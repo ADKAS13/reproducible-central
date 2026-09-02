@@ -1,0 +1,24 @@
+# automatalib.buildspec
+groupId=net.automatalib
+artifactId=automata-parent
+version=9
+
+gitRepo=https://github.com/LearnLib/automatalib.git
+gitTag=70c10ac
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+
+gitRepo=https://github.com/LearnLib/automatalib.git
+gitTag=70c10ac
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="mvn clean install"
+buildinfo=target/Automata.buildinfo

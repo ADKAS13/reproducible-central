@@ -1,0 +1,15 @@
+# telegrambots-7.7.0.buildspec
+groupId=org.telegram
+artifactId=Bots
+version=10.0.0
+
+gitRepo=https://github.com/ADKAS13/TelegramBots1.git
+gitTag=3f0c7a5
+
+tool=mvn
+jdk=17
+newline=lf
+umask=022
+
+command="mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Denforcer.skip=true -Dgpg.skip=true"
+buildinfo=target/Bots-10.0.0.mod.buildinfo

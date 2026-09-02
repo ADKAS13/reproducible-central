@@ -1,0 +1,16 @@
+# beekeeper.buildspec
+groupId=org.opengis.cite
+artifactId=teamengine
+version=4.0.0
+
+gitRepo=https://github.com/opengeospatial/teamengine.git
+gitTag=7b6c97a7a1c1fb0233209b39261f3d187363b8c6
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="mvn com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten clean install -Denforcer.skip=true -Dgpg.skip=true"
+
+buildinfo=target/beekeeper.buildinfo

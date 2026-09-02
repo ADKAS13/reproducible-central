@@ -78,3 +78,6 @@ RUN apt clean cache \
     graphviz \
   && echo "===== install OpenJDK dependencies" \
   && apt-get -q install -y $(apt-cache depends openjdk-21-jre | grep -v headless | awk '/Depends:/{print$2}')
+
+RUN apt-get install -y maven \
+    && ln -sf $(which mvn) /usr/local/bin/mvn

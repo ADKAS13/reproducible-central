@@ -1,0 +1,1670 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/teamengine/teamengineRQ2minor.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.opengis.cite[0m
+|      [0;34martifactId[0;97m: [1mteamengine[0m
+|      [0;34mversion[0;97m: [1m4.0.0[0m
+|    => https://repo.maven.apache.org/maven2/org/opengis/cite/teamengine/4.0.0
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/opengeospatial/teamengine.git[0m
+|      [0;34mgitTag[0;97m: [1m7b6c97a7a1c1fb0233209b39261f3d187363b8c6[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m8[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1mmvn com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten clean install -Denforcer.skip=true -Dgpg.skip=true[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/beekeeper.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/opengeospatial/teamengine.git[0m on tag [1m7b6c97a7a1c1fb0233209b39261f3d187363b8c6[0m
+/home/adkas13/reproducible-central/teamengine/buildcache/teamengine
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/opengeospatial/teamengine.git (fetch)
+origin	https://github.com/opengeospatial/teamengine.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 7b6c97a7a1c1fb0233209b39261f3d187363b8c6 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/teamengine/buildcache/teamengine
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:23c354fb78da04e3944033b0092d3a8f81dad607b910e132be15d5ce3e9f3c75
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:3f258565a92259fbb9e49306b0d739260cb41a09d48f01877ee1ba2a53410318
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:2b46be0124d3b0f93bf2ec50e2e80371736c1e2cd5d4651506384a212b1935dc
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:8e370c50ce0bab034cf88c0bbda0a821c3ab086bdd848cde674d1a97e7e464b7
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.opengis.cite:teamengine:4.0.0[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/teamengine/buildcache/teamengine:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 mvn com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten clean install -Denforcer.skip=true -Dgpg.skip=true -V -e org.apache.maven.plugins:maven-artifact-plugin:3.6.1:compare org.apache.maven.plugins:maven-artifact-plugin:3.6.1:describe-build-output -Dcompare.fail=false [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+javac: invalid flag: --version
+Usage: javac <options> <source files>
+use -help for a list of possible options
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version [0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Fri Aug 21 08:24:04 UTC 2026.
+Universal Time is now:  Fri Aug 21 08:24:04 UTC 2026.
+
+[0;93m[0m
+[1mApache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)[m
+Maven home: /usr/local/apache-maven
+Java version: 1.8.0_492, vendor: Private Build, runtime: /usr/lib/jvm/java-8-openjdk-amd64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.18.33.2-microsoft-standard-wsl2", arch: "amd64", family: "unix"
+[[1;34mINFO[m] Error stacktraces are turned on.
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] TEAM Engine                                                        [pom]
+[[1;34mINFO[m] TEAM Engine - Tomcat Realm                                         [jar]
+[[1;34mINFO[m] TEAM Engine - Shared Resources                                     [jar]
+[[1;34mINFO[m] TEAM Engine - Core Module                                          [jar]
+[[1;34mINFO[m] TEAM Engine - Service Providers                                    [jar]
+[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers                             [jar]
+[[1;34mINFO[m] TEAM Engine - Web Application                                      [war]
+[[1;34mINFO[m] TEAM Engine - Console Application                                  [pom]
+[[1;34mINFO[m] TEAM Engine - Virtualization                                       [pom]
+[[1;34mINFO[m] TEAM Engine - Tests                                                [pom]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36morg.opengis.cite:teamengine[0;1m >---------------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine 5.5-SNAPSHOT                                 [1/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Detected aggregator/parent POM — preserving project layout definitions.
+[[1;34mINFO[m] POM updated successfully: teamengine
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
+[[1;34mINFO[m] Rendering 12 Doxia documents: 3 asciidoc, 9 markdown
+asciidoctor: WARNING: <stdin>: line 92: list item index: expected 2, got 1
+asciidoctor: WARNING: <stdin>: line 93: list item index: expected 3, got 1
+asciidoctor: WARNING: <stdin>: line 94: list item index: expected 4, got 1
+asciidoctor: WARNING: <stdin>: line 95: list item index: expected 5, got 1
+asciidoctor: WARNING: <stdin>: line 141: list item index: expected 2, got 1
+asciidoctor: WARNING: <stdin>: line 142: list item index: expected 3, got 1
+asciidoctor: WARNING: <stdin>: line 143: list item index: expected 4, got 1
+[[1;34mINFO[m] Building jar: /var/maven/app/target/teamengine-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/5.5-SNAPSHOT/teamengine-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/target/teamengine-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/5.5-SNAPSHOT/teamengine-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Reference build java.version: 1.8.0_492 (from MANIFEST.MF Build-Jdk)
+[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/target/reference/teamengine-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m2 files match[m
+[[1;34mINFO[m]                                                  saved to target/teamengine-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.opengis.cite.teamengine:teamengine-realm[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Tomcat Realm 5.5-SNAPSHOT                  [2/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-realm/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-realm
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-realm/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-realm: pinned=10 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: teamengine-realm
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-realm/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] ShortRevision tag detected. The value is '10'.
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app/teamengine-realm' && 'git' 'rev-parse' '--verify' '--short=10' 'HEAD'
+[[1;34mINFO[m] Working directory: /var/maven/app/teamengine-realm
+[[1;34mINFO[m] Storing buildNumber: 7b6c97a7a1 at timestamp: 1787300649763
+[[1;33mWARNING[m] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[[1;34mINFO[m] ShortRevision tag detected. The value is '10'.
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app/teamengine-realm' && 'git' 'rev-parse' '--verify' '--short=10' 'HEAD'
+[[1;34mINFO[m] Working directory: /var/maven/app/teamengine-realm
+[[1;34mINFO[m] Storing buildScmBranch: UNKNOWN
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:compile[m [1m(default-compile)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/teamengine-realm/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/teamengine-realm/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:testCompile[m [1m(default-testCompile)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/teamengine-realm/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/teamengine-realm/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.occamlab.te.realm.UserFilesRealmTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in com.occamlab.te.realm.UserFilesRealmTest
+Running com.occamlab.te.realm.VerifyPBKDF2Realm
+Aug 21, 2026 8:24:11 AM com.occamlab.te.realm.PBKDF2Realm authenticate
+WARNING: Fields are missing from the password hash.
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.315 sec - in com.occamlab.te.realm.VerifyPBKDF2Realm
+Running com.occamlab.te.realm.VerifyPasswordStorage
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 sec - in com.occamlab.te.realm.VerifyPasswordStorage
+
+Results :
+
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:2.10.4:jar[m [1m(attach-javadocs)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] 
+Loading source files for package com.occamlab.te.realm...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_492
+Building tree for all the packages and classes...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/PasswordStorage.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/PasswordStorage.CannotPerformOperationException.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/PasswordStorage.InvalidHashException.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/PBKDF2Realm.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/UserFilesRealm.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/package-frame.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/package-summary.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/package-tree.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/constant-values.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/serialized-form.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/class-use/PasswordStorage.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/class-use/PasswordStorage.InvalidHashException.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/class-use/PasswordStorage.CannotPerformOperationException.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/class-use/UserFilesRealm.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/class-use/PBKDF2Realm.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/com/occamlab/te/realm/package-use.html...
+Building index for all the packages and classes...
+Generating /var/maven/app/teamengine-realm/target/apidocs/overview-tree.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/index-all.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/deprecated-list.html...
+Building index for all classes...
+Generating /var/maven/app/teamengine-realm/target/apidocs/allclasses-frame.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/allclasses-noframe.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/index.html...
+Generating /var/maven/app/teamengine-realm/target/apidocs/help-doc.html...
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-realm/5.5-SNAPSHOT/teamengine-realm-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-realm/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-realm/5.5-SNAPSHOT/teamengine-realm-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-realm/5.5-SNAPSHOT/teamengine-realm-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-realm/5.5-SNAPSHOT/teamengine-realm-5.5-SNAPSHOT-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Reference build java.version: 1.8.0_492 (from MANIFEST.MF Build-Jdk)
+[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/teamengine-realm/target/reference/teamengine-realm-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36morg.opengis.cite.teamengine:teamengine-resources[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Shared Resources 5.5-SNAPSHOT              [3/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-resources/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-resources
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-resources/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-resources: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: teamengine-resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-resources/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:bundle[m [1m(default)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 65 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:compile[m [1m(default-compile)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/teamengine-resources/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:testCompile[m [1m(default-testCompile)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-resources/5.5-SNAPSHOT/teamengine-resources-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-resources/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-resources/5.5-SNAPSHOT/teamengine-resources-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-resources/5.5-SNAPSHOT/teamengine-resources-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Reference build java.version: 1.8.0_492 (from MANIFEST.MF Build-Jdk)
+[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/teamengine-resources/target/reference/teamengine-resources-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.opengis.cite.teamengine:teamengine-core[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Core Module 5.5-SNAPSHOT                   [4/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-core/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-core
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-core/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-core: pinned=34 upgraded=0 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: teamengine-core
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-core/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/teamengine-core/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:compile[m [1m(default-compile)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 86 source files to /var/maven/app/teamengine-core/target/classes
+[[1;34mINFO[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/RecordedForms.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/RecordedForms.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 271 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:testCompile[m [1m(default-testCompile)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 13 source files to /var/maven/app/teamengine-core/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/teamengine-core/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.occamlab.te.parsers.HttpParserTest
+Aug 21, 2026 8:24:15 AM com.occamlab.te.parsers.ImageParser parse
+WARNING: Failed to parse text/plain resource from file:/var/maven/app/teamengine-core/target/test-classes/jabberwocky.txt 
+ null
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.402 sec - in com.occamlab.te.parsers.HttpParserTest
+Running com.occamlab.te.parsers.xml.FileSchemaSupplierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.22 sec - in com.occamlab.te.parsers.xml.FileSchemaSupplierTest
+Running com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
+Running com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
+Running com.occamlab.te.parsers.SchematronValidatingParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.365 sec - in com.occamlab.te.parsers.SchematronValidatingParserTest
+Running com.occamlab.te.parsers.XMLValidatingParserTest
+Aug 21, 2026 8:24:16 AM com.occamlab.te.parsers.XMLValidatingParser parse
+INFO: Error parsing InputStream
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:121)
+	at com.occamlab.te.parsers.XMLValidatingParser.parse(XMLValidatingParser.java:266)
+	at com.occamlab.te.parsers.XMLValidatingParser.parse(XMLValidatingParser.java:225)
+	at com.occamlab.te.parsers.XMLValidatingParserTest.parseNonXMLResource(XMLValidatingParserTest.java:219)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.18 sec - in com.occamlab.te.parsers.XMLValidatingParserTest
+Running com.occamlab.te.parsers.ImageParserTest
+Aug 21, 2026 8:24:16 AM com.occamlab.te.parsers.ImageParser parse
+WARNING: Failed to parse text/plain resource from file:/var/maven/app/teamengine-core/target/test-classes/jabberwocky.txt 
+ null
+Aug 21, 2026 8:24:16 AM com.occamlab.te.parsers.ImageParser parse
+WARNING: Failed to parse content/unknown resource from file:/var/maven/app/teamengine-core/target/test-classes/img/fjord.webp 
+ null
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 sec - in com.occamlab.te.parsers.ImageParserTest
+Running com.occamlab.te.SetupOptionsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.occamlab.te.SetupOptionsTest
+Running com.occamlab.te.TECoreTest
+Testing suite test:suite in Test Mode with defaultResult of Pass ...
+******************************************************************************************************************************
+   Testing test:main type Mandatory in Test Mode with defaultResult Pass (null)...
+      Assertion: main test is valid
+******************************************************************************************************************************
+      Testing test:testA type Mandatory in Test Mode with defaultResult Pass (null/d1e24_1)...
+         Assertion: testA is valid
+******************************************************************************************************************************
+         Testing test:testA1 type Mandatory in Test Mode with defaultResult Pass (null/d1e24_1/d1e39_1)...
+            Assertion: testA1 is valid
+         Test test:testA1 Passed
+******************************************************************************************************************************
+         Testing test:testA2 type Mandatory in Test Mode with defaultResult Pass (null/d1e24_1/d1e41_1)...
+            Assertion: testA2 is valid
+         Test test:testA2 Failed
+******************************************************************************************************************************
+         Testing test:testA3 type Mandatory in Test Mode with defaultResult Pass (null/d1e24_1/d1e43_1)...
+            Assertion: testA3 is valid
+         Test test:testA3 Passed
+      Test test:testA Failed - Inherited
+******************************************************************************************************************************
+      Testing test:testB type Mandatory in Test Mode with defaultResult Pass (null/d1e26_1)...
+         Assertion: testB is valid
+******************************************************************************************************************************
+         Testing test:testB1 type Mandatory in Test Mode with defaultResult Pass (null/d1e26_1/d1e54_1)...
+            Assertion: testB1 is valid
+         Test test:testB1 Passed
+******************************************************************************************************************************
+         Testing test:testB2 type Mandatory in Test Mode with defaultResult Pass (null/d1e26_1/d1e56_1)...
+            Assertion: testB2 is valid
+         Test test:testB2 Passed
+******************************************************************************************************************************
+         Testing test:testB3 type Mandatory in Test Mode with defaultResult Pass (null/d1e26_1/d1e58_1)...
+            Assertion: testB3 is valid
+         Test test:testB3 Passed
+      Test test:testB Passed
+   Test test:main Failed - Inherited
+			See the detail test Report null/log.xml
+Suite test:suite Failed
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 sec - in com.occamlab.te.TECoreTest
+Running com.occamlab.te.html.EarlToHtmlTransformationTest
+Aug 21, 2026 8:24:16 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+SEVERE: Transformation of EARL to HTML failed.
+java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
+	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1368)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1268)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1237)
+	at com.occamlab.te.html.EarlToHtmlTransformation.earlHtmlReport(EarlToHtmlTransformation.java:52)
+	at com.occamlab.te.html.EarlToHtmlTransformationTest.testEarlHtmlReport_TestNG(EarlToHtmlTransformationTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+
+Aug 21, 2026 8:24:17 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+SEVERE: Transformation of EARL to HTML failed.
+java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
+	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1368)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1268)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1237)
+	at com.occamlab.te.html.EarlToHtmlTransformation.earlHtmlReport(EarlToHtmlTransformation.java:52)
+	at com.occamlab.te.html.EarlToHtmlTransformationTest.testEarlHtmlReport_Ctl_WithHierarchy_WithInheritedFailure(EarlToHtmlTransformationTest.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+
+Aug 21, 2026 8:24:17 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+SEVERE: Transformation of EARL to HTML failed.
+java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
+	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1368)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1268)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1237)
+	at com.occamlab.te.html.EarlToHtmlTransformation.earlHtmlReport(EarlToHtmlTransformation.java:52)
+	at com.occamlab.te.html.EarlToHtmlTransformationTest.testEarlHtmlReport_Ctl_WithHierarchy(EarlToHtmlTransformationTest.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+
+Aug 21, 2026 8:24:17 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+SEVERE: Transformation of EARL to HTML failed.
+java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
+	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1368)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1268)
+	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1237)
+	at com.occamlab.te.html.EarlToHtmlTransformation.earlHtmlReport(EarlToHtmlTransformation.java:52)
+	at com.occamlab.te.html.EarlToHtmlTransformationTest.testEarlHtmlReport_Ctl_WithHierarchy_MissingElements(EarlToHtmlTransformationTest.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.417 sec - in com.occamlab.te.html.EarlToHtmlTransformationTest
+Running com.occamlab.te.util.DateTimeUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.occamlab.te.util.DateTimeUtilsTest
+Running com.occamlab.te.util.XMLParserUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in com.occamlab.te.util.XMLParserUtilsTest
+Running com.occamlab.te.CtlEarlReporterTest
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.864 sec - in com.occamlab.te.CtlEarlReporterTest
+
+Results :
+
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-core/target/teamengine-core-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-core/target/teamengine-core-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:2.10.4:jar[m [1m(attach-javadocs)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] The goal 'org.apache.maven.plugins:maven-javadoc-plugin:2.10.4:javadoc' has not been previously called for the module: 'org.opengis.cite.teamengine:teamengine-resources:jar:5.5-SNAPSHOT'. Trying to invoke it...
+[[1;33mWARNING[m] Creating fake javadoc directory to prevent repeated invocations: /var/maven/app/teamengine-resources/target/apidocs
+[[1;31mERROR[m] Error fetching link: /var/maven/app/teamengine-resources/target/apidocs/package-list. Ignored it.
+[[1;34mINFO[m] 
+Loading source files for package com.occamlab.te.index...
+Loading source files for package com.occamlab.te...
+Loading source files for package com.occamlab.te.form...
+Loading source files for package com.occamlab.te.saxon...
+Loading source files for package com.occamlab.te.parsers...
+Loading source files for package com.occamlab.te.parsers.xml...
+Loading source files for package com.occamlab.te.html...
+Loading source files for package com.occamlab.te.config...
+Loading source files for package com.occamlab.te.vocabulary...
+Loading source files for package com.occamlab.te.util...
+Loading source files for package com.occamlab.te.util.protocols.data...
+Loading source files for package net.sf.saxon.s9api...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_492
+Building tree for all the packages and classes...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/FunctionEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/Index.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/IndexEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/NamedEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/ParserEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/ProfileEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/SuiteEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/TemplateEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/TemplateEntryInterface.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/TestEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/CtlEarlReporter.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/CtlErrorHandler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/Engine.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/ErrorHandlerImpl.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/Generator.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/ListSuites.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/NullErrorListener.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/RecordedForm.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/RecordedForms.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/RecordTestResult.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/RuntimeOptions.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/SetupOptions.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/Suite.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/SwingForm.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/TEClassLoader.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/TECore.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/TeErrorListener.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/Test.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/ViewLog.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/form/ImageHandler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/GetTypeFunctionCall.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/ObjValue.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/TEFunctionCall.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/TEFunctionLibrary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/TEJavaFunctionCall.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/TEXSLFunctionCall.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/BinaryPayloadParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/CDataParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/HTTPParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/ImageParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/NullParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/SchematronValidatingParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/SoapParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/ValidationError.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/XmlErrorHandler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/XmlErrorHandler.ErrorIterator.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/XMLValidatingParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/XSLTransformationErrorHandler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/XSLTransformationParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/ZipParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/CachingSchemaLoader.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/FileSchemaSupplier.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/InMemorySchemaSupplier.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/SchemaLoader.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/SchemaSupplier.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/UrlSchemaSupplier.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/XsdSchemaLoader.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/html/EarlToHtmlTransformation.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/ConfigComparator.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/ConfigEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/ConfigFileBuilder.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/CITE.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/Config.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/CONTENT.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/EARL.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/HTTP.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/Constants.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/DateTimeUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/DocumentationHelper.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/DomUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/IOUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/LogUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/Misc.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/Soap11MessageBuilder.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/Soap12MessageBuilder.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/SoapUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/Stopwatch.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/StringUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/URLConnectionUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/Utils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/Utils.MyNamespaceContext.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/XMLParserUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/ZipUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/protocols/data/Handler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/net/sf/saxon/s9api/S9APIUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/overview-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/form/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/form/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/form/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/html/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/html/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/html/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/protocols/data/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/protocols/data/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/protocols/data/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/net/sf/saxon/s9api/package-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/net/sf/saxon/s9api/package-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/net/sf/saxon/s9api/package-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/constant-values.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/serialized-form.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/TemplateEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/TestEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/SuiteEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/ProfileEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/FunctionEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/TemplateEntryInterface.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/IndexEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/Index.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/ParserEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/class-use/NamedEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/NullErrorListener.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/ListSuites.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/SwingForm.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/RecordedForm.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/RecordTestResult.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/TEClassLoader.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/CtlErrorHandler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/RuntimeOptions.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/ErrorHandlerImpl.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/SetupOptions.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/Suite.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/Test.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/RecordedForms.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/TeErrorListener.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/TECore.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/CtlEarlReporter.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/Engine.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/ViewLog.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/class-use/Generator.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/form/class-use/ImageHandler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/class-use/GetTypeFunctionCall.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/class-use/TEFunctionCall.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/class-use/ObjValue.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/class-use/TEXSLFunctionCall.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/class-use/TEJavaFunctionCall.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/class-use/TEFunctionLibrary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/ZipParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/SoapParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/XMLValidatingParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/SchematronValidatingParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/XSLTransformationParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/NullParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/ImageParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/BinaryPayloadParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/ValidationError.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/XmlErrorHandler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/XmlErrorHandler.ErrorIterator.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/HTTPParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/XSLTransformationErrorHandler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/class-use/CDataParser.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/class-use/UrlSchemaSupplier.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/class-use/InMemorySchemaSupplier.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/class-use/FileSchemaSupplier.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/class-use/XsdSchemaLoader.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/class-use/CachingSchemaLoader.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/class-use/SchemaSupplier.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/class-use/SchemaLoader.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/html/class-use/EarlToHtmlTransformation.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/class-use/ConfigComparator.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/class-use/ConfigFileBuilder.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/class-use/ConfigEntry.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/class-use/HTTP.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/class-use/EARL.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/class-use/CITE.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/class-use/CONTENT.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/class-use/Config.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/ZipUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/Constants.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/DateTimeUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/LogUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/Soap11MessageBuilder.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/StringUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/DocumentationHelper.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/Misc.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/Soap12MessageBuilder.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/URLConnectionUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/Utils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/Utils.MyNamespaceContext.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/Stopwatch.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/XMLParserUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/DomUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/IOUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/class-use/SoapUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/protocols/data/class-use/Handler.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/net/sf/saxon/s9api/class-use/S9APIUtils.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/config/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/form/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/html/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/index/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/parsers/xml/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/saxon/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/util/protocols/data/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/com/occamlab/te/vocabulary/package-use.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/net/sf/saxon/s9api/package-use.html...
+Building index for all the packages and classes...
+Generating /var/maven/app/teamengine-core/target/apidocs/overview-tree.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/index-all.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/deprecated-list.html...
+Building index for all classes...
+Generating /var/maven/app/teamengine-core/target/apidocs/allclasses-frame.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/allclasses-noframe.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/index.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/overview-summary.html...
+Generating /var/maven/app/teamengine-core/target/apidocs/help-doc.html...
+19 warnings
+[[1;33mWARNING[m] Javadoc Warnings
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/RecordedForms.java:22: warning - @return tag has no arguments.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/RecordTestResult.java:271: warning - @return tag has no arguments.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/SetupOptions.java:105: warning - @return tag has no arguments.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/parsers/ImageParser.java:393: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/parsers/ImageParser.java:441: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/parsers/SchematronValidatingParser.java:198: warning - @param argument "doc" is not a parameter name.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/parsers/SoapParser.java:56: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/parsers/XMLValidatingParser.java:329: warning - @param argument "Document" is not a parameter name.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/parsers/XMLValidatingParser.java:329: warning - @param argument "Document" is not a parameter name.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/parsers/ZipParser.java:104: warning - @param argument "resp" is not a parameter name.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/parsers/ZipParser.java:193: warning - @param argument "path" is not a parameter name.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/util/LogUtils.java:441: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/util/Soap11MessageBuilder.java:77: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/util/Soap12MessageBuilder.java:67: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/util/SoapUtils.java:55: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/util/SoapUtils.java:87: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/util/SoapUtils.java:110: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/util/SoapUtils.java:143: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;33mWARNING[m] /var/maven/app/teamengine-core/src/main/java/com/occamlab/te/util/SoapUtils.java:176: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-core/target/teamengine-core-5.5-SNAPSHOT-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-core/target/teamengine-core-5.5-SNAPSHOT.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-core/5.5-SNAPSHOT/teamengine-core-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-core/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-core/5.5-SNAPSHOT/teamengine-core-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-core/target/teamengine-core-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-core/5.5-SNAPSHOT/teamengine-core-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-core/target/teamengine-core-5.5-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-core/5.5-SNAPSHOT/teamengine-core-5.5-SNAPSHOT-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-core[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Reference build java.version: 1.8.0_492 (from MANIFEST.MF Build-Jdk)
+[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/teamengine-core/target/reference/teamengine-core-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-core/target/teamengine-core-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36morg.opengis.cite.teamengine:teamengine-spi[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Service Providers 5.5-SNAPSHOT             [5/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-spi/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-spi
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-spi/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-spi: pinned=41 upgraded=0 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: teamengine-spi
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-spi/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 4 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:compile[m [1m(default-compile)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 18 source files to /var/maven/app/teamengine-spi/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/teamengine-spi/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:testCompile[m [1m(default-testCompile)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/teamengine-spi/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/teamengine-spi/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
+Running com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 sec - in com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
+Running com.occamlab.te.spi.executors.testng.VerifyEarlReporter
+java.io.FileNotFoundException: /var/maven/teamengine/config.xml (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:205)
+	at com.occamlab.te.vocabulary.Config.<init>(Config.java:73)
+	at com.occamlab.te.spi.executors.testng.EarlReporter.<init>(EarlReporter.java:88)
+	at com.occamlab.te.spi.executors.testng.VerifyEarlReporter.writeModel(VerifyEarlReporter.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+java.io.FileNotFoundException: /var/maven/teamengine/config.xml (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:205)
+	at com.occamlab.te.vocabulary.Config.<init>(Config.java:73)
+	at com.occamlab.te.spi.executors.testng.EarlReporter.<init>(EarlReporter.java:88)
+	at com.occamlab.te.spi.executors.testng.VerifyEarlReporter.initializeModel(VerifyEarlReporter.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.377 sec - in com.occamlab.te.spi.executors.testng.VerifyEarlReporter
+Running com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
+
+Results :
+
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-spi/target/teamengine-spi-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-spi/target/teamengine-spi-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:2.10.4:jar[m [1m(attach-javadocs)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] 
+Loading source files for package com.occamlab.te.spi.jaxrs.resources...
+Loading source files for package com.occamlab.te.spi.jaxrs...
+Loading source files for package com.occamlab.te.spi.report...
+Loading source files for package com.occamlab.te.spi.executors...
+Loading source files for package com.occamlab.te.spi.executors.testng...
+Loading source files for package com.occamlab.te.spi.util...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_492
+Building tree for all the packages and classes...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/ImageResource.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/TestRunResource.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/TestSuiteOverviewResource.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/TestSuiteSetResource.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/ApplicationComponents.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/ErrorResponseBuilder.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/TestSuiteController.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/TestSuiteRegistry.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/report/ReportLog.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/FixtureManager.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/TestRunExecutor.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/TestRunFixture.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/AlterSuiteParametersListener.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/BasicXMLReporter.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/EarlReporter.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/TestNGExecutor.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/TestRunSummary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/util/HtmlReport.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/overview-frame.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/package-frame.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/package-summary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/package-tree.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/package-frame.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/package-summary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/package-tree.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/package-frame.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/package-summary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/package-tree.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/package-frame.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/package-summary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/package-tree.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/report/package-frame.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/report/package-summary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/report/package-tree.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/util/package-frame.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/util/package-summary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/util/package-tree.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/constant-values.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/class-use/TestSuiteOverviewResource.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/class-use/TestSuiteSetResource.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/class-use/TestRunResource.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/class-use/ImageResource.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/class-use/TestSuiteController.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/class-use/ApplicationComponents.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/class-use/TestSuiteRegistry.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/class-use/ErrorResponseBuilder.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/report/class-use/ReportLog.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/class-use/TestRunFixture.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/class-use/TestRunExecutor.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/class-use/FixtureManager.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/class-use/TestNGExecutor.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/class-use/BasicXMLReporter.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/class-use/EarlReporter.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/class-use/AlterSuiteParametersListener.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/class-use/TestRunSummary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/util/class-use/HtmlReport.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/package-use.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/executors/testng/package-use.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/package-use.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/jaxrs/resources/package-use.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/report/package-use.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/com/occamlab/te/spi/util/package-use.html...
+Building index for all the packages and classes...
+Generating /var/maven/app/teamengine-spi/target/apidocs/overview-tree.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/index-all.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/deprecated-list.html...
+Building index for all classes...
+Generating /var/maven/app/teamengine-spi/target/apidocs/allclasses-frame.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/allclasses-noframe.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/index.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/overview-summary.html...
+Generating /var/maven/app/teamengine-spi/target/apidocs/help-doc.html...
+4 warnings
+[[1;33mWARNING[m] Javadoc Warnings
+[[1;33mWARNING[m] /var/maven/app/teamengine-spi/src/main/java/com/occamlab/te/spi/executors/testng/EarlReporter.java:253: warning - #TEST_RUN_ID (referenced by @value tag) is an unknown reference.
+[[1;33mWARNING[m] /var/maven/app/teamengine-spi/src/main/java/com/occamlab/te/spi/executors/testng/EarlReporter.java:407: warning - #REQ_ATTR (referenced by @value tag) is an unknown reference.
+[[1;33mWARNING[m] /var/maven/app/teamengine-spi/src/main/java/com/occamlab/te/spi/executors/testng/EarlReporter.java:407: warning - #RSP_ATTR (referenced by @value tag) is an unknown reference.
+[[1;33mWARNING[m] /var/maven/app/teamengine-spi/src/main/java/com/occamlab/te/spi/util/HtmlReport.java:55: warning - @return tag has no arguments.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-spi/target/teamengine-spi-5.5-SNAPSHOT-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-spi/target/teamengine-spi-5.5-SNAPSHOT.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-spi/5.5-SNAPSHOT/teamengine-spi-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-spi/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-spi/5.5-SNAPSHOT/teamengine-spi-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-spi/target/teamengine-spi-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-spi/5.5-SNAPSHOT/teamengine-spi-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-spi/target/teamengine-spi-5.5-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-spi/5.5-SNAPSHOT/teamengine-spi-5.5-SNAPSHOT-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Reference build java.version: 1.8.0_492 (from MANIFEST.MF Build-Jdk)
+[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/teamengine-spi/target/reference/teamengine-spi-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-spi/target/teamengine-spi-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.opengis.cite.teamengine:teamengine-spi-ctl[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - CTL Test Suite Providers 5.5-SNAPSHOT      [6/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-spi-ctl/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-spi-ctl
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-spi-ctl/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-spi-ctl: pinned=41 upgraded=0 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: teamengine-spi-ctl
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-spi-ctl/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/teamengine-spi-ctl/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:compile[m [1m(default-compile)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/teamengine-spi-ctl/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:testCompile[m [1m(default-testCompile)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/teamengine-spi-ctl/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/teamengine-spi-ctl/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.occamlab.te.spi.ctl.VerifyCtlExecutor
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.222 sec - in com.occamlab.te.spi.ctl.VerifyCtlExecutor
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-spi-ctl/target/teamengine-spi-ctl-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-spi-ctl/target/teamengine-spi-ctl-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:2.10.4:jar[m [1m(attach-javadocs)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] 
+Loading source files for package com.occamlab.te.spi.ctl...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_492
+Building tree for all the packages and classes...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/com/occamlab/te/spi/ctl/CtlExecutor.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/com/occamlab/te/spi/ctl/package-frame.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/com/occamlab/te/spi/ctl/package-summary.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/com/occamlab/te/spi/ctl/package-tree.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/constant-values.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/com/occamlab/te/spi/ctl/class-use/CtlExecutor.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/com/occamlab/te/spi/ctl/package-use.html...
+Building index for all the packages and classes...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/overview-tree.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/index-all.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/deprecated-list.html...
+Building index for all classes...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/allclasses-frame.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/allclasses-noframe.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/index.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/overview-summary.html...
+Generating /var/maven/app/teamengine-spi-ctl/target/apidocs/help-doc.html...
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-spi-ctl/target/teamengine-spi-ctl-5.5-SNAPSHOT-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-spi-ctl/target/teamengine-spi-ctl-5.5-SNAPSHOT.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-spi-ctl/5.5-SNAPSHOT/teamengine-spi-ctl-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-spi-ctl/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-spi-ctl/5.5-SNAPSHOT/teamengine-spi-ctl-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-spi-ctl/target/teamengine-spi-ctl-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-spi-ctl/5.5-SNAPSHOT/teamengine-spi-ctl-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-spi-ctl/target/teamengine-spi-ctl-5.5-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-spi-ctl/5.5-SNAPSHOT/teamengine-spi-ctl-5.5-SNAPSHOT-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Reference build java.version: 1.8.0_492 (from MANIFEST.MF Build-Jdk)
+[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/teamengine-spi-ctl/target/reference/teamengine-spi-ctl-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-spi-ctl/target/teamengine-spi-ctl-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36morg.opengis.cite.teamengine:teamengine-web[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Web Application 5.5-SNAPSHOT               [7/10][m
+[[1;34mINFO[m] [1m--------------------------------[ war ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-web/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-web
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-web/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-web: pinned=55 upgraded=0 downgraded=0 added=5 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: teamengine-web
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-web/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(default)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 28 resources
+[[1;34mINFO[m] Copying 65 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:compile[m [1m(default-compile)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 22 source files to /var/maven/app/teamengine-web/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 21 resources
+[[1;34mINFO[m] Copying 65 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:testCompile[m [1m(default-testCompile)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/teamengine-web/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/teamengine-web/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.occamlab.te.web.VerifyTestSuite
+******************************************************************************************************************************
+Testing ex:num-parity-main type Mandatory in Test Mode with defaultResult Pass (e72f6c29-0f73-42dd-bd93-3e9f3d0fdc4f)...
+   Assertion: The input number satisfies all constraints.
+******************************************************************************************************************************
+   Testing ex:is-even type Mandatory in Test Mode with defaultResult Pass (e72f6c29-0f73-42dd-bd93-3e9f3d0fdc4f/d68e28_1)...
+      Assertion: The integer is even.
+   Test ex:is-even Passed
+Test ex:num-parity-main Passed
+Report file "/var/maven/app/teamengine-web/target/te-base/users/adkas13/e72f6c29-0f73-42dd-bd93-3e9f3d0fdc4f/report.html" created!
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.81 sec - in com.occamlab.te.web.VerifyTestSuite
+Running com.occamlab.te.web.CoverageMonitorTest
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.CoverageMonitor <init>
+WARNING: InputStream cannot be null
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec - in com.occamlab.te.web.CoverageMonitorTest
+Running com.occamlab.te.web.ConfigFileCreatorTest
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator process
+INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/scripts
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator process
+INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/scripts
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator process
+INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/scripts
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator process
+INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/scripts
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator process
+INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/scripts
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase/config.xml
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator process
+INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase/scripts
+Aug 21, 2026 8:24:28 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase/config.xml
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec - in com.occamlab.te.web.ConfigFileCreatorTest
+
+Results :
+
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-web/target/teamengine-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-war-plugin:2.5:war[m [1m(default-war)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Packaging webapp
+[[1;34mINFO[m] Assembling webapp [teamengine-web] in [/var/maven/app/teamengine-web/target/teamengine]
+[[1;34mINFO[m] Processing war project
+[[1;34mINFO[m] Copying webapp webResources [/var/maven/app/teamengine-web/src/main/webapp] to [/var/maven/app/teamengine-web/target/teamengine]
+[[1;34mINFO[m] Copying webapp resources [/var/maven/app/teamengine-web/src/main/webapp]
+[[1;34mINFO[m] Webapp assembled in [244 msecs]
+[[1;34mINFO[m] Building war: /var/maven/app/teamengine-web/target/teamengine.war
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.6:single[m [1m(default)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Reading assembly descriptor: /var/maven/app/teamengine-web/src/assembly/common-libs.xml
+[[1;34mINFO[m] Building zip: /var/maven/app/teamengine-web/target/teamengine-common-libs.zip
+[[1;34mINFO[m] Building tar: /var/maven/app/teamengine-web/target/teamengine-common-libs.tar.gz
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-web/target/teamengine.war to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-web/5.5-SNAPSHOT/teamengine-web-5.5-SNAPSHOT.war
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-web/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-web/5.5-SNAPSHOT/teamengine-web-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-web/target/teamengine-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-web/5.5-SNAPSHOT/teamengine-web-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-web/target/teamengine-common-libs.zip to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-web/5.5-SNAPSHOT/teamengine-web-5.5-SNAPSHOT-common-libs.zip
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-web/target/teamengine-common-libs.tar.gz to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-web/5.5-SNAPSHOT/teamengine-web-5.5-SNAPSHOT-common-libs.tar.gz
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-web[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Reference build java.version: 1.8.0_492 (from MANIFEST.MF Build-Jdk)
+[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/teamengine-web/target/reference/teamengine-web-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m5 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-web/target/teamengine-web-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.opengis.cite.teamengine:teamengine-console[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Console Application 5.5-SNAPSHOT           [8/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-console[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-console/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-console[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Detected aggregator/parent POM — preserving project layout definitions.
+[[1;34mINFO[m] POM updated successfully: teamengine-console
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-console[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-console/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(default)[m @ [36mteamengine-console[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-console[0;1m ---[m
+[[1;34mINFO[m] maven.site.skip = true: Skipping jar generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.6:single[m [1m(default)[m @ [36mteamengine-console[0;1m ---[m
+[[1;34mINFO[m] Reading assembly descriptor: /var/maven/app/teamengine-console/src/assembly/bin.xml
+[[1;34mINFO[m] Reading assembly descriptor: /var/maven/app/teamengine-console/src/assembly/base.xml
+[[1;34mINFO[m] Building zip: /var/maven/app/teamengine-console/target/teamengine-console-5.5-SNAPSHOT-bin.zip
+[[1;34mINFO[m] Building tar: /var/maven/app/teamengine-console/target/teamengine-console-5.5-SNAPSHOT-bin.tar.gz
+[[1;34mINFO[m] Building zip: /var/maven/app/teamengine-console/target/teamengine-console-5.5-SNAPSHOT-base.zip
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-console[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-console/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-console/5.5-SNAPSHOT/teamengine-console-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-console/target/teamengine-console-5.5-SNAPSHOT-bin.zip to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-console/5.5-SNAPSHOT/teamengine-console-5.5-SNAPSHOT-bin.zip
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-console/target/teamengine-console-5.5-SNAPSHOT-bin.tar.gz to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-console/5.5-SNAPSHOT/teamengine-console-5.5-SNAPSHOT-bin.tar.gz
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-console/target/teamengine-console-5.5-SNAPSHOT-base.zip to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-console/5.5-SNAPSHOT/teamengine-console-5.5-SNAPSHOT-base.zip
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-console[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/teamengine-console/target/reference/teamengine-console-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m4 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-console/target/teamengine-console-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------< [0;36morg.opengis.cite.teamengine:teamengine-virtualization[0;1m >--------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Virtualization 5.5-SNAPSHOT                [9/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-virtualization/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Detected aggregator/parent POM — preserving project layout definitions.
+[[1;34mINFO[m] POM updated successfully: teamengine-virtualization
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-virtualization/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;34mINFO[m] maven.site.skip = true: Skipping jar generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.6:single[m [1m(default)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;34mINFO[m] Reading assembly descriptor: /var/maven/app/teamengine-virtualization/src/assembly/packer.xml
+[[1;34mINFO[m] Building zip: /var/maven/app/teamengine-virtualization/target/teamengine-virtualization-5.5-SNAPSHOT-packer.zip
+[[1;34mINFO[m] Building tar: /var/maven/app/teamengine-virtualization/target/teamengine-virtualization-5.5-SNAPSHOT-packer.tar.gz
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.10:copy-dependencies[m [1m(copy-dependencies)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;34mINFO[m] Copying jena-iri-3.1.0.jar to /var/maven/app/teamengine-virtualization/target/jena-iri-3.1.0.jar
+[[1;34mINFO[m] Copying animal-sniffer-annotations-1.14.jar to /var/maven/app/teamengine-virtualization/target/animal-sniffer-annotations-1.14.jar
+[[1;34mINFO[m] Copying jcommander-1.48.jar to /var/maven/app/teamengine-virtualization/target/jcommander-1.48.jar
+[[1;34mINFO[m] Copying isorelax-20030108.jar to /var/maven/app/teamengine-virtualization/target/isorelax-20030108.jar
+[[1;34mINFO[m] Copying javax.annotation-api-1.2-b03.jar to /var/maven/app/teamengine-virtualization/target/javax.annotation-api-1.2-b03.jar
+[[1;34mINFO[m] Copying saxon9-9.0.0.8.jar to /var/maven/app/teamengine-virtualization/target/saxon9-9.0.0.8.jar
+[[1;34mINFO[m] Copying xml-apis-1.4.01.jar to /var/maven/app/teamengine-virtualization/target/xml-apis-1.4.01.jar
+[[1;34mINFO[m] Copying jena-core-3.1.0.jar to /var/maven/app/teamengine-virtualization/target/jena-core-3.1.0.jar
+[[1;34mINFO[m] Copying slf4j-jdk14-1.7.21.jar to /var/maven/app/teamengine-virtualization/target/slf4j-jdk14-1.7.21.jar
+[[1;34mINFO[m] Copying json-simple-1.1.1.jar to /var/maven/app/teamengine-virtualization/target/json-simple-1.1.1.jar
+[[1;34mINFO[m] Copying joda-time-2.9.4.jar to /var/maven/app/teamengine-virtualization/target/joda-time-2.9.4.jar
+[[1;34mINFO[m] Copying commons-cli-1.3.jar to /var/maven/app/teamengine-virtualization/target/commons-cli-1.3.jar
+[[1;34mINFO[m] Copying hamcrest-core-1.3.jar to /var/maven/app/teamengine-virtualization/target/hamcrest-core-1.3.jar
+[[1;34mINFO[m] Copying teamengine.war to /var/maven/app/teamengine-virtualization/target/teamengine-web-5.5-SNAPSHOT.war
+[[1;34mINFO[m] Copying mimepull-1.9.3.jar to /var/maven/app/teamengine-virtualization/target/mimepull-1.9.3.jar
+[[1;34mINFO[m] Copying jena-base-3.1.0.jar to /var/maven/app/teamengine-virtualization/target/jena-base-3.1.0.jar
+[[1;34mINFO[m] Copying collection-0.6.jar to /var/maven/app/teamengine-virtualization/target/collection-0.6.jar
+[[1;34mINFO[m] Copying mail-1.4.7.jar to /var/maven/app/teamengine-virtualization/target/mail-1.4.7.jar
+[[1;34mINFO[m] Copying jena-shaded-guava-3.1.0.jar to /var/maven/app/teamengine-virtualization/target/jena-shaded-guava-3.1.0.jar
+[[1;34mINFO[m] Copying checker-qual-2.5.2.jar to /var/maven/app/teamengine-virtualization/target/checker-qual-2.5.2.jar
+[[1;34mINFO[m] Copying slf4j-api-1.7.20.jar to /var/maven/app/teamengine-virtualization/target/slf4j-api-1.7.20.jar
+[[1;34mINFO[m] Copying teamengine-spi-ctl-5.5-SNAPSHOT.jar to /var/maven/app/teamengine-virtualization/target/teamengine-spi-ctl-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Copying guava-26.0-jre.jar to /var/maven/app/teamengine-virtualization/target/guava-26.0-jre.jar
+[[1;34mINFO[m] Copying jsr305-3.0.2.jar to /var/maven/app/teamengine-virtualization/target/jsr305-3.0.2.jar
+[[1;34mINFO[m] Copying testng-6.9.10.jar to /var/maven/app/teamengine-virtualization/target/testng-6.9.10.jar
+[[1;34mINFO[m] Copying commons-io-2.5.jar to /var/maven/app/teamengine-virtualization/target/commons-io-2.5.jar
+[[1;34mINFO[m] Copying jersey-core-1.19.jar to /var/maven/app/teamengine-virtualization/target/jersey-core-1.19.jar
+[[1;34mINFO[m] Copying j2objc-annotations-1.1.jar to /var/maven/app/teamengine-virtualization/target/j2objc-annotations-1.1.jar
+[[1;34mINFO[m] Copying derby-10.10.2.0.jar to /var/maven/app/teamengine-virtualization/target/derby-10.10.2.0.jar
+[[1;34mINFO[m] Copying teamengine-spi-5.5-SNAPSHOT.jar to /var/maven/app/teamengine-virtualization/target/teamengine-spi-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Copying activation-1.1.jar to /var/maven/app/teamengine-virtualization/target/activation-1.1.jar
+[[1;34mINFO[m] Copying jing-20091111.jar to /var/maven/app/teamengine-virtualization/target/jing-20091111.jar
+[[1;34mINFO[m] Copying xercesImpl-2.11.0.jar to /var/maven/app/teamengine-virtualization/target/xercesImpl-2.11.0.jar
+[[1;34mINFO[m] Copying jstl-api-1.2.jar to /var/maven/app/teamengine-virtualization/target/jstl-api-1.2.jar
+[[1;34mINFO[m] Copying commons-codec-1.10.jar to /var/maven/app/teamengine-virtualization/target/commons-codec-1.10.jar
+[[1;34mINFO[m] Copying error_prone_annotations-2.1.3.jar to /var/maven/app/teamengine-virtualization/target/error_prone_annotations-2.1.3.jar
+[[1;34mINFO[m] Copying jsr311-api-1.1.1.jar to /var/maven/app/teamengine-virtualization/target/jsr311-api-1.1.1.jar
+[[1;34mINFO[m] Copying javax.servlet.jsp.jstl-1.2.3.jar to /var/maven/app/teamengine-virtualization/target/javax.servlet.jsp.jstl-1.2.3.jar
+[[1;34mINFO[m] Copying teamengine-realm-5.5-SNAPSHOT.jar to /var/maven/app/teamengine-virtualization/target/teamengine-realm-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Copying teamengine-common-libs.zip to /var/maven/app/teamengine-virtualization/target/teamengine-web-5.5-SNAPSHOT-common-libs.zip
+[[1;34mINFO[m] Copying webservices-api-2.3.jar to /var/maven/app/teamengine-virtualization/target/webservices-api-2.3.jar
+[[1;34mINFO[m] Copying junit-4.12.jar to /var/maven/app/teamengine-virtualization/target/junit-4.12.jar
+[[1;34mINFO[m] Copying teamengine-console-5.5-SNAPSHOT-base.zip to /var/maven/app/teamengine-virtualization/target/teamengine-console-5.5-SNAPSHOT-base.zip
+[[1;34mINFO[m] Copying jersey-servlet-1.19.jar to /var/maven/app/teamengine-virtualization/target/jersey-servlet-1.19.jar
+[[1;34mINFO[m] Copying teamengine-resources-5.5-SNAPSHOT.jar to /var/maven/app/teamengine-virtualization/target/teamengine-resources-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Copying jersey-multipart-1.19.jar to /var/maven/app/teamengine-virtualization/target/jersey-multipart-1.19.jar
+[[1;34mINFO[m] Copying servlet-api-2.5.jar to /var/maven/app/teamengine-virtualization/target/servlet-api-2.5.jar
+[[1;34mINFO[m] Copying xml-resolver-1.2.jar to /var/maven/app/teamengine-virtualization/target/xml-resolver-1.2.jar
+[[1;34mINFO[m] Copying jersey-server-1.19.jar to /var/maven/app/teamengine-virtualization/target/jersey-server-1.19.jar
+[[1;34mINFO[m] Copying teamengine-core-5.5-SNAPSHOT.jar to /var/maven/app/teamengine-virtualization/target/teamengine-core-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Copying webservices-rt-2.3.jar to /var/maven/app/teamengine-virtualization/target/webservices-rt-2.3.jar
+[[1;34mINFO[m] Copying commons-fileupload-1.3.3.jar to /var/maven/app/teamengine-virtualization/target/commons-fileupload-1.3.3.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-virtualization/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-virtualization/5.5-SNAPSHOT/teamengine-virtualization-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-virtualization/target/teamengine-virtualization-5.5-SNAPSHOT-packer.zip to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-virtualization/5.5-SNAPSHOT/teamengine-virtualization-5.5-SNAPSHOT-packer.zip
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-virtualization/target/teamengine-virtualization-5.5-SNAPSHOT-packer.tar.gz to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-virtualization/5.5-SNAPSHOT/teamengine-virtualization-5.5-SNAPSHOT-packer.tar.gz
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/teamengine-virtualization/target/reference/teamengine-virtualization-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-virtualization/target/teamengine-virtualization-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.opengis.cite.teamengine:teamengine-tests[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Tests 5.5-SNAPSHOT                        [10/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+Downloading from smartbear-sweden-plugin-repository: http://www.soapui.org/repository/maven2/com/baeldung/counter-maven-plugin/1.0-SNAPSHOT/maven-metadata.xml
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-tests[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-tests/target/dependency-tree-before.txt
+[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-tests[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Detected aggregator/parent POM — preserving project layout definitions.
+[[1;34mINFO[m] POM updated successfully: teamengine-tests
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-tests[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/teamengine-tests/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-tests[0;1m ---[m
+[[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-tests/target/teamengine-tests-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-tests[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-tests/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-tests/5.5-SNAPSHOT/teamengine-tests-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-tests/target/teamengine-tests-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-tests/5.5-SNAPSHOT/teamengine-tests-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mteamengine-tests[0;1m ---[m
+[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[[1;34mINFO[m] Saved aggregate info on build to /var/maven/app/teamengine-tests/target/teamengine-tests-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] Aggregate buildinfo copied to target/teamengine-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] Checking against reference build from central...
+[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[[1;34mINFO[m] Reference build java.version: 1.8.0_492 (from MANIFEST.MF Build-Jdk)
+[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
+[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/target/reference/teamengine-tests-5.5-SNAPSHOT.buildinfo
+[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m31 files match[m
+[[1;34mINFO[m]                                                  saved to teamengine-tests/target/teamengine-tests-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] Aggregate buildcompare copied to target/teamengine-5.5-SNAPSHOT.buildcompare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36morg.opengis.cite:teamengine[0;1m >---------------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine 5.5-SNAPSHOT                                [11/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:describe-build-output[m [1m(default-cli)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] reactor executionRoot = org.opengis.cite:teamengine:pom:5.5-SNAPSHOT (current)
+       reactor first = executionRoot
+               first.parent = null
+[[1;34mINFO[m] outputTimestamp = null => disabled
+[[1;34mINFO[m] plugin outputTimestamp parameter diagnostics:
+        - plugin outputTimestamp parameter (defaultValue="${project.build.outputTimestamp}") = null
+        - project.build.outputTimestamp property from project = null
+        - project.build.outputTimestamp property from project model = null
+        - project.build.outputTimestamp property from project original model = null
+[[1;34mINFO[m] 
+[[1;34mINFO[m] parent in reactor: org.opengis.cite:teamengine @ pom.xml (10 modules), property = null
+[[1;34mINFO[m] 
+[[1;34mINFO[m] groupId: org.opengis.cite.teamengine (9 artifactIds)
+[[1;34mINFO[m] groupId: org.opengis.cite (1 artifactId)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] skip/ignore? artifactId[1m[:classifier][:extension][m = build-path repository-filename size [sha256]
+[[1;34mINFO[m]              teamengine[1m:pom[m = pom.xml [1mteamengine-5.5-SNAPSHOT.pom[m 11379 a85f87ca460a59b1900a3c6077dfa8deb4367306d32ea0c68754ae102daa8011
+[[1;34mINFO[m]              teamengine[1m:site[m = [32mtarget/[mteamengine-5.5-SNAPSHOT-site.jar - 524551 a9a2d1026428f53e192c77b246925ff26fbd6ce71c6fb7945f167d261878ec54
+[[1;34mINFO[m]              teamengine-realm[1m:pom[m = teamengine-realm/pom.xml [1mteamengine-realm-5.5-SNAPSHOT.pom[m 3524 d4657b7a5b494421880b6c2e78f50dd062fdebb5f471d1fc8edb24504eb8e1fc
+[[1;34mINFO[m]              teamengine-realm[1m[m = [32mteamengine-realm/target/[mteamengine-realm-5.5-SNAPSHOT.jar - 14085 66ea208446de6952807a2f4d9e1ef4c216b666959a517321150f874e062d7b7f
+[[1;34mINFO[m]              teamengine-realm[1m:site[m = [32mteamengine-realm/target/[mteamengine-realm-5.5-SNAPSHOT-site.jar - 326295 4d6eafd3729f99bde96692552471dbfde45df6741a2deee67bd0036a671f46d7
+[[1;34mINFO[m] RB-ignored   teamengine-realm[1m:javadoc[m = [32mteamengine-realm/target/[mteamengine-realm-5.5-SNAPSHOT-javadoc.jar - 52390
+[[1;34mINFO[m]              teamengine-resources[1m:pom[m = teamengine-resources/pom.xml [1mteamengine-resources-5.5-SNAPSHOT.pom[m 1403 c6f6a6d179293394329610373a598e32e42fdb4f81d655533a422d0a548baa1c
+[[1;34mINFO[m]              teamengine-resources[1m[m = [32mteamengine-resources/target/[mteamengine-resources-5.5-SNAPSHOT.jar - 124842 884f06564d6100fb25d50ee4adee20cf7986ce4491b0d768f52bc1ab0a4c1da4
+[[1;34mINFO[m]              teamengine-resources[1m:site[m = [32mteamengine-resources/target/[mteamengine-resources-5.5-SNAPSHOT-site.jar - 326056 be7534c8ea8359e4e0470a54d3fd8cfcfb983c3035e5dc84a16dab62097bede6
+[[1;34mINFO[m]              teamengine-core[1m:pom[m = teamengine-core/pom.xml [1mteamengine-core-5.5-SNAPSHOT.pom[m 7986 51ac32e20b75847da0a323aa5e5d97cdfc00711e9981b6cd3c9c77da72f4566e
+[[1;34mINFO[m]              teamengine-core[1m[m = [32mteamengine-core/target/[mteamengine-core-5.5-SNAPSHOT.jar - 266345 39c51d4f34fa73c2857cda08e023889abb8da44e10fb5e24db53cebc648a5f5d
+[[1;34mINFO[m]              teamengine-core[1m:site[m = [32mteamengine-core/target/[mteamengine-core-5.5-SNAPSHOT-site.jar - 326770 2a22d7827ce1b82be0c81bdacec24a79d3f4d340c4ceca8078473893696cb634
+[[1;34mINFO[m] RB-ignored   teamengine-core[1m:javadoc[m = [32mteamengine-core/target/[mteamengine-core-5.5-SNAPSHOT-javadoc.jar - 571531
+[[1;34mINFO[m]              teamengine-spi[1m:pom[m = teamengine-spi/pom.xml [1mteamengine-spi-5.5-SNAPSHOT.pom[m 9718 52b0bf0c3294715b76a90b5a8db179936b7b01214a2d7ff6c198b1d93f2e264c
+[[1;34mINFO[m]              teamengine-spi[1m[m = [32mteamengine-spi/target/[mteamengine-spi-5.5-SNAPSHOT.jar - 55475 e1af97b84c9bbaa8993c2c676f9126a6c395f99016c0141c23b0f6bfac792acc
+[[1;34mINFO[m]              teamengine-spi[1m:site[m = [32mteamengine-spi/target/[mteamengine-spi-5.5-SNAPSHOT-site.jar - 326974 ea43d4ee12821246c49d992079b5fca9cc386783995962a8322b0b5adabc7259
+[[1;34mINFO[m] RB-ignored   teamengine-spi[1m:javadoc[m = [32mteamengine-spi/target/[mteamengine-spi-5.5-SNAPSHOT-javadoc.jar - 148419
+[[1;34mINFO[m]              teamengine-spi-ctl[1m:pom[m = teamengine-spi-ctl/pom.xml [1mteamengine-spi-ctl-5.5-SNAPSHOT.pom[m 9705 8356f097ea5d7b31b67ab7a992f4597e96aad1ee6f606c5fc1a7094e78155160
+[[1;34mINFO[m]              teamengine-spi-ctl[1m[m = [32mteamengine-spi-ctl/target/[mteamengine-spi-ctl-5.5-SNAPSHOT.jar - 7882 97f66e1ae621f711cf310baae15eee90ea36fd93b819b515b9709f484d905379
+[[1;34mINFO[m]              teamengine-spi-ctl[1m:site[m = [32mteamengine-spi-ctl/target/[mteamengine-spi-ctl-5.5-SNAPSHOT-site.jar - 326976 4c4d4bb09326cf7e9a64ed1c118e9418708e8c79802cfa885cfb5bb242680439
+[[1;34mINFO[m] RB-ignored   teamengine-spi-ctl[1m:javadoc[m = [32mteamengine-spi-ctl/target/[mteamengine-spi-ctl-5.5-SNAPSHOT-javadoc.jar - 28176
+[[1;34mINFO[m]              teamengine-web[1m:pom[m = teamengine-web/pom.xml [1mteamengine-web-5.5-SNAPSHOT.pom[m 14784 c083c292153c3aebd529350e59618b3ae78fd21771abb388a0d1aeab48ccea20
+[[1;34mINFO[m]              teamengine-web[1m:war[m = [32mteamengine-web/target/[mteamengine.war [1mteamengine-web-5.5-SNAPSHOT.war[m 28111213 160eb8e7902ab23cb36ce08ae07af045b3a92fac6e1abd8574c4430fe9cb66b3
+[[1;34mINFO[m]              teamengine-web[1m:site[m = [32mteamengine-web/target/[mteamengine-site.jar [1mteamengine-web-5.5-SNAPSHOT-site.jar[m 327616 2f222b75be170bd09f948d09072ad74022652ff5609360768d3bb213779b8747
+[[1;34mINFO[m]              teamengine-web[1m:common-libs:zip[m = [32mteamengine-web/target/[mteamengine-common-libs.zip [1mteamengine-web-5.5-SNAPSHOT-common-libs.zip[m 3764026 17d68e95928a9430447e1fd7b867905941775dc912fc610cc3259b5b06b0458a
+[[1;34mINFO[m]              teamengine-web[1m:common-libs:tar.gz[m = [32mteamengine-web/target/[mteamengine-common-libs.tar.gz [1mteamengine-web-5.5-SNAPSHOT-common-libs.tar.gz[m 3764017 61e6dd63cb4d22f621b3f08e1e5837cf1e8d37571023edfd167a110bd4c4f4d9
+[[1;34mINFO[m]              teamengine-console[1m:pom[m = teamengine-console/pom.xml [1mteamengine-console-5.5-SNAPSHOT.pom[m 2505 c7d347a6d735026ff3ea36c81c4a86294cf0d4d4b43759e9955c5dc4579973bc
+[[1;34mINFO[m]              teamengine-console[1m:bin:zip[m = [32mteamengine-console/target/[mteamengine-console-5.5-SNAPSHOT-bin.zip - 14210011 d4154ea13aa95dc21ddedf16065821f93f956c4369e65a7306aa7df073049652
+[[1;34mINFO[m]              teamengine-console[1m:bin:tar.gz[m = [32mteamengine-console/target/[mteamengine-console-5.5-SNAPSHOT-bin.tar.gz - 14161718 841b2555eb61d3888b5107c3cc46442586586d2de87a5c652f17eef26b6dd51c
+[[1;34mINFO[m]              teamengine-console[1m:base:zip[m = [32mteamengine-console/target/[mteamengine-console-5.5-SNAPSHOT-base.zip - 14686 8f84fc54c4c30bb2667a767a873a1640646bf92c66621d48c058609bd25a26dd
+[[1;34mINFO[m]              teamengine-virtualization[1m:pom[m = teamengine-virtualization/pom.xml [1mteamengine-virtualization-5.5-SNAPSHOT.pom[m 4043 85c78a79f511c4738cbcad8b0e3df8c1657a0371c5ae3248cf8691823b0cc7b7
+[[1;34mINFO[m]              teamengine-virtualization[1m:packer:zip[m = [32mteamengine-virtualization/target/[mteamengine-virtualization-5.5-SNAPSHOT-packer.zip - 20390 4eaf53b2b9f3982e0b8155873d221edd55492ab67631313a3ca26a8f1d0a5c64
+[[1;34mINFO[m]              teamengine-virtualization[1m:packer:tar.gz[m = [32mteamengine-virtualization/target/[mteamengine-virtualization-5.5-SNAPSHOT-packer.tar.gz - 18066 e1e4869d754f1dcfb61386d20154f95a48bb2ec5e625a243422f9f93aa826609
+[[1;34mINFO[m]              teamengine-tests[1m:pom[m = teamengine-tests/pom.xml [1mteamengine-tests-5.5-SNAPSHOT.pom[m 3018 1e020b9644677761129a0c75cd1646386301be32d28ff78e2614071c469cd842
+[[1;34mINFO[m]              teamengine-tests[1m:site[m = [32mteamengine-tests/target/[mteamengine-tests-5.5-SNAPSHOT-site.jar - 326499 d759b0d9a9b6c17ee1dd568bd4d5526c6eb6166f9ed0483e2948ff6c207a2b8f
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for TEAM Engine 5.5-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] TEAM Engine ........................................ [1;32mSUCCESS[m [  0.445 s]
+[[1;34mINFO[m] TEAM Engine - Tomcat Realm ......................... [1;32mSUCCESS[m [  3.276 s]
+[[1;34mINFO[m] TEAM Engine - Shared Resources ..................... [1;32mSUCCESS[m [  0.237 s]
+[[1;34mINFO[m] TEAM Engine - Core Module .......................... [1;32mSUCCESS[m [ 10.328 s]
+[[1;34mINFO[m] TEAM Engine - Service Providers .................... [1;32mSUCCESS[m [  2.349 s]
+[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers ............. [1;32mSUCCESS[m [  1.443 s]
+[[1;34mINFO[m] TEAM Engine - Web Application ...................... [1;32mSUCCESS[m [  4.742 s]
+[[1;34mINFO[m] TEAM Engine - Console Application .................. [1;32mSUCCESS[m [  1.555 s]
+[[1;34mINFO[m] TEAM Engine - Virtualization ....................... [1;32mSUCCESS[m [  0.420 s]
+[[1;34mINFO[m] TEAM Engine - Tests ................................ [1;32mSUCCESS[m [  2.154 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  30.940 s
+[[1;34mINFO[m] Finished at: 2026-08-21T08:24:36Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/beekeeper.buildinfo: No such file or directory
+dos2unix: Skipping target/beekeeper.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

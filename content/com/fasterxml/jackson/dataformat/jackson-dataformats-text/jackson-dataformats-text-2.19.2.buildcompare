@@ -1,9 +1,0 @@
-version=2.19.2
-ok=13
-ko=0
-ignored=4
-okFiles="jackson-dataformats-text-2.19.2.pom jackson-dataformat-csv-2.19.2.pom jackson-dataformat-csv-2.19.2.jar jackson-dataformat-csv-2.19.2-sources.jar jackson-dataformat-properties-2.19.2.pom jackson-dataformat-properties-2.19.2.jar jackson-dataformat-properties-2.19.2-sources.jar jackson-dataformat-yaml-2.19.2.pom jackson-dataformat-yaml-2.19.2.jar jackson-dataformat-yaml-2.19.2-sources.jar jackson-dataformat-toml-2.19.2.pom jackson-dataformat-toml-2.19.2.jar jackson-dataformat-toml-2.19.2-sources.jar"
-koFiles=""
-ignoredFiles="jackson-dataformat-csv-2.19.2.module jackson-dataformat-properties-2.19.2.module jackson-dataformat-yaml-2.19.2.module jackson-dataformat-toml-2.19.2.module"
-reference_java_version="1.8 (from MANIFEST.MF Build-Jdk-Spec)"
-reference_os_name="Unix (from pom.properties newline)"

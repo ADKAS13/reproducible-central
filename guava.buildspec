@@ -1,0 +1,16 @@
+# automatalib.buildspec
+groupId=com.google.guava
+artifactId=guava-parent
+version=HEAD-jre-SNAPSHOT
+
+gitRepo=https://github.com/google/guava.git
+gitTag=7f30024044a97a7b98e7faca9a07a382ca62121a
+
+tool=mvn
+jdk=18
+newline=lf
+umask=022
+
+command="mvn com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten clean install "
+
+buildinfo=target/guava.buildinfo

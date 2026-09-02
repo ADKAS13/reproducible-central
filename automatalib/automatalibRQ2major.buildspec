@@ -1,0 +1,18 @@
+# automatalib.buildspec
+# automatalib.buildspec
+groupId=net.automatalib
+artifactId=automata-parent
+version=9
+
+gitRepo=https://github.com/LearnLib/automatalib.git
+gitTag=3cfc64a
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+
+command="mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"
+
+buildinfo=target/AutomataRQ2-major.buildinfo
