@@ -1,0 +1,122 @@
+[org.apache.paimon:paimon-parent](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/versions) RB check
+=======
+
+[![Reproducible Builds](https://reproducible-builds.org/images/logos/rb.svg) an independently-verifiable path from source to binary code](https://reproducible-builds.org/)
+
+## Project: [org.apache.paimon:paimon-parent](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/versions) [![Reproducible Builds](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jvm-repo-rebuild/reproducible-central/master/content/org/apache/paimon/badge.json)](https://github.com/jvm-repo-rebuild/reproducible-central/blob/master/content/org/apache/paimon/README.md)
+
+Source code: [https://github.com/apache/paimon.git](https://github.com/apache/paimon.git)
+
+<details><summary>This project defines 82 modules:</summary>
+
+* [org.apache.paimon:paimon-api](https://central.sonatype.com/artifact/org.apache.paimon/paimon-api/overview)
+* [org.apache.paimon:paimon-arrow](https://central.sonatype.com/artifact/org.apache.paimon/paimon-arrow/overview)
+* [org.apache.paimon:paimon-azure](https://central.sonatype.com/artifact/org.apache.paimon/paimon-azure/overview)
+* [org.apache.paimon:paimon-azure-impl](https://central.sonatype.com/artifact/org.apache.paimon/paimon-azure-impl/overview)
+* [org.apache.paimon:paimon-benchmark](https://central.sonatype.com/artifact/org.apache.paimon/paimon-benchmark/overview)
+* [org.apache.paimon:paimon-bundle](https://central.sonatype.com/artifact/org.apache.paimon/paimon-bundle/overview)
+* [org.apache.paimon:paimon-ci-tools](https://central.sonatype.com/artifact/org.apache.paimon/paimon-ci-tools/overview)
+* [org.apache.paimon:paimon-codegen](https://central.sonatype.com/artifact/org.apache.paimon/paimon-codegen/overview)
+* [org.apache.paimon:paimon-codegen-loader](https://central.sonatype.com/artifact/org.apache.paimon/paimon-codegen-loader/overview)
+* [org.apache.paimon:paimon-common](https://central.sonatype.com/artifact/org.apache.paimon/paimon-common/overview)
+* [org.apache.paimon:paimon-core](https://central.sonatype.com/artifact/org.apache.paimon/paimon-core/overview)
+* [org.apache.paimon:paimon-cosn](https://central.sonatype.com/artifact/org.apache.paimon/paimon-cosn/overview)
+* [org.apache.paimon:paimon-cosn-impl](https://central.sonatype.com/artifact/org.apache.paimon/paimon-cosn-impl/overview)
+* [org.apache.paimon:paimon-filesystems](https://central.sonatype.com/artifact/org.apache.paimon/paimon-filesystems/overview)
+* [org.apache.paimon:paimon-flink](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink/overview)
+* [org.apache.paimon:paimon-flink-1.14](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-1.14/overview)
+* [org.apache.paimon:paimon-flink-1.15](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-1.15/overview)
+* [org.apache.paimon:paimon-flink-1.16](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-1.16/overview)
+* [org.apache.paimon:paimon-flink-1.17](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-1.17/overview)
+* [org.apache.paimon:paimon-flink-1.18](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-1.18/overview)
+* [org.apache.paimon:paimon-flink-1.19](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-1.19/overview)
+* [org.apache.paimon:paimon-flink-1.20](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-1.20/overview)
+* [org.apache.paimon:paimon-flink-action](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-action/overview)
+* [org.apache.paimon:paimon-flink-cdc](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-cdc/overview)
+* [org.apache.paimon:paimon-flink-common](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink-common/overview)
+* [org.apache.paimon:paimon-flink1-common](https://central.sonatype.com/artifact/org.apache.paimon/paimon-flink1-common/overview)
+* [org.apache.paimon:paimon-format](https://central.sonatype.com/artifact/org.apache.paimon/paimon-format/overview)
+* [org.apache.paimon:paimon-full-text](https://central.sonatype.com/artifact/org.apache.paimon/paimon-full-text/overview)
+* [org.apache.paimon:paimon-gs](https://central.sonatype.com/artifact/org.apache.paimon/paimon-gs/overview)
+* [org.apache.paimon:paimon-gs-impl](https://central.sonatype.com/artifact/org.apache.paimon/paimon-gs-impl/overview)
+* [org.apache.paimon:paimon-hadoop-uber](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hadoop-uber/overview)
+* [org.apache.paimon:paimon-hive](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive/overview)
+* [org.apache.paimon:paimon-hive-catalog](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive-catalog/overview)
+* [org.apache.paimon:paimon-hive-common](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive-common/overview)
+* [org.apache.paimon:paimon-hive-connector-2.1](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive-connector-2.1/overview)
+* [org.apache.paimon:paimon-hive-connector-2.1-cdh-6.3](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive-connector-2.1-cdh-6.3/overview)
+* [org.apache.paimon:paimon-hive-connector-2.2](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive-connector-2.2/overview)
+* [org.apache.paimon:paimon-hive-connector-2.3](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive-connector-2.3/overview)
+* [org.apache.paimon:paimon-hive-connector-3.1](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive-connector-3.1/overview)
+* [org.apache.paimon:paimon-hive-connector-common](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hive-connector-common/overview)
+* [org.apache.paimon:paimon-hudi](https://central.sonatype.com/artifact/org.apache.paimon/paimon-hudi/overview)
+* [org.apache.paimon:paimon-jindo](https://central.sonatype.com/artifact/org.apache.paimon/paimon-jindo/overview)
+* [org.apache.paimon:paimon-jindodls](https://central.sonatype.com/artifact/org.apache.paimon/paimon-jindodls/overview)
+* [org.apache.paimon:paimon-lance](https://central.sonatype.com/artifact/org.apache.paimon/paimon-lance/overview)
+* [org.apache.paimon:paimon-lumina](https://central.sonatype.com/artifact/org.apache.paimon/paimon-lumina/overview)
+* [org.apache.paimon:paimon-mosaic](https://central.sonatype.com/artifact/org.apache.paimon/paimon-mosaic/overview)
+* [org.apache.paimon:paimon-obs](https://central.sonatype.com/artifact/org.apache.paimon/paimon-obs/overview)
+* [org.apache.paimon:paimon-obs-impl](https://central.sonatype.com/artifact/org.apache.paimon/paimon-obs-impl/overview)
+* [org.apache.paimon:paimon-open-api](https://central.sonatype.com/artifact/org.apache.paimon/paimon-open-api/overview)
+* [org.apache.paimon:paimon-oss](https://central.sonatype.com/artifact/org.apache.paimon/paimon-oss/overview)
+* [org.apache.paimon:paimon-oss-impl](https://central.sonatype.com/artifact/org.apache.paimon/paimon-oss-impl/overview)
+* [org.apache.paimon:paimon-parent](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/overview)
+* [org.apache.paimon:paimon-s3](https://central.sonatype.com/artifact/org.apache.paimon/paimon-s3/overview)
+* [org.apache.paimon:paimon-s3-impl](https://central.sonatype.com/artifact/org.apache.paimon/paimon-s3-impl/overview)
+* [org.apache.paimon:paimon-service](https://central.sonatype.com/artifact/org.apache.paimon/paimon-service/overview)
+* [org.apache.paimon:paimon-service-client](https://central.sonatype.com/artifact/org.apache.paimon/paimon-service-client/overview)
+* [org.apache.paimon:paimon-service-runtime](https://central.sonatype.com/artifact/org.apache.paimon/paimon-service-runtime/overview)
+* [org.apache.paimon:paimon-spark](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark/overview)
+* [org.apache.paimon:paimon-spark-2](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-2/overview)
+* [org.apache.paimon:paimon-spark-3.1](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.1/overview)
+* [org.apache.paimon:paimon-spark-3.2](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.2/overview)
+* [org.apache.paimon:paimon-spark-3.2_2.12](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.2_2.12/overview)
+* [org.apache.paimon:paimon-spark-3.3](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.3/overview)
+* [org.apache.paimon:paimon-spark-3.3_2.12](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.3_2.12/overview)
+* [org.apache.paimon:paimon-spark-3.4](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.4/overview)
+* [org.apache.paimon:paimon-spark-3.4_2.12](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.4_2.12/overview)
+* [org.apache.paimon:paimon-spark-3.5](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.5/overview)
+* [org.apache.paimon:paimon-spark-3.5_2.12](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-3.5_2.12/overview)
+* [org.apache.paimon:paimon-spark-common](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-common/overview)
+* [org.apache.paimon:paimon-spark-common_2.12](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-common_2.12/overview)
+* [org.apache.paimon:paimon-spark-ut](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-ut/overview)
+* [org.apache.paimon:paimon-spark-ut_2.12](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark-ut_2.12/overview)
+* [org.apache.paimon:paimon-spark3-common](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark3-common/overview)
+* [org.apache.paimon:paimon-spark3-common_2.12](https://central.sonatype.com/artifact/org.apache.paimon/paimon-spark3-common_2.12/overview)
+* [org.apache.paimon:paimon-test-utils](https://central.sonatype.com/artifact/org.apache.paimon/paimon-test-utils/overview)
+* [org.apache.paimon:paimon-vector](https://central.sonatype.com/artifact/org.apache.paimon/paimon-vector/overview)
+* [org.apache.paimon:paimon-vfs](https://central.sonatype.com/artifact/org.apache.paimon/paimon-vfs/overview)
+* [org.apache.paimon:paimon-vfs-common](https://central.sonatype.com/artifact/org.apache.paimon/paimon-vfs-common/overview)
+* [org.apache.paimon:paimon-vfs-hadoop](https://central.sonatype.com/artifact/org.apache.paimon/paimon-vfs-hadoop/overview)
+* [org.apache.paimon:paimon-vortex](https://central.sonatype.com/artifact/org.apache.paimon/paimon-vortex/overview)
+* [org.apache.paimon:paimon-vortex-format](https://central.sonatype.com/artifact/org.apache.paimon/paimon-vortex-format/overview)
+* [org.apache.paimon:paimon-vortex-jni](https://central.sonatype.com/artifact/org.apache.paimon/paimon-vortex-jni/overview)
+</details>
+
+rebuilding **18 releases** of org.apache.paimon:paimon-parent:
+- **4** releases were found successfully **fully reproducible** (100% reproducible artifacts :white_check_mark:),
+- 14 had issues (some unreproducible artifacts :warning:, see eventual :mag: diffoscope and/or :memo: issue tracker links):
+  - running [stabilize](doc/stabilize.md) on 6, 0 had all their differences removed :recycle:, 6 still had differences :rotating_light: or files not supported by stabilize :no_entry_sign:
+
+| version | [build spec](/BUILDSPEC.md) | [result](https://reproducible-builds.org/docs/jvm/): reproducible? | [stabilize](https://github.com/google/oss-rebuild/blob/main/cmd/stabilize/README.md) | size |
+| -- | --------- | ------ | ------ | -- |
+| [2.0.0](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/2.0.0/pom) | [mvn jdk8](paimon-parent-2.0.0.buildspec) | [result](paimon-parent-2.0.0.buildinfo): [192 :white_check_mark:  1 :warning:](paimon-parent-2.0.0.buildcompare) [:mag:](paimon-parent-2.0.0.diffoscope) | 1 :no_entry_sign: | 1.4G |
+| [1.4.2](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.4.2/pom) | [mvn jdk8](paimon-parent-1.4.2.buildspec) | [result](paimon-parent-1.4.2.buildinfo): [176 :white_check_mark:  1 :warning:](paimon-parent-1.4.2.buildcompare) | 1 :no_entry_sign: | 1.3G |
+| [1.4.1](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.4.1/pom) | [mvn jdk8](paimon-parent-1.4.1.buildspec) | [result](paimon-parent-1.4.1.buildinfo): [175 :white_check_mark:  2 :warning:](paimon-parent-1.4.1.buildcompare) | 1 :rotating_light: 1 :no_entry_sign: | 1.3G |
+| [1.3.2](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.3.2/pom) | [mvn jdk8](paimon-parent-1.3.2.buildspec) | [result](paimon-parent-1.3.2.buildinfo): [167 :white_check_mark:  4 :warning:](paimon-parent-1.3.2.buildcompare) | 3 :rotating_light: 1 :no_entry_sign: | 1.1G |
+| [1.3.1](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.3.1/pom) | [mvn jdk8](paimon-parent-1.3.1.buildspec) | [result](paimon-parent-1.3.1.buildinfo): [154 :white_check_mark:  17 :warning:](paimon-parent-1.3.1.buildcompare) [:memo:](https://github.com/apache/paimon/issues/6557) | 12 :rotating_light: 5 :no_entry_sign: | 1.1G |
+| [1.3.0](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.3.0/pom) | [mvn jdk8](paimon-parent-1.3.0.buildspec) | [result](paimon-parent-1.3.0.buildinfo): [168 :white_check_mark:  3 :warning:](paimon-parent-1.3.0.buildcompare) [:mag:](paimon-parent-1.3.0.diffoscope) [:memo:](https://github.com/apache/paimon/issues/6557) | 3 :rotating_light: | 1.1G |
+| [1.2.0](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.2.0/pom) | [mvn jdk8](paimon-parent-1.2.0.buildspec) | [result](paimon-parent-1.2.0.buildinfo): [152 :white_check_mark: ](paimon-parent-1.2.0.buildcompare) | | 1.1G |
+| [1.1.1](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.1.1/pom) | [mvn jdk8](paimon-parent-1.1.1.buildspec) | [result](paimon-parent-1.1.1.buildinfo): [152 :white_check_mark: ](paimon-parent-1.1.1.buildcompare) | | 990M |
+| [1.1.0](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.1.0/pom) | [mvn jdk8](paimon-parent-1.1.0.buildspec) | [result](paimon-parent-1.1.0.buildinfo): [152 :white_check_mark: ](paimon-parent-1.1.0.buildcompare) | | 990M |
+| [1.0.1](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.0.1/pom) | [mvn jdk8](paimon-parent-1.0.1.buildspec) | [result](paimon-parent-1.0.1.buildinfo): [139 :white_check_mark: ](paimon-parent-1.0.1.buildcompare) | | 994M |
+| [1.0.0](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/1.0.0/pom) | [mvn jdk8](paimon-parent-1.0.0.buildspec) | [result](paimon-parent-1.0.0.buildinfo): [96 :white_check_mark:  43 :warning:](paimon-parent-1.0.0.buildcompare) [:mag:](paimon-parent-1.0.0.diffoscope) | - | 992M |
+| [0.9.0](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/0.9.0/pom) | [mvn jdk8](paimon-parent-0.9.0.buildspec) | [result](paimon-parent-0.9.0.buildinfo): [81 :white_check_mark:  51 :warning:](paimon-parent-0.9.0.buildcompare) [:mag:](paimon-parent-0.9.0.diffoscope) [:memo:](https://github.com/apache/paimon/pull/4190) | - | 983M |
+| [0.8.2](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/0.8.2/pom) | [mvn jdk8](paimon-parent-0.8.2.buildspec) | [result](paimon-parent-0.8.2.buildinfo): [43 :white_check_mark:  83 :warning:](paimon-parent-0.8.2.buildcompare) [:mag:](paimon-parent-0.8.2.diffoscope) [:memo:](https://github.com/apache/paimon/pull/3719) | - | 917M |
+| [0.8.1](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/0.8.1/pom) | [mvn jdk8](paimon-parent-0.8.1.buildspec) | [result](paimon-parent-0.8.1.buildinfo): [43 :white_check_mark:  83 :warning:](paimon-parent-0.8.1.buildcompare) [:memo:](https://github.com/apache/paimon/pull/3719) | - | 917M |
+| [0.8.0](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/0.8.0/pom) | [mvn jdk8](paimon-parent-0.8.0.buildspec) | [result](paimon-parent-0.8.0.buildinfo): [43 :white_check_mark:  83 :warning:](paimon-parent-0.8.0.buildcompare) | - | 901M |
+| [0.7.0-incubating](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/0.7.0-incubating/pom) | [mvn jdk8](paimon-parent-0.7.0-incubating.buildspec) | [result](paimon-parent-0.7.0-incubating.buildinfo): [44 :white_check_mark:  84 :warning:](paimon-parent-0.7.0-incubating.buildcompare) | - | 889M |
+| [0.6.1-incubating](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/0.6.1-incubating/pom) | [mvn jdk8](paimon-parent-0.6.1-incubating.buildspec) | [result](paimon-parent-0.6.1-incubating.buildinfo): [40 :white_check_mark:  80 :warning:](paimon-parent-0.6.1-incubating.buildcompare) | - | 885M |
+| [0.6.0-incubating](https://central.sonatype.com/artifact/org.apache.paimon/paimon-parent/0.6.0-incubating/pom) | [mvn jdk8](paimon-parent-0.6.0-incubating.buildspec) | [result](paimon-parent-0.6.0-incubating.buildinfo): [23 :white_check_mark:  96 :warning:](paimon-parent-0.6.0-incubating.buildcompare) [:memo:](https://github.com/apache/incubator-paimon/pull/2519) | - | 884M |
+
+<i>(size is calculated without javadoc, that has been excluded from reproducibility checks)</i>

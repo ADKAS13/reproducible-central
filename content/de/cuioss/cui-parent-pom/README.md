@@ -18,12 +18,22 @@ Source code: [https://github.com/cuioss/cui-parent-pom.git](https://github.com/c
 * [de.cuioss:quarkus-bom](https://central.sonatype.com/artifact/de.cuioss/quarkus-bom/overview)
 </details>
 
-rebuilding **51 releases** of de.cuioss:cui-parent-pom:
-- **46** releases were found successfully **fully reproducible** (100% reproducible artifacts :white_check_mark:),
-- 5 had issues (some unreproducible artifacts :warning:, see eventual :mag: diffoscope and/or :memo: issue tracker links):
+rebuilding **61 releases** of de.cuioss:cui-parent-pom:
+- **55** releases were found successfully **fully reproducible** (100% reproducible artifacts :white_check_mark:),
+- 6 had issues (some unreproducible artifacts :warning:, see eventual :mag: diffoscope and/or :memo: issue tracker links):
 
 | version | [build spec](/BUILDSPEC.md) | [result](https://reproducible-builds.org/docs/jvm/): reproducible? | [stabilize](https://github.com/google/oss-rebuild/blob/main/cmd/stabilize/README.md) | size |
 | -- | --------- | ------ | ------ | -- |
+| [1.5.10](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.10/pom) | [mvn jdk21](cui-parent-pom-1.5.10.buildspec) | [result](cui-parent-pom-1.5.10.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.10.buildcompare) | | 99K |
+| [1.5.9](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.9/pom) | [mvn jdk21](cui-parent-pom-1.5.9.buildspec) | [result](cui-parent-pom-1.5.9.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.9.buildcompare) | | 99K |
+| [1.5.8](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.8/pom) | [mvn jdk21](cui-parent-pom-1.5.8.buildspec) | [result](cui-parent-pom-1.5.8.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.8.buildcompare) | | 99K |
+| [1.5.7](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.7/pom) | [mvn jdk21](cui-parent-pom-1.5.7.buildspec) | [result](cui-parent-pom-1.5.7.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.7.buildcompare) | | 99K |
+| [1.5.6](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.6/pom) | [mvn jdk21](cui-parent-pom-1.5.6.buildspec) | [result](cui-parent-pom-1.5.6.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.6.buildcompare) | | 95K |
+| [1.5.5](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.5/pom) | [mvn jdk21](cui-parent-pom-1.5.5.buildspec) | [result](cui-parent-pom-1.5.5.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.5.buildcompare) | | 94K |
+| [1.5.4](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.4/pom) | [mvn jdk21](cui-parent-pom-1.5.4.buildspec) | [result](cui-parent-pom-1.5.4.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.4.buildcompare) | | 93K |
+| [1.5.3](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.3/pom) | [mvn jdk21](cui-parent-pom-1.5.3.buildspec) | [result](cui-parent-pom-1.5.3.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.3.buildcompare) | | 93K |
+| [1.5.2](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.2/pom) | [mvn jdk21](cui-parent-pom-1.5.2.buildspec) | :x: | |
+| [1.5.1](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.1/pom) | [mvn jdk21](cui-parent-pom-1.5.1.buildspec) | [result](cui-parent-pom-1.5.1.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.1.buildcompare) | | 92K |
 | [1.5.0](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.5.0/pom) | [mvn jdk21](cui-parent-pom-1.5.0.buildspec) | [result](cui-parent-pom-1.5.0.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.5.0.buildcompare) | | 92K |
 | [1.4.5](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.4.5/pom) | [mvn jdk21](cui-parent-pom-1.4.5.buildspec) | [result](cui-parent-pom-1.4.5.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.4.5.buildcompare) | | 95K |
 | [1.4.4](https://central.sonatype.com/artifact/de.cuioss/cui-parent-pom/1.4.4/pom) | [mvn jdk21](cui-parent-pom-1.4.4.buildspec) | [result](cui-parent-pom-1.4.4.buildinfo): [7 :white_check_mark: ](cui-parent-pom-1.4.4.buildcompare) | | 95K |

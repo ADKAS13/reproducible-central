@@ -1,0 +1,39 @@
+[io.cucumber:junit-xml-formatter](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/versions) RB check
+=======
+
+[![Reproducible Builds](https://reproducible-builds.org/images/logos/rb.svg) an independently-verifiable path from source to binary code](https://reproducible-builds.org/)
+
+## Project: [io.cucumber:junit-xml-formatter](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/versions) [![Reproducible Builds](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jvm-repo-rebuild/reproducible-central/master/content/io/cucumber/junit-xml-formatter/badge.json)](https://github.com/jvm-repo-rebuild/reproducible-central/blob/master/content/io/cucumber/junit-xml-formatter/README.md)
+
+Source code: [https://github.com/cucumber/cucumber-junit-xml-formatter.git](https://github.com/cucumber/cucumber-junit-xml-formatter.git)
+
+rebuilding **21 releases** of io.cucumber:junit-xml-formatter:
+- **18** releases were found successfully **fully reproducible** (100% reproducible artifacts :white_check_mark:),
+- 3 had issues (some unreproducible artifacts :warning:, see eventual :mag: diffoscope and/or :memo: issue tracker links):
+  - running [stabilize](doc/stabilize.md) on 3, 0 had all their differences removed :recycle:, 3 still had differences :rotating_light: or files not supported by stabilize :no_entry_sign:
+
+| version | [build spec](/BUILDSPEC.md) | [result](https://reproducible-builds.org/docs/jvm/): reproducible? | [stabilize](https://github.com/google/oss-rebuild/blob/main/cmd/stabilize/README.md) | size |
+| -- | --------- | ------ | ------ | -- |
+| [0.14.1](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.14.1/pom) | [mvn jdk21](junit-xml-formatter-0.14.1.buildspec) | [result](junit-xml-formatter-0.14.1.buildinfo): [2 :white_check_mark:  1 :warning:](junit-xml-formatter-0.14.1.buildcompare) | 1 :no_entry_sign: | 35K |
+| [0.14.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.14.0/pom) | [mvn jdk21](junit-xml-formatter-0.14.0.buildspec) | [result](junit-xml-formatter-0.14.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.14.0.buildcompare) | | 32K |
+| [0.13.3](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.13.3/pom) | [mvn jdk21](junit-xml-formatter-0.13.3.buildspec) | [result](junit-xml-formatter-0.13.3.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.13.3.buildcompare) | | 31K |
+| [0.13.2](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.13.2/pom) | [mvn jdk21](junit-xml-formatter-0.13.2.buildspec) | [result](junit-xml-formatter-0.13.2.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.13.2.buildcompare) | | 31K |
+| [0.13.1](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.13.1/pom) | [mvn jdk21](junit-xml-formatter-0.13.1.buildspec) | [result](junit-xml-formatter-0.13.1.buildinfo): [2 :white_check_mark:  1 :warning:](junit-xml-formatter-0.13.1.buildcompare) [:mag:](junit-xml-formatter-0.13.1.diffoscope) | 1 :no_entry_sign: | 31K |
+| [0.13.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.13.0/pom) | [mvn jdk21](junit-xml-formatter-0.13.0.buildspec) | [result](junit-xml-formatter-0.13.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.13.0.buildcompare) | | 31K |
+| [0.12.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.12.0/pom) | [mvn jdk21](junit-xml-formatter-0.12.0.buildspec) | [result](junit-xml-formatter-0.12.0.buildinfo): [2 :white_check_mark:  1 :warning:](junit-xml-formatter-0.12.0.buildcompare) [:mag:](junit-xml-formatter-0.12.0.diffoscope) | 1 :no_entry_sign: | 31K |
+| [0.11.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.11.0/pom) | [mvn jdk17](junit-xml-formatter-0.11.0.buildspec) | [result](junit-xml-formatter-0.11.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.11.0.buildcompare) | | 29K |
+| [0.10.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.10.0/pom) | [mvn jdk17](junit-xml-formatter-0.10.0.buildspec) | [result](junit-xml-formatter-0.10.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.10.0.buildcompare) | | 26K |
+| [0.9.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.9.0/pom) | [mvn jdk11](junit-xml-formatter-0.9.0.buildspec) | [result](junit-xml-formatter-0.9.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.9.0.buildcompare) | | 26K |
+| [0.8.1](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.8.1/pom) | [mvn jdk11](junit-xml-formatter-0.8.1.buildspec) | [result](junit-xml-formatter-0.8.1.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.8.1.buildcompare) | | 26K |
+| [0.8.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.8.0/pom) | [mvn jdk11](junit-xml-formatter-0.8.0.buildspec) | [result](junit-xml-formatter-0.8.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.8.0.buildcompare) | | 26K |
+| [0.7.1](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.7.1/pom) | [mvn jdk11](junit-xml-formatter-0.7.1.buildspec) | [result](junit-xml-formatter-0.7.1.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.7.1.buildcompare) | | 26K |
+| [0.7.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.7.0/pom) | [mvn jdk11](junit-xml-formatter-0.7.0.buildspec) | [result](junit-xml-formatter-0.7.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.7.0.buildcompare) | | 26K |
+| [0.6.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.6.0/pom) | [mvn jdk11](junit-xml-formatter-0.6.0.buildspec) | [result](junit-xml-formatter-0.6.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.6.0.buildcompare) | | 25K |
+| [0.5.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.5.0/pom) | [mvn jdk11](junit-xml-formatter-0.5.0.buildspec) | [result](junit-xml-formatter-0.5.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.5.0.buildcompare) | | 26K |
+| [0.4.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.4.0/pom) | [mvn jdk11](junit-xml-formatter-0.4.0.buildspec) | [result](junit-xml-formatter-0.4.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.4.0.buildcompare) | | 25K |
+| [0.3.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.3.0/pom) | [mvn jdk11](junit-xml-formatter-0.3.0.buildspec) | [result](junit-xml-formatter-0.3.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.3.0.buildcompare) | | 36K |
+| [0.2.1](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.2.1/pom) | [mvn jdk11](junit-xml-formatter-0.2.1.buildspec) | [result](junit-xml-formatter-0.2.1.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.2.1.buildcompare) | | 29K |
+| [0.2.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.2.0/pom) | [mvn jdk11](junit-xml-formatter-0.2.0.buildspec) | [result](junit-xml-formatter-0.2.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.2.0.buildcompare) | | 29K |
+| [0.1.0](https://central.sonatype.com/artifact/io.cucumber/junit-xml-formatter/0.1.0/pom) | [mvn jdk11](junit-xml-formatter-0.1.0.buildspec) | [result](junit-xml-formatter-0.1.0.buildinfo): [3 :white_check_mark: ](junit-xml-formatter-0.1.0.buildcompare) | | 29K |
+
+<i>(size is calculated without javadoc, that has been excluded from reproducibility checks)</i>

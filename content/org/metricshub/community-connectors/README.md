@@ -1,0 +1,30 @@
+[org.metricshub:community-connectors](https://central.sonatype.com/artifact/org.metricshub/community-connectors/versions) RB check
+=======
+
+[![Reproducible Builds](https://reproducible-builds.org/images/logos/rb.svg) an independently-verifiable path from source to binary code](https://reproducible-builds.org/)
+
+## Project: [org.metricshub:community-connectors](https://central.sonatype.com/artifact/org.metricshub/community-connectors/versions) [![Reproducible Builds](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jvm-repo-rebuild/reproducible-central/master/content/org/metricshub/community-connectors/badge.json)](https://github.com/jvm-repo-rebuild/reproducible-central/blob/master/content/org/metricshub/community-connectors/README.md)
+
+Source code: [https://github.com/MetricsHub/community-connectors.git](https://github.com/MetricsHub/community-connectors.git)
+
+rebuilding **13 releases** of org.metricshub:community-connectors:
+- **13** releases were found successfully **fully reproducible** (100% reproducible artifacts :white_check_mark:),
+- 0 had issues (some unreproducible artifacts :warning:, see eventual :mag: diffoscope and/or :memo: issue tracker links):
+
+| version | [build spec](/BUILDSPEC.md) | [result](https://reproducible-builds.org/docs/jvm/): reproducible? | [stabilize](https://github.com/google/oss-rebuild/blob/main/cmd/stabilize/README.md) | size |
+| -- | --------- | ------ | ------ | -- |
+| [1.0.22](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.22/pom) | [mvn jdk25](community-connectors-1.0.22.buildspec) | [result](community-connectors-1.0.22.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.22.buildcompare) | | 150K |
+| [1.0.21](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.21/pom) | [mvn jdk17](community-connectors-1.0.21.buildspec) | [result](community-connectors-1.0.21.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.21.buildcompare) | | 148K |
+| [1.0.20](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.20/pom) | [mvn jdk17](community-connectors-1.0.20.buildspec) | [result](community-connectors-1.0.20.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.20.buildcompare) | | 147K |
+| [1.0.19](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.19/pom) | [mvn jdk17](community-connectors-1.0.19.buildspec) | [result](community-connectors-1.0.19.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.19.buildcompare) | | 147K |
+| [1.0.18](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.18/pom) | [mvn jdk17](community-connectors-1.0.18.buildspec) | [result](community-connectors-1.0.18.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.18.buildcompare) | | 133K |
+| [1.0.17](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.17/pom) | [mvn jdk17](community-connectors-1.0.17.buildspec) | [result](community-connectors-1.0.17.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.17.buildcompare) | | 119K |
+| [1.0.16](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.16/pom) | [mvn jdk17](community-connectors-1.0.16.buildspec) | [result](community-connectors-1.0.16.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.16.buildcompare) | | 114K |
+| [1.0.15](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.15/pom) | [mvn jdk17](community-connectors-1.0.15.buildspec) | [result](community-connectors-1.0.15.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.15.buildcompare) | | 108K |
+| [1.0.14](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.14/pom) | [mvn jdk17](community-connectors-1.0.14.buildspec) | [result](community-connectors-1.0.14.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.14.buildcompare) | | 106K |
+| [1.0.13](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.13/pom) | [mvn jdk17](community-connectors-1.0.13.buildspec) | [result](community-connectors-1.0.13.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.13.buildcompare) | | 105K |
+| [1.0.12](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.12/pom) | [mvn jdk17](community-connectors-1.0.12.buildspec) | [result](community-connectors-1.0.12.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.12.buildcompare) | | 105K |
+| [1.0.11](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.11/pom) | [mvn jdk17](community-connectors-1.0.11.buildspec) | [result](community-connectors-1.0.11.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.11.buildcompare) | | 102K |
+| [1.0.10](https://central.sonatype.com/artifact/org.metricshub/community-connectors/1.0.10/pom) | [mvn jdk17](community-connectors-1.0.10.buildspec) | [result](community-connectors-1.0.10.buildinfo): [3 :white_check_mark: ](community-connectors-1.0.10.buildcompare) | | 92K |
+
+<i>(size is calculated without javadoc, that has been excluded from reproducibility checks)</i>

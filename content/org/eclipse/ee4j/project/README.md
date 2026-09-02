@@ -1,0 +1,26 @@
+[org.eclipse.ee4j:project](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/versions) RB check
+=======
+
+[![Reproducible Builds](https://reproducible-builds.org/images/logos/rb.svg) an independently-verifiable path from source to binary code](https://reproducible-builds.org/)
+
+## Project: [org.eclipse.ee4j:project](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/versions) [![Reproducible Builds](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jvm-repo-rebuild/reproducible-central/master/content/org/eclipse/ee4j/project/badge.json)](https://github.com/jvm-repo-rebuild/reproducible-central/blob/master/content/org/eclipse/ee4j/project/README.md)
+
+Source code: [https://github.com/eclipse-ee4j/ee4j.git](https://github.com/eclipse-ee4j/ee4j.git)
+
+rebuilding **9 releases** of org.eclipse.ee4j:project:
+- **9** releases were found successfully **fully reproducible** (100% reproducible artifacts :white_check_mark:),
+- 0 had issues (some unreproducible artifacts :warning:, see eventual :mag: diffoscope and/or :memo: issue tracker links):
+
+| version | [build spec](/BUILDSPEC.md) | [result](https://reproducible-builds.org/docs/jvm/): reproducible? | [stabilize](https://github.com/google/oss-rebuild/blob/main/cmd/stabilize/README.md) | size |
+| -- | --------- | ------ | ------ | -- |
+| [2.0.5](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/2.0.5/pom) | [mvn jdk21](project-2.0.5.buildspec) | [result](project-2.0.5.buildinfo): [1 :white_check_mark: ](project-2.0.5.buildcompare) | | 28K |
+| [2.0.4](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/2.0.4/pom) | [mvn jdk21](project-2.0.4.buildspec) | [result](project-2.0.4.buildinfo): [1 :white_check_mark: ](project-2.0.4.buildcompare) | | 27K |
+| [2.0.3](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/2.0.3/pom) | [mvn jdk21](project-2.0.3.buildspec) | [result](project-2.0.3.buildinfo): [1 :white_check_mark: ](project-2.0.3.buildcompare) | | 27K |
+| [2.0.2](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/2.0.2/pom) | [mvn jdk21](project-2.0.2.buildspec) | [result](project-2.0.2.buildinfo): [1 :white_check_mark: ](project-2.0.2.buildcompare) | | 27K |
+| [2.0.1](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/2.0.1/pom) | [mvn jdk21](project-2.0.1.buildspec) | [result](project-2.0.1.buildinfo): [1 :white_check_mark: ](project-2.0.1.buildcompare) | | 27K |
+| [2.0.0](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/2.0.0/pom) | [mvn jdk21](project-2.0.0.buildspec) | [result](project-2.0.0.buildinfo): [1 :white_check_mark: ](project-2.0.0.buildcompare) | | 26K |
+| [2.0.0-M1](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/2.0.0-M1/pom) | [mvn jdk21](project-2.0.0-M1.buildspec) | [result](project-2.0.0-M1.buildinfo): [1 :white_check_mark: ](project-2.0.0-M1.buildcompare) | | 15K |
+| [1.0.9](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/1.0.9/pom) | [mvn jdk21](project-1.0.9.buildspec) | [result](project-1.0.9.buildinfo): [3 :white_check_mark: ](project-1.0.9.buildcompare) | | 23K |
+| [1.0.8](https://central.sonatype.com/artifact/org.eclipse.ee4j/project/1.0.8/pom) | [mvn jdk21](project-1.0.8.buildspec) | [result](project-1.0.8.buildinfo): [1 :white_check_mark: ](project-1.0.8.buildcompare) | | 15K |
+
+<i>(size is calculated without javadoc, that has been excluded from reproducibility checks)</i>
