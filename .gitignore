@@ -37,3 +37,4 @@ tmp/
 .wip/*.buildinfo
 .wip/*.buildcompare
 gh-pages/
+logs/

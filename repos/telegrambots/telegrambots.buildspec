@@ -11,5 +11,5 @@ jdk=17
 newline=lf
 umask=022
 
-command="mvn clean install -Denforcer.skip=true -Dgpg.skip=true artifact:buildinfo"
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install -Denforcer.skip=true -Dgpg.skip=true\""
 buildinfo=target/Bots-10.0.0.buildinfo

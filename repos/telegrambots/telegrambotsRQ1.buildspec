@@ -11,5 +11,5 @@ jdk=17
 newline=lf
 umask=022
 
-command="mvn com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten clean install -Denforcer.skip=true -Dgpg.skip=true"
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Denforcer.skip=true -Dgpg.skip=true\""
 buildinfo=target/Bots-10.0.0.mod.buildinfo

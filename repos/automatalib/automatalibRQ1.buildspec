@@ -1,0 +1,16 @@
+# automatalib.buildspec
+groupId=net.automatalib
+artifactId=automata-parent
+version=9
+
+gitRepo=https://github.com/LearnLib/automatalib.git
+gitTag=3cfc64a
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/AutomataRQ1.buildinfo

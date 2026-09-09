@@ -1,0 +1,18 @@
+# automatalib.buildspec
+
+groupId=com.google.cloud.trace
+artifactId=root
+version=0.8.0
+
+gitRepo=https://github.com/GoogleCloudPlatform/cloud-trace-java.git
+gitTag=9aa2f22e571577887053a86d2236830b3922421b
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+tool=mvn-3.8.6
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install\""
+
+buildinfo=target/test.buildinfo
