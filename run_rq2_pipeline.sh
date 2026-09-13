@@ -2,20 +2,7 @@
 # run_rq2_pipeline.sh
 #
 # Runs rebuild.sh for every buildspec matching a pattern, then collects
-# dependency comparison results into a CSV.
-#
-# Usage:
-#   ./run_rq2_pipeline.sh <range_mode> [buildspec_pattern]
-#
-# Examples:
-#   ./run_rq2_pipeline.sh minor                        # all *RQ2minor.buildspec files
-#   ./run_rq2_pipeline.sh major "*RQ2major.buildspec"  # explicit pattern
-#   ./run_rq2_pipeline.sh pinned "*RQ2pinned.buildspec"
-#
-# Requirements:
-#   - Run from the reproducible-central root directory
-#   - counter-maven-plugin must be installed in local .m2
-#   - Python 3.9+ for collect_results.py
+# dependency comparison results and RQ1-style equivalence/test stats into CSVs and console reports.
 
 set -euo pipefail
 
@@ -23,11 +10,14 @@ RANGE_MODE="${1:-minor}"
 PATTERN="${2:-*RQ2${RANGE_MODE}.buildspec}"
 RC_ROOT="$(pwd)"
 REBUILD_SH="${RC_ROOT}/rebuild.sh"
-COLLECT_SCRIPT="$(dirname "$0")/collect_results.py"
-OUTPUT_CSV="${RC_ROOT}/rq2_results_${RANGE_MODE}.csv"
+COLLECT_RQ2_SCRIPT="$(dirname "$0")/scripts/collect_rq2_results.py"
+COLLECT_RQ1_SCRIPT="$(dirname "$0")/scripts/collect_rq1_results.py"
+
+OUTPUT_CSV="${RC_ROOT}/results/rq2_results_${RANGE_MODE}.csv"
+OUTPUT_RQ1_CSV="${RC_ROOT}/results/rq1_style_stats_${RANGE_MODE}.csv"
 LOG_DIR="${RC_ROOT}/rq2_logs_${RANGE_MODE}"
 
-mkdir -p "$LOG_DIR"
+mkdir -p "$LOG_DIR" "${RC_ROOT}/results"
 
 echo "======================================================"
 echo "  RQ2 Pipeline — range mode: ${RANGE_MODE}"
@@ -83,12 +73,23 @@ fi
 echo "======================================================"
 echo ""
 
-# Collect results into CSV
-echo "[COLLECT] Scanning for comparison reports..."
-python3 "${COLLECT_SCRIPT}" \
+# 1. Collect RQ2 Dependency Change Summary
+echo "[COLLECT] Running RQ2 Dependency Change Analysis..."
+python3 "${COLLECT_RQ2_SCRIPT}" \
     --root "${RC_ROOT}" \
     --range "${RANGE_MODE}" \
     --output "${OUTPUT_CSV}"
 
 echo ""
-echo "Done. Results: ${OUTPUT_CSV}"
+
+# 2. Collect RQ1-style Build, Test, and Binary Equivalence Stats
+echo "[COLLECT] Scanning for comparison reports and test results..."
+python3 "${COLLECT_RQ1_SCRIPT}" \
+    --root "${RC_ROOT}" \
+    --output "${OUTPUT_RQ1_CSV}" \
+    --log-dir "${LOG_DIR}"
+
+echo ""
+echo "Done."
+echo "  - RQ2 Dependency Results: ${OUTPUT_CSV}"
+echo "  - Equivalence & Test Stats: ${OUTPUT_RQ1_CSV}"

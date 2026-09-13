@@ -1,0 +1,4 @@
+flag,pinned_total,pinned_avg,upgraded_total,upgraded_avg,downgraded_total,downgraded_avg,added_total,added_avg,removed_total,removed_avg,scope_changed_total,scope_changed_avg,total_before_sum,total_before_avg,total_after_sum,total_after_avg,total_modules,successful_builds,build_success_rate
+major,751,10.430555555555555,1328,18.444444444444443,0,0.0,741,10.291666666666666,0,0.0,0,0.0,2079,28.875,2820,39.166666666666664,72,72,100.0
+minor,940,13.055555555555555,1139,15.819444444444445,0,0.0,310,4.305555555555555,0,0.0,0,0.0,2079,28.875,2389,33.18055555555556,72,72,100.0
+patch,1513,21.01388888888889,566,7.861111111111111,0,0.0,54,0.75,0,0.0,0,0.0,2079,28.875,2133,29.625,72,72,100.0

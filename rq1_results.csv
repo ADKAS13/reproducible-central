@@ -1,2 +1,0 @@
-repo,build_success,total_modules,modules_with_tests,total_tests,total_passed,total_failed,total_errored,total_skipped,equivalent_modules,non_equivalent_modules,skipped_flatten,upgraded_count,downgraded_count,removed_count,added_count,pass_rate,equivalence_rate
-automatalib,False,27,15,377,301,0,0,76,7,20,0,143,0,33,179,79.8,25.9

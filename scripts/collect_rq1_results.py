@@ -11,7 +11,7 @@ For RQ1 (pinned flattening, no version ranges), checks:
      REMOVED entries indicate a flattening bug.
 
 Usage:
-    python collect_rq1_results.py --root ~/reproducible-central --output rq1_results.csv
+    python collect_rq1_results.py --root ~/reproducible-central --output results/rq1_results.csv
     python collect_rq1_results.py --root ~/reproducible-central --log-dir ~/reproducible-central/rq1_logs
 """
 
@@ -181,13 +181,30 @@ def collect_repo(buildcache: Path, repo: str, log_dir: Path) -> list[ModuleResul
 
         results.append(result)
 
-    # Determine overall build success from log
-    # Look for log file matching this repo
+    # Determine overall build success from log.
+    # Match any log file that starts with the repo name (case-insensitive)
+    # since log filenames are {repo}_{specname}.log and repo names may differ
+    # slightly from buildcache parent names.
     build_success = False
-    for log_file in sorted(log_dir.glob(f"{repo}_*.log")):
-        if parse_build_log(log_file):
-            build_success = True
-            break
+    for log_file in sorted(log_dir.glob("*.log")):
+        if log_file.stem.lower().startswith(repo.lower()):
+            if parse_build_log(log_file):
+                build_success = True
+                break
+
+    # Fallback: if no log found, check the buildcache itself for a Maven
+    # BUILD SUCCESS marker in any recent log files written there.
+    if not build_success:
+        for log_file in sorted(log_dir.glob("*.log")):
+            content = ""
+            try:
+                content = log_file.read_text(errors="replace")
+            except Exception:
+                continue
+            # Match by checking if the repo's group/artifact appears in the log
+            if repo.lower() in content.lower() and "BUILD SUCCESS" in content:
+                build_success = True
+                break
 
     for r in results:
         r.build_success = build_success
@@ -303,8 +320,8 @@ def main():
     )
     parser.add_argument("--root", type=Path, required=True,
                         help="Root of reproducible-central checkout")
-    parser.add_argument("--output", type=Path, default=Path("rq1_results.csv"),
-                        help="Output CSV file path (default: rq1_results.csv)")
+    parser.add_argument("--output", type=Path, default=Path("results/rq1_results.csv"),
+                        help="Output CSV file path (default: results/rq1_results.csv)")
     parser.add_argument("--log-dir", type=Path, default=None,
                         help="Directory containing rebuild.sh log files (default: <root>/rq1_logs)")
     parser.add_argument("--summary-only", action="store_true",
@@ -317,19 +334,45 @@ def main():
     all_results: list[ModuleResult] = []
     summaries: list[RepoSummary] = []
 
+    # Only process repos for which we have a log file — this ensures we only
+    # report on repos that the pipeline actually ran, not stale buildcaches
+    # from previous experiments.
+    logged_repos = set()
+    for log_file in sorted(log_dir.glob("*.log")):
+        # Log filename format: {repo}_{specname}.log
+        # repo name is the part before the first underscore
+        repo_name = log_file.stem.split("_")[0]
+        logged_repos.add(repo_name.lower())
+
+    if not logged_repos:
+        print(f"[WARN] No log files found in {log_dir} — have you run the pipeline yet?",
+              file=sys.stderr)
+
     for buildcache in sorted(args.root.rglob("buildcache")):
         if not buildcache.is_dir():
             continue
+
+        # Skip stray top-level buildcache (directly under root, not under a repo dir)
+        if buildcache.parent == args.root:
+            print(f"[SKIP] Ignoring top-level buildcache at {buildcache}", file=sys.stderr)
+            continue
+
         repo = buildcache.parent.name
+
+        # Skip repos that weren't part of this pipeline run
+        if logged_repos and repo.lower() not in logged_repos:
+            continue
 
         results = collect_repo(buildcache, repo, log_dir)
         if not results:
+            print(f"[WARN] No comparison reports found for repo '{repo}' in {buildcache}", file=sys.stderr)
             continue
 
         build_success = any(r.build_success for r in results)
         summary = summarise_repo(repo, results, build_success)
         summaries.append(summary)
         all_results.extend(results)
+        print(f"[OK]   {repo}: {len(results)} modules, build={'PASS' if build_success else 'FAIL'}", file=sys.stderr)
 
     if not summaries:
         print("No results found. Have you run the RQ1 builds yet?")

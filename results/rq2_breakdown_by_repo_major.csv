@@ -1,0 +1,6 @@
+repo,pinned,upgraded,downgraded,added,removed,scope_changed,total_before,total_after,total_modules,successful_builds,build_success_rate
+automatalib,376,162,0,60,0,0,538,598,26,26,100.0
+cloudtrace,205,695,0,497,0,0,900,1397,30,30,100.0
+easyvcr,1,4,0,1,0,0,5,6,1,1,100.0
+teamengine,96,85,0,71,0,0,181,252,6,6,100.0
+telegrambots,73,382,0,112,0,0,455,567,9,9,100.0
