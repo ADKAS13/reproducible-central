@@ -1,0 +1,389 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/oauth1-signer-java/oauth1-signer-javaRQ1.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1mcom.mastercard.developer[0m
+|      [0;34martifactId[0;97m: [1moauth1-signer[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/com/mastercard/developer/oauth1-signer/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/Mastercard/oauth1-signer-java.git[0m
+|      [0;34mgitTag[0;97m: [1m8598bd890eaef647205abe193072a623b60bb853[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m17[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Oauth1-signer-java.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/Mastercard/oauth1-signer-java.git[0m on tag [1m8598bd890eaef647205abe193072a623b60bb853[0m
+/home/adkas13/reproducible-central/repos/oauth1-signer-java/buildcache/oauth1-signer
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/Mastercard/oauth1-signer-java.git (fetch)
+origin	https://github.com/Mastercard/oauth1-signer-java.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 8598bd890eaef647205abe193072a623b60bb853 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/oauth1-signer-java/buildcache/oauth1-signer
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk17-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk17-toolchains-17 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:8892e6d708e13fc12524f985aba0278c05f3ba657b2a530afafa1c4fa4b81254
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk17-toolchains-17-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:e77d39953476fc9af9a96e13033d4d1d557fdd06864cc5a4799af1f70cbed851
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:3713e48b358dcb07c0ef78b5e68e5584f5fc5864ad45e5dd94dd4ff90df88977
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:43a3c0b00451558265985c3d55337b65aa9b31d9242d6e4fceda17dcf2752f37
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.mastercard.developer:oauth1-signer:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/oauth1-signer-java/buildcache/oauth1-signer:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" -V -e org.apache.maven.plugins:maven-artifact-plugin:3.6.1:compare org.apache.maven.plugins:maven-artifact-plugin:3.6.1:describe-build-output -Dcompare.fail=false [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 17.0.20[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Mon Sep 28 02:39:07 UTC 2026.
+Universal Time is now:  Mon Sep 28 02:39:07 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules
+[[1;34mINFO[m] Installing Central Publishing features
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mcom.mastercard.developer:oauth1-signer[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding oauth1-signer 1.6.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Initialized pom.deps.xml for oauth1-signer — direct=11 (literal=5, property=6, excluded=0) — range mode: pinned
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated property spring-version = 6.2.19 (dependency <version> left as ${spring-version})
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated property okhttp3-version = 4.12.0 (dependency <version> left as ${okhttp3-version})
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated property okhttp2-version = 2.7.5 (dependency <version> left as ${okhttp2-version})
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated property google-api-client-version = 2.3.0 (dependency <version> left as ${google-api-client-version})
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated property feign-version = 9.7.0 (dependency <version> left as ${feign-version})
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated property spring-webflux-version = 3.5.3 (dependency <version> left as ${spring-webflux-version})
+[[1;34mINFO[m] Flattened direct dependencies for: oauth1-signer
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison for oauth1-signer: pinned=95 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] POM updated successfully: oauth1-signer
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.7:prepare-agent[m [1m(pre-unit-test)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] argLine set to -javaagent:/var/maven/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/var/maven/app/target/jacoco.exec
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged source code[m.
+[[1;34mINFO[m] Compiling 19 source files with javac [debug target 9] to target/classes
+[[1;33mWARNING[m] system modules path not set in conjunction with -source 9
+[[1;34mINFO[m] /var/maven/app/src/main/java/com/mastercard/developer/signers/SpringWebfluxSigner.java: /var/maven/app/src/main/java/com/mastercard/developer/signers/SpringWebfluxSigner.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/src/main/java/com/mastercard/developer/signers/SpringWebfluxSigner.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 17 source files with javac [debug target 9] to target/test-classes
+[[1;33mWARNING[m] system modules path not set in conjunction with -source 9
+[[1;34mINFO[m] /var/maven/app/src/test/java/com/mastercard/developer/signers/OkHttpSignerTest.java: /var/maven/app/src/test/java/com/mastercard/developer/signers/OkHttpSignerTest.java uses or overrides a deprecated API.
+[[1;34mINFO[m] /var/maven/app/src/test/java/com/mastercard/developer/signers/OkHttpSignerTest.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] /var/maven/app/src/test/java/com/mastercard/developer/signers/SpringWebfluxSignerTest.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/src/test/java/com/mastercard/developer/signers/SpringWebfluxSignerTest.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.mastercard.developer.utils.SecurityUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.243 sec
+Running com.mastercard.developer.utils.AuthenticationUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
+Running com.mastercard.developer.oauth.OAuthTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Sep 28, 2026 2:39:15 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fsandbox.api.mastercard.com%2Ffraud%2Fmerchant%2Fv1%2Ftermination-inquiry&Format%3DXML%26PageLength%3D10%26PageOffset%3D0%26oauth_body_hash%3Dh2Pd7zlzEZjZVIKB4j94UZn%2FxxoR3RoCjYQ9%2FJdadGQ%3D%26oauth_consumer_key%3Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx%26oauth_nonce%3D1111111111111111111%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1111111111%26oauth_version%3D1.0
+Sep 28, 2026 2:39:15 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: GET&https%3A%2F%2Fexample.com&param%3Dtoken1%3Atoken2
+Sep 28, 2026 2:39:15 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: GET&https%3A%2F%2Fexample.com&param%3Dtoken1%253Atoken2
+Sep 28, 2026 2:39:15 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com&first_param%3Dothervalue%26first_param%3Dvalue%26oauth_body_hash%3Dbody%2Fhash%26oauth_nonce%3Drandomnonce%26param2%3Dhello
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.487 sec
+Running com.mastercard.developer.signers.OkHttp2SignerTest
+Sep 28, 2026 2:39:15 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D31BkL4A%2B06EvGC2ZWylkJ3LfVFjw%2B%2BUX82DQ6M2y5tg%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3DmVcuGA0gJrK1NbuB%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563155%26oauth_version%3D1.0
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 sec
+Running com.mastercard.developer.signers.OpenFeignSignerTest
+Sep 28, 2026 2:39:15 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: GET&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D47DEQpj8HBSa%2B%2FTImW%2B5JCeuQeRkm5NMpJWZG3hSuFU%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3D9QheTTKn7QkLyj0Q%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563155%26oauth_version%3D1.0
+Sep 28, 2026 2:39:16 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D31BkL4A%2B06EvGC2ZWylkJ3LfVFjw%2B%2BUX82DQ6M2y5tg%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3D8MOlAdBGnodGFL4B%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563156%26oauth_version%3D1.0
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 sec
+Running com.mastercard.developer.signers.GoogleApiClientSignerTest
+Sep 28, 2026 2:39:16 AM io.opencensus.trace.Tracing loadTraceComponent
+FINE: Couldn't load full implementation for OpenTelemetry TraceComponent, now trying to load original implementation.
+java.lang.ClassNotFoundException: io.opentelemetry.opencensusshim.OpenTelemetryTraceComponentImpl
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:469)
+	at io.opencensus.trace.Tracing.loadTraceComponent(Tracing.java:96)
+	at io.opencensus.trace.Tracing.<clinit>(Tracing.java:38)
+	at com.google.api.client.http.OpenCensusUtils.<clinit>(OpenCensusUtils.java:56)
+	at com.google.api.client.http.HttpRequest.<init>(HttpRequest.java:203)
+	at com.google.api.client.http.HttpTransport.buildRequest(HttpTransport.java:115)
+	at com.google.api.client.http.HttpRequestFactory.buildRequest(HttpRequestFactory.java:86)
+	at com.google.api.client.http.HttpRequestFactory.buildPostRequest(HttpRequestFactory.java:128)
+	at com.mastercard.developer.signers.GoogleApiClientSignerTest.testSign_ShouldAddOAuth1HeaderToPostRequest(GoogleApiClientSignerTest.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Sep 28, 2026 2:39:16 AM io.opencensus.trace.Tracing loadTraceComponent
+FINE: Couldn't load full implementation for TraceComponent, now trying to load lite implementation.
+java.lang.ClassNotFoundException: io.opencensus.impl.trace.TraceComponentImpl
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:469)
+	at io.opencensus.trace.Tracing.loadTraceComponent(Tracing.java:111)
+	at io.opencensus.trace.Tracing.<clinit>(Tracing.java:38)
+	at com.google.api.client.http.OpenCensusUtils.<clinit>(OpenCensusUtils.java:56)
+	at com.google.api.client.http.HttpRequest.<init>(HttpRequest.java:203)
+	at com.google.api.client.http.HttpTransport.buildRequest(HttpTransport.java:115)
+	at com.google.api.client.http.HttpRequestFactory.buildRequest(HttpRequestFactory.java:86)
+	at com.google.api.client.http.HttpRequestFactory.buildPostRequest(HttpRequestFactory.java:128)
+	at com.mastercard.developer.signers.GoogleApiClientSignerTest.testSign_ShouldAddOAuth1HeaderToPostRequest(GoogleApiClientSignerTest.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Sep 28, 2026 2:39:16 AM io.opencensus.trace.Tracing loadTraceComponent
+FINE: Couldn't load lite implementation for TraceComponent, now using default implementation for TraceComponent.
+java.lang.ClassNotFoundException: io.opencensus.impllite.trace.TraceComponentImplLite
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:469)
+	at io.opencensus.trace.Tracing.loadTraceComponent(Tracing.java:124)
+	at io.opencensus.trace.Tracing.<clinit>(Tracing.java:38)
+	at com.google.api.client.http.OpenCensusUtils.<clinit>(OpenCensusUtils.java:56)
+	at com.google.api.client.http.HttpRequest.<init>(HttpRequest.java:203)
+	at com.google.api.client.http.HttpTransport.buildRequest(HttpTransport.java:115)
+	at com.google.api.client.http.HttpRequestFactory.buildRequest(HttpRequestFactory.java:86)
+	at com.google.api.client.http.HttpRequestFactory.buildPostRequest(HttpRequestFactory.java:128)
+	at com.mastercard.developer.signers.GoogleApiClientSignerTest.testSign_ShouldAddOAuth1HeaderToPostRequest(GoogleApiClientSignerTest.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Sep 28, 2026 2:39:16 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D31BkL4A%2B06EvGC2ZWylkJ3LfVFjw%2B%2BUX82DQ6M2y5tg%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3DKqvSGsTidWe3ys0F%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563156%26oauth_version%3D1.0
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.166 sec
+Running com.mastercard.developer.signers.HttpsUrlConnectionSignerTest
+Sep 28, 2026 2:39:16 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D31BkL4A%2B06EvGC2ZWylkJ3LfVFjw%2B%2BUX82DQ6M2y5tg%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3D24XM1TcuPTpVT9gz%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563156%26oauth_version%3D1.0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 sec
+Running com.mastercard.developer.signers.ApacheHttpClient4SignerTest
+Sep 28, 2026 2:39:16 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D31BkL4A%2B06EvGC2ZWylkJ3LfVFjw%2B%2BUX82DQ6M2y5tg%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3Dc7EFm14PTKxd3n7h%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563156%26oauth_version%3D1.0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec
+Running com.mastercard.developer.signers.OkHttpSignerTest
+Sep 28, 2026 2:39:16 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D31BkL4A%2B06EvGC2ZWylkJ3LfVFjw%2B%2BUX82DQ6M2y5tg%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3DXW2D5bbai0aFsosv%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563156%26oauth_version%3D1.0
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 sec
+Running com.mastercard.developer.signers.SpringWebfluxSignerTest
+Sep 28, 2026 2:39:17 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: GET&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3Dmz4eLTpKctDqHrrYO6MICimohtiYVqqpqIQMz4n99AA%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3DApDeAdaptXWHN8tY%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563157%26oauth_version%3D1.0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.727 sec
+Running com.mastercard.developer.signers.SpringHttpRequestSignerTest
+Sep 28, 2026 2:39:17 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3Deji%2FgfOD9pQzrW6QDTWz4jhVk%2Fdqe3q11DVbi6Qe4ks%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3D4ese8ONQfoOORcSy%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563157%26oauth_version%3D1.0
+Sep 28, 2026 2:39:17 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: GET&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D47DEQpj8HBSa%2B%2FTImW%2B5JCeuQeRkm5NMpJWZG3hSuFU%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3DgLYmO8zthzPwMuXd%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563157%26oauth_version%3D1.0
+Sep 28, 2026 2:39:17 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: GET&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3D47DEQpj8HBSa%2B%2FTImW%2B5JCeuQeRkm5NMpJWZG3hSuFU%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3D29BCpZRBYImsfv3C%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563157%26oauth_version%3D1.0
+Sep 28, 2026 2:39:17 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3Deji%2FgfOD9pQzrW6QDTWz4jhVk%2Fdqe3q11DVbi6Qe4ks%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3DYCsi5YoJpw4MpoHp%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563157%26oauth_version%3D1.0
+Sep 28, 2026 2:39:17 AM com.mastercard.developer.oauth.OAuth getSignatureBaseString
+FINE: Generated SBS: POST&https%3A%2F%2Fapi.mastercard.com%2Fservice&oauth_body_hash%3Deji%2FgfOD9pQzrW6QDTWz4jhVk%2Fdqe3q11DVbi6Qe4ks%3D%26oauth_consumer_key%3DSome%20key%26oauth_nonce%3DnfVnKit1ajCBuyIA%26oauth_signature_method%3DRSA-SHA256%26oauth_timestamp%3D1790563157%26oauth_version%3D1.0
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.142 sec
+
+Results :
+
+Tests run: 42, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.7:report[m [1m(post-unit-test)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Loading execution data file /var/maven/app/target/jacoco.exec
+[[1;34mINFO[m] Analyzed bundle 'oauth1-signer' with 20 classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/oauth1-signer-1.6.0.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-source-plugin:3.3.0:jar[m [1m(attach-sources)[0;1m > [0;1mgenerate-sources[m @ [36moauth1-signer[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.7:prepare-agent[m [1m(pre-unit-test)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] argLine set to -javaagent:/var/maven/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/var/maven/app/target/jacoco.exec
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-source-plugin:3.3.0:jar[m [1m(attach-sources)[0;1m < [0;1mgenerate-sources[m @ [36moauth1-signer[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar[m [1m(attach-sources)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/oauth1-signer-1.6.0-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(generate-javadoc)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36moauth1-signer[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/oauth1-signer-1.6.0.jar to /var/maven/.m2/repository/com/mastercard/developer/oauth1-signer/1.6.0/oauth1-signer-1.6.0.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/com/mastercard/developer/oauth1-signer/1.6.0/oauth1-signer-1.6.0.pom
+[[1;34mINFO[m] Installing /var/maven/app/target/oauth1-signer-1.6.0-sources.jar to /var/maven/.m2/repository/com/mastercard/developer/oauth1-signer/1.6.0/oauth1-signer-1.6.0-sources.jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  9.981 s
+[[1;34mINFO[m] Finished at: 2026-09-28T02:39:18Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Oauth1-signer-java.buildinfo: No such file or directory
+dos2unix: Skipping target/Oauth1-signer-java.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

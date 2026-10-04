@@ -1,0 +1,17 @@
+# easyvcr.buildspec
+groupId=com.easypost
+artifactId=easyvcr
+version=0.5.3
+
+gitRepo=https://github.com/EasyPost/easyvcr-java.git
+gitTag=7ab1ec7
+
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dcheckstyle.skip=true -Denforcer.skip=true -Dgpg.skip=true -DargLine="-Dhttp.timeout=5000"\""
+
+buildinfo=target/easyvcrRQ2patch.buildinfo

@@ -1,0 +1,15 @@
+groupId=org.dromara.autotable
+artifactId=auto-table
+version=9
+
+gitRepo=https://github.com/dromara/auto-table.git
+gitTag=429e36efab8bae331fc6ad5e70ab01ee27e169d6
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install -pl '!:auto-table-test-adapter-mybatis-plus'\""
+
+buildinfo=target/Auto-table.buildinfo

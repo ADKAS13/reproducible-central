@@ -1,0 +1,32 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/astra/RQ2minor/astraRQ2minor.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.alfasoftware[0m
+|      [0;34martifactId[0;97m: [1mastra[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/org/alfasoftware/astra/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/alfasoftware/astra.git[0m
+|      [0;34mgitTag[0;97m: [1mbbc6407425ec3d7613cc4c3ee003e5480d78dedd[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m17[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dmaven.javadoc.skip=true "[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Astra.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching maven-metadata.xml from Maven Central
+downloading [1mhttps://repo.maven.apache.org/maven2/org/alfasoftware/astra/maven-metadata.xml[0m to /home/adkas13/reproducible-central/repos/astra/RQ2minor
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mcurl -s --fail https://repo.maven.apache.org/maven2/org/alfasoftware/astra/maven-metadata.xml --output maven-metadata.xml [0m
+[90m
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to download maven-metadata.xml [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

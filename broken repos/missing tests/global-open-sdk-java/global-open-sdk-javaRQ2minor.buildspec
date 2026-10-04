@@ -1,0 +1,15 @@
+groupId=com.alipay.global.sdk
+artifactId=global-open-sdk-java
+version=9
+
+gitRepo=https://github.com/alipay/global-open-sdk-java.git
+gitTag=adbea7b8b662d81749b6420adf6df07a35cc795e
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dgpg.skip=true\""
+
+buildinfo=target/Global-open-sdk-java.buildinfo

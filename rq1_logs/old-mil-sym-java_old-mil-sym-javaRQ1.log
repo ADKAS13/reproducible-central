@@ -1,0 +1,173 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/old-mil-sym-java/old-mil-sym-javaRQ1.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1mio.github.missioncommand[0m
+|      [0;34martifactId[0;97m: [1mmil-sym-java[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/io/github/missioncommand/mil-sym-java/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/missioncommand/old-mil-sym-java.git[0m
+|      [0;34mgitTag[0;97m: [1m8d2587328b0eb25cfc85141eb2ff268a8f1e2454[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Old-mil-sym-java.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/missioncommand/old-mil-sym-java.git[0m on tag [1m8d2587328b0eb25cfc85141eb2ff268a8f1e2454[0m
+/home/adkas13/reproducible-central/repos/old-mil-sym-java/buildcache/mil-sym-java
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/missioncommand/old-mil-sym-java.git (fetch)
+origin	https://github.com/missioncommand/old-mil-sym-java.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 8d2587328b0eb25cfc85141eb2ff268a8f1e2454 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/old-mil-sym-java/buildcache/mil-sym-java
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mio.github.missioncommand:mil-sym-java:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/old-mil-sym-java/buildcache/mil-sym-java:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" -V -e org.apache.maven.plugins:maven-artifact-plugin:3.6.1:compare org.apache.maven.plugins:maven-artifact-plugin:3.6.1:describe-build-output -Dcompare.fail=false [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Mon Sep 28 02:39:20 UTC 2026.
+Universal Time is now:  Mon Sep 28 02:39:20 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 13 modules
+[[1;34mINFO[m] Installing Central Publishing features
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] mil-sym-java                                                       [pom]
+[[1;34mINFO[m] mil-sym-java :: Core :: JavaRendererUtils                          [jar]
+[[1;34mINFO[m] mil-sym-java :: Core :: JavaLineArray                              [jar]
+[[1;34mINFO[m] mil-sym-java :: Core :: JavaRendererServer                         [jar]
+[[1;34mINFO[m] mil-sym-java :: Core :: JavaRenderer                               [jar]
+[[1;34mINFO[m] mil-sym-java :: Core                                               [pom]
+[[1;34mINFO[m] mil-sym-java :: Renderer :: RendererPluginInterface                [jar]
+[[1;34mINFO[m] mil-sym-java :: Renderer :: mil-sym-renderer                       [jar]
+[[1;34mINFO[m] mil-sym-java :: Renderer                                           [pom]
+[[1;34mINFO[m] mil-sym-java :: Service :: mil-sym-service                         [war]
+[[1;34mINFO[m] mil-sym-java :: Service                                            [pom]
+[[1;34mINFO[m] mil-sym-java :: Samples :: rendering-sample-1                      [jar]
+[[1;34mINFO[m] mil-sym-java :: Samples                                            [pom]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mio.github.missioncommand:mil-sym-java[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding mil-sym-java 0.1.46                                      [1/13][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmil-sym-java[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mmil-sym-java[0;1m ---[m
+[[1;34mINFO[m] Initialized pom.deps.xml for mil-sym-java — direct=0 (literal=0, property=0, excluded=0), managed=24 (literal=0, property=17, excluded=7) — range mode: pinned
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mmil-sym-java[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property commons-collections.version = 3.2.2
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property httpunit.version = 1.7
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property gson.version = 2.8.9
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property spring.version = [5.3.33,)
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property javaee-web-api.version = 6.0
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property junit.version = 4.13.1
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property commons-configuration.version = 1.9
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property commons-io.version = 2.14.0
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property commons-lang.version = 2.6
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property javaee-api.version = 6.0
+[[1;34mINFO[m] Flattened dependencyManagement for: mil-sym-java (24 entries)
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison for mil-sym-java: pinned=16 upgraded=0 downgraded=8 excluded=0
+[[1;34mINFO[m] POM updated successfully: mil-sym-java
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mmil-sym-java[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.5.0:jar[m [1m(attach-javadocs)[m @ [36mmil-sym-java[0;1m ---[m
+[[1;34mINFO[m] Not executing Javadoc as the project is not a Java classpath-capable package
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-gpg-plugin:3.1.0:sign[m [1m(sign-artifacts)[m @ [36mmil-sym-java[0;1m ---[m
+[[1;34mINFO[m] Signing 1 file with default secret key.
+gpg: directory '/var/maven/.gnupg' created
+gpg: keybox '/var/maven/.gnupg/pubring.kbx' created
+gpg: no default secret key: No secret key
+gpg: signing failed: No secret key
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for mil-sym-java 0.1.46:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] mil-sym-java ....................................... [1;31mFAILURE[m [  1.180 s]
+[[1;34mINFO[m] mil-sym-java :: Core :: JavaRendererUtils .......... [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Core :: JavaLineArray .............. [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Core :: JavaRendererServer ......... [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Core :: JavaRenderer ............... [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Core ............................... [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Renderer :: RendererPluginInterface  [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Renderer :: mil-sym-renderer ....... [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Renderer ........................... [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Service :: mil-sym-service ......... [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Service ............................ [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Samples :: rendering-sample-1 ...... [1;33mSKIPPED[m
+[[1;34mINFO[m] mil-sym-java :: Samples ............................ [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  1.554 s
+[[1;34mINFO[m] Finished at: 2026-09-28T02:39:23Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-gpg-plugin:3.1.0:sign[m [1m(sign-artifacts)[m on project [36mmil-sym-java[m: [1;31mExit code: 2[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

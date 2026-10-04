@@ -1,0 +1,15 @@
+groupId=org.omnifaces
+artifactId=optimusfaces
+version=9
+
+gitRepo=https://github.com/omnifaces/optimusfaces.git
+gitTag=fd407bc794389e5794fcdb1c6d26c119af9386b0
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dit.test="!OptimusFacesMySQLIT,!OptimusFacesPostgreSQLIT"\""
+
+buildinfo=target/Optimusfaces.buildinfo

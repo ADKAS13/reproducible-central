@@ -1,0 +1,15 @@
+groupId=jp.co.yahoo.yosegi
+artifactId=yosegi
+version=9
+
+gitRepo=https://github.com/yahoojapan/yosegi.git
+gitTag=42d48607ac4ef97abad3426b5ccc8d492e37ab5b
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install  -Dtest="!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex"  -Dmaven.javadoc.skip=true -Dgpg.skip=true \""
+
+buildinfo=target/Yosegi.buildinfo

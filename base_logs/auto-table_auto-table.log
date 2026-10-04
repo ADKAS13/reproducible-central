@@ -1,0 +1,1468 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/auto-table/base/auto-table.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.dromara.autotable[0m
+|      [0;34martifactId[0;97m: [1mauto-table[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/org/dromara/autotable/auto-table/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/dromara/auto-table.git[0m
+|      [0;34mgitTag[0;97m: [1m429e36efab8bae331fc6ad5e70ab01ee27e169d6[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m8[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -pl '!:auto-table-test-adapter-mybatis-plus'"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Auto-table.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/dromara/auto-table.git[0m on tag [1m429e36efab8bae331fc6ad5e70ab01ee27e169d6[0m
+/home/adkas13/reproducible-central/repos/auto-table/base/buildcache/auto-table
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/dromara/auto-table.git (fetch)
+origin	https://github.com/dromara/auto-table.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 429e36efab8bae331fc6ad5e70ab01ee27e169d6 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/auto-table/base/buildcache/auto-table
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:1058280974120b51d18b8f71f941283af8612725fc28a3a72cfb85cf150239c6
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:8514503f3f5516217b6be23a408be73c80c45fc9c054c70b7f26973b7e0100ed
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:80d48831e3263a373a8351d99ce446ede387df085e0783cc6b9649f602eb5da0
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.dromara.autotable:auto-table:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/auto-table/base/buildcache/auto-table:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -pl '!:auto-table-test-adapter-mybatis-plus'" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+javac: invalid flag: --version
+Usage: javac <options> <source files>
+use -help for a list of possible options
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version [0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sat Oct  3 12:39:48 UTC 2026.
+Universal Time is now:  Sat Oct  3 12:39:48 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 31 modules
+[[1;34mINFO[m] Installing Central Publishing features
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] org.dromara.autotable:auto-table                                   [pom]
+[[1;34mINFO[m] auto-table-annotation                                              [jar]
+[[1;34mINFO[m] auto-table-core                                                    [jar]
+[[1;34mINFO[m] auto-table-strategy                                                [pom]
+[[1;34mINFO[m] auto-table-strategy-dm                                             [jar]
+[[1;34mINFO[m] auto-table-strategy-doris                                          [jar]
+[[1;34mINFO[m] auto-table-strategy-h2                                             [jar]
+[[1;34mINFO[m] auto-table-strategy-pgsql                                          [jar]
+[[1;34mINFO[m] auto-table-strategy-kingbase                                       [jar]
+[[1;34mINFO[m] auto-table-strategy-mysql                                          [jar]
+[[1;34mINFO[m] auto-table-strategy-oracle                                         [jar]
+[[1;34mINFO[m] auto-table-strategy-yashandb                                       [jar]
+[[1;34mINFO[m] auto-table-strategy-sqlserver                                      [jar]
+[[1;34mINFO[m] auto-table-strategy-sqlite                                         [jar]
+[[1;34mINFO[m] auto-table-strategy-all                                            [jar]
+[[1;34mINFO[m] auto-table-spring-boot-starter                                     [jar]
+[[1;34mINFO[m] auto-table-solon-plugin                                            [jar]
+[[1;34mINFO[m] auto-table-test                                                    [pom]
+[[1;34mINFO[m] auto-table-test-core                                               [jar]
+[[1;34mINFO[m] auto-table-test-spring-boot                                        [jar]
+[[1;34mINFO[m] auto-table-test-dynamicdatasource                                  [jar]
+[[1;34mINFO[m] auto-table-test-solon-plugin                                       [jar]
+[[1;34mINFO[m] auto-table-test-spring-boot-dynamicdatasource                      [jar]
+[[1;34mINFO[m] auto-table-test-doris                                              [jar]
+[[1;34mINFO[m] auto-table-adapter                                                 [pom]
+[[1;34mINFO[m] auto-table-adapter-mybatis-plus                                    [jar]
+[[1;34mINFO[m] auto-table-adapter-mybatis-plus-spring-boot-starter                [jar]
+[[1;34mINFO[m] auto-table-adapter-mybatis-flex                                    [jar]
+[[1;34mINFO[m] auto-table-adapter-mybatis-flex-spring-boot-starter                [jar]
+[[1;34mINFO[m] auto-table-support                                                 [pom]
+[[1;34mINFO[m] auto-table-support-springdoc                                       [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36morg.dromara.autotable:auto-table[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding org.dromara.autotable:auto-table 2.7.2                   [1/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table[0;1m ---[m
+[[1;34mINFO[m] Not executing Javadoc as the project is not a Java classpath-capable package
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table/2.7.2/auto-table-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.dromara.autotable:auto-table-annotation[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-annotation 2.7.2                              [2/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-annotation/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged source code[m.
+[[1;34mINFO[m] Compiling 42 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-annotation/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] 
+2 warnings
+[[1;33mWARNING[m] Javadoc Warnings
+[[1;33mWARNING[m] /var/maven/app/auto-table-annotation/src/main/java/org/dromara/autotable/annotation/AutoColumn.java:92: warning - Tag @link: reference not found: org.dromara.autotable.core.constants.DatabaseDialect
+[[1;33mWARNING[m] /var/maven/app/auto-table-annotation/src/main/java/org/dromara/autotable/annotation/AutoTable.java:40: warning - Tag @link: reference not found: org.dromara.autotable.core.constants.DatabaseDialect
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - SHA-1 : f47c1db11d51836d540a6b5a9ca345b81af6804b
+[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - MD5 : 4af5b7f2c82ba02777a2055ffa724052
+[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - SHA-1 : 0df3aef02d0f78b5349b25370b05aec2725c1bec
+[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - MD5 : a5a06a3e9873bd9a31e64914c7b55187
+[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - SHA-1 : 6eb9ffcf59e40489ce9a539846c860176bccf9e5
+[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - MD5 : ffb90b7a0fe913b395f446a774330d92
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-annotation[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-annotation/2.7.2/auto-table-annotation-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-annotation/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-annotation/2.7.2/auto-table-annotation-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-annotation/2.7.2/auto-table-annotation-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-annotation/2.7.2/auto-table-annotation-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36morg.dromara.autotable:auto-table-core[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-core 2.7.2                                    [3/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-core/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 62 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] /var/maven/app/auto-table-core/src/main/java/org/dromara/autotable/core/initdata/InitDataHandler.java: /var/maven/app/auto-table-core/src/main/java/org/dromara/autotable/core/initdata/InitDataHandler.java uses or overrides a deprecated API.
+[[1;34mINFO[m] /var/maven/app/auto-table-core/src/main/java/org/dromara/autotable/core/initdata/InitDataHandler.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] /var/maven/app/auto-table-core/src/main/java/org/dromara/autotable/core/builder/ColumnMetadataBuilder.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/auto-table-core/src/main/java/org/dromara/autotable/core/builder/ColumnMetadataBuilder.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-core/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-core/target/auto-table-core-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-core/target/auto-table-core-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] 
+3 warnings
+[[1;33mWARNING[m] Javadoc Warnings
+[[1;33mWARNING[m] /var/maven/app/auto-table-core/src/main/java/org/dromara/autotable/core/recordsql/AutoTableExecuteSqlLog.java:22: error: cannot find symbol
+[[1;33mWARNING[m] duplicate_key = {AutoTableExecuteSqlLog.Fields.tableSchema, AutoTableExecuteSqlLog.Fields.tableName},
+[[1;33mWARNING[m] ^
+[[1;33mWARNING[m] symbol:   variable Fields
+[[1;33mWARNING[m] location: class AutoTableExecuteSqlLog
+[[1;33mWARNING[m] /var/maven/app/auto-table-core/src/main/java/org/dromara/autotable/core/recordsql/AutoTableExecuteSqlLog.java:22: error: cannot find symbol
+[[1;33mWARNING[m] duplicate_key = {AutoTableExecuteSqlLog.Fields.tableSchema, AutoTableExecuteSqlLog.Fields.tableName},
+[[1;33mWARNING[m] ^
+[[1;33mWARNING[m] symbol:   variable Fields
+[[1;33mWARNING[m] location: class AutoTableExecuteSqlLog
+[[1;33mWARNING[m] /var/maven/app/auto-table-core/src/main/java/org/dromara/autotable/core/recordsql/RecordSqlHandler.java:11: warning - @param argument "autoTableExecuteSqlLog" is not a parameter name.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-core/target/auto-table-core-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - SHA-1 : c27113e678eb05d3ed85d53ebddecac7d8ec2220
+[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - MD5 : 860a9a152a653688d051913bdf441fe9
+[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - SHA-1 : c945bac7c79f897b9315c9e248f9f54c0bbe0d2b
+[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - MD5 : 4aa29800116f025502ea0b0bfff9b680
+[[1;34mINFO[m] auto-table-core-2.7.2.jar - SHA-1 : eff1078631f38dfdc2e8380be0cc3a1cca7a74d3
+[[1;34mINFO[m] auto-table-core-2.7.2.jar - MD5 : 0f8149d9575ff386d2b3be3112d49561
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-core[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-core/target/auto-table-core-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-core/2.7.2/auto-table-core-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-core/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-core/2.7.2/auto-table-core-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-core/target/auto-table-core-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-core/2.7.2/auto-table-core-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-core/target/auto-table-core-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-core/2.7.2/auto-table-core-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36morg.dromara.autotable:auto-table-strategy[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy 2.7.2                                [4/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy[0;1m ---[m
+[[1;34mINFO[m] Not executing Javadoc as the project is not a Java classpath-capable package
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy/2.7.2/auto-table-strategy-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.dromara.autotable:auto-table-strategy-dm[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-dm 2.7.2                             [5/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 15 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-dm/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-dm/target/auto-table-strategy-dm-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-dm/target/auto-table-strategy-dm-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] 
+1 warning
+[[1;33mWARNING[m] Javadoc Warnings
+[[1;33mWARNING[m] /var/maven/app/auto-table-strategy/auto-table-strategy-dm/src/main/java/org/dromara/autotable/strategy/dm/builder/DmColumnMetadataBuilder.java:18: warning - @date: is an unknown tag.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-dm/target/auto-table-strategy-dm-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-dm[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-dm/target/auto-table-strategy-dm-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-dm/2.7.2/auto-table-strategy-dm-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-dm/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-dm/2.7.2/auto-table-strategy-dm-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-dm/target/auto-table-strategy-dm-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-dm/2.7.2/auto-table-strategy-dm-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-dm/target/auto-table-strategy-dm-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-dm/2.7.2/auto-table-strategy-dm-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36morg.dromara.autotable:auto-table-strategy-doris[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-doris 2.7.2                          [6/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 16 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-doris/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-doris/target/auto-table-strategy-doris-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-doris/target/auto-table-strategy-doris-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-doris/target/auto-table-strategy-doris-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-doris[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-doris/target/auto-table-strategy-doris-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-doris/2.7.2/auto-table-strategy-doris-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-doris/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-doris/2.7.2/auto-table-strategy-doris-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-doris/target/auto-table-strategy-doris-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-doris/2.7.2/auto-table-strategy-doris-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-doris/target/auto-table-strategy-doris-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-doris/2.7.2/auto-table-strategy-doris-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.dromara.autotable:auto-table-strategy-h2[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-h2 2.7.2                             [7/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 12 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-h2/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-h2/target/auto-table-strategy-h2-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-h2/target/auto-table-strategy-h2-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-h2/target/auto-table-strategy-h2-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-h2[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-h2/target/auto-table-strategy-h2-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-h2/2.7.2/auto-table-strategy-h2-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-h2/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-h2/2.7.2/auto-table-strategy-h2-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-h2/target/auto-table-strategy-h2-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-h2/2.7.2/auto-table-strategy-h2-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-h2/target/auto-table-strategy-h2-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-h2/2.7.2/auto-table-strategy-h2-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36morg.dromara.autotable:auto-table-strategy-pgsql[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-pgsql 2.7.2                          [8/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 15 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 2 source files with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dromara.autotable.strategy.pgsql.PgsqlStrategyIsTypeDiffTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.dromara.autotable.strategy.pgsql.PgsqlDbColumnDataTypeFormatTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/auto-table-strategy-pgsql-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/auto-table-strategy-pgsql-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/auto-table-strategy-pgsql-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/auto-table-strategy-pgsql-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-pgsql/2.7.2/auto-table-strategy-pgsql-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-pgsql/2.7.2/auto-table-strategy-pgsql-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/auto-table-strategy-pgsql-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-pgsql/2.7.2/auto-table-strategy-pgsql-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/auto-table-strategy-pgsql-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-pgsql/2.7.2/auto-table-strategy-pgsql-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36morg.dromara.autotable:auto-table-strategy-kingbase[0;1m >---------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-kingbase 2.7.2                       [9/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 2 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/target/auto-table-strategy-kingbase-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/target/auto-table-strategy-kingbase-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] 
+1 warning
+[[1;33mWARNING[m] Javadoc Warnings
+[[1;33mWARNING[m] /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/src/main/java/org/dromara/autotable/strategy/kingbase/KingBaseStrategy.java:13: warning - @date: is an unknown tag.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/target/auto-table-strategy-kingbase-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/target/auto-table-strategy-kingbase-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-kingbase/2.7.2/auto-table-strategy-kingbase-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-kingbase/2.7.2/auto-table-strategy-kingbase-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/target/auto-table-strategy-kingbase-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-kingbase/2.7.2/auto-table-strategy-kingbase-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/target/auto-table-strategy-kingbase-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-kingbase/2.7.2/auto-table-strategy-kingbase-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36morg.dromara.autotable:auto-table-strategy-mysql[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-mysql 2.7.2                         [10/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 21 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 1 source file with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dromara.autotable.strategy.mysql.MysqlModifyTableSqlBuilderTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/auto-table-strategy-mysql-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/auto-table-strategy-mysql-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/auto-table-strategy-mysql-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/auto-table-strategy-mysql-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-mysql/2.7.2/auto-table-strategy-mysql-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-mysql/2.7.2/auto-table-strategy-mysql-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/auto-table-strategy-mysql-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-mysql/2.7.2/auto-table-strategy-mysql-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/auto-table-strategy-mysql-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-mysql/2.7.2/auto-table-strategy-mysql-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36morg.dromara.autotable:auto-table-strategy-oracle[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-oracle 2.7.2                        [11/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 10 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 1 source file with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/auto-table-strategy-oracle-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/auto-table-strategy-oracle-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/auto-table-strategy-oracle-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/auto-table-strategy-oracle-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-oracle/2.7.2/auto-table-strategy-oracle-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-oracle/2.7.2/auto-table-strategy-oracle-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/auto-table-strategy-oracle-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-oracle/2.7.2/auto-table-strategy-oracle-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/auto-table-strategy-oracle-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-oracle/2.7.2/auto-table-strategy-oracle-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36morg.dromara.autotable:auto-table-strategy-yashandb[0;1m >---------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-yashandb 2.7.2                      [12/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 15 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 2 source files with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/auto-table-strategy-yashandb-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/auto-table-strategy-yashandb-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/auto-table-strategy-yashandb-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/auto-table-strategy-yashandb-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-yashandb/2.7.2/auto-table-strategy-yashandb-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-yashandb/2.7.2/auto-table-strategy-yashandb-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/auto-table-strategy-yashandb-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-yashandb/2.7.2/auto-table-strategy-yashandb-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/auto-table-strategy-yashandb-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-yashandb/2.7.2/auto-table-strategy-yashandb-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------< [0;36morg.dromara.autotable:auto-table-strategy-sqlserver[0;1m >---------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-sqlserver 2.7.2                     [13/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 15 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 8 source files with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dromara.autotable.strategy.sqlserver.SqlServerModifyTableSqlBuilderTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.dromara.autotable.strategy.sqlserver.SqlServerIntegrationTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.dromara.autotable.strategy.sqlserver.SqlServerStrategyUnitTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.dromara.autotable.strategy.sqlserver.SqlServerCompareTableInfoTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.dromara.autotable.strategy.sqlserver.builder.SqlServerColumnMetadataBuilderTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Running org.dromara.autotable.strategy.sqlserver.SqlServerDatabaseBuilderTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.dromara.autotable.strategy.sqlserver.SqlServerCreateTableSqlBuilderTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.dromara.autotable.strategy.sqlserver.SqlServerDbColumnDataTypeFormatTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/auto-table-strategy-sqlserver-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/auto-table-strategy-sqlserver-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/auto-table-strategy-sqlserver-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/auto-table-strategy-sqlserver-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-sqlserver/2.7.2/auto-table-strategy-sqlserver-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-sqlserver/2.7.2/auto-table-strategy-sqlserver-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/auto-table-strategy-sqlserver-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-sqlserver/2.7.2/auto-table-strategy-sqlserver-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/auto-table-strategy-sqlserver-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-sqlserver/2.7.2/auto-table-strategy-sqlserver-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36morg.dromara.autotable:auto-table-strategy-sqlite[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-sqlite 2.7.2                        [14/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 12 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/target/auto-table-strategy-sqlite-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/target/auto-table-strategy-sqlite-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/target/auto-table-strategy-sqlite-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/target/auto-table-strategy-sqlite-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-sqlite/2.7.2/auto-table-strategy-sqlite-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-sqlite/2.7.2/auto-table-strategy-sqlite-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/target/auto-table-strategy-sqlite-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-sqlite/2.7.2/auto-table-strategy-sqlite-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/target/auto-table-strategy-sqlite-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-sqlite/2.7.2/auto-table-strategy-sqlite-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.dromara.autotable:auto-table-strategy-all[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-strategy-all 2.7.2                           [15/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-all/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 1 source file with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-strategy/auto-table-strategy-all/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-all/target/auto-table-strategy-all-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-all/target/auto-table-strategy-all-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-strategy/auto-table-strategy-all/target/auto-table-strategy-all-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-strategy-all[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-all/target/auto-table-strategy-all-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-all/2.7.2/auto-table-strategy-all-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-all/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-all/2.7.2/auto-table-strategy-all-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-all/target/auto-table-strategy-all-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-all/2.7.2/auto-table-strategy-all-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-strategy/auto-table-strategy-all/target/auto-table-strategy-all-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-strategy-all/2.7.2/auto-table-strategy-all-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------< [0;36morg.dromara.autotable:auto-table-spring-boot-starter[0;1m >--------[m
+[[1;34mINFO[m] [1mBuilding auto-table-spring-boot-starter 2.7.2                    [16/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-spring-boot-starter/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 11 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-spring-boot-starter/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - SHA-1 : 749e265c04a6754d41fa09722e234f7e9143fd5e
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - MD5 : 2fdb6cba802d8468fc1794bb4f530e37
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - SHA-1 : 1ee03a58f612a8e41171a5b62bb476af5c7d33c0
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - MD5 : 303cc5fe97ec6daad2da75223d8d2761
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - SHA-1 : 1161481cd2059faf8195f295e470c9e26542d866
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - MD5 : ce3880d15864c60281089fcccb577dc8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-spring-boot-starter/2.7.2/auto-table-spring-boot-starter-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-spring-boot-starter/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-spring-boot-starter/2.7.2/auto-table-spring-boot-starter-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-spring-boot-starter/2.7.2/auto-table-spring-boot-starter-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-spring-boot-starter/2.7.2/auto-table-spring-boot-starter-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.dromara.autotable:auto-table-solon-plugin[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-solon-plugin 2.7.2                           [17/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 10 source files with javac [debug parameters target 1.8] to target/classes
+1
+[[1;34mINFO[m] /var/maven/app/auto-table-solon-plugin/src/main/java/org/dromara/autotable/solon/integration/AutoTablePlugin.java: /var/maven/app/auto-table-solon-plugin/src/main/java/org/dromara/autotable/solon/integration/AutoTablePlugin.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/auto-table-solon-plugin/src/main/java/org/dromara/autotable/solon/integration/AutoTablePlugin.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-solon-plugin/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] 
+2 warnings
+[[1;33mWARNING[m] Javadoc Warnings
+[[1;33mWARNING[m] /var/maven/app/auto-table-solon-plugin/src/main/java/org/dromara/autotable/solon/integration/AutoTablePlugin.java:47: warning - @date is an unknown tag.
+[[1;33mWARNING[m] /var/maven/app/auto-table-solon-plugin/src/main/java/org/dromara/autotable/solon/properties/AutoTablePropertiesRegister.java:16: warning - @date is an unknown tag.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - SHA-1 : 3e8416d516bcad9a99138de28b1127b2f18999a6
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - MD5 : a037e5caf10a45516e8c7bddd1f2fef5
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - SHA-1 : 1696465c6c33f6c923fbae0905ffeca368f4e677
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - MD5 : cfb186480dd50fdb3ef062170687e13b
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - SHA-1 : 20515cf66ccdde234de7f8f340b5681379933dfc
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - MD5 : 9cbd2142ac0527b084df71d9a250d9ca
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-solon-plugin/2.7.2/auto-table-solon-plugin-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-solon-plugin/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-solon-plugin/2.7.2/auto-table-solon-plugin-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-solon-plugin/2.7.2/auto-table-solon-plugin-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-solon-plugin/2.7.2/auto-table-solon-plugin-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36morg.dromara.autotable:auto-table-test[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-test 2.7.2                                   [18/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-test[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-test[0;1m ---[m
+[[1;34mINFO[m] Skipping source per configuration.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-test[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-test[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test/2.7.2/auto-table-test-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36morg.dromara.autotable:auto-table-test-core[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-test-core 2.7.2                              [19/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 11 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 3 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 4 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 106 source files with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/auto-table-test/auto-table-test-core/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-test/auto-table-test-core/target/auto-table-test-core-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Skipping source per configuration.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-test-core[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-core/target/auto-table-test-core-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-core/2.7.2/auto-table-test-core-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-core/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-core/2.7.2/auto-table-test-core-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36morg.dromara.autotable:auto-table-test-spring-boot[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding auto-table-test-spring-boot 2.7.2                       [20/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 6 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-test/auto-table-test-spring-boot/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 1 source file with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/auto-table-test/auto-table-test-spring-boot/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dromara.autotable.test.springboot.MyTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-test/auto-table-test-spring-boot/target/auto-table-test-spring-boot-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Skipping source per configuration.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-spring-boot/target/auto-table-test-spring-boot-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-spring-boot/2.7.2/auto-table-test-spring-boot-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-spring-boot/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-spring-boot/2.7.2/auto-table-test-spring-boot-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------< [0;36morg.dromara.autotable:auto-table-test-dynamicdatasource[0;1m >-------[m
+[[1;34mINFO[m] [1mBuilding auto-table-test-dynamicdatasource 2.7.2                 [21/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 11 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 8 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-test/auto-table-test-dynamicdatasource/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-test/auto-table-test-dynamicdatasource/target/auto-table-test-dynamicdatasource-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Skipping source per configuration.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-dynamicdatasource/target/auto-table-test-dynamicdatasource-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-dynamicdatasource/2.7.2/auto-table-test-dynamicdatasource-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-dynamicdatasource/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-dynamicdatasource/2.7.2/auto-table-test-dynamicdatasource-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36morg.dromara.autotable:auto-table-test-solon-plugin[0;1m >---------[m
+[[1;34mINFO[m] [1mBuilding auto-table-test-solon-plugin 2.7.2                      [22/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 7 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-test/auto-table-test-solon-plugin/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 1 source file with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/auto-table-test/auto-table-test-solon-plugin/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dromara.autotable.test.springboot.MyTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-test/auto-table-test-solon-plugin/target/auto-table-test-solon-plugin-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Skipping source per configuration.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-solon-plugin/target/auto-table-test-solon-plugin-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-solon-plugin/2.7.2/auto-table-test-solon-plugin-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-solon-plugin/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-solon-plugin/2.7.2/auto-table-test-solon-plugin-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.dromara.autotable:auto-table-test-spring-boot-dynamicdatasource[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding auto-table-test-spring-boot-dynamicdatasource 2.7.2     [23/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 11 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-test/auto-table-test-spring-boot-dynamicdatasource/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-test/auto-table-test-spring-boot-dynamicdatasource/target/auto-table-test-spring-boot-dynamicdatasource-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Skipping source per configuration.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-spring-boot-dynamicdatasource/target/auto-table-test-spring-boot-dynamicdatasource-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-spring-boot-dynamicdatasource/2.7.2/auto-table-test-spring-boot-dynamicdatasource-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-spring-boot-dynamicdatasource/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-spring-boot-dynamicdatasource/2.7.2/auto-table-test-spring-boot-dynamicdatasource-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.dromara.autotable:auto-table-test-doris[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-test-doris 2.7.2                             [24/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 13 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-test/auto-table-test-doris/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-test/auto-table-test-doris/target/auto-table-test-doris-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] Skipping source per configuration.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-test-doris[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-doris/target/auto-table-test-doris-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-doris/2.7.2/auto-table-test-doris-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-test/auto-table-test-doris/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-test-doris/2.7.2/auto-table-test-doris-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36morg.dromara.autotable:auto-table-adapter[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-adapter 2.7.2                                [25/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-adapter[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-adapter[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-adapter[0;1m ---[m
+[[1;34mINFO[m] Not executing Javadoc as the project is not a Java classpath-capable package
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-adapter[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter/2.7.2/auto-table-adapter-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------< [0;36morg.dromara.autotable:auto-table-adapter-mybatis-plus[0;1m >--------[m
+[[1;34mINFO[m] [1mBuilding auto-table-adapter-mybatis-plus 2.7.2                   [26/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 6 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 2 source files with javac [debug parameters target 1.8] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.2.5:test[m [1m(default-test)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusMetadataAdapterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m24[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusMetadataAdapterTest[m
+[[1;34mINFO[m] Running org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusJavaTypeToDatabaseTypeConverterTest[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusJavaTypeToDatabaseTypeConverterTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 31, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/target/auto-table-adapter-mybatis-plus-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/target/auto-table-adapter-mybatis-plus-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/target/auto-table-adapter-mybatis-plus-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/target/auto-table-adapter-mybatis-plus-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-plus/2.7.2/auto-table-adapter-mybatis-plus-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-plus/2.7.2/auto-table-adapter-mybatis-plus-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/target/auto-table-adapter-mybatis-plus-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-plus/2.7.2/auto-table-adapter-mybatis-plus-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/target/auto-table-adapter-mybatis-plus-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-plus/2.7.2/auto-table-adapter-mybatis-plus-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.dromara.autotable:auto-table-adapter-mybatis-plus-spring-boot-starter[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding auto-table-adapter-mybatis-plus-spring-boot-starter 2.7.2 [27/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 3 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/src/main/java/org/dromara/autotable/adapter/mybatisplus/spring/MybatisPlusDynamicDataSourceHandler.java: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/src/main/java/org/dromara/autotable/adapter/mybatisplus/spring/MybatisPlusDynamicDataSourceHandler.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/src/main/java/org/dromara/autotable/adapter/mybatisplus/spring/MybatisPlusDynamicDataSourceHandler.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/target/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/target/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] 
+1 warning
+[[1;33mWARNING[m] Javadoc Warnings
+[[1;33mWARNING[m] /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/src/main/java/org/dromara/autotable/adapter/mybatisplus/spring/MybatisPlusAutoConfiguration.java:50: warning - Tag @link: reference not found: DynamicDataSourceConfiguration
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/target/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/target/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-plus-spring-boot-starter/2.7.2/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-plus-spring-boot-starter/2.7.2/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/target/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-plus-spring-boot-starter/2.7.2/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/target/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-plus-spring-boot-starter/2.7.2/auto-table-adapter-mybatis-plus-spring-boot-starter-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------< [0;36morg.dromara.autotable:auto-table-adapter-mybatis-flex[0;1m >--------[m
+[[1;34mINFO[m] [1mBuilding auto-table-adapter-mybatis-flex 2.7.2                   [28/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 4 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/src/main/java/org/dromara/autotable/adapter/mybatisflex/MybatisFlexMetadataAdapter.java: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/src/main/java/org/dromara/autotable/adapter/mybatisflex/MybatisFlexMetadataAdapter.java uses or overrides a deprecated API.
+[[1;34mINFO[m] /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/src/main/java/org/dromara/autotable/adapter/mybatisflex/MybatisFlexMetadataAdapter.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/target/auto-table-adapter-mybatis-flex-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/target/auto-table-adapter-mybatis-flex-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/target/auto-table-adapter-mybatis-flex-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/target/auto-table-adapter-mybatis-flex-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-flex/2.7.2/auto-table-adapter-mybatis-flex-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-flex/2.7.2/auto-table-adapter-mybatis-flex-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/target/auto-table-adapter-mybatis-flex-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-flex/2.7.2/auto-table-adapter-mybatis-flex-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/target/auto-table-adapter-mybatis-flex-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-flex/2.7.2/auto-table-adapter-mybatis-flex-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.dromara.autotable:auto-table-adapter-mybatis-flex-spring-boot-starter[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding auto-table-adapter-mybatis-flex-spring-boot-starter 2.7.2 [29/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 3 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/target/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/target/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/target/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/target/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-flex-spring-boot-starter/2.7.2/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-flex-spring-boot-starter/2.7.2/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/target/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-flex-spring-boot-starter/2.7.2/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/target/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-adapter-mybatis-flex-spring-boot-starter/2.7.2/auto-table-adapter-mybatis-flex-spring-boot-starter-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36morg.dromara.autotable:auto-table-support[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding auto-table-support 2.7.2                                [30/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-support[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-support[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-support[0;1m ---[m
+[[1;34mINFO[m] Not executing Javadoc as the project is not a Java classpath-capable package
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-support[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-support/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-support/2.7.2/auto-table-support-2.7.2.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36morg.dromara.autotable:auto-table-support-springdoc[0;1m >---------[m
+[[1;34mINFO[m] [1mBuilding auto-table-support-springdoc 2.7.2                      [31/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:compile[m [1m(default-compile)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 3 source files with javac [debug parameters target 1.8] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/auto-table-support/auto-table-support-springdoc/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-support/auto-table-support-springdoc/target/auto-table-support-springdoc-2.7.2.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.3.0:jar-no-fork[m [1m(attach-sources)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-support/auto-table-support-springdoc/target/auto-table-support-springdoc-2.7.2-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.6.3:jar[m [1m(attach-javadocs)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] No previous run data found, generating javadoc.
+[[1;34mINFO[m] Building jar: /var/maven/app/auto-table-support/auto-table-support-springdoc/target/auto-table-support-springdoc-2.7.2-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-support-springdoc[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-support/auto-table-support-springdoc/target/auto-table-support-springdoc-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-support-springdoc/2.7.2/auto-table-support-springdoc-2.7.2.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-support/auto-table-support-springdoc/pom.xml to /var/maven/.m2/repository/org/dromara/autotable/auto-table-support-springdoc/2.7.2/auto-table-support-springdoc-2.7.2.pom
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-support/auto-table-support-springdoc/target/auto-table-support-springdoc-2.7.2-sources.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-support-springdoc/2.7.2/auto-table-support-springdoc-2.7.2-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/auto-table-support/auto-table-support-springdoc/target/auto-table-support-springdoc-2.7.2-javadoc.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-support-springdoc/2.7.2/auto-table-support-springdoc-2.7.2-javadoc.jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for org.dromara.autotable:auto-table 2.7.2:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] org.dromara.autotable:auto-table ................... [1;32mSUCCESS[m [  1.118 s]
+[[1;34mINFO[m] auto-table-annotation .............................. [1;32mSUCCESS[m [  3.146 s]
+[[1;34mINFO[m] auto-table-core .................................... [1;32mSUCCESS[m [  4.159 s]
+[[1;34mINFO[m] auto-table-strategy ................................ [1;32mSUCCESS[m [  0.014 s]
+[[1;34mINFO[m] auto-table-strategy-dm ............................. [1;32mSUCCESS[m [  1.953 s]
+[[1;34mINFO[m] auto-table-strategy-doris .......................... [1;32mSUCCESS[m [  2.178 s]
+[[1;34mINFO[m] auto-table-strategy-h2 ............................. [1;32mSUCCESS[m [  1.935 s]
+[[1;34mINFO[m] auto-table-strategy-pgsql .......................... [1;32mSUCCESS[m [  2.739 s]
+[[1;34mINFO[m] auto-table-strategy-kingbase ....................... [1;32mSUCCESS[m [  1.124 s]
+[[1;34mINFO[m] auto-table-strategy-mysql .......................... [1;32mSUCCESS[m [  2.622 s]
+[[1;34mINFO[m] auto-table-strategy-oracle ......................... [1;32mSUCCESS[m [ 0.-449 s]
+[[1;34mINFO[m] auto-table-strategy-yashandb ....................... [1;32mSUCCESS[m [  2.277 s]
+[[1;34mINFO[m] auto-table-strategy-sqlserver ...................... [1;32mSUCCESS[m [  2.516 s]
+[[1;34mINFO[m] auto-table-strategy-sqlite ......................... [1;32mSUCCESS[m [  1.489 s]
+[[1;34mINFO[m] auto-table-strategy-all ............................ [1;32mSUCCESS[m [  0.871 s]
+[[1;34mINFO[m] auto-table-spring-boot-starter ..................... [1;32mSUCCESS[m [  1.583 s]
+[[1;34mINFO[m] auto-table-solon-plugin ............................ [1;32mSUCCESS[m [  1.553 s]
+[[1;34mINFO[m] auto-table-test .................................... [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] auto-table-test-core ............................... [1;32mSUCCESS[m [  2.286 s]
+[[1;34mINFO[m] auto-table-test-spring-boot ........................ [1;32mSUCCESS[m [  1.222 s]
+[[1;34mINFO[m] auto-table-test-dynamicdatasource .................. [1;32mSUCCESS[m [  0.578 s]
+[[1;34mINFO[m] auto-table-test-solon-plugin ....................... [1;32mSUCCESS[m [  1.234 s]
+[[1;34mINFO[m] auto-table-test-spring-boot-dynamicdatasource ...... [1;32mSUCCESS[m [  0.552 s]
+[[1;34mINFO[m] auto-table-test-doris .............................. [1;32mSUCCESS[m [  0.681 s]
+[[1;34mINFO[m] auto-table-adapter ................................. [1;32mSUCCESS[m [  0.015 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-plus .................... [1;32mSUCCESS[m [  2.411 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-plus-spring-boot-starter  [1;32mSUCCESS[m [  1.240 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-flex .................... [1;32mSUCCESS[m [  1.217 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-flex-spring-boot-starter  [1;32mSUCCESS[m [  1.170 s]
+[[1;34mINFO[m] auto-table-support ................................. [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] auto-table-support-springdoc ....................... [1;32mSUCCESS[m [  1.133 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  45.222 s
+[[1;34mINFO[m] Finished at: 2026-10-03T12:40:35Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Auto-table.buildinfo: No such file or directory
+dos2unix: Skipping target/Auto-table.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

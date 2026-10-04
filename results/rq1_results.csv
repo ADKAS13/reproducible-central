@@ -1,6 +1,11 @@
 repo,build_success,total_modules,modules_with_tests,total_tests,total_passed,total_failed,total_errored,total_skipped,equivalent_modules,non_equivalent_modules,skipped_flatten,upgraded_count,downgraded_count,removed_count,added_count,pass_rate,equivalence_rate
-automatalib,True,26,20,793,715,0,0,78,25,1,0,1,0,0,0,90.2,96.2
-cloudtrace,True,30,6,75,75,0,0,0,24,6,0,38,0,0,38,100.0,80.0
-easyvcr,False,1,1,32,30,2,0,0,1,0,0,0,0,0,0,93.8,100.0
+Xponents,True,1,1,12,12,0,0,0,1,0,0,0,0,0,43,100.0,100.0
+astra,True,4,1,112,109,0,0,3,4,0,0,0,0,0,0,97.3,100.0
+auto-table,True,26,1,31,31,0,0,0,26,0,0,0,0,0,1,100.0,100.0
+automatalib,True,22,18,760,682,0,0,78,22,0,0,0,0,0,0,89.7,100.0
+cloudtrace,True,30,6,75,75,0,0,0,30,0,0,0,0,0,14,100.0,100.0
+easyvcr,True,1,1,32,32,0,0,0,1,0,0,0,0,0,0,100.0,100.0
+sokrates,True,5,5,499,496,0,0,3,5,0,0,0,0,0,0,99.4,100.0
 teamengine,True,6,5,74,74,0,0,0,6,0,0,0,0,0,16,100.0,100.0
 telegrambots,True,9,9,576,576,0,0,0,9,0,0,0,0,0,1,100.0,100.0
+yosegi,True,1,1,4067,4067,0,0,0,1,0,0,0,0,0,0,100.0,100.0

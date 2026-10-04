@@ -1,0 +1,15 @@
+groupId=sec.web.renderer
+artifactId=mil-sym-java
+version=9
+
+gitRepo=https://github.com/missioncommand/old-mil-sym-java.git
+gitTag=1c7a176abffdb5ae0383d06c09618f7f9a326348
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dgpg.skip=true\""
+
+buildinfo=target/Old-mil-sym-java.buildinfo

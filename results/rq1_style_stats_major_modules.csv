@@ -1,4 +1,8 @@
 repo,module,build_success,tests_run,tests_failed,tests_errored,tests_skipped,pinned,upgraded,downgraded,added,removed,scope_changed,skipped_flatten,equivalent,tests_passed,pass_rate
+astra,astra-cli,True,0,0,0,0,17,6,0,2,0,0,False,False,0,
+astra,astra-core,True,112,0,0,3,16,5,0,2,0,0,False,False,109,97.3
+astra,astra-example,True,0,0,0,0,17,5,0,2,0,0,False,False,0,
+astra,astra-testing,True,0,0,0,0,17,5,0,2,0,0,False,False,0,
 automatalib,automata-brics,True,4,0,0,0,9,10,0,4,0,0,False,False,4,100.0
 automatalib,automata-api,True,79,0,0,0,6,10,0,4,0,0,False,False,79,100.0
 automatalib,basic,True,0,0,0,0,25,6,0,1,0,0,False,False,0,
@@ -56,7 +60,7 @@ cloudtrace,grpc-consumer,True,0,0,0,0,4,47,0,30,0,0,False,False,0,
 cloudtrace,http-consumer,True,0,0,0,0,4,47,0,30,0,0,False,False,0,
 cloudtrace,sink,True,2,0,0,0,57,0,0,1,0,0,False,True,2,100.0
 easyvcr,easyvcr,True,32,0,0,0,1,4,0,1,0,0,False,False,32,100.0
-teamengine,teamengine-core,True,50,0,0,0,9,25,0,27,0,0,False,False,50,100.0
+teamengine,teamengine-core,True,50,0,0,0,10,24,0,16,0,0,False,False,50,100.0
 teamengine,teamengine-realm,True,5,0,0,0,6,4,0,3,0,0,False,False,5,100.0
 teamengine,teamengine-resources,True,0,0,0,0,0,0,0,0,0,0,False,True,0,
 teamengine,teamengine-spi,True,7,0,0,0,13,28,0,18,0,0,False,False,7,100.0

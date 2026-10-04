@@ -1,0 +1,15 @@
+groupId=io.github.missioncommand
+artifactId=mil-sym-java
+version=9
+
+gitRepo=https://github.com/missioncommand/old-mil-sym-java.git
+gitTag=8d2587328b0eb25cfc85141eb2ff268a8f1e2454
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Old-mil-sym-java.buildinfo

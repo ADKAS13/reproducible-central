@@ -64,7 +64,7 @@ DEPRECATED: The legacy builder is deprecated and will be removed in a future rel
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
+sha256:c404047d535041d1f41ab3578ec3b25429b7f3b11a53dc6f3c3a573c06c2bdc1
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mnet.automatalib:automata-parent:9[0m release
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Sep  9 18:40:23 UTC 2026.
-Universal Time is now:  Wed Sep  9 18:40:23 UTC 2026.
+Local time is now:      Wed Sep 23 22:55:16 UTC 2026.
+Universal Time is now:  Wed Sep 23 22:55:16 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -127,11 +127,26 @@ Universal Time is now:  Wed Sep  9 18:40:23 UTC 2026.
 [[1;34mINFO[m] Deleting /var/maven/app/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;33mWARNING[m] pom.deps.management.xml already exists (managed) — skipping to protect your original backup.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-parent
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property checkerframework.version = 3.0.0
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property metainf-services.version = 1.8
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property cacio.version = 1.9
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property slf4j.version = 1.7.30
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property brics-automaton.version = 1.11-8
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property jung.version = 2.1.1
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property duzzt.version = 0.1.0
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property graphviz-awt-shapes.version = 0.0.1
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property guava.version = 28.2-jre
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property buildergen.version = 0.1
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property javax-annotations.version = 1.3.2
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property logback.version = 1.2.3
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property testng.version = 7.1.0
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property mockito.version = 3.2.4
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (managed) for automata-parent: pinned=46 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened dependencyManagement for: automata-parent (46 entries)
+[[1;34mINFO[m] POM updated successfully: automata-parent
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.8.2:attach-descriptor[m [1m(attach-descriptor)[m @ [36mautomata-parent[0;1m ---[m
 [[1;34mINFO[m] Attaching 'src/site/site.xml' site descriptor with classifier 'site'.
@@ -148,11 +163,10 @@ Universal Time is now:  Wed Sep  9 18:40:23 UTC 2026.
 [[1;34mINFO[m] Deleting /var/maven/app/build-parent/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-build-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/build-parent/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in automata-build-parent — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-build-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-build-parent
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for automata-build-parent — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-build-parent[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/build-parent/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-build-parent/0.10.0-SNAPSHOT/automata-build-parent-0.10.0-SNAPSHOT.pom
@@ -165,11 +179,10 @@ Universal Time is now:  Wed Sep  9 18:40:23 UTC 2026.
 [[1;34mINFO[m] Deleting /var/maven/app/commons/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-commons-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/commons/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in automata-commons-parent — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-commons-parent
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for automata-commons-parent — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-commons-parent[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/commons/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-commons-parent/0.10.0-SNAPSHOT/automata-commons-parent-0.10.0-SNAPSHOT.pom
@@ -182,15 +195,11 @@ Universal Time is now:  Wed Sep  9 18:40:23 UTC 2026.
 [[1;34mINFO[m] Deleting /var/maven/app/commons/smartcollections/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/commons/smartcollections/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 12 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-commons-smartcollections — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-commons-smartcollections
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/commons/smartcollections/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-commons-smartcollections: pinned=8 upgraded=4 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-commons-smartcollections: pinned=12 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-commons-smartcollections
 [[1;34mINFO[m] POM updated successfully: automata-commons-smartcollections
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
@@ -215,7 +224,7 @@ Universal Time is now:  Wed Sep  9 18:40:23 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.371 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -237,15 +246,11 @@ Universal Time is now:  Wed Sep  9 18:40:23 UTC 2026.
 [[1;34mINFO[m] Deleting /var/maven/app/commons/util/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-commons-util[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/commons/util/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-commons-util — 5 entries (literal=0, property=0, excluded=5)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-util[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-commons-util
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/commons/util/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-commons-util: pinned=10 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-commons-util: pinned=14 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-commons-util
 [[1;34mINFO[m] POM updated successfully: automata-commons-util
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-commons-util[0;1m ---[m
@@ -273,7 +278,7 @@ Universal Time is now:  Wed Sep  9 18:40:23 UTC 2026.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.484 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.531 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -295,15 +300,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/api/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-api[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/api/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 16 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-api — 6 entries (literal=0, property=0, excluded=6)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-api[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-api
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/api/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-api: pinned=12 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-api: pinned=16 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-api
 [[1;34mINFO[m] POM updated successfully: automata-api
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-api[0;1m ---[m
@@ -331,7 +332,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m79[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.497 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m79[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.528 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -353,15 +354,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/core/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-core[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/core/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 21 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-core — 9 entries (literal=0, property=0, excluded=9)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-core[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-core
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/core/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-core: pinned=13 upgraded=8 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-core: pinned=21 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-core
 [[1;34mINFO[m] POM updated successfully: automata-core
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-core[0;1m ---[m
@@ -389,7 +386,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m248[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.366 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m248[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.41 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -411,15 +408,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/util/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-util[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/util/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 26 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-util — 9 entries (literal=0, property=0, excluded=9)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-util[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-util
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/util/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-util: pinned=22 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-util: pinned=26 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-util
 [[1;34mINFO[m] POM updated successfully: automata-util
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-util[0;1m ---[m
@@ -447,7 +440,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m154[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.264 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m154[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.316 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -469,11 +462,10 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/adapters/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-adapters-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/adapters/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in automata-adapters-parent — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-adapters-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-adapters-parent
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for automata-adapters-parent — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-adapters-parent[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/adapters/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-adapters-parent/0.10.0-SNAPSHOT/automata-adapters-parent-0.10.0-SNAPSHOT.pom
@@ -486,15 +478,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/adapters/brics/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-brics[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/adapters/brics/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-brics — 6 entries (literal=0, property=0, excluded=6)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-brics[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-brics
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/adapters/brics/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-brics: pinned=15 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-brics: pinned=19 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-brics
 [[1;34mINFO[m] POM updated successfully: automata-brics
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-brics[0;1m ---[m
@@ -522,7 +510,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.332 s - in net.automatalib.brics.[1mBricsDFATest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.341 s - in net.automatalib.brics.[1mBricsDFATest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -544,11 +532,10 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/visualization/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-visualization-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/visualization/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in automata-visualization-parent — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-visualization-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-visualization-parent
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for automata-visualization-parent — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-visualization-parent[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/visualization/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-visualization-parent/0.10.0-SNAPSHOT/automata-visualization-parent-0.10.0-SNAPSHOT.pom
@@ -561,16 +548,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/visualization/jung-visualizer/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-jung-visualizer[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/visualization/jung-visualizer/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 37 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-jung-visualizer — 14 entries (literal=0, property=0, excluded=14)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-jung-visualizer[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-jung-visualizer — falling back to pinned lower bounds: Could not resolve following dependencies: []
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-jung-visualizer
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/visualization/jung-visualizer/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-jung-visualizer: pinned=37 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-jung-visualizer: pinned=37 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-jung-visualizer
 [[1;34mINFO[m] POM updated successfully: automata-jung-visualizer
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-jung-visualizer[0;1m ---[m
@@ -598,7 +580,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.524 s - in net.automatalib.visualization.jung.[1mProviderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.575 s - in net.automatalib.visualization.jung.[1mProviderTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -620,16 +602,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/incremental/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-incremental[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/incremental/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 37 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-incremental — 10 entries (literal=0, property=0, excluded=10)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-incremental[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-incremental — falling back to pinned lower bounds: Could not resolve following dependencies: []
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-incremental
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/incremental/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-incremental: pinned=37 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-incremental: pinned=37 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-incremental
 [[1;34mINFO[m] POM updated successfully: automata-incremental
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-incremental[0;1m ---[m
@@ -657,7 +634,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m69[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.936 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m69[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.877 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -679,11 +656,10 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in automata-serialization-parent — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-serialization-parent
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for automata-serialization-parent — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-parent[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/serialization/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-parent/0.10.0-SNAPSHOT/automata-serialization-parent-0.10.0-SNAPSHOT.pom
@@ -696,14 +672,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/core/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-core[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/core/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-serialization-core — 2 entries (literal=0, property=0, excluded=2)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-core[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-core
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/core/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-core: pinned=10 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-serialization-core: pinned=10 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-serialization-core
 [[1;34mINFO[m] POM updated successfully: automata-serialization-core
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-core[0;1m ---[m
@@ -739,15 +712,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/etf/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-etf[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/etf/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-serialization-etf — 7 entries (literal=0, property=0, excluded=7)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-etf[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-etf
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/etf/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-etf: pinned=15 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-serialization-etf: pinned=19 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-serialization-etf
 [[1;34mINFO[m] POM updated successfully: automata-serialization-etf
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-etf[0;1m ---[m
@@ -772,7 +741,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.398 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.409 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -794,15 +763,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/fsm/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-fsm[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/fsm/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-serialization-fsm — 8 entries (literal=0, property=0, excluded=8)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-fsm[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-fsm
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/fsm/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-fsm: pinned=15 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-serialization-fsm: pinned=19 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-serialization-fsm
 [[1;34mINFO[m] POM updated successfully: automata-serialization-fsm
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-fsm[0;1m ---[m
@@ -830,7 +795,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.391 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.375 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -852,15 +817,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/taf/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-taf[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/taf/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-serialization-taf — 7 entries (literal=0, property=0, excluded=7)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-taf[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-taf
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/taf/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-taf: pinned=15 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-serialization-taf: pinned=19 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-serialization-taf
 [[1;34mINFO[m] POM updated successfully: automata-serialization-taf
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mjavacc-maven-plugin:2.6:javacc[m [1m(javacc)[m @ [36mautomata-serialization-taf[0;1m ---[m
@@ -899,7 +860,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.401 s - in net.automatalib.serialization.taf.[1mTAFSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.419 s - in net.automatalib.serialization.taf.[1mTAFSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -921,11 +882,10 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/modelchecking/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-modelchecking-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/modelchecking/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in automata-modelchecking-parent — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-modelchecking-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-modelchecking-parent
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for automata-modelchecking-parent — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-modelchecking-parent[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/modelchecking/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-modelchecking-parent/0.10.0-SNAPSHOT/automata-modelchecking-parent-0.10.0-SNAPSHOT.pom
@@ -938,15 +898,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/modelchecking/ltsmin/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/modelchecking/ltsmin/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 25 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-modelchecking-ltsmin — 12 entries (literal=0, property=0, excluded=12)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-modelchecking-ltsmin
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/modelchecking/ltsmin/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-modelchecking-ltsmin: pinned=21 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-modelchecking-ltsmin: pinned=25 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-modelchecking-ltsmin
 [[1;34mINFO[m] POM updated successfully: automata-modelchecking-ltsmin
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mjavacc-maven-plugin:2.6:javacc[m [1m(javacc)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
@@ -984,7 +940,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m89[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m76[m, Time elapsed: 0.566 s - in [1mTestSuite[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m89[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m76[m, Time elapsed: 0.546 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1006,15 +962,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/aut/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-aut[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/aut/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-serialization-aut — 7 entries (literal=0, property=0, excluded=7)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-aut[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-aut
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/aut/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-aut: pinned=11 upgraded=8 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-serialization-aut: pinned=19 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-serialization-aut
 [[1;34mINFO[m] POM updated successfully: automata-serialization-aut
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-aut[0;1m ---[m
@@ -1039,7 +991,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.aut.[1mAUTSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.352 s - in net.automatalib.serialization.aut.[1mAUTSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.362 s - in net.automatalib.serialization.aut.[1mAUTSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1061,15 +1013,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/dot/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-dot[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/dot/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-serialization-dot — 8 entries (literal=0, property=0, excluded=8)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-dot[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-dot
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/dot/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-dot: pinned=15 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-serialization-dot: pinned=19 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-serialization-dot
 [[1;34mINFO[m] POM updated successfully: automata-serialization-dot
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mjavacc-maven-plugin:2.6:javacc[m [1m(javacc)[m @ [36mautomata-serialization-dot[0;1m ---[m
@@ -1108,7 +1056,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.453 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.424 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1130,15 +1078,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/learnlibv2/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/learnlibv2/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-serialization-learnlibv2 — 6 entries (literal=0, property=0, excluded=6)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-learnlibv2
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/learnlibv2/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-learnlibv2: pinned=15 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-serialization-learnlibv2: pinned=19 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-serialization-learnlibv2
 [[1;34mINFO[m] POM updated successfully: automata-serialization-learnlibv2
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
@@ -1163,7 +1107,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.382 s - in net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.346 s - in net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1185,15 +1129,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/serialization/saf/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-saf[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/saf/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-serialization-saf — 7 entries (literal=0, property=0, excluded=7)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-saf[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-saf
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/saf/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-saf: pinned=15 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-serialization-saf: pinned=19 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-serialization-saf
 [[1;34mINFO[m] POM updated successfully: automata-serialization-saf
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-saf[0;1m ---[m
@@ -1218,7 +1158,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.saf.[1mSAFSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.367 s - in net.automatalib.serialization.saf.[1mSAFSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 s - in net.automatalib.serialization.saf.[1mSAFSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1240,16 +1180,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/visualization/dot-visualizer/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-dot-visualizer[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/visualization/dot-visualizer/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 34 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-dot-visualizer — 11 entries (literal=0, property=0, excluded=11)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-dot-visualizer[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-dot-visualizer — falling back to pinned lower bounds: Could not resolve following dependencies: []
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-dot-visualizer
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/visualization/dot-visualizer/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-dot-visualizer: pinned=34 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-dot-visualizer: pinned=34 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-dot-visualizer
 [[1;34mINFO[m] POM updated successfully: automata-dot-visualizer
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-dot-visualizer[0;1m ---[m
@@ -1277,7 +1212,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.083 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.113 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1299,11 +1234,12 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/distribution/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-distribution[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/distribution/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 30 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-distribution — 18 entries (literal=0, property=0, excluded=18)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-distribution[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-distribution
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-distribution: pinned=30 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-distribution
+[[1;34mINFO[m] POM updated successfully: automata-distribution
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-distribution[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/distribution/pom.xml to /var/maven/.m2/repository/net/automatalib/distribution/automata-distribution/0.10.0-SNAPSHOT/automata-distribution-0.10.0-SNAPSHOT.pom
@@ -1316,11 +1252,10 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/archetypes/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-archetypes-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/archetypes/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in automata-archetypes-parent — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-archetypes-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-archetypes-parent
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for automata-archetypes-parent — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-archetypes-parent[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/archetypes/pom.xml to /var/maven/.m2/repository/net/automatalib/archetypes/automata-archetypes-parent/0.10.0-SNAPSHOT/automata-archetypes-parent-0.10.0-SNAPSHOT.pom
@@ -1333,33 +1268,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/archetypes/basic/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mbasic[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/archetypes/basic/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 31 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for basic — 1 entries (literal=0, property=0, excluded=1)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mbasic[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: basic
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/archetypes/basic/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for basic: pinned=25 upgraded=6 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for basic: pinned=31 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: basic
 [[1;34mINFO[m] POM updated successfully: basic
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.5.0:resources[m [1m(default-resources)[m @ [36mbasic[0;1m ---[m
@@ -1421,8 +1334,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] [INFO] BUILD SUCCESS
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
-[[1;34mINFO[m] [INFO] Total time:  1.171 s
-[[1;34mINFO[m] [INFO] Finished at: 2026-09-09T18:40:56Z
+[[1;34mINFO[m] [INFO] Total time:  1.304 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-09-23T22:55:51Z
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
 [[1;34mINFO[m] 
@@ -1440,33 +1353,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/archetypes/complete/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcomplete[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/archetypes/complete/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 31 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for complete — 1 entries (literal=0, property=0, excluded=1)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcomplete[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: complete
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/archetypes/complete/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for complete: pinned=25 upgraded=6 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for complete: pinned=31 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: complete
 [[1;34mINFO[m] POM updated successfully: complete
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.5.0:resources[m [1m(default-resources)[m @ [36mcomplete[0;1m ---[m
@@ -1528,8 +1419,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] [INFO] BUILD SUCCESS
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
-[[1;34mINFO[m] [INFO] Total time:  1.213 s
-[[1;34mINFO[m] [INFO] Finished at: 2026-09-09T18:40:58Z
+[[1;34mINFO[m] [INFO] Total time:  1.190 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-09-23T22:55:54Z
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
 [[1;34mINFO[m] 
@@ -1547,15 +1438,10 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/build-tools/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-build-tools[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/build-tools/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in automata-build-tools — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-build-tools[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-build-tools
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/build-tools/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-build-tools: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
-[[1;34mINFO[m] POM updated successfully: automata-build-tools
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for automata-build-tools — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-build-tools[0;1m ---[m
 [[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
@@ -1589,16 +1475,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Deleting /var/maven/app/examples/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-examples[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/examples/target/dependency-tree-before.txt
-[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
-[[1;34mINFO[m] Initialized pom.deps.xml with 42 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for automata-examples — 14 entries (literal=0, property=0, excluded=14)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-examples[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-examples — falling back to pinned lower bounds: Could not resolve following dependencies: []
-[[1;34mINFO[m] Flattening leaf module dependencies for: automata-examples
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/examples/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-examples: pinned=42 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for automata-examples: pinned=42 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: automata-examples
 [[1;34mINFO[m] POM updated successfully: automata-examples
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-examples[0;1m ---[m
@@ -1662,7 +1543,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [INFO] SimpleBricsExample: Output for a b b c is true
 [INFO] SimpleBricsExample: Output for a b b b b b d e is true
 [INFO] SimpleBricsExample: Output for a d e is false
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m10[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 1.684 s - in net.automatalib.examples.[1mExamplesTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m10[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 1.743 s - in net.automatalib.examples.[1mExamplesTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1678,42 +1559,42 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for AutomataLib 0.10.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  1.045 s]
-[[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.026 s]
-[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.026 s]
-[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  0.309 s]
-[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  3.083 s]
-[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  2.504 s]
-[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  5.585 s]
-[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  3.707 s]
-[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.014 s]
-[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  0.984 s]
-[[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;32mSUCCESS[m [  0.014 s]
-[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  1.375 s]
-[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  1.811 s]
-[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.014 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.082 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  1.017 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  1.070 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  1.300 s]
+[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  1.008 s]
+[[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.022 s]
+[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.020 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  2.669 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  3.097 s]
+[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  2.722 s]
+[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  5.824 s]
+[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  3.847 s]
+[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.012 s]
+[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  0.972 s]
+[[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;32mSUCCESS[m [  0.015 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  1.256 s]
+[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  1.693 s]
+[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.012 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.077 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  1.015 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  0.989 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  1.279 s]
 [[1;34mINFO[m] AutomataLib :: Model Checking ...................... [1;32mSUCCESS[m [  0.013 s]
-[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  1.612 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  1.050 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  1.217 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.977 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [  0.967 s]
-[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  1.837 s]
-[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.014 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.063 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  0.132 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  2.191 s]
-[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.040 s]
-[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  2.409 s]
+[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  1.673 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  0.961 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  1.170 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.921 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [ 0.-258 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  1.813 s]
+[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.024 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.055 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  2.631 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  2.148 s]
+[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.036 s]
+[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  2.543 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  36.855 s
-[[1;34mINFO[m] Finished at: 2026-09-09T18:41:01Z
+[[1;34mINFO[m] Total time:  39.336 s
+[[1;34mINFO[m] Finished at: 2026-09-23T22:55:56Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/AutomataRQ2-major.buildinfo: No such file or directory
 dos2unix: Skipping target/AutomataRQ2-major.buildinfo, not a regular file.

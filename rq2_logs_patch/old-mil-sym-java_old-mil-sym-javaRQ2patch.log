@@ -1,0 +1,8 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/broken repos/missing tests/old-mil-sym-java/old-mil-sym-javaRQ2patch.buildspec[0m
+/home/adkas13/reproducible-central/rebuild.sh: line 31: /home/adkas13/reproducible-central/broken: No such file or directory
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m could not source /home/adkas13/reproducible-central/broken repos/missing tests/old-mil-sym-java/old-mil-sym-javaRQ2patch.buildspec [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

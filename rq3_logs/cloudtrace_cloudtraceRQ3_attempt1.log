@@ -64,7 +64,7 @@ DEPRECATED: The legacy builder is deprecated and will be removed in a future rel
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-sha256:6159ec5824dfb1621785b4ebf694b27d2eef6ad91ff41ba967271c605bd493be
+sha256:9842b955938b8415e6a5ce537efa9415b2f909ed0466568529a9b3808f52ab73
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.google.cloud.trace:root:0.8.0[0m release
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Sep  9 18:41:03 UTC 2026.
-Universal Time is now:  Wed Sep  9 18:41:03 UTC 2026.
+Local time is now:      Wed Sep 23 22:55:58 UTC 2026.
+Universal Time is now:  Wed Sep 23 22:55:58 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -142,11 +142,14 @@ Universal Time is now:  Wed Sep  9 18:41:03 UTC 2026.
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mroot[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;33mWARNING[m] pom.deps.management.xml already exists (managed) — skipping to protect your original backup.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mroot[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: root
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property google-cloud-trace.version = 0.34.0-beta
+[[1;34mINFO[m] [LOCK-PLUGIN] Updated managed property grpc.version = 1.9.0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (managed) for root: pinned=2 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened dependencyManagement for: root (2 entries)
+[[1;34mINFO[m] POM updated successfully: root
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mroot[0;1m ---[m
 [[1;34mINFO[m] 
@@ -161,11 +164,10 @@ Universal Time is now:  Wed Sep  9 18:41:03 UTC 2026.
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msdk[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in sdk — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msdk[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: sdk
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for sdk — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36msdk[0;1m ---[m
 [[1;34mINFO[m] 
@@ -180,15 +182,10 @@ Universal Time is now:  Wed Sep  9 18:41:03 UTC 2026.
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mannotation[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/annotation/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in annotation — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mannotation[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: annotation
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/annotation/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for annotation: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
-[[1;34mINFO[m] POM updated successfully: annotation
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for annotation — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mannotation[0;1m ---[m
 [[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
@@ -254,14 +251,11 @@ Generating /var/maven/app/sdk/annotation/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcore[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/core/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for core — 4 entries (literal=0, property=0, excluded=4)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcore[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: core
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/core/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for core: pinned=2 upgraded=8 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for core: pinned=10 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: core
 [[1;34mINFO[m] POM updated successfully: core
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcore[0;1m ---[m
@@ -285,17 +279,17 @@ Generating /var/maven/app/sdk/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.core.SpanContextFactoryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
 Running com.google.cloud.trace.core.SpanContextTest
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.core.SpanIdTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.core.RateLimitingTraceOptionsFactoryTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.319 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.345 sec
 Running com.google.cloud.trace.core.TraceIdTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.google.cloud.trace.core.TraceOptionsTest
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 
 Results :
 
@@ -404,11 +398,10 @@ Generating /var/maven/app/sdk/core/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in guice — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: guice
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for guice — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mguice[0;1m ---[m
 [[1;34mINFO[m] 
@@ -423,14 +416,11 @@ Generating /var/maven/app/sdk/core/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-annotation[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/annotation/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 7 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-annotation — 6 entries (literal=0, property=0, excluded=6)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-annotation[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-annotation
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/annotation/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-annotation: pinned=7 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-annotation: pinned=7 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-annotation
 [[1;34mINFO[m] POM updated successfully: guice-annotation
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-annotation[0;1m ---[m
@@ -495,14 +485,11 @@ Generating /var/maven/app/guice/annotation/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcore-testing[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/core-testing/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for core-testing — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcore-testing[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: core-testing
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/core-testing/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for core-testing: pinned=2 upgraded=8 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for core-testing: pinned=10 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: core-testing
 [[1;34mINFO[m] POM updated successfully: core-testing
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcore-testing[0;1m ---[m
@@ -526,13 +513,13 @@ Generating /var/maven/app/guice/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.TestTraceIdFactoryTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
 Running com.google.cloud.trace.TestSpanContextHandlerTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
 Running com.google.cloud.trace.TestSpanIdFactoryTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.TestTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
 
 Results :
 
@@ -596,14 +583,11 @@ Generating /var/maven/app/sdk/core-testing/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msdk-sink[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/sink/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 2 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for sdk-sink — 1 entries (literal=0, property=0, excluded=1)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msdk-sink[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: sdk-sink
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/sink/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for sdk-sink: pinned=2 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for sdk-sink: pinned=2 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: sdk-sink
 [[1;34mINFO[m] POM updated successfully: sdk-sink
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36msdk-sink[0;1m ---[m
@@ -668,14 +652,11 @@ Generating /var/maven/app/sdk/sink/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mimplementation[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/implementation/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for implementation — 7 entries (literal=0, property=0, excluded=7)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mimplementation[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: implementation
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/implementation/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for implementation: pinned=6 upgraded=4 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for implementation: pinned=10 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: implementation
 [[1;34mINFO[m] POM updated successfully: implementation
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mimplementation[0;1m ---[m
@@ -699,11 +680,11 @@ Generating /var/maven/app/sdk/sink/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.GrpcSpanContextHandlerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
 Running com.google.cloud.trace.SdkVersionTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
 Running com.google.cloud.trace.SpanContextHandlerTracerTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
 
 Results :
 
@@ -755,14 +736,11 @@ Generating /var/maven/app/sdk/implementation/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-core[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/core/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 9 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-core — 4 entries (literal=0, property=0, excluded=4)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-core[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-core
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/core/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-core: pinned=9 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-core: pinned=9 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-core
 [[1;34mINFO[m] POM updated successfully: guice-core
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-core[0;1m ---[m
@@ -855,14 +833,11 @@ Generating /var/maven/app/guice/core/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-google-auth[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/google-auth/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-google-auth — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-google-auth[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-google-auth
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/google-auth/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-google-auth: pinned=14 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-google-auth: pinned=14 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-google-auth
 [[1;34mINFO[m] POM updated successfully: guice-google-auth
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-google-auth[0;1m ---[m
@@ -935,11 +910,10 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mv1[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sinks/v1/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in v1 — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mv1[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: v1
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for v1 — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mv1[0;1m ---[m
 [[1;34mINFO[m] 
@@ -954,14 +928,11 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msink[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sinks/v1/sink/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 57 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for sink — 7 entries (literal=0, property=0, excluded=7)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msink[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: sink
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sinks/v1/sink/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for sink: pinned=50 upgraded=7 downgraded=0 added=5 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for sink: pinned=57 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: sink
 [[1;34mINFO[m] POM updated successfully: sink
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36msink[0;1m ---[m
@@ -985,7 +956,7 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.v1.consumer.SimpleBufferingTraceConsumerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.321 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.367 sec
 Running com.google.cloud.trace.v1.consumer.SizedBufferingTraceConsumerTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 
@@ -1079,14 +1050,11 @@ Generating /var/maven/app/sinks/v1/sink/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgrpc-consumer[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sinks/v1/grpc-consumer/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 51 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for grpc-consumer — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mgrpc-consumer[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: grpc-consumer
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sinks/v1/grpc-consumer/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for grpc-consumer: pinned=51 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for grpc-consumer: pinned=51 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: grpc-consumer
 [[1;34mINFO[m] POM updated successfully: grpc-consumer
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mgrpc-consumer[0;1m ---[m
@@ -1147,14 +1115,11 @@ Generating /var/maven/app/sinks/v1/grpc-consumer/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-v1[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/v1/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 55 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-v1 — 5 entries (literal=0, property=0, excluded=5)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-v1[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-v1
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/v1/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-v1: pinned=55 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-v1: pinned=55 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-v1
 [[1;34mINFO[m] POM updated successfully: guice-v1
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-v1[0;1m ---[m
@@ -1245,14 +1210,11 @@ Generating /var/maven/app/guice/v1/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-grpc-sink[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/grpc-sink/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 57 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-grpc-sink — 5 entries (literal=0, property=0, excluded=5)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-grpc-sink[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-grpc-sink
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/grpc-sink/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-grpc-sink: pinned=57 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-grpc-sink: pinned=57 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-grpc-sink
 [[1;34mINFO[m] POM updated successfully: guice-grpc-sink
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-grpc-sink[0;1m ---[m
@@ -1313,14 +1275,11 @@ Generating /var/maven/app/guice/grpc-sink/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mjava-timestamp[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/java-timestamp/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 2 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for java-timestamp — 2 entries (literal=0, property=0, excluded=2)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mjava-timestamp[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: java-timestamp
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/java-timestamp/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for java-timestamp: pinned=2 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for java-timestamp: pinned=2 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: java-timestamp
 [[1;34mINFO[m] POM updated successfully: java-timestamp
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mjava-timestamp[0;1m ---[m
@@ -1383,14 +1342,11 @@ Generating /var/maven/app/sdk/java-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-java-timestamp[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/java-timestamp/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-java-timestamp — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-java-timestamp[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-java-timestamp
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/java-timestamp/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-java-timestamp: pinned=6 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-java-timestamp: pinned=6 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-java-timestamp
 [[1;34mINFO[m] POM updated successfully: guice-java-timestamp
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-java-timestamp[0;1m ---[m
@@ -1451,14 +1407,11 @@ Generating /var/maven/app/guice/java-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mjoda-timestamp[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/joda-timestamp/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 3 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for joda-timestamp — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mjoda-timestamp[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: joda-timestamp
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/joda-timestamp/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for joda-timestamp: pinned=3 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for joda-timestamp: pinned=3 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: joda-timestamp
 [[1;34mINFO[m] POM updated successfully: joda-timestamp
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mjoda-timestamp[0;1m ---[m
@@ -1521,14 +1474,11 @@ Generating /var/maven/app/sdk/joda-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-joda-timestamp[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/joda-timestamp/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 7 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-joda-timestamp — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-joda-timestamp[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-joda-timestamp
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/joda-timestamp/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-joda-timestamp: pinned=7 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-joda-timestamp: pinned=7 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-joda-timestamp
 [[1;34mINFO[m] POM updated successfully: guice-joda-timestamp
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-joda-timestamp[0;1m ---[m
@@ -1589,14 +1539,11 @@ Generating /var/maven/app/guice/joda-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mservlet[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/servlet/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 3 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for servlet — 2 entries (literal=0, property=0, excluded=2)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mservlet[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: servlet
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/servlet/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for servlet: pinned=3 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for servlet: pinned=3 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: servlet
 [[1;34mINFO[m] POM updated successfully: servlet
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mservlet[0;1m ---[m
@@ -1660,14 +1607,11 @@ Generating /var/maven/app/sdk/servlet/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-servlet[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/servlet/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 11 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-servlet — 7 entries (literal=0, property=0, excluded=7)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-servlet[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-servlet
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/servlet/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-servlet: pinned=11 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-servlet: pinned=11 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-servlet
 [[1;34mINFO[m] POM updated successfully: guice-servlet
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-servlet[0;1m ---[m
@@ -1734,14 +1678,11 @@ Generating /var/maven/app/guice/servlet/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-single-thread-scheduler[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/single-thread-scheduler/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 4 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-single-thread-scheduler — 1 entries (literal=0, property=0, excluded=1)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-single-thread-scheduler[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-single-thread-scheduler
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/single-thread-scheduler/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-single-thread-scheduler: pinned=4 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-single-thread-scheduler: pinned=4 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-single-thread-scheduler
 [[1;34mINFO[m] POM updated successfully: guice-single-thread-scheduler
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-single-thread-scheduler[0;1m ---[m
@@ -1802,14 +1743,11 @@ Generating /var/maven/app/guice/single-thread-scheduler/target/apidocs/help-doc.
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mservice[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/service/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for service — 2 entries (literal=0, property=0, excluded=2)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mservice[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: service
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/service/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for service: pinned=2 upgraded=4 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for service: pinned=6 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: service
 [[1;34mINFO[m] POM updated successfully: service
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mservice[0;1m ---[m
@@ -1833,7 +1771,7 @@ Generating /var/maven/app/guice/single-thread-scheduler/target/apidocs/help-doc.
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.TraceTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
 
 Results :
 
@@ -1890,11 +1828,10 @@ Generating /var/maven/app/sdk/service/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mservices-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/services/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in services-parent — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mservices-parent[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: services-parent
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for services-parent — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mservices-parent[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1909,14 +1846,11 @@ Generating /var/maven/app/sdk/service/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mlogging-service[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/services/logging-service/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 54 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for logging-service — 5 entries (literal=0, property=0, excluded=5)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mlogging-service[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: logging-service
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/services/logging-service/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for logging-service: pinned=54 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for logging-service: pinned=54 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: logging-service
 [[1;34mINFO[m] POM updated successfully: logging-service
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mlogging-service[0;1m ---[m
@@ -1977,11 +1911,10 @@ Generating /var/maven/app/services/logging-service/target/apidocs/help-doc.html.
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msamples[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] [LOCK-PLUGIN] No direct or managed dependencies in samples — nothing to lock.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msamples[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: samples
+[[1;33mWARNING[m] [LOCK-PLUGIN] No pom.deps.xml / pom.deps.management.xml for samples — run 'init' first. Skipping flatten.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36msamples[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1996,14 +1929,11 @@ Generating /var/maven/app/services/logging-service/target/apidocs/help-doc.html.
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mbasic-logging[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/basic-logging/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 55 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for basic-logging — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mbasic-logging[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: basic-logging
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/samples/basic-logging/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for basic-logging: pinned=55 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for basic-logging: pinned=55 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: basic-logging
 [[1;34mINFO[m] POM updated successfully: basic-logging
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mbasic-logging[0;1m ---[m
@@ -2064,14 +1994,11 @@ Generating /var/maven/app/samples/basic-logging/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mbuffering-grpc[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/buffering-grpc/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 54 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for buffering-grpc — 5 entries (literal=0, property=0, excluded=5)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mbuffering-grpc[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: buffering-grpc
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/samples/buffering-grpc/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for buffering-grpc: pinned=54 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for buffering-grpc: pinned=54 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: buffering-grpc
 [[1;34mINFO[m] POM updated successfully: buffering-grpc
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mbuffering-grpc[0;1m ---[m
@@ -2132,14 +2059,11 @@ Generating /var/maven/app/samples/buffering-grpc/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-scheduled-grpc[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/guice-scheduled-grpc/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 64 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-scheduled-grpc — 10 entries (literal=0, property=0, excluded=10)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-scheduled-grpc[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-scheduled-grpc
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/samples/guice-scheduled-grpc/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-scheduled-grpc: pinned=64 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-scheduled-grpc: pinned=64 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-scheduled-grpc
 [[1;34mINFO[m] POM updated successfully: guice-scheduled-grpc
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-scheduled-grpc[0;1m ---[m
@@ -2200,14 +2124,11 @@ Generating /var/maven/app/samples/guice-scheduled-grpc/target/apidocs/help-doc.h
 [[1;34mINFO[m] [1m--------------------------------[ war ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-servlet-grpc[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/guice-servlet-grpc/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 70 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for guice-servlet-grpc — 13 entries (literal=0, property=0, excluded=13)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-servlet-grpc[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: guice-servlet-grpc
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/samples/guice-servlet-grpc/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-servlet-grpc: pinned=70 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for guice-servlet-grpc: pinned=70 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: guice-servlet-grpc
 [[1;34mINFO[m] POM updated successfully: guice-servlet-grpc
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mguice-servlet-grpc[0;1m ---[m
@@ -2233,7 +2154,7 @@ Generating /var/maven/app/samples/guice-scheduled-grpc/target/apidocs/help-doc.h
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/samples/guice-servlet-grpc/src/main/webapp]
 [[1;34mINFO[m] Building jar: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT/WEB-INF/lib/guice-servlet-grpc-0.8.0-SNAPSHOT.jar
-[[1;34mINFO[m] Webapp assembled in [152 msecs]
+[[1;34mINFO[m] Webapp assembled in [175 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT.war
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mguice-servlet-grpc[0;1m ---[m
@@ -2279,14 +2200,11 @@ Generating /var/maven/app/samples/guice-servlet-grpc/target/apidocs/help-doc.htm
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mmanaged-grpc[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/managed-grpc/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 54 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for managed-grpc — 5 entries (literal=0, property=0, excluded=5)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mmanaged-grpc[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: managed-grpc
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/samples/managed-grpc/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for managed-grpc: pinned=54 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for managed-grpc: pinned=54 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: managed-grpc
 [[1;34mINFO[m] POM updated successfully: managed-grpc
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mmanaged-grpc[0;1m ---[m
@@ -2347,14 +2265,11 @@ Generating /var/maven/app/samples/managed-grpc/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mtrace-grpc-api-service[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/services/trace-grpc-api-service/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 55 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for trace-grpc-api-service — 8 entries (literal=0, property=0, excluded=8)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mtrace-grpc-api-service[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: trace-grpc-api-service
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/services/trace-grpc-api-service/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for trace-grpc-api-service: pinned=55 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for trace-grpc-api-service: pinned=55 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: trace-grpc-api-service
 [[1;34mINFO[m] POM updated successfully: trace-grpc-api-service
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mtrace-grpc-api-service[0;1m ---[m
@@ -2417,14 +2332,11 @@ Generating /var/maven/app/services/trace-grpc-api-service/target/apidocs/help-do
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mstackdriver-trace-api[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/stackdriver-trace-api/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 56 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for stackdriver-trace-api — 3 entries (literal=0, property=0, excluded=3)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mstackdriver-trace-api[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: stackdriver-trace-api
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/samples/stackdriver-trace-api/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for stackdriver-trace-api: pinned=56 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for stackdriver-trace-api: pinned=56 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: stackdriver-trace-api
 [[1;34mINFO[m] POM updated successfully: stackdriver-trace-api
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mstackdriver-trace-api[0;1m ---[m
@@ -2485,14 +2397,11 @@ Generating /var/maven/app/samples/stackdriver-trace-api/target/apidocs/help-doc.
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mappengine-standard-service[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/services/appengine-standard-service/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 63 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for appengine-standard-service — 9 entries (literal=0, property=0, excluded=9)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mappengine-standard-service[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: appengine-standard-service
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/services/appengine-standard-service/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for appengine-standard-service: pinned=56 upgraded=7 downgraded=0 added=5 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for appengine-standard-service: pinned=63 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: appengine-standard-service
 [[1;34mINFO[m] POM updated successfully: appengine-standard-service
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.5.0:compile[m [1m(default)[m @ [36mappengine-standard-service[0;1m ---[m
@@ -2524,11 +2433,11 @@ Generating /var/maven/app/samples/stackdriver-trace-api/target/apidocs/help-doc.
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.service.AppEngineSpanContextHandleTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.341 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.353 sec
 Running com.google.cloud.trace.service.AppEngineTraceServiceTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
 Running com.google.cloud.trace.service.AppEngineTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
 
 Results :
 
@@ -2592,14 +2501,11 @@ Generating /var/maven/app/services/appengine-standard-service/target/apidocs/hel
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mhttp-consumer[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sinks/v1/http-consumer/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 51 dependencies (version range mode: major).
+[[1;34mINFO[m] Initialized pom.deps.xml (direct) for http-consumer — 6 entries (literal=0, property=0, excluded=6)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mhttp-consumer[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: http-consumer
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sinks/v1/http-consumer/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for http-consumer: pinned=51 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Comparison (direct) for http-consumer: pinned=51 upgraded=0 downgraded=0 excluded=0
+[[1;34mINFO[m] Flattened direct dependencies for: http-consumer
 [[1;34mINFO[m] POM updated successfully: http-consumer
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mhttp-consumer[0;1m ---[m
@@ -2657,47 +2563,47 @@ Generating /var/maven/app/sinks/v1/http-consumer/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Google Cloud Trace Java SDK Root Project 0.8.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  1.019 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.021 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.117 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  2.442 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.012 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  0.662 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  0.967 s]
-[[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.692 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  0.922 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  0.834 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  0.703 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.007 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  1.429 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.714 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  0.892 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.642 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.620 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.595 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.592 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.602 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  0.564 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.668 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.584 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.822 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.006 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.666 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  1.015 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.028 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.269 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  1.728 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.010 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  0.655 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  0.912 s]
+[[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.686 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  0.913 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  0.781 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  0.739 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.008 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  1.500 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.707 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  0.842 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.647 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.566 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.607 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.591 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.587 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  0.554 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.696 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.611 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.756 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.007 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.607 s]
 [[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.007 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.564 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.618 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.609 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [ 0.-992 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.688 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.653 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.596 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  3.174 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.617 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.595 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [ 0.-643 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.535 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.710 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.681 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.630 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  3.108 s]
 [[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.613 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  25.724 s
-[[1;34mINFO[m] Finished at: 2026-09-09T18:41:30Z
+[[1;34mINFO[m] Total time:  26.378 s
+[[1;34mINFO[m] Finished at: 2026-09-23T22:56:26Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [0m[0mdos2unix: target/test.buildinfo: No such file or directory
 dos2unix: Skipping target/test.buildinfo, not a regular file.

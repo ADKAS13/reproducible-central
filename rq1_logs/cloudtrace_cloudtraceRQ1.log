@@ -1,4 +1,4 @@
-Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/cloudtrace/cloudtraceRQ1.buildspec[0m
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/cloudtrace/RQ1/cloudtraceRQ1.buildspec[0m
 | 1. rebuild what binaries?
 |      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
 |      [0;34mgroupId[0;97m: [1mcom.google.cloud.trace[0m
@@ -16,19 +16,19 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/cloudtrac
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1mmvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dmaven.compiler.source=1.8 -Dmaven.compiler.target=1.8[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/test.buildinfo[0m
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/GoogleCloudPlatform/cloud-trace-java.git[0m on tag [1m9aa2f22e571577887053a86d2236830b3922421b[0m
-/home/adkas13/reproducible-central/repos/cloudtrace/buildcache/root
+/home/adkas13/reproducible-central/repos/cloudtrace/RQ1/buildcache/root
 [0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
 [90m
 origin	https://github.com/GoogleCloudPlatform/cloud-trace-java.git (fetch)
 origin	https://github.com/GoogleCloudPlatform/cloud-trace-java.git (push)
 [0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
 [0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 9aa2f22e571577887053a86d2236830b3922421b [0m
-[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/cloudtrace/buildcache/root
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/cloudtrace/RQ1/buildcache/root
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.8.6
 [0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8[0m
@@ -68,7 +68,7 @@ sha256:6159ec5824dfb1621785b4ebf694b27d2eef6ad91ff41ba967271c605bd493be
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.google.cloud.trace:root:0.8.0[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/cloudtrace/buildcache/root:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022 mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dmaven.compiler.source=1.8 -Dmaven.compiler.target=1.8 -V -e org.apache.maven.plugins:maven-artifact-plugin:3.6.1:compare org.apache.maven.plugins:maven-artifact-plugin:3.6.1:describe-build-output -Dcompare.fail=false [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/cloudtrace/RQ1/buildcache/root:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,16 +79,10 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Sep  9 18:47:13 UTC 2026.
-Universal Time is now:  Wed Sep  9 18:47:13 UTC 2026.
+Local time is now:      Sat Oct  3 17:14:42 UTC 2026.
+Universal Time is now:  Sat Oct  3 17:14:42 UTC 2026.
 
 [0;93m[0m
-[1mApache Maven 3.8.6 (84538c9988a25aec085021c365c560670ad80f63)[m
-Maven home: /usr/local/apache-maven
-Java version: 1.8.0_502, vendor: Private Build, runtime: /usr/lib/jvm/java-8-openjdk-amd64/jre
-Default locale: en_US, platform encoding: UTF-8
-OS name: "linux", version: "6.18.33.2-microsoft-standard-wsl2", arch: "amd64", family: "unix"
-[[1;34mINFO[m] Error stacktraces are turned on.
 [[1;34mINFO[m] Scanning for projects...
 [[1;34mINFO[m] ------------------------------------------------------------------------
 [[1;34mINFO[m] Detecting the operating system and CPU architecture
@@ -148,11 +142,10 @@ OS name: "linux", version: "6.18.33.2-microsoft-standard-wsl2", arch: "amd64", f
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mroot[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mroot[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mroot[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: root
@@ -165,23 +158,15 @@ OS name: "linux", version: "6.18.33.2-microsoft-standard-wsl2", arch: "amd64", f
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mroot[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/com/google/cloud/trace/root/0.8.0-SNAPSHOT/root-0.8.0-SNAPSHOT.pom
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mroot[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/target/reference/root-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m1 files match[m
-[[1;34mINFO[m]                                                  saved to target/root-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------------------< [0;36mcom.google.cloud.trace:sdk[0;1m >---------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Parent Project 0.8.0-SNAPSHOT [2/36][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msdk[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msdk[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msdk[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: sdk
@@ -194,23 +179,15 @@ OS name: "linux", version: "6.18.33.2-microsoft-standard-wsl2", arch: "amd64", f
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36msdk[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/sdk/pom.xml to /var/maven/.m2/repository/com/google/cloud/trace/sdk/0.8.0-SNAPSHOT/sdk-0.8.0-SNAPSHOT.pom
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36msdk[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/target/reference/sdk-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m1 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/target/sdk-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-----------------< [0;36mcom.google.cloud.trace:annotation[0;1m >------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Annotations 0.8.0-SNAPSHOT   [3/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mannotation[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/annotation/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mannotation[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/annotation/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mannotation[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -279,31 +256,21 @@ Generating /var/maven/app/sdk/annotation/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/annotation/target/annotation-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/annotation/0.8.0-SNAPSHOT/annotation-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/annotation/target/annotation-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/annotation/0.8.0-SNAPSHOT/annotation-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mannotation[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/annotation/target/reference/annotation-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/annotation/target/annotation-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------------< [0;36mcom.google.cloud.trace:core[0;1m >---------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Core Components 0.8.0-SNAPSHOT [4/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mcore[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/core/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcore[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/core/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcore[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 [[1;34mINFO[m] Flattening leaf module dependencies for: core
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/core/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for core: pinned=2 upgraded=8 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for core: pinned=10 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: core
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcore[0;1m ---[m
@@ -329,17 +296,17 @@ Generating /var/maven/app/sdk/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.core.SpanContextFactoryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
 Running com.google.cloud.trace.core.SpanContextTest
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.core.SpanIdTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.google.cloud.trace.core.RateLimitingTraceOptionsFactoryTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.323 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.332 sec
 Running com.google.cloud.trace.core.TraceIdTest
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.google.cloud.trace.core.TraceOptionsTest
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
 
 Results :
 
@@ -443,25 +410,15 @@ Generating /var/maven/app/sdk/core/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/core/target/core-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/core/0.8.0-SNAPSHOT/core-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/core/target/core-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/core/0.8.0-SNAPSHOT/core-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mcore[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/core/target/reference/core-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/core/target/core-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------------< [0;36mcom.google.cloud.trace:guice[0;1m >--------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Guice Support Libraries 0.8.0-SNAPSHOT [5/36][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: guice
@@ -474,23 +431,15 @@ Generating /var/maven/app/sdk/core/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mguice[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/guice/pom.xml to /var/maven/.m2/repository/com/google/cloud/trace/guice/0.8.0-SNAPSHOT/guice-0.8.0-SNAPSHOT.pom
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/target/reference/guice-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m1 files match[m
-[[1;34mINFO[m]                                                  saved to guice/target/guice-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------< [0;36mcom.google.cloud.trace:guice-annotation[0;1m >---------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Annotation Support Guice Modules 0.8.0-SNAPSHOT [6/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-annotation[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/annotation/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-annotation[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/annotation/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 7 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-annotation[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -557,31 +506,21 @@ Generating /var/maven/app/guice/annotation/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/guice/annotation/target/guice-annotation-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-annotation/0.8.0-SNAPSHOT/guice-annotation-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/annotation/target/guice-annotation-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-annotation/0.8.0-SNAPSHOT/guice-annotation-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-annotation[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/annotation/target/reference/guice-annotation-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/annotation/target/guice-annotation-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m----------------< [0;36mcom.google.cloud.trace:core-testing[0;1m >-----------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Core Testing Components 0.8.0-SNAPSHOT [7/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mcore-testing[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/core-testing/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcore-testing[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/core-testing/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcore-testing[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 [[1;34mINFO[m] Flattening leaf module dependencies for: core-testing
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/core-testing/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for core-testing: pinned=2 upgraded=8 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for core-testing: pinned=10 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: core-testing
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcore-testing[0;1m ---[m
@@ -607,13 +546,13 @@ Generating /var/maven/app/guice/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.TestTraceIdFactoryTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec
 Running com.google.cloud.trace.TestSpanContextHandlerTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
 Running com.google.cloud.trace.TestSpanIdFactoryTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.TestTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
 
 Results :
 
@@ -672,25 +611,15 @@ Generating /var/maven/app/sdk/core-testing/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/core-testing/target/core-testing-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/core-testing/0.8.0-SNAPSHOT/core-testing-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/core-testing/target/core-testing-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/core-testing/0.8.0-SNAPSHOT/core-testing-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mcore-testing[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/core-testing/target/reference/core-testing-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/core-testing/target/core-testing-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m------------------< [0;36mcom.google.cloud.trace:sdk-sink[0;1m >-------------------[m
 [[1;34mINFO[m] [1mBuilding sdk-sink 0.8.0-SNAPSHOT                                  [8/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msdk-sink[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/sink/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msdk-sink[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/sink/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 2 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msdk-sink[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -757,31 +686,21 @@ Generating /var/maven/app/sdk/sink/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/sink/target/sdk-sink-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/sdk-sink/0.8.0-SNAPSHOT/sdk-sink-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/sink/target/sdk-sink-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/sdk-sink/0.8.0-SNAPSHOT/sdk-sink-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36msdk-sink[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/sink/target/reference/sdk-sink-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/sink/target/sdk-sink-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------------< [0;36mcom.google.cloud.trace:implementation[0;1m >----------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Core Components Implementations 0.8.0-SNAPSHOT [9/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mimplementation[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/implementation/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mimplementation[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/implementation/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mimplementation[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 [[1;34mINFO[m] Flattening leaf module dependencies for: implementation
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/implementation/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for implementation: pinned=6 upgraded=4 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for implementation: pinned=10 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: implementation
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mimplementation[0;1m ---[m
@@ -807,11 +726,11 @@ Generating /var/maven/app/sdk/sink/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.GrpcSpanContextHandlerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
 Running com.google.cloud.trace.SdkVersionTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.google.cloud.trace.SpanContextHandlerTracerTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
 
 Results :
 
@@ -858,25 +777,15 @@ Generating /var/maven/app/sdk/implementation/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/implementation/target/implementation-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/implementation/0.8.0-SNAPSHOT/implementation-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/implementation/target/implementation-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/implementation/0.8.0-SNAPSHOT/implementation-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mimplementation[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/implementation/target/reference/implementation-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/implementation/target/implementation-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-----------------< [0;36mcom.google.cloud.trace:guice-core[0;1m >------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Core Guice Modules 0.8.0-SNAPSHOT [10/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-core[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/core/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-core[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/core/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 9 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-core[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -971,25 +880,15 @@ Generating /var/maven/app/guice/core/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/guice/core/target/guice-core-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-core/0.8.0-SNAPSHOT/guice-core-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/core/target/guice-core-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-core/0.8.0-SNAPSHOT/guice-core-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-core[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/core/target/reference/guice-core-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/core/target/guice-core-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------< [0;36mcom.google.cloud.trace:guice-google-auth[0;1m >--------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Google Auth Guice Modules 0.8.0-SNAPSHOT [11/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-google-auth[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/google-auth/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-google-auth[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/google-auth/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-google-auth[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1064,25 +963,15 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/guice/google-auth/target/guice-google-auth-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-google-auth/0.8.0-SNAPSHOT/guice-google-auth-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/google-auth/target/guice-google-auth-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-google-auth/0.8.0-SNAPSHOT/guice-google-auth-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-google-auth[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/google-auth/target/reference/guice-google-auth-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/google-auth/target/guice-google-auth-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------------< [0;36mcom.google.cloud.trace.v1:v1[0;1m >--------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK API v1 Dependencies 0.8.0-SNAPSHOT [12/36][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mv1[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sinks/v1/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mv1[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sinks/v1/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mv1[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: v1
@@ -1095,29 +984,25 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mv1[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/sinks/v1/pom.xml to /var/maven/.m2/repository/com/google/cloud/trace/v1/v1/0.8.0-SNAPSHOT/v1-0.8.0-SNAPSHOT.pom
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mv1[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sinks/v1/target/reference/v1-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m1 files match[m
-[[1;34mINFO[m]                                                  saved to sinks/v1/target/v1-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-------------------< [0;36mcom.google.cloud.trace.v1:sink[0;1m >-------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK API v1 Dependencies 0.8.0-SNAPSHOT [13/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.6 kB at 19 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (7.2 kB at 65 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msink[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sinks/v1/sink/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msink[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sinks/v1/sink/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 57 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msink[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 [[1;34mINFO[m] Flattening leaf module dependencies for: sink
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sinks/v1/sink/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for sink: pinned=50 upgraded=7 downgraded=0 added=5 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for sink: pinned=57 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: sink
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36msink[0;1m ---[m
@@ -1143,7 +1028,7 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.v1.consumer.SimpleBufferingTraceConsumerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.37 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.315 sec
 Running com.google.cloud.trace.v1.consumer.SizedBufferingTraceConsumerTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
@@ -1232,25 +1117,15 @@ Generating /var/maven/app/sinks/v1/sink/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sinks/v1/sink/target/sink-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/v1/sink/0.8.0-SNAPSHOT/sink-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sinks/v1/sink/target/sink-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/v1/sink/0.8.0-SNAPSHOT/sink-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36msink[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sinks/v1/sink/target/reference/sink-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sinks/v1/sink/target/sink-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------< [0;36mcom.google.cloud.trace.v1:grpc-consumer[0;1m >---------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK gRPC Sink 0.8.0-SNAPSHOT    [14/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgrpc-consumer[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sinks/v1/grpc-consumer/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgrpc-consumer[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sinks/v1/grpc-consumer/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 51 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mgrpc-consumer[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1313,25 +1188,15 @@ Generating /var/maven/app/sinks/v1/grpc-consumer/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sinks/v1/grpc-consumer/target/grpc-consumer-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/v1/grpc-consumer/0.8.0-SNAPSHOT/grpc-consumer-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sinks/v1/grpc-consumer/target/grpc-consumer-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/v1/grpc-consumer/0.8.0-SNAPSHOT/grpc-consumer-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mgrpc-consumer[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sinks/v1/grpc-consumer/target/reference/grpc-consumer-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sinks/v1/grpc-consumer/target/grpc-consumer-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m------------------< [0;36mcom.google.cloud.trace:guice-v1[0;1m >-------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK API V1 Guice Modules 0.8.0-SNAPSHOT [15/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-v1[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/v1/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-v1[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/v1/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 55 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-v1[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1424,25 +1289,15 @@ Generating /var/maven/app/guice/v1/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/guice/v1/target/guice-v1-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-v1/0.8.0-SNAPSHOT/guice-v1-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/v1/target/guice-v1-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-v1/0.8.0-SNAPSHOT/guice-v1-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-v1[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/v1/target/reference/guice-v1-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/v1/target/guice-v1-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------------< [0;36mcom.google.cloud.trace:guice-grpc-sink[0;1m >---------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK gRPC Sink Guice Modules 0.8.0-SNAPSHOT [16/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-grpc-sink[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/grpc-sink/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-grpc-sink[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/grpc-sink/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 57 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-grpc-sink[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1505,25 +1360,15 @@ Generating /var/maven/app/guice/grpc-sink/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/guice/grpc-sink/target/guice-grpc-sink-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-grpc-sink/0.8.0-SNAPSHOT/guice-grpc-sink-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/grpc-sink/target/guice-grpc-sink-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-grpc-sink/0.8.0-SNAPSHOT/guice-grpc-sink-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-grpc-sink[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/grpc-sink/target/reference/guice-grpc-sink-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/grpc-sink/target/guice-grpc-sink-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------------< [0;36mcom.google.cloud.trace:java-timestamp[0;1m >----------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Java Timestamp Utilities 0.8.0-SNAPSHOT [17/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mjava-timestamp[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/java-timestamp/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mjava-timestamp[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/java-timestamp/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 2 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mjava-timestamp[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1588,25 +1433,15 @@ Generating /var/maven/app/sdk/java-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/java-timestamp/target/java-timestamp-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/java-timestamp/0.8.0-SNAPSHOT/java-timestamp-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/java-timestamp/target/java-timestamp-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/java-timestamp/0.8.0-SNAPSHOT/java-timestamp-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mjava-timestamp[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/java-timestamp/target/reference/java-timestamp-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/java-timestamp/target/java-timestamp-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m------------< [0;36mcom.google.cloud.trace:guice-java-timestamp[0;1m >-------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Java Timestamp Guice Modules 0.8.0-SNAPSHOT [18/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-java-timestamp[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/java-timestamp/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-java-timestamp[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/java-timestamp/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-java-timestamp[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1669,25 +1504,15 @@ Generating /var/maven/app/guice/java-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/guice/java-timestamp/target/guice-java-timestamp-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-java-timestamp/0.8.0-SNAPSHOT/guice-java-timestamp-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/java-timestamp/target/guice-java-timestamp-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-java-timestamp/0.8.0-SNAPSHOT/guice-java-timestamp-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-java-timestamp[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/java-timestamp/target/reference/guice-java-timestamp-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/java-timestamp/target/guice-java-timestamp-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------------< [0;36mcom.google.cloud.trace:joda-timestamp[0;1m >----------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Joda Timestamp Utilities 0.8.0-SNAPSHOT [19/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mjoda-timestamp[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/joda-timestamp/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mjoda-timestamp[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/joda-timestamp/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 3 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mjoda-timestamp[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1752,25 +1577,15 @@ Generating /var/maven/app/sdk/joda-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/joda-timestamp/target/joda-timestamp-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/joda-timestamp/0.8.0-SNAPSHOT/joda-timestamp-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/joda-timestamp/target/joda-timestamp-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/joda-timestamp/0.8.0-SNAPSHOT/joda-timestamp-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mjoda-timestamp[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/joda-timestamp/target/reference/joda-timestamp-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/joda-timestamp/target/joda-timestamp-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m------------< [0;36mcom.google.cloud.trace:guice-joda-timestamp[0;1m >-------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Joda Timestamp Guice Modules 0.8.0-SNAPSHOT [20/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-joda-timestamp[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/joda-timestamp/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-joda-timestamp[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/joda-timestamp/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 7 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-joda-timestamp[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1833,25 +1648,15 @@ Generating /var/maven/app/guice/joda-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/guice/joda-timestamp/target/guice-joda-timestamp-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-joda-timestamp/0.8.0-SNAPSHOT/guice-joda-timestamp-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/joda-timestamp/target/guice-joda-timestamp-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-joda-timestamp/0.8.0-SNAPSHOT/guice-joda-timestamp-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-joda-timestamp[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/joda-timestamp/target/reference/guice-joda-timestamp-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/joda-timestamp/target/guice-joda-timestamp-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-------------------< [0;36mcom.google.cloud.trace:servlet[0;1m >-------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Servlet Utilities 0.8.0-SNAPSHOT [21/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mservlet[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/servlet/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mservlet[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/servlet/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 3 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mservlet[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -1917,25 +1722,15 @@ Generating /var/maven/app/sdk/servlet/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/servlet/target/servlet-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/servlet/0.8.0-SNAPSHOT/servlet-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/servlet/target/servlet-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/servlet/0.8.0-SNAPSHOT/servlet-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mservlet[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/servlet/target/reference/servlet-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/servlet/target/servlet-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m----------------< [0;36mcom.google.cloud.trace:guice-servlet[0;1m >----------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Servlet Support Guice Modules 0.8.0-SNAPSHOT [22/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-servlet[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/servlet/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-servlet[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/servlet/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 11 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-servlet[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2004,25 +1799,15 @@ Generating /var/maven/app/guice/servlet/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/guice/servlet/target/guice-servlet-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-servlet/0.8.0-SNAPSHOT/guice-servlet-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/servlet/target/guice-servlet-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-servlet/0.8.0-SNAPSHOT/guice-servlet-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-servlet[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/servlet/target/reference/guice-servlet-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/servlet/target/guice-servlet-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------< [0;36mcom.google.cloud.trace:guice-single-thread-scheduler[0;1m >--------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules 0.8.0-SNAPSHOT [23/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-single-thread-scheduler[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/guice/single-thread-scheduler/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-single-thread-scheduler[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/guice/single-thread-scheduler/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 4 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-single-thread-scheduler[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2085,31 +1870,21 @@ Generating /var/maven/app/guice/single-thread-scheduler/target/apidocs/help-doc.
 [[1;34mINFO[m] Installing /var/maven/app/guice/single-thread-scheduler/target/guice-single-thread-scheduler-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-single-thread-scheduler/0.8.0-SNAPSHOT/guice-single-thread-scheduler-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/guice/single-thread-scheduler/target/guice-single-thread-scheduler-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-single-thread-scheduler/0.8.0-SNAPSHOT/guice-single-thread-scheduler-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-single-thread-scheduler[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/guice/single-thread-scheduler/target/reference/guice-single-thread-scheduler-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to guice/single-thread-scheduler/target/guice-single-thread-scheduler-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-------------------< [0;36mcom.google.cloud.trace:service[0;1m >-------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Service Definition 0.8.0-SNAPSHOT [24/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mservice[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sdk/service/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mservice[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sdk/service/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mservice[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 [[1;34mINFO[m] Flattening leaf module dependencies for: service
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/service/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for service: pinned=2 upgraded=4 downgraded=0 added=4 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for service: pinned=6 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: service
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mservice[0;1m ---[m
@@ -2135,7 +1910,7 @@ Generating /var/maven/app/guice/single-thread-scheduler/target/apidocs/help-doc.
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.TraceTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec
 
 Results :
 
@@ -2187,25 +1962,15 @@ Generating /var/maven/app/sdk/service/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sdk/service/target/service-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/service/0.8.0-SNAPSHOT/service-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sdk/service/target/service-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/service/0.8.0-SNAPSHOT/service-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mservice[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/sdk/service/target/reference/service-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to sdk/service/target/service-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------------< [0;36mcom.google.cloud.trace:services-parent[0;1m >---------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Services 0.8.0-SNAPSHOT     [25/36][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mservices-parent[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/services/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mservices-parent[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/services/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mservices-parent[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: services-parent
@@ -2218,23 +1983,15 @@ Generating /var/maven/app/sdk/service/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mservices-parent[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/services/pom.xml to /var/maven/.m2/repository/com/google/cloud/trace/services-parent/0.8.0-SNAPSHOT/services-parent-0.8.0-SNAPSHOT.pom
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mservices-parent[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/services/target/reference/services-parent-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m1 files match[m
-[[1;34mINFO[m]                                                  saved to services/target/services-parent-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------------< [0;36mcom.google.cloud.trace:logging-service[0;1m >---------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Logging Service 0.8.0-SNAPSHOT [26/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mlogging-service[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/services/logging-service/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mlogging-service[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/services/logging-service/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 54 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mlogging-service[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2297,25 +2054,15 @@ Generating /var/maven/app/services/logging-service/target/apidocs/help-doc.html.
 [[1;34mINFO[m] Installing /var/maven/app/services/logging-service/target/logging-service-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/logging-service/0.8.0-SNAPSHOT/logging-service-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/services/logging-service/target/logging-service-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/logging-service/0.8.0-SNAPSHOT/logging-service-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mlogging-service[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/services/logging-service/target/reference/logging-service-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to services/logging-service/target/logging-service-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-------------------< [0;36mcom.google.cloud.trace:samples[0;1m >-------------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Samples 0.8.0-SNAPSHOT      [27/36][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msamples[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/samples/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msamples[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msamples[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: samples
@@ -2328,20 +2075,15 @@ Generating /var/maven/app/services/logging-service/target/apidocs/help-doc.html.
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36msamples[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/samples/pom.xml to /var/maven/.m2/repository/com/google/cloud/trace/samples/0.8.0-SNAPSHOT/samples-0.8.0-SNAPSHOT.pom
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36msamples[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Auto-skipping goal because module skips install and/or deploy
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m----------------< [0;36mcom.google.cloud.trace:basic-logging[0;1m >----------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Basic Logging Sample 0.8.0-SNAPSHOT [28/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbasic-logging[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/samples/basic-logging/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mbasic-logging[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/basic-logging/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 55 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mbasic-logging[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2404,20 +2146,15 @@ Generating /var/maven/app/samples/basic-logging/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/samples/basic-logging/target/basic-logging-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/basic-logging/0.8.0-SNAPSHOT/basic-logging-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/samples/basic-logging/target/basic-logging-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/basic-logging/0.8.0-SNAPSHOT/basic-logging-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mbasic-logging[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Auto-skipping goal because module skips install and/or deploy
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------------< [0;36mcom.google.cloud.trace:buffering-grpc[0;1m >----------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Buffering gRPC Sample 0.8.0-SNAPSHOT [29/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbuffering-grpc[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/samples/buffering-grpc/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mbuffering-grpc[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/buffering-grpc/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 54 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mbuffering-grpc[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2480,20 +2217,15 @@ Generating /var/maven/app/samples/buffering-grpc/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/samples/buffering-grpc/target/buffering-grpc-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/buffering-grpc/0.8.0-SNAPSHOT/buffering-grpc-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/samples/buffering-grpc/target/buffering-grpc-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/buffering-grpc/0.8.0-SNAPSHOT/buffering-grpc-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mbuffering-grpc[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Auto-skipping goal because module skips install and/or deploy
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m------------< [0;36mcom.google.cloud.trace:guice-scheduled-grpc[0;1m >-------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Guice Scheduled gRPC Sample 0.8.0-SNAPSHOT [30/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-scheduled-grpc[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/samples/guice-scheduled-grpc/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-scheduled-grpc[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/guice-scheduled-grpc/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 64 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-scheduled-grpc[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2556,20 +2288,15 @@ Generating /var/maven/app/samples/guice-scheduled-grpc/target/apidocs/help-doc.h
 [[1;34mINFO[m] Installing /var/maven/app/samples/guice-scheduled-grpc/target/guice-scheduled-grpc-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-scheduled-grpc/0.8.0-SNAPSHOT/guice-scheduled-grpc-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/samples/guice-scheduled-grpc/target/guice-scheduled-grpc-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-scheduled-grpc/0.8.0-SNAPSHOT/guice-scheduled-grpc-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-scheduled-grpc[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Auto-skipping goal because module skips install and/or deploy
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-------------< [0;36mcom.google.cloud.trace:guice-servlet-grpc[0;1m >--------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Guice Servlet Sample 0.8.0-SNAPSHOT [31/36][m
 [[1;34mINFO[m] [1m--------------------------------[ war ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mguice-servlet-grpc[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/samples/guice-servlet-grpc/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mguice-servlet-grpc[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/guice-servlet-grpc/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 70 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-servlet-grpc[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2602,7 +2329,7 @@ Generating /var/maven/app/samples/guice-scheduled-grpc/target/apidocs/help-doc.h
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/samples/guice-servlet-grpc/src/main/webapp]
 [[1;34mINFO[m] Building jar: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT/WEB-INF/lib/guice-servlet-grpc-0.8.0-SNAPSHOT.jar
-[[1;34mINFO[m] Webapp assembled in [119 msecs]
+[[1;34mINFO[m] Webapp assembled in [127 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT.war
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mguice-servlet-grpc[0;1m ---[m
@@ -2643,20 +2370,15 @@ Generating /var/maven/app/samples/guice-servlet-grpc/target/apidocs/help-doc.htm
 [[1;34mINFO[m] Installing /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-servlet-grpc/0.8.0-SNAPSHOT/guice-servlet-grpc-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/guice-servlet-grpc/0.8.0-SNAPSHOT/guice-servlet-grpc-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mguice-servlet-grpc[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Auto-skipping goal because module skips install and/or deploy
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m----------------< [0;36mcom.google.cloud.trace:managed-grpc[0;1m >-----------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Managed gRPC Sample 0.8.0-SNAPSHOT [32/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmanaged-grpc[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/samples/managed-grpc/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mmanaged-grpc[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/managed-grpc/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 54 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mmanaged-grpc[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2719,20 +2441,15 @@ Generating /var/maven/app/samples/managed-grpc/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/samples/managed-grpc/target/managed-grpc-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/managed-grpc/0.8.0-SNAPSHOT/managed-grpc-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/samples/managed-grpc/target/managed-grpc-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/managed-grpc/0.8.0-SNAPSHOT/managed-grpc-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mmanaged-grpc[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Auto-skipping goal because module skips install and/or deploy
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-----------< [0;36mcom.google.cloud.trace:trace-grpc-api-service[0;1m >------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK gRPC Trace API Service 0.8.0-SNAPSHOT [33/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mtrace-grpc-api-service[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/services/trace-grpc-api-service/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mtrace-grpc-api-service[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/services/trace-grpc-api-service/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 55 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mtrace-grpc-api-service[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2797,25 +2514,15 @@ Generating /var/maven/app/services/trace-grpc-api-service/target/apidocs/help-do
 [[1;34mINFO[m] Installing /var/maven/app/services/trace-grpc-api-service/target/trace-grpc-api-service-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/trace-grpc-api-service/0.8.0-SNAPSHOT/trace-grpc-api-service-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/services/trace-grpc-api-service/target/trace-grpc-api-service-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/trace-grpc-api-service/0.8.0-SNAPSHOT/trace-grpc-api-service-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mtrace-grpc-api-service[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/services/trace-grpc-api-service/target/reference/trace-grpc-api-service-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to services/trace-grpc-api-service/target/trace-grpc-api-service-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m------------< [0;36mcom.google.cloud.trace:stackdriver-trace-api[0;1m >------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Stackdriver Trace API example 0.8.0-SNAPSHOT [34/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mstackdriver-trace-api[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/samples/stackdriver-trace-api/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mstackdriver-trace-api[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/samples/stackdriver-trace-api/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 56 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mstackdriver-trace-api[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -2878,26 +2585,21 @@ Generating /var/maven/app/samples/stackdriver-trace-api/target/apidocs/help-doc.
 [[1;34mINFO[m] Installing /var/maven/app/samples/stackdriver-trace-api/target/stackdriver-trace-api-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/stackdriver-trace-api/0.8.0-SNAPSHOT/stackdriver-trace-api-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/samples/stackdriver-trace-api/target/stackdriver-trace-api-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/stackdriver-trace-api/0.8.0-SNAPSHOT/stackdriver-trace-api-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mstackdriver-trace-api[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Auto-skipping goal because module skips install and/or deploy
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m---------< [0;36mcom.google.cloud.trace:appengine-standard-service[0;1m >----------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK App Engine Standard Service 0.8.0-SNAPSHOT [35/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mappengine-standard-service[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/services/appengine-standard-service/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mappengine-standard-service[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/services/appengine-standard-service/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 63 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mappengine-standard-service[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 [[1;34mINFO[m] Flattening leaf module dependencies for: appengine-standard-service
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/services/appengine-standard-service/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for appengine-standard-service: pinned=56 upgraded=7 downgraded=0 added=5 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for appengine-standard-service: pinned=63 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: appengine-standard-service
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.5.0:compile[m [1m(default)[m @ [36mappengine-standard-service[0;1m ---[m
@@ -2930,11 +2632,11 @@ Generating /var/maven/app/samples/stackdriver-trace-api/target/apidocs/help-doc.
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.service.AppEngineSpanContextHandleTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.367 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.328 sec
 Running com.google.cloud.trace.service.AppEngineTraceServiceTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
 Running com.google.cloud.trace.service.AppEngineTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
 
 Results :
 
@@ -2993,25 +2695,15 @@ Generating /var/maven/app/services/appengine-standard-service/target/apidocs/hel
 [[1;34mINFO[m] Installing /var/maven/app/services/appengine-standard-service/target/appengine-standard-service-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/appengine-standard-service/0.8.0-SNAPSHOT/appengine-standard-service-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/services/appengine-standard-service/target/appengine-standard-service-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/appengine-standard-service/0.8.0-SNAPSHOT/appengine-standard-service-0.8.0-SNAPSHOT-javadoc.jar
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mappengine-standard-service[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/services/appengine-standard-service/target/reference/appengine-standard-service-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m3 files match[m
-[[1;34mINFO[m]                                                  saved to services/appengine-standard-service/target/appengine-standard-service-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------< [0;36mcom.google.cloud.trace.v1:http-consumer[0;1m >---------------[m
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK HTTP Sink 0.8.0-SNAPSHOT    [36/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mhttp-consumer[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/sinks/v1/http-consumer/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mhttp-consumer[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/sinks/v1/http-consumer/target/dependency-tree-before.txt
-[[1;33mWARNING[m] pom.deps.xml already exists! Skipping init to protect your original backup.
+[[1;34mINFO[m] Initialized pom.deps.xml with 51 dependencies (version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mhttp-consumer[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
@@ -3073,211 +2765,50 @@ Generating /var/maven/app/sinks/v1/http-consumer/target/apidocs/help-doc.html...
 [[1;34mINFO[m] Installing /var/maven/app/sinks/v1/http-consumer/pom.xml to /var/maven/.m2/repository/com/google/cloud/trace/v1/http-consumer/0.8.0-SNAPSHOT/http-consumer-0.8.0-SNAPSHOT.pom
 [[1;34mINFO[m] Installing /var/maven/app/sinks/v1/http-consumer/target/http-consumer-0.8.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/google/cloud/trace/v1/http-consumer/0.8.0-SNAPSHOT/http-consumer-0.8.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] Installing /var/maven/app/sinks/v1/http-consumer/target/http-consumer-0.8.0-SNAPSHOT-javadoc.jar to /var/maven/.m2/repository/com/google/cloud/trace/v1/http-consumer/0.8.0-SNAPSHOT/http-consumer-0.8.0-SNAPSHOT-javadoc.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:compare[m [1m(default-cli)[m @ [36mhttp-consumer[0;1m ---[m
-[[1;31mERROR[m] Reproducible Build not activated by project.build.outputTimestamp property: see https://maven.apache.org/guides/mini/guide-reproducible-builds.html
-[[1;34mINFO[m] Saved aggregate info on build to /var/maven/app/sinks/v1/http-consumer/target/http-consumer-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] Aggregate buildinfo copied to target/root-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] Checking against reference build from central...
-[[1;34mINFO[m] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
-[[1;34mINFO[m] Reference build java.version: 1.8.0_502 (from MANIFEST.MF Build-Jdk)
-[[1;34mINFO[m] Reference build os.name: Unix (from pom.properties newline)
-[[1;34mINFO[m] Minimal buildinfo generated from downloaded artifacts: /var/maven/app/target/reference/http-consumer-0.8.0-SNAPSHOT.buildinfo
-[[1;34mINFO[m] [Reproducible Builds] rebuild comparison result: [1;32m77 files match[m
-[[1;34mINFO[m]                                                  saved to sinks/v1/http-consumer/target/http-consumer-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] Aggregate buildcompare copied to target/root-0.8.0-SNAPSHOT.buildcompare
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--------------------< [0;36mcom.google.cloud.trace:root[0;1m >---------------------[m
-[[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK Root Project 0.8.0-SNAPSHOT [37/36][m
-[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.1:describe-build-output[m [1m(default-cli)[m @ [36mroot[0;1m ---[m
-[[1;34mINFO[m] reactor executionRoot = com.google.cloud.trace:root:pom:0.8.0-SNAPSHOT (current)
-       reactor first = executionRoot
-               first.parent = null
-[[1;34mINFO[m] outputTimestamp = null => disabled
-[[1;34mINFO[m] plugin outputTimestamp parameter diagnostics:
-        - plugin outputTimestamp parameter (defaultValue="${project.build.outputTimestamp}") = null
-        - project.build.outputTimestamp property from project = null
-        - project.build.outputTimestamp property from project model = null
-        - project.build.outputTimestamp property from project original model = null
-[[1;34mINFO[m] 
-[[1;34mINFO[m] parent in reactor: com.google.cloud.trace:root @ pom.xml (36 modules), property = null
-[[1;34mINFO[m] 
-[[1;34mINFO[m] groupId: com.google.cloud.trace (32 artifactIds)
-[[1;34mINFO[m] groupId: com.google.cloud.trace.v1 (4 artifactIds)
-[[1;34mINFO[m] 
-[[1;34mINFO[m] skip/ignore? artifactId[1m[:classifier][:extension][m = build-path repository-filename size [sha256]
-[[1;34mINFO[m]              root[1m:pom[m = pom.xml [1mroot-0.8.0-SNAPSHOT.pom[m 5759 e2656365e9d1e89799c0eaf3fe32296b7ad39e2c06189c05aa1c9a3d77dde223
-[[1;34mINFO[m]              sdk[1m:pom[m = sdk/pom.xml [1msdk-0.8.0-SNAPSHOT.pom[m 998 e381505b665dbd65987464463ff0bb7a48a23188fdec7a5c6bb2d0ba548c7e13
-[[1;34mINFO[m]              annotation[1m:pom[m = sdk/annotation/pom.xml [1mannotation-0.8.0-SNAPSHOT.pom[m 658 616338ceb6c51ece1442b60d8a3dbbeef41284cccdd4e452c3b4f556c89390cd
-[[1;34mINFO[m]              annotation[1m[m = [32msdk/annotation/target/[mannotation-0.8.0-SNAPSHOT.jar - 4513 35dfbbc52c7dd2ca521496a23901dac5d5e06e8da73462f5417510196860316c
-[[1;34mINFO[m]              annotation[1m:sources[m = [32msdk/annotation/target/[mannotation-0.8.0-SNAPSHOT-sources.jar - 6309 c7d511514f6e1d5b37ec27e03ac1b3eb522c1042e9a87dcac762210c279d8d35
-[[1;34mINFO[m] RB-ignored   annotation[1m:javadoc[m = [32msdk/annotation/target/[mannotation-0.8.0-SNAPSHOT-javadoc.jar - 39307
-[[1;34mINFO[m]              core[1m:pom[m = sdk/core/pom.xml [1mcore-0.8.0-SNAPSHOT.pom[m 3614 87a26c5e75d672e48fbe076a6dba4b41e051fdcfede703092772c3b8f17aaafa
-[[1;34mINFO[m]              core[1m[m = [32msdk/core/target/[mcore-0.8.0-SNAPSHOT.jar - 25552 3f1d741a7f8280604f853425621331d6f0c703ae14eb1e9a1d7c26e15a5dec2c
-[[1;34mINFO[m]              core[1m:sources[m = [32msdk/core/target/[mcore-0.8.0-SNAPSHOT-sources.jar - 29528 133c1ba46fc832813b70a5e8ac12b74980162d3e378c2c441b9ead27df22df0a
-[[1;34mINFO[m] RB-ignored   core[1m:javadoc[m = [32msdk/core/target/[mcore-0.8.0-SNAPSHOT-javadoc.jar - 170988
-[[1;34mINFO[m]              guice[1m:pom[m = guice/pom.xml [1mguice-0.8.0-SNAPSHOT.pom[m 946 e9e1f54cf50b783e3c9168f8ffc72ad3f8af97417296d8fe092233cb8b226f60
-[[1;34mINFO[m]              guice-annotation[1m:pom[m = guice/annotation/pom.xml [1mguice-annotation-0.8.0-SNAPSHOT.pom[m 2225 2a11cc825fc6103ef39486b1e952330661a4450f98f88113c523cdf58087c39d
-[[1;34mINFO[m]              guice-annotation[1m[m = [32mguice/annotation/target/[mguice-annotation-0.8.0-SNAPSHOT.jar - 9207 ff7c8808f71dc7a9679afda0d5fcdd2d87a0a80a651f3908966e4867d7b85b94
-[[1;34mINFO[m]              guice-annotation[1m:sources[m = [32mguice/annotation/target/[mguice-annotation-0.8.0-SNAPSHOT-sources.jar - 6664 6eebc406bb3a511e0e2a83dc562ea3943bdc4e62d76fed9d0e2621f5deccf054
-[[1;34mINFO[m] RB-ignored   guice-annotation[1m:javadoc[m = [32mguice/annotation/target/[mguice-annotation-0.8.0-SNAPSHOT-javadoc.jar - 34824
-[[1;34mINFO[m]              core-testing[1m:pom[m = sdk/core-testing/pom.xml [1mcore-testing-0.8.0-SNAPSHOT.pom[m 3634 c0bd0887ebc0ca35bf2d1b8a36e4d2a535a508f632a1c88542fa8162bcf1794a
-[[1;34mINFO[m]              core-testing[1m[m = [32msdk/core-testing/target/[mcore-testing-0.8.0-SNAPSHOT.jar - 9900 9c9668170b01212cfa7daa969704505c1c706711cf2e58a8c192e18bdbeb9d36
-[[1;34mINFO[m]              core-testing[1m:sources[m = [32msdk/core-testing/target/[mcore-testing-0.8.0-SNAPSHOT-sources.jar - 6875 c747b07e9ce49ca3dd43c1ffccf51cb056d50dc7e27bdf2971fb5861339f2159
-[[1;34mINFO[m] RB-ignored   core-testing[1m:javadoc[m = [32msdk/core-testing/target/[mcore-testing-0.8.0-SNAPSHOT-javadoc.jar - 60968
-[[1;34mINFO[m]              sdk-sink[1m:pom[m = sdk/sink/pom.xml [1msdk-sink-0.8.0-SNAPSHOT.pom[m 935 d847fb7dde8929ede30a3c42fde573cdece14e0c31edf1e7983fe8a6a059a4be
-[[1;34mINFO[m]              sdk-sink[1m[m = [32msdk/sink/target/[msdk-sink-0.8.0-SNAPSHOT.jar - 4218 916a8f4199ed348843ed336bc012fac90852301bfb9fdee9e98817506b1e6628
-[[1;34mINFO[m]              sdk-sink[1m:sources[m = [32msdk/sink/target/[msdk-sink-0.8.0-SNAPSHOT-sources.jar - 5054 c4fb97db8655e8df15d978ddb34b98da5c117e0b64974757911c1354e1958d2c
-[[1;34mINFO[m] RB-ignored   sdk-sink[1m:javadoc[m = [32msdk/sink/target/[msdk-sink-0.8.0-SNAPSHOT-javadoc.jar - 35480
-[[1;34mINFO[m]              implementation[1m:pom[m = sdk/implementation/pom.xml [1mimplementation-0.8.0-SNAPSHOT.pom[m 3850 446392e70f33cc16f0b4757437b7fd649f2e897597d9978d21d6c1d1e2be7daf
-[[1;34mINFO[m]              implementation[1m[m = [32msdk/implementation/target/[mimplementation-0.8.0-SNAPSHOT.jar - 9083 eab0389382a9a0af86761384dd9d8b20ce5e3962fe0cf9a39a882723db94eecc
-[[1;34mINFO[m]              implementation[1m:sources[m = [32msdk/implementation/target/[mimplementation-0.8.0-SNAPSHOT-sources.jar - 6737 e41e80af023229d766cda83ea1913cbb23f0001f37f841c6a854d2c7707d97a0
-[[1;34mINFO[m] RB-ignored   implementation[1m:javadoc[m = [32msdk/implementation/target/[mimplementation-0.8.0-SNAPSHOT-javadoc.jar - 34995
-[[1;34mINFO[m]              guice-core[1m:pom[m = guice/core/pom.xml [1mguice-core-0.8.0-SNAPSHOT.pom[m 2625 8cc8b6bf4f1197c04ee82adf09a0e50a914723a0cfa3ea83eb61a877147226a5
-[[1;34mINFO[m]              guice-core[1m[m = [32mguice/core/target/[mguice-core-0.8.0-SNAPSHOT.jar - 13904 3f411f36345f49403f8d1fe1dcc0e2cb86dd13388d9ccfeaf2d8ddcfad601d4b
-[[1;34mINFO[m]              guice-core[1m:sources[m = [32mguice/core/target/[mguice-core-0.8.0-SNAPSHOT-sources.jar - 15934 b7b9825703c65a98b08f047868d36181584969dfa5a90829e21cc56f40f53d53
-[[1;34mINFO[m] RB-ignored   guice-core[1m:javadoc[m = [32mguice/core/target/[mguice-core-0.8.0-SNAPSHOT-javadoc.jar - 91116
-[[1;34mINFO[m]              guice-google-auth[1m:pom[m = guice/google-auth/pom.xml [1mguice-google-auth-0.8.0-SNAPSHOT.pom[m 3775 c926c8b363863dd736fe9ee6a268addc12dd8b80d749882c3e743b53bdced82c
-[[1;34mINFO[m]              guice-google-auth[1m[m = [32mguice/google-auth/target/[mguice-google-auth-0.8.0-SNAPSHOT.jar - 8562 3c768962b0caedce25566f7814023b5c5be73122ad209d3541cb75e5192b245f
-[[1;34mINFO[m]              guice-google-auth[1m:sources[m = [32mguice/google-auth/target/[mguice-google-auth-0.8.0-SNAPSHOT-sources.jar - 8688 fa5123d37a8c149bc50fba615e8aa61ff6905829b99bfe0a2ed92f09d5e09db2
-[[1;34mINFO[m] RB-ignored   guice-google-auth[1m:javadoc[m = [32mguice/google-auth/target/[mguice-google-auth-0.8.0-SNAPSHOT-javadoc.jar - 49967
-[[1;34mINFO[m]              v1[1m:pom[m = sinks/v1/pom.xml [1mv1-0.8.0-SNAPSHOT.pom[m 733 02862ddae4f4366fb3f6a1ce0032feccf12c4ad560c8b56f79e066a35d4a17d1
-[[1;34mINFO[m]              sink[1m:pom[m = sinks/v1/sink/pom.xml [1msink-0.8.0-SNAPSHOT.pom[m 14073 aece94b87f5428e104a9f6c78fb730d2e592366f88e0358a166bb101d3f49d68
-[[1;34mINFO[m]              sink[1m[m = [32msinks/v1/sink/target/[msink-0.8.0-SNAPSHOT.jar - 19921 bd9edaf7e7f8839da12fd2b978d328a2b71a0318ba8e56fb69c4f2a98164ac66
-[[1;34mINFO[m]              sink[1m:sources[m = [32msinks/v1/sink/target/[msink-0.8.0-SNAPSHOT-sources.jar - 18125 fc1cf5732ebe99d6c80a56450d4104aba62c89bedbc6db31da6b7b0570ef2117
-[[1;34mINFO[m] RB-ignored   sink[1m:javadoc[m = [32msinks/v1/sink/target/[msink-0.8.0-SNAPSHOT-javadoc.jar - 105136
-[[1;34mINFO[m]              grpc-consumer[1m:pom[m = sinks/v1/grpc-consumer/pom.xml [1mgrpc-consumer-0.8.0-SNAPSHOT.pom[m 11981 34f06d90da4cfaa0b78f8f6a87e033e6ab4fe9046b1d9de8218c08dfecc5486d
-[[1;34mINFO[m]              grpc-consumer[1m[m = [32msinks/v1/grpc-consumer/target/[mgrpc-consumer-0.8.0-SNAPSHOT.jar - 4668 f008b5778ef8b01df8074f25d20590381a48259be46c474ff802bbf088588d71
-[[1;34mINFO[m]              grpc-consumer[1m:sources[m = [32msinks/v1/grpc-consumer/target/[mgrpc-consumer-0.8.0-SNAPSHOT-sources.jar - 4471 9e49019e1084975d4c52b65d4e75a269c787bd586bc0268291d11f37c735457f
-[[1;34mINFO[m] RB-ignored   grpc-consumer[1m:javadoc[m = [32msinks/v1/grpc-consumer/target/[mgrpc-consumer-0.8.0-SNAPSHOT-javadoc.jar - 26915
-[[1;34mINFO[m]              guice-v1[1m:pom[m = guice/v1/pom.xml [1mguice-v1-0.8.0-SNAPSHOT.pom[m 12879 bb19d09b23bf64316e98110cd2a3f005f62d021077fb3034fb96443f8033c3b6
-[[1;34mINFO[m]              guice-v1[1m[m = [32mguice/v1/target/[mguice-v1-0.8.0-SNAPSHOT.jar - 16121 d3d22765e52ab7f3e62f24be9b02be7dad8230888dad51e60bc0bc562421d4f0
-[[1;34mINFO[m]              guice-v1[1m:sources[m = [32mguice/v1/target/[mguice-v1-0.8.0-SNAPSHOT-sources.jar - 16333 63c7e7b7c53630e4857570605dc0c4a81b19666d466a4f235aa7788917957f32
-[[1;34mINFO[m] RB-ignored   guice-v1[1m:javadoc[m = [32mguice/v1/target/[mguice-v1-0.8.0-SNAPSHOT-javadoc.jar - 86739
-[[1;34mINFO[m]              guice-grpc-sink[1m:pom[m = guice/grpc-sink/pom.xml [1mguice-grpc-sink-0.8.0-SNAPSHOT.pom[m 13347 102e9b98e3b7ca9fcb8766b16e2926e675a0d7f0dc58c4633821f141c5a43841
-[[1;34mINFO[m]              guice-grpc-sink[1m[m = [32mguice/grpc-sink/target/[mguice-grpc-sink-0.8.0-SNAPSHOT.jar - 4051 34af163b281c3f8874f8968023b3cb365f61b2d308164022ea320980fa3f790a
-[[1;34mINFO[m]              guice-grpc-sink[1m:sources[m = [32mguice/grpc-sink/target/[mguice-grpc-sink-0.8.0-SNAPSHOT-sources.jar - 4244 9c2c76a7244a17c6977ff9e3a52b3d9fb8b99e9af9d779467e1b899c2862a930
-[[1;34mINFO[m] RB-ignored   guice-grpc-sink[1m:javadoc[m = [32mguice/grpc-sink/target/[mguice-grpc-sink-0.8.0-SNAPSHOT-javadoc.jar - 25286
-[[1;34mINFO[m]              java-timestamp[1m:pom[m = sdk/java-timestamp/pom.xml [1mjava-timestamp-0.8.0-SNAPSHOT.pom[m 1137 1c89f168b4af9311a60454b82106e394bbaf3a83115a1f35e1dc1acad59f9d55
-[[1;34mINFO[m]              java-timestamp[1m[m = [32msdk/java-timestamp/target/[mjava-timestamp-0.8.0-SNAPSHOT.jar - 3550 5cd23e1e53e1f3f1479656ee6beb68b80a18c745cf3e3932859d93dcbb827e8a
-[[1;34mINFO[m]              java-timestamp[1m:sources[m = [32msdk/java-timestamp/target/[mjava-timestamp-0.8.0-SNAPSHOT-sources.jar - 3929 4bd702e11d9500707e173ade399e113948278c679c5507553282fa49b6092301
-[[1;34mINFO[m] RB-ignored   java-timestamp[1m:javadoc[m = [32msdk/java-timestamp/target/[mjava-timestamp-0.8.0-SNAPSHOT-javadoc.jar - 29361
-[[1;34mINFO[m]              guice-java-timestamp[1m:pom[m = guice/java-timestamp/pom.xml [1mguice-java-timestamp-0.8.0-SNAPSHOT.pom[m 1998 431434b7b69d5b7725b57c20a0bd2dbbfc2f0abf05f7982e89a593b3b03ddae0
-[[1;34mINFO[m]              guice-java-timestamp[1m[m = [32mguice/java-timestamp/target/[mguice-java-timestamp-0.8.0-SNAPSHOT.jar - 3031 840697052ea057f956eec9f51d1c9043abbf7aabafbcc45b821579d68acd849b
-[[1;34mINFO[m]              guice-java-timestamp[1m:sources[m = [32mguice/java-timestamp/target/[mguice-java-timestamp-0.8.0-SNAPSHOT-sources.jar - 3184 76c683b1485d4cab08a0883f5544c89698a4351b6763ac6f8f45c3f4a521ef1b
-[[1;34mINFO[m] RB-ignored   guice-java-timestamp[1m:javadoc[m = [32mguice/java-timestamp/target/[mguice-java-timestamp-0.8.0-SNAPSHOT-javadoc.jar - 24791
-[[1;34mINFO[m]              joda-timestamp[1m:pom[m = sdk/joda-timestamp/pom.xml [1mjoda-timestamp-0.8.0-SNAPSHOT.pom[m 1341 120812ffc42e7bf1ffd686252854b683c0b3a596259365a7a521b857bf9a9090
-[[1;34mINFO[m]              joda-timestamp[1m[m = [32msdk/joda-timestamp/target/[mjoda-timestamp-0.8.0-SNAPSHOT.jar - 3595 35581627d9fe1b8c942a24bd5533cb51aa0629f02fee1d9a5672a2e6f8f51053
-[[1;34mINFO[m]              joda-timestamp[1m:sources[m = [32msdk/joda-timestamp/target/[mjoda-timestamp-0.8.0-SNAPSHOT-sources.jar - 3842 88ce77fb7c6b1cddb88e8de405bee1b74958d84149f499912eeb189653af8914
-[[1;34mINFO[m] RB-ignored   joda-timestamp[1m:javadoc[m = [32msdk/joda-timestamp/target/[mjoda-timestamp-0.8.0-SNAPSHOT-javadoc.jar - 29086
-[[1;34mINFO[m]              guice-joda-timestamp[1m:pom[m = guice/joda-timestamp/pom.xml [1mguice-joda-timestamp-0.8.0-SNAPSHOT.pom[m 2202 4bfe1c3fbfa1379e751c2be7de7fd3d305fd9d03398259d4be7440224dc47668
-[[1;34mINFO[m]              guice-joda-timestamp[1m[m = [32mguice/joda-timestamp/target/[mguice-joda-timestamp-0.8.0-SNAPSHOT.jar - 3046 062f7cb3a675c8cc90973afe05e72f7e3034033fd3f57509d907013d98541b6b
-[[1;34mINFO[m]              guice-joda-timestamp[1m:sources[m = [32mguice/joda-timestamp/target/[mguice-joda-timestamp-0.8.0-SNAPSHOT-sources.jar - 2855 7302077c10cb431eca7ad7a7b5d65db5a6536a2e61dd9b60aa2b4a7d21457da6
-[[1;34mINFO[m] RB-ignored   guice-joda-timestamp[1m:javadoc[m = [32mguice/joda-timestamp/target/[mguice-joda-timestamp-0.8.0-SNAPSHOT-javadoc.jar - 24822
-[[1;34mINFO[m]              servlet[1m:pom[m = sdk/servlet/pom.xml [1mservlet-0.8.0-SNAPSHOT.pom[m 1288 260e0d4a581893c353d988e204440118ddeb0f325c8f58ad5a85a55258d63ef2
-[[1;34mINFO[m]              servlet[1m[m = [32msdk/servlet/target/[mservlet-0.8.0-SNAPSHOT.jar - 3431 b608444318f460b5c640d7ccbf37740709c26e176dd082328f5a5d4e290eff56
-[[1;34mINFO[m]              servlet[1m:sources[m = [32msdk/servlet/target/[mservlet-0.8.0-SNAPSHOT-sources.jar - 3501 743fc6a39e977a58fbadfd3e92c3e60cfeb16aad9938b5acd49656e11db6fc44
-[[1;34mINFO[m] RB-ignored   servlet[1m:javadoc[m = [32msdk/servlet/target/[mservlet-0.8.0-SNAPSHOT-javadoc.jar - 25247
-[[1;34mINFO[m]              guice-servlet[1m:pom[m = guice/servlet/pom.xml [1mguice-servlet-0.8.0-SNAPSHOT.pom[m 3109 d9f74fabc4678d78a536d8192e6af1a620005f481bc08eae33b2db18e02985d3
-[[1;34mINFO[m]              guice-servlet[1m[m = [32mguice/servlet/target/[mguice-servlet-0.8.0-SNAPSHOT.jar - 6145 5d2d85a108b17ab99b5a10170053c582afa32779252805d73331ad88e686827e
-[[1;34mINFO[m]              guice-servlet[1m:sources[m = [32mguice/servlet/target/[mguice-servlet-0.8.0-SNAPSHOT-sources.jar - 6162 8155779f96acd9b2268f09a369b1949b29053b03099f8d7fd563c3c299350ecc
-[[1;34mINFO[m] RB-ignored   guice-servlet[1m:javadoc[m = [32mguice/servlet/target/[mguice-servlet-0.8.0-SNAPSHOT-javadoc.jar - 38329
-[[1;34mINFO[m]              guice-single-thread-scheduler[1m:pom[m = guice/single-thread-scheduler/pom.xml [1mguice-single-thread-scheduler-0.8.0-SNAPSHOT.pom[m 1566 8ec38c397a78eac576f331a33fa3d7b95cf7657b68f2c268bf0f8cd2b220e9e1
-[[1;34mINFO[m]              guice-single-thread-scheduler[1m[m = [32mguice/single-thread-scheduler/target/[mguice-single-thread-scheduler-0.8.0-SNAPSHOT.jar - 3075 0b42622ea61afce4aba122da4e45594a60f91132336a564de86feaf64ada240c
-[[1;34mINFO[m]              guice-single-thread-scheduler[1m:sources[m = [32mguice/single-thread-scheduler/target/[mguice-single-thread-scheduler-0.8.0-SNAPSHOT-sources.jar - 3289 9cd181426802d6b80af2ccef04718d69cd073997ed29efa4db3ad8655b95456b
-[[1;34mINFO[m] RB-ignored   guice-single-thread-scheduler[1m:javadoc[m = [32mguice/single-thread-scheduler/target/[mguice-single-thread-scheduler-0.8.0-SNAPSHOT-javadoc.jar - 24960
-[[1;34mINFO[m]              service[1m:pom[m = sdk/service/pom.xml [1mservice-0.8.0-SNAPSHOT.pom[m 2782 c7f42d42c68ee7b06570e7c98d8454e67d11f9c391ba982697999780da3ada87
-[[1;34mINFO[m]              service[1m[m = [32msdk/service/target/[mservice-0.8.0-SNAPSHOT.jar - 9583 a9af6d69c5577d38073252ab59cd21cc110e321fa9261224d26edbbec78ee04d
-[[1;34mINFO[m]              service[1m:sources[m = [32msdk/service/target/[mservice-0.8.0-SNAPSHOT-sources.jar - 4653 7d65998f420b932905255ccf87b6054802c6636da77f3591be59ef65f6942aef
-[[1;34mINFO[m] RB-ignored   service[1m:javadoc[m = [32msdk/service/target/[mservice-0.8.0-SNAPSHOT-javadoc.jar - 36866
-[[1;34mINFO[m]              services-parent[1m:pom[m = services/pom.xml [1mservices-parent-0.8.0-SNAPSHOT.pom[m 712 68a9381d6f21dfd93741a5180ce69f50763e442607db09e00128ad8c804e577b
-[[1;34mINFO[m]              logging-service[1m:pom[m = services/logging-service/pom.xml [1mlogging-service-0.8.0-SNAPSHOT.pom[m 12685 623cd8d1923edba10585954db6f95494e2484014e2ded23f6fde4bffc4ff2f14
-[[1;34mINFO[m]              logging-service[1m[m = [32mservices/logging-service/target/[mlogging-service-0.8.0-SNAPSHOT.jar - 4557 65044bd6ba1ba999ebb31bc28e79f46378ce964b04084e21f53e703cf4e00cea
-[[1;34mINFO[m]              logging-service[1m:sources[m = [32mservices/logging-service/target/[mlogging-service-0.8.0-SNAPSHOT-sources.jar - 4523 581698a34cc48ddb9ab7177be4164987da80c4e230ccb340587efdafa63d5cef
-[[1;34mINFO[m] RB-ignored   logging-service[1m:javadoc[m = [32mservices/logging-service/target/[mlogging-service-0.8.0-SNAPSHOT-javadoc.jar - 24881
-[[1;34mINFO[m] not-deployed samples[1m:pom[m = samples/pom.xml [1msamples-0.8.0-SNAPSHOT.pom[m 918
-[[1;34mINFO[m] not-deployed basic-logging[1m:pom[m = samples/basic-logging/pom.xml [1mbasic-logging-0.8.0-SNAPSHOT.pom[m 13357
-[[1;34mINFO[m] not-deployed basic-logging[1m[m = [32msamples/basic-logging/target/[mbasic-logging-0.8.0-SNAPSHOT.jar - 4309
-[[1;34mINFO[m] not-deployed basic-logging[1m:sources[m = [32msamples/basic-logging/target/[mbasic-logging-0.8.0-SNAPSHOT-sources.jar - 4341
-[[1;34mINFO[m] not-deployed basic-logging[1m:javadoc[m = [32msamples/basic-logging/target/[mbasic-logging-0.8.0-SNAPSHOT-javadoc.jar - 25162
-[[1;34mINFO[m] not-deployed buffering-grpc[1m:pom[m = samples/buffering-grpc/pom.xml [1mbuffering-grpc-0.8.0-SNAPSHOT.pom[m 13364
-[[1;34mINFO[m] not-deployed buffering-grpc[1m[m = [32msamples/buffering-grpc/target/[mbuffering-grpc-0.8.0-SNAPSHOT.jar - 5323
-[[1;34mINFO[m] not-deployed buffering-grpc[1m:sources[m = [32msamples/buffering-grpc/target/[mbuffering-grpc-0.8.0-SNAPSHOT-sources.jar - 4873
-[[1;34mINFO[m] not-deployed buffering-grpc[1m:javadoc[m = [32msamples/buffering-grpc/target/[mbuffering-grpc-0.8.0-SNAPSHOT-javadoc.jar - 25341
-[[1;34mINFO[m] not-deployed guice-scheduled-grpc[1m:pom[m = samples/guice-scheduled-grpc/pom.xml [1mguice-scheduled-grpc-0.8.0-SNAPSHOT.pom[m 15955
-[[1;34mINFO[m] not-deployed guice-scheduled-grpc[1m[m = [32msamples/guice-scheduled-grpc/target/[mguice-scheduled-grpc-0.8.0-SNAPSHOT.jar - 5571
-[[1;34mINFO[m] not-deployed guice-scheduled-grpc[1m:sources[m = [32msamples/guice-scheduled-grpc/target/[mguice-scheduled-grpc-0.8.0-SNAPSHOT-sources.jar - 5185
-[[1;34mINFO[m] not-deployed guice-scheduled-grpc[1m:javadoc[m = [32msamples/guice-scheduled-grpc/target/[mguice-scheduled-grpc-0.8.0-SNAPSHOT-javadoc.jar - 25701
-[[1;34mINFO[m] not-deployed guice-servlet-grpc[1m:pom[m = samples/guice-servlet-grpc/pom.xml [1mguice-servlet-grpc-0.8.0-SNAPSHOT.pom[m 16750
-[[1;34mINFO[m] not-deployed guice-servlet-grpc[1m:war[m = [32msamples/guice-servlet-grpc/target/[mguice-servlet-grpc-0.8.0-SNAPSHOT.war - 15214963
-[[1;34mINFO[m] not-deployed guice-servlet-grpc[1m:sources[m = [32msamples/guice-servlet-grpc/target/[mguice-servlet-grpc-0.8.0-SNAPSHOT-sources.jar - 6701
-[[1;34mINFO[m] not-deployed guice-servlet-grpc[1m:javadoc[m = [32msamples/guice-servlet-grpc/target/[mguice-servlet-grpc-0.8.0-SNAPSHOT-javadoc.jar - 36494
-[[1;34mINFO[m] not-deployed managed-grpc[1m:pom[m = samples/managed-grpc/pom.xml [1mmanaged-grpc-0.8.0-SNAPSHOT.pom[m 13218
-[[1;34mINFO[m] not-deployed managed-grpc[1m[m = [32msamples/managed-grpc/target/[mmanaged-grpc-0.8.0-SNAPSHOT.jar - 4885
-[[1;34mINFO[m] not-deployed managed-grpc[1m:sources[m = [32msamples/managed-grpc/target/[mmanaged-grpc-0.8.0-SNAPSHOT-sources.jar - 4653
-[[1;34mINFO[m] not-deployed managed-grpc[1m:javadoc[m = [32msamples/managed-grpc/target/[mmanaged-grpc-0.8.0-SNAPSHOT-javadoc.jar - 25163
-[[1;34mINFO[m]              trace-grpc-api-service[1m:pom[m = services/trace-grpc-api-service/pom.xml [1mtrace-grpc-api-service-0.8.0-SNAPSHOT.pom[m 12847 01b4ef629acafc73990d541b88e5327f288a79a73f3085dc3960a89e5e0ac842
-[[1;34mINFO[m]              trace-grpc-api-service[1m[m = [32mservices/trace-grpc-api-service/target/[mtrace-grpc-api-service-0.8.0-SNAPSHOT.jar - 6538 d90771c246a2aca5a4e721971751fabeae7e695322a3e2c200fa12df5cbf7b08
-[[1;34mINFO[m]              trace-grpc-api-service[1m:sources[m = [32mservices/trace-grpc-api-service/target/[mtrace-grpc-api-service-0.8.0-SNAPSHOT-sources.jar - 5244 82bad7f532c1b811fe419aeed44f6d6adfaf54214b8e6824ea86d11c50695eee
-[[1;34mINFO[m] RB-ignored   trace-grpc-api-service[1m:javadoc[m = [32mservices/trace-grpc-api-service/target/[mtrace-grpc-api-service-0.8.0-SNAPSHOT-javadoc.jar - 31906
-[[1;34mINFO[m] not-deployed stackdriver-trace-api[1m:pom[m = samples/stackdriver-trace-api/pom.xml [1mstackdriver-trace-api-0.8.0-SNAPSHOT.pom[m 13626
-[[1;34mINFO[m] not-deployed stackdriver-trace-api[1m[m = [32msamples/stackdriver-trace-api/target/[mstackdriver-trace-api-0.8.0-SNAPSHOT.jar - 4793
-[[1;34mINFO[m] not-deployed stackdriver-trace-api[1m:sources[m = [32msamples/stackdriver-trace-api/target/[mstackdriver-trace-api-0.8.0-SNAPSHOT-sources.jar - 4567
-[[1;34mINFO[m] not-deployed stackdriver-trace-api[1m:javadoc[m = [32msamples/stackdriver-trace-api/target/[mstackdriver-trace-api-0.8.0-SNAPSHOT-javadoc.jar - 25337
-[[1;34mINFO[m]              appengine-standard-service[1m:pom[m = services/appengine-standard-service/pom.xml [1mappengine-standard-service-0.8.0-SNAPSHOT.pom[m 16287 d3ecf7b53e134fcf1aa864c6992b8697295e19290deee28ffef6822ae814d746
-[[1;34mINFO[m]              appengine-standard-service[1m[m = [32mservices/appengine-standard-service/target/[mappengine-standard-service-0.8.0-SNAPSHOT.jar - 19920 4193e1b8ef1943ecc7ce6d2c45df0fa86fa23328b566aab646c1e3ce98362708
-[[1;34mINFO[m]              appengine-standard-service[1m:sources[m = [32mservices/appengine-standard-service/target/[mappengine-standard-service-0.8.0-SNAPSHOT-sources.jar - 12067 1832329054f29d0a70a9431b017b3227b3556ee6365086d4a6218b128227acb1
-[[1;34mINFO[m] RB-ignored   appengine-standard-service[1m:javadoc[m = [32mservices/appengine-standard-service/target/[mappengine-standard-service-0.8.0-SNAPSHOT-javadoc.jar - 61907
-[[1;34mINFO[m]              http-consumer[1m:pom[m = sinks/v1/http-consumer/pom.xml [1mhttp-consumer-0.8.0-SNAPSHOT.pom[m 11981 8addd074c79a53869a35a8921943251cfd7cb504312b5d4047644b62c16a0ce4
-[[1;34mINFO[m]              http-consumer[1m[m = [32msinks/v1/http-consumer/target/[mhttp-consumer-0.8.0-SNAPSHOT.jar - 5505 14798c97fdd59ceed289c3eeb86d3f355b78f873b4bb647225a8218968413c7c
-[[1;34mINFO[m]              http-consumer[1m:sources[m = [32msinks/v1/http-consumer/target/[mhttp-consumer-0.8.0-SNAPSHOT-sources.jar - 4684 28dc26118ef8d09acd96fcf43aa5c48a83e7e842963be7ac311e19bdb5f1f7b6
-[[1;34mINFO[m] RB-ignored   http-consumer[1m:javadoc[m = [32msinks/v1/http-consumer/target/[mhttp-consumer-0.8.0-SNAPSHOT-javadoc.jar - 24931
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Google Cloud Trace Java SDK Root Project 0.8.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  0.044 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.021 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.280 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  3.031 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.015 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  0.768 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  1.072 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  0.873 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.020 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.373 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  2.050 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.013 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  0.776 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  0.942 s]
 [[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.686 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  1.010 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [-1.-465 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  0.795 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.013 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  1.735 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.736 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  0.880 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.644 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.652 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.624 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.622 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.644 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  0.608 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.735 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.619 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.875 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.010 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.658 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.006 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.616 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.658 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.638 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.540 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.786 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.758 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.614 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  2.847 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.722 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  0.944 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  0.841 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  0.755 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.008 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  2.403 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.678 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  0.874 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.658 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.594 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.592 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.609 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.626 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  0.579 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.704 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.625 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.836 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.006 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.634 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.007 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.591 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.651 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.635 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.586 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.758 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.664 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.609 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  2.686 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.687 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  28.323 s
-[[1;34mINFO[m] Finished at: 2026-09-09T18:47:42Z
+[[1;34mINFO[m] Total time:  29.031 s
+[[1;34mINFO[m] Finished at: 2026-10-03T17:15:10Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [0m[0mdos2unix: target/test.buildinfo: No such file or directory
 dos2unix: Skipping target/test.buildinfo, not a regular file.

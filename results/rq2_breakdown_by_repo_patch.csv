@@ -1,6 +1,8 @@
 repo,pinned,upgraded,downgraded,added,removed,scope_changed,total_before,total_after,total_modules,successful_builds,build_success_rate
-automatalib,485,53,0,0,0,0,538,538,26,26,100.0
-cloudtrace,663,237,0,29,0,0,900,929,30,30,100.0
-easyvcr,5,0,0,0,0,0,5,5,1,1,100.0
-teamengine,123,58,0,24,0,0,181,205,6,6,100.0
-telegrambots,237,218,0,1,0,0,455,456,9,9,100.0
+astra,71,17,0,4,0,0,88,92,4,4,100.0
+automatalib,411,127,0,29,0,0,538,567,26,26,100.0
+cloudtrace,677,223,0,108,0,0,900,1008,30,30,100.0
+easyvcr,4,1,0,1,0,0,5,6,1,1,100.0
+teamengine,76,105,0,23,0,0,181,204,6,6,100.0
+telegrambots,106,349,0,5,0,0,455,460,9,9,100.0
+yosegi,1,23,0,2,0,0,24,26,1,1,100.0

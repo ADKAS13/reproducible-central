@@ -1,0 +1,15 @@
+groupId=io.zeebe.hazelcast
+artifactId=root
+version=9
+
+gitRepo=https://github.com/camunda-community-hub/zeebe-hazelcast-exporter.git
+gitTag=beeeb824102b642e847e0eaf3efa1798f720c861
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DargLine="-Dhttp.timeout=5000"\""
+
+buildinfo=target/Zeebe-hazelcast-exporter.buildinfo

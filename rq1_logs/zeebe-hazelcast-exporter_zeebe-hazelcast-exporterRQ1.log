@@ -1,0 +1,250 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/zeebe-hazelcast-exporter/RQ1/zeebe-hazelcast-exporterRQ1.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1mio.zeebe.hazelcast[0m
+|      [0;34martifactId[0;97m: [1mroot[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/io/zeebe/hazelcast/root/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/camunda-community-hub/zeebe-hazelcast-exporter.git[0m
+|      [0;34mgitTag[0;97m: [1mbeeeb824102b642e847e0eaf3efa1798f720c861[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DargLine=-Dhttp.timeout=5000"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Zeebe-hazelcast-exporter.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/camunda-community-hub/zeebe-hazelcast-exporter.git[0m on tag [1mbeeeb824102b642e847e0eaf3efa1798f720c861[0m
+/home/adkas13/reproducible-central/repos/zeebe-hazelcast-exporter/RQ1/buildcache/root
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/camunda-community-hub/zeebe-hazelcast-exporter.git (fetch)
+origin	https://github.com/camunda-community-hub/zeebe-hazelcast-exporter.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f beeeb824102b642e847e0eaf3efa1798f720c861 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/zeebe-hazelcast-exporter/RQ1/buildcache/root
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mio.zeebe.hazelcast:root:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/zeebe-hazelcast-exporter/RQ1/buildcache/root:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DargLine=-Dhttp.timeout=5000" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sat Oct  3 17:19:04 UTC 2026.
+Universal Time is now:  Sat Oct  3 17:19:04 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 3 modules...
+[[1;34mINFO[m] Not installing Nexus Staging features:
+[[1;34mINFO[m]  * Preexisting staging related goal bindings found in 3 modules.
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Zeebe Hazelcast Root                                               [pom]
+[[1;34mINFO[m] Zeebe Hazelcast Exporter                                           [jar]
+[[1;34mINFO[m] Zeebe Hazelcast Connector                                          [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------------< [0;36mio.zeebe.hazelcast:root[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding Zeebe Hazelcast Root 1.0.0                                [1/3][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.6:clean[m [1m(default-clean)[m @ [36mroot[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mroot[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mroot[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: root
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mroot[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/io/zeebe/hazelcast/root/1.0.0/root-1.0.0.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36mio.zeebe.hazelcast:zeebe-hazelcast-exporter[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding Zeebe Hazelcast Exporter 1.0.0                            [2/3][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from zeebe-snapshots: https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-api/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml (5.0 kB at 14 kB/s)
+[[1;33mWARNING[m] Could not transfer metadata io.grpc:grpc-api/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-api/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Could not transfer metadata io.grpc:grpc-api/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-api/maven-metadata.xml 403 Forbidden
+Downloading from zeebe-snapshots: https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-core/maven-metadata.xml
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.6 kB at 107 kB/s)
+[[1;33mWARNING[m] Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+Downloading from zeebe-snapshots: https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/org/agrona/agrona/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/agrona/agrona/maven-metadata.xml
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/org/agrona/agrona/maven-metadata.xml
+Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/agrona/agrona/maven-metadata.xml (3.6 kB at 8.8 kB/s)
+[[1;33mWARNING[m] Could not transfer metadata org.agrona:agrona/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/org/agrona/agrona/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Could not transfer metadata org.agrona:agrona/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/org/agrona/agrona/maven-metadata.xml 403 Forbidden
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.6:clean[m [1m(default-clean)[m @ [36mzeebe-hazelcast-exporter[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mzeebe-hazelcast-exporter[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/exporter/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 113 dependencies (version range mode: pinned).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mzeebe-hazelcast-exporter[0;1m ---[m
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-api/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-api/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-api/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-api/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-api/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-api/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer org.agrona:agrona/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata org.agrona:agrona/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/org/agrona/agrona/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer org.agrona:agrona/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata org.agrona:agrona/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/org/agrona/agrona/maven-metadata.xml 403 Forbidden
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;33mWARNING[m] Failure to transfer org.agrona:agrona/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata org.agrona:agrona/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/org/agrona/agrona/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer org.agrona:agrona/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata org.agrona:agrona/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/org/agrona/agrona/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-api/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-api/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-api/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-api/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-api/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-api/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/google/protobuf/protobuf-javalite/3.12.0/protobuf-javalite-3.12.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-javalite/3.12.0/protobuf-javalite-3.12.0.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 15 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-javalite/3.12.0/protobuf-javalite-3.12.0.pom (15 kB at 40 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-all/1.0.0/grpc-all-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-all/1.0.0/grpc-all-1.0.0.pom
+Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-all/1.0.0/grpc-all-1.0.0.pom (2.9 kB at 7.6 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-auth/1.0.0/grpc-auth-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-auth/1.0.0/grpc-auth-1.0.0.pom
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-auth/1.0.0/grpc-auth-1.0.0.pom (2.1 kB at 5.5 kB/s)
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+Downloading from MavenCentralServer: http://repo1.maven.org/maven2/io/grpc/grpc-core/maven-metadata.xml
+Downloading from TypesafeRepository: http://repo.typesafe.com/typesafe/releases/io/grpc/grpc-core/maven-metadata.xml
+[[1;33mWARNING[m] Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to TypesafeRepository (http://repo.typesafe.com/typesafe/releases/): Transfer failed for http://repo.typesafe.com/typesafe/releases/io/grpc/grpc-core/maven-metadata.xml
+[[1;33mWARNING[m] Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to MavenCentralServer (http://repo1.maven.org/maven2/): Transfer failed for http://repo1.maven.org/maven2/io/grpc/grpc-core/maven-metadata.xml 501 Not Implemented
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-core/1.0.0/grpc-core-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/1.0.0/grpc-core-1.0.0.pom
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/1.0.0/grpc-core-1.0.0.pom (2.1 kB at 5.1 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-protobuf-lite/1.0.0/grpc-protobuf-lite-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/1.0.0/grpc-protobuf-lite-1.0.0.pom
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/1.0.0/grpc-protobuf-lite-1.0.0.pom (2.1 kB at 4.4 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-protobuf/1.0.0/grpc-protobuf-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/1.0.0/grpc-protobuf-1.0.0.pom
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/1.0.0/grpc-protobuf-1.0.0.pom (2.7 kB at 8.5 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/google/protobuf/protobuf-java/3.0.0/protobuf-java-3.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.0.0/protobuf-java-3.0.0.pom
+Progress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.0.0/protobuf-java-3.0.0.pom (4.1 kB at 75 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/google/protobuf/protobuf-java-util/3.0.0/protobuf-java-util-3.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0/protobuf-java-util-3.0.0.pom
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/3.0.0/protobuf-java-util-3.0.0.pom (3.9 kB at 60 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/google/code/gson/gson/2.3/gson-2.3.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.3/gson-2.3.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.3/gson-2.3.pom (9.0 kB at 142 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-protobuf-nano/1.0.0/grpc-protobuf-nano-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-nano/1.0.0/grpc-protobuf-nano-1.0.0.pom
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-nano/1.0.0/grpc-protobuf-nano-1.0.0.pom (2.1 kB at 8.0 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/google/protobuf/nano/protobuf-javanano/3.0.0-alpha-5/protobuf-javanano-3.0.0-alpha-5.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/nano/protobuf-javanano/3.0.0-alpha-5/protobuf-javanano-3.0.0-alpha-5.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/nano/protobuf-javanano/3.0.0-alpha-5/protobuf-javanano-3.0.0-alpha-5.pom (11 kB at 146 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-netty/1.0.0/grpc-netty-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty/1.0.0/grpc-netty-1.0.0.pom
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty/1.0.0/grpc-netty-1.0.0.pom (2.1 kB at 5.4 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-stub/1.0.0/grpc-stub-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/1.0.0/grpc-stub-1.0.0.pom
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/1.0.0/grpc-stub-1.0.0.pom (1.7 kB at 24 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-okhttp/1.0.0/grpc-okhttp-1.0.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-okhttp/1.0.0/grpc-okhttp-1.0.0.pom
+Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-okhttp/1.0.0/grpc-okhttp-1.0.0.pom (2.4 kB at 10 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/squareup/okio/okio/1.6.0/okio-1.6.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.6.0/okio-1.6.0.pom
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.6.0/okio-1.6.0.pom (1.5 kB at 23 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/squareup/okio/okio-parent/1.6.0/okio-parent-1.6.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.6.0/okio-parent-1.6.0.pom
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.6.0/okio-parent-1.6.0.pom (3.2 kB at 50 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.pom
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0.pom (1.4 kB at 22 kB/s)
+Downloading from zeebe: https://app.camunda.com/nexus/content/repositories/zeebe-io/com/squareup/okhttp/parent/2.5.0/parent-2.5.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp/parent/2.5.0/parent-2.5.0.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp/parent/2.5.0/parent-2.5.0.pom (9.2 kB at 116 kB/s)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for zeebe-hazelcast-exporter — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;33mWARNING[m] Failure to transfer org.agrona:agrona/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata org.agrona:agrona/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/org/agrona/agrona/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer org.agrona:agrona/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata org.agrona:agrona/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/org/agrona/agrona/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-api/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-api/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-api/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-api/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-api/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-api/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe (https://app.camunda.com/nexus/content/repositories/zeebe-io/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of zeebe-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to zeebe-snapshots (https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/): Authorization failed for https://app.camunda.com/nexus/content/repositories/zeebe-io-snapshots/io/grpc/grpc-core/maven-metadata.xml 403 Forbidden
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from http://repo.typesafe.com/typesafe/releases/ was cached in the local repository, resolution will not be reattempted until the update interval of TypesafeRepository has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to TypesafeRepository (http://repo.typesafe.com/typesafe/releases/): Transfer failed for http://repo.typesafe.com/typesafe/releases/io/grpc/grpc-core/maven-metadata.xml
+[[1;33mWARNING[m] Failure to transfer io.grpc:grpc-core/maven-metadata.xml from http://repo1.maven.org/maven2/ was cached in the local repository, resolution will not be reattempted until the update interval of MavenCentralServer has elapsed or updates are forced. Original error: Could not transfer metadata io.grpc:grpc-core/maven-metadata.xml from/to MavenCentralServer (http://repo1.maven.org/maven2/): Transfer failed for http://repo1.maven.org/maven2/io/grpc/grpc-core/maven-metadata.xml 501 Not Implemented
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for Zeebe Hazelcast Root 1.0.0:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Zeebe Hazelcast Root ............................... [1;32mSUCCESS[m [  0.266 s]
+[[1;34mINFO[m] Zeebe Hazelcast Exporter ........................... [1;31mFAILURE[m [15:36 min]
+[[1;34mINFO[m] Zeebe Hazelcast Connector .......................... [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  15:37 min
+[[1;34mINFO[m] Finished at: 2026-10-03T17:34:43Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32mcom.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m on project [36mzeebe-hazelcast-exporter[m: [1;31mError during flattening process: Could not resolve following dependencies: [][m: Could not resolve dependencies for project io.zeebe.hazelcast:zeebe-hazelcast-exporter:jar:1.0.0: Failed to collect dependencies for io.zeebe.hazelcast:zeebe-hazelcast-exporter:jar:1.0.0: Could not resolve version conflict among [io.camunda:zeebe-client-java:jar:1.0.0 -> io.grpc:grpc-core:jar:1.37.0, io.camunda:zeebe-gateway:jar:1.0.0 -> io.grpc:grpc-core:jar:1.37.0, io.grpc:grpc-core:jar:1.37.0, io.grpc:grpc-netty:jar:1.37.0 -> io.grpc:grpc-core:jar:[1.37.0,1.37.0], me.dinowernli:java-grpc-prometheus:jar:0.3.0 -> io.grpc:grpc-all:jar:1.0.0 -> io.grpc:grpc-auth:jar:1.0.0 -> io.grpc:grpc-core:jar:[1.0.0,1.0.0], me.dinowernli:java-grpc-prometheus:jar:0.3.0 -> io.grpc:grpc-all:jar:1.0.0 -> io.grpc:grpc-protobuf-nano:jar:1.0.0 -> io.grpc:grpc-core:jar:1.0.0, me.dinowernli:java-grpc-prometheus:jar:0.3.0 -> io.grpc:grpc-all:jar:1.0.0 -> io.grpc:grpc-core:jar:[1.0.0,1.0.0], me.dinowernli:java-grpc-prometheus:jar:0.3.0 -> io.grpc:grpc-all:jar:1.0.0 -> io.grpc:grpc-okhttp:jar:1.0.0 -> io.grpc:grpc-core:jar:[1.0.0,1.0.0]] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[[1;31mERROR[m] 
+[[1;31mERROR[m] After correcting the problems, you can resume the build with the command
+[[1;31mERROR[m]   [1mmvn <args> -rf :zeebe-hazelcast-exporter[m
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m
