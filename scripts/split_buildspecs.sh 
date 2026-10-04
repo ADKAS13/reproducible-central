@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# scripts/split_buildspecs.sh
+#
+# Moves every buildspec in repos/<repo>/ into its own flavor subfolder:
+#   reponame.buildspec           -> repos/reponame/base/
+#   reponameRQ1.buildspec        -> repos/reponame/RQ1/
+#   reponameRQ2major.buildspec   -> repos/reponame/RQ2major/
+#   reponameRQ2minor.buildspec   -> repos/reponame/RQ2minor/
+#   reponameRQ2patch.buildspec   -> repos/reponame/RQ2patch/
+#
+# Idempotent: buildspecs that were already moved are not touched.
+#
+# Usage (from the reproducible-central root):
+#   DRY_RUN=1 ./scripts/split_buildspecs.sh     # preview
+#   ./scripts/split_buildspecs.sh               # do it
+#   ./scripts/split_buildspecs.sh path/to/repos # custom repos dir
+
+set -euo pipefail
+
+REPOS_DIR="${1:-repos}"
+DRY_RUN="${DRY_RUN:-0}"
+
+run() {
+    if [ "$DRY_RUN" = "1" ]; then echo "[dry-run] $*"; else "$@"; fi
+}
+
+for repo_dir in "${REPOS_DIR}"/*/; do
+    repo_dir="${repo_dir%/}"
+    for spec in "${repo_dir}"/*.buildspec; do
+        [ -e "$spec" ] || continue
+        name="$(basename "$spec" .buildspec)"
+        case "$name" in
+            *RQ2major) flavor="RQ2major" ;;
+            *RQ2minor) flavor="RQ2minor" ;;
+            *RQ2patch) flavor="RQ2patch" ;;
+            *RQ1)      flavor="RQ1" ;;
+            *)         flavor="base" ;;
+        esac
+        target="${repo_dir}/${flavor}"
+        run mkdir -p "$target"
+        run mv "$spec" "${target}/"
+        echo "$(basename "$repo_dir"): ${name}.buildspec -> ${flavor}/"
+    done
+done

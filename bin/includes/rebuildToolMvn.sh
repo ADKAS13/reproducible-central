@@ -19,15 +19,16 @@
 # rebuild with Maven tool (tool=mvn)
 rebuildToolMvn() {
   # the effective rebuild command, adding artifact:compare goal to compare with central content
-  local mvn_rebuild="${command} -V -e org.apache.maven.plugins:maven-artifact-plugin:3.6.1:compare org.apache.maven.plugins:maven-artifact-plugin:3.6.1:describe-build-output -Dcompare.fail=false"
-  case ${tool} in
-    mvn-3.6.*|mvn-3.5.*)
-      mvn_rebuild="${command} -V -e org.apache.maven.plugins:maven-artifact-plugin:3.5.1:compare -Dcompare.fail=false"
-      ;;
-  esac
-  if [ -n "${referenceRepo}" ]
+  local mvn_rebuild="${command}"
+  if [ -z "${SKIP_REMOTE_VERIFY:-}" ]
   then
-    mvn_rebuild="${mvn_rebuild} -Dreference.repo=${referenceRepo}"
+    mvn_rebuild="${command} -V -e org.apache.maven.plugins:maven-artifact-plugin:3.6.1:compare org.apache.maven.plugins:maven-artifact-plugin:3.6.1:describe-build-output -Dcompare.fail=false"
+    case ${tool} in
+      mvn-3.6.*|mvn-3.5.*)
+        mvn_rebuild="${command} -V -e org.apache.maven.plugins:maven-artifact-plugin:3.5.1:compare -Dcompare.fail=false"
+        ;;
+    esac
+    [ -n "${referenceRepo}" ] && mvn_rebuild="${mvn_rebuild} -Dreference.repo=${referenceRepo}"
   fi
 
 
@@ -69,6 +70,15 @@ rebuildToolMvn() {
       #   sdk use java ${jdk}
       mvnBuildDocker "${mvn_rebuild}" || fatal "failed to build"
     fi
+  fi
+  if [ -z "${SKIP_REMOTE_VERIFY:-}" ]
+  then
+    dos2unix ${buildinfo} || fatal "failed to convert buildinfo newlines"
+    cp ${buildinfo} ../.. || fatal "failed to copy buildinfo file"
+
+    buildcompare="$(dirname "${buildinfo}")/$(basename ${buildinfo} .buildinfo).buildcompare"
+    dos2unix ${buildcompare} || fatal "failed to convert buildcompare newlines"
+    cp ${buildcompare} ../.. || fatal "failed to copy buildcompare file"
   fi
 
   dos2unix ${buildinfo} || fatal "failed to convert buildinfo newlines"

@@ -18,7 +18,7 @@ fetchSource() {
 [ -z "${artifactId}" ] && fatal "Cannot run this separately"
 
 # check that maven-metadata.xml is there, or init content
-if [ ! -f maven-metadata.xml ]
+if [ -z "${SKIP_REMOTE_VERIFY:-}" ] && [ ! -f maven-metadata.xml ]
 then
   info "Fetching maven-metadata.xml from Maven Central"
   metaUrl="https://repo.maven.apache.org/maven2/$(echo ${groupId} | tr '.' '/')/${artifactId}/maven-metadata.xml"
