@@ -38,3 +38,5 @@ tmp/
 .wip/*.buildcompare
 gh-pages/
 logs/
+
+*.env

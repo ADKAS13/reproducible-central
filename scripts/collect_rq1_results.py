@@ -118,6 +118,7 @@ def parse_comparison_report(report_path: Path, repo: str) -> Optional[ModuleResu
             result.upgraded == 0
             and result.downgraded == 0
             and result.removed == 0
+            and result.added == 0
             and not result.skipped_flatten
         )
         return result
@@ -128,24 +129,26 @@ def parse_comparison_report(report_path: Path, repo: str) -> Optional[ModuleResu
 
 def parse_surefire_reports(module_target: Path) -> tuple[int, int, int, int]:
     """
-    Parse surefire XML reports in target/surefire-reports/ for a module.
+    Parse surefire AND failsafe XML reports for a module.
     Returns (tests_run, failures, errors, skipped).
     """
-    surefire_dir = module_target / "surefire-reports"
-    if not surefire_dir.exists():
-        return 0, 0, 0, 0
-
     import xml.etree.ElementTree as ET
     total, failures, errors, skipped = 0, 0, 0, 0
-    for xml_file in surefire_dir.glob("TEST-*.xml"):
-        try:
-            root = ET.parse(xml_file).getroot()
-            total    += int(root.get("tests",    0))
-            failures += int(root.get("failures", 0))
-            errors   += int(root.get("errors",   0))
-            skipped  += int(root.get("skipped",  0))
-        except Exception:
-            pass
+
+    for report_dir_name in ("surefire-reports", "failsafe-reports"):
+        report_dir = module_target / report_dir_name
+        if not report_dir.exists():
+            continue
+        for xml_file in report_dir.glob("TEST-*.xml"):
+            try:
+                root = ET.parse(xml_file).getroot()
+                total    += int(root.get("tests",    0))
+                failures += int(root.get("failures", 0))
+                errors   += int(root.get("errors",   0))
+                skipped  += int(root.get("skipped",  0))
+            except Exception:
+                pass
+
     return total, failures, errors, skipped
 
 
@@ -352,12 +355,17 @@ def main():
         if not buildcache.is_dir():
             continue
 
-        # Skip stray top-level buildcache (directly under root, not under a repo dir)
-        if buildcache.parent == args.root:
-            print(f"[SKIP] Ignoring top-level buildcache at {buildcache}", file=sys.stderr)
+        try:
+            relative = buildcache.relative_to(args.root / "repos")
+        except ValueError:
+            continue
+        if len(relative.parts) != 3:  # <repo>/<flavor>/buildcache
+            print(f"[SKIP] Unexpected buildcache depth: {buildcache}", file=sys.stderr)
             continue
 
-        repo = buildcache.parent.name
+        repo, flavor = relative.parts[0], relative.parts[1]
+        if flavor != "RQ1":
+            continue
 
         # Skip repos that weren't part of this pipeline run
         if logged_repos and repo.lower() not in logged_repos:

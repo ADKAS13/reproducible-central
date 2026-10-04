@@ -10,6 +10,7 @@ import os
 import sys
 import re
 import argparse
+from dotenv import load_dotenv
 from google import genai
 
 def analyze_and_fix_pom(log_content: str, pom_path: str) -> bool:
@@ -39,8 +40,11 @@ def analyze_and_fix_pom(log_content: str, pom_path: str) -> bool:
         "immediately after a line labeled 'UPDATED_POM:'.\n"
         "3. Do NOT wrap the UPDATED_POM content in markdown triple backticks.\n"
     )
-
-    client = genai.Client()
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        print("[LLM-Fixer] Error: GEMINI_API_KEY not found in environment variables.")
+        return False
+    client = genai.Client(api_key=api_key)
 
     response = client.models.generate_content(
         model="gemini-3.6-flash",

@@ -46,7 +46,7 @@ ax.set_title(
 ax.legend(loc="upper left")
 
 plt.tight_layout()
-plt.savefig("graphs/repo_dependency_breakdown.png", dpi=300)
+plt.savefig("graphs/rq1_repo_dependency_breakdown.png", dpi=300)
 plt.close()
 
 # -------------------------------------------------------------------
@@ -72,7 +72,7 @@ ax.set_title("Module Equivalence Breakdown by Repository", fontweight="bold")
 ax.legend(loc="upper left")
 
 plt.tight_layout()
-plt.savefig("graphs/repo_module_equivalence.png", dpi=300)
+plt.savefig("graphs/rq1_repo_module_equivalence.png", dpi=300)
 plt.close()
 
 # -------------------------------------------------------------------
@@ -100,5 +100,5 @@ for bar in bars:
   )
 
 plt.tight_layout()
-plt.savefig("graphs/repo_pass_rate.png", dpi=300)
+plt.savefig("graphs/rq1_repo_pass_rate.png", dpi=300)
 plt.close()

@@ -100,14 +100,28 @@ def collect_from_buildcache(buildcache: Path, repo: str, range_mode: str) -> lis
 def collect_from_root(root: Path, range_mode: str) -> list[ModuleResult]:
     """
     Scan all subdirectories of a reproducible-central root for buildcaches.
-    Assumes structure: root/<repo>/buildcache/<artifactId>/
+    Expects structure: repos/<repo>/<flavor>/buildcache/
     """
     results = []
     for buildcache in sorted(root.rglob("buildcache")):
-        if buildcache.is_dir():
-            repo = buildcache.parent.name
-            repo_results = collect_from_buildcache(buildcache, repo, range_mode)
-            results.extend(repo_results)
+        if not buildcache.is_dir():
+            continue
+        # Expect repos/<repo>/<flavor>/buildcache — anything shallower is stale/misplaced
+        try:
+            relative = buildcache.relative_to(root / "repos")
+        except ValueError:
+            continue
+        if len(relative.parts) != 3:  # <repo>/<flavor>/buildcache
+            print(f"[SKIP] Unexpected buildcache depth: {buildcache}", file=sys.stderr)
+            continue
+        repo, flavor = relative.parts[0], relative.parts[1]
+        expected_flavor = f"RQ2{args.range}"
+        if flavor != expected_flavor:
+          continue
+
+        
+        repo_results = collect_from_buildcache(buildcache, repo, range_mode)
+        results.extend(repo_results)
     return results
 
 

@@ -152,13 +152,30 @@ for idx, flag in enumerate(FLAGS):
     bottom = np.zeros(len(repos))
     for action, color in zip(actions, colors):
         values = data[action]
-        ax.bar(
+        bars = ax.bar(
             repos,
             values,
             bottom=bottom,
             label=action.capitalize(),
             color=color,
         )
+
+        # Add quantity labels inside each bar segment
+        for bar, val, btm in zip(bars, values, bottom):
+            if val > 0:  # Only label non-zero values to avoid clutter
+                # Position text in the vertical center of the segment
+                y_pos = btm + (val / 2.0)
+                ax.text(
+                    bar.get_x() + bar.get_width() / 2.0,
+                    y_pos,
+                    f"{int(val)}",
+                    ha="center",
+                    va="center",
+                    color="white",
+                    fontsize=8,
+                    fontweight="bold",
+                )
+
         bottom += values
 
     ax.set_title(f"Flag: {flag.capitalize()}", fontweight="bold")
@@ -340,3 +357,145 @@ if test_stats_dfs:
     plt.tight_layout()
     plt.savefig(os.path.join(GRAPHS_DIR, "rq2_test_success_rate.png"), dpi=300)
     plt.close()
+
+# -------------------------------------------------------------------
+# Graph 5: Dual-Axis Graph (All Lines: Build/Test Success vs Upgraded Dependencies)
+# -------------------------------------------------------------------
+macro_rates = []
+for flag in ["major", "minor", "patch"]:
+    build_rate = flag_summary.loc[flag_summary["flag"] == flag, "build_success_rate"].values[0]
+    upg_avg = flag_summary.loc[flag_summary["flag"] == flag, "upgraded_avg"].values[0]
+    
+    test_rate = 0.0
+    if test_stats_dfs:
+        f_df = df_test_all[df_test_all["flag"] == flag.capitalize()]
+        tot_tests = f_df["total_tests"].sum()
+        tot_passed = f_df["total_passed"].sum()
+        test_rate = (tot_passed / tot_tests * 100) if tot_tests > 0 else f_df["pass_rate"].mean()
+
+    macro_rates.append({
+        "flag": flag.capitalize(),
+        "build_success_rate": build_rate,
+        "test_pass_rate": test_rate,
+        "upgraded_avg": upg_avg
+    })
+
+df_macro = pd.DataFrame(macro_rates)
+
+fig, ax1 = plt.subplots(figsize=(9, 5))
+
+x_idx = np.arange(len(df_macro))
+
+# Left Y Axis Lines: Build and Test Success Rates
+line1 = ax1.plot(
+    x_idx, df_macro["build_success_rate"], 
+    color="#4c72b0", marker="s", linewidth=2.5, markersize=8, label="Build Success Rate (%)"
+)
+line2 = ax1.plot(
+    x_idx, df_macro["test_pass_rate"], 
+    color="#55a868", marker="^", linewidth=2.5, markersize=8, label="Test Success Rate (%)"
+)
+
+ax1.set_xlabel("Version Flag Scope", fontweight="bold")
+ax1.set_ylabel("Success Rate (%)", fontweight="bold", color="#2b2b2b")
+ax1.set_xticks(x_idx)
+ax1.set_xticklabels(df_macro["flag"])
+ax1.set_ylim(0, 105)
+
+# Right Y Axis Line: Average Upgraded Dependencies
+ax2 = ax1.twinx()
+line3 = ax2.plot(
+    x_idx, df_macro["upgraded_avg"], 
+    color="#c44e52", marker="o", linewidth=2.5, markersize=8, linestyle="--", label="Avg Upgraded Deps"
+)
+ax2.set_ylabel("Average Upgraded Dependencies / Module", fontweight="bold", color="#c44e52")
+ax2.tick_params(axis="y", labelcolor="#c44e52")
+ax2.grid(False)
+
+# Add value annotations directly above data points for clarity
+for i in range(len(df_macro)):
+    ax1.text(i, df_macro["build_success_rate"][i] + 2, f"{df_macro['build_success_rate'][i]:.1f}%", color="#4c72b0", fontweight="bold", ha="center")
+    ax1.text(i, df_macro["test_pass_rate"][i] - 4, f"{df_macro['test_pass_rate'][i]:.1f}%", color="#55a868", fontweight="bold", ha="center")
+    ax2.text(i, df_macro["upgraded_avg"][i] + (df_macro["upgraded_avg"].max() * 0.03), f"{df_macro['upgraded_avg'][i]:.1f}", color="#c44e52", fontweight="bold", ha="center")
+
+# Consolidate legend and move outside plot box to avoid overlapping content
+lines = line1 + line2 + line3
+labels = [l.get_label() for l in lines]
+ax1.legend(lines, labels, loc="upper left", bbox_to_anchor=(1.15, 1.0), borderaxespad=0.0)
+
+plt.title("Build/Test Success vs. Upgraded Dependencies by Flag Scope", fontweight="bold", pad=15)
+plt.tight_layout()
+plt.savefig(os.path.join(GRAPHS_DIR, "rq2_dual_axis_success_vs_upgrades.png"), dpi=300, bbox_inches="tight")
+plt.close()
+
+# -------------------------------------------------------------------
+# Graph 6: Pareto Front Trade-off Analysis (Upgraded Deps vs Pass Rate)
+# -------------------------------------------------------------------
+pareto_data = []
+for flag in FLAGS:
+    file_path = os.path.join(RESULTS_DIR, f"rq1_style_stats_{flag}_modules.csv")
+    if os.path.exists(file_path):
+        m_df = pd.read_csv(file_path)
+        m_df["flag"] = flag.capitalize()
+        pareto_data.append(m_df)
+
+if pareto_data:
+    df_modules_all = pd.concat(pareto_data, ignore_index=True)
+    
+    fig, ax = plt.subplots(figsize=(9, 6))
+    
+    sns.scatterplot(
+        data=df_modules_all,
+        x="upgraded",
+        y="pass_rate",
+        hue="flag",
+        style="flag",
+        alpha=0.7,
+        s=70,
+        ax=ax
+    )
+
+    pareto_pts = df_modules_all[["upgraded", "pass_rate"]].drop_duplicates().values
+    is_pareto = np.ones(pareto_pts.shape[0], dtype=bool)
+    for i, c in enumerate(pareto_pts):
+        if is_pareto[i]:
+            is_pareto[is_pareto] = np.any(pareto_pts[is_pareto] > c, axis=1) | np.any(pareto_pts[is_pareto] == c, axis=1)
+            is_pareto[i] = True
+
+    pareto_front = pareto_pts[is_pareto]
+    pareto_front = pareto_front[pareto_front[:, 0].argsort()]
+
+    ax.plot(pareto_front[:, 0], pareto_front[:, 1], color="black", linestyle="--", linewidth=1.5, label="Pareto Frontier")
+
+    ax.set_title("Pareto Frontier: Upgraded Dependencies vs. Test Pass Rate", fontweight="bold")
+    ax.set_xlabel("Upgraded Dependencies Count", fontweight="bold")
+    ax.set_ylabel("Test Pass Rate (%)", fontweight="bold")
+    ax.legend(loc="lower left")
+
+    plt.tight_layout()
+    plt.savefig(os.path.join(GRAPHS_DIR, "rq2_pareto_upgrades_vs_passrate.png"), dpi=300)
+    plt.close()
+
+# -------------------------------------------------------------------
+# Graph 7: Distribution Analysis (Box/Violin Plot of Upgraded Deps)
+# -------------------------------------------------------------------
+fig, ax = plt.subplots(figsize=(8, 5))
+
+sns.boxplot(
+    data=df_all,
+    x="flag",
+    y="upgraded",
+    palette="Set2",
+    showmeans=True,
+    meanprops={"marker": "o", "markerfacecolor": "white", "markeredgecolor": "black"},
+    ax=ax
+)
+
+ax.set_xticklabels([f.capitalize() for f in FLAGS])
+ax.set_title("Distribution & Outliers of Upgraded Dependencies per Module", fontweight="bold")
+ax.set_xlabel("Version Flag Scope", fontweight="bold")
+ax.set_ylabel("Upgraded Dependency Count", fontweight="bold")
+
+plt.tight_layout()
+plt.savefig(os.path.join(GRAPHS_DIR, "rq2_upgraded_distribution_box.png"), dpi=300)
+plt.close()
