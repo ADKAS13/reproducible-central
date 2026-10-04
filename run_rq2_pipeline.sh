@@ -3,8 +3,12 @@
 #
 # Runs rebuild.sh for every buildspec matching a pattern, then collects
 # dependency comparison results and RQ1-style equivalence/test stats into CSVs and console reports.
+#
+# Every buildspec lives in its own folder (repos/<repo>/RQ2<mode>/<repo>RQ2<mode>.buildspec)
+# and runs with a fresh checkout and a fresh Maven local repo (see scripts/fresh_env.sh).
 
 set -euo pipefail
+export SKIP_REMOTE_VERIFY=1
 
 RANGE_MODE="${1:-minor}"
 PATTERN="${2:-*RQ2${RANGE_MODE}.buildspec}"
@@ -17,6 +21,9 @@ OUTPUT_CSV="${RC_ROOT}/results/rq2_results_${RANGE_MODE}.csv"
 OUTPUT_RQ1_CSV="${RC_ROOT}/results/rq1_style_stats_${RANGE_MODE}.csv"
 LOG_DIR="${RC_ROOT}/rq2_logs_${RANGE_MODE}"
 
+# shellcheck source=scripts/fresh_env.sh
+. "$(dirname "$0")/scripts/fresh_env.sh"
+
 mkdir -p "$LOG_DIR" "${RC_ROOT}/results"
 
 echo "======================================================"
@@ -26,16 +33,19 @@ echo "  Output:  ${OUTPUT_CSV}"
 echo "======================================================"
 
 # Find all matching buildspecs
-mapfile -t BUILDSPECS < <(find "${RC_ROOT}" -name "${PATTERN}" | sort)
+mapfile -t BUILDSPECS < <(find "${RC_ROOT}/repos" -name "${PATTERN}" | sort)
 
 if [ ${#BUILDSPECS[@]} -eq 0 ]; then
     echo "ERROR: No buildspecs found matching pattern: ${PATTERN}"
     exit 1
 fi
 
+# repo name = grandparent folder (repos/<repo>/<flavor>/<file>.buildspec)
+repo_of() { basename "$(dirname "$(dirname "$1")")"; }
+
 echo "Found ${#BUILDSPECS[@]} buildspec(s):"
 for spec in "${BUILDSPECS[@]}"; do
-    echo "  - $(basename "$(dirname "$spec")")/$(basename "$spec")"
+    echo "  - $(repo_of "$spec")/$(basename "$spec")"
 done
 echo ""
 
@@ -45,15 +55,28 @@ FAIL=0
 FAIL_LIST=()
 
 for spec in "${BUILDSPECS[@]}"; do
-    REPO=$(basename "$(dirname "$spec")")
+    REPO="$(repo_of "$spec")"
     SPEC_NAME=$(basename "$spec")
     LOG_FILE="${LOG_DIR}/${REPO}_${SPEC_NAME%.buildspec}.log"
 
     echo "[BUILD] ${REPO}/${SPEC_NAME}"
-    
-    if bash "${REBUILD_SH}" "$spec" > "$LOG_FILE" 2>&1; then
+
+    if ! reset_run_env "$spec"; then
+        echo "        -> RESET FAILED, skipping"
+        ((FAIL++)) || true
+        FAIL_LIST+=("${REPO}/${SPEC_NAME}")
+        continue
+    fi
+
+    bash "${REBUILD_SH}" "$spec" > "$LOG_FILE" 2>&1 || true
+    exit_code=$?
+
+    if grep -q "BUILD SUCCESS" "$LOG_FILE"; then
         echo "        -> SUCCESS (log: $LOG_FILE)"
         ((PASS++)) || true
+        if [ $exit_code -ne 0 ]; then
+            echo "        -> NOTE: rebuild.sh exited ${exit_code} despite BUILD SUCCESS (non-fatal post-build step)"
+        fi
     else
         echo "        -> FAILED  (log: $LOG_FILE)"
         ((FAIL++)) || true

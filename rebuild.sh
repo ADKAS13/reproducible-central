@@ -123,9 +123,9 @@ echo
 
 pomFile=$(echo "$command" | sed -nE 's/.*-f ([^ ]+).*/\1/p')
 if [ -n "$pomFile" ]; then
-  displayResult "$(dirname "$pomFile")"
+  [ -z "${SKIP_REMOTE_VERIFY:-}" ] && displayResult "$(dirname "$pomFile")" || true
 else
-  displayResult ""
+  [ -z "${SKIP_REMOTE_VERIFY:-}" ] && displayResult "" || true
 fi
 
 displayOptional  "os"

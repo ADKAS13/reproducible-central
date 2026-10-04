@@ -11,6 +11,7 @@ fi
 
 REPO_NAME="$1"
 TARGET_DIR="repos/${REPO_NAME}"
+LOG_DIR="logs/${REPO_NAME}"
 
 # Validate target directory exists
 if [ ! -d "${TARGET_DIR}" ]; then
@@ -18,8 +19,11 @@ if [ ! -d "${TARGET_DIR}" ]; then
     exit 1
 fi
 
-# Find all .buildspec files (sorted alphabetically)
-mapfile -t BUILDSPECS < <(find "${TARGET_DIR}" -maxdepth 1 -type f -name "*.buildspec" | sort)
+# Ensure log directory exists
+mkdir -p "${LOG_DIR}"
+
+# Find all .buildspec files recursively across subdirectories (e.g. base/, RQ1/, RQ2major/)
+mapfile -t BUILDSPECS < <(find "${TARGET_DIR}" -type f -name "*.buildspec" | sort)
 
 if [ "${#BUILDSPECS[@]}" -eq 0 ]; then
     echo "[WARN] No .buildspec files found in '${TARGET_DIR}'."
@@ -36,18 +40,30 @@ FAILED_BUILDS=()
 
 # Loop through and run each buildspec script
 for spec in "${BUILDSPECS[@]}"; do
+    # Derive a clean log name from the spec filename (e.g., automatalibRQ1.buildspec -> automatalibRQ1.log)
+    spec_filename=$(basename "${spec}")
+    log_filename="${spec_filename%.buildspec}.log"
+    log_file="${LOG_DIR}/${log_filename}"
+
     echo ""
     echo "----------------------------------------------------------"
     echo "[RUNNING] ${spec}"
+    echo "[LOG]     ${log_file}"
     echo "----------------------------------------------------------"
-    
-    # Execute through rebuild.sh wrapper
-    if ./rebuild.sh "${spec}"; then
-        echo "[SUCCESS] ${spec}"
-        SUCCESSFUL_BUILDS+=("${spec}")
+
+    # Execute through rebuild.sh wrapper, redirecting stdout & stderr to the log file
+    if ./rebuild.sh "${spec}" > "${log_file}" 2>&1; then
+        # Verify if BUILD SUCCESS was actually printed inside the log output
+        if grep -q "BUILD SUCCESS" "${log_file}"; then
+            echo "[SUCCESS] ${spec} (BUILD SUCCESS achieved)"
+            SUCCESSFUL_BUILDS+=("${spec} | Log: ${log_file}")
+        else
+            echo "[FAILED]  ${spec} (Finished with 0 exit code but missing 'BUILD SUCCESS')" >&2
+            FAILED_BUILDS+=("${spec} | Log: ${log_file}")
+        fi
     else
-        echo "[FAILED] ${spec}" >&2
-        FAILED_BUILDS+=("${spec}")
+        echo "[FAILED]  ${spec} (Process returned non-zero exit code)" >&2
+        FAILED_BUILDS+=("${spec} | Log: ${log_file}")
     fi
 done
 
@@ -59,8 +75,8 @@ echo "=========================================================="
 
 if [ "${#SUCCESSFUL_BUILDS[@]}" -gt 0 ]; then
     echo "SUCCESSFUL BUILDS (${#SUCCESSFUL_BUILDS[@]}):"
-    for spec in "${SUCCESSFUL_BUILDS[@]}"; do
-        echo "  - ${spec}"
+    for item in "${SUCCESSFUL_BUILDS[@]}"; do
+        echo "  - ${item}"
     done
 else
     echo "SUCCESSFUL BUILDS: None"
@@ -70,8 +86,8 @@ echo ""
 
 if [ "${#FAILED_BUILDS[@]}" -gt 0 ]; then
     echo "FAILED BUILDS (${#FAILED_BUILDS[@]}):"
-    for spec in "${FAILED_BUILDS[@]}"; do
-        echo "  - ${spec}"
+    for item in "${FAILED_BUILDS[@]}"; do
+        echo "  - ${item}"
     done
 else
     echo "FAILED BUILDS: None"
