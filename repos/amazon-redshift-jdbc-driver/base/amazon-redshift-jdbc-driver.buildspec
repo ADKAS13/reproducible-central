@@ -1,0 +1,15 @@
+groupId=com.amazon.redshift
+artifactId=redshift-jdbc42
+version=9
+
+gitRepo=https://github.com/aws/amazon-redshift-jdbc-driver.git
+gitTag=09dd9702619dbea60d634b557e415c157c3e4d9a
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install\""
+
+buildinfo=target/Amazon-redshift-jdbc-driver.buildinfo

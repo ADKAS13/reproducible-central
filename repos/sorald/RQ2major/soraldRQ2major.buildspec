@@ -1,0 +1,15 @@
+groupId=se.kth.castor
+artifactId=sorald
+version=9
+
+gitRepo=https://github.com/ASSERT-KTH/sorald.git
+gitTag=87ce9cc379184fe141dc6dea98e344f21f461818
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dmaven.javadoc.skip=true\""
+
+buildinfo=target/Sorald.buildinfo

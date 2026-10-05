@@ -76,8 +76,8 @@ sha256:43a3c0b00451558265985c3d55337b65aa9b31d9242d6e4fceda17dcf2752f37
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sat Oct  3 17:15:35 UTC 2026.
-Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
+Local time is now:      Sun Oct  4 17:52:13 UTC 2026.
+Universal Time is now:  Sun Oct  4 17:52:13 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -153,19 +153,19 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.common.utils.[1mSystemUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.368 s -- in nl.obren.sokrates.common.utils.[1mSystemUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.417 s -- in nl.obren.sokrates.common.utils.[1mSystemUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.io.[1mJsonMapperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in nl.obren.sokrates.common.io.[1mJsonMapperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in nl.obren.sokrates.common.io.[1mJsonMapperTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.io.[1mJsonGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 s -- in nl.obren.sokrates.common.io.[1mJsonGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 s -- in nl.obren.sokrates.common.io.[1mJsonGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.io.[1mUserPropertiesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in nl.obren.sokrates.common.io.[1mUserPropertiesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in nl.obren.sokrates.common.io.[1mUserPropertiesTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.analysis.[1mFindingTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.common.analysis.[1mFindingTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.utils.[1mReflectionUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in nl.obren.sokrates.common.utils.[1mReflectionUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in nl.obren.sokrates.common.utils.[1mReflectionUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.utils.[1mFormattingUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in nl.obren.sokrates.common.utils.[1mFormattingUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in nl.obren.sokrates.common.utils.[1mFormattingUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.renderingutils.[1mRichTextRenderingUtilsTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.common.renderingutils.[1mRichTextRenderingUtilsTest[m
 [[1;34mINFO[m] 
@@ -238,217 +238,217 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mDuplicationInstanceTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.352 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationInstanceTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.457 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationInstanceTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.hack.[1mHackAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s -- in nl.obren.sokrates.sourcecode.lang.hack.[1mHackAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in nl.obren.sokrates.sourcecode.lang.hack.[1mHackAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.thrift.[1mThriftAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.lang.thrift.[1mThriftAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in nl.obren.sokrates.sourcecode.lang.thrift.[1mThriftAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryScopingUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryScopingUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryScopingUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryUtilsTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mGitHistoryUtilTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mGitHistoryUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mGitHistoryUtilTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryComponentsHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryComponentsHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryComponentsHelperTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mTemporalDependenciesHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mTemporalDependenciesHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mTemporalDependenciesHelperTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mDateUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mDateUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mDateUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFileModificationHistoryTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileModificationHistoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileModificationHistoryTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFilePairsChangedTogetherTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFilePairsChangedTogetherTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFilePairsChangedTogetherTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mComponentUpdateHistoryTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mComponentUpdateHistoryTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.files.[1mDuplicationAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mDuplicationAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mDuplicationAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.files.[1mFileHistoryAnalyzerOrderingTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mFileHistoryAnalyzerOrderingTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mFileHistoryAnalyzerOrderingTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.files.[1mUnitsAnalyzerAggregationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mUnitsAnalyzerAggregationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mUnitsAnalyzerAggregationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.threshold.[1mThresholdsTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.threshold.[1mThresholdsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.contributors.[1mContributorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.contributors.[1mContributorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.contributors.[1mContributorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.landscape.[1mVirtualLandscapesConfigTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.171 s -- in nl.obren.sokrates.sourcecode.landscape.[1mVirtualLandscapesConfigTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 s -- in nl.obren.sokrates.sourcecode.landscape.[1mVirtualLandscapesConfigTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.scoping.[1mScopingConventionsHiddenFilesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.040 s -- in nl.obren.sokrates.sourcecode.scoping.[1mScopingConventionsHiddenFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in nl.obren.sokrates.sourcecode.scoping.[1mScopingConventionsHiddenFilesTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryPerExtensionUtilsTest[m
-2026-Oct-03 17:15:46 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading history from file
-2026-Oct-03 17:15:46 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading commit line 1/4: 2020-01-01 alice@org.com c1 src/A.java
-2026-Oct-03 17:15:46 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading commit line 4/4: 2020-01-04 alice@org.com c4 build/pom.xml
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s -- in nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryPerExtensionUtilsTest[m
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading history from file
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading commit line 1/4: 2020-01-01 alice@org.com c1 src/A.java
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading commit line 4/4: 2020-01-04 alice@org.com c4 build/pom.xml
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s -- in nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryPerExtensionUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.githistory.[1mExtractGitHistoryFileHandlerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.githistory.[1mExtractGitHistoryFileHandlerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.githistory.[1mExtractGitHistoryFileHandlerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mSearchResultDependenciesTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 0.018 s -- in nl.obren.sokrates.sourcecode.search.[1mSearchResultDependenciesTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 0.015 s -- in nl.obren.sokrates.sourcecode.search.[1mSearchResultDependenciesTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mExtensionGroupTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in nl.obren.sokrates.sourcecode.[1mExtensionGroupTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.[1mExtensionGroupTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mFileInfoForDuplicationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mFileInfoForDuplicationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mFileInfoForDuplicationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangeTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mBlockTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mBlockTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mBlockTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mLineIndexesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mLineIndexesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mLineIndexesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mLineInfoTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mLineInfoTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mDuplicationUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mDuplicationAggregatorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationAggregatorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mDuplicationEngineTest[m
-2026-Oct-03 17:15:46 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Starting analysis/duplication/extracting blocks
-2026-Oct-03 17:15:46 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Done 'analysis/duplication/extracting blocks' in 10ms
-2026-Oct-03 17:15:46 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Starting analysis/duplication/getting number of duplicated lines
-2026-Oct-03 17:15:46 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Done 'analysis/duplication/getting number of duplicated lines' in 0ms
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationEngineTest[m
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Starting analysis/duplication/extracting blocks
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Done 'analysis/duplication/extracting blocks' in 8ms
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Starting analysis/duplication/getting number of duplicated lines
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Done 'analysis/duplication/getting number of duplicated lines' in 0ms
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationEngineTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mSourceFileDuplicationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication.[1mSourceFileDuplicationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.duplication.[1mSourceFileDuplicationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.abap.[1mAbapAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.abap.[1mAbapAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.cpp.[1mCIncludesDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCIncludesDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCIncludesDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.cpp.[1mCppAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCppAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCppAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.cpp.[1mCStyleAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCStyleAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCStyleAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasNaturalAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasNaturalAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasNaturalAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.r.[1mRAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.r.[1mRAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.swift.[1mSwiftAnalyzerTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m5[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.lang.swift.[1mSwiftAnalyzerTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m5[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.009 s -- in nl.obren.sokrates.sourcecode.lang.swift.[1mSwiftAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.ts.[1mTypeScriptAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.ts.[1mTypeScriptAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.shell.[1mShellAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.shell.[1mShellAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.shell.[1mShellAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.jsp.[1mJspAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.jsp.[1mJspAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.jsp.[1mJspAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.java.[1mJavaAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in nl.obren.sokrates.sourcecode.lang.java.[1mJavaAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in nl.obren.sokrates.sourcecode.lang.java.[1mJavaAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.php.[1mPhpHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.php.[1mPhpHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.php.[1mPhpAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.php.[1mPhpAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.php.[1mPhpAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.yaml.[1mYamlAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.yaml.[1mYamlAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.[1mDefaultLanguageAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.[1mDefaultLanguageAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.[1mDefaultLanguageAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.vb.[1mVisualBasicAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.vb.[1mVisualBasicAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.go.[1mGoLangHeuristicDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.go.[1mGoLangHeuristicDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.go.[1mGoLangHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.go.[1mGoLangAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.go.[1mGoLangAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.lang.go.[1mGoLangAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.julia.[1mJuliaAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in nl.obren.sokrates.sourcecode.lang.julia.[1mJuliaAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in nl.obren.sokrates.sourcecode.lang.julia.[1mJuliaAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.kotlin.[1mKotlinAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.lang.kotlin.[1mKotlinAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in nl.obren.sokrates.sourcecode.lang.kotlin.[1mKotlinAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.perl.[1mPerlAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.perl.[1mPerlAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.perl.[1mPerlHeuristicDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.perl.[1mPerlHeuristicDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.sourcecode.lang.perl.[1mPerlHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.html.[1mHtmlAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.html.[1mHtmlAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.clojure.[1mClojureLangAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.clojure.[1mClojureLangAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.clojure.[1mClojureLangAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.lua.[1mLuaAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in nl.obren.sokrates.sourcecode.lang.lua.[1mLuaAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.lua.[1mLuaAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicUnitsExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicUnitsExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.scala.[1mScalaAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.rust.[1mRustAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.rust.[1mRustAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.rust.[1mRustAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.python.[1mPythonAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.lang.python.[1mPythonAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.python.[1mPythonAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.python.[1mPythonDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.python.[1mPythonDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.python.[1mPythonDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.objectpascal.[1mObjectPascalAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.objectpascal.[1mObjectPascalAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.metrics.[1mMetricsListTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in nl.obren.sokrates.sourcecode.metrics.[1mMetricsListTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.metrics.[1mMetricsListTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.[1mDuplicationMetricTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.analysis.[1mDuplicationMetricTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.analysis.[1mDuplicationMetricTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.[1mAnalyzerOverrideTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.analysis.[1mAnalyzerOverrideTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSearcheableFilesCacheTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.[1mSearcheableFilesCacheTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.[1mSearcheableFilesCacheTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceCodeFilesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in nl.obren.sokrates.sourcecode.[1mSourceCodeFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in nl.obren.sokrates.sourcecode.[1mSourceCodeFilesTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.aspects.[1mMetaRulesProcessorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.aspects.[1mMetaRulesProcessorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.aspects.[1mMetaRulesProcessorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.aspects.[1mRangeTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.aspects.[1mRangeTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.cleaners.[1mCodeBlockParserTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mCodeBlockParserTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mCodeBlockParserTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.cleaners.[1mCommentsCleanerUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mCommentsCleanerUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mCommentsCleanerUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.cleaners.[1mCommentsAndEmptyLinesCleanerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mCommentsAndEmptyLinesCleanerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.cleaners.[1mSourceCodeCleanerUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mSourceCodeCleanerUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mSourceCodeCleanerUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mCodeConfigurationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.[1mCodeConfigurationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.[1mCodeConfigurationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.dependencies.[1mDependencyAnchorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyAnchorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyAnchorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.dependencies.[1mComponentDependencyTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mComponentDependencyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mComponentDependencyTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.dependencies.[1mDependencyTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.dependencies.[1mDependencyUtilsTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceFileTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceFileFilterTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileFilterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileFilterTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.scoping.[1mConventionUtilsTest[m
-2026-Oct-03 17:15:47 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*[.]java" / content like ""
-2026-Oct-03 17:15:47 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*/a/.*" / content like ""
-2026-Oct-03 17:15:47 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 3:   - path like ".*[.]java" / content like ""
-2026-Oct-03 17:15:47 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*[.]java" / content like ""
-2026-Oct-03 17:15:47 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*/a/.*" / content like ""
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.sourcecode.scoping.[1mConventionUtilsTest[m
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*[.]java" / content like ""
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*/a/.*" / content like ""
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 3:   - path like ".*[.]java" / content like ""
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*[.]java" / content like ""
+2026-Oct-04 17:52:27 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*/a/.*" / content like ""
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in nl.obren.sokrates.sourcecode.scoping.[1mConventionUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.units.[1mUnitsExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.units.[1mUnitsExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.units.[1mUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.units.[1mUnitUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.units.[1mUnitUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.units.[1mUnitUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.units.[1mCStyleHeuristicUnitsExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.units.[1mCStyleHeuristicUnitsExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.units.[1mCStyleHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.units.[1mPythonHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.units.[1mPythonHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mExtensionGroupExtractorTest[m
@@ -456,7 +456,7 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceFileSizeDistributionTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileSizeDistributionTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceFileWithSearchDataTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileWithSearchDataTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileWithSearchDataTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.githistory.[1mAuthorCommitTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.githistory.[1mAuthorCommitTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.[1mStringOperationFactoryTest[m
@@ -466,7 +466,7 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mExtractRegexOperationTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mExtractRegexOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mNoOpsOperationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mNoOpsOperationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mNoOpsOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mUpperCaseOperationTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mUpperCaseOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mPrependOperationTest[m
@@ -476,13 +476,13 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mTrimOperationTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mTrimOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mReplaceOperationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mReplaceOperationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mReplaceOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mLowerCaseOperationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mLowerCaseOperationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mLowerCaseOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.[1mComplexOperationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.[1mComplexOperationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.operations.[1mComplexOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mLogicalDecompositionTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.[1mLogicalDecompositionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.[1mLogicalDecompositionTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mFoundLineTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.search.[1mFoundLineTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mSearchExpressionTest[m
@@ -490,7 +490,7 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mSearchResultCleanerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.search.[1mSearchResultCleanerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mReplacePairTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.search.[1mReplacePairTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.search.[1mReplacePairTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -548,27 +548,27 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.214 s -- in nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.219 s -- in nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.landscape.data.[1mContributorIndividualReportExportTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s -- in nl.obren.sokrates.reports.landscape.data.[1mContributorIndividualReportExportTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in nl.obren.sokrates.reports.landscape.data.[1mContributorIndividualReportExportTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.landscape.data.[1mRepositoryExportTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.271 s -- in nl.obren.sokrates.reports.landscape.data.[1mRepositoryExportTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.295 s -- in nl.obren.sokrates.reports.landscape.data.[1mRepositoryExportTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.landscape.data.[1mContributorReportExportTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in nl.obren.sokrates.reports.landscape.data.[1mContributorReportExportTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in nl.obren.sokrates.reports.landscape.data.[1mContributorReportExportTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.landscape.statichtml.[1mVirtualLandscapeBuilderTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s -- in nl.obren.sokrates.reports.landscape.statichtml.[1mVirtualLandscapeBuilderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 s -- in nl.obren.sokrates.reports.landscape.statichtml.[1mVirtualLandscapeBuilderTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.statichtml.[1mDuplicationReportGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mDuplicationReportGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mDuplicationReportGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.statichtml.[1mMetricsListReportGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mMetricsListReportGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mMetricsListReportGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.statichtml.[1mControlsReportGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mControlsReportGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mControlsReportGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.statichtml.[1mFindingsReportGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mFindingsReportGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mFindingsReportGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.explorers.[1mFilesExplorerGeneratorsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in nl.obren.sokrates.reports.generators.explorers.[1mFilesExplorerGeneratorsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in nl.obren.sokrates.reports.generators.explorers.[1mFilesExplorerGeneratorsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.core.[1mReportFileExporterTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.reports.core.[1mReportFileExporterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.reports.core.[1mReportFileExporterTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -624,11 +624,11 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.cli.[1mPathStringsToTreeStructureTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.342 s -- in nl.obren.sokrates.cli.[1mPathStringsToTreeStructureTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 s -- in nl.obren.sokrates.cli.[1mPathStringsToTreeStructureTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.cli.[1mCommandsTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.cli.[1mCommandsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.cli.[1mSokratesFileUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s -- in nl.obren.sokrates.cli.[1mSokratesFileUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in nl.obren.sokrates.cli.[1mSokratesFileUtilsTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1193,11 +1193,11 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s -- in nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s -- in nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.codeexplorer.common.[1mPathCellRendererTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in nl.obren.sokrates.codeexplorer.common.[1mPathCellRendererTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in nl.obren.sokrates.codeexplorer.common.[1mPathCellRendererTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.codeexplorer.io.[1mRegexUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.317 s -- in nl.obren.sokrates.codeexplorer.io.[1mRegexUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.372 s -- in nl.obren.sokrates.codeexplorer.io.[1mRegexUtilsTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1907,17 +1907,17 @@ Universal Time is now:  Sat Oct  3 17:15:35 UTC 2026.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for sokrates 1.0:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] sokrates ........................................... [1;32mSUCCESS[m [  0.606 s]
-[[1;34mINFO[m] common ............................................. [1;32mSUCCESS[m [  4.509 s]
-[[1;34mINFO[m] codeanalyzer ....................................... [1;32mSUCCESS[m [  5.061 s]
-[[1;34mINFO[m] reports ............................................ [1;32mSUCCESS[m [  3.389 s]
-[[1;34mINFO[m] cli ................................................ [1;32mSUCCESS[m [  4.962 s]
-[[1;34mINFO[m] codeexplorer ....................................... [1;32mSUCCESS[m [  9.869 s]
+[[1;34mINFO[m] sokrates ........................................... [1;32mSUCCESS[m [  0.612 s]
+[[1;34mINFO[m] common ............................................. [1;32mSUCCESS[m [  4.508 s]
+[[1;34mINFO[m] codeanalyzer ....................................... [1;32mSUCCESS[m [  7.852 s]
+[[1;34mINFO[m] reports ............................................ [1;32mSUCCESS[m [  2.092 s]
+[[1;34mINFO[m] cli ................................................ [1;32mSUCCESS[m [  4.953 s]
+[[1;34mINFO[m] codeexplorer ....................................... [1;32mSUCCESS[m [ 10.118 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  28.561 s
-[[1;34mINFO[m] Finished at: 2026-10-03T17:16:05Z
+[[1;34mINFO[m] Total time:  30.310 s
+[[1;34mINFO[m] Finished at: 2026-10-04T17:52:45Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Sokrates.buildinfo: No such file or directory
 dos2unix: Skipping target/Sokrates.buildinfo, not a regular file.

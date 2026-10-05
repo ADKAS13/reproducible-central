@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sat Oct  3 12:42:42 UTC 2026.
-Universal Time is now:  Sat Oct  3 12:42:42 UTC 2026.
+Local time is now:      Sun Oct  4 18:29:24 UTC 2026.
+Universal Time is now:  Sun Oct  4 18:29:24 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -130,7 +130,7 @@ asciidoctor: WARNING: <stdin>: line 143: list item index: expected 4, got 1
 [[1;34mINFO[m] ShortRevision tag detected. The value is '10'.
 [[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app/teamengine-realm' && 'git' 'rev-parse' '--verify' '--short=10' 'HEAD'
 [[1;34mINFO[m] Working directory: /var/maven/app/teamengine-realm
-[[1;34mINFO[m] Storing buildNumber: 7b6c97a7a1 at timestamp: 1791031368186
+[[1;34mINFO[m] Storing buildNumber: 7b6c97a7a1 at timestamp: 1791138571940
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -161,13 +161,13 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
  T E S T S
 -------------------------------------------------------
 Running com.occamlab.te.realm.UserFilesRealmTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in com.occamlab.te.realm.UserFilesRealmTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 sec - in com.occamlab.te.realm.UserFilesRealmTest
 Running com.occamlab.te.realm.VerifyPBKDF2Realm
-Oct 03, 2026 12:42:49 PM com.occamlab.te.realm.PBKDF2Realm authenticate
+Oct 04, 2026 6:29:32 PM com.occamlab.te.realm.PBKDF2Realm authenticate
 WARNING: Fields are missing from the password hash.
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.353 sec - in com.occamlab.te.realm.VerifyPBKDF2Realm
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.518 sec - in com.occamlab.te.realm.VerifyPBKDF2Realm
 Running com.occamlab.te.realm.VerifyPasswordStorage
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec - in com.occamlab.te.realm.VerifyPasswordStorage
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 sec - in com.occamlab.te.realm.VerifyPasswordStorage
 
 Results :
 
@@ -258,20 +258,20 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
  T E S T S
 -------------------------------------------------------
 Running com.occamlab.te.parsers.HttpParserTest
-Oct 03, 2026 12:42:53 PM com.occamlab.te.parsers.ImageParser parse
+Oct 04, 2026 6:29:36 PM com.occamlab.te.parsers.ImageParser parse
 WARNING: Failed to parse text/plain resource from file:/var/maven/app/teamengine-core/target/test-classes/jabberwocky.txt 
  null
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.408 sec - in com.occamlab.te.parsers.HttpParserTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.434 sec - in com.occamlab.te.parsers.HttpParserTest
 Running com.occamlab.te.parsers.xml.FileSchemaSupplierTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.256 sec - in com.occamlab.te.parsers.xml.FileSchemaSupplierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.306 sec - in com.occamlab.te.parsers.xml.FileSchemaSupplierTest
 Running com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
 Running com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
 Running com.occamlab.te.parsers.SchematronValidatingParserTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.41 sec - in com.occamlab.te.parsers.SchematronValidatingParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.407 sec - in com.occamlab.te.parsers.SchematronValidatingParserTest
 Running com.occamlab.te.parsers.XMLValidatingParserTest
-Oct 03, 2026 12:42:53 PM com.occamlab.te.parsers.XMLValidatingParser parse
+Oct 04, 2026 6:29:37 PM com.occamlab.te.parsers.XMLValidatingParser parse
 INFO: Error parsing InputStream
 org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
 	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
@@ -308,17 +308,17 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not al
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 sec - in com.occamlab.te.parsers.XMLValidatingParserTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.22 sec - in com.occamlab.te.parsers.XMLValidatingParserTest
 Running com.occamlab.te.parsers.ImageParserTest
-Oct 03, 2026 12:42:53 PM com.occamlab.te.parsers.ImageParser parse
+Oct 04, 2026 6:29:37 PM com.occamlab.te.parsers.ImageParser parse
 WARNING: Failed to parse text/plain resource from file:/var/maven/app/teamengine-core/target/test-classes/jabberwocky.txt 
  null
-Oct 03, 2026 12:42:53 PM com.occamlab.te.parsers.ImageParser parse
+Oct 04, 2026 6:29:37 PM com.occamlab.te.parsers.ImageParser parse
 WARNING: Failed to parse content/unknown resource from file:/var/maven/app/teamengine-core/target/test-classes/img/fjord.webp 
  null
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in com.occamlab.te.parsers.ImageParserTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 sec - in com.occamlab.te.parsers.ImageParserTest
 Running com.occamlab.te.SetupOptionsTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.occamlab.te.SetupOptionsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.occamlab.te.SetupOptionsTest
 Running com.occamlab.te.TECoreTest
 Testing suite test:suite in Test Mode with defaultResult of Pass ...
 ******************************************************************************************************************************
@@ -359,9 +359,9 @@ Testing suite test:suite in Test Mode with defaultResult of Pass ...
    Test test:main Failed - Inherited
 			See the detail test Report null/log.xml
 Suite test:suite Failed
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.198 sec - in com.occamlab.te.TECoreTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.229 sec - in com.occamlab.te.TECoreTest
 Running com.occamlab.te.html.EarlToHtmlTransformationTest
-Oct 03, 2026 12:42:54 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+Oct 04, 2026 6:29:38 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
 SEVERE: Transformation of EARL to HTML failed.
 java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
 	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
@@ -395,7 +395,7 @@ java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Oct 03, 2026 12:42:54 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+Oct 04, 2026 6:29:38 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
 SEVERE: Transformation of EARL to HTML failed.
 java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
 	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
@@ -429,7 +429,7 @@ java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Oct 03, 2026 12:42:55 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+Oct 04, 2026 6:29:39 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
 SEVERE: Transformation of EARL to HTML failed.
 java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
 	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
@@ -463,7 +463,7 @@ java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Oct 03, 2026 12:42:55 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+Oct 04, 2026 6:29:39 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
 SEVERE: Transformation of EARL to HTML failed.
 java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
 	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
@@ -497,16 +497,16 @@ java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.306 sec - in com.occamlab.te.html.EarlToHtmlTransformationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.629 sec - in com.occamlab.te.html.EarlToHtmlTransformationTest
 Running com.occamlab.te.util.DateTimeUtilsTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.occamlab.te.util.DateTimeUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.occamlab.te.util.DateTimeUtilsTest
 Running com.occamlab.te.util.XMLParserUtilsTest
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in com.occamlab.te.util.XMLParserUtilsTest
 Running com.occamlab.te.CtlEarlReporterTest
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.815 sec - in com.occamlab.te.CtlEarlReporterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.635 sec - in com.occamlab.te.CtlEarlReporterTest
 
 Results :
 
@@ -558,9 +558,9 @@ Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
  T E S T S
 -------------------------------------------------------
 Running com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec - in com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
 Running com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 sec - in com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 sec - in com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
 Running com.occamlab.te.spi.executors.testng.VerifyEarlReporter
 java.io.FileNotFoundException: /var/maven/teamengine/config.xml (No such file or directory)
 	at java.io.FileInputStream.open0(Native Method)
@@ -652,9 +652,9 @@ java.io.FileNotFoundException: /var/maven/teamengine/config.xml (No such file or
 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.417 sec - in com.occamlab.te.spi.executors.testng.VerifyEarlReporter
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.494 sec - in com.occamlab.te.spi.executors.testng.VerifyEarlReporter
 Running com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
 
 Results :
 
@@ -706,7 +706,7 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
  T E S T S
 -------------------------------------------------------
 Running com.occamlab.te.spi.ctl.VerifyCtlExecutor
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.257 sec - in com.occamlab.te.spi.ctl.VerifyCtlExecutor
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.254 sec - in com.occamlab.te.spi.ctl.VerifyCtlExecutor
 
 Results :
 
@@ -763,57 +763,57 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
 -------------------------------------------------------
 Running com.occamlab.te.web.VerifyTestSuite
 ******************************************************************************************************************************
-Testing ex:num-parity-main type Mandatory in Test Mode with defaultResult Pass (7f2a7d20-d7a7-4cb7-bfb3-fca85c053f56)...
+Testing ex:num-parity-main type Mandatory in Test Mode with defaultResult Pass (840c5ca7-21be-4fe5-9e0f-205fd52ba58f)...
    Assertion: The input number satisfies all constraints.
 ******************************************************************************************************************************
-   Testing ex:is-even type Mandatory in Test Mode with defaultResult Pass (7f2a7d20-d7a7-4cb7-bfb3-fca85c053f56/d68e28_1)...
+   Testing ex:is-even type Mandatory in Test Mode with defaultResult Pass (840c5ca7-21be-4fe5-9e0f-205fd52ba58f/d68e28_1)...
       Assertion: The integer is even.
    Test ex:is-even Passed
 Test ex:num-parity-main Passed
-Report file "/var/maven/app/teamengine-web/target/te-base/users/adkas13/7f2a7d20-d7a7-4cb7-bfb3-fca85c053f56/report.html" created!
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.851 sec - in com.occamlab.te.web.VerifyTestSuite
+Report file "/var/maven/app/teamengine-web/target/te-base/users/adkas13/840c5ca7-21be-4fe5-9e0f-205fd52ba58f/report.html" created!
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.841 sec - in com.occamlab.te.web.VerifyTestSuite
 Running com.occamlab.te.web.CoverageMonitorTest
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.CoverageMonitor <init>
+Oct 04, 2026 6:29:46 PM com.occamlab.te.web.CoverageMonitor <init>
 WARNING: InputStream cannot be null
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in com.occamlab.te.web.CoverageMonitorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec - in com.occamlab.te.web.CoverageMonitorTest
 Running com.occamlab.te.web.ConfigFileCreatorTest
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/config.xml
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.ConfigFileCreator process
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/scripts
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/config.xml
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/config.xml
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.ConfigFileCreator process
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/scripts
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/config.xml
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/config.xml
-Oct 03, 2026 12:43:00 PM com.occamlab.te.web.ConfigFileCreator process
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/scripts
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/config.xml
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/config.xml
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator process
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/scripts
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/config.xml
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/config.xml
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator process
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/scripts
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/config.xml
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase/config.xml
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator process
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase/scripts
-Oct 03, 2026 12:43:01 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 04, 2026 6:29:47 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase/config.xml
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 sec - in com.occamlab.te.web.ConfigFileCreatorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 sec - in com.occamlab.te.web.ConfigFileCreatorTest
 
 Results :
 
@@ -830,7 +830,7 @@ Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp webResources [/var/maven/app/teamengine-web/src/main/webapp] to [/var/maven/app/teamengine-web/target/teamengine]
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/teamengine-web/src/main/webapp]
-[[1;34mINFO[m] Webapp assembled in [254 msecs]
+[[1;34mINFO[m] Webapp assembled in [305 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/teamengine-web/target/teamengine.war
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.6:single[m [1m(default)[m @ [36mteamengine-web[0;1m ---[m
@@ -958,21 +958,21 @@ Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for TEAM Engine 5.5-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] TEAM Engine ........................................ [1;32mSUCCESS[m [  4.098 s]
-[[1;34mINFO[m] TEAM Engine - Tomcat Realm ......................... [1;32mSUCCESS[m [  2.571 s]
-[[1;34mINFO[m] TEAM Engine - Shared Resources ..................... [1;32mSUCCESS[m [  0.377 s]
-[[1;34mINFO[m] TEAM Engine - Core Module .......................... [1;32mSUCCESS[m [  6.092 s]
-[[1;34mINFO[m] TEAM Engine - Service Providers .................... [1;32mSUCCESS[m [  1.374 s]
-[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers ............. [1;32mSUCCESS[m [  0.895 s]
-[[1;34mINFO[m] TEAM Engine - Web Application ...................... [1;32mSUCCESS[m [  4.671 s]
-[[1;34mINFO[m] TEAM Engine - Console Application .................. [1;32mSUCCESS[m [  1.068 s]
-[[1;34mINFO[m] TEAM Engine - Virtualization ....................... [1;32mSUCCESS[m [  0.328 s]
-[[1;34mINFO[m] TEAM Engine - Tests ................................ [1;32mSUCCESS[m [  0.355 s]
+[[1;34mINFO[m] TEAM Engine ........................................ [1;32mSUCCESS[m [  6.214 s]
+[[1;34mINFO[m] TEAM Engine - Tomcat Realm ......................... [1;32mSUCCESS[m [  1.994 s]
+[[1;34mINFO[m] TEAM Engine - Shared Resources ..................... [1;32mSUCCESS[m [  0.429 s]
+[[1;34mINFO[m] TEAM Engine - Core Module .......................... [1;32mSUCCESS[m [  8.100 s]
+[[1;34mINFO[m] TEAM Engine - Service Providers .................... [1;32mSUCCESS[m [  2.105 s]
+[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers ............. [1;32mSUCCESS[m [  0.955 s]
+[[1;34mINFO[m] TEAM Engine - Web Application ...................... [1;32mSUCCESS[m [  4.788 s]
+[[1;34mINFO[m] TEAM Engine - Console Application .................. [1;32mSUCCESS[m [  1.335 s]
+[[1;34mINFO[m] TEAM Engine - Virtualization ....................... [1;32mSUCCESS[m [  0.614 s]
+[[1;34mINFO[m] TEAM Engine - Tests ................................ [1;32mSUCCESS[m [  0.511 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  21.975 s
-[[1;34mINFO[m] Finished at: 2026-10-03T12:43:05Z
+[[1;34mINFO[m] Total time:  27.175 s
+[[1;34mINFO[m] Finished at: 2026-10-04T18:29:52Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/beekeeper.buildinfo: No such file or directory
 dos2unix: Skipping target/beekeeper.buildinfo, not a regular file.

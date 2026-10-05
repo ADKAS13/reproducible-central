@@ -1,0 +1,604 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/old-mil-sym-java/base/old-mil-sym-java.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1msec.web.renderer[0m
+|      [0;34martifactId[0;97m: [1mmil-sym-java[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/sec/web/renderer/mil-sym-java/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/missioncommand/old-mil-sym-java.git[0m
+|      [0;34mgitTag[0;97m: [1m1c7a176abffdb5ae0383d06c09618f7f9a326348[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -Dgpg.skip=true"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Old-mil-sym-java.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/missioncommand/old-mil-sym-java.git[0m on tag [1m1c7a176abffdb5ae0383d06c09618f7f9a326348[0m
+/home/adkas13/reproducible-central/repos/old-mil-sym-java/base/buildcache/mil-sym-java
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/missioncommand/old-mil-sym-java.git (fetch)
+origin	https://github.com/missioncommand/old-mil-sym-java.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 1c7a176abffdb5ae0383d06c09618f7f9a326348 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/old-mil-sym-java/base/buildcache/mil-sym-java
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1msec.web.renderer:mil-sym-java:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/old-mil-sym-java/base/buildcache/mil-sym-java:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -Dgpg.skip=true" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Oct  4 18:25:40 UTC 2026.
+Universal Time is now:  Sun Oct  4 18:25:40 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] sec-core-parent                                                    [pom]
+[[1;34mINFO[m] JavaRendererUtils                                                  [jar]
+[[1;34mINFO[m] JavaLineArray                                                      [jar]
+[[1;34mINFO[m] JavaRendererServer                                                 [jar]
+[[1;34mINFO[m] JavaRenderer                                                       [jar]
+[[1;34mINFO[m] RendererPluginInterface                                            [jar]
+[[1;34mINFO[m] mil-sym-renderer                                                   [jar]
+[[1;34mINFO[m] mil-sym-renderer Parent Pom                                        [pom]
+[[1;34mINFO[m] mil-sym-svc Parent Pom                                             [pom]
+[[1;34mINFO[m] mil-sym-service                                                    [war]
+[[1;34mINFO[m] rendering-sample-1                                                 [jar]
+[[1;34mINFO[m] mil-sym-samples Pom                                                [pom]
+[[1;34mINFO[m] mil-sym-java Master Pom                                            [pom]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36msec.web.renderer:sec-core-parent[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding sec-core-parent 0.1.4                                    [1/13][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msec-core-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36msec-core-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/core/pom.xml to /var/maven/.m2/repository/sec/web/renderer/sec-core-parent/0.1.4/sec-core-parent-0.1.4.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------< [0;36msec.web.renderer:JavaRendererUtils[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding JavaRendererUtils 0.1.4                                  [2/13][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 13 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:compile[m [1m(default-compile)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] Compiling 35 source files to /var/maven/app/core/JavaRendererUtils/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/JavaRendererUtils/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:testCompile[m [1m(default-testCompile)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.3.1:jar[m [1m(default-jar)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/core/JavaRendererUtils/target/JavaRendererUtils-0.1.4.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.2-beta-5:attached[m [1m(default)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/core/JavaRendererUtils/target/JavaRendererUtils-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mJavaRendererUtils[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRendererUtils/target/JavaRendererUtils-0.1.4.jar to /var/maven/.m2/repository/sec/web/renderer/JavaRendererUtils/0.1.4/JavaRendererUtils-0.1.4.jar
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRendererUtils/pom.xml to /var/maven/.m2/repository/sec/web/renderer/JavaRendererUtils/0.1.4/JavaRendererUtils-0.1.4.pom
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRendererUtils/target/JavaRendererUtils-0.1.4-jar-with-dependencies.jar to /var/maven/.m2/repository/sec/web/renderer/JavaRendererUtils/0.1.4/JavaRendererUtils-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36msec.web.renderer:JavaLineArray[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding JavaLineArray 0.1.4                                      [3/13][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 9 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:compile[m [1m(default-compile)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] Compiling 19 source files to /var/maven/app/core/JavaLineArray/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/JavaLineArray/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:testCompile[m [1m(default-testCompile)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.3.1:jar[m [1m(default-jar)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/core/JavaLineArray/target/JavaLineArray-0.1.4.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.2-beta-5:attached[m [1m(default)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/core/JavaLineArray/target/JavaLineArray-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mJavaLineArray[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaLineArray/target/JavaLineArray-0.1.4.jar to /var/maven/.m2/repository/sec/web/renderer/JavaLineArray/0.1.4/JavaLineArray-0.1.4.jar
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaLineArray/pom.xml to /var/maven/.m2/repository/sec/web/renderer/JavaLineArray/0.1.4/JavaLineArray-0.1.4.pom
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaLineArray/target/JavaLineArray-0.1.4-jar-with-dependencies.jar to /var/maven/.m2/repository/sec/web/renderer/JavaLineArray/0.1.4/JavaLineArray-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36msec.web.renderer:JavaRendererServer[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding JavaRendererServer 0.1.4                                 [4/13][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/JavaRendererServer/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:compile[m [1m(default-compile)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] Compiling 7 source files to /var/maven/app/core/JavaRendererServer/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/JavaRendererServer/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:testCompile[m [1m(default-testCompile)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.3.1:jar[m [1m(default-jar)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/core/JavaRendererServer/target/JavaRendererServer-0.1.4.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.2-beta-5:attached[m [1m(default)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] Building jar: /var/maven/app/core/JavaRendererServer/target/JavaRendererServer-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mJavaRendererServer[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRendererServer/target/JavaRendererServer-0.1.4.jar to /var/maven/.m2/repository/sec/web/renderer/JavaRendererServer/0.1.4/JavaRendererServer-0.1.4.jar
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRendererServer/pom.xml to /var/maven/.m2/repository/sec/web/renderer/JavaRendererServer/0.1.4/JavaRendererServer-0.1.4.pom
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRendererServer/target/JavaRendererServer-0.1.4-jar-with-dependencies.jar to /var/maven/.m2/repository/sec/web/renderer/JavaRendererServer/0.1.4/JavaRendererServer-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36msec.web.renderer:JavaRenderer[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding JavaRenderer 0.1.4                                       [5/13][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/JavaRenderer/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:compile[m [1m(default-compile)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] Compiling 5 source files to /var/maven/app/core/JavaRenderer/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/JavaRenderer/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:testCompile[m [1m(default-testCompile)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.3.1:jar[m [1m(default-jar)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/core/JavaRenderer/target/JavaRenderer-0.1.4.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.2-beta-5:attached[m [1m(default)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] Building jar: /var/maven/app/core/JavaRenderer/target/JavaRenderer-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mJavaRenderer[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRenderer/target/JavaRenderer-0.1.4.jar to /var/maven/.m2/repository/sec/web/renderer/JavaRenderer/0.1.4/JavaRenderer-0.1.4.jar
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRenderer/pom.xml to /var/maven/.m2/repository/sec/web/renderer/JavaRenderer/0.1.4/JavaRenderer-0.1.4.pom
+[[1;34mINFO[m] Installing /var/maven/app/core/JavaRenderer/target/JavaRenderer-0.1.4-jar-with-dependencies.jar to /var/maven/.m2/repository/sec/web/renderer/JavaRenderer/0.1.4/JavaRenderer-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36msec.web.renderer:RendererPluginInterface[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding RendererPluginInterface 0.1.4                            [6/13][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mRendererPluginInterface[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mRendererPluginInterface[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/renderer/RendererPluginInterface/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:compile[m [1m(default-compile)[m @ [36mRendererPluginInterface[0;1m ---[m
+[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/renderer/RendererPluginInterface/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mRendererPluginInterface[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/renderer/RendererPluginInterface/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:testCompile[m [1m(default-testCompile)[m @ [36mRendererPluginInterface[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mRendererPluginInterface[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mRendererPluginInterface[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/renderer/RendererPluginInterface/target/RendererPluginInterface-0.1.4.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mRendererPluginInterface[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/renderer/RendererPluginInterface/target/RendererPluginInterface-0.1.4.jar to /var/maven/.m2/repository/sec/web/renderer/RendererPluginInterface/0.1.4/RendererPluginInterface-0.1.4.jar
+[[1;34mINFO[m] Installing /var/maven/app/renderer/RendererPluginInterface/pom.xml to /var/maven/.m2/repository/sec/web/renderer/RendererPluginInterface/0.1.4/RendererPluginInterface-0.1.4.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------< [0;36msec.web.renderer:mil-sym-renderer[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding mil-sym-renderer 0.1.4                                   [7/13][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/renderer/mil-sym-renderer/src/main/jnlp/resources
+[[1;34mINFO[m] Copying 5 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:compile[m [1m(default-compile)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] Compiling 64 source files to /var/maven/app/renderer/mil-sym-renderer/target/classes
+[[1;33mWARNING[m] /var/maven/app/renderer/mil-sym-renderer/src/main/java/sec/web/renderer/utilities/PNGInfo.java:[32,54] Base64 is internal proprietary API and may be removed in a future release
+[[1;33mWARNING[m] /var/maven/app/renderer/mil-sym-renderer/src/main/java/sec/web/renderer/utilities/PNGInfo.java:[460,56] Base64 is internal proprietary API and may be removed in a future release
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/renderer/mil-sym-renderer/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:testCompile[m [1m(default-testCompile)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.3.1:jar[m [1m(default-jar)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/renderer/mil-sym-renderer/target/mil-sym-renderer-0.1.4.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.2-beta-5:attached[m [1m(default)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] ArmyC2/ already added, skipping
+[[1;34mINFO[m] ArmyC2/C2SD/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] ArmyC2/ already added, skipping
+[[1;34mINFO[m] ArmyC2/C2SD/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] Building jar: /var/maven/app/renderer/mil-sym-renderer/target/mil-sym-renderer-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] ArmyC2/ already added, skipping
+[[1;34mINFO[m] ArmyC2/C2SD/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] ArmyC2/ already added, skipping
+[[1;34mINFO[m] ArmyC2/C2SD/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mwebstart-maven-plugin:1.0-beta-6:jnlp-inline[m [1m(package)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] Directory does not exist /var/maven/app/renderer/mil-sym-renderer/src/main/jnlp/resources
+[[1;34mINFO[m] -- Remove existing signatures
+[[1;34mINFO[m] -- Sign jars
+[[1;34mINFO[m] Building zip: /var/maven/app/renderer/mil-sym-renderer/target/mil-sym-renderer-0.1.4.zip
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mmil-sym-renderer[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/renderer/mil-sym-renderer/target/mil-sym-renderer-0.1.4.jar to /var/maven/.m2/repository/sec/web/renderer/mil-sym-renderer/0.1.4/mil-sym-renderer-0.1.4.jar
+[[1;34mINFO[m] Installing /var/maven/app/renderer/mil-sym-renderer/pom.xml to /var/maven/.m2/repository/sec/web/renderer/mil-sym-renderer/0.1.4/mil-sym-renderer-0.1.4.pom
+[[1;34mINFO[m] Installing /var/maven/app/renderer/mil-sym-renderer/target/mil-sym-renderer-0.1.4-jar-with-dependencies.jar to /var/maven/.m2/repository/sec/web/renderer/mil-sym-renderer/0.1.4/mil-sym-renderer-0.1.4-jar-with-dependencies.jar
+[[1;34mINFO[m] Installing /var/maven/app/renderer/mil-sym-renderer/target/mil-sym-renderer-0.1.4.zip to /var/maven/.m2/repository/sec/web/renderer/mil-sym-renderer/0.1.4/mil-sym-renderer-0.1.4.zip
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36msec.web.renderer:mil-sym-renderer-parent[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding mil-sym-renderer Parent Pom 0.1.4                        [8/13][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmil-sym-renderer-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mmil-sym-renderer-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/renderer/pom.xml to /var/maven/.m2/repository/sec/web/renderer/mil-sym-renderer-parent/0.1.4/mil-sym-renderer-parent-0.1.4.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36msec.web.renderer:mil-sym-svc-parent[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding mil-sym-svc Parent Pom 0.1.4                             [9/13][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmil-sym-svc-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-source-plugin:2.2:jar[m [1m(attach-sources)[0;1m > [0;1mgenerate-sources[m @ [36mmil-sym-svc-parent[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-source-plugin:2.2:jar[m [1m(attach-sources)[0;1m < [0;1mgenerate-sources[m @ [36mmil-sym-svc-parent[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:2.2:jar[m [1m(attach-sources)[m @ [36mmil-sym-svc-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mmil-sym-svc-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/service/pom.xml to /var/maven/.m2/repository/sec/web/renderer/mil-sym-svc-parent/0.1.4/mil-sym-svc-parent-0.1.4.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36msec.web.renderer:mil-sym-service[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding mil-sym-service 0.1.4                                   [10/13][m
+[[1;34mINFO[m] [1m--------------------------------[ war ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmil-sym-service[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mmil-sym-service[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:compile[m [1m(default-compile)[m @ [36mmil-sym-service[0;1m ---[m
+[[1;34mINFO[m] Compiling 19 source files to /var/maven/app/service/mil-sym-service/target/classes
+[[1;33mWARNING[m] -options.
+/var/maven/app/service/mil-sym-service/src/main/java/sec/web/renderer/utils/ImagingUtils.java:[5,54] Base64 is internal proprietary API and may be removed in a future release
+[[1;33mWARNING[m] /var/maven/app/service/mil-sym-service/src/main/java/sec/web/renderer/services/directory/DirectoryReaderController.java:[16,52] [deprecation] DirectoryWatcherVJ6 in sec.web.renderer.services.directory.listeners has been deprecated
+[[1;33mWARNING[m] /var/maven/app/service/mil-sym-service/src/main/java/sec/web/renderer/services/directory/DirectoryReaderController.java:[38,32] [deprecation] DirectoryWatcherVJ6 in sec.web.renderer.services.directory.listeners has been deprecated
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mmil-sym-service[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:testCompile[m [1m(default-testCompile)[m @ [36mmil-sym-service[0;1m ---[m
+[[1;34mINFO[m] Compiling 2 source files to /var/maven/app/service/mil-sym-service/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mmil-sym-service[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/service/mil-sym-service/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-war-plugin:2.1.1:war[m [1m(default-war)[m @ [36mmil-sym-service[0;1m ---[m
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/var/maven/.m2/repository/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar) to field java.util.Properties.defaults
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[[1;34mINFO[m] Packaging webapp
+[[1;34mINFO[m] Assembling webapp [mil-sym-service] in [/var/maven/app/service/mil-sym-service/target/mil-sym-service-0.1.4]
+[[1;34mINFO[m] Processing war project
+[[1;34mINFO[m] Copying webapp resources [/var/maven/app/service/mil-sym-service/src/main/webapp]
+[[1;34mINFO[m] Webapp assembled in [151 msecs]
+[[1;34mINFO[m] Building war: /var/maven/app/service/mil-sym-service/target/mil-sym-service-0.1.4.war
+[[1;34mINFO[m] WEB-INF/web.xml already added, skipping
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-source-plugin:2.2:jar[m [1m(attach-sources)[0;1m > [0;1mgenerate-sources[m @ [36mmil-sym-service[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-source-plugin:2.2:jar[m [1m(attach-sources)[0;1m < [0;1mgenerate-sources[m @ [36mmil-sym-service[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:2.2:jar[m [1m(attach-sources)[m @ [36mmil-sym-service[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/service/mil-sym-service/target/mil-sym-service-0.1.4-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mmil-sym-service[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/service/mil-sym-service/target/mil-sym-service-0.1.4.war to /var/maven/.m2/repository/sec/web/renderer/mil-sym-service/0.1.4/mil-sym-service-0.1.4.war
+[[1;34mINFO[m] Installing /var/maven/app/service/mil-sym-service/pom.xml to /var/maven/.m2/repository/sec/web/renderer/mil-sym-service/0.1.4/mil-sym-service-0.1.4.pom
+[[1;34mINFO[m] Installing /var/maven/app/service/mil-sym-service/target/mil-sym-service-0.1.4-sources.jar to /var/maven/.m2/repository/sec/web/renderer/mil-sym-service/0.1.4/mil-sym-service-0.1.4-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36msec.web.renderer:rendering-sample-1[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding rendering-sample-1 0.1.4                                [11/13][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/samples/rendering-sample-1/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:compile[m [1m(default-compile)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/samples/rendering-sample-1/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/samples/rendering-sample-1/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:2.3.2:testCompile[m [1m(default-testCompile)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/samples/rendering-sample-1/target/rendering-sample-1.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.2-beta-5:attached[m [1m(default)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] ArmyC2/ already added, skipping
+[[1;34mINFO[m] ArmyC2/C2SD/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] ArmyC2/ already added, skipping
+[[1;34mINFO[m] ArmyC2/C2SD/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] Building jar: /var/maven/app/samples/rendering-sample-1/target/rendering-sample-1-executable.jar
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] ArmyC2/ already added, skipping
+[[1;34mINFO[m] ArmyC2/C2SD/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;34mINFO[m] META-INF/ already added, skipping
+[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
+[[1;34mINFO[m] ArmyC2/ already added, skipping
+[[1;34mINFO[m] ArmyC2/C2SD/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/ already added, skipping
+[[1;34mINFO[m] META-INF/maven/sec.web.renderer/ already added, skipping
+[[1;33mWARNING[m] Configuration options: 'appendAssemblyId' is set to false, and 'classifier' is missing.
+Instead of attaching the assembly file: /var/maven/app/samples/rendering-sample-1/target/rendering-sample-1-executable.jar, it will become the file for main project artifact.
+NOTE: If multiple descriptors or descriptor-formats are provided for this project, the value of this file will be non-deterministic!
+[[1;33mWARNING[m] Replacing pre-existing project main-artifact file: /var/maven/app/samples/rendering-sample-1/target/rendering-sample-1.jar
+with assembly file: /var/maven/app/samples/rendering-sample-1/target/rendering-sample-1-executable.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mrendering-sample-1[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/samples/rendering-sample-1/target/rendering-sample-1-executable.jar to /var/maven/.m2/repository/sec/web/renderer/rendering-sample-1/0.1.4/rendering-sample-1-0.1.4.jar
+[[1;34mINFO[m] Installing /var/maven/app/samples/rendering-sample-1/pom.xml to /var/maven/.m2/repository/sec/web/renderer/rendering-sample-1/0.1.4/rendering-sample-1-0.1.4.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36msec.web.renderer:mil-sym-samples-parent[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding mil-sym-samples Pom 0.1.4                               [12/13][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmil-sym-samples-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mmil-sym-samples-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/samples/pom.xml to /var/maven/.m2/repository/sec/web/renderer/mil-sym-samples-parent/0.1.4/mil-sym-samples-parent-0.1.4.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36msec.web.renderer:mil-sym-java[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding mil-sym-java Master Pom 0.1.4                           [13/13][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmil-sym-java[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mmil-sym-java[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/sec/web/renderer/mil-sym-java/0.1.4/mil-sym-java-0.1.4.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for mil-sym-java Master Pom 0.1.4:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] sec-core-parent .................................... [1;32mSUCCESS[m [  0.274 s]
+[[1;34mINFO[m] JavaRendererUtils .................................. [1;32mSUCCESS[m [  3.601 s]
+[[1;34mINFO[m] JavaLineArray ...................................... [1;32mSUCCESS[m [  1.687 s]
+[[1;34mINFO[m] JavaRendererServer ................................. [1;32mSUCCESS[m [  0.566 s]
+[[1;34mINFO[m] JavaRenderer ....................................... [1;32mSUCCESS[m [  0.502 s]
+[[1;34mINFO[m] RendererPluginInterface ............................ [1;32mSUCCESS[m [  0.205 s]
+[[1;34mINFO[m] mil-sym-renderer ................................... [1;32mSUCCESS[m [  4.340 s]
+[[1;34mINFO[m] mil-sym-renderer Parent Pom ........................ [1;32mSUCCESS[m [  0.013 s]
+[[1;34mINFO[m] mil-sym-svc Parent Pom ............................. [1;32mSUCCESS[m [  0.169 s]
+[[1;34mINFO[m] mil-sym-service .................................... [1;32mSUCCESS[m [  1.718 s]
+[[1;34mINFO[m] rendering-sample-1 ................................. [1;32mSUCCESS[m [  0.493 s]
+[[1;34mINFO[m] mil-sym-samples Pom ................................ [1;32mSUCCESS[m [  0.008 s]
+[[1;34mINFO[m] mil-sym-java Master Pom ............................ [1;32mSUCCESS[m [  0.010 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  13.838 s
+[[1;34mINFO[m] Finished at: 2026-10-04T18:25:55Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Old-mil-sym-java.buildinfo: No such file or directory
+dos2unix: Skipping target/Old-mil-sym-java.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

@@ -1,0 +1,15 @@
+groupId=org.phenopackets
+artifactId=phenopacket-schema
+version=9
+
+gitRepo=https://github.com/ga4gh/phenopacket-schema.git
+gitTag=2090c54b4cd68e1d44aab8b067d0b0def0f8a30c
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install\""
+
+buildinfo=target/Phenopacket-schema.buildinfo

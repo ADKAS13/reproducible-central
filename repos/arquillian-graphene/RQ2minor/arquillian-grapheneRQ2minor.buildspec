@@ -1,0 +1,15 @@
+groupId=org.jboss.arquillian.graphene
+artifactId=graphene-parent
+version=9
+
+gitRepo=https://github.com/arquillian/arquillian-graphene.git
+gitTag=6f2930652c58c5299915f6beb9eed5a96b5474c6
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Arquillian-graphene.buildinfo

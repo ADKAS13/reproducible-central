@@ -1,0 +1,1681 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/sorald/base/sorald.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1mse.kth.castor[0m
+|      [0;34martifactId[0;97m: [1msorald[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/se/kth/castor/sorald/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/ASSERT-KTH/sorald.git[0m
+|      [0;34mgitTag[0;97m: [1m87ce9cc379184fe141dc6dea98e344f21f461818[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -Dmaven.javadoc.skip=true"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Sorald.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/ASSERT-KTH/sorald.git[0m on tag [1m87ce9cc379184fe141dc6dea98e344f21f461818[0m
+/home/adkas13/reproducible-central/repos/sorald/base/buildcache/sorald
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/ASSERT-KTH/sorald.git (fetch)
+origin	https://github.com/ASSERT-KTH/sorald.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 87ce9cc379184fe141dc6dea98e344f21f461818 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/sorald/base/buildcache/sorald
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mse.kth.castor:sorald:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/sorald/base/buildcache/sorald:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -Dmaven.javadoc.skip=true" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Oct  4 18:26:52 UTC 2026.
+Universal Time is now:  Sun Oct  4 18:26:52 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36mse.kth.castor:sorald[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding Sorald 0.3.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 3.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml (1.4 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 18 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml
+Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 3.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 11 kB/s)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] ShortRevision tag detected. The value is '8'.
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' '--short=8' 'HEAD'
+[[1;34mINFO[m] Working directory: /var/maven/app
+[[1;34mINFO[m] Storing buildNumber: 87ce9cc3 at timestamp: 1791138417136
+[[1;33mWARNING[m] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[[1;34mINFO[m] ShortRevision tag detected. The value is '8'.
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' '--short=8' 'HEAD'
+[[1;34mINFO[m] Working directory: /var/maven/app
+[[1;34mINFO[m] Storing buildScmBranch: UNKNOWN
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.6:prepare-agent[m [1m(default-prepare-agent)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] argLine set to -javaagent:/var/maven/.m2/repository/org/jacoco/org.jacoco.agent/0.8.6/org.jacoco.agent-0.8.6-runtime.jar=destfile=/var/maven/app/target/jacoco.exec
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 86 source files to /var/maven/app/target/classes
+[[1;34mINFO[m] /var/maven/app/src/main/java/sorald/processor/BigDecimalDoubleConstructorProcessor.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/src/main/java/sorald/processor/BigDecimalDoubleConstructorProcessor.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 173 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 29 source files to /var/maven/app/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running sorald.[1mSegmentStrategyTest[m
+-----Number of fixes------
+ArrayHashCodeAndToStringProcessor: 10
+-----End of report------
+java.lang.IllegalStateException: Just crashing a little bit here :)
+	at sorald.SegmentStrategyTest.throwIllegalStateException(SegmentStrategyTest.java:148)
+	at sorald.SegmentStrategyTest.lambda$segmentStrategy_doesNotFail_onCrashInParsingSegment$1(SegmentStrategyTest.java:105)
+	at sorald.Repair.lambda$segmentRepair$2(Repair.java:165)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.LinkedList$LLSpliterator.tryAdvance(LinkedList.java:1253)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at sorald.SegmentStrategyTest.segmentStrategy_doesNotFail_onCrashInParsingSegment(SegmentStrategyTest.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+java.lang.IllegalStateException: Just crashing a little bit here :)
+	at sorald.SegmentStrategyTest.throwIllegalStateException(SegmentStrategyTest.java:148)
+	at sorald.SegmentStrategyTest.lambda$segmentStrategy_doesNotFail_onCrashInParsingSegment$1(SegmentStrategyTest.java:105)
+	at sorald.Repair.lambda$segmentRepair$2(Repair.java:165)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.LinkedList$LLSpliterator.tryAdvance(LinkedList.java:1253)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at sorald.SegmentStrategyTest.segmentStrategy_doesNotFail_onCrashInParsingSegment(SegmentStrategyTest.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+--max-files-per-segment must be greater than 0
+Usage: sorald repair [-hV] [--max-files-per-segment=<maxFilesPerSegment>]
+                     [--max-fixes-per-rule=<maxFixesPerRule>]
+                     [--pretty-printing-strategy=<prettyPrintingStrategy>]
+                     [--repair-strategy=<repairStrategy>]
+                     [--resolve-classpath-from=<resolveClasspathFrom>]
+                     --source=<source> [--stats-output-file=<statsOutputFile>]
+                     [--target=<target>] (--rule-key=<ruleKey> |
+                     --violation-specs=<ruleViolationSpecifiers>[,
+                     <ruleViolationSpecifiers>...]
+                     [--violation-specs=<ruleViolationSpecifiers>[,
+                     <ruleViolationSpecifiers>...]]...)
+Repair Sonar rule violations in a targeted project.
+  -h, --help                 Show this help message and exit.
+      --max-files-per-segment=<maxFilesPerSegment>
+                             Max number of files per loaded segment for
+                               segmented repair. It should be >= 3000 files per
+                               segment.
+      --max-fixes-per-rule=<maxFixesPerRule>
+                             Max number of fixes per rule.
+      --pretty-printing-strategy=<prettyPrintingStrategy>
+                             Mode for pretty printing the source code:
+                               'NORMAL', which means that all source code will
+                               be printed and its formatting might change (such
+                               as indentation), and 'SNIPER', which means that
+                               only statements changed towards the repair of
+                               Sonar rule violations will be printed.
+      --repair-strategy=<repairStrategy>
+                             Type of repair strategy. DEFAULT - load everything
+                               without splitting up the folder in segments,
+                               MAVEN - use Maven to locate production source
+                               code and the classpath (test source code is
+                               ignored), SEGMENT - splitting the folder into
+                               smaller segments and repair one segment at a
+                               time (need to specify --maxFilesPerSegment if
+                               not default)
+      --resolve-classpath-from=<resolveClasspathFrom>
+                             Path to the root of a project to resolve the
+                               classpath from. Currently only works for Maven
+                               projects.
+      --rule-key=<ruleKey>   Choose one of the following rule keys:
+                             S1118: Utility classes should not have public
+                               constructors
+                             	(incomplete: Only handles implicit public
+                               constructor)
+                             S1132: Strings literals should be placed on the
+                               left side when checking for equality
+                             S1155: Collection.isEmpty() should be used to test
+                               for emptiness
+                             S1217: "Thread.run()" should not be called directly
+                             S1444: "public static" fields should be constant
+                             	(incomplete: does not fix variable naming)
+                             S1481: Unused local variables should be removed
+                             S1596: "Collections.EMPTY_LIST", "EMPTY_MAP", and
+                               "EMPTY_SET" should not be used
+                             S1656: Variables should not be self-assigned
+                             S1854: Unused assignments should be removed
+                             S1860: Synchronization should not be based on
+                               Strings or boxed primitives
+                             S1948: Fields in a "Serializable" class should
+                               either be transient or serializable
+                             S2057: Every class implementing Serializable
+                               should declare a static final serialVersionUID.
+                             	(incomplete: This processor does not address the
+                               case where the class already has a
+                               serialVersionUID with a non long type.)
+                             S2095: Resources should be closed
+                             S2097: "equals(Object obj)" should test argument
+                               type
+                             S2111: "BigDecimal(double)" should not be used
+                             S2116: "hashCode" and "toString" should not be
+                               called on array instances
+                             S2142: "InterruptedException" should not be ignored
+                             S2164: Math should not be performed on floats
+                             S2167: "compareTo" should not return "Integer.
+                               MIN_VALUE"
+                             S2184: Math operands should be cast before
+                               assignment
+                             S2204: ".equals()" should not be used to test the
+                               values of "Atomic" classes
+                             S2225: "toString()" and "clone()" methods should
+                               not return null
+                             	(incomplete: does not fix null returning clone())
+                             S2272: "Iterator.next()" methods should throw
+                               "NoSuchElementException"
+                             S2755: XML parsers should not be vulnerable to XXE
+                               attacks
+                             	(incomplete: This processor is a WIP and
+                               currently supports a subset of rule 2755. See
+                               Sorald's documentation for details.)
+                             S3032: JEE applications should not "getClassLoader"
+                             S3067: "getClass" should not be used for
+                               synchronization
+                             S3984: Exception should not be created without
+                               being thrown
+                             S4973: Strings and Boxed types should be compared
+                               using "equals()"
+      --source=<source>      The path to the file or folder to be analyzed and
+                               possibly repaired.
+      --stats-output-file=<statsOutputFile>
+                             Path to a file to store execution statistics in
+                               (in JSON format). If left unspecified, Sorald
+                               does not gather statistics.
+      --target=<target>      The target of this execution (ex. sorald/92d377).
+                               This will be included in the json report.
+  -V, --version              Print version information and exit.
+      --violation-specs=<ruleViolationSpecifiers>[,<ruleViolationSpecifiers>...]
+                             One or more rule violation specifiers. Specifiers
+                               can be gathered with the 'mine' command using
+                               the --stats-output-file option.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.613 s - in sorald.[1mSegmentStrategyTest[m
+[[1;34mINFO[m] Running sorald.[1mRepairTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in sorald.[1mRepairTest[m
+[[1;34mINFO[m] Running sorald.segment.[1mSoraldTreeBuilderAlgorithmTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 s - in sorald.segment.[1mSoraldTreeBuilderAlgorithmTest[m
+[[1;34mINFO[m] Running sorald.segment.[1mFirstFitSegmentationAlgorithmTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in sorald.segment.[1mFirstFitSegmentationAlgorithmTest[m
+[[1;34mINFO[m] Running sorald.[1mGatherStatsTest[m
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.94 s - in sorald.[1mGatherStatsTest[m
+[[1;34mINFO[m] Running sorald.[1mClasspathModeTest[m
+-----Number of fixes------
+CastArithmeticOperandProcessor: 1
+-----End of report------
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.731 s - in sorald.[1mClasspathModeTest[m
+[[1;34mINFO[m] Running sorald.processor.[1mProcessorTest[m
+-----Number of fixes------
+UtilityClassWithPublicConstructorProcessor: 1
+-----End of report------
+-----Number of fixes------
+PublicStaticFieldShouldBeFinalProcessor: 1
+-----End of report------
+-----Number of fixes------
+PublicStaticFieldShouldBeFinalProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 3
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 2
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+BigDecimalDoubleConstructorProcessor: 8
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+SelfAssignementProcessor: 10
+-----End of report------
+-----Number of fixes------
+IteratorNextExceptionProcessor: 1
+-----End of report------
+-----Number of fixes------
+CollectionsEmptyConstantsProcessor: 3
+-----End of report------
+-----Number of fixes------
+CompareToReturnValueProcessor: 2
+-----End of report------
+-----Number of fixes------
+UnusedLocalVariableProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SynchronizationOnGetClassProcessor: 2
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 2
+-----End of report------
+-----Number of fixes------
+SynchronizationOnStringOrBoxedProcessor: 7
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 5
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 1
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 2
+-----End of report------
+-----Number of fixes------
+UnusedThrowableProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnusedThrowableProcessor: 1
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 1
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 8
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 26
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 4
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 1
+-----End of report------
+-----Number of fixes------
+ToStringReturningNullProcessor: 1
+-----End of report------
+-----Number of fixes------
+MathOnFloatProcessor: 7
+-----End of report------
+-----Number of fixes------
+ArrayHashCodeAndToStringProcessor: 4
+-----End of report------
+-----Number of fixes------
+ArrayHashCodeAndToStringProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 6
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 3
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+CollectionIsEmptyProcessor: 2
+-----End of report------
+-----Number of fixes------
+EqualsOnAtomicClassProcessor: 3
+-----End of report------
+-----Number of fixes------
+ThreadRunProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerializableFieldInSerializableClassProcessor: 1
+-----End of report------
+-----Number of fixes------
+EqualsArgumentTypeProcessor: 1
+-----End of report------
+-----Number of fixes------
+EqualsArgumentTypeProcessor: 1
+-----End of report------
+-----Number of fixes------
+CompareStringsBoxedTypesWithEqualsProcessor: 3
+-----End of report------
+-----Number of fixes------
+GetClassLoaderProcessor: 5
+-----End of report------
+-----Number of fixes------
+UtilityClassWithPublicConstructorProcessor: 1
+-----End of report------
+-----Number of fixes------
+PublicStaticFieldShouldBeFinalProcessor: 1
+-----End of report------
+-----Number of fixes------
+PublicStaticFieldShouldBeFinalProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 2
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+BigDecimalDoubleConstructorProcessor: 8
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+CollectionsEmptyConstantsProcessor: 3
+-----End of report------
+-----Number of fixes------
+UnusedLocalVariableProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 2
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 5
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 1
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 2
+-----End of report------
+-----Number of fixes------
+UnusedThrowableProcessor: 1
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 8
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 4
+-----End of report------
+-----Number of fixes------
+ToStringReturningNullProcessor: 1
+-----End of report------
+-----Number of fixes------
+ArrayHashCodeAndToStringProcessor: 4
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 6
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+CollectionIsEmptyProcessor: 2
+-----End of report------
+-----Number of fixes------
+ThreadRunProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerializableFieldInSerializableClassProcessor: 1
+-----End of report------
+-----Number of fixes------
+EqualsArgumentTypeProcessor: 1
+-----End of report------
+-----Number of fixes------
+EqualsArgumentTypeProcessor: 1
+-----End of report------
+-----Number of fixes------
+CompareStringsBoxedTypesWithEqualsProcessor: 3
+-----End of report------
+-----Number of fixes------
+UtilityClassWithPublicConstructorProcessor: 1
+-----End of report------
+-----Number of fixes------
+PublicStaticFieldShouldBeFinalProcessor: 1
+-----End of report------
+-----Number of fixes------
+PublicStaticFieldShouldBeFinalProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 2
+-----End of report------
+-----Number of fixes------
+UnclosedResourcesProcessor: 1
+-----End of report------
+-----Number of fixes------
+BigDecimalDoubleConstructorProcessor: 8
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+SelfAssignementProcessor: 10
+-----End of report------
+-----Number of fixes------
+IteratorNextExceptionProcessor: 1
+-----End of report------
+-----Number of fixes------
+CollectionsEmptyConstantsProcessor: 3
+-----End of report------
+-----Number of fixes------
+CompareToReturnValueProcessor: 2
+-----End of report------
+-----Number of fixes------
+UnusedLocalVariableProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+SynchronizationOnGetClassProcessor: 2
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 2
+-----End of report------
+-----Number of fixes------
+SynchronizationOnStringOrBoxedProcessor: 7
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 5
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 1
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 2
+-----End of report------
+-----Number of fixes------
+UnusedThrowableProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnusedThrowableProcessor: 1
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 8
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 4
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 1
+-----End of report------
+-----Number of fixes------
+ToStringReturningNullProcessor: 1
+-----End of report------
+-----Number of fixes------
+ArrayHashCodeAndToStringProcessor: 4
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 6
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 3
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+CollectionIsEmptyProcessor: 2
+-----End of report------
+-----Number of fixes------
+EqualsOnAtomicClassProcessor: 3
+-----End of report------
+-----Number of fixes------
+ThreadRunProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerializableFieldInSerializableClassProcessor: 1
+-----End of report------
+-----Number of fixes------
+EqualsArgumentTypeProcessor: 1
+-----End of report------
+-----Number of fixes------
+EqualsArgumentTypeProcessor: 1
+-----End of report------
+-----Number of fixes------
+CompareStringsBoxedTypesWithEqualsProcessor: 3
+-----End of report------
+-----Number of fixes------
+XxeProcessingProcessor: 1
+-----End of report------
+-----Number of fixes------
+StringLiteralInsideEqualsProcessor: 1
+-----End of report------
+-----Number of fixes------
+SerialVersionUidProcessor: 1
+-----End of report------
+-----Number of fixes------
+InterruptedExceptionProcessor: 1
+-----End of report------
+-----Number of fixes------
+UnusedThrowableProcessor: 1
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 8
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 4
+-----End of report------
+-----Number of fixes------
+EqualsArgumentTypeProcessor: 1
+-----End of report------
+-----Number of fixes------
+DeadStoreProcessor: 3
+-----End of report------
+-----Number of fixes------
+ArrayHashCodeAndToStringProcessor: 5
+-----End of report------
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m221[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 21.573 s - in sorald.processor.[1mProcessorTest[m
+[[1;34mINFO[m] Running sorald.processor.[1mSoraldAbstractProcessorTest[m
+java.lang.RuntimeException: I'm a crash :)
+	at sorald.processor.SoraldAbstractProcessorTest.<clinit>(SoraldAbstractProcessorTest.java:16)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.platform.commons.util.ReflectionUtils.newInstance(ReflectionUtils.java:513)
+	at org.junit.jupiter.engine.execution.ConstructorInvocation.proceed(ConstructorInvocation.java:56)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestClassConstructor(InvocationInterceptor.java:72)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:342)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:289)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:259)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:258)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:101)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:100)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+java.lang.NullPointerException
+	at sorald.processor.SoraldAbstractProcessor.process(SoraldAbstractProcessor.java:162)
+	at sorald.processor.SoraldAbstractProcessorTest.process_recordsCrashEvent(SoraldAbstractProcessorTest.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+java.lang.RuntimeException: I'm a crash :)
+	at sorald.processor.SoraldAbstractProcessorTest.<clinit>(SoraldAbstractProcessorTest.java:16)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.platform.commons.util.ReflectionUtils.newInstance(ReflectionUtils.java:513)
+	at org.junit.jupiter.engine.execution.ConstructorInvocation.proceed(ConstructorInvocation.java:56)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestClassConstructor(InvocationInterceptor.java:72)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:342)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:289)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:259)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:258)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:101)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:100)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+java.lang.RuntimeException: I'm a crash :)
+	at sorald.processor.SoraldAbstractProcessorTest.<clinit>(SoraldAbstractProcessorTest.java:16)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.platform.commons.util.ReflectionUtils.newInstance(ReflectionUtils.java:513)
+	at org.junit.jupiter.engine.execution.ConstructorInvocation.proceed(ConstructorInvocation.java:56)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestClassConstructor(InvocationInterceptor.java:72)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:342)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:289)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:259)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:258)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:101)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:100)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+java.lang.RuntimeException: I'm a crash :)
+	at sorald.processor.SoraldAbstractProcessorTest.<clinit>(SoraldAbstractProcessorTest.java:16)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.platform.commons.util.ReflectionUtils.newInstance(ReflectionUtils.java:513)
+	at org.junit.jupiter.engine.execution.ConstructorInvocation.proceed(ConstructorInvocation.java:56)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestClassConstructor(InvocationInterceptor.java:72)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:342)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:289)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:259)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:258)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:101)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:100)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.222 s - in sorald.processor.[1mSoraldAbstractProcessorTest[m
+[[1;34mINFO[m] Running sorald.processor.[1mMaxFixesPerRuleTest[m
+-----Number of fixes------
+ArrayHashCodeAndToStringProcessor: 3
+-----End of report------
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in sorald.processor.[1mMaxFixesPerRuleTest[m
+[[1;34mINFO[m] Running sorald.processor.[1mNoSonarTest[m
+-----Number of fixes------
+ArrayHashCodeAndToStringProcessor: 1
+-----End of report------
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s - in sorald.processor.[1mNoSonarTest[m
+[[1;34mINFO[m] Running sorald.processor.[1mBestFitScannerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.76 s - in sorald.processor.[1mBestFitScannerTest[m
+[[1;34mINFO[m] Running sorald.processor.[1mProcessorTestFilesCompileTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m132[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.388 s - in sorald.processor.[1mProcessorTestFilesCompileTest[m
+[[1;34mINFO[m] Running sorald.sonar.[1mRuleVerifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s - in sorald.sonar.[1mRuleVerifierTest[m
+[[1;34mINFO[m] Running sorald.sonar.[1mScannedViolationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in sorald.sonar.[1mScannedViolationTest[m
+[[1;34mINFO[m] Running sorald.sonar.[1mRuleViolationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.28 s - in sorald.sonar.[1mRuleViolationTest[m
+[[1;34mINFO[m] Running sorald.sonar.[1mChecksTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in sorald.sonar.[1mChecksTest[m
+[[1;34mINFO[m] Running sorald.event.collectors.[1mCompilationUnitCollectorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.922 s - in sorald.event.collectors.[1mCompilationUnitCollectorTest[m
+[[1;34mINFO[m] Running sorald.[1mTargetedRepairTest[m
+Error: --rule-key=<ruleKey>, --violation-specs=<ruleViolationSpecifiers> are mutually exclusive (specify only one)
+Usage: sorald repair [-hV] [--max-files-per-segment=<maxFilesPerSegment>]
+                     [--max-fixes-per-rule=<maxFixesPerRule>]
+                     [--pretty-printing-strategy=<prettyPrintingStrategy>]
+                     [--repair-strategy=<repairStrategy>]
+                     [--resolve-classpath-from=<resolveClasspathFrom>]
+                     --source=<source> [--stats-output-file=<statsOutputFile>]
+                     [--target=<target>] (--rule-key=<ruleKey> |
+                     --violation-specs=<ruleViolationSpecifiers>[,
+                     <ruleViolationSpecifiers>...]
+                     [--violation-specs=<ruleViolationSpecifiers>[,
+                     <ruleViolationSpecifiers>...]]...)
+Repair Sonar rule violations in a targeted project.
+  -h, --help                 Show this help message and exit.
+      --max-files-per-segment=<maxFilesPerSegment>
+                             Max number of files per loaded segment for
+                               segmented repair. It should be >= 3000 files per
+                               segment.
+      --max-fixes-per-rule=<maxFixesPerRule>
+                             Max number of fixes per rule.
+      --pretty-printing-strategy=<prettyPrintingStrategy>
+                             Mode for pretty printing the source code:
+                               'NORMAL', which means that all source code will
+                               be printed and its formatting might change (such
+                               as indentation), and 'SNIPER', which means that
+                               only statements changed towards the repair of
+                               Sonar rule violations will be printed.
+      --repair-strategy=<repairStrategy>
+                             Type of repair strategy. DEFAULT - load everything
+                               without splitting up the folder in segments,
+                               MAVEN - use Maven to locate production source
+                               code and the classpath (test source code is
+                               ignored), SEGMENT - splitting the folder into
+                               smaller segments and repair one segment at a
+                               time (need to specify --maxFilesPerSegment if
+                               not default)
+      --resolve-classpath-from=<resolveClasspathFrom>
+                             Path to the root of a project to resolve the
+                               classpath from. Currently only works for Maven
+                               projects.
+      --rule-key=<ruleKey>   Choose one of the following rule keys:
+                             S1118: Utility classes should not have public
+                               constructors
+                             	(incomplete: Only handles implicit public
+                               constructor)
+                             S1132: Strings literals should be placed on the
+                               left side when checking for equality
+                             S1155: Collection.isEmpty() should be used to test
+                               for emptiness
+                             S1217: "Thread.run()" should not be called directly
+                             S1444: "public static" fields should be constant
+                             	(incomplete: does not fix variable naming)
+                             S1481: Unused local variables should be removed
+                             S1596: "Collections.EMPTY_LIST", "EMPTY_MAP", and
+                               "EMPTY_SET" should not be used
+                             S1656: Variables should not be self-assigned
+                             S1854: Unused assignments should be removed
+                             S1860: Synchronization should not be based on
+                               Strings or boxed primitives
+                             S1948: Fields in a "Serializable" class should
+                               either be transient or serializable
+                             S2057: Every class implementing Serializable
+                               should declare a static final serialVersionUID.
+                             	(incomplete: This processor does not address the
+                               case where the class already has a
+                               serialVersionUID with a non long type.)
+                             S2095: Resources should be closed
+                             S2097: "equals(Object obj)" should test argument
+                               type
+                             S2111: "BigDecimal(double)" should not be used
+                             S2116: "hashCode" and "toString" should not be
+                               called on array instances
+                             S2142: "InterruptedException" should not be ignored
+                             S2164: Math should not be performed on floats
+                             S2167: "compareTo" should not return "Integer.
+                               MIN_VALUE"
+                             S2184: Math operands should be cast before
+                               assignment
+                             S2204: ".equals()" should not be used to test the
+                               values of "Atomic" classes
+                             S2225: "toString()" and "clone()" methods should
+                               not return null
+                             	(incomplete: does not fix null returning clone())
+                             S2272: "Iterator.next()" methods should throw
+                               "NoSuchElementException"
+                             S2755: XML parsers should not be vulnerable to XXE
+                               attacks
+                             	(incomplete: This processor is a WIP and
+                               currently supports a subset of rule 2755. See
+                               Sorald's documentation for details.)
+                             S3032: JEE applications should not "getClassLoader"
+                             S3067: "getClass" should not be used for
+                               synchronization
+                             S3984: Exception should not be created without
+                               being thrown
+                             S4973: Strings and Boxed types should be compared
+                               using "equals()"
+      --source=<source>      The path to the file or folder to be analyzed and
+                               possibly repaired.
+      --stats-output-file=<statsOutputFile>
+                             Path to a file to store execution statistics in
+                               (in JSON format). If left unspecified, Sorald
+                               does not gather statistics.
+      --target=<target>      The target of this execution (ex. sorald/92d377).
+                               This will be included in the json report.
+  -V, --version              Print version information and exit.
+      --violation-specs=<ruleViolationSpecifiers>[,<ruleViolationSpecifiers>...]
+                             One or more rule violation specifiers. Specifiers
+                               can be gathered with the 'mine' command using
+                               the --stats-output-file option.
+-----Number of fixes------
+BigDecimalDoubleConstructorProcessor: 1
+-----End of report------
+-----Number of fixes------
+BigDecimalDoubleConstructorProcessor: 1
+-----End of report------
+-----Number of fixes------
+BigDecimalDoubleConstructorProcessor: 1
+-----End of report------
+-----Number of fixes------
+BigDecimalDoubleConstructorProcessor: 8
+-----End of report------
+-----Number of fixes------
+BigDecimalDoubleConstructorProcessor: 1
+-----End of report------
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.716 s - in sorald.[1mTargetedRepairTest[m
+[[1;34mINFO[m] Running sorald.[1mCodeGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.569 s - in sorald.[1mCodeGeneratorTest[m
+[[1;34mINFO[m] Running sorald.[1mMavenLauncherTest[m
+-----Number of fixes------
+DeadStoreProcessor: 2
+-----End of report------
+-----Number of fixes------
+CastArithmeticOperandProcessor: 1
+-----End of report------
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.463 s - in sorald.[1mMavenLauncherTest[m
+[[1;34mINFO[m] Running sorald.[1mFileUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s - in sorald.[1mFileUtilsTest[m
+[[1;34mINFO[m] Running sorald.miner.[1mWarningMinerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.928 s - in sorald.miner.[1mWarningMinerTest[m
+[[1;34mINFO[m] Running sorald.cli.[1mCliTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in sorald.cli.[1mCliTest[m
+[[1;34mINFO[m] Running sorald.cli.[1mSoraldVersionProviderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in sorald.cli.[1mSoraldVersionProviderTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;33mWARNING[m] [1;33mTests run: 419, Failures: 0, Errors: 0, Skipped: 2[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.6:report[m [1m(default-report)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] Loading execution data file /var/maven/app/target/jacoco.exec
+[[1;34mINFO[m] Analyzed bundle 'Sorald' with 85 classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/sorald-0.3.1-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:3.3.0:single[m [1m(make-assembly)[m @ [36msorald[0;1m ---[m
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-ssh/maven-metadata.xml (1.6 kB at 8.8 kB/s)
+[[1;34mINFO[m] Building jar: /var/maven/app/target/sorald-0.3.1-SNAPSHOT-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.2.0:jar[m [1m(attach-javadocs)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36msorald[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/sorald-0.3.1-SNAPSHOT.jar to /var/maven/.m2/repository/se/kth/castor/sorald/0.3.1-SNAPSHOT/sorald-0.3.1-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/se/kth/castor/sorald/0.3.1-SNAPSHOT/sorald-0.3.1-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/target/sorald-0.3.1-SNAPSHOT-jar-with-dependencies.jar to /var/maven/.m2/repository/se/kth/castor/sorald/0.3.1-SNAPSHOT/sorald-0.3.1-SNAPSHOT-jar-with-dependencies.jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  02:18 min
+[[1;34mINFO[m] Finished at: 2026-10-04T18:29:12Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Sorald.buildinfo: No such file or directory
+dos2unix: Skipping target/Sorald.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

@@ -21,173 +21,10 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/easyvcr/R
 |      [0;34mbuildinfo[0;97m: [1mtarget/easyvcrRQ1.buildinfo[0m
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/EasyPost/easyvcr-java.git[0m on tag [1m7ab1ec7[0m
-/home/adkas13/reproducible-central/repos/easyvcr/RQ2major/buildcache/easyvcr
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
-[90m
-origin	https://github.com/EasyPost/easyvcr-java.git (fetch)
-origin	https://github.com/EasyPost/easyvcr-java.git (push)
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 7ab1ec7 [0m
-[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/easyvcr/RQ2major/buildcache/easyvcr
-
-[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
-[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
-[90m
-DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
-            Install the buildx component to build images with BuildKit:
-            https://docs.docker.com/go/buildx/
-
-sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
-[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
-[90m
-DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
-            Install the buildx component to build images with BuildKit:
-            https://docs.docker.com/go/buildx/
-
-sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
-
-[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
-[90m
-DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
-            Install the buildx component to build images with BuildKit:
-            https://docs.docker.com/go/buildx/
-
-sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
-
-[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
-[90m
-DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
-            Install the buildx component to build images with BuildKit:
-            https://docs.docker.com/go/buildx/
-
-sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
-
-[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
-[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.easypost:easyvcr:0.5.3[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/easyvcr/RQ2major/buildcache/easyvcr:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dcheckstyle.skip=true -Denforcer.skip=true -Dgpg.skip=true -DargLine=-Dhttp.timeout=5000" [0m
-[90m
-[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
-[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
-[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
-[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
-
-Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 03:06:18 UTC 2026.
-Universal Time is now:  Sun Oct  4 03:06:18 UTC 2026.
-
-[0;93m[0m
-[[1;34mINFO[m] Scanning for projects...
-[[1;34mINFO[m] Inspecting build with total of 1 modules...
-[[1;34mINFO[m] Installing Nexus Staging features:
-[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m------------------------< [0;36mcom.easypost:easyvcr[0;1m >------------------------[m
-[[1;34mINFO[m] [1mBuilding com.easypost:easyvcr 0.5.3[m
-[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 5 dependencies (version range mode: major).
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 4.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 22 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml
-Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 7.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 3.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/maven-metadata.xml (1.1 kB at 16 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: easyvcr
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for easyvcr: pinned=1 upgraded=4 downgraded=0 added=1 removed=0 scope_changed=0
-[[1;34mINFO[m] POM updated successfully: easyvcr
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:3.1.2:check[m [1m(validate)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0:enforce[m [1m(enforce-java)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] Skipping Rule Enforcement.
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.8:prepare-agent[m [1m(default)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] argLine set to -javaagent:/var/maven/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/var/maven/app/target/jacoco.exec
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mtemplating-maven-plugin:1.0.0:filter-sources[m [1m(filtering-java-templates)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] Request to add '/var/maven/app/src/main/java-templates' folder. Not added since it does not exist.
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] Copying 1 resource
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.9.0:compile[m [1m(default-compile)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] Changes detected - recompiling the module!
-[[1;34mINFO[m] Compiling 34 source files to /var/maven/app/target/classes
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/src/test/resources
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.9.0:testCompile[m [1m(default-testCompile)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] Changes detected - recompiling the module!
-[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/target/test-classes
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M3:test[m [1m(default-test)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mVCRTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m13[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.128 s - in [1mVCRTest[m
-[[1;34mINFO[m] Running [1mHttpUrlConnectionTest[m
-[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m19[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 6.997 s[1;31m <<< FAILURE![m - in [1mHttpUrlConnectionTest[m
-[[1;31mERROR[m] testNonJsonDataWithCensors(HttpUrlConnectionTest)  Time elapsed: 0.319 s  <<< FAILURE!
-java.lang.AssertionError: unexpected exception type thrown; expected:<com.google.gson.JsonParseException> but was:<java.lang.NullPointerException>
-	at HttpUrlConnectionTest.testNonJsonDataWithCensors(HttpUrlConnectionTest.java:89)
-Caused by: java.lang.NullPointerException
-	at HttpUrlConnectionTest.lambda$testNonJsonDataWithCensors$0(HttpUrlConnectionTest.java:89)
-	at HttpUrlConnectionTest.testNonJsonDataWithCensors(HttpUrlConnectionTest.java:89)
-
-[[1;31mERROR[m] testDelay(HttpUrlConnectionTest)  Time elapsed: 2.347 s  <<< FAILURE!
-java.lang.AssertionError
-	at HttpUrlConnectionTest.testDelay(HttpUrlConnectionTest.java:325)
-
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;31mERROR[m] [1;31mFailures: [m
-[[1;31mERROR[m] [1;31m  HttpUrlConnectionTest.testDelay:325[m
-[[1;31mERROR[m] [1;31m  HttpUrlConnectionTest.testNonJsonDataWithCensors:89 unexpected exception type thrown; expected:<com.google.gson.JsonParseException> but was:<java.lang.NullPointerException>[m
-[[1;34mINFO[m] 
-[[1;31mERROR[m] [1;31mTests run: 32, Failures: 2, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] [1;31mBUILD FAILURE[m
-[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  13.276 s
-[[1;34mINFO[m] Finished at: 2026-10-04T03:06:33Z
-[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:3.0.0-M3:test[m [1m(default-test)[m on project [36measyvcr[m: [1;31mThere are test failures.[m
-[[1;31mERROR[m] [1;31m[m
-[[1;31mERROR[m] [1;31mPlease refer to /var/maven/app/target/surefire-reports for the individual test results.[m
-[[1;31mERROR[m] [1;31mPlease refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m
-[[1;31mERROR[m] -> [1m[Help 1][m
-[[1;31mERROR[m] 
-[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
-[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
-[[1;31mERROR[m] 
-[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
-[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+fatal: unable to access 'https://github.com/EasyPost/easyvcr-java.git/': Could not resolve host: github.com
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
-[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to clone easyvcr [0;93m
 [0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
 [0m

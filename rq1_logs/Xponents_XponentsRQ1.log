@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sat Oct  3 17:12:02 UTC 2026.
-Universal Time is now:  Sat Oct  3 17:12:02 UTC 2026.
+Local time is now:      Sun Oct  4 17:42:51 UTC 2026.
+Universal Time is now:  Sun Oct  4 17:42:51 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -94,231 +94,12 @@ Universal Time is now:  Sat Oct  3 17:12:02 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mopensextant-xponents[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.pom
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.pom (1.6 kB at 9.2 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/acplt/oncrpc/1.0.7/oncrpc-1.0.7.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/acplt/oncrpc/1.0.7/oncrpc-1.0.7.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/acplt/oncrpc/1.0.7/oncrpc-1.0.7.pom (1.2 kB at 12 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-server/9.2.2.v20140723/jetty-server-9.2.2.v20140723.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-server/9.2.2.v20140723/jetty-server-9.2.2.v20140723.pom
-Progress (1): 4.1 kBProgress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-server/9.2.2.v20140723/jetty-server-9.2.2.v20140723.pom (4.1 kB at 41 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-project/9.2.2.v20140723/jetty-project-9.2.2.v20140723.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-project/9.2.2.v20140723/jetty-project-9.2.2.v20140723.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 32 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-project/9.2.2.v20140723/jetty-project-9.2.2.v20140723.pom (32 kB at 320 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-parent/22/jetty-parent-22.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-parent/22/jetty-parent-22.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-parent/22/jetty-parent-22.pom (22 kB at 225 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-http/9.2.2.v20140723/jetty-http-9.2.2.v20140723.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.2.2.v20140723/jetty-http-9.2.2.v20140723.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.2.2.v20140723/jetty-http-9.2.2.v20140723.pom (2.5 kB at 33 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-util/9.2.2.v20140723/jetty-util-9.2.2.v20140723.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.2.2.v20140723/jetty-util-9.2.2.v20140723.pom
-Progress (1): 3.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.2.2.v20140723/jetty-util-9.2.2.v20140723.pom (3.4 kB at 37 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-io/9.2.2.v20140723/jetty-io-9.2.2.v20140723.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.2.2.v20140723/jetty-io-9.2.2.v20140723.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.2.2.v20140723/jetty-io-9.2.2.v20140723.pom (2.3 kB at 8.5 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/calcite/avatica/avatica-metrics/1.10.0/avatica-metrics-1.10.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/calcite/avatica/avatica-metrics/1.10.0/avatica-metrics-1.10.0.pom
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/calcite/avatica/avatica-metrics/1.10.0/avatica-metrics-1.10.0.pom (3.5 kB at 9.6 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/fasterxml/jackson/core/jackson-core/2.6.3/jackson-core-2.6.3.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.6.3/jackson-core-2.6.3.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.6.3/jackson-core-2.6.3.pom (4.9 kB at 59 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/fasterxml/jackson/jackson-parent/2.6.1/jackson-parent-2.6.1.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.6.1/jackson-parent-2.6.1.pom
-Progress (1): 4.1 kBProgress (1): 7.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.6.1/jackson-parent-2.6.1.pom (7.8 kB at 113 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/fasterxml/oss-parent/23/oss-parent-23.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/23/oss-parent-23.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/23/oss-parent-23.pom (19 kB at 203 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/fasterxml/jackson/core/jackson-annotations/2.6.3/jackson-annotations-2.6.3.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.6.3/jackson-annotations-2.6.3.pom
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.6.3/jackson-annotations-2.6.3.pom (1.3 kB at 19 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/fasterxml/jackson/core/jackson-databind/2.6.3/jackson-databind-2.6.3.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.6.3/jackson-databind-2.6.3.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.6.3/jackson-databind-2.6.3.pom (6.1 kB at 84 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.pom (1.2 kB at 15 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.pom (11 kB at 164 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/commons/commons-parent/12/commons-parent-12.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/12/commons-parent-12.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 27 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/12/commons-parent-12.pom (27 kB at 379 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.pom (11 kB at 160 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/net/hydromatic/aggdesigner-algorithm/6.0/aggdesigner-algorithm-6.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/net/hydromatic/aggdesigner-algorithm/6.0/aggdesigner-algorithm-6.0.pom
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/hydromatic/aggdesigner-algorithm/6.0/aggdesigner-algorithm-6.0.pom (1.5 kB at 18 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/net/hydromatic/aggdesigner/6.0/aggdesigner-6.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/net/hydromatic/aggdesigner/6.0/aggdesigner-6.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/hydromatic/aggdesigner/6.0/aggdesigner-6.0.pom (11 kB at 131 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
-Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom (18 kB at 245 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/zookeeper/zookeeper/3.4.6/zookeeper-3.4.6.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/zookeeper/zookeeper/3.4.6/zookeeper-3.4.6.pom
-Progress (1): 3.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/zookeeper/zookeeper/3.4.6/zookeeper-3.4.6.pom (3.4 kB at 44 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/jline/jline/0.9.94/jline-0.9.94.pom
-Downloading from central: https://repo.maven.apache.org/maven2/jline/jline/0.9.94/jline-0.9.94.pom
-Progress (1): 4.1 kBProgress (1): 6.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jline/jline/0.9.94/jline-0.9.94.pom (6.4 kB at 90 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.pom
-Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 26 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.pom (26 kB at 336 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/lucene/lucene-memory/7.7.2/lucene-memory-7.7.2.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-memory/7.7.2/lucene-memory-7.7.2.pom
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-memory/7.7.2/lucene-memory-7.7.2.pom (3.0 kB at 42 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/io/sgr/s2-geometry-library-java/1.0.0/s2-geometry-library-java-1.0.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/io/sgr/s2-geometry-library-java/1.0.0/s2-geometry-library-java-1.0.0.pom
-Progress (1): 4.1 kBProgress (1): 5.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/sgr/s2-geometry-library-java/1.0.0/s2-geometry-library-java-1.0.0.pom (5.1 kB at 61 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/lucene/lucene-analyzers-kuromoji/7.7.2/lucene-analyzers-kuromoji-7.7.2.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-analyzers-kuromoji/7.7.2/lucene-analyzers-kuromoji-7.7.2.pom
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-analyzers-kuromoji/7.7.2/lucene-analyzers-kuromoji-7.7.2.pom (3.2 kB at 13 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/lucene/lucene-queryparser/7.7.2/lucene-queryparser-7.7.2.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queryparser/7.7.2/lucene-queryparser-7.7.2.pom
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queryparser/7.7.2/lucene-queryparser-7.7.2.pom (3.5 kB at 52 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/hadoop/hadoop-annotations/2.7.4/hadoop-annotations-2.7.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-annotations/2.7.4/hadoop-annotations-2.7.4.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-annotations/2.7.4/hadoop-annotations-2.7.4.pom (2.4 kB at 26 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/hadoop/hadoop-project/2.7.4/hadoop-project-2.7.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-project/2.7.4/hadoop-project-2.7.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 37 kBProgress (1): 41 kBProgress (1): 45 kBProgress (1): 47 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-project/2.7.4/hadoop-project-2.7.4.pom (47 kB at 193 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/hadoop/hadoop-main/2.7.4/hadoop-main-2.7.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-main/2.7.4/hadoop-main-2.7.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-main/2.7.4/hadoop-main-2.7.4.pom (19 kB at 79 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/hadoop/hadoop-auth/2.7.4/hadoop-auth-2.7.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-auth/2.7.4/hadoop-auth-2.7.4.pom
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-auth/2.7.4/hadoop-auth-2.7.4.pom (7.7 kB at 33 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/hadoop/hadoop-common/2.7.4/hadoop-common-2.7.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-common/2.7.4/hadoop-common-2.7.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 31 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-common/2.7.4/hadoop-common-2.7.4.pom (31 kB at 392 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/hadoop/hadoop-project-dist/2.7.4/hadoop-project-dist-2.7.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-project-dist/2.7.4/hadoop-project-dist-2.7.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-project-dist/2.7.4/hadoop-project-dist-2.7.4.pom (19 kB at 80 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/hadoop/hadoop-hdfs/2.7.4/hadoop-hdfs-2.7.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-hdfs/2.7.4/hadoop-hdfs-2.7.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-hdfs/2.7.4/hadoop-hdfs-2.7.4.pom (24 kB at 289 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/logging/log4j/log4j-slf4j-impl/2.11.0/log4j-slf4j-impl-2.11.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.11.0/log4j-slf4j-impl-2.11.0.pom
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.11.0/log4j-slf4j-impl-2.11.0.pom (7.7 kB at 30 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-continuation/9.4.14.v20181114/jetty-continuation-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-continuation/9.4.14.v20181114/jetty-continuation-9.4.14.v20181114.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-continuation/9.4.14.v20181114/jetty-continuation-9.4.14.v20181114.pom (1.2 kB at 5.2 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-deploy/9.4.14.v20181114/jetty-deploy-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-deploy/9.4.14.v20181114/jetty-deploy-9.4.14.v20181114.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-deploy/9.4.14.v20181114/jetty-deploy-9.4.14.v20181114.pom (1.7 kB at 4.3 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-http/9.4.14.v20181114/jetty-http-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.4.14.v20181114/jetty-http-9.4.14.v20181114.pom
-Progress (1): 4.1 kBProgress (1): 4.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.4.14.v20181114/jetty-http-9.4.14.v20181114.pom (4.3 kB at 41 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-io/9.4.14.v20181114/jetty-io-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.4.14.v20181114/jetty-io-9.4.14.v20181114.pom
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.4.14.v20181114/jetty-io-9.4.14.v20181114.pom (1.3 kB at 15 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-jmx/9.4.14.v20181114/jetty-jmx-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.14.v20181114/jetty-jmx-9.4.14.v20181114.pom
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.14.v20181114/jetty-jmx-9.4.14.v20181114.pom (1.5 kB at 6.9 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-security/9.4.14.v20181114/jetty-security-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-security/9.4.14.v20181114/jetty-security-9.4.14.v20181114.pom
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-security/9.4.14.v20181114/jetty-security-9.4.14.v20181114.pom (1.6 kB at 13 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-server/9.4.14.v20181114/jetty-server-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-server/9.4.14.v20181114/jetty-server-9.4.14.v20181114.pom
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-server/9.4.14.v20181114/jetty-server-9.4.14.v20181114.pom (2.6 kB at 19 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-servlet/9.4.14.v20181114/jetty-servlet-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-servlet/9.4.14.v20181114/jetty-servlet-9.4.14.v20181114.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-servlet/9.4.14.v20181114/jetty-servlet-9.4.14.v20181114.pom (2.1 kB at 20 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-util/9.4.14.v20181114/jetty-util-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.4.14.v20181114/jetty-util-9.4.14.v20181114.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.4.14.v20181114/jetty-util-9.4.14.v20181114.pom (3.8 kB at 39 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-webapp/9.4.14.v20181114/jetty-webapp-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-webapp/9.4.14.v20181114/jetty-webapp-9.4.14.v20181114.pom
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-webapp/9.4.14.v20181114/jetty-webapp-9.4.14.v20181114.pom (3.0 kB at 36 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/eclipse/jetty/jetty-xml/9.4.14.v20181114/jetty-xml-9.4.14.v20181114.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-xml/9.4.14.v20181114/jetty-xml-9.4.14.v20181114.pom
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-xml/9.4.14.v20181114/jetty-xml-9.4.14.v20181114.pom (1.9 kB at 24 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.pom
-Progress (1): 614 B                   Downloaded from maven-restlet-talend: https://maven.restlet.talend.com/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.pom (614 B at 7.8 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/restlet/jee/org.restlet.parent/2.3.0/org.restlet.parent-2.3.0.pom
-Progress (1): 4.1/9.6 kBProgress (1): 6.3/9.6 kBProgress (1): 9.6 kB                        Downloaded from maven-restlet-talend: https://maven.restlet.talend.com/org/restlet/jee/org.restlet.parent/2.3.0/org.restlet.parent-2.3.0.pom (9.6 kB at 367 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.pom
-Progress (1): 915 B                   Downloaded from maven-restlet-talend: https://maven.restlet.talend.com/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.pom (915 B at 22 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.pom
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.pom (1.1 kB at 16 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.pom (2.5 kB at 34 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.pom
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.pom (1.9 kB at 25 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/apache/yetus/yetus-project/0.5.0/yetus-project-0.5.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/yetus/yetus-project/0.5.0/yetus-project-0.5.0.pom
-Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/yetus/yetus-project/0.5.0/yetus-project-0.5.0.pom (6.8 kB at 94 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.pom
-Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 29 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.pom (29 kB at 412 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.pom
-Downloading from central: https://repo.maven.apache.org/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.pom
-Progress (1): 962 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.pom (962 B at 13 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/slf4j/slf4j-simple/1.7.2/slf4j-simple-1.7.2.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.7.2/slf4j-simple-1.7.2.pom
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.7.2/slf4j-simple-1.7.2.pom (1.5 kB at 22 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/slf4j/slf4j-parent/1.7.2/slf4j-parent-1.7.2.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.2/slf4j-parent-1.7.2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.2/slf4j-parent-1.7.2.pom (12 kB at 164 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/opensextant/geodesy/maven-metadata.xml
 Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/opensextant/geodesy/maven-metadata.xml
-Progress (1): 360 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opensextant/geodesy/maven-metadata.xml (360 B at 640 B/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/opensextant/geodesy/2.0.0/geodesy-2.0.0.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/opensextant/geodesy/2.0.0/geodesy-2.0.0.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/opensextant/geodesy/2.0.0/geodesy-2.0.0.pom (2.1 kB at 5.2 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/commons-lang/commons-lang/2.5/commons-lang-2.5.pom
-Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 17 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.5/commons-lang-2.5.pom (17 kB at 220 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/opensextant/geodesy/maven-metadata.xml
+Progress (1): 360 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opensextant/geodesy/maven-metadata.xml (360 B at 445 B/s)
 Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml
-Progress (1): 750 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml (750 B at 2.6 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.4/log4j-1.2.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.4/log4j-1.2.4.pom
-Progress (1): 144 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.4/log4j-1.2.4.pom (144 B at 1.1 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.5/log4j-1.2.5.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.5/log4j-1.2.5.pom
-Progress (1): 144 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.5/log4j-1.2.5.pom (144 B at 533 B/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.6/log4j-1.2.6.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.6/log4j-1.2.6.pom
-Progress (1): 145 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.6/log4j-1.2.6.pom (145 B at 2.0 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.7/log4j-1.2.7.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.7/log4j-1.2.7.pom
-Progress (1): 144 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.7/log4j-1.2.7.pom (144 B at 1.6 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.8/log4j-1.2.8.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.8/log4j-1.2.8.pom
-Progress (1): 145 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.8/log4j-1.2.8.pom (145 B at 2.1 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.9/log4j-1.2.9.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.9/log4j-1.2.9.pom
-Progress (1): 144 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.9/log4j-1.2.9.pom (144 B at 1.7 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.11/log4j-1.2.11.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.11/log4j-1.2.11.pom
-Progress (1): 145 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.11/log4j-1.2.11.pom (145 B at 1.6 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.13/log4j-1.2.13.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.13/log4j-1.2.13.pom
-Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.13/log4j-1.2.13.pom (389 B at 5.9 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/log4j/log4j/1.2.15/log4j-1.2.15.pom
-Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.pom (18 kB at 247 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/javax/mail/mail/1.4/mail-1.4.pom
-Downloading from central: https://repo.maven.apache.org/maven2/javax/mail/mail/1.4/mail-1.4.pom
-Progress (1): 993 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/mail/mail/1.4/mail-1.4.pom (993 B at 15 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/javax/jms/jms/1.1/jms-1.1.pom
-Downloading from central: https://repo.maven.apache.org/maven2/javax/jms/jms/1.1/jms-1.1.pom
-Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/jms/jms/1.1/jms-1.1.pom (677 B at 9.0 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/sun/jdmk/jmxtools/1.2.1/jmxtools-1.2.1.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jdmk/jmxtools/1.2.1/jmxtools-1.2.1.pom
-Progress (1): 409 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jdmk/jmxtools/1.2.1/jmxtools-1.2.1.pom (409 B at 6.3 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/com/sun/jmx/jmxri/1.2.1/jmxri-1.2.1.pom
-Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jmx/jmxri/1.2.1/jmxri-1.2.1.pom
-Progress (1): 155 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jmx/jmxri/1.2.1/jmxri-1.2.1.pom (155 B at 2.1 kB/s)
-Downloading from maven-restlet-talend: https://maven.restlet.talend.com/org/ow2/asm/asm-tree/5.1/asm-tree-5.1.pom
-Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/5.1/asm-tree-5.1.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/5.1/asm-tree-5.1.pom (2.1 kB at 29 kB/s)
+Progress (1): 750 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml (750 B at 1.8 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: opensextant-xponents
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for opensextant-xponents: pinned=101 upgraded=0 downgraded=0 added=43 removed=0 scope_changed=0
@@ -355,58 +136,58 @@ Progress (1): 2.1 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestPlacePhonetics[m
-17:12:43,513 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
-17:12:43,514 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
-17:12:43,514 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/var/maven/app/target/test-classes/logback.xml]
-17:12:43,515 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
-17:12:43,515 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/var/maven/app/etc/logback.xml]
-17:12:43,515 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/var/maven/app/target/test-classes/logback.xml]
-17:12:43,591 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
-17:12:43,592 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
-17:12:43,597 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
-17:12:43,612 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-17:12:43,650 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
-17:12:43,650 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.apache] to ERROR
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors] to INFO
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.geo] to INFO
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xtax] to INFO
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xtemporal] to INFO
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xcoord] to INFO
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.poli] to INFO
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.geo.rules] to DEBUG
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.xlayer] to INFO
-17:12:43,651 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
-17:12:43,652 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@2d3379b4 - Registering current configuration as safe fallback point
+17:42:59,583 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+17:42:59,584 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+17:42:59,585 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/var/maven/app/target/test-classes/logback.xml]
+17:42:59,585 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+17:42:59,585 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/var/maven/app/etc/logback.xml]
+17:42:59,585 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/var/maven/app/target/test-classes/logback.xml]
+17:42:59,683 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+17:42:59,684 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+17:42:59,687 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+17:42:59,690 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+17:42:59,721 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
+17:42:59,721 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.apache] to ERROR
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors] to INFO
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.geo] to INFO
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xtax] to INFO
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xtemporal] to INFO
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xcoord] to INFO
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.poli] to INFO
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.geo.rules] to DEBUG
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.xlayer] to INFO
+17:42:59,722 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+17:42:59,723 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@2d3379b4 - Registering current configuration as safe fallback point
 
-2026-10-03T17:12:43.655 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase ok phonetic:ok
-2026-10-03T17:12:43.658 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ØK (null, null, PPLX), score=4.70, øk
-2026-10-03T17:12:43.659 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
-2026-10-03T17:12:43.659 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=øk (null, null, PPLX), score=3.70, øk
-2026-10-03T17:12:43.660 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
-2026-10-03T17:12:43.660 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE='OK (null, null, PPLX), score=6.70, 'ok
-2026-10-03T17:12:43.660 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ 'ok
-2026-10-03T17:12:43.661 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase ok phonetic:ok
-2026-10-03T17:12:43.661 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ØK (null, null, PPLX), score=4.70, øk
-2026-10-03T17:12:43.661 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
-2026-10-03T17:12:43.661 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=øk (null, null, PPLX), score=3.70, øk
-2026-10-03T17:12:43.662 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
-2026-10-03T17:12:43.662 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE='OK (null, null, PPLX), score=6.70, 'ok
-2026-10-03T17:12:43.662 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ 'ok
-2026-10-03T17:12:43.662 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=OK (null, null, PPLX), score=7.70, ok
+2026-10-04T17:42:59.725 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase ok phonetic:ok
+2026-10-04T17:42:59.729 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ØK (null, null, PPLX), score=4.70, øk
+2026-10-04T17:42:59.730 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
+2026-10-04T17:42:59.730 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=øk (null, null, PPLX), score=3.70, øk
+2026-10-04T17:42:59.731 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
+2026-10-04T17:42:59.731 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE='OK (null, null, PPLX), score=6.70, 'ok
+2026-10-04T17:42:59.731 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ 'ok
+2026-10-04T17:42:59.732 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase ok phonetic:ok
+2026-10-04T17:42:59.732 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ØK (null, null, PPLX), score=4.70, øk
+2026-10-04T17:42:59.732 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
+2026-10-04T17:42:59.732 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=øk (null, null, PPLX), score=3.70, øk
+2026-10-04T17:42:59.733 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
+2026-10-04T17:42:59.733 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE='OK (null, null, PPLX), score=6.70, 'ok
+2026-10-04T17:42:59.737 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ 'ok
+2026-10-04T17:42:59.738 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=OK (null, null, PPLX), score=7.70, ok
 Place Match 'OK' -- valid geo for candidate.
 Detect abnormal punctuation
-2026-10-03T17:12:43.665 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase aea phonetic:aea
-2026-10-03T17:12:43.665 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=aea (null, null, PPLX), score=5.03, aea
-2026-10-03T17:12:43.665 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aea
-2026-10-03T17:12:43.666 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=Aeå (null, null, PPLX), score=5.03, aeå
-2026-10-03T17:12:43.666 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aeå
-2026-10-03T17:12:43.667 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase aea phonetic:aea
-2026-10-03T17:12:43.667 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=aea (null, null, PPLX), score=5.03, aea
-2026-10-03T17:12:43.667 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aea
-2026-10-03T17:12:43.667 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ÄEÃ (null, null, PPLX), score=5.03, äeã
+2026-10-04T17:42:59.741 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase aea phonetic:aea
+2026-10-04T17:42:59.741 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=aea (null, null, PPLX), score=5.03, aea
+2026-10-04T17:42:59.742 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aea
+2026-10-04T17:42:59.742 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=Aeå (null, null, PPLX), score=5.03, aeå
+2026-10-04T17:42:59.742 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aeå
+2026-10-04T17:42:59.743 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase aea phonetic:aea
+2026-10-04T17:42:59.743 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=aea (null, null, PPLX), score=5.03, aea
+2026-10-04T17:42:59.743 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aea
+2026-10-04T17:42:59.743 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ÄEÃ (null, null, PPLX), score=5.03, äeã
 Place Match 'ÄEÃ' -- valid geo for candidate.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 s - in org.opensextant.extractors.test.[1mTestPlacePhonetics[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 s - in org.opensextant.extractors.test.[1mTestPlacePhonetics[m
 [[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestGazetteerConflationKey[m
 Key 1  = Lee County-US-ADM2-36.70545--83.12853
 Hash1 = -1711687143
@@ -419,20 +200,20 @@ Hash3 = -1944029872
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.opensextant.extractors.test.[1mTestGazFactory[m
 [[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestSolrUtils[m
 Date 2017-01-02T04:05:06Z Parses as Mon Jan 02 04:05:06 UTC 2017 in current timezone
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.opensextant.extractors.test.[1mTestSolrUtils[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in org.opensextant.extractors.test.[1mTestSolrUtils[m
 [[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestNameScoreUtils[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.opensextant.extractors.test.[1mTestNameScoreUtils[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.opensextant.extractors.test.[1mTestNameScoreUtils[m
 [[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestResourceLoading[m
 This requires CLASSPATH set via maven or other means to include ./solr/etc/gazetteer/ or xponents-gaz-meta JAR
 Russian Stopwords count=159
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.opensextant.extractors.test.[1mTestResourceLoading[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in org.opensextant.extractors.test.[1mTestResourceLoading[m
 [[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestPersonFilter[m
 Test punctuation in names
-2026-10-03T17:12:41.360 DEBUG o.o.e.geo.rules.PersonNameFilter - NAME FILTER
+2026-10-04T17:42:59.875 DEBUG o.o.e.geo.rules.PersonNameFilter - NAME FILTER
 	[]
-2026-10-03T17:12:41.360 DEBUG o.o.e.geo.rules.PersonNameFilter - TITLE FILTER
+2026-10-04T17:42:59.876 DEBUG o.o.e.geo.rules.PersonNameFilter - TITLE FILTER
 	[]
-2026-10-03T17:12:41.360 DEBUG o.o.e.geo.rules.PersonNameFilter - SUFFIX FILTER
+2026-10-04T17:42:59.876 DEBUG o.o.e.geo.rules.PersonNameFilter - SUFFIX FILTER
 	[]
 John Doe pass? false
 John Doe pass? false
@@ -450,7 +231,7 @@ Test A. {B
 	Invalid: {
 Test A—.B
 	Invalid:—
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.opensextant.extractors.test.[1mTestPersonFilter[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.opensextant.extractors.test.[1mTestPersonFilter[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -487,8 +268,8 @@ Test A—.B
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  38.743 s
-[[1;34mINFO[m] Finished at: 2026-10-03T17:12:42Z
+[[1;34mINFO[m] Total time:  8.097 s
+[[1;34mINFO[m] Finished at: 2026-10-04T17:43:01Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Xponents.buildinfo: No such file or directory
 dos2unix: Skipping target/Xponents.buildinfo, not a regular file.

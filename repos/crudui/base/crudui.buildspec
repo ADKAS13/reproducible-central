@@ -1,0 +1,15 @@
+groupId=org.vaadin.crudui
+artifactId=crudui
+version=9
+
+gitRepo=https://github.com/alejandro-du/crudui.git
+gitTag=5085976b938bbd2c0733c4937ee8fa1813554abe
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install\""
+
+buildinfo=target/Crudui.buildinfo

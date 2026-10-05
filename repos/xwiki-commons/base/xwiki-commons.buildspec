@@ -1,0 +1,15 @@
+groupId=org.xwiki.commons
+artifactId=xwiki-commons
+version=9
+
+gitRepo=https://github.com/xwiki/xwiki-commons.git
+gitTag=09356cc83ee0f034857a251b7b3c72ddc5251fcb
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install\""
+
+buildinfo=target/Xwiki-commons.buildinfo

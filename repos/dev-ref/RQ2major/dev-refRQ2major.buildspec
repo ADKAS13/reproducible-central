@@ -1,0 +1,15 @@
+groupId=io.keikai
+artifactId=dev-ref
+version=9
+
+gitRepo=https://github.com/keikai/dev-ref.git
+gitTag=fea0257999f43e38a2d60e5a167f363f7902b703
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Dev-ref.buildinfo

@@ -1,0 +1,15 @@
+groupId=org.jboss.elemento
+artifactId=elemento-parent
+version=9
+
+gitRepo=https://github.com/hal/elemento.git
+gitTag=07806758a88e59f7ce99d4baeb08158afeb8db06
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Elemento.buildinfo

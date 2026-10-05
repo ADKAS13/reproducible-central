@@ -1,0 +1,15 @@
+groupId=com.thoughtworks.gauge
+artifactId=gauge-java
+version=9
+
+gitRepo=https://github.com/getgauge/gauge-java.git
+gitTag=5ae7753ddb46dc0b32bb87bc34f89d942c67c461
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dgpg.skip=true\""
+
+buildinfo=target/Gauge-java.buildinfo
