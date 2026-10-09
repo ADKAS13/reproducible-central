@@ -1,0 +1,1465 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/phenopacket-schema/RQ2minor/phenopacket-schemaRQ2minor.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.phenopackets[0m
+|      [0;34martifactId[0;97m: [1mphenopacket-schema[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/org/phenopackets/phenopacket-schema/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/ga4gh/phenopacket-schema.git[0m
+|      [0;34mgitTag[0;97m: [1m2090c54b4cd68e1d44aab8b067d0b0def0f8a30c[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Phenopacket-schema.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/ga4gh/phenopacket-schema.git[0m on tag [1m2090c54b4cd68e1d44aab8b067d0b0def0f8a30c[0m
+/home/adkas13/reproducible-central/repos/phenopacket-schema/RQ2minor/buildcache/phenopacket-schema
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/ga4gh/phenopacket-schema.git (fetch)
+origin	https://github.com/ga4gh/phenopacket-schema.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 2090c54b4cd68e1d44aab8b067d0b0def0f8a30c [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/phenopacket-schema/RQ2minor/buildcache/phenopacket-schema
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.phenopackets:phenopacket-schema:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/phenopacket-schema/RQ2minor/buildcache/phenopacket-schema:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Mon Oct  5 19:56:56 UTC 2026.
+Universal Time is now:  Mon Oct  5 19:56:56 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] Detecting the operating system and CPU architecture
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] os.detected.name: linux
+[[1;34mINFO[m] os.detected.arch: x86_64
+[[1;34mINFO[m] os.detected.version: 6.18
+[[1;34mINFO[m] os.detected.version.major: 6
+[[1;34mINFO[m] os.detected.version.minor: 18
+[[1;34mINFO[m] os.detected.release: ubuntu
+[[1;34mINFO[m] os.detected.release.version: 22.04
+[[1;34mINFO[m] os.detected.release.like.ubuntu: true
+[[1;34mINFO[m] os.detected.release.like.debian: true
+[[1;34mINFO[m] os.detected.classifier: linux-x86_64
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36morg.phenopackets:phenopacket-schema[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding phenopacket-schema 2.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 33 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+Downloading from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-base/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-base/maven-metadata.xml (4.9 kB at 9.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-structures-r4/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-structures-r4/maven-metadata.xml (4.2 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-utilities/maven-metadata.xml
+Progress (1): 590 B                   Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-utilities/maven-metadata.xml (590 B at 1.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 63 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.6 kB at 45 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.0 kB at 76 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/maven-metadata.xml (6.3 kB at 57 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0.pr1/jackson-dataformat-yaml-2.10.0.pr1.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0.pr1/jackson-dataformat-yaml-2.10.0.pr1.pom (2.3 kB at 8.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.0.pr1/jackson-dataformats-text-2.10.0.pr1.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.0.pr1/jackson-dataformats-text-2.10.0.pr1.pom (3.0 kB at 7.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0.pr2/jackson-dataformat-yaml-2.10.0.pr2.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0.pr2/jackson-dataformat-yaml-2.10.0.pr2.pom (2.3 kB at 22 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.0.pr2/jackson-dataformats-text-2.10.0.pr2.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.0.pr2/jackson-dataformats-text-2.10.0.pr2.pom (3.0 kB at 32 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0.pr3/jackson-dataformat-yaml-2.10.0.pr3.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0.pr3/jackson-dataformat-yaml-2.10.0.pr3.pom (2.3 kB at 8.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.0.pr3/jackson-dataformats-text-2.10.0.pr3.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.0.pr3/jackson-dataformats-text-2.10.0.pr3.pom (3.0 kB at 8.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.1/jackson-dataformat-yaml-2.10.1.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.1/jackson-dataformat-yaml-2.10.1.pom (2.3 kB at 32 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.1/jackson-dataformats-text-2.10.1.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.1/jackson-dataformats-text-2.10.1.pom (3.0 kB at 37 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.3/jackson-dataformat-yaml-2.10.3.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.3/jackson-dataformat-yaml-2.10.3.pom (2.3 kB at 29 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.3/jackson-dataformats-text-2.10.3.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.3/jackson-dataformats-text-2.10.3.pom (3.0 kB at 38 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.4/jackson-dataformat-yaml-2.10.4.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.4/jackson-dataformat-yaml-2.10.4.pom (2.3 kB at 33 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.4/jackson-dataformats-text-2.10.4.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.4/jackson-dataformats-text-2.10.4.pom (3.0 kB at 43 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.5/jackson-dataformat-yaml-2.10.5.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.5/jackson-dataformat-yaml-2.10.5.pom (2.3 kB at 30 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.5/jackson-dataformats-text-2.10.5.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.10.5/jackson-dataformats-text-2.10.5.pom (3.0 kB at 39 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.0.rc1/jackson-dataformat-yaml-2.11.0.rc1.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.0.rc1/jackson-dataformat-yaml-2.11.0.rc1.pom (2.3 kB at 22 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.0.rc1/jackson-dataformats-text-2.11.0.rc1.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.0.rc1/jackson-dataformats-text-2.11.0.rc1.pom (3.0 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.0/jackson-dataformat-yaml-2.11.0.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.0/jackson-dataformat-yaml-2.11.0.pom (2.3 kB at 31 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.0/jackson-dataformats-text-2.11.0.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.0/jackson-dataformats-text-2.11.0.pom (3.0 kB at 40 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.1/jackson-dataformat-yaml-2.11.1.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.1/jackson-dataformat-yaml-2.11.1.pom (2.3 kB at 28 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.1/jackson-dataformats-text-2.11.1.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.1/jackson-dataformats-text-2.11.1.pom (3.0 kB at 41 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.2/jackson-dataformat-yaml-2.11.2.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.2/jackson-dataformat-yaml-2.11.2.pom (2.3 kB at 34 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.2/jackson-dataformats-text-2.11.2.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.2/jackson-dataformats-text-2.11.2.pom (3.0 kB at 41 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.3/jackson-dataformat-yaml-2.11.3.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.3/jackson-dataformat-yaml-2.11.3.pom (2.3 kB at 36 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.3/jackson-dataformats-text-2.11.3.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.3/jackson-dataformats-text-2.11.3.pom (3.0 kB at 41 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.4/jackson-dataformat-yaml-2.11.4.pom
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.11.4/jackson-dataformat-yaml-2.11.4.pom (2.3 kB at 28 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.4/jackson-dataformats-text-2.11.4.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.11.4/jackson-dataformats-text-2.11.4.pom (3.0 kB at 37 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.0-rc1/jackson-dataformat-yaml-2.12.0-rc1.pom
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.0-rc1/jackson-dataformat-yaml-2.12.0-rc1.pom (2.6 kB at 11 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.0-rc1/jackson-dataformats-text-2.12.0-rc1.pom
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.0-rc1/jackson-dataformats-text-2.12.0-rc1.pom (3.3 kB at 12 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.0-rc2/jackson-dataformat-yaml-2.12.0-rc2.pom
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.0-rc2/jackson-dataformat-yaml-2.12.0-rc2.pom (2.6 kB at 8.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.0-rc2/jackson-dataformats-text-2.12.0-rc2.pom
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.0-rc2/jackson-dataformats-text-2.12.0-rc2.pom (3.3 kB at 12 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.0/jackson-dataformat-yaml-2.12.0.pom
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.0/jackson-dataformat-yaml-2.12.0.pom (2.6 kB at 29 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.0/jackson-dataformats-text-2.12.0.pom
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.0/jackson-dataformats-text-2.12.0.pom (3.2 kB at 45 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.1/jackson-dataformat-yaml-2.12.1.pom
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.1/jackson-dataformat-yaml-2.12.1.pom (2.6 kB at 37 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.1/jackson-dataformats-text-2.12.1.pom
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.1/jackson-dataformats-text-2.12.1.pom (3.2 kB at 42 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.2/jackson-dataformat-yaml-2.12.2.pom
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.12.2/jackson-dataformat-yaml-2.12.2.pom (2.6 kB at 36 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.2/jackson-dataformats-text-2.12.2.pom
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.12.2/jackson-dataformats-text-2.12.2.pom (3.2 kB at 40 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 5.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 21 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 6.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 94 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml
+Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml (476 B at 7.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 6.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 113 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/maven-metadata.xml (7.3 kB at 27 kB/s)
+[[1;33mWARNING[m] The POM for com.google.protobuf:protobuf-java-util:jar:3.22.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 3.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/maven-metadata.xml
+Progress (1): 858 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/maven-metadata.xml (858 B at 3.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml
+Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 5.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/maven-metadata.xml
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/maven-metadata.xml (1.9 kB at 6.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 8.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 54 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 54 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 46 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 51 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml
+Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 9.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 35 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 46 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 5.8 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: phenopacket-schema
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for phenopacket-schema: pinned=7 upgraded=26 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: phenopacket-schema
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile[m [1m(default)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Compiling 15 proto file(s) to /var/maven/app/target/generated-sources/protobuf/java
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-python[m [1m(default)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Compiling 15 proto file(s) to /var/maven/app/target/generated-sources/protobuf/python
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-cpp[m [1m(default)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Compiling 15 proto file(s) to /var/maven/app/target/generated-sources/protobuf/cpp
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:compile-js[m [1m(default)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Compiling 15 proto file(s) to /var/maven/app/target/generated-sources/protobuf/js
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/src/main/resources
+[[1;34mINFO[m] Copying 15 resources
+[[1;34mINFO[m] Copying 15 resources
+[[1;34mINFO[m] Copying 15 resources
+[[1;34mINFO[m] Copying 15 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 168 source files to /var/maven/app/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:test-compile[m [1m(default)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Compiling 1 proto file(s) to /var/maven/app/target/generated-test-sources/protobuf/java
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:test-compile-python[m [1m(default)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Compiling 1 proto file(s) to /var/maven/app/target/generated-test-sources/protobuf/python
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.6.1:test-compile-cpp[m [1m(default)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Compiling 1 proto file(s) to /var/maven/app/target/generated-test-sources/protobuf/cpp
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 54 source files to /var/maven/app/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.phenopackets.schema.v2.io.[1mPhenopacketFormatTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 s - in org.phenopackets.schema.v2.io.[1mPhenopacketFormatTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mPhenopacketTest[m
+---
+subject:
+  id: "SAMN05324082-individual"
+  sex: "MALE"
+  taxonomy:
+    id: "NCBITaxon:9606"
+    label: "Homo sapiens"
+biosamples:
+- id: "SAMN05324082"
+  individualId: "SAMN05324082-individual"
+  description: "THP-1; 6 hours; DMSO; Replicate 1"
+  sampledTissue:
+    id: "UBERON:0000178"
+    label: "peripheral blood"
+  phenotypicFeatures:
+  - type:
+      id: "EFO:0001253"
+      label: "THP-1"
+  - type:
+      id: "BTO:0000214"
+      label: "cell culture"
+  - type:
+      id: "CL:0000576"
+      label: "monocyte"
+  taxonomy:
+    id: "NCBITaxon:9606"
+    label: "Homo sapiens"
+  histologicalDiagnosis:
+    id: "EFO:0000221"
+    label: "Acute Monocytic Leukemia"
+  timeOfCollection:
+    age:
+      iso8601duration: "P1Y"
+diseases:
+- term:
+    id: "EFO:0000222"
+    label: "acute myeloid leukemia"
+metaData:
+  created: "2016-06-29T12:03:03Z"
+  resources:
+  - id: "pato"
+    name: "PhenotypicFeature And Trait Ontology"
+    url: "http://purl.obolibrary.org/obo/pato.owl"
+    version: "2018-03-28"
+    namespacePrefix: "PATO"
+  - id: "efo"
+    name: "Experimental Factor Ontology"
+    url: "http://www.ebi.ac.uk/efo/efo.owl"
+    version: "2.97"
+    namespacePrefix: "EFO"
+  - id: "cl"
+    name: "Cell Ontology"
+    url: "http://purl.obolibrary.org/obo/cl.owl"
+    version: "2017-12-11"
+    namespacePrefix: "CL"
+  - id: "bto"
+    name: "BRENDA tissue / enzyme source"
+    url: "http://purl.obolibrary.org/obo/bto"
+    version: "2016-05-05"
+    namespacePrefix: "BTO"
+  - id: "uberon"
+    name: "Uber-anatomy ontology"
+    url: "http://purl.obolibrary.org/obo/uberon.owl"
+    version: "2018-05-14"
+    namespacePrefix: "UBERON"
+  - id: "ncbitaxon"
+    name: "NCBI organismal classification"
+    url: "http://purl.obolibrary.org/obo/ncbitaxon.owl"
+    version: "2018-03-02"
+    namespacePrefix: "NCBITaxon"
+  updates:
+  - timestamp: "2018-06-10T10:59:06Z"
+
+---
+subject:
+  id: "P123542"
+  sex: "MALE"
+  vitalStatus:
+    status: "DECEASED"
+    timeOfDeath:
+      timestamp: "2020-03-28T00:00:00Z"
+    causeOfDeath:
+      id: "MONDO:0100096"
+      label: "COVID-19"
+  timeAtEncounter:
+    age:
+      iso8601duration: "P70Y"
+phenotypicFeatures:
+- type:
+    id: "NCIT:C76246"
+    label: "Blood Group A"
+- type:
+    id: "NCIT:C76251"
+    label: "Rh Positive Blood Group"
+- type:
+    id: "NCIT:C3038"
+    label: "Fever"
+  onset:
+    timestamp: "2020-03-17T00:00:00Z"
+- type:
+    id: "NCIT:C34615"
+    label: "Flank Pain"
+  onset:
+    timestamp: "2020-03-17T00:00:00Z"
+- type:
+    id: "NCIT:C3090"
+    label: "Hematuria"
+  onset:
+    timestamp: "2020-03-17T00:00:00Z"
+- type:
+    id: "NCIT:C27009"
+    label: "Myalgia"
+  onset:
+    interval:
+      start: "2020-03-18T00:00:00Z"
+      end: "2020-03-20T00:00:00Z"
+- type:
+    id: "NCIT:C2987"
+    label: "Diarrhea"
+  onset:
+    interval:
+      start: "2020-03-18T00:00:00Z"
+      end: "2020-03-20T00:00:00Z"
+- type:
+    id: "NCIT:C2998"
+    label: "Dyspnea"
+  onset:
+    interval:
+      start: "2020-03-18T00:00:00Z"
+      end: "2020-03-20T00:00:00Z"
+- type:
+    id: "NCIT:C27043"
+    label: "Acute Respiratory Failure"
+  onset:
+    timestamp: "2020-03-20T00:00:00Z"
+diseases:
+- term:
+    id: "NCIT:C2985"
+    label: "Diabetes Mellitus"
+  excluded: true
+- term:
+    id: "NCIT:C34830"
+    label: "Cardiomyopathy"
+- term:
+    id: "NCIT:C80389"
+    label: "Chronic Kidney Disease, Stage 3"
+- term:
+    id: "NCIT:C3283"
+    label: "Obesity"
+- term:
+    id: "MONDO:0100096"
+    label: "COVID-19"
+  onset:
+    timestamp: "2020-03-17T00:00:00Z"
+metaData:
+  resources:
+  - id: "ncit"
+    name: "NCI Thesaurus OBO Edition"
+    url: "http://purl.obolibrary.org/obo/ncit.owl"
+    version: "http://purl.obolibrary.org/obo/ncit/releases/2019-11-26/ncit.owl"
+    namespacePrefix: "NCIT"
+  - id: "mondo"
+    name: "Mondo Disease Ontology"
+    url: "http://purl.obolibrary.org/obo/mondo.obo"
+    namespacePrefix: "MONDO"
+  phenopacketSchemaVersion: "v2.0"
+medicalActions:
+- procedure:
+    code:
+      id: "NCIT:C80473"
+      label: "Left Ventricular Assist Device"
+    performed:
+      timestamp: "2016-01-01T00:00:00Z"
+- treatment:
+    agent:
+      id: "NCIT:C722"
+      label: "Oxygen"
+    routeOfAdministration:
+      id: "NCIT:C38284"
+      label: "Nasal Route of Administration"
+    doseIntervals:
+    - quantity:
+        unitClass:
+          id: "NCIT:C67388"
+          label: "Liter per Minute"
+        value: 2.0
+      interval:
+        start: "2020-03-20T00:00:00Z"
+        end: "2020-03-22T00:00:00Z"
+    - quantity:
+        unitClass:
+          id: "NCIT:C67388"
+          label: "Liter per Minute"
+        value: 50.0
+      interval:
+        start: "2020-03-22T00:00:00Z"
+        end: "2020-03-23T00:00:00Z"
+- treatment:
+    agent:
+      id: "NCIT:C557"
+      label: "Hydroxychloroquine"
+    doseIntervals:
+    - quantity:
+        unitClass:
+          id: "NCIT:C28253"
+          label: "mg"
+        value: 450.0
+      scheduleFrequency:
+        id: "NCIT:C64496"
+        label: "Twice Daily"
+      interval:
+        start: "2020-03-20T00:00:00Z"
+        end: "2020-03-20T00:00:00Z"
+    - quantity:
+        unitClass:
+          id: "NCIT:C28253"
+          label: "mg"
+        value: 450.0
+      scheduleFrequency:
+        id: "NCIT:C125004"
+        label: "Once Daily"
+      interval:
+        start: "2020-03-21T00:00:00Z"
+        end: "2020-03-22T00:00:00Z"
+- procedure:
+    code:
+      id: "NCIT:C116648"
+      label: "Tracheal Intubation"
+    performed:
+      timestamp: "2020-03-22T00:00:00Z"
+- treatment:
+    agent:
+      id: "NCIT:C722"
+      label: "Oxygen"
+    routeOfAdministration:
+      id: "NCIT:C50254"
+      label: "Positive end Expiratory Pressure Valve Device"
+    doseIntervals:
+    - quantity:
+        unitClass:
+          id: "NCIT:C91060"
+          label: "Centimeters of Water"
+        value: 14.0
+      interval:
+        start: "2020-03-22T00:00:00Z"
+        end: "2020-03-28T00:00:00Z"
+- treatment:
+    agent:
+      id: "NCIT:C84217"
+      label: "Tocilizumab"
+    doseIntervals:
+    - interval:
+        start: "2020-03-24T00:00:00Z"
+        end: "2020-03-28T00:00:00Z"
+
+---
+subject:
+  id: "patient1"
+  dateOfBirth: "1964-03-15T00:00:00Z"
+biosamples:
+- id: "sample1"
+  individualId: "patient1"
+  sampledTissue:
+    id: "NCIT:C139196"
+    label: "Esophageal Lymph Node"
+  histologicalDiagnosis:
+    id: "NCIT:C4024"
+    label: "Esophageal Squamous Cell Carcinoma"
+  tumorProgression:
+    id: "NCIT:C84509"
+    label: "Primary Malignant Neoplasm"
+  diagnosticMarkers:
+  - id: "NCIT:C131711"
+    label: "Human Papillomavirus-18 Positive"
+  procedure:
+    code:
+      id: "NCIT:C15189"
+      label: "Biopsy"
+  timeOfCollection:
+    age:
+      iso8601duration: "P48Y3M"
+- id: "sample2"
+  individualId: "patient1"
+  sampledTissue:
+    id: "NCIT:C12389"
+    label: "Esophagus"
+  tumorProgression:
+    id: "NCIT:C4813"
+    label: "Recurrent Malignant Neoplasm"
+  procedure:
+    code:
+      id: "NCIT:C15189"
+      label: "Biopsy"
+  timeOfCollection:
+    age:
+      iso8601duration: "P49Y2M"
+- id: "sample3"
+  individualId: "patient1"
+  sampledTissue:
+    id: "NCIT:C12468"
+    label: "Lung"
+  tumorProgression:
+    id: "NCIT:C3261"
+    label: "Metastatic Neoplasm"
+  procedure:
+    code:
+      id: "NCIT:C15189"
+      label: "Biopsy"
+  timeOfCollection:
+    age:
+      iso8601duration: "P50Y7M"
+diseases:
+- term:
+    id: "NCIT:C4024"
+    label: "Esophageal Squamous Cell Carcinoma"
+  clinicalTnmFinding:
+  - id: "NCIT:C48724"
+    label: "T2 Stage Finding"
+  - id: "NCIT:C48706"
+    label: "N1 Stage Finding"
+  - id: "NCIT:C48699"
+    label: "M0 Stage Finding"
+metaData:
+  resources:
+  - id: "ncit"
+    name: "NCI Thesaurus OBO Edition"
+    url: "http://purl.obolibrary.org/obo/ncit.owl"
+    version: "18.05d"
+    namespacePrefix: "NCIT"
+
+---
+id: "kindred 1A"
+subject:
+  id: "kindred 1A"
+  dateOfBirth: "1998-01-01T00:00:00Z"
+  sex: "MALE"
+  timeAtEncounter:
+    age:
+      iso8601duration: "P3Y"
+phenotypicFeatures:
+- type:
+    id: "HP:0001159"
+    label: "Syndactyly"
+  onset:
+    ontologyClass:
+      id: "HP:0003577"
+      label: "Congenital onset"
+- type:
+    id: "HP:0002090"
+    label: "Pneumonia"
+  onset:
+    ontologyClass:
+      id: "HP:0011463"
+      label: "Childhood onset"
+- type:
+    id: "HP:0000028"
+    label: "Cryptorchidism"
+  onset:
+    ontologyClass:
+      id: "HP:0003577"
+      label: "Congenital onset"
+- type:
+    id: "HP:0011109"
+    label: "Chronic sinusitis"
+  severity:
+    id: "HP:0012828"
+    label: "Severe"
+  onset:
+    ontologyClass:
+      id: "HP:0003581"
+      label: "Adult onset"
+htsFiles:
+- uri: "file://data/file.vcf.gz"
+  htsFormat: "VCF"
+  genomeAssembly: "GRCh38"
+  individualToSampleIdentifiers:
+    kindred 1A: "SAME000234"
+
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in org.phenopackets.schema.v2.[1mPhenopacketTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mFamilyTest[m
+---
+id: "kindred 1"
+proband:
+  id: "kindred 1A"
+  subject:
+    id: "kindred 1A"
+    dateOfBirth: "1998-01-01T00:00:00Z"
+    sex: "MALE"
+    timeAtEncounter:
+      age:
+        iso8601duration: "P3Y"
+  phenotypicFeatures:
+  - type:
+      id: "HP:0001159"
+      label: "Syndactyly"
+    onset:
+      ontologyClass:
+        id: "HP:0003577"
+        label: "Congenital onset"
+  - type:
+      id: "HP:0002090"
+      label: "Pneumonia"
+    onset:
+      ontologyClass:
+        id: "HP:0011463"
+        label: "Childhood onset"
+  - type:
+      id: "HP:0000028"
+      label: "Cryptorchidism"
+    onset:
+      ontologyClass:
+        id: "HP:0003577"
+        label: "Congenital onset"
+  - type:
+      id: "HP:0011109"
+      label: "Chronic sinusitis"
+    severity:
+      id: "HP:0012828"
+      label: "Severe"
+    onset:
+      ontologyClass:
+        id: "HP:0003581"
+        label: "Adult onset"
+  htsFiles:
+  - uri: "file://data/file.vcf.gz"
+    htsFormat: "VCF"
+    genomeAssembly: "GRCh38"
+    individualToSampleIdentifiers:
+      kindred 1A: "SAME000234"
+relatives:
+- subject:
+    id: "kindred 1B"
+    dateOfBirth: "2000-03-04T00:00:00Z"
+    sex: "FEMALE"
+  phenotypicFeatures:
+  - type:
+      id: "HP:0001159"
+      label: "Syndactyly"
+    onset:
+      ontologyClass:
+        id: "HP:0003577"
+        label: "Congenital onset"
+  - type:
+      id: "HP:0002090"
+      label: "Pneumonia"
+    negated: true
+  - type:
+      id: "HP:0011109"
+      label: "Chronic sinusitis"
+    negated: true
+- subject:
+    id: "MOTHER"
+    sex: "FEMALE"
+- subject:
+    id: "FATHER"
+    sex: "MALE"
+pedigree:
+  persons:
+  - individualId: "kindred 1A"
+    paternalId: "FATHER"
+    maternalId: "MOTHER"
+    sex: "MALE"
+    affectedStatus: "AFFECTED"
+  - individualId: "kindred 1B"
+    paternalId: "FATHER"
+    maternalId: "MOTHER"
+    sex: "FEMALE"
+    affectedStatus: "AFFECTED"
+  - individualId: "MOTHER"
+    sex: "FEMALE"
+    affectedStatus: "UNAFFECTED"
+  - individualId: "FATHER"
+    sex: "MALE"
+    affectedStatus: "UNAFFECTED"
+metaData:
+  created: "2026-10-05T19:57:17.101Z"
+  createdBy: "Jules J."
+  resources:
+  - id: "hp"
+    name: "human phenotype ontology"
+    url: "http://purl.obolibrary.org/obo/hp.owl"
+    version: "2018-03-08"
+    namespacePrefix: "HP"
+    iriPrefix: "http://purl.obolibrary.org/obo/HP_"
+  - id: "pato"
+    name: "PhenotypicFeature And Trait Ontology"
+    url: "http://purl.obolibrary.org/obo/pato.owl"
+    version: "2018-03-28"
+    namespacePrefix: "PATO"
+    iriPrefix: "http://purl.obolibrary.org/obo/PATO_"
+  - id: "geno"
+    name: "Genotype Ontology"
+    url: "http://purl.obolibrary.org/obo/geno.owl"
+    version: "19-03-2018"
+    namespacePrefix: "GENO"
+    iriPrefix: "http://purl.obolibrary.org/obo/GENO_"
+  - id: "pubmed"
+    name: "PubMed"
+    namespacePrefix: "PMID"
+    iriPrefix: "https://www.ncbi.nlm.nih.gov/pubmed/"
+  externalReferences:
+  - id: "PMID:19915526"
+    description: "Kindred 1 in Ng SB et al. Exome sequencing identifies the cause\
+      \ of a mendelian disorder. Nat Genet. 2010;42(1):30-5."
+
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.phenopackets.schema.v2.[1mFamilyTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mInterpretationTest[m
+---
+id: "kindred 1A"
+subject:
+  id: "kindred 1A"
+  dateOfBirth: "1998-01-01T00:00:00Z"
+  sex: "MALE"
+  timeAtEncounter:
+    age:
+      iso8601duration: "P3Y"
+phenotypicFeatures:
+- type:
+    id: "HP:0001159"
+    label: "Syndactyly"
+  onset:
+    ontologyClass:
+      id: "HP:0003577"
+      label: "Congenital onset"
+- type:
+    id: "HP:0002090"
+    label: "Pneumonia"
+  onset:
+    ontologyClass:
+      id: "HP:0011463"
+      label: "Childhood onset"
+- type:
+    id: "HP:0000028"
+    label: "Cryptorchidism"
+  onset:
+    ontologyClass:
+      id: "HP:0003577"
+      label: "Congenital onset"
+- type:
+    id: "HP:0011109"
+    label: "Chronic sinusitis"
+  severity:
+    id: "HP:0012828"
+    label: "Severe"
+  onset:
+    ontologyClass:
+      id: "HP:0003581"
+      label: "Adult onset"
+htsFiles:
+- uri: "file://data/file.vcf.gz"
+  htsFormat: "VCF"
+  genomeAssembly: "GRCh38"
+  individualToSampleIdentifiers:
+    kindred 1A: "SAME000234"
+interpretations:
+- id: "SOLVERD:0000012456"
+  progressStatus: "SOLVED"
+  diagnosis:
+    disease:
+      id: "OMIM:263750"
+      label: "Miller syndrome"
+    genomicInterpretations:
+    - interpretationStatus: "CONTRIBUTORY"
+      gene:
+        id: "HGNC:2867"
+        symbol: "DHODH"
+    - interpretationStatus: "CONTRIBUTORY"
+      variantInterpretation:
+        variantFinding: "PATHOGENIC"
+        variant:
+          hgvsAllele: {}
+
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.phenopackets.schema.v2.[1mInterpretationTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mFhirTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 s - in org.phenopackets.schema.v2.[1mFhirTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v1.io.[1mPhenopacketFormatTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in org.phenopackets.schema.v1.io.[1mPhenopacketFormatTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mPhenopacketTest[m
+---
+subject:
+  id: "SAMN05324082-individual"
+  sex: "MALE"
+  taxonomy:
+    id: "NCBITaxon:9606"
+    label: "Homo sapiens"
+biosamples:
+- id: "SAMN05324082"
+  individualId: "SAMN05324082-individual"
+  description: "THP-1; 6 hours; DMSO; Replicate 1"
+  sampledTissue:
+    id: "UBERON:0000178"
+    label: "peripheral blood"
+  phenotypicFeatures:
+  - type:
+      id: "EFO:0001253"
+      label: "THP-1"
+  - type:
+      id: "BTO:0000214"
+      label: "cell culture"
+  - type:
+      id: "CL:0000576"
+      label: "monocyte"
+  taxonomy:
+    id: "NCBITaxon:9606"
+    label: "Homo sapiens"
+  ageOfIndividualAtCollection:
+    age: "P1Y"
+  histologicalDiagnosis:
+    id: "EFO:0000221"
+    label: "Acute Monocytic Leukemia"
+diseases:
+- term:
+    id: "EFO:0000222"
+    label: "acute myeloid leukemia"
+metaData:
+  created: "2016-06-29T12:03:03Z"
+  resources:
+  - id: "pato"
+    name: "PhenotypicFeature And Trait Ontology"
+    url: "http://purl.obolibrary.org/obo/pato.owl"
+    version: "2018-03-28"
+    namespacePrefix: "PATO"
+  - id: "efo"
+    name: "Experimental Factor Ontology"
+    url: "http://www.ebi.ac.uk/efo/efo.owl"
+    version: "2.97"
+    namespacePrefix: "EFO"
+  - id: "cl"
+    name: "Cell Ontology"
+    url: "http://purl.obolibrary.org/obo/cl.owl"
+    version: "2017-12-11"
+    namespacePrefix: "CL"
+  - id: "bto"
+    name: "BRENDA tissue / enzyme source"
+    url: "http://purl.obolibrary.org/obo/bto"
+    version: "2016-05-05"
+    namespacePrefix: "BTO"
+  - id: "uberon"
+    name: "Uber-anatomy ontology"
+    url: "http://purl.obolibrary.org/obo/uberon.owl"
+    version: "2018-05-14"
+    namespacePrefix: "UBERON"
+  - id: "ncbitaxon"
+    name: "NCBI organismal classification"
+    url: "http://purl.obolibrary.org/obo/ncbitaxon.owl"
+    version: "2018-03-02"
+    namespacePrefix: "NCBITaxon"
+  updates:
+  - timestamp: "2018-06-10T10:59:06Z"
+
+---
+subject:
+  id: "patient1"
+  dateOfBirth: "1964-03-15T00:00:00Z"
+biosamples:
+- id: "sample1"
+  individualId: "patient1"
+  sampledTissue:
+    id: "NCIT:C139196"
+    label: "Esophageal Lymph Node"
+  ageOfIndividualAtCollection:
+    age: "P48Y3M"
+  histologicalDiagnosis:
+    id: "NCIT:C4024"
+    label: "Esophageal Squamous Cell Carcinoma"
+  tumorProgression:
+    id: "NCIT:C84509"
+    label: "Primary Malignant Neoplasm"
+  diagnosticMarkers:
+  - id: "NCIT:C131711"
+    label: "Human Papillomavirus-18 Positive"
+  procedure:
+    code:
+      id: "NCIT:C15189"
+      label: "Biopsy"
+- id: "sample2"
+  individualId: "patient1"
+  sampledTissue:
+    id: "NCIT:C12389"
+    label: "Esophagus"
+  ageOfIndividualAtCollection:
+    age: "P49Y2M"
+  tumorProgression:
+    id: "NCIT:C4813"
+    label: "Recurrent Malignant Neoplasm"
+  procedure:
+    code:
+      id: "NCIT:C15189"
+      label: "Biopsy"
+- id: "sample3"
+  individualId: "patient1"
+  sampledTissue:
+    id: "NCIT:C12468"
+    label: "Lung"
+  ageOfIndividualAtCollection:
+    age: "P50Y7M"
+  tumorProgression:
+    id: "NCIT:C3261"
+    label: "Metastatic Neoplasm"
+  procedure:
+    code:
+      id: "NCIT:C15189"
+      label: "Biopsy"
+diseases:
+- term:
+    id: "NCIT:C4024"
+    label: "Esophageal Squamous Cell Carcinoma"
+  tnmFinding:
+  - id: "NCIT:C48724"
+    label: "T2 Stage Finding"
+  - id: "NCIT:C48706"
+    label: "N1 Stage Finding"
+  - id: "NCIT:C48699"
+    label: "M0 Stage Finding"
+metaData:
+  resources:
+  - id: "ncit"
+    name: "NCI Thesaurus OBO Edition"
+    url: "http://purl.obolibrary.org/obo/ncit.owl"
+    version: "18.05d"
+    namespacePrefix: "NCIT"
+
+{
+  "id": "kindred 1A",
+  "subject": {
+    "id": "kindred 1A",
+    "dateOfBirth": "1998-01-01T00:00:00Z",
+    "ageAtCollection": {
+      "age": "P3Y"
+    },
+    "sex": "MALE"
+  },
+  "phenotypicFeatures": [{
+    "type": {
+      "id": "HP:0001159",
+      "label": "Syndactyly"
+    },
+    "classOfOnset": {
+      "id": "HP:0003577",
+      "label": "Congenital onset"
+    }
+  }, {
+    "type": {
+      "id": "HP:0002090",
+      "label": "Pneumonia"
+    },
+    "classOfOnset": {
+      "id": "HP:0011463",
+      "label": "Childhood onset"
+    }
+  }, {
+    "type": {
+      "id": "HP:0000028",
+      "label": "Cryptorchidism"
+    },
+    "classOfOnset": {
+      "id": "HP:0003577",
+      "label": "Congenital onset"
+    }
+  }, {
+    "type": {
+      "id": "HP:0011109",
+      "label": "Chronic sinusitis"
+    },
+    "severity": {
+      "id": "HP:0012828",
+      "label": "Severe"
+    },
+    "classOfOnset": {
+      "id": "HP:0003581",
+      "label": "Adult onset"
+    }
+  }],
+  "variants": [{
+    "hgvsAllele": {
+      "hgvs": "NM_001361.4:c.403C\u003eT"
+    },
+    "zygosity": {
+      "id": "GENO:0000135",
+      "label": "heterozygous"
+    }
+  }, {
+    "hgvsAllele": {
+      "hgvs": "NM_001361.4:c.454G\u003eA"
+    },
+    "zygosity": {
+      "id": "GENO:0000135",
+      "label": "heterozygous"
+    }
+  }, {
+    "hgvsAllele": {
+      "hgvs": "NM_001369.2:c.12599dupA"
+    },
+    "zygosity": {
+      "id": "GENO:0000136",
+      "label": "homozygous"
+    }
+  }],
+  "htsFiles": [{
+    "uri": "file://data/file.vcf.gz",
+    "htsFormat": "VCF",
+    "genomeAssembly": "GRCh38",
+    "individualToSampleIdentifiers": {
+      "kindred 1A": "SAME000234"
+    }
+  }]
+}
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.phenopackets.schema.v1.[1mPhenopacketTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mFamilyTest[m
+---
+id: "kindred 1"
+proband:
+  id: "kindred 1A"
+  subject:
+    id: "kindred 1A"
+    dateOfBirth: "1998-01-01T00:00:00Z"
+    ageAtCollection:
+      age: "P3Y"
+    sex: "MALE"
+  phenotypicFeatures:
+  - type:
+      id: "HP:0001159"
+      label: "Syndactyly"
+    classOfOnset:
+      id: "HP:0003577"
+      label: "Congenital onset"
+  - type:
+      id: "HP:0002090"
+      label: "Pneumonia"
+    classOfOnset:
+      id: "HP:0011463"
+      label: "Childhood onset"
+  - type:
+      id: "HP:0000028"
+      label: "Cryptorchidism"
+    classOfOnset:
+      id: "HP:0003577"
+      label: "Congenital onset"
+  - type:
+      id: "HP:0011109"
+      label: "Chronic sinusitis"
+    severity:
+      id: "HP:0012828"
+      label: "Severe"
+    classOfOnset:
+      id: "HP:0003581"
+      label: "Adult onset"
+  variants:
+  - hgvsAllele:
+      hgvs: "NM_001361.4:c.403C>T"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+  - hgvsAllele:
+      hgvs: "NM_001361.4:c.454G>A"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+  - hgvsAllele:
+      hgvs: "NM_001369.2:c.12599dupA"
+    zygosity:
+      id: "GENO:0000136"
+      label: "homozygous"
+  htsFiles:
+  - uri: "file://data/file.vcf.gz"
+    htsFormat: "VCF"
+    genomeAssembly: "GRCh38"
+    individualToSampleIdentifiers:
+      kindred 1A: "SAME000234"
+relatives:
+- subject:
+    id: "kindred 1B"
+    dateOfBirth: "2000-03-04T00:00:00Z"
+    sex: "FEMALE"
+  phenotypicFeatures:
+  - type:
+      id: "HP:0001159"
+      label: "Syndactyly"
+    classOfOnset:
+      id: "HP:0003577"
+      label: "Congenital onset"
+  - type:
+      id: "HP:0002090"
+      label: "Pneumonia"
+    negated: true
+  - type:
+      id: "HP:0011109"
+      label: "Chronic sinusitis"
+    negated: true
+  variants:
+  - hgvsAllele:
+      hgvs: "NM_001361.4:c.403C>T"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+  - hgvsAllele:
+      hgvs: "NM_001361.4:c.454G>A"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+  - hgvsAllele:
+      hgvs: "NM_001369.2:c.12599dupA"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+- subject:
+    id: "MOTHER"
+    sex: "FEMALE"
+  variants:
+  - hgvsAllele:
+      hgvs: "NM_001361.4:c.454G>A"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+  - hgvsAllele:
+      hgvs: "NM_001369.2:c.12599dupA"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+- subject:
+    id: "FATHER"
+    sex: "MALE"
+  variants:
+  - hgvsAllele:
+      hgvs: "NM_001361.4:c.403C>T"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+  - hgvsAllele:
+      hgvs: "NM_001369.2:c.12599dupA"
+    zygosity:
+      id: "GENO:0000135"
+      label: "heterozygous"
+pedigree:
+  persons:
+  - individualId: "kindred 1A"
+    paternalId: "FATHER"
+    maternalId: "MOTHER"
+    sex: "MALE"
+    affectedStatus: "AFFECTED"
+  - individualId: "kindred 1B"
+    paternalId: "FATHER"
+    maternalId: "MOTHER"
+    sex: "FEMALE"
+    affectedStatus: "AFFECTED"
+  - individualId: "MOTHER"
+    sex: "FEMALE"
+    affectedStatus: "UNAFFECTED"
+  - individualId: "FATHER"
+    sex: "MALE"
+    affectedStatus: "UNAFFECTED"
+metaData:
+  created: "2026-10-05T19:57:17.332Z"
+  createdBy: "Jules J."
+  resources:
+  - id: "hp"
+    name: "human phenotype ontology"
+    url: "http://purl.obolibrary.org/obo/hp.owl"
+    version: "2018-03-08"
+    namespacePrefix: "HP"
+    iriPrefix: "http://purl.obolibrary.org/obo/HP_"
+  - id: "pato"
+    name: "PhenotypicFeature And Trait Ontology"
+    url: "http://purl.obolibrary.org/obo/pato.owl"
+    version: "2018-03-28"
+    namespacePrefix: "PATO"
+    iriPrefix: "http://purl.obolibrary.org/obo/PATO_"
+  - id: "geno"
+    name: "Genotype Ontology"
+    url: "http://purl.obolibrary.org/obo/geno.owl"
+    version: "19-03-2018"
+    namespacePrefix: "GENO"
+    iriPrefix: "http://purl.obolibrary.org/obo/GENO_"
+  - id: "pubmed"
+    name: "PubMed"
+    namespacePrefix: "PMID"
+    iriPrefix: "https://www.ncbi.nlm.nih.gov/pubmed/"
+  externalReferences:
+  - id: "PMID:19915526"
+    description: "Kindred 1 in Ng SB et al. Exome sequencing identifies the cause\
+      \ of a mendelian disorder. Nat Genet. 2010;42(1):30-5."
+
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.phenopackets.schema.v1.[1mFamilyTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mInterpretationTest[m
+{
+  "id": "SOLVERD:0000012456",
+  "resolutionStatus": "SOLVED",
+  "phenopacket": {
+    "id": "kindred 1A",
+    "subject": {
+      "id": "kindred 1A",
+      "dateOfBirth": "1998-01-01T00:00:00Z",
+      "ageAtCollection": {
+        "age": "P3Y"
+      },
+      "sex": "MALE"
+    },
+    "phenotypicFeatures": [{
+      "type": {
+        "id": "HP:0001159",
+        "label": "Syndactyly"
+      },
+      "classOfOnset": {
+        "id": "HP:0003577",
+        "label": "Congenital onset"
+      }
+    }, {
+      "type": {
+        "id": "HP:0002090",
+        "label": "Pneumonia"
+      },
+      "classOfOnset": {
+        "id": "HP:0011463",
+        "label": "Childhood onset"
+      }
+    }, {
+      "type": {
+        "id": "HP:0000028",
+        "label": "Cryptorchidism"
+      },
+      "classOfOnset": {
+        "id": "HP:0003577",
+        "label": "Congenital onset"
+      }
+    }, {
+      "type": {
+        "id": "HP:0011109",
+        "label": "Chronic sinusitis"
+      },
+      "severity": {
+        "id": "HP:0012828",
+        "label": "Severe"
+      },
+      "classOfOnset": {
+        "id": "HP:0003581",
+        "label": "Adult onset"
+      }
+    }],
+    "variants": [{
+      "hgvsAllele": {
+        "hgvs": "NM_001361.4:c.403C\u003eT"
+      },
+      "zygosity": {
+        "id": "GENO:0000135",
+        "label": "heterozygous"
+      }
+    }, {
+      "hgvsAllele": {
+        "hgvs": "NM_001361.4:c.454G\u003eA"
+      },
+      "zygosity": {
+        "id": "GENO:0000135",
+        "label": "heterozygous"
+      }
+    }, {
+      "hgvsAllele": {
+        "hgvs": "NM_001369.2:c.12599dupA"
+      },
+      "zygosity": {
+        "id": "GENO:0000136",
+        "label": "homozygous"
+      }
+    }],
+    "htsFiles": [{
+      "uri": "file://data/file.vcf.gz",
+      "htsFormat": "VCF",
+      "genomeAssembly": "GRCh38",
+      "individualToSampleIdentifiers": {
+        "kindred 1A": "SAME000234"
+      }
+    }]
+  },
+  "diagnosis": [{
+    "disease": {
+      "term": {
+        "id": "OMIM:263750",
+        "label": "Miller syndrome"
+      }
+    },
+    "genomicInterpretations": [{
+      "status": "CAUSATIVE",
+      "gene": {
+        "id": "HGNC:2867",
+        "symbol": "DHODH"
+      }
+    }]
+  }],
+  "metaData": {
+    "created": "2026-10-05T19:57:17.373Z",
+    "createdBy": "Jules J.",
+    "resources": [{
+      "id": "hp",
+      "name": "human phenotype ontology",
+      "url": "http://purl.obolibrary.org/obo/hp.owl",
+      "version": "2018-03-08",
+      "namespacePrefix": "HP",
+      "iriPrefix": "http://purl.obolibrary.org/obo/HP_"
+    }, {
+      "id": "omim",
+      "name": "Online Mendelian Inheritance in Man",
+      "url": "https://omim.org",
+      "namespacePrefix": "OMIM",
+      "iriPrefix": "https://omim.org/entry/"
+    }, {
+      "id": "geno",
+      "name": "Genotype Ontology",
+      "url": "http://purl.obolibrary.org/obo/geno.owl",
+      "version": "19-03-2018",
+      "namespacePrefix": "GENO",
+      "iriPrefix": "http://purl.obolibrary.org/obo/GENO_"
+    }, {
+      "id": "hgnc",
+      "name": "HUGO Gene Nomenclature Committee",
+      "namespacePrefix": "HGNC",
+      "iriPrefix": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:"
+    }]
+  }
+}
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.phenopackets.schema.v1.[1mInterpretationTest[m
+[[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mFhirTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.phenopackets.schema.v1.[1mFhirTest[m
+[[1;34mINFO[m] Running org.matchmakerexchange.api.v1.[1mMmeNodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.matchmakerexchange.api.v1.[1mMmeNodeTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 24, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/phenopacket-schema-2.0.0.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.1.0:jar[m [1m(attach-javadocs)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/phenopacket-schema-2.0.0-javadoc.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/phenopacket-schema-2.0.0-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mphenopacket-schema[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/phenopacket-schema-2.0.0.jar to /var/maven/.m2/repository/org/phenopackets/phenopacket-schema/2.0.0/phenopacket-schema-2.0.0.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/phenopackets/phenopacket-schema/2.0.0/phenopacket-schema-2.0.0.pom
+[[1;34mINFO[m] Installing /var/maven/app/target/phenopacket-schema-2.0.0-javadoc.jar to /var/maven/.m2/repository/org/phenopackets/phenopacket-schema/2.0.0/phenopacket-schema-2.0.0-javadoc.jar
+[[1;34mINFO[m] Installing /var/maven/app/target/phenopacket-schema-2.0.0-sources.jar to /var/maven/.m2/repository/org/phenopackets/phenopacket-schema/2.0.0/phenopacket-schema-2.0.0-sources.jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  28.058 s
+[[1;34mINFO[m] Finished at: 2026-10-05T19:57:24Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Phenopacket-schema.buildinfo: No such file or directory
+dos2unix: Skipping target/Phenopacket-schema.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

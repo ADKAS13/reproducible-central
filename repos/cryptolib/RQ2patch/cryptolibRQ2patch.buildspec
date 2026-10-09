@@ -1,0 +1,15 @@
+groupId=org.cryptomator
+artifactId=cryptolib
+version=9
+
+gitRepo=https://github.com/cryptomator/cryptolib.git
+gitTag=e3ee3de00010ee7e4cdf538333e3ae0d99c82b08
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Crypto.buildinfo

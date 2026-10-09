@@ -61,57 +61,65 @@ for flag, df in flag_dfs.items():
     repo_breakdown_by_flag[flag] = grouped
 
 # -------------------------------------------------------------------
-# Table 1: Spans both columns using table*
+# Table 1: Single Column Per-Repository Breakdown (Filtered)
 # -------------------------------------------------------------------
 rows = []
-all_repos = sorted(df_all["repo"].unique())
+
+# Filter out summary/aggregate rows like 'RQ2major', 'RQ2patch', 'RQ2minor', etc.
+all_repos = sorted(
+    [
+        repo
+        for repo in df_all["repo"].unique()
+        if not str(repo).startswith("RQ2") and not str(repo).startswith("RQ1")
+    ]
+)
 
 for repo in all_repos:
-    for flag in FLAGS:
-        data = repo_breakdown_by_flag[flag]
-        repo_data = data[data["repo"] == repo]
-        if not repo_data.empty:
-            r = repo_data.iloc[0]
-            rows.append(
-                {
-                    "Repository": repo,
-                    "Flag": flag.capitalize(),
-                    "Upgraded": int(r["upgraded"]),
-                    "Pinned": int(r["pinned"]),
-                    "Downgraded": int(r["downgraded"]),
-                    "Build Success Rate": f"{r['build_success_rate']:.1f}\\%",
-                }
-            )
+  for flag in FLAGS:
+    data = repo_breakdown_by_flag[flag]
+    repo_data = data[data["repo"] == repo]
+    if not repo_data.empty:
+      r = repo_data.iloc[0]
+      rows.append({
+          "Repository": repo,
+          "Flag": flag.capitalize(),
+          "Upgraded": int(r["upgraded"]),
+          "Pinned": int(r["pinned"]),
+          "Downgraded": int(r["downgraded"]),
+          "Build Success Rate": f"{r['build_success_rate']:.1f}\\%",
+      })
 
 df_repo_latex = pd.DataFrame(rows)
 
-latex_repo_table = """\\begin{table*}[t]
+latex_repo_table = """\\begin{table}[htbp]
 \\centering
 \\caption{Per-Repository Dependency Actions and Build Success Rate across Update Flags}
 \\label{tab:repo_breakdown}
+\\resizebox{\\linewidth}{!}{%
 \\begin{tabular}{llrrrr}
 \\toprule
-\\textbf{Repository} & \\textbf{Flag} & \\textbf{Upgraded} & \\textbf{Pinned} & \\textbf{Downgraded} & \\textbf{Build Success Rate} \\\\
+\\textbf{Repository} & \\textbf{Flag} & \\textbf{Upgraded} & \\textbf{Pinned} & \\textbf{Downgraded} & \\textbf{Build Rate} \\\\
 \\midrule
 """
 
 current_repo = ""
 for idx, row in df_repo_latex.iterrows():
-    repo_str = row["Repository"] if row["Repository"] != current_repo else ""
-    if current_repo != "" and row["Repository"] != current_repo:
-        latex_repo_table += "\\midrule\n"
-    current_repo = row["Repository"]
+  repo_str = row["Repository"] if row["Repository"] != current_repo else ""
+  if current_repo != "" and row["Repository"] != current_repo:
+    latex_repo_table += "\\midrule\n"
+  current_repo = row["Repository"]
 
-    latex_repo_table += f"{repo_str} & {row['Flag']} & {row['Upgraded']} & {row['Pinned']} & {row['Downgraded']} & {row['Build Success Rate']} \\\\\n"
+  latex_repo_table += f"{repo_str} & {row['Flag']} & {row['Upgraded']} & {row['Pinned']} & {row['Downgraded']} & {row['Build Success Rate']} \\\\\n"
 
 latex_repo_table += """\\bottomrule
-\\end{tabular}
-\\end{table*}"""
+\\end{tabular}%
+}
+\\end{table}"""
 
 with open(os.path.join(TABLES_DIR, "rq2_per_repo_breakdown.tex"), "w") as f:
-    f.write(latex_repo_table)
+  f.write(latex_repo_table)
 
-print("Saved: rq2_per_repo_breakdown.tex (Full-Width / Two-Column)")
+print("Saved: rq2_per_repo_breakdown.tex (Single-Column Fitted)")
 
 # -------------------------------------------------------------------
 # Table 2: Single Column auto-scaled with \resizebox

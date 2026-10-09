@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 17:48:28 UTC 2026.
-Universal Time is now:  Sun Oct  4 17:48:28 UTC 2026.
+Local time is now:      Thu Oct  8 15:14:28 UTC 2026.
+Universal Time is now:  Thu Oct  8 15:14:28 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -210,7 +210,7 @@ Universal Time is now:  Sun Oct  4 17:48:28 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.495 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.382 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -266,7 +266,7 @@ Universal Time is now:  Sun Oct  4 17:48:28 UTC 2026.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.633 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.421 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -322,7 +322,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m79[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.584 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m79[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.421 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -378,7 +378,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m248[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.67 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m248[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.323 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -434,7 +434,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m154[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.391 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m154[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.32 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -506,7 +506,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.352 s - in net.automatalib.brics.[1mBricsDFATest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.323 s - in net.automatalib.brics.[1mBricsDFATest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -578,7 +578,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.746 s - in net.automatalib.visualization.jung.[1mProviderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.613 s - in net.automatalib.visualization.jung.[1mProviderTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -634,7 +634,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m69[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.845 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m69[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.882 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -745,7 +745,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.392 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.364 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -801,7 +801,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.37 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.353 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -868,7 +868,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.392 s - in net.automatalib.serialization.taf.[1mTAFSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.359 s - in net.automatalib.serialization.taf.[1mTAFSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -950,7 +950,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m89[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m76[m, Time elapsed: 0.652 s - in [1mTestSuite[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m89[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m76[m, Time elapsed: 0.47 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1003,7 +1003,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.aut.[1mAUTSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.371 s - in net.automatalib.serialization.aut.[1mAUTSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.301 s - in net.automatalib.serialization.aut.[1mAUTSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1070,7 +1070,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.432 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.379 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1123,7 +1123,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.403 s - in net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.32 s - in net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1176,7 +1176,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.saf.[1mSAFSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 s - in net.automatalib.serialization.saf.[1mSAFSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.32 s - in net.automatalib.serialization.saf.[1mSAFSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1232,7 +1232,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.226 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.023 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1282,9 +1282,9 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [1mBuilding AutomataLib :: Archetypes :: Basic 0.10.0-SNAPSHOT      [28/31][m
 [[1;34mINFO[m] [1m--------------------------[ maven-archetype ]---------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml (1.1 kB at 2.9 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml (1.1 kB at 2.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (1.0 kB at 13 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (1.0 kB at 11 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbasic[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1358,8 +1358,8 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] [INFO] BUILD SUCCESS
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
-[[1;34mINFO[m] [INFO] Total time:  1.269 s
-[[1;34mINFO[m] [INFO] Finished at: 2026-10-04T17:49:09Z
+[[1;34mINFO[m] [INFO] Total time:  1.021 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-10-08T15:15:04Z
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
 [[1;34mINFO[m] 
@@ -1445,8 +1445,8 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] [INFO] BUILD SUCCESS
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
-[[1;34mINFO[m] [INFO] Total time:  1.176 s
-[[1;34mINFO[m] [INFO] Finished at: 2026-10-04T17:49:11Z
+[[1;34mINFO[m] [INFO] Total time:  1.040 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-10-08T15:15:06Z
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
 [[1;34mINFO[m] 
@@ -1575,7 +1575,7 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [INFO] SimpleBricsExample: Output for a b b c is true
 [INFO] SimpleBricsExample: Output for a b b b b b d e is true
 [INFO] SimpleBricsExample: Output for a d e is false
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m10[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 1.653 s - in net.automatalib.examples.[1mExamplesTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m10[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 1.478 s - in net.automatalib.examples.[1mExamplesTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1591,42 +1591,42 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for AutomataLib 0.10.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  1.403 s]
-[[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.023 s]
-[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.021 s]
-[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  2.948 s]
-[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  3.321 s]
-[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  2.816 s]
-[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  7.565 s]
-[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  2.987 s]
-[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.018 s]
-[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  1.031 s]
-[[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;32mSUCCESS[m [  0.015 s]
-[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  1.453 s]
-[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  1.618 s]
-[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.018 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.092 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  1.078 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  0.996 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  1.281 s]
-[[1;34mINFO[m] AutomataLib :: Model Checking ...................... [1;32mSUCCESS[m [  0.012 s]
-[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  1.686 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  0.932 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  1.129 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.998 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [  0.929 s]
-[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  1.940 s]
-[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.014 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.066 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  3.425 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  2.127 s]
-[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.034 s]
-[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  2.368 s]
+[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  1.190 s]
+[[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.025 s]
+[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.025 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  2.341 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  2.822 s]
+[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  2.269 s]
+[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  5.486 s]
+[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  3.866 s]
+[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.015 s]
+[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  0.927 s]
+[[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  1.247 s]
+[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  1.653 s]
+[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.014 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.068 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  0.937 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  0.926 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  1.146 s]
+[[1;34mINFO[m] AutomataLib :: Model Checking ...................... [1;32mSUCCESS[m [  0.010 s]
+[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  1.425 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  0.853 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  1.037 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.881 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [  0.884 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  1.703 s]
+[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.019 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.061 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  3.009 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  1.868 s]
+[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.032 s]
+[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  2.137 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  44.770 s
-[[1;34mINFO[m] Finished at: 2026-10-04T17:49:14Z
+[[1;34mINFO[m] Total time:  39.246 s
+[[1;34mINFO[m] Finished at: 2026-10-08T15:15:08Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/AutomataRQ1.buildinfo: No such file or directory
 dos2unix: Skipping target/AutomataRQ1.buildinfo, not a regular file.

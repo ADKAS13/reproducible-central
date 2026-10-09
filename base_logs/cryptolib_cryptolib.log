@@ -1,0 +1,199 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/cryptolib/base/cryptolib.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.cryptomator[0m
+|      [0;34martifactId[0;97m: [1mcryptolib[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/org/cryptomator/cryptolib/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/cryptomator/cryptolib.git[0m
+|      [0;34mgitTag[0;97m: [1me3ee3de00010ee7e4cdf538333e3ae0d99c82b08[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Crypto.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/cryptomator/cryptolib.git[0m on tag [1me3ee3de00010ee7e4cdf538333e3ae0d99c82b08[0m
+/home/adkas13/reproducible-central/repos/cryptolib/base/buildcache/cryptolib
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/cryptomator/cryptolib.git (fetch)
+origin	https://github.com/cryptomator/cryptolib.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f e3ee3de00010ee7e4cdf538333e3ae0d99c82b08 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/cryptolib/base/buildcache/cryptolib
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.cryptomator:cryptolib:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/cryptolib/base/buildcache/cryptolib:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Thu Oct  8 11:37:05 UTC 2026.
+Universal Time is now:  Thu Oct  8 11:37:05 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------------< [0;36morg.cryptomator:cryptolib[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding Cryptomator Crypto Library 2.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 43 source files to /var/maven/app/target/classes
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/cryptomator/cryptolib/v1/FileHeaderImpl.java: Some input files use or override a deprecated API.
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/cryptomator/cryptolib/v1/FileHeaderImpl.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 37 source files to /var/maven/app/target/test-classes
+[[1;34mINFO[m] /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java: /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.759 s - in org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s - in org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mScryptTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 s - in org.cryptomator.cryptolib.common.[1mScryptTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.241 s - in org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.08 s - in org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.567 s - in org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 s - in org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 s - in org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s - in org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s - in org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.v2.[1mCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m20[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s - in org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m306[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.184 s - in org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileHeaderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m22[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s - in org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mCryptorsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m26[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.cryptomator.cryptolib.[1mCryptorsTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m6[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.1 s - in org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mEncryptingReadableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.[1mEncryptingReadableByteChannelTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;33mWARNING[m] [1;33mTests run: 477, Failures: 0, Errors: 0, Skipped: 3[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/cryptolib-2.0.0.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/cryptolib-2.0.0.jar to /var/maven/.m2/repository/org/cryptomator/cryptolib/2.0.0/cryptolib-2.0.0.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/cryptomator/cryptolib/2.0.0/cryptolib-2.0.0.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  7.689 s
+[[1;34mINFO[m] Finished at: 2026-10-08T11:37:14Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Crypto.buildinfo: No such file or directory
+dos2unix: Skipping target/Crypto.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

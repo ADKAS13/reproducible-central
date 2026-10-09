@@ -20,13 +20,1770 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/automatal
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/AutomataRQ2-minor.buildinfo[0m
 
-[0m[0;97m[[1;94mINFO[0;97m] [0mFetching maven-metadata.xml from Maven Central
-downloading [1mhttps://repo.maven.apache.org/maven2/net/automatalib/automata-parent/maven-metadata.xml[0m to /home/adkas13/reproducible-central/repos/automatalib/RQ2minor
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mcurl -s --fail https://repo.maven.apache.org/maven2/net/automatalib/automata-parent/maven-metadata.xml --output maven-metadata.xml [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/LearnLib/automatalib.git[0m on tag [1m3cfc64a[0m
+/home/adkas13/reproducible-central/repos/automatalib/RQ2minor/buildcache/automata-parent
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
 [90m
+origin	https://github.com/LearnLib/automatalib.git (fetch)
+origin	https://github.com/LearnLib/automatalib.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 3cfc64a [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/automatalib/RQ2minor/buildcache/automata-parent
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:1058280974120b51d18b8f71f941283af8612725fc28a3a72cfb85cf150239c6
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:8514503f3f5516217b6be23a408be73c80c45fc9c054c70b7f26973b7e0100ed
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:80d48831e3263a373a8351d99ce446ede387df085e0783cc6b9649f602eb5da0
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mnet.automatalib:automata-parent:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/automatalib/RQ2minor/buildcache/automata-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+javac: invalid flag: --version
+Usage: javac <options> <source files>
+use -help for a list of possible options
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version [0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Mon Oct  5 16:23:49 UTC 2026.
+Universal Time is now:  Mon Oct  5 16:23:49 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] AutomataLib                                                        [pom]
+[[1;34mINFO[m] AutomataLib :: Build Parent                                        [pom]
+[[1;34mINFO[m] AutomataLib :: Commons                                             [pom]
+[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections                        [jar]
+[[1;34mINFO[m] AutomataLib :: Commons :: Utilities                                [jar]
+[[1;34mINFO[m] AutomataLib :: API                                                 [jar]
+[[1;34mINFO[m] AutomataLib :: Core                                                [jar]
+[[1;34mINFO[m] AutomataLib :: Utilities                                           [jar]
+[[1;34mINFO[m] AutomataLib :: Adapters                                            [pom]
+[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS                                   [jar]
+[[1;34mINFO[m] AutomataLib :: Visualization                                       [pom]
+[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer                    [jar]
+[[1;34mINFO[m] AutomataLib :: Incremental                                         [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization                                       [pom]
+[[1;34mINFO[m] AutomataLib :: Serialization :: Core                               [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: ETF                                [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: FSM                                [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: TAF                                [jar]
+[[1;34mINFO[m] AutomataLib :: Model Checking                                      [pom]
+[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin                            [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: AUT                                [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: DOT                                [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2                         [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: SAF                                [jar]
+[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer                     [jar]
+[[1;34mINFO[m] AutomataLib :: Distribution                                        [pom]
+[[1;34mINFO[m] AutomataLib :: Archetypes                                          [pom]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic                     [maven-archetype]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete                  [maven-archetype]
+[[1;34mINFO[m] AutomataLib :: Build Tools                                         [jar]
+[[1;34mINFO[m] AutomataLib :: Examples                                            [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36mnet.automatalib:automata-parent[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib 0.10.0-SNAPSHOT                              [1/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.8.2:attach-descriptor[m [1m(attach-descriptor)[m @ [36mautomata-parent[0;1m ---[m
+[[1;34mINFO[m] Attaching 'src/site/site.xml' site descriptor with classifier 'site'.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-parent/0.10.0-SNAPSHOT/automata-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/target/automata-parent-0.10.0-SNAPSHOT-site.xml to /var/maven/.m2/repository/net/automatalib/automata-parent/0.10.0-SNAPSHOT/automata-parent-0.10.0-SNAPSHOT-site.xml
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mnet.automatalib:automata-build-parent[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Build Parent 0.10.0-SNAPSHOT              [2/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-build-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-build-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/build-parent/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-build-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-build-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-build-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/build-parent/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-build-parent/0.10.0-SNAPSHOT/automata-build-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36mnet.automatalib:automata-commons-parent[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Commons 0.10.0-SNAPSHOT                   [3/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-commons-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-commons-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/commons/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-commons-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-commons-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/commons/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-commons-parent/0.10.0-SNAPSHOT/automata-commons-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36mnet.automatalib:automata-commons-smartcollections[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Commons :: Smart Collections 0.10.0-SNAPSHOT [4/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/commons/smartcollections/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 12 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml
+Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 507 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 18 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 54 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 1.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 82 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml
+Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml (476 B at 1.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 3.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 2.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 93 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 31 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 5.9 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-commons-smartcollections
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/commons/smartcollections/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-commons-smartcollections: pinned=5 upgraded=7 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-commons-smartcollections
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/commons/smartcollections/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 23 source files to /var/maven/app/commons/smartcollections/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/commons/smartcollections/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/commons/smartcollections/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.32 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/commons/smartcollections/target/automata-commons-smartcollections-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/commons/smartcollections/target/automata-commons-smartcollections-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-commons-smartcollections/0.10.0-SNAPSHOT/automata-commons-smartcollections-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/commons/smartcollections/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-commons-smartcollections/0.10.0-SNAPSHOT/automata-commons-smartcollections-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mnet.automatalib:automata-commons-util[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Commons :: Utilities 0.10.0-SNAPSHOT      [5/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/commons/util/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 47 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-commons-util
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/commons/util/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-commons-util: pinned=6 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-commons-util
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 69 source files to /var/maven/app/commons/util/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 5 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 14 source files to /var/maven/app/commons/util/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.415 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 38, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/commons/util/target/automata-commons-util-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-commons-util[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/commons/util/target/automata-commons-util-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-commons-util/0.10.0-SNAPSHOT/automata-commons-util-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/commons/util/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-commons-util/0.10.0-SNAPSHOT/automata-commons-util-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mnet.automatalib:automata-api[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: API 0.10.0-SNAPSHOT                       [6/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/api/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 16 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-api
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/api/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-api: pinned=8 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-api
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/api/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 129 source files to /var/maven/app/api/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 8 source files to /var/maven/app/api/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m79[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.417 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 79, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/api/target/automata-api-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-api[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/api/target/automata-api-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-api/0.10.0-SNAPSHOT/automata-api-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/api/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-api/0.10.0-SNAPSHOT/automata-api-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36mnet.automatalib:automata-core[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Core 0.10.0-SNAPSHOT                      [7/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/core/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 21 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 144 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 47 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 186 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
+Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 15 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-core
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/core/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-core: pinned=10 upgraded=11 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-core
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 79 source files to /var/maven/app/core/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 49 source files to /var/maven/app/core/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m248[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.222 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 248, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/core/target/automata-core-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-core[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/core/target/automata-core-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-core/0.10.0-SNAPSHOT/automata-core-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/core/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-core/0.10.0-SNAPSHOT/automata-core-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36mnet.automatalib:automata-util[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Utilities 0.10.0-SNAPSHOT                 [8/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/util/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 26 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-util
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/util/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-util: pinned=18 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-util
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/util/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 129 source files to /var/maven/app/util/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/util/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 37 source files to /var/maven/app/util/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m154[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.141 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 154, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/util/target/automata-util-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-util[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/util/target/automata-util-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-util/0.10.0-SNAPSHOT/automata-util-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/util/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-util/0.10.0-SNAPSHOT/automata-util-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36mnet.automatalib:automata-adapters-parent[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Adapters 0.10.0-SNAPSHOT                  [9/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-adapters-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-adapters-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/adapters/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-adapters-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-adapters-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-adapters-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/adapters/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-adapters-parent/0.10.0-SNAPSHOT/automata-adapters-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36mnet.automatalib:automata-brics[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Adapters :: BRICS 0.10.0-SNAPSHOT        [10/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/adapters/brics/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+Downloading from central: https://repo.maven.apache.org/maven2/dk/brics/automaton/automaton/maven-metadata.xml
+Progress (1): 337 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dk/brics/automaton/automaton/maven-metadata.xml (337 B at 787 B/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-brics
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/adapters/brics/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-brics: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-brics
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/adapters/brics/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 5 source files to /var/maven/app/adapters/brics/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/adapters/brics/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/adapters/brics/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running net.automatalib.brics.[1mBricsDFATest[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 s - in net.automatalib.brics.[1mBricsDFATest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 4, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/adapters/brics/target/automata-brics-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-brics[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/adapters/brics/target/automata-brics-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-brics/0.10.0-SNAPSHOT/automata-brics-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/adapters/brics/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-brics/0.10.0-SNAPSHOT/automata-brics-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36mnet.automatalib:automata-visualization-parent[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Visualization 0.10.0-SNAPSHOT            [11/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-visualization-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-visualization-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/visualization/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-visualization-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-visualization-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-visualization-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/visualization/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-visualization-parent/0.10.0-SNAPSHOT/automata-visualization-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36mnet.automatalib:automata-jung-visualizer[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Visualization :: JUNG Visualizer 0.10.0-SNAPSHOT [12/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/visualization/jung-visualizer/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 37 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+Downloading from central: https://repo.maven.apache.org/maven2/com/github/misberner/graphviz-awt-shapes/graphviz-awt-shapes/maven-metadata.xml
+Progress (1): 366 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/misberner/graphviz-awt-shapes/graphviz-awt-shapes/maven-metadata.xml (366 B at 751 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/jidesoft/jide-oss/maven-metadata.xml
+Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/jidesoft/jide-oss/maven-metadata.xml (2.5 kB at 5.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 19 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-shared/maven-metadata.xml
+Progress (1): 451 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-shared/maven-metadata.xml (451 B at 1.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-tta/maven-metadata.xml
+Progress (1): 448 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-tta/maven-metadata.xml (448 B at 919 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/jcip/jcip-annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-algorithms/maven-metadata.xml
+Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-algorithms/maven-metadata.xml (362 B at 785 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/maven-metadata.xml
+Progress (1): 355 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/maven-metadata.xml (355 B at 657 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-graph-impl/maven-metadata.xml
+Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-graph-impl/maven-metadata.xml (362 B at 726 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-visualization/maven-metadata.xml
+Progress (1): 365 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-visualization/maven-metadata.xml (365 B at 1.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml
+Progress (1): 464 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml (464 B at 1.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-reflect/maven-metadata.xml
+Progress (1): 471 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-reflect/maven-metadata.xml (471 B at 2.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing/maven-metadata.xml
+Progress (1): 475 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing/maven-metadata.xml (475 B at 1.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit/maven-metadata.xml
+Progress (1): 481 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit/maven-metadata.xml (481 B at 983 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit-4.5/maven-metadata.xml
+Progress (1): 485 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit-4.5/maven-metadata.xml (485 B at 1.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml
+Progress (1): 751 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml (751 B at 2.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 3.2 kB/s)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-jung-visualizer — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-jung-visualizer
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/visualization/jung-visualizer/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-jung-visualizer: pinned=37 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-jung-visualizer
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/visualization/jung-visualizer/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/visualization/jung-visualizer/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/visualization/jung-visualizer/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/visualization/jung-visualizer/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running net.automatalib.visualization.jung.[1mProviderTest[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.484 s - in net.automatalib.visualization.jung.[1mProviderTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 2, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/visualization/jung-visualizer/target/automata-jung-visualizer-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-jung-visualizer[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/visualization/jung-visualizer/target/automata-jung-visualizer-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-jung-visualizer/0.10.0-SNAPSHOT/automata-jung-visualizer-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/visualization/jung-visualizer/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-jung-visualizer/0.10.0-SNAPSHOT/automata-jung-visualizer-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36mnet.automatalib:automata-incremental[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Incremental 0.10.0-SNAPSHOT              [13/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/incremental/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 37 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-incremental — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-incremental
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/incremental/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-incremental: pinned=37 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-incremental
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/incremental/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 30 source files to /var/maven/app/incremental/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/incremental/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 10 source files to /var/maven/app/incremental/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m69[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.777 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 69, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/incremental/target/automata-incremental-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-incremental[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/incremental/target/automata-incremental-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-incremental/0.10.0-SNAPSHOT/automata-incremental-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/incremental/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-incremental/0.10.0-SNAPSHOT/automata-incremental-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36mnet.automatalib:automata-serialization-parent[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization 0.10.0-SNAPSHOT            [14/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-serialization-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-parent/0.10.0-SNAPSHOT/automata-serialization-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36mnet.automatalib:automata-serialization-core[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization :: Core 0.10.0-SNAPSHOT    [15/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/core/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-core
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/core/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-core: pinned=6 upgraded=4 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-serialization-core
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/core/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 11 source files to /var/maven/app/serialization/core/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/core/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/serialization/core/target/automata-serialization-core-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-core[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/core/target/automata-serialization-core-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-serialization-core/0.10.0-SNAPSHOT/automata-serialization-core-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/serialization/core/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-core/0.10.0-SNAPSHOT/automata-serialization-core-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36mnet.automatalib:automata-serialization-etf[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization :: ETF 0.10.0-SNAPSHOT     [16/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/etf/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-etf
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/etf/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-etf: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-serialization-etf
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/etf/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/serialization/etf/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 4 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/serialization/etf/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.351 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 7, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/serialization/etf/target/automata-serialization-etf-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-etf[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/etf/target/automata-serialization-etf-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-serialization-etf/0.10.0-SNAPSHOT/automata-serialization-etf-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/serialization/etf/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-etf/0.10.0-SNAPSHOT/automata-serialization-etf-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36mnet.automatalib:automata-serialization-fsm[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization :: FSM 0.10.0-SNAPSHOT     [17/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/fsm/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-fsm
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/fsm/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-fsm: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-serialization-fsm
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/fsm/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 6 source files to /var/maven/app/serialization/fsm/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 4 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/serialization/fsm/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.341 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 10, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/serialization/fsm/target/automata-serialization-fsm-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-fsm[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/fsm/target/automata-serialization-fsm-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-serialization-fsm/0.10.0-SNAPSHOT/automata-serialization-fsm-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/serialization/fsm/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-fsm/0.10.0-SNAPSHOT/automata-serialization-fsm-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36mnet.automatalib:automata-serialization-taf[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization :: TAF 0.10.0-SNAPSHOT     [18/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/taf/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-taf
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/taf/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-taf: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-serialization-taf
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjavacc-maven-plugin:2.6:javacc[m [1m(javacc)[m @ [36mautomata-serialization-taf[0;1m ---[m
+Java Compiler Compiler Version 5.0 (Parser Generator)
+(type "javacc" with no arguments for help)
+Reading from file /var/maven/app/serialization/taf/src/main/javacc/TAF.jj . . .
+File "TokenMgrError.java" does not exist.  Will create one.
+File "ParseException.java" does not exist.  Will create one.
+File "Token.java" does not exist.  Will create one.
+File "SimpleCharStream.java" does not exist.  Will create one.
+Parser generated successfully.
+[[1;34mINFO[m] Processed 1 grammar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/taf/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 21 source files to /var/maven/app/serialization/taf/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/taf/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/taf/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running net.automatalib.serialization.taf.[1mTAFSerializationTest[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.337 s - in net.automatalib.serialization.taf.[1mTAFSerializationTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 4, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/serialization/taf/target/automata-serialization-taf-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-taf[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/taf/target/automata-serialization-taf-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-serialization-taf/0.10.0-SNAPSHOT/automata-serialization-taf-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/serialization/taf/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-taf/0.10.0-SNAPSHOT/automata-serialization-taf-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36mnet.automatalib:automata-modelchecking-parent[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Model Checking 0.10.0-SNAPSHOT           [19/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-modelchecking-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-modelchecking-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/modelchecking/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-modelchecking-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-modelchecking-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-modelchecking-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/modelchecking/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-modelchecking-parent/0.10.0-SNAPSHOT/automata-modelchecking-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36mnet.automatalib:automata-modelchecking-ltsmin[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Model Checking :: LTSmin 0.10.0-SNAPSHOT [20/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/modelchecking/ltsmin/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 25 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-modelchecking-ltsmin
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/modelchecking/ltsmin/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-modelchecking-ltsmin: pinned=17 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-modelchecking-ltsmin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjavacc-maven-plugin:2.6:javacc[m [1m(javacc)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+Java Compiler Compiler Version 5.0 (Parser Generator)
+(type "javacc" with no arguments for help)
+Reading from file /var/maven/app/modelchecking/ltsmin/src/main/javacc/LTSminLTL.jj . . .
+Note: UNICODE_INPUT option is specified. Please make sure you create the parser/lexer using a Reader with the correct character encoding.
+File "TokenMgrError.java" does not exist.  Will create one.
+File "ParseException.java" does not exist.  Will create one.
+File "Token.java" does not exist.  Will create one.
+File "SimpleCharStream.java" does not exist.  Will create one.
+Parser generated successfully.
+[[1;34mINFO[m] Processed 1 grammar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/modelchecking/ltsmin/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] Compiling 26 source files to /var/maven/app/modelchecking/ltsmin/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] Compiling 18 source files to /var/maven/app/modelchecking/ltsmin/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m89[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m76[m, Time elapsed: 0.475 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;33mWARNING[m] [1;33mTests run: 63, Failures: 0, Errors: 0, Skipped: 50[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/modelchecking/ltsmin/target/automata-modelchecking-ltsmin-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/modelchecking/ltsmin/target/automata-modelchecking-ltsmin-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-modelchecking-ltsmin/0.10.0-SNAPSHOT/automata-modelchecking-ltsmin-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/modelchecking/ltsmin/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-modelchecking-ltsmin/0.10.0-SNAPSHOT/automata-modelchecking-ltsmin-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36mnet.automatalib:automata-serialization-aut[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization :: AUT 0.10.0-SNAPSHOT     [21/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/aut/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-aut
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/aut/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-aut: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-serialization-aut
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/aut/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/serialization/aut/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 4 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/aut/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running net.automatalib.serialization.aut.[1mAUTSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.298 s - in net.automatalib.serialization.aut.[1mAUTSerializationTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 5, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/serialization/aut/target/automata-serialization-aut-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-aut[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/aut/target/automata-serialization-aut-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-serialization-aut/0.10.0-SNAPSHOT/automata-serialization-aut-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/serialization/aut/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-aut/0.10.0-SNAPSHOT/automata-serialization-aut-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36mnet.automatalib:automata-serialization-dot[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization :: DOT 0.10.0-SNAPSHOT     [22/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/dot/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-dot
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/dot/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-dot: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-serialization-dot
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjavacc-maven-plugin:2.6:javacc[m [1m(javacc)[m @ [36mautomata-serialization-dot[0;1m ---[m
+Java Compiler Compiler Version 5.0 (Parser Generator)
+(type "javacc" with no arguments for help)
+Reading from file /var/maven/app/serialization/dot/src/main/javacc/DOT.jj . . .
+File "TokenMgrError.java" does not exist.  Will create one.
+File "ParseException.java" does not exist.  Will create one.
+File "Token.java" does not exist.  Will create one.
+File "SimpleCharStream.java" does not exist.  Will create one.
+Parser generated successfully.
+[[1;34mINFO[m] Processed 1 grammar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/dot/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 17 source files to /var/maven/app/serialization/dot/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 9 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/serialization/dot/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.402 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 18, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/serialization/dot/target/automata-serialization-dot-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-dot[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/dot/target/automata-serialization-dot-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-serialization-dot/0.10.0-SNAPSHOT/automata-serialization-dot-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/serialization/dot/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-dot/0.10.0-SNAPSHOT/automata-serialization-dot-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36mnet.automatalib:automata-serialization-learnlibv2[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization :: LearnLibV2 0.10.0-SNAPSHOT [23/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/learnlibv2/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-learnlibv2
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/learnlibv2/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-learnlibv2: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-serialization-learnlibv2
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/learnlibv2/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/learnlibv2/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/learnlibv2/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/learnlibv2/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.301 s - in net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 3, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/serialization/learnlibv2/target/automata-serialization-learnlibv2-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/learnlibv2/target/automata-serialization-learnlibv2-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-serialization-learnlibv2/0.10.0-SNAPSHOT/automata-serialization-learnlibv2-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/serialization/learnlibv2/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-learnlibv2/0.10.0-SNAPSHOT/automata-serialization-learnlibv2-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36mnet.automatalib:automata-serialization-saf[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Serialization :: SAF 0.10.0-SNAPSHOT     [24/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/saf/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-serialization-saf
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/serialization/saf/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-serialization-saf: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-serialization-saf
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/saf/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 11 source files to /var/maven/app/serialization/saf/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/serialization/saf/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/saf/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running net.automatalib.serialization.saf.[1mSAFSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s - in net.automatalib.serialization.saf.[1mSAFSerializationTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 4, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/serialization/saf/target/automata-serialization-saf-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-serialization-saf[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/serialization/saf/target/automata-serialization-saf-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-serialization-saf/0.10.0-SNAPSHOT/automata-serialization-saf-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/serialization/saf/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-serialization-saf/0.10.0-SNAPSHOT/automata-serialization-saf-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36mnet.automatalib:automata-dot-visualizer[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Visualization :: DOT Visualizer 0.10.0-SNAPSHOT [25/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/visualization/dot-visualizer/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 34 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-dot-visualizer — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-dot-visualizer
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/visualization/dot-visualizer/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-dot-visualizer: pinned=34 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-dot-visualizer
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/visualization/dot-visualizer/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 9 source files to /var/maven/app/visualization/dot-visualizer/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/visualization/dot-visualizer/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/visualization/dot-visualizer/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.003 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 4, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/visualization/dot-visualizer/target/automata-dot-visualizer-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-dot-visualizer[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/visualization/dot-visualizer/target/automata-dot-visualizer-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-dot-visualizer/0.10.0-SNAPSHOT/automata-dot-visualizer-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/visualization/dot-visualizer/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-dot-visualizer/0.10.0-SNAPSHOT/automata-dot-visualizer-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36mnet.automatalib.distribution:automata-distribution[0;1m >---------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Distribution 0.10.0-SNAPSHOT             [26/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-distribution[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-distribution[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/distribution/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 30 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-distribution[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-distribution
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-distribution[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/distribution/pom.xml to /var/maven/.m2/repository/net/automatalib/distribution/automata-distribution/0.10.0-SNAPSHOT/automata-distribution-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------< [0;36mnet.automatalib.archetypes:automata-archetypes-parent[0;1m >--------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Archetypes 0.10.0-SNAPSHOT               [27/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-archetypes-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-archetypes-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/archetypes/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-archetypes-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: automata-archetypes-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-archetypes-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/archetypes/pom.xml to /var/maven/.m2/repository/net/automatalib/archetypes/automata-archetypes-parent/0.10.0-SNAPSHOT/automata-archetypes-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36mnet.automatalib.archetypes:basic[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Archetypes :: Basic 0.10.0-SNAPSHOT      [28/31][m
+[[1;34mINFO[m] [1m--------------------------[ maven-archetype ]---------------------------[m
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml (1.1 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (1.0 kB at 15 kB/s)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/archetypes/basic/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 31 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: basic
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/archetypes/basic/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for basic: pinned=27 upgraded=4 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: basic
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.5.0:resources[m [1m(default-resources)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources-template to target/classes
+[[1;34mINFO[m] Copying 3 resources from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.5.0:testResources[m [1m(default-testResources)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/test/resources-template to target/test-classes
+[[1;34mINFO[m] Copying 1 resource from src/test/resources to target/test-classes
+[[1;34mINFO[m] The encoding used to copy filtered properties files has not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-archetype-plugin:3.1.2:jar[m [1m(default-jar)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] Building archetype jar: /var/maven/app/archetypes/basic/target/basic-0.10.0-SNAPSHOT
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-archetype-plugin:3.1.2:integration-test[m [1m(default-integration-test)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] Processing Archetype IT project: basic
+[[1;34mINFO[m] ----------------------------------------------------------------------------
+[[1;34mINFO[m] Using following parameters for creating project from Archetype: basic:0.10.0-SNAPSHOT
+[[1;34mINFO[m] ----------------------------------------------------------------------------
+[[1;34mINFO[m] Parameter: groupId, Value: archetype.it
+[[1;34mINFO[m] Parameter: artifactId, Value: basic
+[[1;34mINFO[m] Parameter: version, Value: 0.1-SNAPSHOT
+[[1;34mINFO[m] Parameter: package, Value: it.pkg
+[[1;34mINFO[m] Parameter: packageInPathFormat, Value: it/pkg
+[[1;34mINFO[m] Parameter: version, Value: 0.1-SNAPSHOT
+[[1;34mINFO[m] Parameter: package, Value: it.pkg
+[[1;34mINFO[m] Parameter: groupId, Value: archetype.it
+[[1;34mINFO[m] Parameter: automatalibVersion, Value: 0.10.0-SNAPSHOT
+[[1;34mINFO[m] Parameter: artifactId, Value: basic
+[[1;34mINFO[m] Project created from Archetype in dir: /var/maven/app/archetypes/basic/target/test-classes/projects/basic/project/basic
+[[1;34mINFO[m] Invoking post-archetype-generation goals: package
+[[1;34mINFO[m] [INFO] Error stacktraces are turned on.
+[[1;34mINFO[m] [INFO] Scanning for projects...
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] -------------------------< archetype.it:basic >-------------------------
+[[1;34mINFO[m] [INFO] Building basic 0.1-SNAPSHOT
+[[1;34mINFO[m] [INFO] --------------------------------[ jar ]---------------------------------
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ basic ---
+[[1;34mINFO[m] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] [INFO] Copying 1 resource
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ basic ---
+[[1;34mINFO[m] [INFO] Changes detected - recompiling the module!
+[[1;34mINFO[m] [INFO] Compiling 1 source file to /var/maven/app/archetypes/basic/target/test-classes/projects/basic/project/basic/target/classes
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ basic ---
+[[1;34mINFO[m] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] [INFO] skip non existing resourceDirectory /var/maven/app/archetypes/basic/target/test-classes/projects/basic/project/basic/src/test/resources
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ basic ---
+[[1;34mINFO[m] [INFO] No sources to compile
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ basic ---
+[[1;34mINFO[m] [INFO] No tests to run.
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ basic ---
+[[1;34mINFO[m] [INFO] Building jar: /var/maven/app/archetypes/basic/target/test-classes/projects/basic/project/basic/target/basic-0.1-SNAPSHOT.jar
+[[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
+[[1;34mINFO[m] [INFO] BUILD SUCCESS
+[[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
+[[1;34mINFO[m] [INFO] Total time:  0.962 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-10-05T16:24:33Z
+[[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
+[[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:3.2.0:install[m [1m(default-install)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/archetypes/basic/pom.xml to /var/maven/.m2/repository/net/automatalib/archetypes/basic/0.10.0-SNAPSHOT/basic-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/archetypes/basic/target/basic-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/archetypes/basic/0.10.0-SNAPSHOT/basic-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-archetype-plugin:3.1.2:update-local-catalog[m [1m(default-update-local-catalog)[m @ [36mbasic[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36mnet.automatalib.archetypes:complete[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Archetypes :: Complete 0.10.0-SNAPSHOT   [29/31][m
+[[1;34mINFO[m] [1m--------------------------[ maven-archetype ]---------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/archetypes/complete/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 31 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: complete
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/archetypes/complete/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for complete: pinned=27 upgraded=4 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: complete
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.5.0:resources[m [1m(default-resources)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources-template to target/classes
+[[1;34mINFO[m] Copying 3 resources from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.5.0:testResources[m [1m(default-testResources)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/test/resources-template to target/test-classes
+[[1;34mINFO[m] Copying 1 resource from src/test/resources to target/test-classes
+[[1;34mINFO[m] The encoding used to copy filtered properties files has not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-archetype-plugin:3.1.2:jar[m [1m(default-jar)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] Building archetype jar: /var/maven/app/archetypes/complete/target/complete-0.10.0-SNAPSHOT
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-archetype-plugin:3.1.2:integration-test[m [1m(default-integration-test)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] Processing Archetype IT project: complete
+[[1;34mINFO[m] ----------------------------------------------------------------------------
+[[1;34mINFO[m] Using following parameters for creating project from Archetype: complete:0.10.0-SNAPSHOT
+[[1;34mINFO[m] ----------------------------------------------------------------------------
+[[1;34mINFO[m] Parameter: groupId, Value: archetype.it
+[[1;34mINFO[m] Parameter: artifactId, Value: complete
+[[1;34mINFO[m] Parameter: version, Value: 0.1-SNAPSHOT
+[[1;34mINFO[m] Parameter: package, Value: it.pkg
+[[1;34mINFO[m] Parameter: packageInPathFormat, Value: it/pkg
+[[1;34mINFO[m] Parameter: version, Value: 0.1-SNAPSHOT
+[[1;34mINFO[m] Parameter: package, Value: it.pkg
+[[1;34mINFO[m] Parameter: groupId, Value: archetype.it
+[[1;34mINFO[m] Parameter: automatalibVersion, Value: 0.10.0-SNAPSHOT
+[[1;34mINFO[m] Parameter: artifactId, Value: complete
+[[1;34mINFO[m] Project created from Archetype in dir: /var/maven/app/archetypes/complete/target/test-classes/projects/complete/project/complete
+[[1;34mINFO[m] Invoking post-archetype-generation goals: package
+[[1;34mINFO[m] [INFO] Error stacktraces are turned on.
+[[1;34mINFO[m] [INFO] Scanning for projects...
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] -----------------------< archetype.it:complete >------------------------
+[[1;34mINFO[m] [INFO] Building complete 0.1-SNAPSHOT
+[[1;34mINFO[m] [INFO] --------------------------------[ jar ]---------------------------------
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ complete ---
+[[1;34mINFO[m] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] [INFO] Copying 1 resource
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ complete ---
+[[1;34mINFO[m] [INFO] Changes detected - recompiling the module!
+[[1;34mINFO[m] [INFO] Compiling 1 source file to /var/maven/app/archetypes/complete/target/test-classes/projects/complete/project/complete/target/classes
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ complete ---
+[[1;34mINFO[m] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] [INFO] skip non existing resourceDirectory /var/maven/app/archetypes/complete/target/test-classes/projects/complete/project/complete/src/test/resources
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ complete ---
+[[1;34mINFO[m] [INFO] No sources to compile
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ complete ---
+[[1;34mINFO[m] [INFO] No tests to run.
+[[1;34mINFO[m] [INFO] 
+[[1;34mINFO[m] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ complete ---
+[[1;34mINFO[m] [INFO] Building jar: /var/maven/app/archetypes/complete/target/test-classes/projects/complete/project/complete/target/complete-0.1-SNAPSHOT.jar
+[[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
+[[1;34mINFO[m] [INFO] BUILD SUCCESS
+[[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
+[[1;34mINFO[m] [INFO] Total time:  0.962 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-10-05T16:24:35Z
+[[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
+[[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:3.2.0:install[m [1m(default-install)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/archetypes/complete/pom.xml to /var/maven/.m2/repository/net/automatalib/archetypes/complete/0.10.0-SNAPSHOT/complete-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/archetypes/complete/target/complete-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/archetypes/complete/0.10.0-SNAPSHOT/complete-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-archetype-plugin:3.1.2:update-local-catalog[m [1m(default-update-local-catalog)[m @ [36mcomplete[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36mnet.automatalib:automata-build-tools[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Build Tools 0.10.0-SNAPSHOT              [30/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/build-tools/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-build-tools
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/build-tools/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-build-tools: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-build-tools
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 6 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/build-tools/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/build-tools/target/automata-build-tools-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-build-tools[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/build-tools/target/automata-build-tools-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-build-tools/0.10.0-SNAPSHOT/automata-build-tools-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/build-tools/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-build-tools/0.10.0-SNAPSHOT/automata-build-tools-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------< [0;36mnet.automatalib:automata-examples[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Examples 0.10.0-SNAPSHOT                 [31/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/examples/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 42 dependencies (version range mode: minor).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+Downloading from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml (5.9 kB at 21 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml (5.9 kB at 94 kB/s)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-examples — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;34mINFO[m] Flattening leaf module dependencies for: automata-examples
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/examples/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-examples: pinned=42 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: automata-examples
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 10 source files to /var/maven/app/examples/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/examples/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/examples/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running net.automatalib.examples.[1mExamplesTest[m
+[INFO] IncrementalDFAExample: Incremental construction using a Tree
+[INFO] IncrementalDFAExample:   Inserting a b c as accepted
+[INFO] IncrementalDFAExample:   Inserting a c as rejected
+[INFO] IncrementalDFAExample:   Inserting a c b as accepted
+[INFO] IncrementalDFAExample:   Inserting ε as accepted
+[INFO] IncrementalDFAExample: Incremental construction using a DAG
+[INFO] IncrementalDFAExample:   Inserting a b c as accepted
+[INFO] IncrementalDFAExample:   Inserting a c as rejected
+[INFO] IncrementalDFAExample:   Inserting a c b as accepted
+[INFO] IncrementalDFAExample:   Inserting ε as accepted
+[INFO] IncrementalMealyExample: Incremental construction using a tree
+[INFO] IncrementalMealyExample:   Inserting a b c / x y z
+[INFO] IncrementalMealyExample:   Inserting a c / x w
+[INFO] IncrementalMealyExample:   Inserting a c b / x w u
+[INFO] IncrementalMealyExample: Incremental construction using a DAG
+[INFO] IncrementalMealyExample:   Inserting a b c / x y z
+[INFO] IncrementalMealyExample:   Inserting a c / x w
+[INFO] IncrementalMealyExample:   Inserting a c b / x w u
+[INFO] IncrementalPCDFAExample: Incremental construction using a tree
+[INFO] IncrementalPCDFAExample:   Inserting a b c as accepted
+[INFO] IncrementalPCDFAExample:   Inserting a c b as rejected
+[INFO] IncrementalPCDFAExample:   Inserting a c as accepted
+[INFO] IncrementalPCDFAExample: Incremental construction using a DAG
+[INFO] IncrementalPCDFAExample:   Inserting a b c as accepted
+[INFO] IncrementalPCDFAExample:   Inserting a c b as rejected
+[INFO] IncrementalPCDFAExample:   Inserting a c as accepted
+[INFO] LTSminUtil: Could not find binary 'etf2lts-mc' of the LTSmin installation. LTSmin can be obtained at https://ltsmin.utwente.nl. If you installed LTSmin in a non standard location you can set the property: 'automatalib.ltsmin.path'. Setting the $PATH variable works too.
+[INFO] LTSminUtil: Could not find binary 'ltsmin-convert' of the LTSmin installation. LTSmin can be obtained at https://ltsmin.utwente.nl. If you installed LTSmin in a non standard location you can set the property: 'automatalib.ltsmin.path'. Setting the $PATH variable works too.
+[INFO] OneSEVPAExample: The VPA does accept the word 'i'
+[INFO] OneSEVPAExample: The VPA does accept the word 'cir'
+[INFO] OneSEVPAExample: The VPA does accept the word 'cccirrr'
+[INFO] OneSEVPAExample: The VPA does not accept the word 'cirrr'
+[INFO] OneSEVPAExample: The VPA does not accept the word 'cccir'
+[INFO] OneSEVPAExample: The VPA does accept the word 'cciiirr'
+[INFO] OneSEVPAExample: The VPA does not accept the word 'cirircr'
+[INFO] SimpleBricsExample: Output for a b d is true
+[INFO] SimpleBricsExample: Output for a b b c is true
+[INFO] SimpleBricsExample: Output for a b b b b b d e is true
+[INFO] SimpleBricsExample: Output for a d e is false
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m10[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 1.502 s - in net.automatalib.examples.[1mExamplesTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;33mWARNING[m] [1;33mTests run: 10, Failures: 0, Errors: 0, Skipped: 2[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/examples/target/automata-examples-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-examples[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/examples/target/automata-examples-0.10.0-SNAPSHOT.jar to /var/maven/.m2/repository/net/automatalib/automata-examples/0.10.0-SNAPSHOT/automata-examples-0.10.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/examples/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-examples/0.10.0-SNAPSHOT/automata-examples-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for AutomataLib 0.10.0-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  1.143 s]
+[[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.017 s]
+[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.015 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  4.895 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  2.813 s]
+[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  2.175 s]
+[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  6.032 s]
+[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  3.209 s]
+[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.010 s]
+[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  1.312 s]
+[[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  7.593 s]
+[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  1.517 s]
+[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.012 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.066 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  0.911 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  0.958 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  1.164 s]
+[[1;34mINFO[m] AutomataLib :: Model Checking ...................... [1;32mSUCCESS[m [  0.012 s]
+[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  1.446 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  0.832 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  1.090 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.855 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [  0.903 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  1.678 s]
+[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.024 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.065 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  2.292 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  1.762 s]
+[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.030 s]
+[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  2.827 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  47.977 s
+[[1;34mINFO[m] Finished at: 2026-10-05T16:24:38Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/AutomataRQ2-minor.buildinfo: No such file or directory
+dos2unix: Skipping target/AutomataRQ2-minor.buildinfo, not a regular file.
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
-[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to download maven-metadata.xml [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
 [0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
 [0m

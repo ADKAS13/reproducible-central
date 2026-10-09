@@ -68,7 +68,8 @@ for spec in "${BUILDSPECS[@]}"; do
         continue
     fi
 
-    bash "${REBUILD_SH}" "$spec" > "$LOG_FILE" 2>&1 || true
+    timeout --foreground 2h bash "${REBUILD_SH}" "$spec" > "$LOG_FILE" 2>&1 || true
+    docker rm -f rebuild-central >/dev/null 2>&1 || true
     exit_code=$?
 
     if grep -q "BUILD SUCCESS" "$LOG_FILE"; then

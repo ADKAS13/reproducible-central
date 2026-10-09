@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 18:24:16 UTC 2026.
-Universal Time is now:  Sun Oct  4 18:24:16 UTC 2026.
+Local time is now:      Thu Oct  8 11:37:21 UTC 2026.
+Universal Time is now:  Thu Oct  8 11:37:21 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -117,7 +117,7 @@ Universal Time is now:  Sun Oct  4 18:24:16 UTC 2026.
 [[1;34mINFO[m] Assembling webapp [dev-ref] in [/var/maven/app/target/dev-ref]
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/src/main/webapp]
-[[1;34mINFO[m] Webapp assembled in [429 msecs]
+[[1;34mINFO[m] Webapp assembled in [249 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/target/dev-ref.war
 [[1;34mINFO[m] WEB-INF/web.xml already added, skipping
 [[1;34mINFO[m] 
@@ -127,8 +127,8 @@ Universal Time is now:  Sun Oct  4 18:24:16 UTC 2026.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  6.082 s
-[[1;34mINFO[m] Finished at: 2026-10-04T18:24:23Z
+[[1;34mINFO[m] Total time:  4.919 s
+[[1;34mINFO[m] Finished at: 2026-10-08T11:37:27Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Dev-ref.buildinfo: No such file or directory
 dos2unix: Skipping target/Dev-ref.buildinfo, not a regular file.

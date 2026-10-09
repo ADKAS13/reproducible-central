@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 18:23:08 UTC 2026.
-Universal Time is now:  Sun Oct  4 18:23:08 UTC 2026.
+Local time is now:      Thu Oct  8 11:35:56 UTC 2026.
+Universal Time is now:  Thu Oct  8 11:35:56 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -260,15 +260,15 @@ Generating /var/maven/app/sdk/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.core.SpanContextFactoryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
 Running com.google.cloud.trace.core.SpanContextTest
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.google.cloud.trace.core.SpanIdTest
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.google.cloud.trace.core.RateLimitingTraceOptionsFactoryTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.574 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.281 sec
 Running com.google.cloud.trace.core.TraceIdTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.google.cloud.trace.core.TraceOptionsTest
 Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 
@@ -481,13 +481,13 @@ Generating /var/maven/app/guice/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.TestTraceIdFactoryTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
 Running com.google.cloud.trace.TestSpanContextHandlerTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.google.cloud.trace.TestSpanIdFactoryTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.TestTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
 
 Results :
 
@@ -639,7 +639,7 @@ Generating /var/maven/app/sdk/sink/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.GrpcSpanContextHandlerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
 Running com.google.cloud.trace.SdkVersionTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.google.cloud.trace.SpanContextHandlerTracerTest
@@ -872,9 +872,9 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK API v1 Dependencies 0.8.0-SNAPSHOT [13/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.6 kB at 21 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.6 kB at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (7.2 kB at 90 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (7.2 kB at 105 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msink[0;1m ---[m
 [[1;34mINFO[m] 
@@ -901,7 +901,7 @@ Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from c
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.v1.consumer.SimpleBufferingTraceConsumerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.526 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.288 sec
 Running com.google.cloud.trace.v1.consumer.SizedBufferingTraceConsumerTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
@@ -2012,7 +2012,7 @@ Generating /var/maven/app/samples/guice-scheduled-grpc/target/apidocs/help-doc.h
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/samples/guice-servlet-grpc/src/main/webapp]
 [[1;34mINFO[m] Building jar: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT/WEB-INF/lib/guice-servlet-grpc-0.8.0-SNAPSHOT.jar
-[[1;34mINFO[m] Webapp assembled in [162 msecs]
+[[1;34mINFO[m] Webapp assembled in [118 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT.war
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mguice-servlet-grpc[0;1m ---[m
@@ -2271,11 +2271,11 @@ Generating /var/maven/app/samples/stackdriver-trace-api/target/apidocs/help-doc.
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.service.AppEngineSpanContextHandleTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.535 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.303 sec
 Running com.google.cloud.trace.service.AppEngineTraceServiceTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
 Running com.google.cloud.trace.service.AppEngineTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
 
 Results :
 
@@ -2396,47 +2396,47 @@ Generating /var/maven/app/sinks/v1/http-consumer/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Google Cloud Trace Java SDK Root Project 0.8.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  1.273 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.027 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.705 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  2.803 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.011 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  0.796 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  1.016 s]
-[[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.648 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  1.021 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  0.971 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  0.773 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  0.736 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.017 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.333 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  1.896 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.008 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  0.709 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  0.872 s]
+[[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.591 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  0.883 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  0.758 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  0.688 s]
 [[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.007 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  2.798 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.734 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  1.056 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.690 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.664 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.845 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.810 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.631 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [-1.-246 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.860 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.637 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.807 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.005 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.771 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.006 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.609 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.749 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.656 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.676 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.706 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.733 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.581 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  3.225 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.697 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  2.190 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.576 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  0.789 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.587 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.567 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.544 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.549 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.552 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  0.547 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.642 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.589 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.770 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.006 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.596 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.005 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.546 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.567 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.591 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.469 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.611 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.610 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.561 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  2.376 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.585 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  31.197 s
-[[1;34mINFO[m] Finished at: 2026-10-04T18:23:40Z
+[[1;34mINFO[m] Total time:  26.325 s
+[[1;34mINFO[m] Finished at: 2026-10-08T11:36:23Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [0m[0mdos2unix: target/test.buildinfo: No such file or directory
 dos2unix: Skipping target/test.buildinfo, not a regular file.

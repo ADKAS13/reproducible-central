@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 17:51:53 UTC 2026.
-Universal Time is now:  Sun Oct  4 17:51:53 UTC 2026.
+Local time is now:      Thu Oct  8 15:17:56 UTC 2026.
+Universal Time is now:  Thu Oct  8 15:17:56 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -473,7 +473,6 @@ Universal Time is now:  Sun Oct  4 17:51:53 UTC 2026.
 [[1;34mINFO[m] [1m----------------< [0;36msec.web.renderer:mil-sym-svc-parent[0;1m >-----------------[m
 [[1;34mINFO[m] [1mBuilding mil-sym-svc Parent Pom 0.1.4                             [9/13][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
-Downloading from jsdoctk2: http://jsdoctk-plugin.googlecode.com/svn/repo/com/baeldung/counter-maven-plugin/1.0-SNAPSHOT/maven-metadata.xml
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mmil-sym-svc-parent[0;1m ---[m
 [[1;34mINFO[m] 
@@ -551,7 +550,7 @@ WARNING: All illegal access operations will be denied in a future release
 [[1;34mINFO[m] Assembling webapp [mil-sym-service] in [/var/maven/app/service/mil-sym-service/target/mil-sym-service-0.1.4]
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/service/mil-sym-service/src/main/webapp]
-[[1;34mINFO[m] Webapp assembled in [114 msecs]
+[[1;34mINFO[m] Webapp assembled in [99 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/service/mil-sym-service/target/mil-sym-service-0.1.4.war
 [[1;34mINFO[m] WEB-INF/web.xml already added, skipping
 [[1;34mINFO[m] 
@@ -699,24 +698,24 @@ with assembly file: /var/maven/app/samples/rendering-sample-1/target/rendering-s
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for mil-sym-java Master Pom 0.1.4:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] sec-core-parent .................................... [1;32mSUCCESS[m [  0.417 s]
-[[1;34mINFO[m] JavaRendererUtils .................................. [1;32mSUCCESS[m [  1.499 s]
-[[1;34mINFO[m] JavaLineArray ...................................... [1;32mSUCCESS[m [  1.646 s]
-[[1;34mINFO[m] JavaRendererServer ................................. [1;32mSUCCESS[m [  0.550 s]
-[[1;34mINFO[m] JavaRenderer ....................................... [1;32mSUCCESS[m [  0.455 s]
-[[1;34mINFO[m] RendererPluginInterface ............................ [1;32mSUCCESS[m [  0.171 s]
-[[1;34mINFO[m] mil-sym-renderer ................................... [1;32mSUCCESS[m [  3.813 s]
-[[1;34mINFO[m] mil-sym-renderer Parent Pom ........................ [1;32mSUCCESS[m [  0.015 s]
-[[1;34mINFO[m] mil-sym-svc Parent Pom ............................. [1;32mSUCCESS[m [  0.525 s]
-[[1;34mINFO[m] mil-sym-service .................................... [1;32mSUCCESS[m [  1.465 s]
-[[1;34mINFO[m] rendering-sample-1 ................................. [1;32mSUCCESS[m [  0.490 s]
-[[1;34mINFO[m] mil-sym-samples Pom ................................ [1;32mSUCCESS[m [  0.018 s]
-[[1;34mINFO[m] mil-sym-java Master Pom ............................ [1;32mSUCCESS[m [  0.013 s]
+[[1;34mINFO[m] sec-core-parent .................................... [1;32mSUCCESS[m [  0.292 s]
+[[1;34mINFO[m] JavaRendererUtils .................................. [1;32mSUCCESS[m [  2.248 s]
+[[1;34mINFO[m] JavaLineArray ...................................... [1;32mSUCCESS[m [  1.161 s]
+[[1;34mINFO[m] JavaRendererServer ................................. [1;32mSUCCESS[m [  0.474 s]
+[[1;34mINFO[m] JavaRenderer ....................................... [1;32mSUCCESS[m [  0.425 s]
+[[1;34mINFO[m] RendererPluginInterface ............................ [1;32mSUCCESS[m [  0.190 s]
+[[1;34mINFO[m] mil-sym-renderer ................................... [1;32mSUCCESS[m [  3.250 s]
+[[1;34mINFO[m] mil-sym-renderer Parent Pom ........................ [1;32mSUCCESS[m [  0.012 s]
+[[1;34mINFO[m] mil-sym-svc Parent Pom ............................. [1;32mSUCCESS[m [  0.113 s]
+[[1;34mINFO[m] mil-sym-service .................................... [1;32mSUCCESS[m [  1.255 s]
+[[1;34mINFO[m] rendering-sample-1 ................................. [1;32mSUCCESS[m [  0.306 s]
+[[1;34mINFO[m] mil-sym-samples Pom ................................ [1;32mSUCCESS[m [  0.013 s]
+[[1;34mINFO[m] mil-sym-java Master Pom ............................ [1;32mSUCCESS[m [  0.012 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  11.267 s
-[[1;34mINFO[m] Finished at: 2026-10-04T17:52:05Z
+[[1;34mINFO[m] Total time:  9.911 s
+[[1;34mINFO[m] Finished at: 2026-10-08T15:18:07Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Old-mil-sym-java.buildinfo: No such file or directory
 dos2unix: Skipping target/Old-mil-sym-java.buildinfo, not a regular file.

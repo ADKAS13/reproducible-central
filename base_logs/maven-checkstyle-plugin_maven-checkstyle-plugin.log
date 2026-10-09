@@ -1,0 +1,238 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/maven-checkstyle-plugin/base/maven-checkstyle-plugin.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.apache.maven.plugins[0m
+|      [0;34martifactId[0;97m: [1mmaven-checkstyle-plugin[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-checkstyle-plugin/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/apache/maven-checkstyle-plugin.git[0m
+|      [0;34mgitTag[0;97m: [1mb1ad0bbbf077d5670cf679043076b9a1691ce4cc[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Maven-checkstyle-plugin.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/apache/maven-checkstyle-plugin.git[0m on tag [1mb1ad0bbbf077d5670cf679043076b9a1691ce4cc[0m
+/home/adkas13/reproducible-central/repos/maven-checkstyle-plugin/base/buildcache/maven-checkstyle-plugin
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/apache/maven-checkstyle-plugin.git (fetch)
+origin	https://github.com/apache/maven-checkstyle-plugin.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f b1ad0bbbf077d5670cf679043076b9a1691ce4cc [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/maven-checkstyle-plugin/base/buildcache/maven-checkstyle-plugin
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.apache.maven.plugins:maven-checkstyle-plugin:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/maven-checkstyle-plugin/base/buildcache/maven-checkstyle-plugin:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Thu Oct  8 11:38:33 UTC 2026.
+Universal Time is now:  Thu Oct  8 11:38:33 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36morg.apache.maven.plugins:maven-checkstyle-plugin[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding Apache Maven Checkstyle Plugin 3.1.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m----------------------------[ maven-plugin ]----------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-bytecode-version)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(ban-known-bad-maven-versions)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(ensure-no-container-api)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:1.9.1:parse-version[m [1m(parse-version)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(rat-check)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Parsing exclusions from /var/maven/app/.gitignore
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 71 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: src/it/multi-modules-aggregate/child-b/src/test/java/org/apache/maven/plugins/checkstyle/its/AppTest.java
+[[1;34mINFO[m] Exclude: src/main/resources/config/maven-header.txt
+[[1;34mINFO[m] Exclude: src/it/MCHECKSTYLE-225-customHeader/build-tools/src/main/resources/test/custom-header.txt
+[[1;34mINFO[m] Exclude: src/it/MCHECKSTYLE-225-pluginManagement/build-tools/src/main/resources/test/custom-header.txt
+[[1;34mINFO[m] Exclude: src/it/MCHECKSTYLE-225-LICENSE.txt/build-tools/src/main/resources/LICENSE.txt
+[[1;34mINFO[m] Exclude: .repository/**
+[[1;34mINFO[m] Exclude: .maven/spy.log
+[[1;34mINFO[m] Exclude: dependency-reduced-pom.xml
+[[1;34mINFO[m] Exclude: .java-version
+[[1;34mINFO[m] 296 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 287 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5:helpmojo[m [1m(generate-helpmojo)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] java-annotations mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-resource-bundles)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 10 resources
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 21 source files to /var/maven/app/target/classes
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/apache/maven/plugins/checkstyle/AbstractCheckstyleReport.java: /var/maven/app/src/main/java/org/apache/maven/plugins/checkstyle/AbstractCheckstyleReport.java uses or overrides a deprecated API.
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/apache/maven/plugins/checkstyle/AbstractCheckstyleReport.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5:descriptor[m [1m(default-descriptor)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] java-annotations mojo extractor found 4 mojo descriptors.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32manimal-sniffer-maven-plugin:1.16:check[m [1m(check-java-compatibility)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mplexus-component-metadata:1.7.1:generate-metadata[m [1m(default)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Discovered 3 component descriptors(s)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/src/test/resources
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 12 source files to /var/maven/app/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.[1mRuleUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.apache.maven.plugins.checkstyle.[1mRuleUtilTest[m
+[[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerTest[m
+[[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleResultsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleResultsTest[m
+[[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerMultiSourceTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerMultiSourceTest[m
+[[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.[1mCheckstyleReportTest[m
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] Starting audit...
+[WARN] /var/maven/app/src/test/test-sources/TestJavaObject.java:21: 'method def modifier' has incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] /var/maven/app/src/test/test-sources/TestJavaObject.java:23: 'method def rcurly' has incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] /var/maven/app/src/test/test-sources/TestJavaObject.java:25: 'method def modifier' has incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] /var/maven/app/src/test/test-sources/TestJavaObject.java:27: 'method def rcurly' has incorrect indentation level 4, expected level should be 2. [Indentation]
+Audit done.
+[INFO] Starting audit...
+[WARN] /var/maven/app/src/test/test-sources/TestJavaObject.java:21: 'method def modifier' has incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] /var/maven/app/src/test/test-sources/TestJavaObject.java:23: 'method def rcurly' has incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] /var/maven/app/src/test/test-sources/TestJavaObject.java:25: 'method def modifier' has incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] /var/maven/app/src/test/test-sources/TestJavaObject.java:27: 'method def rcurly' has incorrect indentation level 4, expected level should be 2. [Indentation]
+Audit done.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.481 s - in org.apache.maven.plugins.checkstyle.[1mCheckstyleReportTest[m
+[[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.[1mReportResourceTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.maven.plugins.checkstyle.[1mReportResourceTest[m
+[[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.[1mCheckstyleViolationCheckMojoTest[m
+[INFO] Unable to perform checkstyle:check, unable to find checkstyle:checkstyle outputFile.
+[INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.207 s - in org.apache.maven.plugins.checkstyle.[1mCheckstyleViolationCheckMojoTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 27, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.1.0:jar[m [1m(default-jar)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/maven-checkstyle-plugin-3.1.1-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5:addPluginArtifactMetadata[m [1m(default-addPluginArtifactMetadata)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.7.1:attach-descriptor[m [1m(attach-descriptor)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Skipping because packaging 'maven-plugin' is not pom.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:3.0.0:check[m [1m(checkstyle-check)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] There is 1 error reported by Checkstyle 6.18 with config/maven_checks.xml ruleset.
+[[1;34mINFO[m] Ignored 1 error, 0 violation remaining.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/maven-checkstyle-plugin-3.1.1-SNAPSHOT.jar to /var/maven/.m2/repository/org/apache/maven/plugins/maven-checkstyle-plugin/3.1.1-SNAPSHOT/maven-checkstyle-plugin-3.1.1-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/apache/maven/plugins/maven-checkstyle-plugin/3.1.1-SNAPSHOT/maven-checkstyle-plugin-3.1.1-SNAPSHOT.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  12.003 s
+[[1;34mINFO[m] Finished at: 2026-10-08T11:38:46Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Maven-checkstyle-plugin.buildinfo: No such file or directory
+dos2unix: Skipping target/Maven-checkstyle-plugin.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

@@ -86,6 +86,21 @@ class RepoSummary:
             return None
         return round(self.equivalent_modules / checked * 100, 1)
 
+ANSI = re.compile(r"\x1b\[[0-9;]*m")
+AGG = re.compile(r"Tests run: (\d+), Failures: (\d+), Errors: (\d+), Skipped: (\d+)\s*$")
+
+def parse_log_test_totals(log_path: Path) -> tuple[int, int, int, int]:
+    run = fail = err = skip = 0
+    try:
+        for line in log_path.read_text(errors="replace").splitlines():
+            m = AGG.search(ANSI.sub("", line))
+            if m:
+                r, f, e, s = map(int, m.groups())
+                run += r; fail += f; err += e; skip += s
+    except Exception:
+        pass
+    return run, fail, err, skip
+
 
 def parse_comparison_report(report_path: Path, repo: str) -> Optional[ModuleResult]:
     """Parse a dependency-comparison-report.txt into a ModuleResult."""
@@ -127,30 +142,49 @@ def parse_comparison_report(report_path: Path, repo: str) -> Optional[ModuleResu
         return None
 
 
-def parse_surefire_reports(module_target: Path) -> tuple[int, int, int, int]:
+def parse_surefire_reports(build_root: Path) -> tuple[int, int, int, int]:
     """
-    Parse surefire AND failsafe XML reports for a module.
+    Parse all Surefire/Failsafe XML reports anywhere under build_root.
     Returns (tests_run, failures, errors, skipped).
     """
     import xml.etree.ElementTree as ET
-    total, failures, errors, skipped = 0, 0, 0, 0
+
+    total = failures = errors = skipped = 0
+    processed_files = set()
 
     for report_dir_name in ("surefire-reports", "failsafe-reports"):
-        report_dir = module_target / report_dir_name
-        if not report_dir.exists():
-            continue
-        for xml_file in report_dir.glob("TEST-*.xml"):
-            try:
-                root = ET.parse(xml_file).getroot()
-                total    += int(root.get("tests",    0))
-                failures += int(root.get("failures", 0))
-                errors   += int(root.get("errors",   0))
-                skipped  += int(root.get("skipped",  0))
-            except Exception:
-                pass
+        for report_dir in build_root.rglob(report_dir_name):
+            if not report_dir.is_dir():
+                continue
+
+            for xml_file in report_dir.glob("TEST-*.xml"):
+                xml_file = xml_file.resolve()
+
+                if xml_file in processed_files:
+                    continue
+                processed_files.add(xml_file)
+
+                try:
+                    root = ET.parse(xml_file).getroot()
+
+                    if root.tag == "testsuite":
+                        suites = [root]
+                    else:
+                        suites = root.findall("testsuite")
+
+                    for suite in suites:
+                        total += int(suite.get("tests", 0))
+                        failures += int(suite.get("failures", 0))
+                        errors += int(suite.get("errors", 0))
+                        skipped += int(suite.get("skipped", 0))
+
+                except Exception as e:
+                    print(
+                        f"[WARN] Could not parse {xml_file}: {e}",
+                        file=sys.stderr
+                    )
 
     return total, failures, errors, skipped
-
 
 def parse_build_log(log_path: Path) -> bool:
     """Check if the build log indicates overall success."""
@@ -163,48 +197,40 @@ def parse_build_log(log_path: Path) -> bool:
     except Exception:
         return False
 
-
-def collect_repo(buildcache: Path, repo: str, log_dir: Path) -> list[ModuleResult]:
+def collect_repo(buildcache: Path, repo: str, log_dir: Path):
     """Collect all module results for one repo."""
     results = []
 
     # Find all comparison reports
-    for report_path in sorted(buildcache.rglob("dependency-comparison-report.txt")):
+    for report_path in sorted(
+        buildcache.rglob("dependency-comparison-report.txt")
+    ):
         result = parse_comparison_report(report_path, repo)
+
         if not result:
             continue
 
-        # Find surefire reports relative to the comparison report
-        module_target = report_path.parent
-        runs, fails, errs, skipped = parse_surefire_reports(module_target)
-        result.tests_run     = runs
-        result.tests_failed  = fails
-        result.tests_errored = errs
-        result.tests_skipped = skipped
-
         results.append(result)
 
+    # Find test reports across the ENTIRE RQ1 buildcache.
+    test_totals = parse_surefire_reports(buildcache)
+
     # Determine overall build success from log.
-    # Match any log file that starts with the repo name (case-insensitive)
-    # since log filenames are {repo}_{specname}.log and repo names may differ
-    # slightly from buildcache parent names.
     build_success = False
+
     for log_file in sorted(log_dir.glob("*.log")):
         if log_file.stem.lower().startswith(repo.lower()):
             if parse_build_log(log_file):
                 build_success = True
                 break
 
-    # Fallback: if no log found, check the buildcache itself for a Maven
-    # BUILD SUCCESS marker in any recent log files written there.
     if not build_success:
         for log_file in sorted(log_dir.glob("*.log")):
-            content = ""
             try:
                 content = log_file.read_text(errors="replace")
             except Exception:
                 continue
-            # Match by checking if the repo's group/artifact appears in the log
+
             if repo.lower() in content.lower() and "BUILD SUCCESS" in content:
                 build_success = True
                 break
@@ -212,28 +238,63 @@ def collect_repo(buildcache: Path, repo: str, log_dir: Path) -> list[ModuleResul
     for r in results:
         r.build_success = build_success
 
-    return results
+    return results, test_totals
 
+def summarise_repo(
+    repo,
+    results,
+    build_success,
+    test_totals=(0, 0, 0, 0),
+):
+    module_run  = sum(r.tests_run for r in results)
+    module_fail = sum(r.tests_failed for r in results)
+    module_err  = sum(r.tests_errored for r in results)
+    module_skip = sum(r.tests_skipped for r in results)
 
-def summarise_repo(repo: str, results: list[ModuleResult], build_success: bool) -> RepoSummary:
-    """Aggregate module results into a repo-level summary."""
-    modules_with_tests = sum(1 for r in results if r.tests_run > 0)
-    equiv   = sum(1 for r in results if r.equivalent and not r.skipped_flatten)
-    nonequiv= sum(1 for r in results if not r.equivalent and not r.skipped_flatten)
+    # Prefer the complete buildcache-wide test discovery.
+    # The per-module values may be unavailable when comparison reports
+    # and Maven target directories are stored in different locations.
+    run, fail, err, skip = test_totals
+
+    if run == 0:
+        run, fail, err, skip = (
+            module_run,
+            module_fail,
+            module_err,
+            module_skip,
+        )
+
+    passed = run - fail - err - skip
+
+    modules_with_tests = sum(
+        1 for r in results if r.tests_run > 0
+    )
+
+    equiv = sum(
+        1 for r in results
+        if r.equivalent and not r.skipped_flatten
+    )
+
+    nonequiv = sum(
+        1 for r in results
+        if not r.equivalent and not r.skipped_flatten
+    )
 
     return RepoSummary(
         repo=repo,
         build_success=build_success,
         total_modules=len(results),
         modules_with_tests=modules_with_tests,
-        total_tests=sum(r.tests_run for r in results),
-        total_passed=sum(r.tests_passed for r in results),
-        total_failed=sum(r.tests_failed for r in results),
-        total_errored=sum(r.tests_errored for r in results),
-        total_skipped=sum(r.tests_skipped for r in results),
+        total_tests=run,
+        total_passed=passed,
+        total_failed=fail,
+        total_errored=err,
+        total_skipped=skip,
         equivalent_modules=equiv,
         non_equivalent_modules=nonequiv,
-        skipped_flatten=sum(1 for r in results if r.skipped_flatten),
+        skipped_flatten=sum(
+            1 for r in results if r.skipped_flatten
+        ),
         upgraded_count=sum(r.upgraded for r in results),
         downgraded_count=sum(r.downgraded for r in results),
         removed_count=sum(r.removed for r in results),
@@ -371,13 +432,18 @@ def main():
         if logged_repos and repo.lower() not in logged_repos:
             continue
 
-        results = collect_repo(buildcache, repo, log_dir)
+        results, test_totals = collect_repo(buildcache, repo, log_dir)
         if not results:
             print(f"[WARN] No comparison reports found for repo '{repo}' in {buildcache}", file=sys.stderr)
             continue
 
         build_success = any(r.build_success for r in results)
-        summary = summarise_repo(repo, results, build_success)
+        summary = summarise_repo(
+            repo,
+            results,
+            build_success,
+            test_totals=test_totals
+        )
         summaries.append(summary)
         all_results.extend(results)
         print(f"[OK]   {repo}: {len(results)} modules, build={'PASS' if build_success else 'FAIL'}", file=sys.stderr)

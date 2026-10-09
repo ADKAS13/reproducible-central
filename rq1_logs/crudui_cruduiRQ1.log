@@ -79,14 +79,12 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 17:49:58 UTC 2026.
-Universal Time is now:  Sun Oct  4 17:49:58 UTC 2026.
+Local time is now:      Thu Oct  8 15:15:45 UTC 2026.
+Universal Time is now:  Thu Oct  8 15:15:45 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
 [[1;33mWARNING[m] The project org.vaadin.crudui:crudui:jar:2.1.0 uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
-Downloading from vaadin-snapshots: https://oss.sonatype.org/content/repositories/vaadin-snapshots/com/baeldung/counter-maven-plugin/1.0-SNAPSHOT/maven-metadata.xml
-Downloading from vaadin-prereleases: http://maven.vaadin.com/vaadin-prereleases/com/baeldung/counter-maven-plugin/1.0-SNAPSHOT/maven-metadata.xml
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m----------------------< [0;36morg.vaadin.crudui:crudui[0;1m >----------------------[m
 [[1;34mINFO[m] [1mBuilding Crud UI Add-on 2.1.0[m
@@ -257,8 +255,8 @@ Generating /var/maven/app/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  26.211 s
-[[1;34mINFO[m] Finished at: 2026-10-04T17:50:26Z
+[[1;34mINFO[m] Total time:  30.900 s
+[[1;34mINFO[m] Finished at: 2026-10-08T15:16:17Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Crudui.buildinfo: No such file or directory
 dos2unix: Skipping target/Crudui.buildinfo, not a regular file.

@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 18:21:17 UTC 2026.
-Universal Time is now:  Sun Oct  4 18:21:17 UTC 2026.
+Local time is now:      Thu Oct  8 11:34:21 UTC 2026.
+Universal Time is now:  Thu Oct  8 11:34:21 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -175,12 +175,12 @@ Universal Time is now:  Sun Oct  4 18:21:17 UTC 2026.
 [[1;34mINFO[m] Building jar: /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2-javadoc.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-annotation[0;1m ---[m
-[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - SHA-1 : e3c5b96b231b6680b747819919528bbd320b92e5
-[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - MD5 : 5abe64e63eca55cc6a0c01e21430ebda
-[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - SHA-1 : 23c1811fc6a09663646eb5dce480ec66caaaeaca
-[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - MD5 : 97b468ebc524865af176eee7b2a339cf
-[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - SHA-1 : 3efcad5026361b06647245eb08915ed5a5510f7f
-[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - MD5 : 111e417220a2bbc003d24fccd82700fb
+[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - SHA-1 : 1509cef4a7eb58bb874c85bd072f1c68ff65ee31
+[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - MD5 : b6718f7afa3d16af0e9b10ba6f1c3427
+[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - SHA-1 : f3a5187b9f656d89f9d533a8ad284d6c2969269c
+[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - MD5 : 6e0776c3c3dffbe4fd828900ea39806b
+[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - SHA-1 : bae3acffac113a51739b2435ca5c80ea29bb182a
+[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - MD5 : 29b37fae1e9ea0b0e4aa9935c9a18c78
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-annotation[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-annotation/2.7.2/auto-table-annotation-2.7.2.jar
@@ -241,12 +241,12 @@ Universal Time is now:  Sun Oct  4 18:21:17 UTC 2026.
 [[1;34mINFO[m] Building jar: /var/maven/app/auto-table-core/target/auto-table-core-2.7.2-javadoc.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-core[0;1m ---[m
-[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - SHA-1 : 3dd3450e7880b7d6bb3f555f357fcc0ee20ef09d
-[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - MD5 : ad83e893ed46df1e01cc1053c28e1c4b
-[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - SHA-1 : 242ed7219c145d8b936e41fc58838bd240971fff
-[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - MD5 : dd6280ed32eb93da46c27b243212e27c
-[[1;34mINFO[m] auto-table-core-2.7.2.jar - SHA-1 : b05558401acefbf63acabdd205c23132cf12857f
-[[1;34mINFO[m] auto-table-core-2.7.2.jar - MD5 : 8a275326b54ae5bf79cdeae6330ebd31
+[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - SHA-1 : 7a924cedf879b5306fb64218e1dbf41920e12b2f
+[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - MD5 : 7e868836caaccb594cdf33e12ba852f7
+[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - SHA-1 : 4b41c6bd0911838095dff55564f2f7abd9142abd
+[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - MD5 : 81c6fd1861d592b4bc6e1e57f4cdc548
+[[1;34mINFO[m] auto-table-core-2.7.2.jar - SHA-1 : 6b0d19525c0169e6d40692d1d718bfa5be1ed708
+[[1;34mINFO[m] auto-table-core-2.7.2.jar - MD5 : 11a3079731e4a5f30bef97d4d72df7f8
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-core[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/auto-table-core/target/auto-table-core-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-core/2.7.2/auto-table-core-2.7.2.jar
@@ -421,7 +421,7 @@ Universal Time is now:  Sun Oct  4 18:21:17 UTC 2026.
  T E S T S
 -------------------------------------------------------
 Running org.dromara.autotable.strategy.pgsql.PgsqlStrategyIsTypeDiffTest
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running org.dromara.autotable.strategy.pgsql.PgsqlDbColumnDataTypeFormatTest
 Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
@@ -671,13 +671,13 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
  T E S T S
 -------------------------------------------------------
 Running org.dromara.autotable.strategy.sqlserver.SqlServerModifyTableSqlBuilderTest
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running org.dromara.autotable.strategy.sqlserver.SqlServerIntegrationTest
 Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running org.dromara.autotable.strategy.sqlserver.SqlServerStrategyUnitTest
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running org.dromara.autotable.strategy.sqlserver.SqlServerCompareTableInfoTest
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running org.dromara.autotable.strategy.sqlserver.builder.SqlServerColumnMetadataBuilderTest
 Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
@@ -826,12 +826,12 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] Building jar: /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2-javadoc.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - SHA-1 : 5d026cfe8c5d07c356624df18c1a76e96dae8ead
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - MD5 : 23fdf89384b1a36bc91b5762856d1c2f
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - SHA-1 : e0dd9b696887077d2b140fbb7184316e0ffdb970
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - MD5 : 95337a7dca684f226ef4e0c110201a3c
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - SHA-1 : 9b9375c19dcd608a67c519d5fc56652451170f9e
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - MD5 : 12bdc4a9a47d0b905f81ff47956c0ef6
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - SHA-1 : c35746c7a0b93c6510bf5bb54e6a3b5d9fb6696a
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - MD5 : f27449a107fd097127f2a6476d53fdc2
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - SHA-1 : 958221c4f3076013a3accb3c339a761115b3dc9f
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - MD5 : 63e9674b8f8ffcc2b07bb565c043d8e3
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - SHA-1 : 5762f2488d0ecbbd92002015d2269fb41068b9da
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - MD5 : afe0064cd812e9b5d572e5a9bc491164
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-spring-boot-starter/2.7.2/auto-table-spring-boot-starter-2.7.2.jar
@@ -882,12 +882,12 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] Building jar: /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2-javadoc.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-solon-plugin[0;1m ---[m
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - SHA-1 : 2b37f6cae3cfe93c717cd8a37525ed2862430d75
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - MD5 : a7816fa53b03d1579458a2cbad4a1745
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - SHA-1 : 0ea1cf6254a73fa0ea99ff3c7bea0b364933a666
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - MD5 : 1c31e1bb551df71714f61301216dac52
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - SHA-1 : 0c261cacfab6505cee584ed632cb3fa799745e00
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - MD5 : 13f1f417b7e45a73a19deb92f5b0f48d
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - SHA-1 : ccaac290a7f77d3b1163ded075473140af7fbf64
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - MD5 : f56e51dfcf94cb041e517ea9d02e2a9b
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - SHA-1 : 59256db6e283aa9ff8d4ea038f2e467990708098
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - MD5 : d862175355741eb1b225261ddc867b41
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - SHA-1 : 91bfe4d89bc531cfa999db1713acb9d3a1eb55f3
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - MD5 : 65c53460e074295b03a0b9ca4ae7ecd5
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-solon-plugin[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-solon-plugin/2.7.2/auto-table-solon-plugin-2.7.2.jar
@@ -1209,12 +1209,12 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusMetadataAdapterTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m24[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.110 s -- in org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusMetadataAdapterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m24[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s -- in org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusMetadataAdapterTest[m
 [[1;34mINFO[m] Running org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusJavaTypeToDatabaseTypeConverterTest[m
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusJavaTypeToDatabaseTypeConverterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusJavaTypeToDatabaseTypeConverterTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1421,42 +1421,42 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for org.dromara.autotable:auto-table 2.7.2:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] org.dromara.autotable:auto-table ................... [1;32mSUCCESS[m [  1.332 s]
-[[1;34mINFO[m] auto-table-annotation .............................. [1;32mSUCCESS[m [  3.766 s]
-[[1;34mINFO[m] auto-table-core .................................... [1;32mSUCCESS[m [  2.271 s]
-[[1;34mINFO[m] auto-table-strategy ................................ [1;32mSUCCESS[m [  0.014 s]
-[[1;34mINFO[m] auto-table-strategy-dm ............................. [1;32mSUCCESS[m [  2.055 s]
-[[1;34mINFO[m] auto-table-strategy-doris .......................... [1;32mSUCCESS[m [  2.258 s]
-[[1;34mINFO[m] auto-table-strategy-h2 ............................. [1;32mSUCCESS[m [  1.948 s]
-[[1;34mINFO[m] auto-table-strategy-pgsql .......................... [1;32mSUCCESS[m [  2.575 s]
-[[1;34mINFO[m] auto-table-strategy-kingbase ....................... [1;32mSUCCESS[m [  1.211 s]
-[[1;34mINFO[m] auto-table-strategy-mysql .......................... [1;32mSUCCESS[m [  2.650 s]
-[[1;34mINFO[m] auto-table-strategy-oracle ......................... [1;32mSUCCESS[m [  2.621 s]
-[[1;34mINFO[m] auto-table-strategy-yashandb ....................... [1;32mSUCCESS[m [  2.427 s]
-[[1;34mINFO[m] auto-table-strategy-sqlserver ...................... [1;32mSUCCESS[m [  2.923 s]
-[[1;34mINFO[m] auto-table-strategy-sqlite ......................... [1;32mSUCCESS[m [  1.611 s]
-[[1;34mINFO[m] auto-table-strategy-all ............................ [1;32mSUCCESS[m [  0.968 s]
-[[1;34mINFO[m] auto-table-spring-boot-starter ..................... [1;32mSUCCESS[m [  1.707 s]
-[[1;34mINFO[m] auto-table-solon-plugin ............................ [1;32mSUCCESS[m [  1.659 s]
-[[1;34mINFO[m] auto-table-test .................................... [1;32mSUCCESS[m [  0.011 s]
-[[1;34mINFO[m] auto-table-test-core ............................... [1;32mSUCCESS[m [  2.586 s]
-[[1;34mINFO[m] auto-table-test-spring-boot ........................ [1;32mSUCCESS[m [  1.373 s]
-[[1;34mINFO[m] auto-table-test-dynamicdatasource .................. [1;32mSUCCESS[m [  0.606 s]
-[[1;34mINFO[m] auto-table-test-solon-plugin ....................... [1;32mSUCCESS[m [ 0.-524 s]
-[[1;34mINFO[m] auto-table-test-spring-boot-dynamicdatasource ...... [1;32mSUCCESS[m [  0.607 s]
-[[1;34mINFO[m] auto-table-test-doris .............................. [1;32mSUCCESS[m [  0.676 s]
-[[1;34mINFO[m] auto-table-adapter ................................. [1;32mSUCCESS[m [  0.015 s]
-[[1;34mINFO[m] auto-table-adapter-mybatis-plus .................... [1;32mSUCCESS[m [  2.872 s]
-[[1;34mINFO[m] auto-table-adapter-mybatis-plus-spring-boot-starter  [1;32mSUCCESS[m [  1.279 s]
-[[1;34mINFO[m] auto-table-adapter-mybatis-flex .................... [1;32mSUCCESS[m [  1.319 s]
-[[1;34mINFO[m] auto-table-adapter-mybatis-flex-spring-boot-starter  [1;32mSUCCESS[m [  1.166 s]
-[[1;34mINFO[m] auto-table-support ................................. [1;32mSUCCESS[m [  0.016 s]
-[[1;34mINFO[m] auto-table-support-springdoc ....................... [1;32mSUCCESS[m [  1.330 s]
+[[1;34mINFO[m] org.dromara.autotable:auto-table ................... [1;32mSUCCESS[m [  0.887 s]
+[[1;34mINFO[m] auto-table-annotation .............................. [1;32mSUCCESS[m [  2.683 s]
+[[1;34mINFO[m] auto-table-core .................................... [1;32mSUCCESS[m [  3.516 s]
+[[1;34mINFO[m] auto-table-strategy ................................ [1;32mSUCCESS[m [  0.013 s]
+[[1;34mINFO[m] auto-table-strategy-dm ............................. [1;32mSUCCESS[m [  1.710 s]
+[[1;34mINFO[m] auto-table-strategy-doris .......................... [1;32mSUCCESS[m [  2.001 s]
+[[1;34mINFO[m] auto-table-strategy-h2 ............................. [1;32mSUCCESS[m [  1.692 s]
+[[1;34mINFO[m] auto-table-strategy-pgsql .......................... [1;32mSUCCESS[m [  2.345 s]
+[[1;34mINFO[m] auto-table-strategy-kingbase ....................... [1;32mSUCCESS[m [  1.015 s]
+[[1;34mINFO[m] auto-table-strategy-mysql .......................... [1;32mSUCCESS[m [  2.387 s]
+[[1;34mINFO[m] auto-table-strategy-oracle ......................... [1;32mSUCCESS[m [  2.276 s]
+[[1;34mINFO[m] auto-table-strategy-yashandb ....................... [1;32mSUCCESS[m [  2.027 s]
+[[1;34mINFO[m] auto-table-strategy-sqlserver ...................... [1;32mSUCCESS[m [  2.321 s]
+[[1;34mINFO[m] auto-table-strategy-sqlite ......................... [1;32mSUCCESS[m [  1.400 s]
+[[1;34mINFO[m] auto-table-strategy-all ............................ [1;32mSUCCESS[m [  0.821 s]
+[[1;34mINFO[m] auto-table-spring-boot-starter ..................... [1;32mSUCCESS[m [  1.430 s]
+[[1;34mINFO[m] auto-table-solon-plugin ............................ [1;32mSUCCESS[m [  1.387 s]
+[[1;34mINFO[m] auto-table-test .................................... [1;32mSUCCESS[m [  0.010 s]
+[[1;34mINFO[m] auto-table-test-core ............................... [1;32mSUCCESS[m [  2.132 s]
+[[1;34mINFO[m] auto-table-test-spring-boot ........................ [1;32mSUCCESS[m [  1.115 s]
+[[1;34mINFO[m] auto-table-test-dynamicdatasource .................. [1;32mSUCCESS[m [  0.486 s]
+[[1;34mINFO[m] auto-table-test-solon-plugin ....................... [1;32mSUCCESS[m [  1.062 s]
+[[1;34mINFO[m] auto-table-test-spring-boot-dynamicdatasource ...... [1;32mSUCCESS[m [  0.479 s]
+[[1;34mINFO[m] auto-table-test-doris .............................. [1;32mSUCCESS[m [  0.632 s]
+[[1;34mINFO[m] auto-table-adapter ................................. [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-plus .................... [1;32mSUCCESS[m [  2.186 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-plus-spring-boot-starter  [1;32mSUCCESS[m [  1.111 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-flex .................... [1;32mSUCCESS[m [  1.130 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-flex-spring-boot-starter  [1;32mSUCCESS[m [  1.148 s]
+[[1;34mINFO[m] auto-table-support ................................. [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] auto-table-support-springdoc ....................... [1;32mSUCCESS[m [  1.047 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  48.047 s
-[[1;34mINFO[m] Finished at: 2026-10-04T18:22:06Z
+[[1;34mINFO[m] Total time:  42.984 s
+[[1;34mINFO[m] Finished at: 2026-10-08T11:35:05Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Auto-table.buildinfo: No such file or directory
 dos2unix: Skipping target/Auto-table.buildinfo, not a regular file.

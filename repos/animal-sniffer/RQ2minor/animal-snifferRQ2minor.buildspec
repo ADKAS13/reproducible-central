@@ -1,0 +1,15 @@
+groupId=org.codehaus.mojo
+artifactId=animal-sniffer-parent
+version=9
+
+gitRepo=https://github.com/mojohaus/animal-sniffer.git
+gitTag=bdfb6cf8247aa0662ea6208a99ad6d5720d1aeac
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Animal-sniffer.buildinfo

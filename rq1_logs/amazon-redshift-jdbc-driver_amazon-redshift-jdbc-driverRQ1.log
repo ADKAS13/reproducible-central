@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 17:43:08 UTC 2026.
-Universal Time is now:  Sun Oct  4 17:43:08 UTC 2026.
+Local time is now:      Thu Oct  8 15:09:23 UTC 2026.
+Universal Time is now:  Thu Oct  8 15:09:23 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -162,7 +162,7 @@ Universal Time is now:  Sun Oct  4 17:43:08 UTC 2026.
 [[1;34mINFO[m] Preprocess sources : /var/maven/app/src/main/java
 [[1;34mINFO[m] Preprocess destination : /var/maven/app/target/gen-src
 [[1;34mINFO[m] -----------------------------------------------------------------
-[[1;34mINFO[m] Completed, preprocessed 287 files, copied 17 files, elapsed time 343ms
+[[1;34mINFO[m] Completed, preprocessed 287 files, copied 17 files, elapsed time 285ms
 [[1;34mINFO[m] A Compile source root has been removed from the root list [/var/maven/app/src/main/java]
 [[1;34mINFO[m] The New compile source root has been added into the list [/var/maven/app/target/gen-src]
 [[1;34mINFO[m] 
@@ -250,8 +250,8 @@ Universal Time is now:  Sun Oct  4 17:43:08 UTC 2026.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  14.992 s
-[[1;34mINFO[m] Finished at: 2026-10-04T17:43:24Z
+[[1;34mINFO[m] Total time:  13.342 s
+[[1;34mINFO[m] Finished at: 2026-10-08T15:09:37Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Amazon-redshift-jdbc-driver.buildinfo: No such file or directory
 dos2unix: Skipping target/Amazon-redshift-jdbc-driver.buildinfo, not a regular file.

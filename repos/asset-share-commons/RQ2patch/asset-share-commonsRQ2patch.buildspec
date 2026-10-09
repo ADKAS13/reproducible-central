@@ -1,0 +1,15 @@
+groupId=com.adobe.aem.commons
+artifactId=assetshare
+version=9
+
+gitRepo=https://github.com/adobe/asset-share-commons.git
+gitTag=a2f294ef6dcd9d14a12dd7a00bd53aa8c314ee2a
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Asset-share-commons.buildinfo

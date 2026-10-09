@@ -115,9 +115,9 @@ def collect_from_root(root: Path, range_mode: str) -> list[ModuleResult]:
             print(f"[SKIP] Unexpected buildcache depth: {buildcache}", file=sys.stderr)
             continue
         repo, flavor = relative.parts[0], relative.parts[1]
-        expected_flavor = f"RQ2{args.range}"
+        expected_flavor = f"RQ2{range_mode}"
         if flavor != expected_flavor:
-          continue
+            continue
 
         
         repo_results = collect_from_buildcache(buildcache, repo, range_mode)

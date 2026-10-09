@@ -1,0 +1,15 @@
+groupId=com.github.santiontanon
+artifactId=mdl
+version=9
+
+gitRepo=https://github.com/santiontanon/mdlz80optimizer.git
+gitTag=ca40546db0806bcc3751de8d4eced23794d8ca00
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Mdlz80optimizer.buildinfo

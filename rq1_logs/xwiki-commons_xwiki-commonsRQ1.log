@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct  4 18:00:21 UTC 2026.
-Universal Time is now:  Sun Oct  4 18:00:21 UTC 2026.
+Local time is now:      Thu Oct  8 15:24:49 UTC 2026.
+Universal Time is now:  Thu Oct  8 15:24:49 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -402,9 +402,9 @@ Universal Time is now:  Sun Oct  4 18:00:21 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.xwiki.tool.checkstyle.[1mSinceFormatCheckTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.353 s - in org.xwiki.tool.checkstyle.[1mSinceFormatCheckTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.201 s - in org.xwiki.tool.checkstyle.[1mSinceFormatCheckTest[m
 [[1;34mINFO[m] Running org.xwiki.tool.checkstyle.[1mUnstableAnnotationCheckTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in org.xwiki.tool.checkstyle.[1mUnstableAnnotationCheckTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s - in org.xwiki.tool.checkstyle.[1mUnstableAnnotationCheckTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -953,41 +953,41 @@ Audit done.
 [[1;34mINFO[m] [1mBuilding XWiki Commons - Tools - Spoon - Checks 13.6-SNAPSHOT   [10/100][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
-Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 1.8 kB/s)
+Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 675 B/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.resources/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml (1.1 kB at 12 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml (1.1 kB at 15 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.expressions/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml (1.4 kB at 12 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml (1.4 kB at 14 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 12 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 17 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
-Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 14 kB/s)
+Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
+Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 20 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 12 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 18 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.jobs/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 15 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
@@ -996,25 +996,25 @@ Progress (1): 1.2 kB                    Downloaded from central: https://repo.
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 11 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 14 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.preferences/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml
-Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/osgi/org.osgi.service.prefs/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/osgi/org.osgi.service.prefs/maven-metadata.xml
-Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 3.9 kB/s)
+Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/osgi/org.osgi.service.prefs/maven-metadata.xml
+Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 4.5 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.osgi:org.osgi.service.prefs/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/osgi/org.osgi.service.prefs/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 12 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 15 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.contenttype/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.preferences/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.preferences/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
+Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
-Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml (1.1 kB at 9.9 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml (1.1 kB at 12 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.app/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
@@ -1039,7 +1039,7 @@ Progress (1): 1.1 kB                    Downloaded from central: https://repo.
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml (1.2 kB at 15 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml (1.2 kB at 12 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.filesystem/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
@@ -1047,15 +1047,15 @@ Progress (1): 1.2 kB                    Downloaded from central: https://repo.
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.filesystem/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.filesystem/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
-Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 9.3 kB/s)
+Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 16 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.text/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
+Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
-Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 11 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 13 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.commands/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
@@ -2580,13 +2580,13 @@ Audit done.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.xwiki.test.junit5.[1mCaptureConsoleExtensionTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s - in org.xwiki.test.junit5.[1mCaptureConsoleExtensionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s - in org.xwiki.test.junit5.[1mCaptureConsoleExtensionTest[m
 [[1;34mINFO[m] Running org.xwiki.test.junit5.[1mFailingTestDebuggingTestExecutionListenerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.524 s - in org.xwiki.test.junit5.[1mFailingTestDebuggingTestExecutionListenerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 s - in org.xwiki.test.junit5.[1mFailingTestDebuggingTestExecutionListenerTest[m
 [[1;34mINFO[m] Running org.xwiki.test.junit5.[1mLogCaptureExtensionTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in org.xwiki.test.junit5.[1mLogCaptureExtensionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.xwiki.test.junit5.[1mLogCaptureExtensionTest[m
 [[1;34mINFO[m] Running org.xwiki.test.[1mAllLogRuleStaticTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.xwiki.test.[1mAllLogRuleStaticTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.xwiki.test.[1mAllLogRuleStaticTest[m
 [[1;34mINFO[m] Running org.xwiki.test.[1mAllLogRuleDebugLevelTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.xwiki.test.[1mAllLogRuleDebugLevelTest[m
 [[1;34mINFO[m] 
@@ -2833,21 +2833,21 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for XWiki Commons - Parent POM 13.6-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] XWiki Commons - Parent POM ......................... [1;32mSUCCESS[m [  0.966 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Parent POM ................. [1;32mSUCCESS[m [  0.217 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Verification Resources ..... [1;32mSUCCESS[m [  5.877 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Tools POM .................. [1;32mSUCCESS[m [  0.878 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Remote Resource Plugin ..... [1;32mSUCCESS[m [  2.860 s]
-[[1;34mINFO[m] XWiki Commons - Tools - License Resources .......... [1;32mSUCCESS[m [  0.475 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Enforcers .................. [1;32mSUCCESS[m [  0.500 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Banned Dependencies Enforcer [1;32mSUCCESS[m [  1.012 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Spoon - Parent POM ......... [1;32mSUCCESS[m [  0.127 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Spoon - Checks ............. [1;32mSUCCESS[m [  7.777 s]
-[[1;34mINFO[m] XWiki Commons - Root POM ........................... [1;32mSUCCESS[m [  0.858 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Test Framework - Parent POM  [1;32mSUCCESS[m [  0.104 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Test Framework - Simple .... [1;32mSUCCESS[m [  2.772 s]
-[[1;34mINFO[m] XWiki Commons - Core - Parent POM .................. [1;32mSUCCESS[m [  0.803 s]
-[[1;34mINFO[m] XWiki Commons - Stability .......................... [1;31mFAILURE[m [  0.599 s]
+[[1;34mINFO[m] XWiki Commons - Parent POM ......................... [1;32mSUCCESS[m [  0.617 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Parent POM ................. [1;32mSUCCESS[m [  0.093 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Verification Resources ..... [1;32mSUCCESS[m [  3.200 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Tools POM .................. [1;32mSUCCESS[m [  0.668 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Remote Resource Plugin ..... [1;32mSUCCESS[m [  1.799 s]
+[[1;34mINFO[m] XWiki Commons - Tools - License Resources .......... [1;32mSUCCESS[m [  0.276 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Enforcers .................. [1;32mSUCCESS[m [  0.383 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Banned Dependencies Enforcer [1;32mSUCCESS[m [  0.521 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Spoon - Parent POM ......... [1;32mSUCCESS[m [  0.100 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Spoon - Checks ............. [1;32mSUCCESS[m [  9.211 s]
+[[1;34mINFO[m] XWiki Commons - Root POM ........................... [1;32mSUCCESS[m [  0.708 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Test Framework - Parent POM  [1;32mSUCCESS[m [  0.089 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Test Framework - Simple .... [1;32mSUCCESS[m [  1.902 s]
+[[1;34mINFO[m] XWiki Commons - Core - Parent POM .................. [1;32mSUCCESS[m [  0.383 s]
+[[1;34mINFO[m] XWiki Commons - Stability .......................... [1;31mFAILURE[m [  0.260 s]
 [[1;34mINFO[m] XWiki Commons - Text ............................... [1;33mSKIPPED[m
 [[1;34mINFO[m] XWiki Commons - Component - Parent POM ............. [1;33mSKIPPED[m
 [[1;34mINFO[m] XWiki Commons - Component - API .................... [1;33mSKIPPED[m
@@ -2936,8 +2936,8 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  26.866 s
-[[1;34mINFO[m] Finished at: 2026-10-04T18:00:49Z
+[[1;34mINFO[m] Total time:  20.870 s
+[[1;34mINFO[m] Finished at: 2026-10-08T15:25:11Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;31mERROR[m] Failed to execute goal [32mcom.mycila:license-maven-plugin:4.1:check[m [1m(default)[m on project [36mxwiki-commons-stability[m: [1;31mSome files do not have the expected license header[m -> [1m[Help 1][m
 [[1;31mERROR[m] 
