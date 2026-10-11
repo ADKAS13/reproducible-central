@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Oct  6 03:58:11 UTC 2026.
-Universal Time is now:  Tue Oct  6 03:58:11 UTC 2026.
+Local time is now:      Sat Oct 10 21:08:44 UTC 2026.
+Universal Time is now:  Sat Oct 10 21:08:44 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -140,13 +140,13 @@ asciidoctor: WARNING: <stdin>: line 143: list item index: expected 4, got 1
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-realm[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 4.7 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 3.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 13 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 9.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 212 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 149 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
-Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 3.7 kB/s)
+Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 3.5 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-realm
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-realm/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-realm: pinned=6 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
@@ -156,7 +156,7 @@ Progress (1): 907 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] ShortRevision tag detected. The value is '10'.
 [[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app/teamengine-realm' && 'git' 'rev-parse' '--verify' '--short=10' 'HEAD'
 [[1;34mINFO[m] Working directory: /var/maven/app/teamengine-realm
-[[1;34mINFO[m] Storing buildNumber: 7b6c97a7a1 at timestamp: 1791259096630
+[[1;34mINFO[m] Storing buildNumber: 7b6c97a7a1 at timestamp: 1791666531644
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -187,13 +187,13 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
  T E S T S
 -------------------------------------------------------
 Running com.occamlab.te.realm.UserFilesRealmTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in com.occamlab.te.realm.UserFilesRealmTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec - in com.occamlab.te.realm.UserFilesRealmTest
 Running com.occamlab.te.realm.VerifyPBKDF2Realm
-Oct 06, 2026 3:58:17 AM com.occamlab.te.realm.PBKDF2Realm authenticate
+Oct 10, 2026 9:08:53 PM com.occamlab.te.realm.PBKDF2Realm authenticate
 WARNING: Fields are missing from the password hash.
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.318 sec - in com.occamlab.te.realm.VerifyPBKDF2Realm
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.343 sec - in com.occamlab.te.realm.VerifyPBKDF2Realm
 Running com.occamlab.te.realm.VerifyPasswordStorage
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 sec - in com.occamlab.te.realm.VerifyPasswordStorage
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 sec - in com.occamlab.te.realm.VerifyPasswordStorage
 
 Results :
 
@@ -278,25 +278,25 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-core[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/andrewoma/dexx/collection/maven-metadata.xml
-Progress (1): 454 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/andrewoma/dexx/collection/maven-metadata.xml (454 B at 1.4 kB/s)
+Progress (1): 454 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/andrewoma/dexx/collection/maven-metadata.xml (454 B at 1.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 2.2 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 6.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 16 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 26 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 72 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 8.7 kB/s)
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 1.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/maven-metadata.xml
-Progress (1): 344 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/maven-metadata.xml (344 B at 1.4 kB/s)
+Progress (1): 344 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/maven-metadata.xml (344 B at 988 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml
-Progress (1): 788 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml (788 B at 14 kB/s)
+Progress (1): 788 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml (788 B at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 20 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 25 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml
-Progress (1): 795 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 13 kB/s)
+Progress (1): 795 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 5.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/stax/stax/1.0/stax-1.0.pom
 [[1;33mWARNING[m] The POM for stax:stax:jar:1.0 is missing, no dependency information available
 Downloading from central: https://repo.maven.apache.org/maven2/stax/stax-ri/1.0/stax-ri-1.0.pom
@@ -304,43 +304,43 @@ Downloading from central: https://repo.maven.apache.org/maven2/stax/stax-ri/1.0/
 Downloading from central: https://repo.maven.apache.org/maven2/clover/clover/1.3-rc4/clover-1.3-rc4.pom
 [[1;33mWARNING[m] The POM for clover:clover:jar:1.3-rc4 is missing, no dependency information available
 Downloading from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 38 kB/s)
+Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 30 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml (3.3 kB at 14 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml (3.3 kB at 53 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/maven-metadata.xml (5.4 kB at 26 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/maven-metadata.xml (5.4 kB at 23 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-base/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-base/maven-metadata.xml (1.7 kB at 6.5 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-base/maven-metadata.xml (1.7 kB at 6.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-core/maven-metadata.xml
 Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-core/maven-metadata.xml (2.2 kB at 7.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri/maven-metadata.xml (2.1 kB at 8.2 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri/maven-metadata.xml (2.1 kB at 6.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-shaded-guava/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-shaded-guava/maven-metadata.xml (1.3 kB at 5.3 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-shaded-guava/maven-metadata.xml (1.3 kB at 2.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 31 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB at 16 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB at 4.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/maven-metadata.xml
-Progress (1): 443 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/maven-metadata.xml (443 B at 965 B/s)
+Progress (1): 443 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/maven-metadata.xml (443 B at 6.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/opengis/cite/saxon/saxon9/maven-metadata.xml
 Progress (1): 341 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opengis/cite/saxon/saxon9/maven-metadata.xml (341 B at 645 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 69 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 66 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/xmlmatchers/xml-matchers/maven-metadata.xml
 Progress (1): 370 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/xmlmatchers/xml-matchers/maven-metadata.xml (370 B at 1.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml
-Progress (1): 680 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml (680 B at 3.7 kB/s)
+Progress (1): 680 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml (680 B at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml
-Progress (1): 951 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml (951 B at 21 kB/s)
+Progress (1): 951 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml (951 B at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml
-Progress (1): 567 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 2.3 kB/s)
+Progress (1): 567 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 2.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/maven-metadata.xml
-Progress (1): 375 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/maven-metadata.xml (375 B at 1.7 kB/s)
+Progress (1): 375 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/maven-metadata.xml (375 B at 4.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/maven-metadata.xml
-Progress (1): 539 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/maven-metadata.xml (539 B at 2.5 kB/s)
+Progress (1): 539 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/maven-metadata.xml (539 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xom/xom/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/xom/xom/maven-metadata.xml (1.1 kB at 4.0 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/xom/xom/maven-metadata.xml (1.1 kB at 4.1 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-core
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-core/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-core: pinned=9 upgraded=25 downgraded=0 added=27 removed=0 scope_changed=0
@@ -372,20 +372,20 @@ Progress (1): 1.1 kB                    Downloaded from central: https://repo.
  T E S T S
 -------------------------------------------------------
 Running com.occamlab.te.parsers.HttpParserTest
-Oct 06, 2026 3:58:28 AM com.occamlab.te.parsers.ImageParser parse
+Oct 10, 2026 9:09:03 PM com.occamlab.te.parsers.ImageParser parse
 WARNING: Failed to parse text/plain resource from file:/var/maven/app/teamengine-core/target/test-classes/jabberwocky.txt 
  null
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.381 sec - in com.occamlab.te.parsers.HttpParserTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.397 sec - in com.occamlab.te.parsers.HttpParserTest
 Running com.occamlab.te.parsers.xml.FileSchemaSupplierTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 sec - in com.occamlab.te.parsers.xml.FileSchemaSupplierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.243 sec - in com.occamlab.te.parsers.xml.FileSchemaSupplierTest
 Running com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
 Running com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
 Running com.occamlab.te.parsers.SchematronValidatingParserTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.355 sec - in com.occamlab.te.parsers.SchematronValidatingParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.373 sec - in com.occamlab.te.parsers.SchematronValidatingParserTest
 Running com.occamlab.te.parsers.XMLValidatingParserTest
-Oct 06, 2026 3:58:28 AM com.occamlab.te.parsers.XMLValidatingParser parse
+Oct 10, 2026 9:09:04 PM com.occamlab.te.parsers.XMLValidatingParser parse
 INFO: Error parsing InputStream
 org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
 	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
@@ -422,17 +422,17 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not al
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 sec - in com.occamlab.te.parsers.XMLValidatingParserTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.181 sec - in com.occamlab.te.parsers.XMLValidatingParserTest
 Running com.occamlab.te.parsers.ImageParserTest
-Oct 06, 2026 3:58:28 AM com.occamlab.te.parsers.ImageParser parse
+Oct 10, 2026 9:09:04 PM com.occamlab.te.parsers.ImageParser parse
 WARNING: Failed to parse text/plain resource from file:/var/maven/app/teamengine-core/target/test-classes/jabberwocky.txt 
  null
-Oct 06, 2026 3:58:28 AM com.occamlab.te.parsers.ImageParser parse
+Oct 10, 2026 9:09:04 PM com.occamlab.te.parsers.ImageParser parse
 WARNING: Failed to parse content/unknown resource from file:/var/maven/app/teamengine-core/target/test-classes/img/fjord.webp 
  null
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 sec - in com.occamlab.te.parsers.ImageParserTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 sec - in com.occamlab.te.parsers.ImageParserTest
 Running com.occamlab.te.SetupOptionsTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.occamlab.te.SetupOptionsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.occamlab.te.SetupOptionsTest
 Running com.occamlab.te.TECoreTest
 Testing suite test:suite in Test Mode with defaultResult of Pass ...
 ******************************************************************************************************************************
@@ -473,9 +473,9 @@ Testing suite test:suite in Test Mode with defaultResult of Pass ...
    Test test:main Failed - Inherited
 			See the detail test Report null/log.xml
 Suite test:suite Failed
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 sec - in com.occamlab.te.TECoreTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 sec - in com.occamlab.te.TECoreTest
 Running com.occamlab.te.html.EarlToHtmlTransformationTest
-Oct 06, 2026 3:58:29 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+Oct 10, 2026 9:09:05 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
 SEVERE: Transformation of EARL to HTML failed.
 java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
 	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
@@ -509,7 +509,7 @@ java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Oct 06, 2026 3:58:29 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+Oct 10, 2026 9:09:05 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
 SEVERE: Transformation of EARL to HTML failed.
 java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
 	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
@@ -543,7 +543,7 @@ java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Oct 06, 2026 3:58:30 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+Oct 10, 2026 9:09:05 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
 SEVERE: Transformation of EARL to HTML failed.
 java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
 	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
@@ -577,7 +577,7 @@ java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Oct 06, 2026 3:58:30 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
+Oct 10, 2026 9:09:05 PM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
 SEVERE: Transformation of EARL to HTML failed.
 java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
 	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
@@ -611,16 +611,16 @@ java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.071 sec - in com.occamlab.te.html.EarlToHtmlTransformationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.199 sec - in com.occamlab.te.html.EarlToHtmlTransformationTest
 Running com.occamlab.te.util.DateTimeUtilsTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.occamlab.te.util.DateTimeUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.occamlab.te.util.DateTimeUtilsTest
 Running com.occamlab.te.util.XMLParserUtilsTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.occamlab.te.util.XMLParserUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in com.occamlab.te.util.XMLParserUtilsTest
 Running com.occamlab.te.CtlEarlReporterTest
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.718 sec - in com.occamlab.te.CtlEarlReporterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.777 sec - in com.occamlab.te.CtlEarlReporterTest
 
 Results :
 
@@ -658,23 +658,23 @@ Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-spi[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml
-Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 4.8 kB/s)
+Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 1.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 5.4 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 23 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 5.0 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 4.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-core/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-core/maven-metadata.xml (1.6 kB at 6.6 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-core/maven-metadata.xml (1.6 kB at 24 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-server/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-server/maven-metadata.xml (1.6 kB at 7.6 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-server/maven-metadata.xml (1.6 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jersey/contribs/jersey-multipart/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/contribs/jersey-multipart/maven-metadata.xml (1.6 kB at 5.8 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/contribs/jersey-multipart/maven-metadata.xml (1.6 kB at 5.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml
-Progress (1): 926 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml (926 B at 3.0 kB/s)
+Progress (1): 926 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml (926 B at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/maven-metadata.xml (4.2 kB at 23 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/maven-metadata.xml (4.2 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 12 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 57 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.66/jcommander-1.66.pom
 [[1;33mWARNING[m] The POM for com.beust:jcommander:jar:1.66 is missing, no dependency information available
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-spi
@@ -706,9 +706,9 @@ Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcomman
  T E S T S
 -------------------------------------------------------
 Running com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec - in com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
 Running com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec - in com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec - in com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
 Running com.occamlab.te.spi.executors.testng.VerifyEarlReporter
 java.io.FileNotFoundException: /var/maven/teamengine/config.xml (No such file or directory)
 	at java.io.FileInputStream.open0(Native Method)
@@ -800,9 +800,9 @@ java.io.FileNotFoundException: /var/maven/teamengine/config.xml (No such file or
 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.456 sec - in com.occamlab.te.spi.executors.testng.VerifyEarlReporter
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.359 sec - in com.occamlab.te.spi.executors.testng.VerifyEarlReporter
 Running com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
 
 Results :
 
@@ -840,7 +840,7 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-spi-ctl[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/maven-metadata.xml
-Progress (1): 731 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/maven-metadata.xml (731 B at 3.3 kB/s)
+Progress (1): 731 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/maven-metadata.xml (731 B at 7.5 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-spi-ctl
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-spi-ctl/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-spi-ctl: pinned=13 upgraded=28 downgraded=0 added=18 removed=0 scope_changed=0
@@ -870,7 +870,7 @@ Progress (1): 731 B                   Downloaded from central: https://repo.ma
  T E S T S
 -------------------------------------------------------
 Running com.occamlab.te.spi.ctl.VerifyCtlExecutor
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.409 sec - in com.occamlab.te.spi.ctl.VerifyCtlExecutor
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.25 sec - in com.occamlab.te.spi.ctl.VerifyCtlExecutor
 
 Results :
 
@@ -907,27 +907,27 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-web[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-servlet/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-servlet/maven-metadata.xml (1.4 kB at 6.6 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-servlet/maven-metadata.xml (1.4 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-fileupload/commons-fileupload/maven-metadata.xml
-Progress (1): 635 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-fileupload/commons-fileupload/maven-metadata.xml (635 B at 3.2 kB/s)
+Progress (1): 635 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-fileupload/commons-fileupload/maven-metadata.xml (635 B at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/activation/activation/maven-metadata.xml
-Progress (1): 498 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/activation/activation/maven-metadata.xml (498 B at 2.0 kB/s)
+Progress (1): 498 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/activation/activation/maven-metadata.xml (498 B at 1.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml
-Progress (1): 564 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml (564 B at 2.7 kB/s)
+Progress (1): 564 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml (564 B at 7.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/mail/mail/maven-metadata.xml
-Progress (1): 867 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/mail/mail/maven-metadata.xml (867 B at 4.2 kB/s)
+Progress (1): 867 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/mail/mail/maven-metadata.xml (867 B at 3.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jstl/jstl-api/maven-metadata.xml
-Progress (1): 331 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jstl/jstl-api/maven-metadata.xml (331 B at 1.4 kB/s)
+Progress (1): 331 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jstl/jstl-api/maven-metadata.xml (331 B at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/derby/derby/maven-metadata.xml
-Progress (1): 928 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/derby/derby/maven-metadata.xml (928 B at 4.2 kB/s)
+Progress (1): 928 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/derby/derby/maven-metadata.xml (928 B at 3.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-api/maven-metadata.xml
-Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-api/maven-metadata.xml (3.7 kB at 12 kB/s)
+Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-api/maven-metadata.xml (3.7 kB at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-ri-bom-ext/3.0.1-b02/jaxws-ri-bom-ext-3.0.1-b02.pom
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-ri-bom/3.0.1-b02/jaxws-ri-bom-3.0.1-b02.pom
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-rt/maven-metadata.xml
-Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-rt/maven-metadata.xml (3.7 kB at 12 kB/s)
+Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-rt/maven-metadata.xml (3.7 kB at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/web/javax.servlet.jsp.jstl/maven-metadata.xml
-Progress (1): 575 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/web/javax.servlet.jsp.jstl/maven-metadata.xml (575 B at 2.1 kB/s)
+Progress (1): 575 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/web/javax.servlet.jsp.jstl/maven-metadata.xml (575 B at 1.5 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for teamengine-web — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-web
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-web/target/dependency-tree-after.txt
@@ -963,57 +963,57 @@ Progress (1): 575 B                   Downloaded from central: https://repo.ma
 -------------------------------------------------------
 Running com.occamlab.te.web.VerifyTestSuite
 ******************************************************************************************************************************
-Testing ex:num-parity-main type Mandatory in Test Mode with defaultResult Pass (c7652723-fbce-4e6b-b96d-f6ddcd7c0250)...
+Testing ex:num-parity-main type Mandatory in Test Mode with defaultResult Pass (bd7329c7-99d9-4b91-a6b5-d7e0059a8938)...
    Assertion: The input number satisfies all constraints.
 ******************************************************************************************************************************
-   Testing ex:is-even type Mandatory in Test Mode with defaultResult Pass (c7652723-fbce-4e6b-b96d-f6ddcd7c0250/d68e28_1)...
+   Testing ex:is-even type Mandatory in Test Mode with defaultResult Pass (bd7329c7-99d9-4b91-a6b5-d7e0059a8938/d68e28_1)...
       Assertion: The integer is even.
    Test ex:is-even Passed
 Test ex:num-parity-main Passed
-Report file "/var/maven/app/teamengine-web/target/te-base/users/adkas13/c7652723-fbce-4e6b-b96d-f6ddcd7c0250/report.html" created!
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.671 sec - in com.occamlab.te.web.VerifyTestSuite
+Report file "/var/maven/app/teamengine-web/target/te-base/users/adkas13/bd7329c7-99d9-4b91-a6b5-d7e0059a8938/report.html" created!
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.712 sec - in com.occamlab.te.web.VerifyTestSuite
 Running com.occamlab.te.web.CoverageMonitorTest
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.CoverageMonitor <init>
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.CoverageMonitor <init>
 WARNING: InputStream cannot be null
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in com.occamlab.te.web.CoverageMonitorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in com.occamlab.te.web.CoverageMonitorTest
 Running com.occamlab.te.web.ConfigFileCreatorTest
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator process
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/scripts
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator process
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/scripts
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator process
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/scripts
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator process
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/scripts
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator process
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/scripts
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
 INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase/config.xml
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator process
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator process
 INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase/scripts
-Oct 06, 2026 3:58:41 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
+Oct 10, 2026 9:09:15 PM com.occamlab.te.web.ConfigFileCreator saveConfigFile
 INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase/config.xml
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec - in com.occamlab.te.web.ConfigFileCreatorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec - in com.occamlab.te.web.ConfigFileCreatorTest
 
 Results :
 
@@ -1030,7 +1030,7 @@ Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp webResources [/var/maven/app/teamengine-web/src/main/webapp] to [/var/maven/app/teamengine-web/target/teamengine]
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/teamengine-web/src/main/webapp]
-[[1;34mINFO[m] Webapp assembled in [178 msecs]
+[[1;34mINFO[m] Webapp assembled in [194 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/teamengine-web/target/teamengine.war
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.6:single[m [1m(default)[m @ [36mteamengine-web[0;1m ---[m
@@ -1184,21 +1184,21 @@ Downloading from smartbear-sweden-plugin-repository: http://www.soapui.org/repos
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for TEAM Engine 5.5-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] TEAM Engine ........................................ [1;32mSUCCESS[m [  2.512 s]
-[[1;34mINFO[m] TEAM Engine - Tomcat Realm ......................... [1;32mSUCCESS[m [  3.801 s]
-[[1;34mINFO[m] TEAM Engine - Shared Resources ..................... [1;32mSUCCESS[m [  0.195 s]
-[[1;34mINFO[m] TEAM Engine - Core Module .......................... [1;32mSUCCESS[m [ 12.375 s]
-[[1;34mINFO[m] TEAM Engine - Service Providers .................... [1;32mSUCCESS[m [  3.716 s]
-[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers ............. [1;32mSUCCESS[m [  1.311 s]
-[[1;34mINFO[m] TEAM Engine - Web Application ...................... [1;32mSUCCESS[m [  7.331 s]
-[[1;34mINFO[m] TEAM Engine - Console Application .................. [1;32mSUCCESS[m [ 0.-110 s]
-[[1;34mINFO[m] TEAM Engine - Virtualization ....................... [1;32mSUCCESS[m [  0.273 s]
-[[1;34mINFO[m] TEAM Engine - Tests ................................ [1;32mSUCCESS[m [  0.918 s]
+[[1;34mINFO[m] TEAM Engine ........................................ [1;32mSUCCESS[m [  3.880 s]
+[[1;34mINFO[m] TEAM Engine - Tomcat Realm ......................... [1;32mSUCCESS[m [  4.068 s]
+[[1;34mINFO[m] TEAM Engine - Shared Resources ..................... [1;32mSUCCESS[m [  0.198 s]
+[[1;34mINFO[m] TEAM Engine - Core Module .......................... [1;32mSUCCESS[m [ 13.106 s]
+[[1;34mINFO[m] TEAM Engine - Service Providers .................... [1;32mSUCCESS[m [  2.979 s]
+[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers ............. [1;32mSUCCESS[m [  0.407 s]
+[[1;34mINFO[m] TEAM Engine - Web Application ...................... [1;32mSUCCESS[m [  7.416 s]
+[[1;34mINFO[m] TEAM Engine - Console Application .................. [1;32mSUCCESS[m [  0.959 s]
+[[1;34mINFO[m] TEAM Engine - Virtualization ....................... [1;32mSUCCESS[m [  0.357 s]
+[[1;34mINFO[m] TEAM Engine - Tests ................................ [1;32mSUCCESS[m [  1.115 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  32.469 s
-[[1;34mINFO[m] Finished at: 2026-10-06T03:58:44Z
+[[1;34mINFO[m] Total time:  34.644 s
+[[1;34mINFO[m] Finished at: 2026-10-10T21:09:20Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/beekeeper.buildinfo: No such file or directory
 dos2unix: Skipping target/beekeeper.buildinfo, not a regular file.

@@ -7,7 +7,7 @@
 
 set -uo pipefail
 
-PATTERN="${1:-*rq3*.buildspec}"
+PATTERN="${1:-*rq2major.buildspec}"
 RC_ROOT="$(pwd)"
 REBUILD_SH="${RC_ROOT}/rebuild.sh"
 LLM_FIXER="${RC_ROOT}/scripts/rq3_exec.py"

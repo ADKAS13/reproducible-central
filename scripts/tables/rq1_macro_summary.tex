@@ -1,13 +1,16 @@
 \begin{table}[htbp]
 \centering
-\caption{Macro Summary of RQ1 Evaluation Metrics Across All Repositories}
+\caption{Macro Summary and Descriptive Statistics of RQ1 Evaluation Metrics ($N = 27$ Repositories)}
 \label{tab:rq1_macro_summary}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{lrrrr}
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Total Repos} & \textbf{Total Modules} & \textbf{Build Success Rate} & \textbf{Test Pass Rate} & \textbf{Equivalence Rate} \\
+\textbf{Metric} & \textbf{Mean $\pm$ Std} & \textbf{Median [IQR]} & \textbf{Min / Max} & \textbf{Total} \\
 \midrule
-20 & 132 & 90.0\% & 53.2\% & 74.2\% \\
+Build Success Rate & 88.9\% & -- & -- & 24/27 \\
+Test Pass Rate & 90.2\% $\pm$ 25.6 & 100.0\% [0.8] & 0.0\% / 100.0\% & 166,633 tests \\
+Module Equivalence Rate & 100.0\% $\pm$ 0.0 & 100.0\% [0.0] & 100.0\% / 100.0\% & 149 modules \\
+Added Dependencies / Repo & 0.00 & 0.0 & 0 / 0 & 0 \\
 \bottomrule
 \end{tabular}%
 }

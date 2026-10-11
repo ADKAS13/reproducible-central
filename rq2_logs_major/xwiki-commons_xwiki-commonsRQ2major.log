@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Oct  6 04:02:44 UTC 2026.
-Universal Time is now:  Tue Oct  6 04:02:44 UTC 2026.
+Local time is now:      Sat Oct 10 21:18:46 UTC 2026.
+Universal Time is now:  Sat Oct 10 21:18:46 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -326,75 +326,53 @@ Universal Time is now:  Tue Oct  6 04:02:44 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mxwiki-commons-tool-verification-resources[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml
-Progress (1): 394 B                   Downloaded from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml (394 B at 1.3 kB/s)
+Progress (1): 394 B                   Downloaded from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml (394 B at 873 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml (5.9 kB at 80 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml (5.9 kB at 71 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml (5.9 kB at 90 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml (5.9 kB at 85 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/maven-metadata.xml (1.2 kB at 5.0 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/maven-metadata.xml (1.2 kB at 4.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml (1.6 kB at 23 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml (1.6 kB at 24 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/maven-metadata.xml (6.3 kB at 92 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.1/httpclient5-5.1.pom
-Progress (1): 4.1 kBProgress (1): 5.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.1/httpclient5-5.1.pom (5.8 kB at 74 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5-parent/5.1/httpclient5-parent-5.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 14 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5-parent/5.1/httpclient5-parent-5.1.pom (14 kB at 201 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.1.1/httpcore5-5.1.1.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.1.1/httpcore5-5.1.1.pom (3.8 kB at 16 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-parent/5.1.1/httpcore5-parent-5.1.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-parent/5.1.1/httpcore5-parent-5.1.1.pom (10 kB at 127 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.1.1/httpcore5-h2-5.1.1.pom
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.1.1/httpcore5-h2-5.1.1.pom (3.5 kB at 46 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/maven-metadata.xml (6.3 kB at 79 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/maven-metadata.xml
-Progress (1): 975 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/maven-metadata.xml (975 B at 15 kB/s)
+Progress (1): 975 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/maven-metadata.xml (975 B at 4.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml
-Progress (1): 934 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 14 kB/s)
+Progress (1): 934 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/maven-metadata.xml (3.1 kB at 13 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/maven-metadata.xml (3.1 kB at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 20 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml (3.3 kB at 50 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml (3.3 kB at 35 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 17 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml
-Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 6.4 kB/s)
+Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 5.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml
-Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 9.3 kB/s)
+Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 6.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 11 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 9.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/maven-metadata.xml
 Progress (1): 753 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/maven-metadata.xml (753 B at 3.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 59 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 65 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 36 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/maven-metadata.xml (4.0 kB at 66 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/maven-metadata.xml (4.0 kB at 42 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/maven-metadata.xml (4.0 kB at 40 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-M1/junit-vintage-engine-6.0.0-M1.pom
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-M1/junit-vintage-engine-6.0.0-M1.pom (3.2 kB at 43 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-M2/junit-vintage-engine-6.0.0-M2.pom
-Progress (1): 3.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-M2/junit-vintage-engine-6.0.0-M2.pom (3.4 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-RC1/junit-vintage-engine-6.0.0-RC1.pom
-Progress (1): 3.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-RC1/junit-vintage-engine-6.0.0-RC1.pom (3.4 kB at 43 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-RC2/junit-vintage-engine-6.0.0-RC2.pom
-Progress (1): 3.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-RC2/junit-vintage-engine-6.0.0-RC2.pom (3.4 kB at 36 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-RC3/junit-vintage-engine-6.0.0-RC3.pom
-Progress (1): 3.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0-RC3/junit-vintage-engine-6.0.0-RC3.pom (3.4 kB at 9.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0/junit-vintage-engine-6.0.0.pom
-Progress (1): 3.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/6.0.0/junit-vintage-engine-6.0.0.pom (3.4 kB at 43 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/maven-metadata.xml (4.0 kB at 38 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml
-Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 9.8 kB/s)
+Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 8.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml (1.7 kB at 26 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml (1.7 kB at 20 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 12 kB/s)
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 40 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 61 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 39 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: xwiki-commons-tool-verification-resources
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/xwiki-commons-tools/xwiki-commons-tool-verification-resources/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for xwiki-commons-tool-verification-resources: pinned=8 upgraded=23 downgraded=0 added=7 removed=0 scope_changed=0
@@ -472,9 +450,9 @@ Progress (1): 3.9 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.xwiki.tool.checkstyle.[1mSinceFormatCheckTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: -0.834 s - in org.xwiki.tool.checkstyle.[1mSinceFormatCheckTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.216 s - in org.xwiki.tool.checkstyle.[1mSinceFormatCheckTest[m
 [[1;34mINFO[m] Running org.xwiki.tool.checkstyle.[1mUnstableAnnotationCheckTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s - in org.xwiki.tool.checkstyle.[1mUnstableAnnotationCheckTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in org.xwiki.tool.checkstyle.[1mUnstableAnnotationCheckTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -574,447 +552,105 @@ Audit done.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mxwiki-commons-tool-remote-resource-plugin[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml
-Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 792 B/s)
+Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 2.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/maven-metadata.xml
-Progress (1): 553 B                   Downloaded from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/maven-metadata.xml (553 B at 1.2 kB/s)
+Progress (1): 553 B                   Downloaded from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/maven-metadata.xml (553 B at 7.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/collections/google-collections/maven-metadata.xml
-Progress (1): 444 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/collections/google-collections/maven-metadata.xml (444 B at 1.7 kB/s)
+Progress (1): 444 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/collections/google-collections/maven-metadata.xml (444 B at 5.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 16 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 5.9 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml
-Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 2.3 kB/s)
+Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 8.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/maven-metadata.xml (1.6 kB at 5.9 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/maven-metadata.xml (1.6 kB at 6.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/maven-metadata.xml (1.4 kB at 19 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/maven-metadata.xml (1.4 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/maven-metadata.xml
 Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/maven-metadata.xml (1.6 kB at 5.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/4.0.0-beta-1/maven-archiver-4.0.0-beta-1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 32 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/4.0.0-beta-1/maven-archiver-4.0.0-beta-1.pom (32 kB at 355 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml (3.9 kB at 59 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml (3.9 kB at 37 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/maven-metadata.xml
-Progress (1): 989 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/maven-metadata.xml (989 B at 2.1 kB/s)
+Progress (1): 989 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/maven-metadata.xml (989 B at 9.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/maven-metadata.xml
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/maven-metadata.xml (2.4 kB at 6.6 kB/s)
+Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/maven-metadata.xml (2.4 kB at 8.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml (3.9 kB at 56 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml (3.9 kB at 47 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml (3.9 kB at 59 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml (3.9 kB at 48 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml (3.1 kB at 14 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml (3.1 kB at 39 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml (3.8 kB at 56 kB/s)
+Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml (3.8 kB at 49 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/maven-metadata.xml
-Progress (1): 957 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/maven-metadata.xml (957 B at 3.4 kB/s)
+Progress (1): 957 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/maven-metadata.xml (957 B at 9.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/maven-metadata.xml
-Progress (1): 949 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/maven-metadata.xml (949 B at 3.5 kB/s)
+Progress (1): 949 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/maven-metadata.xml (949 B at 9.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/maven-metadata.xml (1.1 kB at 3.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/3.0-alpha-1/maven-project-3.0-alpha-1.pom
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/3.0-alpha-1/maven-project-3.0-alpha-1.pom (3.3 kB at 50 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0-alpha-1/maven-3.0-alpha-1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 21 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0-alpha-1/maven-3.0-alpha-1.pom (21 kB at 90 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.0/model-builder-1.0.pom
-Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/model-builder/1.0/model-builder-1.0.pom (2.9 kB at 8.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-1/maven-project-builder-3.0-alpha-1.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project-builder/3.0-alpha-1/maven-project-builder-3.0-alpha-1.pom (1.7 kB at 22 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/maven-metadata.xml (1.1 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml (3.5 kB at 53 kB/s)
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml (3.5 kB at 41 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-resolver-provider/maven-metadata.xml
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-resolver-provider/maven-metadata.xml (2.3 kB at 7.6 kB/s)
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-resolver-provider/maven-metadata.xml (2.3 kB at 7.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml (3.8 kB at 56 kB/s)
+Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml (3.8 kB at 31 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml
-Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml (2.9 kB at 40 kB/s)
+Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml (2.9 kB at 29 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/maven-metadata.xml (1.0 kB at 3.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/3.0.0/maven-remote-resources-plugin-3.0.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 13 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/3.0.0/maven-remote-resources-plugin-3.0.0.pom (13 kB at 161 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/36/maven-plugins-36.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/36/maven-plugins-36.pom (9.9 kB at 141 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/3.1.0/maven-remote-resources-plugin-3.1.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 15 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/3.1.0/maven-remote-resources-plugin-3.1.0.pom (15 kB at 170 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/3.2.0/maven-remote-resources-plugin-3.2.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 33 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/3.2.0/maven-remote-resources-plugin-3.2.0.pom (33 kB at 140 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/3.3.0/maven-remote-resources-plugin-3.3.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 15 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/3.3.0/maven-remote-resources-plugin-3.3.0.pom (15 kB at 209 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-remote-resources-plugin/maven-metadata.xml (1.0 kB at 1.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/maven-metadata.xml
-Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/maven-metadata.xml (2.8 kB at 8.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.0-alpha-1/maven-resolver-api-2.0.0-alpha-1.pom
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.0-alpha-1/maven-resolver-api-2.0.0-alpha-1.pom (2.6 kB at 6.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.0-alpha-1/maven-resolver-2.0.0-alpha-1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 30 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.0-alpha-1/maven-resolver-2.0.0-alpha-1.pom (30 kB at 52 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.0-alpha-2/maven-resolver-api-2.0.0-alpha-2.pom
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.0-alpha-2/maven-resolver-api-2.0.0-alpha-2.pom (2.6 kB at 5.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.0-alpha-2/maven-resolver-2.0.0-alpha-2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 30 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.0-alpha-2/maven-resolver-2.0.0-alpha-2.pom (30 kB at 73 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.0-alpha-7/maven-resolver-api-2.0.0-alpha-7.pom
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.0-alpha-7/maven-resolver-api-2.0.0-alpha-7.pom (2.6 kB at 6.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.0-alpha-7/maven-resolver-2.0.0-alpha-7.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 31 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.0-alpha-7/maven-resolver-2.0.0-alpha-7.pom (31 kB at 49 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/10.0.19/jetty-bom-10.0.19.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/10.0.19/jetty-bom-10.0.19.pom (19 kB at 72 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.0/maven-resolver-api-2.0.0.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.0/maven-resolver-api-2.0.0.pom (2.1 kB at 5.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.0/maven-resolver-2.0.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 33 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.0/maven-resolver-2.0.0.pom (33 kB at 93 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/10.0.21/jetty-bom-10.0.21.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/10.0.21/jetty-bom-10.0.21.pom (19 kB at 227 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.3/maven-resolver-api-2.0.3.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.3/maven-resolver-api-2.0.3.pom (2.1 kB at 4.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.3/maven-resolver-2.0.3.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 34 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.3/maven-resolver-2.0.3.pom (34 kB at 74 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.6/maven-resolver-api-2.0.6.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.6/maven-resolver-api-2.0.6.pom (2.1 kB at 3.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.6/maven-resolver-2.0.6.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 34 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.6/maven-resolver-2.0.6.pom (34 kB at 70 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.8/maven-resolver-api-2.0.8.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.8/maven-resolver-api-2.0.8.pom (2.1 kB at 5.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.8/maven-resolver-2.0.8.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 34 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.8/maven-resolver-2.0.8.pom (34 kB at 93 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.10/maven-resolver-api-2.0.10.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.10/maven-resolver-api-2.0.10.pom (2.1 kB at 9.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.10/maven-resolver-2.0.10.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.10/maven-resolver-2.0.10.pom (35 kB at 157 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.11/maven-resolver-api-2.0.11.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.11/maven-resolver-api-2.0.11.pom (2.1 kB at 4.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.11/maven-resolver-2.0.11.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.11/maven-resolver-2.0.11.pom (35 kB at 60 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.14/maven-resolver-api-2.0.14.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.14/maven-resolver-api-2.0.14.pom (2.1 kB at 21 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.14/maven-resolver-2.0.14.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.14/maven-resolver-2.0.14.pom (35 kB at 512 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.15/maven-resolver-api-2.0.15.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.15/maven-resolver-api-2.0.15.pom (2.1 kB at 4.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.15/maven-resolver-2.0.15.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.15/maven-resolver-2.0.15.pom (35 kB at 70 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.16/maven-resolver-api-2.0.16.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.16/maven-resolver-api-2.0.16.pom (2.1 kB at 31 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.16/maven-resolver-2.0.16.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.16/maven-resolver-2.0.16.pom (35 kB at 499 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.17/maven-resolver-api-2.0.17.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.17/maven-resolver-api-2.0.17.pom (2.1 kB at 7.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.17/maven-resolver-2.0.17.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.17/maven-resolver-2.0.17.pom (35 kB at 156 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.18/maven-resolver-api-2.0.18.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.18/maven-resolver-api-2.0.18.pom (2.1 kB at 9.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.18/maven-resolver-2.0.18.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 35 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.18/maven-resolver-2.0.18.pom (35 kB at 163 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.22/maven-resolver-api-2.0.22.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/2.0.22/maven-resolver-api-2.0.22.pom (2.1 kB at 29 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.22/maven-resolver-2.0.22.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 36 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/2.0.22/maven-resolver-2.0.22.pom (36 kB at 375 kB/s)
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/maven-metadata.xml (2.8 kB at 9.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/maven-metadata.xml
-Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/maven-metadata.xml (2.8 kB at 9.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.0-alpha-1/maven-resolver-impl-2.0.0-alpha-1.pom
-Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.0-alpha-1/maven-resolver-impl-2.0.0-alpha-1.pom (4.2 kB at 7.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.0-alpha-1/maven-resolver-named-locks-2.0.0-alpha-1.pom
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.0-alpha-1/maven-resolver-named-locks-2.0.0-alpha-1.pom (3.0 kB at 4.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.0-alpha-2/maven-resolver-impl-2.0.0-alpha-2.pom
-Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.0-alpha-2/maven-resolver-impl-2.0.0-alpha-2.pom (4.2 kB at 7.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.0-alpha-2/maven-resolver-named-locks-2.0.0-alpha-2.pom
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.0-alpha-2/maven-resolver-named-locks-2.0.0-alpha-2.pom (3.0 kB at 5.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.0-alpha-7/maven-resolver-impl-2.0.0-alpha-7.pom
-Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.0-alpha-7/maven-resolver-impl-2.0.0-alpha-7.pom (4.2 kB at 10 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.0-alpha-7/maven-resolver-named-locks-2.0.0-alpha-7.pom
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.0-alpha-7/maven-resolver-named-locks-2.0.0-alpha-7.pom (3.0 kB at 7.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.0/maven-resolver-impl-2.0.0.pom
-Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.0/maven-resolver-impl-2.0.0.pom (3.6 kB at 5.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.0/maven-resolver-named-locks-2.0.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.0/maven-resolver-named-locks-2.0.0.pom (2.3 kB at 4.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.3/maven-resolver-impl-2.0.3.pom
-Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.3/maven-resolver-impl-2.0.3.pom (3.6 kB at 5.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.3/maven-resolver-named-locks-2.0.3.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.3/maven-resolver-named-locks-2.0.3.pom (2.3 kB at 4.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.6/maven-resolver-impl-2.0.6.pom
-Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.6/maven-resolver-impl-2.0.6.pom (3.6 kB at 7.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.6/maven-resolver-named-locks-2.0.6.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.6/maven-resolver-named-locks-2.0.6.pom (2.3 kB at 3.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.8/maven-resolver-impl-2.0.8.pom
-Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.8/maven-resolver-impl-2.0.8.pom (3.6 kB at 6.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.8/maven-resolver-named-locks-2.0.8.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.8/maven-resolver-named-locks-2.0.8.pom (2.3 kB at 4.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.10/maven-resolver-impl-2.0.10.pom
-Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.10/maven-resolver-impl-2.0.10.pom (3.6 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.10/maven-resolver-named-locks-2.0.10.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.10/maven-resolver-named-locks-2.0.10.pom (2.3 kB at 6.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.11/maven-resolver-impl-2.0.11.pom
-Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.11/maven-resolver-impl-2.0.11.pom (3.6 kB at 6.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.11/maven-resolver-named-locks-2.0.11.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.11/maven-resolver-named-locks-2.0.11.pom (2.3 kB at 4.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.14/maven-resolver-impl-2.0.14.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.14/maven-resolver-impl-2.0.14.pom (3.8 kB at 18 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.14/maven-resolver-named-locks-2.0.14.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.14/maven-resolver-named-locks-2.0.14.pom (2.4 kB at 26 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.15/maven-resolver-impl-2.0.15.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.15/maven-resolver-impl-2.0.15.pom (3.8 kB at 9.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.15/maven-resolver-named-locks-2.0.15.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.15/maven-resolver-named-locks-2.0.15.pom (2.4 kB at 6.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.16/maven-resolver-impl-2.0.16.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.16/maven-resolver-impl-2.0.16.pom (3.8 kB at 10 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.16/maven-resolver-named-locks-2.0.16.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.16/maven-resolver-named-locks-2.0.16.pom (2.4 kB)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.17/maven-resolver-impl-2.0.17.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.17/maven-resolver-impl-2.0.17.pom (3.8 kB at 9.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.17/maven-resolver-named-locks-2.0.17.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.17/maven-resolver-named-locks-2.0.17.pom (2.4 kB at 6.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.18/maven-resolver-impl-2.0.18.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.18/maven-resolver-impl-2.0.18.pom (3.8 kB at 8.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.18/maven-resolver-named-locks-2.0.18.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.18/maven-resolver-named-locks-2.0.18.pom (2.4 kB at 6.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.22/maven-resolver-impl-2.0.22.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/2.0.22/maven-resolver-impl-2.0.22.pom (3.8 kB at 8.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.22/maven-resolver-named-locks-2.0.22.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/2.0.22/maven-resolver-named-locks-2.0.22.pom (2.4 kB at 5.1 kB/s)
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/maven-metadata.xml (2.8 kB at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/maven-metadata.xml
-Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/maven-metadata.xml (2.8 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.0-alpha-1/maven-resolver-spi-2.0.0-alpha-1.pom
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.0-alpha-1/maven-resolver-spi-2.0.0-alpha-1.pom (2.6 kB at 4.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.0-alpha-2/maven-resolver-spi-2.0.0-alpha-2.pom
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.0-alpha-2/maven-resolver-spi-2.0.0-alpha-2.pom (2.6 kB at 5.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.0-alpha-7/maven-resolver-spi-2.0.0-alpha-7.pom
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.0-alpha-7/maven-resolver-spi-2.0.0-alpha-7.pom (2.6 kB at 4.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.0/maven-resolver-spi-2.0.0.pom
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.0/maven-resolver-spi-2.0.0.pom (2.1 kB at 3.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.3/maven-resolver-spi-2.0.3.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.3/maven-resolver-spi-2.0.3.pom (2.3 kB at 3.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.6/maven-resolver-spi-2.0.6.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.6/maven-resolver-spi-2.0.6.pom (2.3 kB at 4.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.8/maven-resolver-spi-2.0.8.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.8/maven-resolver-spi-2.0.8.pom (2.3 kB at 3.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.10/maven-resolver-spi-2.0.10.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.10/maven-resolver-spi-2.0.10.pom (2.3 kB at 5.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.11/maven-resolver-spi-2.0.11.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.11/maven-resolver-spi-2.0.11.pom (2.3 kB at 3.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.14/maven-resolver-spi-2.0.14.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.14/maven-resolver-spi-2.0.14.pom (2.3 kB at 10 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.15/maven-resolver-spi-2.0.15.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.15/maven-resolver-spi-2.0.15.pom (2.3 kB at 3.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.16/maven-resolver-spi-2.0.16.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.16/maven-resolver-spi-2.0.16.pom (2.3 kB at 4.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.17/maven-resolver-spi-2.0.17.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.17/maven-resolver-spi-2.0.17.pom (2.3 kB at 7.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.18/maven-resolver-spi-2.0.18.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.18/maven-resolver-spi-2.0.18.pom (2.3 kB at 6.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.22/maven-resolver-spi-2.0.22.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/2.0.22/maven-resolver-spi-2.0.22.pom (2.3 kB at 5.0 kB/s)
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/maven-metadata.xml (2.8 kB at 5.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/maven-metadata.xml
 Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/maven-metadata.xml (2.8 kB at 10 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.0-alpha-1/maven-resolver-util-2.0.0-alpha-1.pom
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.0-alpha-1/maven-resolver-util-2.0.0-alpha-1.pom (2.7 kB at 5.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.0-alpha-2/maven-resolver-util-2.0.0-alpha-2.pom
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.0-alpha-2/maven-resolver-util-2.0.0-alpha-2.pom (2.7 kB at 5.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.0-alpha-7/maven-resolver-util-2.0.0-alpha-7.pom
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.0-alpha-7/maven-resolver-util-2.0.0-alpha-7.pom (2.7 kB at 4.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.0/maven-resolver-util-2.0.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.0/maven-resolver-util-2.0.0.pom (2.3 kB at 6.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.3/maven-resolver-util-2.0.3.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.3/maven-resolver-util-2.0.3.pom (2.3 kB at 4.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.6/maven-resolver-util-2.0.6.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.6/maven-resolver-util-2.0.6.pom (2.3 kB at 5.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.8/maven-resolver-util-2.0.8.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.8/maven-resolver-util-2.0.8.pom (2.3 kB at 4.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.10/maven-resolver-util-2.0.10.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.10/maven-resolver-util-2.0.10.pom (2.3 kB at 6.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.11/maven-resolver-util-2.0.11.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.11/maven-resolver-util-2.0.11.pom (2.4 kB at 4.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.14/maven-resolver-util-2.0.14.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.14/maven-resolver-util-2.0.14.pom (2.4 kB at 28 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.15/maven-resolver-util-2.0.15.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.15/maven-resolver-util-2.0.15.pom (2.4 kB at 3.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.16/maven-resolver-util-2.0.16.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.16/maven-resolver-util-2.0.16.pom (2.4 kB at 33 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.17/maven-resolver-util-2.0.17.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.17/maven-resolver-util-2.0.17.pom (2.4 kB at 9.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.18/maven-resolver-util-2.0.18.pom
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.18/maven-resolver-util-2.0.18.pom (2.4 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.22/maven-resolver-util-2.0.22.pom
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/2.0.22/maven-resolver-util-2.0.22.pom (3.3 kB at 42 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/maven-metadata.xml
-Progress (1): 347 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/maven-metadata.xml (347 B at 1.2 kB/s)
+Progress (1): 347 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-resolver/maven-metadata.xml (347 B at 1.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml
-Progress (1): 789 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml (789 B at 2.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.3.0/maven-common-artifact-filters-3.3.0.pom
-Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.3.0/maven-common-artifact-filters-3.3.0.pom (5.6 kB at 85 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.3.1/maven-common-artifact-filters-3.3.1.pom
-Progress (1): 4.1 kBProgress (1): 5.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.3.1/maven-common-artifact-filters-3.3.1.pom (5.5 kB at 83 kB/s)
+Progress (1): 789 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml (789 B at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/maven-metadata.xml
-Progress (1): 936 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/maven-metadata.xml (936 B at 2.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/4.0.0-beta-1/maven-filtering-4.0.0-beta-1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 34 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/4.0.0-beta-1/maven-filtering-4.0.0-beta-1.pom (34 kB at 489 kB/s)
+Progress (1): 936 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/maven-metadata.xml (936 B at 3.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml
-Progress (1): 888 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml (888 B at 14 kB/s)
+Progress (1): 888 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml (888 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml (1.6 kB at 25 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml (1.6 kB at 22 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/maven-metadata.xml
-Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/maven-metadata.xml (636 B at 3.0 kB/s)
+Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/maven-metadata.xml (636 B at 2.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/maven-metadata.xml
-Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/maven-metadata.xml (2.2 kB at 7.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.1/xbean-reflect-4.1.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.1/xbean-reflect-4.1.pom (6.1 kB at 9.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.1/xbean-4.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.1/xbean-4.1.pom (18 kB at 260 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.2/xbean-reflect-4.2.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.2/xbean-reflect-4.2.pom (6.1 kB at 96 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.2/xbean-4.2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.2/xbean-4.2.pom (18 kB at 264 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.3/xbean-reflect-4.3.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.3/xbean-reflect-4.3.pom (6.1 kB at 8.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.3/xbean-4.3.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.3/xbean-4.3.pom (18 kB at 276 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.4/xbean-reflect-4.4.pom
-Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.4/xbean-reflect-4.4.pom (5.9 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.4/xbean-4.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.4/xbean-4.4.pom (18 kB at 281 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.5/xbean-reflect-4.5.pom
-Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.5/xbean-reflect-4.5.pom (5.9 kB at 88 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.5/xbean-4.5.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.5/xbean-4.5.pom (18 kB at 268 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.6/xbean-reflect-4.6.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.6/xbean-reflect-4.6.pom (6.1 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.6/xbean-4.6.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.6/xbean-4.6.pom (18 kB at 252 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.7/xbean-reflect-4.7.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.7/xbean-reflect-4.7.pom (6.1 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.7/xbean-4.7.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.7/xbean-4.7.pom (18 kB at 256 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.8/xbean-reflect-4.8.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.8/xbean-reflect-4.8.pom (6.1 kB at 9.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.8/xbean-4.8.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.8/xbean-4.8.pom (18 kB at 267 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.9/xbean-reflect-4.9.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.9/xbean-reflect-4.9.pom (6.1 kB at 16 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.9/xbean-4.9.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.9/xbean-4.9.pom (18 kB at 259 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.10/xbean-reflect-4.10.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.10/xbean-reflect-4.10.pom (6.1 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.10/xbean-4.10.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.10/xbean-4.10.pom (18 kB at 284 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.11/xbean-reflect-4.11.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.11/xbean-reflect-4.11.pom (6.1 kB at 9.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.11/xbean-4.11.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.11/xbean-4.11.pom (19 kB at 84 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.12/xbean-reflect-4.12.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.12/xbean-reflect-4.12.pom (6.1 kB at 15 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.13/xbean-reflect-4.13.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.13/xbean-reflect-4.13.pom (6.1 kB at 9.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.13/xbean-4.13.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.13/xbean-4.13.pom (19 kB at 244 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.14/xbean-reflect-4.14.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.14/xbean-reflect-4.14.pom (6.1 kB at 29 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.14/xbean-4.14.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.14/xbean-4.14.pom (19 kB at 308 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.15/xbean-reflect-4.15.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.15/xbean-reflect-4.15.pom (6.1 kB at 9.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.15/xbean-4.15.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.15/xbean-4.15.pom (19 kB at 281 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.16/xbean-reflect-4.16.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.16/xbean-reflect-4.16.pom (6.1 kB at 85 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.16/xbean-4.16.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.16/xbean-4.16.pom (19 kB at 277 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.17/xbean-reflect-4.17.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.17/xbean-reflect-4.17.pom (6.1 kB at 8.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.17/xbean-4.17.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.17/xbean-4.17.pom (19 kB at 241 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-java8-flava/2.3/genesis-java8-flava-2.3.pom
-Progress (1): 4.1 kBProgress (1): 5.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-java8-flava/2.3/genesis-java8-flava-2.3.pom (5.5 kB at 75 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-default-flava/2.3/genesis-default-flava-2.3.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 15 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-default-flava/2.3/genesis-default-flava-2.3.pom (15 kB at 231 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis/2.3/genesis-2.3.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 16 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis/2.3/genesis-2.3.pom (16 kB at 253 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.18/xbean-reflect-4.18.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.18/xbean-reflect-4.18.pom (6.1 kB at 93 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.18/xbean-4.18.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.18/xbean-4.18.pom (19 kB at 91 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.19/xbean-reflect-4.19.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.19/xbean-reflect-4.19.pom (6.1 kB at 12 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.19/xbean-4.19.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.19/xbean-4.19.pom (19 kB at 73 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.20/xbean-reflect-4.20.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.20/xbean-reflect-4.20.pom (6.1 kB at 87 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.20/xbean-4.20.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.20/xbean-4.20.pom (19 kB at 272 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.21/xbean-reflect-4.21.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.21/xbean-reflect-4.21.pom (6.1 kB at 98 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.21/xbean-4.21.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.21/xbean-4.21.pom (19 kB at 299 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.22/xbean-reflect-4.22.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.22/xbean-reflect-4.22.pom (6.1 kB at 98 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.22/xbean-4.22.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.22/xbean-4.22.pom (19 kB at 304 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.23/xbean-reflect-4.23.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.23/xbean-reflect-4.23.pom (6.1 kB at 29 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.23/xbean-4.23.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.23/xbean-4.23.pom (19 kB at 295 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.24/xbean-reflect-4.24.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.24/xbean-reflect-4.24.pom (6.1 kB at 15 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.24/xbean-4.24.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.24/xbean-4.24.pom (19 kB at 304 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.25/xbean-reflect-4.25.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.25/xbean-reflect-4.25.pom (6.1 kB at 14 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.25/xbean-4.25.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.25/xbean-4.25.pom (19 kB at 273 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.26/xbean-reflect-4.26.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.26/xbean-reflect-4.26.pom (6.1 kB at 22 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.26/xbean-4.26.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.26/xbean-4.26.pom (19 kB at 239 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.27/xbean-reflect-4.27.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.27/xbean-reflect-4.27.pom (6.1 kB at 78 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.27/xbean-4.27.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.27/xbean-4.27.pom (19 kB at 281 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.28/xbean-reflect-4.28.pom
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.28/xbean-reflect-4.28.pom (6.1 kB at 25 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.28/xbean-4.28.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.28/xbean-4.28.pom (19 kB at 289 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.29/xbean-reflect-4.29.pom
-Progress (1): 4.1 kBProgress (1): 5.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.29/xbean-reflect-4.29.pom (5.8 kB)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.29/xbean-4.29.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.29/xbean-4.29.pom (19 kB at 50 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.30/xbean-reflect-4.30.pom
-Progress (1): 4.1 kBProgress (1): 5.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.30/xbean-reflect-4.30.pom (5.8 kB at 28 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.30/xbean-4.30.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.30/xbean-4.30.pom (19 kB at 265 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.31/xbean-reflect-4.31.pom
-Progress (1): 4.1 kBProgress (1): 5.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/4.31/xbean-reflect-4.31.pom (5.8 kB at 24 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.31/xbean-4.31.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/4.31/xbean-4.31.pom (19 kB at 294 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/5.0.0/xbean-reflect-5.0.0.pom
-Progress (1): 4.1 kBProgress (1): 5.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/5.0.0/xbean-reflect-5.0.0.pom (5.8 kB at 63 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/5.0.0/xbean-5.0.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean/5.0.0/xbean-5.0.0.pom (19 kB at 139 kB/s)
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/maven-metadata.xml (2.2 kB at 6.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml (3.2 kB at 51 kB/s)
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml (3.2 kB at 38 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml (1.5 kB at 17 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml (1.5 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (2.1 kB at 29 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (2.1 kB at 34 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/maven-metadata.xml (3.1 kB at 48 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/maven-metadata.xml (3.1 kB at 45 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (1.3 kB at 19 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (1.3 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/maven-metadata.xml (2.1 kB at 33 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/maven-metadata.xml (2.1 kB at 29 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/maven-metadata.xml
-Progress (1): 645 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/maven-metadata.xml (645 B at 10 kB/s)
+Progress (1): 645 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/maven-metadata.xml (645 B at 9.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml (3.0 kB at 45 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml (3.0 kB at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/maven-metadata.xml (1.2 kB at 3.8 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/maven-metadata.xml (1.2 kB at 4.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/maven-metadata.xml (1.2 kB at 4.5 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/maven-metadata.xml (1.2 kB at 4.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/maven-metadata.xml
 Progress (1): 438 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/maven-metadata.xml (438 B at 1.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/maven-metadata.xml
-Progress (1): 497 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/maven-metadata.xml (497 B at 1.5 kB/s)
+Progress (1): 497 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/maven-metadata.xml (497 B at 7.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml
-Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (538 B at 8.7 kB/s)
+Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (538 B at 6.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml
-Progress (1): 599 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (599 B at 9.7 kB/s)
+Progress (1): 599 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (599 B at 7.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/maven-metadata.xml
-Progress (1): 667 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/maven-metadata.xml (667 B at 3.0 kB/s)
+Progress (1): 667 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/maven-metadata.xml (667 B at 2.8 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for xwiki-commons-tool-remote-resource-plugin — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: xwiki-commons-tool-remote-resource-plugin
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/xwiki-commons-tools/xwiki-commons-tool-remote-resource-plugin/target/dependency-tree-after.txt
@@ -1305,75 +941,17 @@ Audit done.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mxwiki-commons-tool-enforcer-dependencies[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/maven-metadata.xml (1.1 kB at 3.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.0.0-M1/enforcer-api-3.0.0-M1.pom
-Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.0.0-M1/enforcer-api-3.0.0-M1.pom (2.9 kB at 44 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.0.0-M1/enforcer-3.0.0-M1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.0.0-M1/enforcer-3.0.0-M1.pom (8.3 kB at 124 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.1.0/enforcer-api-3.1.0.pom
-Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.1.0/enforcer-api-3.1.0.pom (2.9 kB at 46 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.1.0/enforcer-3.1.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.1.0/enforcer-3.1.0.pom (8.3 kB at 132 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.2.1/enforcer-api-3.2.1.pom
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.2.1/enforcer-api-3.2.1.pom (3.9 kB at 63 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.2.1/enforcer-3.2.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.2.1/enforcer-3.2.1.pom (8.2 kB at 129 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.3.0/enforcer-api-3.3.0.pom
-Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.3.0/enforcer-api-3.3.0.pom (3.6 kB at 56 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.3.0/enforcer-3.3.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.3.0/enforcer-3.3.0.pom (8.2 kB at 123 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.4.0/enforcer-api-3.4.0.pom
-Progress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.4.0/enforcer-api-3.4.0.pom (3.6 kB at 47 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.4.0/enforcer-3.4.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.4.0/enforcer-3.4.0.pom (8.3 kB at 125 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.5.0/enforcer-api-3.5.0.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.5.0/enforcer-api-3.5.0.pom (3.8 kB at 51 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.5.0/enforcer-3.5.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.5.0/enforcer-3.5.0.pom (9.3 kB at 123 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.0/enforcer-api-3.6.0.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.0/enforcer-api-3.6.0.pom (3.8 kB at 47 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.6.0/enforcer-3.6.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.6.0/enforcer-3.6.0.pom (9.3 kB at 129 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.1/enforcer-api-3.6.1.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.1/enforcer-api-3.6.1.pom (3.8 kB at 54 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.6.1/enforcer-3.6.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.6.1/enforcer-3.6.1.pom (9.1 kB at 112 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.2/enforcer-api-3.6.2.pom
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.2/enforcer-api-3.6.2.pom (3.8 kB at 50 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.6.2/enforcer-3.6.2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/3.6.2/enforcer-3.6.2.pom (9.2 kB at 121 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/maven-metadata.xml (1.1 kB at 2.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/maven-metadata.xml (1.1 kB at 2.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.0.0-M1/enforcer-rules-3.0.0-M1.pom
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.0.0-M1/enforcer-rules-3.0.0-M1.pom (3.9 kB at 60 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.1.0/enforcer-rules-3.1.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.1.0/enforcer-rules-3.1.0.pom (4.9 kB at 70 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/3.1.1/maven-dependency-tree-3.1.1.pom
-Progress (1): 4.1 kBProgress (1): 6.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/3.1.1/maven-dependency-tree-3.1.1.pom (6.5 kB at 99 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.2.1/enforcer-rules-3.2.1.pom
-Progress (1): 4.1 kBProgress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.2.1/enforcer-rules-3.2.1.pom (4.1 kB at 62 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.3.0/enforcer-rules-3.3.0.pom
-Progress (1): 4.1 kBProgress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.3.0/enforcer-rules-3.3.0.pom (4.1 kB at 66 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.4.0/enforcer-rules-3.4.0.pom
-Progress (1): 4.1 kBProgress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.4.0/enforcer-rules-3.4.0.pom (4.1 kB at 18 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.5.0/enforcer-rules-3.5.0.pom
-Progress (1): 4.1 kBProgress (1): 5.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.5.0/enforcer-rules-3.5.0.pom (5.4 kB at 75 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.0/enforcer-rules-3.6.0.pom
-Progress (1): 4.1 kBProgress (1): 5.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.0/enforcer-rules-3.6.0.pom (5.4 kB at 17 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.1/enforcer-rules-3.6.1.pom
-Progress (1): 4.1 kBProgress (1): 5.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.1/enforcer-rules-3.6.1.pom (5.2 kB at 78 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.2/enforcer-rules-3.6.2.pom
-Progress (1): 4.1 kBProgress (1): 5.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.2/enforcer-rules-3.6.2.pom (5.2 kB at 84 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/maven-metadata.xml (1.1 kB at 2.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/maven-metadata.xml
-Progress (1): 746 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/maven-metadata.xml (746 B at 1.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/3.2.0/maven-dependency-tree-3.2.0.pom
-Progress (1): 4.1 kBProgress (1): 6.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/3.2.0/maven-dependency-tree-3.2.0.pom (6.2 kB at 94 kB/s)
+Progress (1): 746 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/maven-metadata.xml (746 B at 2.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/beanshell/bsh/maven-metadata.xml
-Progress (1): 323 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/beanshell/bsh/maven-metadata.xml (323 B at 1.3 kB/s)
+Progress (1): 323 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/beanshell/bsh/maven-metadata.xml (323 B at 2.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/maven-metadata.xml
-Progress (1): 508 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/maven-metadata.xml (508 B at 2.1 kB/s)
+Progress (1): 508 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/maven-metadata.xml (508 B at 6.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/maven-metadata.xml
-Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/maven-metadata.xml (677 B at 2.2 kB/s)
+Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/maven-metadata.xml (677 B at 8.5 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for xwiki-commons-tool-enforcer-dependencies — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: xwiki-commons-tool-enforcer-dependencies
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/xwiki-commons-tools/xwiki-commons-tool-enforcers/xwiki-commons-tool-enforcer-dependencies/target/dependency-tree-after.txt
@@ -1539,41 +1117,41 @@ Audit done.
 [[1;34mINFO[m] [1m---------< [0;36morg.xwiki.commons:xwiki-commons-tool-spoon-checks[0;1m >----------[m
 [[1;34mINFO[m] [1mBuilding XWiki Commons - Tools - Spoon - Checks 13.6-SNAPSHOT   [10/100][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 22 kB/s)
+Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 5.0 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.resources/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml (1.1 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml (1.1 kB at 12 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.expressions/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml (1.4 kB at 18 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 21 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 17 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 15 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
+Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
-Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 22 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 16 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.jobs/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
+Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
-Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 17 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
@@ -1583,25 +1161,25 @@ Progress (1): 1.2 kB                    Downloaded from central: https://repo.
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 15 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 17 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.preferences/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/osgi/org.osgi.service.prefs/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/osgi/org.osgi.service.prefs/maven-metadata.xml
-Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 5.7 kB/s)
+Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 5.1 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.osgi:org.osgi.service.prefs/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/osgi/org.osgi.service.prefs/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 20 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 5.3 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.contenttype/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.preferences/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.preferences/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml (1.1 kB at 17 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml (1.1 kB at 15 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.app/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.registry/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
@@ -1623,10 +1201,10 @@ Progress (1): 1.1 kB                    Downloaded from central: https://repo.
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.jobs/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.jobs/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.preferences/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.preferences/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml (1.2 kB at 14 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml (1.2 kB at 4.0 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.filesystem/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.osgi/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
@@ -1634,15 +1212,15 @@ Progress (1): 1.2 kB                    Downloaded from central: https://repo.
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.filesystem/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.filesystem/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
-Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
+Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 5.6 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 5.1 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.text/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
 Downloading from sonatype-nexus-snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
 Downloading from maven.inria.fr-snapshot: http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 5.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 4.5 kB/s)
 [[1;33mWARNING[m] Could not transfer metadata org.eclipse.platform:org.eclipse.core.commands/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.equinox.common/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
 [[1;33mWARNING[m] Failure to transfer org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from http://maven.inria.fr/artifactory/spoon-public-snapshot was cached in the local repository, resolution will not be reattempted until the update interval of maven.inria.fr-snapshot has elapsed or updates are forced. Original error: Could not transfer metadata org.eclipse.platform:org.eclipse.core.runtime/maven-metadata.xml from/to maven.inria.fr-snapshot (http://maven.inria.fr/artifactory/spoon-public-snapshot): Transfer failed for http://maven.inria.fr/artifactory/spoon-public-snapshot/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
@@ -3091,165 +2669,39 @@ Audit done.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mxwiki-commons-tool-test-simple[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/cglib/cglib/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/cglib/cglib/maven-metadata.xml (1.2 kB at 4.4 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/cglib/cglib/maven-metadata.xml (1.2 kB at 4.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 146 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 142 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 172 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 151 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache-extras/beanshell/bsh/maven-metadata.xml
-Progress (1): 368 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache-extras/beanshell/bsh/maven-metadata.xml (368 B at 1.4 kB/s)
+Progress (1): 368 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache-extras/beanshell/bsh/maven-metadata.xml (368 B at 1.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jmock/jmock/maven-metadata.xml
-Progress (1): 745 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock/maven-metadata.xml (745 B at 2.3 kB/s)
+Progress (1): 745 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock/maven-metadata.xml (745 B at 1.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-imposters/maven-metadata.xml
-Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-imposters/maven-metadata.xml (538 B at 1.1 kB/s)
+Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-imposters/maven-metadata.xml (538 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-junit4/maven-metadata.xml
-Progress (1): 752 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-junit4/maven-metadata.xml (752 B at 3.0 kB/s)
+Progress (1): 752 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-junit4/maven-metadata.xml (752 B at 2.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-legacy/maven-metadata.xml
-Progress (1): 752 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-legacy/maven-metadata.xml (752 B at 1.8 kB/s)
+Progress (1): 752 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-legacy/maven-metadata.xml (752 B at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-testjar/maven-metadata.xml
-Progress (1): 722 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-testjar/maven-metadata.xml (722 B at 2.2 kB/s)
+Progress (1): 722 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jmock/jmock-testjar/maven-metadata.xml (722 B at 2.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 50 kB/s)
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 47 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 61 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 57 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 68 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 66 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 68 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 59 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 192 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 175 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/maven-metadata.xml
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/maven-metadata.xml (3.5 kB at 50 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.0.0/mockito-junit-jupiter-4.0.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.0.0/mockito-junit-jupiter-4.0.0.pom (2.3 kB at 32 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.1.0/mockito-junit-jupiter-4.1.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.1.0/mockito-junit-jupiter-4.1.0.pom (2.3 kB at 33 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.2.0/mockito-junit-jupiter-4.2.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.2.0/mockito-junit-jupiter-4.2.0.pom (2.3 kB at 35 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.3.0/mockito-junit-jupiter-4.3.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.3.0/mockito-junit-jupiter-4.3.0.pom (2.3 kB at 6.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.3.1/mockito-junit-jupiter-4.3.1.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.3.1/mockito-junit-jupiter-4.3.1.pom (2.3 kB at 30 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.4.0/mockito-junit-jupiter-4.4.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.4.0/mockito-junit-jupiter-4.4.0.pom (2.3 kB at 30 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.5.0/mockito-junit-jupiter-4.5.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.5.0/mockito-junit-jupiter-4.5.0.pom (2.3 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.5.1/mockito-junit-jupiter-4.5.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.5.1/mockito-junit-jupiter-4.5.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.6.0/mockito-junit-jupiter-4.6.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.6.0/mockito-junit-jupiter-4.6.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.6.1/mockito-junit-jupiter-4.6.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.6.1/mockito-junit-jupiter-4.6.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.7.0/mockito-junit-jupiter-4.7.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.7.0/mockito-junit-jupiter-4.7.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.8.0/mockito-junit-jupiter-4.8.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.8.0/mockito-junit-jupiter-4.8.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.8.1/mockito-junit-jupiter-4.8.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.8.1/mockito-junit-jupiter-4.8.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.9.0/mockito-junit-jupiter-4.9.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.9.0/mockito-junit-jupiter-4.9.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.10.0/mockito-junit-jupiter-4.10.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.10.0/mockito-junit-jupiter-4.10.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.11.0/mockito-junit-jupiter-4.11.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.11.0/mockito-junit-jupiter-4.11.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.0.0/mockito-junit-jupiter-5.0.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.0.0/mockito-junit-jupiter-5.0.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.1.0/mockito-junit-jupiter-5.1.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.1.0/mockito-junit-jupiter-5.1.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.1.1/mockito-junit-jupiter-5.1.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.1.1/mockito-junit-jupiter-5.1.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.2.0/mockito-junit-jupiter-5.2.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.2.0/mockito-junit-jupiter-5.2.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.3.0/mockito-junit-jupiter-5.3.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.3.0/mockito-junit-jupiter-5.3.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.3.1/mockito-junit-jupiter-5.3.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.3.1/mockito-junit-jupiter-5.3.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.4.0/mockito-junit-jupiter-5.4.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.4.0/mockito-junit-jupiter-5.4.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.5.0/mockito-junit-jupiter-5.5.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.5.0/mockito-junit-jupiter-5.5.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.6.0/mockito-junit-jupiter-5.6.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.6.0/mockito-junit-jupiter-5.6.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.8.0/mockito-junit-jupiter-5.8.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.8.0/mockito-junit-jupiter-5.8.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.9.0/mockito-junit-jupiter-5.9.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.9.0/mockito-junit-jupiter-5.9.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.10.0/mockito-junit-jupiter-5.10.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.10.0/mockito-junit-jupiter-5.10.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.pom (0 B at 0 B/s)
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/maven-metadata.xml (3.5 kB at 52 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
-Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 14 kB/s)
+Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/maven-metadata.xml
 Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/maven-metadata.xml (3.7 kB at 12 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha0/log4j-over-slf4j-2.0.0-alpha0.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha0/log4j-over-slf4j-2.0.0-alpha0.pom (1.2 kB at 2.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha1/log4j-over-slf4j-2.0.0-alpha1.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha1/log4j-over-slf4j-2.0.0-alpha1.pom (1.2 kB at 2.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha2/log4j-over-slf4j-2.0.0-alpha2.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha2/log4j-over-slf4j-2.0.0-alpha2.pom (1.2 kB at 2.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha3/log4j-over-slf4j-2.0.0-alpha3.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha3/log4j-over-slf4j-2.0.0-alpha3.pom (1.2 kB at 2.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha4/log4j-over-slf4j-2.0.0-alpha4.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha4/log4j-over-slf4j-2.0.0-alpha4.pom (1.2 kB at 2.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha5/log4j-over-slf4j-2.0.0-alpha5.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha5/log4j-over-slf4j-2.0.0-alpha5.pom (1.2 kB at 3.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha6/log4j-over-slf4j-2.0.0-alpha6.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha6/log4j-over-slf4j-2.0.0-alpha6.pom (1.2 kB at 18 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha7/log4j-over-slf4j-2.0.0-alpha7.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-alpha7/log4j-over-slf4j-2.0.0-alpha7.pom (1.2 kB at 2.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-beta0/log4j-over-slf4j-2.0.0-beta0.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-beta0/log4j-over-slf4j-2.0.0-beta0.pom (1.2 kB at 2.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-beta1/log4j-over-slf4j-2.0.0-beta1.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0-beta1/log4j-over-slf4j-2.0.0-beta1.pom (1.2 kB at 2.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0/log4j-over-slf4j-2.0.0.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.0/log4j-over-slf4j-2.0.0.pom (1.2 kB at 2.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.1/log4j-over-slf4j-2.0.1.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.1/log4j-over-slf4j-2.0.1.pom (1.2 kB at 17 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.2/log4j-over-slf4j-2.0.2.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.2/log4j-over-slf4j-2.0.2.pom (1.2 kB at 4.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.3/log4j-over-slf4j-2.0.3.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.3/log4j-over-slf4j-2.0.3.pom (1.2 kB at 3.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.4/log4j-over-slf4j-2.0.4.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.4/log4j-over-slf4j-2.0.4.pom (1.2 kB at 2.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.5/log4j-over-slf4j-2.0.5.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.5/log4j-over-slf4j-2.0.5.pom (1.2 kB at 5.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.6/log4j-over-slf4j-2.0.6.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.6/log4j-over-slf4j-2.0.6.pom (1.2 kB at 16 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.7/log4j-over-slf4j-2.0.7.pom
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.7/log4j-over-slf4j-2.0.7.pom (1.2 kB at 19 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.8/log4j-over-slf4j-2.0.8.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.8/log4j-over-slf4j-2.0.8.pom (1.7 kB at 3.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.9/log4j-over-slf4j-2.0.9.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.9/log4j-over-slf4j-2.0.9.pom (1.7 kB at 25 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.10/log4j-over-slf4j-2.0.10.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.10/log4j-over-slf4j-2.0.10.pom (1.7 kB at 3.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.11/log4j-over-slf4j-2.0.11.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.11/log4j-over-slf4j-2.0.11.pom (1.7 kB at 24 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.12/log4j-over-slf4j-2.0.12.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.12/log4j-over-slf4j-2.0.12.pom (1.7 kB at 7.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.13/log4j-over-slf4j-2.0.13.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.13/log4j-over-slf4j-2.0.13.pom (1.7 kB at 26 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.14/log4j-over-slf4j-2.0.14.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.14/log4j-over-slf4j-2.0.14.pom (1.7 kB)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.15/log4j-over-slf4j-2.0.15.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.15/log4j-over-slf4j-2.0.15.pom (1.7 kB at 5.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.16/log4j-over-slf4j-2.0.16.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.16/log4j-over-slf4j-2.0.16.pom (1.7 kB at 24 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.17/log4j-over-slf4j-2.0.17.pom
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.17/log4j-over-slf4j-2.0.17.pom (1.6 kB at 24 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.18/log4j-over-slf4j-2.0.18.pom
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.18/log4j-over-slf4j-2.0.18.pom (1.6 kB at 25 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.19/log4j-over-slf4j-2.0.19.pom
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.19/log4j-over-slf4j-2.0.19.pom (1.6 kB at 7.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.20/log4j-over-slf4j-2.0.20.pom
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.0.20/log4j-over-slf4j-2.0.20.pom (1.6 kB at 7.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.1.0-alpha0/log4j-over-slf4j-2.1.0-alpha0.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.1.0-alpha0/log4j-over-slf4j-2.1.0-alpha0.pom (1.7 kB at 5.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.1.0-alpha1/log4j-over-slf4j-2.1.0-alpha1.pom
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/log4j-over-slf4j/2.1.0-alpha1/log4j-over-slf4j-2.1.0-alpha1.pom (1.7 kB at 4.9 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: xwiki-commons-tool-test-simple
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/xwiki-commons-tools/xwiki-commons-tool-test/xwiki-commons-tool-test-simple/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for xwiki-commons-tool-test-simple: pinned=3 upgraded=30 downgraded=0 added=4 removed=0 scope_changed=0
@@ -3327,15 +2779,15 @@ Progress (1): 1.7 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.xwiki.test.junit5.[1mCaptureConsoleExtensionTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in org.xwiki.test.junit5.[1mCaptureConsoleExtensionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in org.xwiki.test.junit5.[1mCaptureConsoleExtensionTest[m
 [[1;34mINFO[m] Running org.xwiki.test.junit5.[1mFailingTestDebuggingTestExecutionListenerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.318 s - in org.xwiki.test.junit5.[1mFailingTestDebuggingTestExecutionListenerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.309 s - in org.xwiki.test.junit5.[1mFailingTestDebuggingTestExecutionListenerTest[m
 [[1;34mINFO[m] Running org.xwiki.test.junit5.[1mLogCaptureExtensionTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.xwiki.test.junit5.[1mLogCaptureExtensionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in org.xwiki.test.junit5.[1mLogCaptureExtensionTest[m
 [[1;34mINFO[m] Running org.xwiki.test.[1mAllLogRuleStaticTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.xwiki.test.[1mAllLogRuleStaticTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.xwiki.test.[1mAllLogRuleStaticTest[m
 [[1;34mINFO[m] Running org.xwiki.test.[1mAllLogRuleDebugLevelTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.xwiki.test.[1mAllLogRuleDebugLevelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.xwiki.test.[1mAllLogRuleDebugLevelTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -3580,21 +3032,21 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for XWiki Commons - Parent POM 13.6-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] XWiki Commons - Parent POM ......................... [1;32mSUCCESS[m [  0.585 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Parent POM ................. [1;32mSUCCESS[m [  0.094 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Verification Resources ..... [1;32mSUCCESS[m [  7.432 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Tools POM .................. [1;32mSUCCESS[m [  0.619 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Remote Resource Plugin ..... [1;32mSUCCESS[m [01:06 min]
-[[1;34mINFO[m] XWiki Commons - Tools - License Resources .......... [1;32mSUCCESS[m [  0.228 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Enforcers .................. [1;32mSUCCESS[m [  0.283 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Banned Dependencies Enforcer [1;32mSUCCESS[m [  5.408 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Spoon - Parent POM ......... [1;32mSUCCESS[m [  0.095 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Spoon - Checks ............. [1;32mSUCCESS[m [  6.731 s]
+[[1;34mINFO[m] XWiki Commons - Parent POM ......................... [1;32mSUCCESS[m [  0.605 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Parent POM ................. [1;32mSUCCESS[m [  0.083 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Verification Resources ..... [1;32mSUCCESS[m [  7.030 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Tools POM .................. [1;32mSUCCESS[m [  0.673 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Remote Resource Plugin ..... [1;32mSUCCESS[m [ 12.305 s]
+[[1;34mINFO[m] XWiki Commons - Tools - License Resources .......... [1;32mSUCCESS[m [  0.478 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Enforcers .................. [1;32mSUCCESS[m [  0.291 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Banned Dependencies Enforcer [1;32mSUCCESS[m [  2.433 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Spoon - Parent POM ......... [1;32mSUCCESS[m [  0.082 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Spoon - Checks ............. [1;32mSUCCESS[m [  7.435 s]
 [[1;34mINFO[m] XWiki Commons - Root POM ........................... [1;32mSUCCESS[m [  0.710 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Test Framework - Parent POM  [1;32mSUCCESS[m [  0.074 s]
-[[1;34mINFO[m] XWiki Commons - Tools - Test Framework - Simple .... [1;32mSUCCESS[m [ 16.085 s]
-[[1;34mINFO[m] XWiki Commons - Core - Parent POM .................. [1;32mSUCCESS[m [  0.382 s]
-[[1;34mINFO[m] XWiki Commons - Stability .......................... [1;31mFAILURE[m [  0.312 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Test Framework - Parent POM  [1;32mSUCCESS[m [  0.078 s]
+[[1;34mINFO[m] XWiki Commons - Tools - Test Framework - Simple .... [1;32mSUCCESS[m [  5.164 s]
+[[1;34mINFO[m] XWiki Commons - Core - Parent POM .................. [1;32mSUCCESS[m [ 0.-190 s]
+[[1;34mINFO[m] XWiki Commons - Stability .......................... [1;31mFAILURE[m [  0.309 s]
 [[1;34mINFO[m] XWiki Commons - Text ............................... [1;33mSKIPPED[m
 [[1;34mINFO[m] XWiki Commons - Component - Parent POM ............. [1;33mSKIPPED[m
 [[1;34mINFO[m] XWiki Commons - Component - API .................... [1;33mSKIPPED[m
@@ -3683,8 +3135,8 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  01:45 min
-[[1;34mINFO[m] Finished at: 2026-10-06T04:04:31Z
+[[1;34mINFO[m] Total time:  38.126 s
+[[1;34mINFO[m] Finished at: 2026-10-10T21:19:25Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;31mERROR[m] Failed to execute goal [32mcom.mycila:license-maven-plugin:4.1:check[m [1m(default)[m on project [36mxwiki-commons-stability[m: [1;31mSome files do not have the expected license header[m -> [1m[Help 1][m
 [[1;31mERROR[m] 

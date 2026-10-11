@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Mon Oct  5 16:47:07 UTC 2026.
-Universal Time is now:  Mon Oct  5 16:47:07 UTC 2026.
+Local time is now:      Sun Oct 11 01:36:55 UTC 2026.
+Universal Time is now:  Sun Oct 11 01:36:55 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -90,273 +90,115 @@ Universal Time is now:  Mon Oct  5 16:47:07 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcryptolib[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '30.0-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 28 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcryptolib[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
 Downloading from bintray: https://jcenter.bintray.com/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 1.4 kB/s)
-Progress (1): 461 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 534 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 1.6 kB/s)
+Progress (1): 461 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 475 B/s)
 Downloading from bintray: https://jcenter.bintray.com/com/google/code/gson/gson/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 26 kB/s)
-Progress (1): 1.7 kB                    Downloaded from bintray: https://jcenter.bintray.com/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 4.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 27 kB/s)
+Progress (1): 1.7 kB                    Downloaded from bintray: https://jcenter.bintray.com/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 4.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
 Downloading from bintray: https://jcenter.bintray.com/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 41 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 56 kB/s)
 Progress (1): 3.3 kB                    Downloaded from bintray: https://jcenter.bintray.com/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 13 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/com/google/guava/failureaccess/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 5.3 kB/s)
-Progress (1): 427 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/guava/failureaccess/maven-metadata.xml (427 B at 607 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
-Downloading from bintray: https://jcenter.bintray.com/com/google/guava/guava/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 68 kB/s)
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from bintray: https://jcenter.bintray.com/com/google/guava/guava/maven-metadata.xml (6.0 kB at 22 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/com/google/guava/listenablefuture/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml
-Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml (476 B at 6.5 kB/s)
-Progress (1): 476 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/guava/listenablefuture/maven-metadata.xml (476 B at 927 B/s)
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 6.8 kB/s)
+Progress (1): 427 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/guava/failureaccess/maven-metadata.xml (427 B at 977 B/s)
 Downloading from bintray: https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 BProgress (2): 514 B | 514 B                           Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 2.2 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 1.1 kB/s)
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 8.2 kB/s)
+Progress (1): 514 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 1.2 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 150 kB/s)
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 27 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 183 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
 Downloading from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 144 kB/s)
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 25 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 175 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 26 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/maven-metadata.xml
-Progress (1): 1.8 kBProgress (2): 1.8 kB | 1.8 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/maven-metadata.xml (1.8 kB at 6.7 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/maven-metadata.xml (1.8 kB at 3.9 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.7-beta-1/jopt-simple-4.7-beta-1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 13 kB                   Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.7-beta-1/jopt-simple-4.7-beta-1.pom (13 kB at 17 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.8-beta-1/jopt-simple-4.8-beta-1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 14 kB                   Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.8-beta-1/jopt-simple-4.8-beta-1.pom (14 kB at 24 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.8/jopt-simple-4.8.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 14 kB                   Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.8/jopt-simple-4.8.pom (14 kB at 27 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.9-beta-1/jopt-simple-4.9-beta-1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 14 kB                   Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.9-beta-1/jopt-simple-4.9-beta-1.pom (14 kB at 25 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 14 kB                   Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.pom (14 kB at 53 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/maven-metadata.xml
+Progress (1): 1.8 kBProgress (2): 1.8 kB | 1.8 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/maven-metadata.xml (1.8 kB at 5.6 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/maven-metadata.xml (1.8 kB at 4.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/maven-metadata.xml
-Progress (1): 603 BProgress (2): 603 B | 603 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/maven-metadata.xml (603 B at 2.7 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/maven-metadata.xml (603 B at 1.4 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.3/commons-math3-3.3.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.3/commons-math3-3.3.pom (24 kB at 89 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.4/commons-math3-3.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 27 kB                   Downloaded from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.4/commons-math3-3.4.pom (27 kB at 50 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 27 kB                   Downloaded from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1.pom (27 kB at 107 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.5/commons-math3-3.5.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 28 kB                   Downloaded from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.5/commons-math3-3.5.pom (28 kB at 112 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.6/commons-math3-3.6.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 29 kB                   Downloaded from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/3.6/commons-math3-3.6.pom (29 kB at 48 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/maven-metadata.xml
+Progress (1): 603 BProgress (2): 603 B | 603 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/maven-metadata.xml (603 B at 2.6 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/maven-metadata.xml (603 B at 1.3 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/apiguardian/apiguardian-api/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml
-Progress (1): 430 BProgress (2): 430 B | 430 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 1.8 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 1.7 kB/s)
+Progress (1): 430 BProgress (2): 430 B | 430 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 1.7 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 993 B/s)
 Downloading from bintray: https://jcenter.bintray.com/org/checkerframework/checker-qual/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kBProgress (2): 5.3 kB | 4.1 kBProgress (2): 5.3 kB | 5.3 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 20 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 12 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/hamcrest/hamcrest/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 92 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml
-Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 7.4 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/hamcrest/hamcrest/maven-metadata.xml
+Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 10 kB/s)
 Progress (1): 577 B                   Downloaded from bintray: https://jcenter.bintray.com/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 1.4 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 48 kB/s)
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 8.0 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.8.0-RC1/junit-jupiter-5.8.0-RC1.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.8.0-RC1/junit-jupiter-5.8.0-RC1.pom (3.2 kB at 4.1 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.8.0/junit-jupiter-5.8.0.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.8.0/junit-jupiter-5.8.0.pom (3.2 kB at 13 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.pom (3.2 kB at 13 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.0-M1/junit-jupiter-5.9.0-M1.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.0-M1/junit-jupiter-5.9.0-M1.pom (3.2 kB at 11 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.0-RC1/junit-jupiter-5.9.0-RC1.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.0-RC1/junit-jupiter-5.9.0-RC1.pom (3.2 kB at 6.0 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.0/junit-jupiter-5.9.0.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.0/junit-jupiter-5.9.0.pom (3.2 kB at 12 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.1/junit-jupiter-5.9.1.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.1/junit-jupiter-5.9.1.pom (3.2 kB at 13 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.2/junit-jupiter-5.9.2.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.2/junit-jupiter-5.9.2.pom (3.2 kB at 13 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.pom (3.2 kB at 13 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.0-M1/junit-jupiter-5.10.0-M1.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.0-M1/junit-jupiter-5.10.0-M1.pom (3.2 kB at 5.7 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.0-RC1/junit-jupiter-5.10.0-RC1.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.0-RC1/junit-jupiter-5.10.0-RC1.pom (3.2 kB at 4.7 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.0-RC2/junit-jupiter-5.10.0-RC2.pom
-Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.0-RC2/junit-jupiter-5.10.0-RC2.pom (3.2 kB at 4.5 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.3/junit-jupiter-5.10.3.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.3/junit-jupiter-5.10.3.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.4/junit-jupiter-5.10.4.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.4/junit-jupiter-5.10.4.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.5/junit-jupiter-5.10.5.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.10.5/junit-jupiter-5.10.5.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.0-M1/junit-jupiter-5.11.0-M1.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.0-M1/junit-jupiter-5.11.0-M1.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.0-M2/junit-jupiter-5.11.0-M2.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.0-M2/junit-jupiter-5.11.0-M2.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.0-RC1/junit-jupiter-5.11.0-RC1.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.0-RC1/junit-jupiter-5.11.0-RC1.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.1/junit-jupiter-5.11.1.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.1/junit-jupiter-5.11.1.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.2/junit-jupiter-5.11.2.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.2/junit-jupiter-5.11.2.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.3/junit-jupiter-5.11.3.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.3/junit-jupiter-5.11.3.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.0-M1/junit-jupiter-5.12.0-M1.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.0-M1/junit-jupiter-5.12.0-M1.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.0-RC1/junit-jupiter-5.12.0-RC1.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.0-RC1/junit-jupiter-5.12.0-RC1.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.0-RC2/junit-jupiter-5.12.0-RC2.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.0-RC2/junit-jupiter-5.12.0-RC2.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.0/junit-jupiter-5.12.0.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.0/junit-jupiter-5.12.0.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.1/junit-jupiter-5.12.1.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/5.12.1/junit-jupiter-5.12.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/maven-metadata.xml
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 54 kB/s)
+Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 13 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 38 kB/s)
-Progress (1): 4.0 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 9.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 63 kB/s)
+Progress (1): 4.0 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 10 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 61 kB/s)
-Progress (1): 4.0 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 15 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 70 kB/s)
+Progress (1): 4.0 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 9.0 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 40 kB/s)
-Progress (1): 3.9 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 16 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 67 kB/s)
+Progress (1): 3.9 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 8.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml
 Downloading from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-commons/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 37 kB/s)
-Progress (1): 4.0 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 15 kB/s)
+Progress (1): 4.0 kBProgress (2): 4.0 kB | 4.0 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 15 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 9.5 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-engine/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml
-Progress (1): 4.0 kBProgress (2): 4.0 kB | 4.0 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 17 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 16 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 73 kB/s)
+Progress (1): 4.0 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 9.7 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/mockito/mockito-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (2): 12 kB | 4.1 kBProgress (2): 12 kB | 8.2 kBProgress (2): 12 kB | 12 kB                            Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 48 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/org/mockito/mockito-core/maven-metadata.xml (12 kB at 30 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 205 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/mockito/mockito-core/maven-metadata.xml (12 kB at 31 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/objenesis/objenesis/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
-Progress (1): 907 BProgress (2): 907 B | 907 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 3.1 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/org/objenesis/objenesis/maven-metadata.xml (907 B at 2.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/maven-metadata.xml
+Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 14 kB/s)
+Progress (1): 907 B                   Downloaded from bintray: https://jcenter.bintray.com/org/objenesis/objenesis/maven-metadata.xml (907 B at 2.1 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/maven-metadata.xml
-Progress (1): 3.4 kBProgress (2): 3.4 kB | 3.4 kB                             Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/maven-metadata.xml (3.4 kB at 8.4 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/maven-metadata.xml (3.4 kB at 7.0 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.27/jmh-core-1.27.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.27/jmh-core-1.27.pom (9.6 kB at 40 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.27/jmh-parent-1.27.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.27/jmh-parent-1.27.pom (11 kB at 46 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.28/jmh-core-1.28.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.28/jmh-core-1.28.pom (9.6 kB at 32 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.28/jmh-parent-1.28.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.28/jmh-parent-1.28.pom (11 kB at 38 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.29/jmh-core-1.29.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.29/jmh-core-1.29.pom (9.6 kB at 23 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.29/jmh-parent-1.29.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.29/jmh-parent-1.29.pom (11 kB at 25 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.30/jmh-core-1.30.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.30/jmh-core-1.30.pom (9.6 kB at 15 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.30/jmh-parent-1.30.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.30/jmh-parent-1.30.pom (11 kB at 21 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.31/jmh-core-1.31.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.31/jmh-core-1.31.pom (9.6 kB at 18 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.31/jmh-parent-1.31.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.31/jmh-parent-1.31.pom (11 kB at 20 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.32/jmh-core-1.32.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.32/jmh-core-1.32.pom (9.6 kB at 20 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.32/jmh-parent-1.32.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.32/jmh-parent-1.32.pom (11 kB at 43 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.33/jmh-core-1.33.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.33/jmh-core-1.33.pom (9.6 kB at 38 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.33/jmh-parent-1.33.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.33/jmh-parent-1.33.pom (11 kB at 43 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.34/jmh-core-1.34.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.34/jmh-core-1.34.pom (9.6 kB at 36 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.34/jmh-parent-1.34.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.34/jmh-parent-1.34.pom (11 kB at 23 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.pom
-Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.35/jmh-core-1.35.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.6 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.35/jmh-core-1.35.pom (9.6 kB at 38 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.35/jmh-parent-1.35.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.35/jmh-parent-1.35.pom (11 kB at 46 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.36/jmh-core-1.36.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.3 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.36/jmh-core-1.36.pom (9.3 kB at 37 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.36/jmh-parent-1.36.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.36/jmh-parent-1.36.pom (12 kB at 45 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.37/jmh-parent-1.37.pom
-Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-parent/1.37/jmh-parent-1.37.pom (0 B at 0 B/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/maven-metadata.xml
+Progress (1): 3.4 kBProgress (2): 3.4 kB | 3.4 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/maven-metadata.xml (3.4 kB at 17 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/maven-metadata.xml (3.4 kB at 8.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml
-Progress (1): 3.1 kBProgress (2): 3.1 kB | 3.1 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml (3.1 kB at 12 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml (3.1 kB at 7.3 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.27/jmh-generator-annprocess-1.27.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.27/jmh-generator-annprocess-1.27.pom (3.8 kB at 15 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.28/jmh-generator-annprocess-1.28.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.28/jmh-generator-annprocess-1.28.pom (3.8 kB at 14 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.29/jmh-generator-annprocess-1.29.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.29/jmh-generator-annprocess-1.29.pom (3.8 kB at 7.4 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.30/jmh-generator-annprocess-1.30.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.30/jmh-generator-annprocess-1.30.pom (3.8 kB at 5.8 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.31/jmh-generator-annprocess-1.31.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.31/jmh-generator-annprocess-1.31.pom (3.8 kB at 4.9 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.32/jmh-generator-annprocess-1.32.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.32/jmh-generator-annprocess-1.32.pom (3.8 kB at 16 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.33/jmh-generator-annprocess-1.33.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.33/jmh-generator-annprocess-1.33.pom (3.8 kB at 15 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.34/jmh-generator-annprocess-1.34.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.34/jmh-generator-annprocess-1.34.pom (3.8 kB at 7.2 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.35/jmh-generator-annprocess-1.35.pom
-Progress (1): 3.8 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.35/jmh-generator-annprocess-1.35.pom (3.8 kB at 14 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.36/jmh-generator-annprocess-1.36.pom
-Progress (1): 3.7 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.36/jmh-generator-annprocess-1.36.pom (3.7 kB at 14 kB/s)
-Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.37/jmh-generator-annprocess-1.37.pom
-Progress (1): 3.7 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/1.37/jmh-generator-annprocess-1.37.pom (3.7 kB at 15 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 3.1 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml (3.1 kB at 14 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml (3.1 kB at 7.0 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/opentest4j/opentest4j/maven-metadata.xml
-Progress (1): 699 BProgress (2): 699 B | 699 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 2.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml
+Progress (1): 699 BProgress (2): 699 B | 699 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 2.1 kB/s)
 Downloaded from bintray: https://jcenter.bintray.com/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 1.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
 Downloading from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 43 kB/s)
-Progress (1): 3.9 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 9.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 66 kB/s)
+Progress (1): 3.9 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 9.6 kB/s)
 Downloading from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-simple/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.2 kBProgress (2): 4.2 kB | 4.1 kBProgress (2): 4.2 kB | 4.2 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 15 kB/s)
-Downloaded from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 10 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.2 kBProgress (2): 4.2 kB | 4.1 kBProgress (2): 4.2 kB | 4.2 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 17 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 9.3 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: cryptolib
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for cryptolib: pinned=5 upgraded=23 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for cryptolib: pinned=6 upgraded=22 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: cryptolib
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java)[m @ [36mcryptolib[0;1m ---[m
@@ -387,59 +229,59 @@ Downloaded from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-simple/mave
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.76 s - in org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.821 s - in org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s - in org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s - in org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s - in org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mScryptTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 s - in org.cryptomator.cryptolib.common.[1mScryptTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.15 s - in org.cryptomator.cryptolib.common.[1mScryptTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.13 s - in org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 s - in org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s - in org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s - in org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.52 s - in org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.545 s - in org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 s - in org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.153 s - in org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 s - in org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.144 s - in org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s - in org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 s - in org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.003 s - in org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mCryptorImplTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.v2.[1mCryptorImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m20[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s - in org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m20[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m306[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 s - in org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m306[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 s - in org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileHeaderImplTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m22[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m22[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mCryptorsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m26[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in org.cryptomator.cryptolib.[1mCryptorsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m26[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s - in org.cryptomator.cryptolib.[1mCryptorsTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m6[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.092 s - in org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m6[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.105 s - in org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
 [[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mEncryptingReadableByteChannelTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.[1mEncryptingReadableByteChannelTest[m
 [[1;34mINFO[m] 
@@ -457,8 +299,8 @@ Downloaded from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-simple/mave
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  45.469 s
-[[1;34mINFO[m] Finished at: 2026-10-05T16:47:53Z
+[[1;34mINFO[m] Total time:  19.168 s
+[[1;34mINFO[m] Finished at: 2026-10-11T01:37:15Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Crypto.buildinfo: No such file or directory
 dos2unix: Skipping target/Crypto.buildinfo, not a regular file.

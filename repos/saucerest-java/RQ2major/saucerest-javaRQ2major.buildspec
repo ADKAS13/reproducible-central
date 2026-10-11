@@ -1,0 +1,15 @@
+groupId=com.saucelabs
+artifactId=saucerest
+version=9
+
+gitRepo=https://github.com/saucelabs/saucerest-java.git
+gitTag=6c510e45bb08d38236cce23915c775d43ab005df
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dgpg.skip=true\""
+
+buildinfo=target/Saucerest-java.buildinfo

@@ -1,0 +1,609 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/animal-sniffer/RQ2patch/animal-snifferRQ2patch.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.codehaus.mojo[0m
+|      [0;34martifactId[0;97m: [1manimal-sniffer-parent[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-parent/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/mojohaus/animal-sniffer.git[0m
+|      [0;34mgitTag[0;97m: [1mbdfb6cf8247aa0662ea6208a99ad6d5720d1aeac[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Animal-sniffer.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/mojohaus/animal-sniffer.git[0m on tag [1mbdfb6cf8247aa0662ea6208a99ad6d5720d1aeac[0m
+/home/adkas13/reproducible-central/repos/animal-sniffer/RQ2patch/buildcache/animal-sniffer-parent
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/mojohaus/animal-sniffer.git (fetch)
+origin	https://github.com/mojohaus/animal-sniffer.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f bdfb6cf8247aa0662ea6208a99ad6d5720d1aeac [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/animal-sniffer/RQ2patch/buildcache/animal-sniffer-parent
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.codehaus.mojo:animal-sniffer-parent:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/animal-sniffer/RQ2patch/buildcache/animal-sniffer-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Oct 11 11:30:32 UTC 2026.
+Universal Time is now:  Sun Oct 11 11:30:32 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Animal Sniffer                                                     [pom]
+[[1;34mINFO[m] Java boot classpath detector                                       [jar]
+[[1;34mINFO[m] Animal Sniffer Annotations                                         [jar]
+[[1;34mINFO[m] Animal Sniffer                                                     [jar]
+[[1;34mINFO[m] Animal Sniffer Maven Plugin                               [maven-plugin]
+[[1;34mINFO[m] Animal Sniffer Maven Enforcer Rule                                 [jar]
+[[1;34mINFO[m] Animal Sniffer Ant Tasks                                           [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36morg.codehaus.mojo:animal-sniffer-parent[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer 1.20-SNAPSHOT                              [1/7][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36manimal-sniffer-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: animal-sniffer-parent
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-parent/1.20-SNAPSHOT/animal-sniffer-parent-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.codehaus.mojo:java-boot-classpath-detector[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding Java boot classpath detector 1.20-SNAPSHOT                [2/7][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/java-boot-classpath-detector/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: java-boot-classpath-detector (0 dependencies, 0 carrying exclusions)
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/java-boot-classpath-detector/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for java-boot-classpath-detector: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: java-boot-classpath-detector
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/java-boot-classpath-detector/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/java-boot-classpath-detector/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/java-boot-classpath-detector/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/java-boot-classpath-detector/target/java-boot-classpath-detector-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/java-boot-classpath-detector/target/java-boot-classpath-detector-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/java-boot-classpath-detector/1.20-SNAPSHOT/java-boot-classpath-detector-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/java-boot-classpath-detector/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/java-boot-classpath-detector/1.20-SNAPSHOT/java-boot-classpath-detector-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.codehaus.mojo:animal-sniffer-annotations[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer Annotations 1.20-SNAPSHOT                  [3/7][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer-annotations/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer-annotations (0 dependencies, 0 carrying exclusions)
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer-annotations/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer-annotations: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: animal-sniffer-annotations
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer-annotations/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/animal-sniffer-annotations/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer-annotations/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer-annotations/target/animal-sniffer-annotations-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-annotations/target/animal-sniffer-annotations-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.20-SNAPSHOT/animal-sniffer-annotations-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-annotations/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.20-SNAPSHOT/animal-sniffer-annotations-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36morg.codehaus.mojo:animal-sniffer[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer 1.20-SNAPSHOT                              [4/7][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 3 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/junit/junit/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 4.0 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/hamcrest/hamcrest-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/ow2/asm/asm/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml (1.7 kB at 26 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer (3 dependencies, 0 carrying exclusions)
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer: pinned=3 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: animal-sniffer
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 10 source files to /var/maven/app/animal-sniffer/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/animal-sniffer/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 2, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer/target/animal-sniffer-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer/target/animal-sniffer-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer/1.20-SNAPSHOT/animal-sniffer-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer/1.20-SNAPSHOT/animal-sniffer-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.codehaus.mojo:animal-sniffer-maven-plugin[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer Maven Plugin 1.20-SNAPSHOT                 [5/7][m
+[[1;34mINFO[m] [1m----------------------------[ maven-plugin ]----------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer-maven-plugin/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-alpha-9-stable-1' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-alpha-4' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 60 dependencies (13 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+Downloading from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/backport-util-concurrent/backport-util-concurrent/maven-metadata.xml
+Progress (1): 553 B                   Downloaded from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/maven-metadata.xml (553 B at 7.2 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/classworlds/classworlds/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/maven-metadata.xml
+Progress (1): 839 B                   Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/maven-metadata.xml (839 B at 2.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/jcraft/jsch/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/com/jcraft/jsch/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/jcraft/jsch/maven-metadata.xml (1.1 kB at 4.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/commons-cli/commons-cli/maven-metadata.xml
+Progress (1): 788 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml (788 B at 13 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/commons-codec/commons-codec/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 17 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/commons-httpclient/commons-httpclient/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-httpclient/commons-httpclient/maven-metadata.xml (1.4 kB at 5.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/nekohtml/nekohtml/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/nekohtml/nekohtml/maven-metadata.xml
+Progress (1): 487 B                   Downloaded from central: https://repo.maven.apache.org/maven2/nekohtml/nekohtml/maven-metadata.xml (487 B at 1.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/nekohtml/xercesMinimal/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/nekohtml/xercesMinimal/maven-metadata.xml
+Progress (1): 355 B                   Downloaded from central: https://repo.maven.apache.org/maven2/nekohtml/xercesMinimal/maven-metadata.xml (355 B at 708 B/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/commons/commons-lang3/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 18 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/jackrabbit/jackrabbit-jcr-commons/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-jcr-commons/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-jcr-commons/maven-metadata.xml (8.1 kB at 18 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-webdav/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/jackrabbit/jackrabbit-webdav/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 7.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-webdav/maven-metadata.xml (7.9 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-artifact/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml (3.9 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-artifact-manager/maven-metadata.xml
+Progress (1): 989 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/maven-metadata.xml (989 B at 4.2 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml (3.9 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-error-diagnostics/maven-metadata.xml
+Progress (1): 814 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/maven-metadata.xml (814 B at 1.9 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-model/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml (3.9 kB at 18 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-monitor/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/maven-metadata.xml
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/maven-metadata.xml (1.0 kB at 3.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-plugin-api/maven-metadata.xml
+Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml (3.8 kB at 14 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-plugin-descriptor/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/maven-metadata.xml
+Progress (1): 996 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/maven-metadata.xml (996 B at 3.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-plugin-parameter-documenter/maven-metadata.xml
+Progress (1): 860 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/maven-metadata.xml (860 B at 3.0 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-plugin-registry/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/maven-metadata.xml
+Progress (1): 957 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/maven-metadata.xml (957 B)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-profile/maven-metadata.xml
+Progress (1): 949 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/maven-metadata.xml (949 B at 13 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-project/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/maven-metadata.xml (1.1 kB at 20 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-repository-metadata/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml (3.5 kB at 8.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-settings/maven-metadata.xml
+Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml (3.8 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/maven-toolchain/maven-metadata.xml
+Progress (1): 644 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/maven-metadata.xml (644 B at 2.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml
+Progress (1): 827 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml (827 B at 1.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml (1.5 kB at 4.0 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml (1.5 kB at 5.3 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml
+Progress (1): 789 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml (789 B at 2.1 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml (1.5 kB at 5.4 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (2.1 kB at 7.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (1.3 kB at 4.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/codehaus/plexus/plexus-utils/maven-metadata.xml
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml (3.0 kB at 11 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/slf4j/jcl-over-slf4j/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 62 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 68 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/maven-metadata.xml
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-jdk14/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/maven-metadata.xml (4.2 kB at 19 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-nop/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-nop/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-nop/maven-metadata.xml (4.2 kB at 50 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/sonatype/plexus/plexus-cipher/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml
+Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (538 B at 1.9 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml
+Progress (1): 599 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (599 B at 2.0 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/sonatype/sisu/sisu-guice/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml (1.3 kB at 5.0 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml (1.2 kB at 3.0 kB/s)
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml (1.2 kB at 2.9 kB/s)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for animal-sniffer-maven-plugin — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer-maven-plugin (60 dependencies, 13 carrying exclusions)
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer-maven-plugin/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer-maven-plugin: pinned=60 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: animal-sniffer-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5.2:helpmojo[m [1m(help-mojo)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] java-annotations mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5.2:helpmojo[m [1m(help-goal)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] java-annotations mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 7 source files to /var/maven/app/animal-sniffer-maven-plugin/target/classes
+[[1;34mINFO[m] /var/maven/app/animal-sniffer-maven-plugin/src/main/java/org/codehaus/mojo/animal_sniffer/maven/CheckSignatureMojo.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/animal-sniffer-maven-plugin/src/main/java/org/codehaus/mojo/animal_sniffer/maven/CheckSignatureMojo.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5.2:descriptor[m [1m(default-descriptor)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] java-annotations mojo extractor found 3 mojo descriptors.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5.2:descriptor[m [1m(mojo-descriptor)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] java-annotations mojo extractor found 3 mojo descriptors.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer-maven-plugin/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer-maven-plugin/target/animal-sniffer-maven-plugin-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5.2:addPluginArtifactMetadata[m [1m(default-addPluginArtifactMetadata)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-maven-plugin/target/animal-sniffer-maven-plugin-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-maven-plugin/1.20-SNAPSHOT/animal-sniffer-maven-plugin-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-maven-plugin/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-maven-plugin/1.20-SNAPSHOT/animal-sniffer-maven-plugin-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.codehaus.mojo:animal-sniffer-enforcer-rule[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer Maven Enforcer Rule 1.20-SNAPSHOT          [6/7][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer-enforcer-rule/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-alpha-4' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-6' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-alpha-9' — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 56 dependencies (13 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+Downloading from ossrh-snapshots: http://oss.sonatype.org/content/repositories/snapshots/org/apache/maven/enforcer/enforcer-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/maven-metadata.xml (1.1 kB at 3.9 kB/s)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for animal-sniffer-enforcer-rule — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer-enforcer-rule (56 dependencies, 13 carrying exclusions)
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer-enforcer-rule/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer-enforcer-rule: pinned=56 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: animal-sniffer-enforcer-rule
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer-enforcer-rule/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/animal-sniffer-enforcer-rule/target/classes
+[[1;34mINFO[m] /var/maven/app/animal-sniffer-enforcer-rule/src/main/java/org/codehaus/mojo/animal_sniffer/enforcer/CheckSignatureRule.java: /var/maven/app/animal-sniffer-enforcer-rule/src/main/java/org/codehaus/mojo/animal_sniffer/enforcer/CheckSignatureRule.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/animal-sniffer-enforcer-rule/src/main/java/org/codehaus/mojo/animal_sniffer/enforcer/CheckSignatureRule.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer-enforcer-rule/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer-enforcer-rule/target/animal-sniffer-enforcer-rule-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-enforcer-rule/target/animal-sniffer-enforcer-rule-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-enforcer-rule/1.20-SNAPSHOT/animal-sniffer-enforcer-rule-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-enforcer-rule/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-enforcer-rule/1.20-SNAPSHOT/animal-sniffer-enforcer-rule-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36morg.codehaus.mojo:animal-sniffer-ant-tasks[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer Ant Tasks 1.20-SNAPSHOT                    [7/7][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer-ant-tasks/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 4 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer-ant-tasks (4 dependencies, 0 carrying exclusions)
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer-ant-tasks/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer-ant-tasks: pinned=4 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: animal-sniffer-ant-tasks
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 6 source files to /var/maven/app/animal-sniffer-ant-tasks/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer-ant-tasks/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer-ant-tasks/target/animal-sniffer-ant-tasks-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-shade-plugin:2.0:shade[m [1m(default)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] Including org.codehaus.mojo:animal-sniffer:jar:1.20-SNAPSHOT in the shaded jar.
+[[1;34mINFO[m] Including org.ow2.asm:asm:jar:7.3.1 in the shaded jar.
+[[1;34mINFO[m] Replacing original artifact with shaded artifact.
+[[1;34mINFO[m] Replacing /var/maven/app/animal-sniffer-ant-tasks/target/animal-sniffer-ant-tasks-1.20-SNAPSHOT.jar with /var/maven/app/animal-sniffer-ant-tasks/target/animal-sniffer-ant-tasks-1.20-SNAPSHOT-shaded.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-ant-tasks/target/animal-sniffer-ant-tasks-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-ant-tasks/1.20-SNAPSHOT/animal-sniffer-ant-tasks-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-ant-tasks/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-ant-tasks/1.20-SNAPSHOT/animal-sniffer-ant-tasks-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for Animal Sniffer 1.20-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.527 s]
+[[1;34mINFO[m] Java boot classpath detector ....................... [1;32mSUCCESS[m [  0.996 s]
+[[1;34mINFO[m] Animal Sniffer Annotations ......................... [1;32mSUCCESS[m [  0.109 s]
+[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  2.183 s]
+[[1;34mINFO[m] Animal Sniffer Maven Plugin ........................ [1;32mSUCCESS[m [ 11.869 s]
+[[1;34mINFO[m] Animal Sniffer Maven Enforcer Rule ................. [1;32mSUCCESS[m [  0.506 s]
+[[1;34mINFO[m] Animal Sniffer Ant Tasks ........................... [1;32mSUCCESS[m [  0.456 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  16.832 s
+[[1;34mINFO[m] Finished at: 2026-10-11T11:30:50Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Animal-sniffer.buildinfo: No such file or directory
+dos2unix: Skipping target/Animal-sniffer.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

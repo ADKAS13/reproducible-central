@@ -76,8 +76,8 @@ sha256:43a3c0b00451558265985c3d55337b65aa9b31d9242d6e4fceda17dcf2752f37
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Oct  8 15:12:59 UTC 2026.
-Universal Time is now:  Thu Oct  8 15:12:59 UTC 2026.
+Local time is now:      Sun Oct 11 07:32:22 UTC 2026.
+Universal Time is now:  Sun Oct 11 07:32:22 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -98,7 +98,7 @@ Universal Time is now:  Thu Oct  8 15:12:59 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mastra[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 3 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 3 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: astra
@@ -119,43 +119,43 @@ Universal Time is now:  Thu Oct  8 15:12:59 UTC 2026.
 [[1;34mINFO[m] [1mBuilding astra-core 1.3.7                                          [2/5][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 1.1 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 2.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml (1.1 kB at 17 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml (1.1 kB at 2.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml (1.4 kB at 18 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml (1.4 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 22 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 21 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 19 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 18 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 5.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 16 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 5.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml
-Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 4.2 kB/s)
+Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 4.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 13 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 4.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml (1.1 kB at 15 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml (1.1 kB at 4.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml (1.2 kB at 17 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml (1.2 kB at 5.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 16 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 5.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 15 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 5.3 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mastra-core[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mastra-core[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/astra-core/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 21 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 21 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra-core[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: astra-core
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: astra-core (21 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/astra-core/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for astra-core: pinned=21 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: astra-core
@@ -183,33 +183,33 @@ Progress (1): 1.2 kB                    Downloaded from central: https://repo.
  T E S T S
 -------------------------------------------------------
 Running org.alfasoftware.astra.core.analysis.assignment.TestAssignmentAnalysis
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.742 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.641 sec
 Running org.alfasoftware.astra.core.matchers.TestAnnotationMatcher
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 sec
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 sec
 Running org.alfasoftware.astra.core.matchers.TestTypeMatcher
-Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.204 sec
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.216 sec
 Running org.alfasoftware.astra.core.matchers.TestMethodMatcher
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.808 sec
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.662 sec
 Running org.alfasoftware.astra.core.refactoring.annotations.TestAnnotationsRefactor
 INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
 INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
 INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
 INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
 INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.159 sec
 Running org.alfasoftware.astra.core.refactoring.methods.methoddeclaration.TestMethodDeclarationRefactor
 INFO - Removing method declaration [org.alfasoftware.astra.core.refactoring.methods.methoddeclaration.RemoveMethodDeclarationExample#doThing(String thing)]
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
 Running org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.TestMethodDeclaringTypeRefactor
 INFO - Refactoring method declaration type of method [doBar] from [FooBar] to [Bar] in [org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.bar.CallerBar]
 INFO - Refactoring method declaration type of method [doBar] from [FooBar] to [Bar] in [org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.bar.CallerBar]
 INFO - Refactoring method declaration type of method [doBar] from [FooBar] to [Bar] in [org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.foobar.CallerFooBar]
 INFO - Refactoring method declaration type of method [doBar] from [FooBar] to [Bar] in [org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.foobar.CallerFooBar]
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec
 Running org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.TestInvocationRemovalRefactor
 INFO - Unwrapping method invocation [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.sub.ExampleTestingModule]] Optional[method name is [module]]] to [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.sub.ReplacementRule replacementRuleFor] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.UnwrapInvocationAndChangeMethodParentTypeExample]
 INFO - Unwrapping method invocation [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.sub.ExampleTestingModule]] Optional[method name is [module]]] to [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.sub.ReplacementRule module] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.UnwrapInvocationAndChangeConstructorParentTypeExample]
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.388 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.359 sec
 Running org.alfasoftware.astra.core.refactoring.methods.methodInvocation.TestMethodInvocationRefactor
 INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticExample]
 INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticExample]
@@ -236,7 +236,7 @@ INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A stat
 INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.C staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticSameNameExample]
 INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A overloaded] to [org.alfasoftware.astra.exampleTypes.A overloaded] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeNewParameterStringLast]
 INFO - Refactoring method invocation [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.transform.ReturnsObject get] to [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.transform.ReturnsObject get] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.transform.InvocationTransformExample]
-Tests run: 17, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.494 sec
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.552 sec
 Running org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.TestConstructorToBuilderRefactor
 INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.constructor.ConstructorType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderExternalBuilderExample]
 INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.constructor.ConstructorType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderExternalBuilderExample]
@@ -244,26 +244,26 @@ INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core
 INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.builder.BuiltType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderInnerClassBuilderExample]
 INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.builder.BuiltType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderInnerClassBuilderExample]
 INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.builder.BuiltType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderInnerClassBuilderExample]
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.164 sec
 Running org.alfasoftware.astra.core.refactoring.methods.constructortostaticmethod.TestConversionRefactor
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec
 Running org.alfasoftware.astra.core.refactoring.imports.TestImportsRefactor
 INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticFour] to [org.alfasoftware.astra.exampleTypes.A staticFour] in [org.alfasoftware.astra.core.refactoring.imports.DuplicateStaticImportExample]
 INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.B staticThree] to [org.alfasoftware.astra.exampleTypes.A staticFour] in [org.alfasoftware.astra.core.refactoring.imports.StaticToDuplicateExample]
 INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticFour] to [org.alfasoftware.astra.exampleTypes.B staticThree] in [org.alfasoftware.astra.core.refactoring.imports.DuplicateStaticImportExample]
 INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.B staticThree] to [org.alfasoftware.astra.exampleTypes.B staticThree] in [org.alfasoftware.astra.core.refactoring.imports.StaticToDuplicateExample]
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.561 sec
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.484 sec
 Running org.alfasoftware.astra.core.refactoring.javadoc.TestJavadocTagsRefactor
 INFO - Refactoring javadoc tag [@link] to [@linkplain] in [org.alfasoftware.astra.core.refactoring.javadoc.JavadocTagExample]
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
 Running org.alfasoftware.astra.core.refactoring.interfaces.removepublic.TestRemovePublicModifierFromInterfaces
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
 Running org.alfasoftware.astra.core.refactoring.interfaces.inlining.TestInlineRefactor
 INFO - Inlining interface [org.alfasoftware.astra.core.refactoring.interfaces.inlining.SampleInterface] onto [InlineInterfaceExample]
 INFO - Inlining interface [org.alfasoftware.astra.core.refactoring.interfaces.inlining.BaseInterface] onto [FooAccess]
 INFO - Inlining interface [org.alfasoftware.astra.core.refactoring.interfaces.inlining.BaseInterface] onto [InlineEdgeCasesExample]
 INFO - Inlining interface [org.alfasoftware.astra.core.refactoring.interfaces.inlining.SampleInterface] onto [InlineInterfaceGenericsExample]
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 sec
 Running org.alfasoftware.astra.core.refactoring.types.TestTypeReferenceRefactor
 INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
 INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.A] to [org.alfasoftware.astra.exampleTypes.B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
@@ -318,7 +318,7 @@ INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refact
 INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
 INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
 INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.236 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.13 sec
 Running org.alfasoftware.astra.core.refactoring.types.TestUpdateTypeRefactor
 INFO - Refactoring package declaration [org.alfasoftware.astra.core.refactoring.types] to [org.alfasoftware.astra.core.refactoring.types.newpackage] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
 INFO - Adding import [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
@@ -329,13 +329,13 @@ INFO - Refactoring qualified type [org.alfasoftware.astra.core.refactoring.types
 INFO - Refactoring simple type [UpdateTypeToChangeExample] to [UpdatedTypeExampleAfter] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
 INFO - Refactoring simple type [UpdateTypeToChangeExample] to [UpdatedTypeExampleAfter] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
 INFO - Refactoring simple type [UpdateTypeToChangeExample] to [UpdatedTypeExampleAfter] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
 Running org.alfasoftware.astra.core.refactoring.javapattern.substitutemethod.staticmethodinvocation.TestStaticMethodInvocationMatching
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec
 Running org.alfasoftware.astra.core.refactoring.javapattern.substitutemethod.TestSubstituteMethodExampleMatching
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec
 Running org.alfasoftware.astra.core.refactoring.javapattern.parametermatching.TestParameterMatchingExample
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.165 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 sec
 
 Results :
 
@@ -372,11 +372,11 @@ Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mastra-example[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/astra-example/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 22 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 22 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: astra-example
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: astra-example (22 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/astra-example/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for astra-example: pinned=22 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: astra-example
@@ -425,11 +425,11 @@ Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mastra-cli[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/astra-cli/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 23 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 23 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: astra-cli
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: astra-cli (23 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/astra-cli/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for astra-cli: pinned=23 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: astra-cli
@@ -469,6 +469,8 @@ Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
 [[1;34mINFO[m] artifact org.eclipse.platform:org.eclipse.core.runtime: checking for updates from central
 [[1;34mINFO[m] artifact org.eclipse.platform:org.eclipse.core.filesystem: checking for updates from central
 [[1;34mINFO[m] artifact org.eclipse.platform:org.eclipse.text: checking for updates from central
+[[1;34mINFO[m] log4j.properties already added, skipping
+[[1;34mINFO[m] META-INF/LICENSE already added, skipping
 [[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
 [[1;34mINFO[m] META-INF/ already added, skipping
 [[1;34mINFO[m] org/ already added, skipping
@@ -659,9 +661,9 @@ Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
 [[1;34mINFO[m] org/apache/ already added, skipping
 [[1;34mINFO[m] META-INF/ already added, skipping
 [[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] log4j.properties already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
 [[1;34mINFO[m] Building jar: /var/maven/app/astra-cli/target/astra-cli-1.3.7-jar-with-dependencies.jar
+[[1;34mINFO[m] log4j.properties already added, skipping
+[[1;34mINFO[m] META-INF/LICENSE already added, skipping
 [[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
 [[1;34mINFO[m] META-INF/ already added, skipping
 [[1;34mINFO[m] org/ already added, skipping
@@ -852,8 +854,6 @@ Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
 [[1;34mINFO[m] org/apache/ already added, skipping
 [[1;34mINFO[m] META-INF/ already added, skipping
 [[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] log4j.properties already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mastra-cli[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/astra-cli/target/astra-cli-1.3.7.jar to /var/maven/.m2/repository/org/alfasoftware/astra-cli/1.3.7/astra-cli-1.3.7.jar
@@ -869,11 +869,11 @@ Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mastra-testing[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/astra-testing/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 22 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 22 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: astra-testing
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: astra-testing (22 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/astra-testing/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for astra-testing: pinned=22 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: astra-testing
@@ -914,16 +914,16 @@ Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for astra 1.3.7:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] astra .............................................. [1;32mSUCCESS[m [  7.617 s]
-[[1;34mINFO[m] astra-core ......................................... [1;32mSUCCESS[m [ 14.866 s]
-[[1;34mINFO[m] astra-example ...................................... [1;32mSUCCESS[m [  0.595 s]
-[[1;34mINFO[m] astra-cli .......................................... [1;32mSUCCESS[m [  3.196 s]
-[[1;34mINFO[m] astra-testing ...................................... [1;32mSUCCESS[m [  0.193 s]
+[[1;34mINFO[m] astra .............................................. [1;32mSUCCESS[m [  7.232 s]
+[[1;34mINFO[m] astra-core ......................................... [1;32mSUCCESS[m [ 12.251 s]
+[[1;34mINFO[m] astra-example ...................................... [1;32mSUCCESS[m [  0.495 s]
+[[1;34mINFO[m] astra-cli .......................................... [1;32mSUCCESS[m [  3.106 s]
+[[1;34mINFO[m] astra-testing ...................................... [1;32mSUCCESS[m [  0.335 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  26.806 s
-[[1;34mINFO[m] Finished at: 2026-10-08T15:13:28Z
+[[1;34mINFO[m] Total time:  23.618 s
+[[1;34mINFO[m] Finished at: 2026-10-11T07:32:47Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Astra.buildinfo: No such file or directory
 dos2unix: Skipping target/Astra.buildinfo, not a regular file.

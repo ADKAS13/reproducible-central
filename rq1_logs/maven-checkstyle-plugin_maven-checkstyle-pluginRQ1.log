@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Oct  8 15:17:48 UTC 2026.
-Universal Time is now:  Thu Oct  8 15:17:48 UTC 2026.
+Local time is now:      Sun Oct 11 07:37:26 UTC 2026.
+Universal Time is now:  Sun Oct 11 07:37:26 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -90,13 +90,13 @@ Universal Time is now:  Thu Oct  8 15:17:48 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 81 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 81 dependencies (39 carrying exclusions, 2 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: maven-checkstyle-plugin
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: maven-checkstyle-plugin (81 dependencies, 39 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for maven-checkstyle-plugin: pinned=81 upgraded=0 downgraded=0 added=15 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for maven-checkstyle-plugin: pinned=81 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: maven-checkstyle-plugin
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mmaven-checkstyle-plugin[0;1m ---[m
@@ -129,8 +129,8 @@ Universal Time is now:  Thu Oct  8 15:17:48 UTC 2026.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  2.702 s
-[[1;34mINFO[m] Finished at: 2026-10-08T15:17:52Z
+[[1;34mINFO[m] Total time:  1.130 s
+[[1;34mINFO[m] Finished at: 2026-10-11T07:37:28Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;31mERROR[m] Failed to execute goal [32morg.apache.rat:apache-rat-plugin:0.12:check[m [1m(rat-check)[m on project [36mmaven-checkstyle-plugin[m: [1;31mToo many files with unapproved license: 2 See RAT report in: /var/maven/app/target/rat.txt[m -> [1m[Help 1][m
 [[1;31mERROR[m] 

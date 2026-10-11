@@ -1,0 +1,15 @@
+groupId=com.helger.peppol
+artifactId=peppol-commons-parent-pom
+version=9
+
+gitRepo=https://github.com/phax/peppol-commons.git
+gitTag=86ea56872d3f1ed495dc78e247b874d2dfcc27bb
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install -Dmaven.test.failure.ignore=true\""
+
+buildinfo=target/Peppol-commons.buildinfo

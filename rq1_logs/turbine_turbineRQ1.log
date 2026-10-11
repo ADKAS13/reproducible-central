@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Oct  8 15:23:42 UTC 2026.
-Universal Time is now:  Thu Oct  8 15:23:42 UTC 2026.
+Local time is now:      Sun Oct 11 07:44:17 UTC 2026.
+Universal Time is now:  Sun Oct 11 07:44:17 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -100,11 +100,11 @@ Universal Time is now:  Thu Oct  8 15:23:42 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mturbine[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 22 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 22 dependencies (0 carrying exclusions, 0 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mturbine[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: turbine
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: turbine (22 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for turbine: pinned=22 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: turbine
@@ -141,53 +141,53 @@ Universal Time is now:  Thu Oct  8 15:23:42 UTC 2026.
  T E S T S
 -------------------------------------------------------
 Running com.google.turbine.parse.UnicodeEscapePreprocessorTest
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec - in com.google.turbine.parse.UnicodeEscapePreprocessorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec - in com.google.turbine.parse.UnicodeEscapePreprocessorTest
 Running com.google.turbine.parse.LexerTest
-Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in com.google.turbine.parse.LexerTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 sec - in com.google.turbine.parse.LexerTest
 Running com.google.turbine.parse.ExpressionParserTest
-Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in com.google.turbine.parse.ExpressionParserTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in com.google.turbine.parse.ExpressionParserTest
 Running com.google.turbine.parse.VariableDeclarationTest
-Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec - in com.google.turbine.parse.VariableDeclarationTest
+Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec - in com.google.turbine.parse.VariableDeclarationTest
 Running com.google.turbine.parse.CommentParserTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in com.google.turbine.parse.CommentParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in com.google.turbine.parse.CommentParserTest
 Running com.google.turbine.parse.ParseErrorTest
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec - in com.google.turbine.parse.ParseErrorTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in com.google.turbine.parse.ParseErrorTest
 Running com.google.turbine.parse.ParserIntegrationTest
-Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in com.google.turbine.parse.ParserIntegrationTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in com.google.turbine.parse.ParserIntegrationTest
 Running com.google.turbine.parse.VariableInitializerTest
 Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.google.turbine.parse.VariableInitializerTest
 Running com.google.turbine.deps.DependenciesTest
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.654 sec - in com.google.turbine.deps.DependenciesTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: -0.909 sec - in com.google.turbine.deps.DependenciesTest
 Running com.google.turbine.deps.TransitiveTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.254 sec - in com.google.turbine.deps.TransitiveTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.338 sec - in com.google.turbine.deps.TransitiveTest
 Running com.google.turbine.diag.LineMapTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.diag.LineMapTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.turbine.diag.LineMapTest
 Running com.google.turbine.options.TurbineOptionsTest
 Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in com.google.turbine.options.TurbineOptionsTest
 Running com.google.turbine.main.ReducedClasspathTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.228 sec - in com.google.turbine.main.ReducedClasspathTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.218 sec - in com.google.turbine.main.ReducedClasspathTest
 Running com.google.turbine.main.MainTest
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 sec - in com.google.turbine.main.MainTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.245 sec - in com.google.turbine.main.MainTest
 Running com.google.turbine.lower.ModuleIntegrationTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.256 sec - in com.google.turbine.lower.ModuleIntegrationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.257 sec - in com.google.turbine.lower.ModuleIntegrationTest
 Running com.google.turbine.lower.LowerIntegrationTest
-Tests run: 261, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.027 sec - in com.google.turbine.lower.LowerIntegrationTest
+Tests run: 261, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.212 sec - in com.google.turbine.lower.LowerIntegrationTest
 Running com.google.turbine.lower.LowerSignatureTest
 Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.lower.LowerSignatureTest
 Running com.google.turbine.lower.LowerTest
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in com.google.turbine.lower.LowerTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec - in com.google.turbine.lower.LowerTest
 Running com.google.turbine.zip.ZipTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.833 sec - in com.google.turbine.zip.ZipTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.639 sec - in com.google.turbine.zip.ZipTest
 Running com.google.turbine.type.TypeTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.google.turbine.type.TypeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.google.turbine.type.TypeTest
 Running com.google.turbine.processing.TurbineElementsTest
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.168 sec - in com.google.turbine.processing.TurbineElementsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.182 sec - in com.google.turbine.processing.TurbineElementsTest
 Running com.google.turbine.processing.TurbineTypesFactoryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.google.turbine.processing.TurbineTypesFactoryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.google.turbine.processing.TurbineTypesFactoryTest
 Running com.google.turbine.processing.TurbineFilerTest
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.google.turbine.processing.TurbineFilerTest
 Running com.google.turbine.processing.TurbineTypesIsAssignableTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 5.585 sec - in com.google.turbine.processing.TurbineTypesIsAssignableTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 6.22 sec - in com.google.turbine.processing.TurbineTypesIsAssignableTest
 Running com.google.turbine.processing.TurbineElementsGetAllMembersTest
 Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineElementsGetAllMembersTest
 Running com.google.turbine.processing.TurbineAnnotationMirrorTest
@@ -195,23 +195,23 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.g
 Running com.google.turbine.processing.TurbineTypeMirrorTest
 Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineTypeMirrorTest
 Running com.google.turbine.processing.TurbineTypesIsSameTypeTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.461 sec - in com.google.turbine.processing.TurbineTypesIsSameTypeTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.446 sec - in com.google.turbine.processing.TurbineTypesIsSameTypeTest
 Running com.google.turbine.processing.TurbineAnnotationProxyTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineAnnotationProxyTest
 Running com.google.turbine.processing.TurbineNameTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineNameTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.turbine.processing.TurbineNameTest
 Running com.google.turbine.processing.TurbineTypesUnaryTest
-Tests run: 3136, Failures: 0, Errors: 0, Skipped: 903, Time elapsed: 0.175 sec - in com.google.turbine.processing.TurbineTypesUnaryTest
+Tests run: 3136, Failures: 0, Errors: 0, Skipped: 903, Time elapsed: 0.17 sec - in com.google.turbine.processing.TurbineTypesUnaryTest
 Running com.google.turbine.processing.TurbineTypesIsSubtypeTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 4.147 sec - in com.google.turbine.processing.TurbineTypesIsSubtypeTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 4.352 sec - in com.google.turbine.processing.TurbineTypesIsSubtypeTest
 Running com.google.turbine.processing.ProcessingIntegrationTest
 Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.ProcessingIntegrationTest
 Running com.google.turbine.processing.TurbineTypesIsSubsignatureTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 30066, Time elapsed: 6.599 sec - in com.google.turbine.processing.TurbineTypesIsSubsignatureTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 30066, Time elapsed: 5.551 sec - in com.google.turbine.processing.TurbineTypesIsSubsignatureTest
 Running com.google.turbine.processing.TurbineMessagerTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineMessagerTest
 Running com.google.turbine.processing.TurbineTypesContainsTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 14508, Time elapsed: 3.119 sec - in com.google.turbine.processing.TurbineTypesContainsTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 14508, Time elapsed: 3.472 sec - in com.google.turbine.processing.TurbineTypesContainsTest
 Running com.google.turbine.processing.TurbineElementTest
 Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineElementTest
 Running com.google.turbine.binder.ClassPathBinderTest
@@ -237,9 +237,9 @@ Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.g
 Running com.google.turbine.bytecode.sig.SigRegressionTest
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.bytecode.sig.SigRegressionTest
 Running com.google.turbine.bytecode.sig.SigIntegrationTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 sec - in com.google.turbine.bytecode.sig.SigIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.457 sec - in com.google.turbine.bytecode.sig.SigIntegrationTest
 Running com.google.turbine.bytecode.ClassReaderTest
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.turbine.bytecode.ClassReaderTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.bytecode.ClassReaderTest
 
 Results :
 
@@ -267,8 +267,8 @@ Tests run: 157852, Failures: 0, Errors: 0, Skipped: 76920
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  56.432 s
-[[1;34mINFO[m] Finished at: 2026-10-08T15:24:40Z
+[[1;34mINFO[m] Total time:  57.609 s
+[[1;34mINFO[m] Finished at: 2026-10-11T07:45:16Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Turbine.buildinfo: No such file or directory
 dos2unix: Skipping target/Turbine.buildinfo, not a regular file.

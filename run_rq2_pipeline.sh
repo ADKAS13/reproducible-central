@@ -111,7 +111,8 @@ echo "[COLLECT] Scanning for comparison reports and test results..."
 python3 "${COLLECT_RQ1_SCRIPT}" \
     --root "${RC_ROOT}" \
     --output "${OUTPUT_RQ1_CSV}" \
-    --log-dir "${LOG_DIR}"
+    --log-dir "${LOG_DIR}" \
+    --flavor "RQ2${RANGE_MODE}"
 
 echo ""
 echo "Done."

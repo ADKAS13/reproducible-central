@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Oct  8 15:17:10 UTC 2026.
-Universal Time is now:  Thu Oct  8 15:17:10 UTC 2026.
+Local time is now:      Sun Oct 11 07:35:56 UTC 2026.
+Universal Time is now:  Sun Oct 11 07:35:56 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -95,11 +95,11 @@ Universal Time is now:  Thu Oct  8 15:17:10 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36melemento-core[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/core/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 16 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 16 dependencies (3 carrying exclusions, 15 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36melemento-core[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: elemento-core
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: elemento-core (16 dependencies, 3 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/core/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for elemento-core: pinned=16 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: elemento-core
@@ -111,7 +111,7 @@ Universal Time is now:  Thu Oct  8 15:17:10 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(get-scm-revision)[m @ [36melemento-core[0;1m ---[m
 [[1;33mWARNING[m] Cannot get the revision information from the scm repository, proceeding with revision of UNKNOWN : 
 No such provider: 'git@github.com'.
-[[1;34mINFO[m] Storing buildNumber: UNKNOWN at timestamp: 1791472632544
+[[1;34mINFO[m] Storing buildNumber: UNKNOWN at timestamp: 1791704158098
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 No such provider: 'git@github.com'.
 [[1;33mWARNING[m] Cannot get the branch information from the scm repository, proceeding with UNKNOWN_BRANCH : 
@@ -143,9 +143,9 @@ No such provider: 'git@github.com'.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.jboss.elemento.[1mByTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in org.jboss.elemento.[1mByTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.jboss.elemento.[1mByTest[m
 [[1;34mINFO[m] Running org.jboss.elemento.[1mIdTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.jboss.elemento.[1mIdTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.jboss.elemento.[1mIdTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -171,7 +171,7 @@ No such provider: 'git@github.com'.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36melemento-parent[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 0 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36melemento-parent[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: elemento-parent
@@ -189,13 +189,13 @@ No such provider: 'git@github.com'.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Elemento :: Parent HEAD-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Elemento :: Core ................................... [1;32mSUCCESS[m [  3.797 s]
-[[1;34mINFO[m] Elemento :: Parent ................................. [1;32mSUCCESS[m [  0.021 s]
+[[1;34mINFO[m] Elemento :: Core ................................... [1;32mSUCCESS[m [  3.715 s]
+[[1;34mINFO[m] Elemento :: Parent ................................. [1;32mSUCCESS[m [  0.022 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  3.971 s
-[[1;34mINFO[m] Finished at: 2026-10-08T15:17:15Z
+[[1;34mINFO[m] Total time:  3.887 s
+[[1;34mINFO[m] Finished at: 2026-10-11T07:36:01Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Elemento.buildinfo: No such file or directory
 dos2unix: Skipping target/Elemento.buildinfo, not a regular file.

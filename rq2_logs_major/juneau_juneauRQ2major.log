@@ -1,0 +1,246 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/juneau/RQ2major/juneauRQ2major.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.apache.juneau[0m
+|      [0;34martifactId[0;97m: [1mjuneau[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/org/apache/juneau/juneau/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/apache/juneau.git[0m
+|      [0;34mgitTag[0;97m: [1m801c636e9badfa6c38e15d5590bfb0b6ec0caa00[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m8[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Juneau.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/apache/juneau.git[0m on tag [1m801c636e9badfa6c38e15d5590bfb0b6ec0caa00[0m
+/home/adkas13/reproducible-central/repos/juneau/RQ2major/buildcache/juneau
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/apache/juneau.git (fetch)
+origin	https://github.com/apache/juneau.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 801c636e9badfa6c38e15d5590bfb0b6ec0caa00 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/juneau/RQ2major/buildcache/juneau
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:1058280974120b51d18b8f71f941283af8612725fc28a3a72cfb85cf150239c6
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:8514503f3f5516217b6be23a408be73c80c45fc9c054c70b7f26973b7e0100ed
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:80d48831e3263a373a8351d99ce446ede387df085e0783cc6b9649f602eb5da0
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.apache.juneau:juneau:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/juneau/RQ2major/buildcache/juneau:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+javac: invalid flag: --version
+Usage: javac <options> <source files>
+use -help for a list of possible options
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version [0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sat Oct 10 20:59:19 UTC 2026.
+Universal Time is now:  Sat Oct 10 20:59:19 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] juneau                                                             [pom]
+[[1;34mINFO[m] juneau/core                                                        [pom]
+[[1;34mINFO[m] juneau/core/marshall                                            [bundle]
+[[1;34mINFO[m] juneau/core/marshall-rdf                                        [bundle]
+[[1;34mINFO[m] juneau/core/dto                                                 [bundle]
+[[1;34mINFO[m] juneau/core/config                                              [bundle]
+[[1;34mINFO[m] juneau/rest                                                        [pom]
+[[1;34mINFO[m] juneau/rest/rest-server                                         [bundle]
+[[1;34mINFO[m] juneau/rest/rest-server-jaxrs                                   [bundle]
+[[1;34mINFO[m] juneau/rest/rest-server-rdf                                     [bundle]
+[[1;34mINFO[m] juneau/rest/rest-server-springboot                              [bundle]
+[[1;34mINFO[m] juneau/rest/rest-client                                         [bundle]
+[[1;34mINFO[m] juneau/rest/rest-mock                                           [bundle]
+[[1;34mINFO[m] juneau/microservice                                                [pom]
+[[1;34mINFO[m] juneau/microservice/microservice-core                              [jar]
+[[1;34mINFO[m] juneau/microservice/microservice-jetty                             [jar]
+[[1;34mINFO[m] juneau/microservice/my-jetty-microservice                          [jar]
+[[1;34mINFO[m] juneau/examples                                                    [pom]
+[[1;34mINFO[m] juneau/examples/rest                                               [jar]
+[[1;34mINFO[m] juneau/microservice/microservice-ftest                             [jar]
+[[1;34mINFO[m] juneau/microservice/my-springboot-microservice                     [jar]
+[[1;34mINFO[m] juneau/sc                                                          [pom]
+[[1;34mINFO[m] juneau/sc/sc-server                                                [jar]
+[[1;34mINFO[m] juneau/sc/sc-client                                                [jar]
+[[1;34mINFO[m] juneau/examples/examples-core                                      [jar]
+[[1;34mINFO[m] juneau/examples/examples-rest-jetty                                [jar]
+[[1;34mINFO[m] juneau/examples/examples-rest-springboot                           [jar]
+[[1;34mINFO[m] juneau/examples/examples-rest-jetty-ftest                          [jar]
+[[1;34mINFO[m] juneau/utest                                                    [bundle]
+[[1;34mINFO[m] juneau/all                                                         [jar]
+[[1;34mINFO[m] juneau/distrib                                                     [pom]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------------< [0;36morg.apache.juneau:juneau[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding juneau 9.0.0-SNAPSHOT                                    [1/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mjuneau[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mjuneau[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mjuneau[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: juneau
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven-version)[m @ [36mjuneau[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mjuneau[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-resource-bundles)[m @ [36mjuneau[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.7.1:attach-descriptor[m [1m(attach-descriptor)[m @ [36mjuneau[0;1m ---[m
+[[1;34mINFO[m] No site descriptor found: nothing to attach.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mjuneau[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Parsing exclusions from /var/maven/app/.gitignore
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 73 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: **/DEPENDENCIES
+[[1;34mINFO[m] Exclude: **/target/**
+[[1;34mINFO[m] Exclude: **/empty.txt
+[[1;34mINFO[m] Exclude: **/TODO.txt
+[[1;34mINFO[m] Exclude: **/.settings/**
+[[1;34mINFO[m] Exclude: **/.project
+[[1;34mINFO[m] Exclude: **/.classpath
+[[1;34mINFO[m] Exclude: **/*.launch
+[[1;34mINFO[m] Exclude: **/*.prefs
+[[1;34mINFO[m] Exclude: **/*.2
+[[1;34mINFO[m] Exclude: **/jetty.out.xml
+[[1;34mINFO[m] Exclude: **/*.log
+[[1;34mINFO[m] Exclude: **/dependency-reduced-pom.xml
+[[1;34mINFO[m] Exclude: **/docs.txt
+[[1;34mINFO[m] Exclude: **/toc.txt
+[[1;34mINFO[m] Exclude: **/app.json
+[[1;34mINFO[m] Exclude: **/Procfile
+[[1;34mINFO[m] 662 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 1, unknown: 1, generated: 0, approved: 449 licenses.
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Parsing exclusions from /var/maven/app/.gitignore
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 73 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: **/DEPENDENCIES
+[[1;34mINFO[m] Exclude: **/target/**
+[[1;34mINFO[m] Exclude: **/empty.txt
+[[1;34mINFO[m] Exclude: **/TODO.txt
+[[1;34mINFO[m] Exclude: **/.settings/**
+[[1;34mINFO[m] Exclude: **/.project
+[[1;34mINFO[m] Exclude: **/.classpath
+[[1;34mINFO[m] Exclude: **/*.launch
+[[1;34mINFO[m] Exclude: **/*.prefs
+[[1;34mINFO[m] Exclude: **/*.2
+[[1;34mINFO[m] Exclude: **/jetty.out.xml
+[[1;34mINFO[m] Exclude: **/*.log
+[[1;34mINFO[m] Exclude: **/dependency-reduced-pom.xml
+[[1;34mINFO[m] Exclude: **/docs.txt
+[[1;34mINFO[m] Exclude: **/toc.txt
+[[1;34mINFO[m] Exclude: **/app.json
+[[1;34mINFO[m] Exclude: **/Procfile
+[[1;34mINFO[m] 662 resources included (use -debug for more details)
+[[1;33mWARNING[m] Files with unapproved licenses:
+  pom.deps.xml
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for juneau 9.0.0-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] juneau ............................................. [1;31mFAILURE[m [  1.709 s]
+[[1;34mINFO[m] juneau/core ........................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/core/marshall ............................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/core/marshall-rdf ........................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/core/dto .................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/core/config ................................. [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/rest ........................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/rest/rest-server ............................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/rest/rest-server-jaxrs ...................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/rest/rest-server-rdf ........................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/rest/rest-server-springboot ................. [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/rest/rest-client ............................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/rest/rest-mock .............................. [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/microservice ................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/microservice/microservice-core .............. [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/microservice/microservice-jetty ............. [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/microservice/my-jetty-microservice .......... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/examples .................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/examples/rest ............................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/microservice/microservice-ftest ............. [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/microservice/my-springboot-microservice ..... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/sc .......................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/sc/sc-server ................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/sc/sc-client ................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/examples/examples-core ...................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/examples/examples-rest-jetty ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/examples/examples-rest-springboot ........... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/examples/examples-rest-jetty-ftest .......... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/utest ....................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/all ......................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] juneau/distrib ..................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  2.403 s
+[[1;34mINFO[m] Finished at: 2026-10-10T20:59:23Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.rat:apache-rat-plugin:0.12:check[m [1m(default)[m on project [36mjuneau[m: [1;31mToo many files with unapproved license: 1 See RAT report in: /var/maven/app/target/rat.txt[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

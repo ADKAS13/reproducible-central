@@ -1,0 +1,15 @@
+groupId=com.wavefront
+artifactId=wavefront
+version=9
+
+gitRepo=https://github.com/Broadcom/wavefront-proxy.git
+gitTag=473181a944de2a37701d6ecc6da5e92b5c10a381
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+
+buildinfo=target/Wavefront-proxy.buildinfo

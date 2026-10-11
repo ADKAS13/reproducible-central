@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Mon Oct  5 16:23:49 UTC 2026.
-Universal Time is now:  Mon Oct  5 16:23:49 UTC 2026.
+Local time is now:      Sun Oct 11 01:35:14 UTC 2026.
+Universal Time is now:  Sun Oct 11 01:35:14 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -179,33 +179,31 @@ Universal Time is now:  Mon Oct  5 16:23:49 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/commons/smartcollections/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 12 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml
-Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 507 B/s)
+Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 429 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 18 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 54 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 1.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 82 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml
-Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml (476 B at 1.3 kB/s)
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 1.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 3.8 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 5.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
 Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 2.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 93 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 22 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 31 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 69 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 5.9 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 30 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-commons-smartcollections
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/commons/smartcollections/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-commons-smartcollections: pinned=5 upgraded=7 downgraded=0 added=3 removed=0 scope_changed=0
@@ -233,7 +231,7 @@ Progress (1): 1.4 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.32 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.336 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -255,13 +253,15 @@ Progress (1): 1.4 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-commons-util[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/commons/util/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-util[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 47 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 65 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-commons-util
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/commons/util/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-commons-util: pinned=6 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
@@ -292,7 +292,7 @@ Progress (1): 3.9 kB                    Downloaded from central: https://repo.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.415 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.438 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -314,6 +314,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-api[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/api/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 16 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -349,7 +351,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m79[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.417 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m79[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.419 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -371,19 +373,21 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-core[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/core/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 21 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-core[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 144 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 245 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 47 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 243 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 186 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 252 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
-Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 15 kB/s)
+Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 4.2 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-core
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/core/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-core: pinned=10 upgraded=11 downgraded=0 added=2 removed=0 scope_changed=0
@@ -414,7 +418,7 @@ Progress (1): 907 B                   Downloaded from central: https://repo.ma
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m248[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.222 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m248[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.236 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -436,6 +440,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-util[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/util/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 26 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -471,7 +477,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m154[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.141 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m154[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.124 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -509,13 +515,14 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-brics[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/adapters/brics/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.11-8' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-brics[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-Downloading from central: https://repo.maven.apache.org/maven2/dk/brics/automaton/automaton/maven-metadata.xml
-Progress (1): 337 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dk/brics/automaton/automaton/maven-metadata.xml (337 B at 787 B/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-brics
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/adapters/brics/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-brics: pinned=11 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
@@ -546,7 +553,7 @@ Progress (1): 337 B                   Downloaded from central: https://repo.ma
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 s - in net.automatalib.brics.[1mBricsDFATest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.316 s - in net.automatalib.brics.[1mBricsDFATest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -584,46 +591,48 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-jung-visualizer[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/visualization/jung-visualizer/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 37 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-jung-visualizer[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/misberner/graphviz-awt-shapes/graphviz-awt-shapes/maven-metadata.xml
-Progress (1): 366 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/misberner/graphviz-awt-shapes/graphviz-awt-shapes/maven-metadata.xml (366 B at 751 B/s)
+Progress (1): 366 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/misberner/graphviz-awt-shapes/graphviz-awt-shapes/maven-metadata.xml (366 B at 727 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/jidesoft/jide-oss/maven-metadata.xml
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/jidesoft/jide-oss/maven-metadata.xml (2.5 kB at 5.6 kB/s)
+Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/jidesoft/jide-oss/maven-metadata.xml (2.5 kB at 5.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 16 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 20 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 19 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-shared/maven-metadata.xml
-Progress (1): 451 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-shared/maven-metadata.xml (451 B at 1.5 kB/s)
+Progress (1): 451 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-shared/maven-metadata.xml (451 B at 818 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-tta/maven-metadata.xml
-Progress (1): 448 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-tta/maven-metadata.xml (448 B at 919 B/s)
+Progress (1): 448 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-tta/maven-metadata.xml (448 B at 1.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/jcip/jcip-annotations/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-algorithms/maven-metadata.xml
-Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-algorithms/maven-metadata.xml (362 B at 785 B/s)
+Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-algorithms/maven-metadata.xml (362 B at 1.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/maven-metadata.xml
-Progress (1): 355 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/maven-metadata.xml (355 B at 657 B/s)
+Progress (1): 355 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/maven-metadata.xml (355 B at 808 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-graph-impl/maven-metadata.xml
-Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-graph-impl/maven-metadata.xml (362 B at 726 B/s)
+Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-graph-impl/maven-metadata.xml (362 B at 799 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-visualization/maven-metadata.xml
-Progress (1): 365 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-visualization/maven-metadata.xml (365 B at 1.0 kB/s)
+Progress (1): 365 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-visualization/maven-metadata.xml (365 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml
-Progress (1): 464 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml (464 B at 1.4 kB/s)
+Progress (1): 464 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml (464 B at 1.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-reflect/maven-metadata.xml
-Progress (1): 471 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-reflect/maven-metadata.xml (471 B at 2.0 kB/s)
+Progress (1): 471 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-reflect/maven-metadata.xml (471 B at 1.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing/maven-metadata.xml
-Progress (1): 475 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing/maven-metadata.xml (475 B at 1.1 kB/s)
+Progress (1): 475 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing/maven-metadata.xml (475 B at 619 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit/maven-metadata.xml
-Progress (1): 481 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit/maven-metadata.xml (481 B at 983 B/s)
+Progress (1): 481 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit/maven-metadata.xml (481 B at 1.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit-4.5/maven-metadata.xml
-Progress (1): 485 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit-4.5/maven-metadata.xml (485 B at 1.4 kB/s)
+Progress (1): 485 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit-4.5/maven-metadata.xml (485 B at 1.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml
-Progress (1): 751 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml (751 B at 2.9 kB/s)
+Progress (1): 751 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml (751 B at 2.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 3.2 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 16 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-jung-visualizer — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-jung-visualizer
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/visualization/jung-visualizer/target/dependency-tree-after.txt
@@ -655,7 +664,7 @@ Progress (1): 721 B                   Downloaded from central: https://repo.ma
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.484 s - in net.automatalib.visualization.jung.[1mProviderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.542 s - in net.automatalib.visualization.jung.[1mProviderTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -677,6 +686,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-incremental[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/incremental/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 37 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -713,7 +724,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m69[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.777 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m69[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.799 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -751,6 +762,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-core[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/core/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-serialization-core[0;1m ---[m
@@ -793,6 +806,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-etf[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/etf/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -825,7 +840,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.351 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.347 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -847,6 +862,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-fsm[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/fsm/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -882,7 +899,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.341 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.352 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -904,6 +921,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-taf[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/taf/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -950,7 +969,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.337 s - in net.automatalib.serialization.taf.[1mTAFSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 s - in net.automatalib.serialization.taf.[1mTAFSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -988,6 +1007,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/modelchecking/ltsmin/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 25 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -1033,7 +1054,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m89[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m76[m, Time elapsed: 0.475 s - in [1mTestSuite[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m89[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m76[m, Time elapsed: 0.521 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1055,6 +1076,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-aut[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/aut/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -1087,7 +1110,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.aut.[1mAUTSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.298 s - in net.automatalib.serialization.aut.[1mAUTSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.316 s - in net.automatalib.serialization.aut.[1mAUTSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1109,6 +1132,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-dot[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/dot/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -1155,7 +1180,7 @@ Parser generated successfully.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.402 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: -0.583 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1177,6 +1202,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/learnlibv2/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -1209,7 +1236,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.301 s - in net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.308 s - in net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1231,6 +1258,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-serialization-saf[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/serialization/saf/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 19 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -1263,7 +1292,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running net.automatalib.serialization.saf.[1mSAFSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s - in net.automatalib.serialization.saf.[1mSAFSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.332 s - in net.automatalib.serialization.saf.[1mSAFSerializationTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1285,6 +1314,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-dot-visualizer[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/visualization/dot-visualizer/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 34 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
@@ -1321,7 +1352,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.003 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.039 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1345,6 +1376,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/distribution/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
@@ -1389,9 +1422,9 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [1mBuilding AutomataLib :: Archetypes :: Basic 0.10.0-SNAPSHOT      [28/31][m
 [[1;34mINFO[m] [1m--------------------------[ maven-archetype ]---------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml (1.1 kB at 14 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml (1.1 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (1.0 kB at 15 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (1.0 kB at 26 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbasic[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1400,6 +1433,8 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
@@ -1484,8 +1519,8 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] [INFO] BUILD SUCCESS
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
-[[1;34mINFO[m] [INFO] Total time:  0.962 s
-[[1;34mINFO[m] [INFO] Finished at: 2026-10-05T16:24:33Z
+[[1;34mINFO[m] [INFO] Total time:  1.037 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-10-11T01:35:56Z
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
 [[1;34mINFO[m] 
@@ -1506,6 +1541,8 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
 [[1;33mWARNING[m] Cannot compute version range for non-release version '0.10.0-SNAPSHOT' — falling back to pinned.
@@ -1590,8 +1627,8 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] [INFO] BUILD SUCCESS
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
-[[1;34mINFO[m] [INFO] Total time:  0.962 s
-[[1;34mINFO[m] [INFO] Finished at: 2026-10-05T16:24:35Z
+[[1;34mINFO[m] [INFO] Total time:  1.000 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-10-11T01:35:58Z
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
 [[1;34mINFO[m] 
@@ -1650,15 +1687,18 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mautomata-examples[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/examples/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '28.2-jre' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.11-8' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 42 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-examples[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml (5.9 kB at 21 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml (5.9 kB at 132 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml (5.9 kB at 94 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml (5.9 kB at 138 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-examples — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-examples
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/examples/target/dependency-tree-after.txt
@@ -1726,7 +1766,7 @@ Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from c
 [INFO] SimpleBricsExample: Output for a b b c is true
 [INFO] SimpleBricsExample: Output for a b b b b b d e is true
 [INFO] SimpleBricsExample: Output for a d e is false
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m10[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 1.502 s - in net.automatalib.examples.[1mExamplesTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m10[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 1.543 s - in net.automatalib.examples.[1mExamplesTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1742,42 +1782,42 @@ Progress (1): 4.1 kBProgress (1): 5.9 kB                    Downloaded from c
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for AutomataLib 0.10.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  1.143 s]
+[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  0.994 s]
 [[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.017 s]
-[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.015 s]
-[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  4.895 s]
-[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  2.813 s]
-[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  2.175 s]
-[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  6.032 s]
-[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  3.209 s]
-[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.010 s]
-[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  1.312 s]
+[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.016 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  3.767 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  2.878 s]
+[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  2.292 s]
+[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  5.938 s]
+[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  3.213 s]
+[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  0.926 s]
 [[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;32mSUCCESS[m [  0.011 s]
-[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  7.593 s]
-[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  1.517 s]
-[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.012 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.066 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  0.911 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  0.958 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  1.164 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  7.493 s]
+[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  1.567 s]
+[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.070 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  0.903 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  0.933 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  1.410 s]
 [[1;34mINFO[m] AutomataLib :: Model Checking ...................... [1;32mSUCCESS[m [  0.012 s]
-[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  1.446 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  0.832 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  1.090 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.855 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [  0.903 s]
-[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  1.678 s]
-[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.024 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.065 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  2.292 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  1.762 s]
-[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.030 s]
-[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  2.827 s]
+[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  1.494 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  0.860 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  0.077 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.851 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [  0.900 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  1.729 s]
+[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.022 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.050 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  2.352 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  1.854 s]
+[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.036 s]
+[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  2.402 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  47.977 s
-[[1;34mINFO[m] Finished at: 2026-10-05T16:24:38Z
+[[1;34mINFO[m] Total time:  45.386 s
+[[1;34mINFO[m] Finished at: 2026-10-11T01:36:01Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/AutomataRQ2-minor.buildinfo: No such file or directory
 dos2unix: Skipping target/AutomataRQ2-minor.buildinfo, not a regular file.

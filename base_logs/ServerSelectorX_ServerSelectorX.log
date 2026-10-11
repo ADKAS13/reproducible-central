@@ -1,0 +1,144 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/ServerSelectorX/base/ServerSelectorX.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1mxyz.derkades[0m
+|      [0;34martifactId[0;97m: [1mServerSelectorX[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/xyz/derkades/ServerSelectorX/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/ServerSelectorX/ServerSelectorX.git[0m
+|      [0;34mgitTag[0;97m: [1mb5e7490e7d859c03ef8b7edc7f2ba5002f73b207[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Serverselectorx.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/ServerSelectorX/ServerSelectorX.git[0m on tag [1mb5e7490e7d859c03ef8b7edc7f2ba5002f73b207[0m
+/home/adkas13/reproducible-central/repos/ServerSelectorX/base/buildcache/ServerSelectorX
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/ServerSelectorX/ServerSelectorX.git (fetch)
+origin	https://github.com/ServerSelectorX/ServerSelectorX.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f b5e7490e7d859c03ef8b7edc7f2ba5002f73b207 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/ServerSelectorX/base/buildcache/ServerSelectorX
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mxyz.derkades:ServerSelectorX:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/ServerSelectorX/base/buildcache/ServerSelectorX:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sat Oct 10 10:52:31 UTC 2026.
+Universal Time is now:  Sat Oct 10 10:52:31 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mxyz.derkades:ServerSelectorX[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding ServerSelectorX 3.3.1[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from derkades: https://derkades.xyz/maven/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+Downloading from bstats-repo: http://repo.bstats.org/content/repositories/releases/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+Downloading from placeholderapi: http://repo.extendedclip.com/content/repositories/placeholderapi/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+Downloading from spigot-repo: https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+Downloading from inventive-repo: https://repo.inventivetalent.org/content/groups/public/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+[[1;33mWARNING[m] Could not transfer metadata org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT/maven-metadata.xml from/to derkades (https://derkades.xyz/maven): Transfer failed for https://derkades.xyz/maven/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+[[1;33mWARNING[m] Could not transfer metadata org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT/maven-metadata.xml from/to bstats-repo (http://repo.bstats.org/content/repositories/releases/): Transfer failed for http://repo.bstats.org/content/repositories/releases/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+[[1;33mWARNING[m] Failure to transfer org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT/maven-metadata.xml from https://derkades.xyz/maven was cached in the local repository, resolution will not be reattempted until the update interval of derkades has elapsed or updates are forced. Original error: Could not transfer metadata org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT/maven-metadata.xml from/to derkades (https://derkades.xyz/maven): Transfer failed for https://derkades.xyz/maven/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+[[1;33mWARNING[m] Failure to transfer org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT/maven-metadata.xml from http://repo.bstats.org/content/repositories/releases/ was cached in the local repository, resolution will not be reattempted until the update interval of bstats-repo has elapsed or updates are forced. Original error: Could not transfer metadata org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT/maven-metadata.xml from/to bstats-repo (http://repo.bstats.org/content/repositories/releases/): Transfer failed for http://repo.bstats.org/content/repositories/releases/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/maven-metadata.xml
+Downloading from spigot-repo: https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.pom
+Downloading from derkades: https://derkades.xyz/maven/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.pom
+Downloading from bstats-repo: http://repo.bstats.org/content/repositories/releases/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.pom
+Downloading from placeholderapi: http://repo.extendedclip.com/content/repositories/placeholderapi/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.pom
+Downloading from inventive-repo: https://repo.inventivetalent.org/content/groups/public/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.pom
+Downloading from spigot-repo: https://hub.spigotmc.org/nexus/content/repositories/snapshots/xyz/derkades/Derkutils/1.4.0/Derkutils-1.4.0.pom
+Downloading from derkades: https://derkades.xyz/maven/xyz/derkades/Derkutils/1.4.0/Derkutils-1.4.0.pom
+Downloading from bstats-repo: http://repo.bstats.org/content/repositories/releases/xyz/derkades/Derkutils/1.4.0/Derkutils-1.4.0.pom
+Downloading from placeholderapi: http://repo.extendedclip.com/content/repositories/placeholderapi/xyz/derkades/Derkutils/1.4.0/Derkutils-1.4.0.pom
+Downloading from inventive-repo: https://repo.inventivetalent.org/content/groups/public/xyz/derkades/Derkutils/1.4.0/Derkutils-1.4.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/xyz/derkades/Derkutils/1.4.0/Derkutils-1.4.0.pom
+Downloading from spigot-repo: https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/bstats/bstats-bukkit/1.2/bstats-bukkit-1.2.pom
+Downloading from derkades: https://derkades.xyz/maven/org/bstats/bstats-bukkit/1.2/bstats-bukkit-1.2.pom
+Downloading from bstats-repo: http://repo.bstats.org/content/repositories/releases/org/bstats/bstats-bukkit/1.2/bstats-bukkit-1.2.pom
+Downloading from placeholderapi: http://repo.extendedclip.com/content/repositories/placeholderapi/org/bstats/bstats-bukkit/1.2/bstats-bukkit-1.2.pom
+Downloading from inventive-repo: https://repo.inventivetalent.org/content/groups/public/org/bstats/bstats-bukkit/1.2/bstats-bukkit-1.2.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/bstats/bstats-bukkit/1.2/bstats-bukkit-1.2.pom
+Downloading from spigot-repo: https://hub.spigotmc.org/nexus/content/repositories/snapshots/me/clip/placeholderapi/2.8.2/placeholderapi-2.8.2.pom
+Downloading from derkades: https://derkades.xyz/maven/me/clip/placeholderapi/2.8.2/placeholderapi-2.8.2.pom
+Downloading from bstats-repo: http://repo.bstats.org/content/repositories/releases/me/clip/placeholderapi/2.8.2/placeholderapi-2.8.2.pom
+Downloading from placeholderapi: http://repo.extendedclip.com/content/repositories/placeholderapi/me/clip/placeholderapi/2.8.2/placeholderapi-2.8.2.pom
+Downloading from inventive-repo: https://repo.inventivetalent.org/content/groups/public/me/clip/placeholderapi/2.8.2/placeholderapi-2.8.2.pom
+Downloading from central: https://repo.maven.apache.org/maven2/me/clip/placeholderapi/2.8.2/placeholderapi-2.8.2.pom
+Downloading from spigot-repo: https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/inventivetalent/spiget-update/bukkit/1.4.0/bukkit-1.4.0.pom
+Downloading from derkades: https://derkades.xyz/maven/org/inventivetalent/spiget-update/bukkit/1.4.0/bukkit-1.4.0.pom
+Downloading from bstats-repo: http://repo.bstats.org/content/repositories/releases/org/inventivetalent/spiget-update/bukkit/1.4.0/bukkit-1.4.0.pom
+Downloading from placeholderapi: http://repo.extendedclip.com/content/repositories/placeholderapi/org/inventivetalent/spiget-update/bukkit/1.4.0/bukkit-1.4.0.pom
+Downloading from inventive-repo: https://repo.inventivetalent.org/content/groups/public/org/inventivetalent/spiget-update/bukkit/1.4.0/bukkit-1.4.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/inventivetalent/spiget-update/bukkit/1.4.0/bukkit-1.4.0.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.509 s
+[[1;34mINFO[m] Finished at: 2026-10-10T10:52:35Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal on project [36mServerSelectorX[m: [1;31mCould not resolve dependencies for project xyz.derkades:ServerSelectorX:jar:3.3.1: Failed to collect dependencies at org.spigotmc:spigot:jar:1.8.8-R0.1-SNAPSHOT[m: Failed to read artifact descriptor for org.spigotmc:spigot:jar:1.8.8-R0.1-SNAPSHOT: Could not transfer artifact org.spigotmc:spigot:pom:1.8.8-R0.1-SNAPSHOT from/to derkades (https://derkades.xyz/maven): Transfer failed for https://derkades.xyz/maven/org/spigotmc/spigot/1.8.8-R0.1-SNAPSHOT/spigot-1.8.8-R0.1-SNAPSHOT.pom: Unknown host derkades.xyz -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

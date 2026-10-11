@@ -390,6 +390,7 @@ def main():
                         help="Directory containing rebuild.sh log files (default: <root>/rq1_logs)")
     parser.add_argument("--summary-only", action="store_true",
                         help="Print summary table but don't write CSV")
+    parser.add_argument("--flavor", default="RQ1")
     args = parser.parse_args()
 
     log_dir = args.log_dir or (args.root / "rq1_logs")
@@ -424,8 +425,8 @@ def main():
             print(f"[SKIP] Unexpected buildcache depth: {buildcache}", file=sys.stderr)
             continue
 
-        repo, flavor = relative.parts[0], relative.parts[1]
-        if flavor != "RQ1":
+        repo, flavor, _ = relative.parts
+        if flavor != args.flavor:
             continue
 
         # Skip repos that weren't part of this pipeline run

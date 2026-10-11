@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Mon Oct  5 19:52:04 UTC 2026.
-Universal Time is now:  Mon Oct  5 19:52:04 UTC 2026.
+Local time is now:      Sun Oct 11 01:38:21 UTC 2026.
+Universal Time is now:  Sun Oct 11 01:38:21 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -111,401 +111,82 @@ Universal Time is now:  Mon Oct  5 19:52:04 UTC 2026.
 [[1;34mINFO[m] [1mBuilding gauge-java 0.7.15[m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml
-Progress (1): 563 B                   Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml (563 B at 2.2 kB/s)
+Progress (1): 563 B                   Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml (563 B at 2.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.6 kB at 110 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.7 kB at 134 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml (5.0 kB at 79 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml (5.1 kB at 111 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgauge-java[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgauge-java[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Version '20210307' has fewer than 2 segments — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
 [[1;34mINFO[m] Initialized pom.deps.xml with 34 dependencies (version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mgauge-java[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/maven-metadata.xml (6.8 kB at 25 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.17.0/javaparser-core-3.17.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.17.0/javaparser-core-3.17.0.pom (4.9 kB at 76 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.17.0/javaparser-parent-3.17.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.17.0/javaparser-parent-3.17.0.pom (18 kB at 287 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.18.0/javaparser-core-3.18.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.18.0/javaparser-core-3.18.0.pom (4.9 kB at 77 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.18.0/javaparser-parent-3.18.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.18.0/javaparser-parent-3.18.0.pom (18 kB at 252 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.19.0/javaparser-core-3.19.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.19.0/javaparser-core-3.19.0.pom (4.9 kB at 75 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.19.0/javaparser-parent-3.19.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.19.0/javaparser-parent-3.19.0.pom (18 kB at 270 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.20.0/javaparser-core-3.20.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.20.0/javaparser-core-3.20.0.pom (4.9 kB at 13 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.20.0/javaparser-parent-3.20.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.20.0/javaparser-parent-3.20.0.pom (18 kB at 35 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.20.2/javaparser-core-3.20.2.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.20.2/javaparser-core-3.20.2.pom (4.9 kB at 9.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.20.2/javaparser-parent-3.20.2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.20.2/javaparser-parent-3.20.2.pom (22 kB at 41 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.22.0/javaparser-core-3.22.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.22.0/javaparser-core-3.22.0.pom (4.9 kB at 7.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.22.0/javaparser-parent-3.22.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.22.0/javaparser-parent-3.22.0.pom (22 kB at 32 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.22.1/javaparser-core-3.22.1.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.22.1/javaparser-core-3.22.1.pom (4.9 kB at 63 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.22.1/javaparser-parent-3.22.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.22.1/javaparser-parent-3.22.1.pom (22 kB at 106 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.23.0/javaparser-core-3.23.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.23.0/javaparser-core-3.23.0.pom (4.9 kB at 73 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.23.0/javaparser-parent-3.23.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.23.0/javaparser-parent-3.23.0.pom (22 kB at 334 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.23.1/javaparser-core-3.23.1.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.23.1/javaparser-core-3.23.1.pom (4.9 kB at 79 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.23.1/javaparser-parent-3.23.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.23.1/javaparser-parent-3.23.1.pom (22 kB at 349 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.0/javaparser-core-3.24.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.0/javaparser-core-3.24.0.pom (4.9 kB at 67 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.0/javaparser-parent-3.24.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.0/javaparser-parent-3.24.0.pom (22 kB at 276 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.2/javaparser-core-3.24.2.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.2/javaparser-core-3.24.2.pom (4.9 kB at 83 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.2/javaparser-parent-3.24.2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.2/javaparser-parent-3.24.2.pom (22 kB at 349 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.4/javaparser-core-3.24.4.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.4/javaparser-core-3.24.4.pom (4.9 kB at 81 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.4/javaparser-parent-3.24.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.4/javaparser-parent-3.24.4.pom (22 kB at 379 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.7/javaparser-core-3.24.7.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.7/javaparser-core-3.24.7.pom (5.0 kB at 65 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.7/javaparser-parent-3.24.7.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 23 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.7/javaparser-parent-3.24.7.pom (23 kB at 331 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.8/javaparser-core-3.24.8.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.8/javaparser-core-3.24.8.pom (5.0 kB at 77 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.8/javaparser-parent-3.24.8.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 23 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.8/javaparser-parent-3.24.8.pom (23 kB at 322 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.9/javaparser-core-3.24.9.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.9/javaparser-core-3.24.9.pom (5.0 kB at 71 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.9/javaparser-parent-3.24.9.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 23 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.9/javaparser-parent-3.24.9.pom (23 kB at 326 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.10/javaparser-core-3.24.10.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.24.10/javaparser-core-3.24.10.pom (5.0 kB at 22 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.10/javaparser-parent-3.24.10.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.24.10/javaparser-parent-3.24.10.pom (24 kB at 105 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.0/javaparser-core-3.25.0.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.0/javaparser-core-3.25.0.pom (5.0 kB at 68 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.0/javaparser-parent-3.25.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.0/javaparser-parent-3.25.0.pom (24 kB at 258 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.1/javaparser-core-3.25.1.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.1/javaparser-core-3.25.1.pom (5.0 kB at 57 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.1/javaparser-parent-3.25.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.1/javaparser-parent-3.25.1.pom (24 kB at 273 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.2/javaparser-core-3.25.2.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.2/javaparser-core-3.25.2.pom (5.0 kB at 62 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.2/javaparser-parent-3.25.2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.2/javaparser-parent-3.25.2.pom (24 kB at 359 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.3/javaparser-core-3.25.3.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.3/javaparser-core-3.25.3.pom (5.0 kB at 72 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.3/javaparser-parent-3.25.3.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.3/javaparser-parent-3.25.3.pom (24 kB at 316 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.4/javaparser-core-3.25.4.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.4/javaparser-core-3.25.4.pom (5.0 kB at 76 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.4/javaparser-parent-3.25.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.4/javaparser-parent-3.25.4.pom (24 kB at 354 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.5/javaparser-core-3.25.5.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.5/javaparser-core-3.25.5.pom (5.0 kB at 56 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.5/javaparser-parent-3.25.5.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.5/javaparser-parent-3.25.5.pom (24 kB at 252 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.6/javaparser-core-3.25.6.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.6/javaparser-core-3.25.6.pom (5.0 kB at 72 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.6/javaparser-parent-3.25.6.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.6/javaparser-parent-3.25.6.pom (24 kB at 339 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.7/javaparser-core-3.25.7.pom
-Progress (1): 4.1 kBProgress (1): 5.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.7/javaparser-core-3.25.7.pom (5.1 kB at 54 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.7/javaparser-parent-3.25.7.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.7/javaparser-parent-3.25.7.pom (24 kB at 111 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.8/javaparser-core-3.25.8.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.8/javaparser-core-3.25.8.pom (4.9 kB at 83 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.8/javaparser-parent-3.25.8.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.8/javaparser-parent-3.25.8.pom (24 kB at 362 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.9/javaparser-core-3.25.9.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.9/javaparser-core-3.25.9.pom (4.9 kB at 74 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.9/javaparser-parent-3.25.9.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.9/javaparser-parent-3.25.9.pom (24 kB at 323 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.10/javaparser-core-3.25.10.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.25.10/javaparser-core-3.25.10.pom (4.9 kB at 86 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.10/javaparser-parent-3.25.10.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.25.10/javaparser-parent-3.25.10.pom (24 kB at 351 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.0/javaparser-core-3.26.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.0/javaparser-core-3.26.0.pom (4.9 kB at 79 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.0/javaparser-parent-3.26.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.0/javaparser-parent-3.26.0.pom (24 kB at 332 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.1/javaparser-core-3.26.1.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.1/javaparser-core-3.26.1.pom (4.9 kB at 75 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.1/javaparser-parent-3.26.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.1/javaparser-parent-3.26.1.pom (24 kB at 378 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.2/javaparser-core-3.26.2.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.2/javaparser-core-3.26.2.pom (4.9 kB at 80 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.2/javaparser-parent-3.26.2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.2/javaparser-parent-3.26.2.pom (24 kB at 390 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.3/javaparser-core-3.26.3.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.3/javaparser-core-3.26.3.pom (4.9 kB at 79 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.3/javaparser-parent-3.26.3.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.3/javaparser-parent-3.26.3.pom (24 kB at 432 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.4/javaparser-core-3.26.4.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.26.4/javaparser-core-3.26.4.pom (4.9 kB at 72 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.4/javaparser-parent-3.26.4.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 25 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.26.4/javaparser-parent-3.26.4.pom (25 kB at 418 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.27.0/javaparser-core-3.27.0.pom
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.27.0/javaparser-core-3.27.0.pom (4.9 kB at 78 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.27.0/javaparser-parent-3.27.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 25 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.27.0/javaparser-parent-3.27.0.pom (25 kB at 365 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.27.1/javaparser-core-3.27.1.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.27.1/javaparser-core-3.27.1.pom (5.0 kB at 84 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.27.1/javaparser-parent-3.27.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 26 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.27.1/javaparser-parent-3.27.1.pom (26 kB at 347 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.28.0/javaparser-core-3.28.0.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.28.0/javaparser-core-3.28.0.pom (5.0 kB at 70 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.28.0/javaparser-parent-3.28.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 26 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.28.0/javaparser-parent-3.28.0.pom (26 kB at 421 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.28.1/javaparser-core-3.28.1.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.28.1/javaparser-core-3.28.1.pom (5.0 kB at 20 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.28.1/javaparser-parent-3.28.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 26 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.28.1/javaparser-parent-3.28.1.pom (26 kB at 110 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.28.2/javaparser-core-3.28.2.pom
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.28.2/javaparser-core-3.28.2.pom (5.0 kB at 76 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.28.2/javaparser-parent-3.28.2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 26 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-parent/3.28.2/javaparser-parent-3.28.2.pom (26 kB at 389 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/maven-metadata.xml (6.8 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/stefanbirkner/system-rules/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/stefanbirkner/system-rules/maven-metadata.xml (1.2 kB at 3.5 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/stefanbirkner/system-rules/maven-metadata.xml (1.2 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/android/annotations/maven-metadata.xml
 Progress (1): 342 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/android/annotations/maven-metadata.xml (342 B at 1.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/maven-metadata.xml (5.7 kB at 26 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/maven-metadata.xml (5.7 kB at 130 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/maven-metadata.xml
-Progress (1): 505 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/maven-metadata.xml (505 B at 2.1 kB/s)
+Progress (1): 505 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/maven-metadata.xml (505 B at 2.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 2.2 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 26 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 39 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 13 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 73 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 1.8 kB/s)
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 8.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 87 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml
-Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml (476 B at 2.1 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 133 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 2.4 kB/s)
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 33 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 183 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 17 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 29 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml
-Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 2.3 kB/s)
+Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml (6.1 kB at 26 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml (6.2 kB at 143 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/maven-metadata.xml (5.6 kB at 77 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.40.2/grpc-netty-shaded-1.40.2.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.40.2/grpc-netty-shaded-1.40.2.pom (2.0 kB at 5.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.41.1/grpc-netty-shaded-1.41.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.41.1/grpc-netty-shaded-1.41.1.pom (2.0 kB at 8.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.41.2/grpc-netty-shaded-1.41.2.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.41.2/grpc-netty-shaded-1.41.2.pom (2.0 kB at 8.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.41.3/grpc-netty-shaded-1.41.3.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.41.3/grpc-netty-shaded-1.41.3.pom (2.0 kB at 5.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.42.0/grpc-netty-shaded-1.42.0.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.42.0/grpc-netty-shaded-1.42.0.pom (2.0 kB at 29 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.42.2/grpc-netty-shaded-1.42.2.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.42.2/grpc-netty-shaded-1.42.2.pom (2.0 kB at 26 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.42.3/grpc-netty-shaded-1.42.3.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.42.3/grpc-netty-shaded-1.42.3.pom (2.0 kB at 5.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.43.0/grpc-netty-shaded-1.43.0.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.43.0/grpc-netty-shaded-1.43.0.pom (2.0 kB at 5.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.43.1/grpc-netty-shaded-1.43.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.43.1/grpc-netty-shaded-1.43.1.pom (2.0 kB at 6.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.43.3/grpc-netty-shaded-1.43.3.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.43.3/grpc-netty-shaded-1.43.3.pom (2.0 kB at 5.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.44.2/grpc-netty-shaded-1.44.2.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.44.2/grpc-netty-shaded-1.44.2.pom (2.0 kB at 5.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.45.3/grpc-netty-shaded-1.45.3.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.45.3/grpc-netty-shaded-1.45.3.pom (2.0 kB at 9.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.45.4/grpc-netty-shaded-1.45.4.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.45.4/grpc-netty-shaded-1.45.4.pom (2.0 kB at 5.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.46.1/grpc-netty-shaded-1.46.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.46.1/grpc-netty-shaded-1.46.1.pom (2.0 kB at 5.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.47.1/grpc-netty-shaded-1.47.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.47.1/grpc-netty-shaded-1.47.1.pom (2.0 kB at 8.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.48.2/grpc-netty-shaded-1.48.2.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.48.2/grpc-netty-shaded-1.48.2.pom (2.0 kB at 8.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.49.1/grpc-netty-shaded-1.49.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.49.1/grpc-netty-shaded-1.49.1.pom (2.0 kB at 4.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.50.0/grpc-netty-shaded-1.50.0.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.50.0/grpc-netty-shaded-1.50.0.pom (2.0 kB at 26 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.50.3/grpc-netty-shaded-1.50.3.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.50.3/grpc-netty-shaded-1.50.3.pom (2.0 kB at 5.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.51.3/grpc-netty-shaded-1.51.3.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.51.3/grpc-netty-shaded-1.51.3.pom (2.0 kB at 5.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.52.0/grpc-netty-shaded-1.52.0.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.52.0/grpc-netty-shaded-1.52.0.pom (2.0 kB at 5.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.54.1/grpc-netty-shaded-1.54.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.54.1/grpc-netty-shaded-1.54.1.pom (2.0 kB at 29 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.54.2/grpc-netty-shaded-1.54.2.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.54.2/grpc-netty-shaded-1.54.2.pom (2.0 kB at 9.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.56.0/grpc-netty-shaded-1.56.0.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.56.0/grpc-netty-shaded-1.56.0.pom (2.0 kB at 32 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.57.0/grpc-netty-shaded-1.57.0.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.57.0/grpc-netty-shaded-1.57.0.pom (2.0 kB at 5.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.57.1/grpc-netty-shaded-1.57.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.57.1/grpc-netty-shaded-1.57.1.pom (2.0 kB at 27 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.57.2/grpc-netty-shaded-1.57.2.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.57.2/grpc-netty-shaded-1.57.2.pom (2.0 kB at 21 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.58.1/grpc-netty-shaded-1.58.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.58.1/grpc-netty-shaded-1.58.1.pom (2.0 kB at 4.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.60.1/grpc-netty-shaded-1.60.1.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.60.1/grpc-netty-shaded-1.60.1.pom (2.0 kB at 32 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.60.2/grpc-netty-shaded-1.60.2.pom
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.60.2/grpc-netty-shaded-1.60.2.pom (2.0 kB at 4.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.63.0/grpc-netty-shaded-1.63.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.63.0/grpc-netty-shaded-1.63.0.pom (2.3 kB at 26 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.63.1/grpc-netty-shaded-1.63.1.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.63.1/grpc-netty-shaded-1.63.1.pom (2.3 kB at 9.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.63.2/grpc-netty-shaded-1.63.2.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.63.2/grpc-netty-shaded-1.63.2.pom (2.3 kB at 9.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.64.0/grpc-netty-shaded-1.64.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.64.0/grpc-netty-shaded-1.64.0.pom (2.3 kB at 37 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.64.1/grpc-netty-shaded-1.64.1.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.64.1/grpc-netty-shaded-1.64.1.pom (2.3 kB at 10 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.64.2/grpc-netty-shaded-1.64.2.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.64.2/grpc-netty-shaded-1.64.2.pom (2.3 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.65.0/grpc-netty-shaded-1.65.0.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.65.0/grpc-netty-shaded-1.65.0.pom (2.3 kB at 9.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.68.2/grpc-netty-shaded-1.68.2.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.68.2/grpc-netty-shaded-1.68.2.pom (2.3 kB at 34 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.68.3/grpc-netty-shaded-1.68.3.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.68.3/grpc-netty-shaded-1.68.3.pom (2.3 kB at 8.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.69.1/grpc-netty-shaded-1.69.1.pom
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.69.1/grpc-netty-shaded-1.69.1.pom (2.3 kB at 32 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.72.0/grpc-netty-shaded-1.72.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.72.0/grpc-netty-shaded-1.72.0.pom (2.5 kB at 31 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.73.0/grpc-netty-shaded-1.73.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.73.0/grpc-netty-shaded-1.73.0.pom (2.5 kB at 12 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.74.0/grpc-netty-shaded-1.74.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.74.0/grpc-netty-shaded-1.74.0.pom (2.5 kB at 12 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.75.0/grpc-netty-shaded-1.75.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.75.0/grpc-netty-shaded-1.75.0.pom (2.5 kB at 32 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.76.1/grpc-netty-shaded-1.76.1.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.76.1/grpc-netty-shaded-1.76.1.pom (2.5 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.77.0/grpc-netty-shaded-1.77.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.77.0/grpc-netty-shaded-1.77.0.pom (2.5 kB at 12 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.77.1/grpc-netty-shaded-1.77.1.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.77.1/grpc-netty-shaded-1.77.1.pom (2.5 kB at 32 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.78.0/grpc-netty-shaded-1.78.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.78.0/grpc-netty-shaded-1.78.0.pom (2.5 kB at 41 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.79.0/grpc-netty-shaded-1.79.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.79.0/grpc-netty-shaded-1.79.0.pom (2.5 kB at 43 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.81.1/grpc-netty-shaded-1.81.1.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.81.1/grpc-netty-shaded-1.81.1.pom (2.5 kB at 30 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.82.0/grpc-netty-shaded-1.82.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.82.0/grpc-netty-shaded-1.82.0.pom (2.5 kB at 31 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.82.1/grpc-netty-shaded-1.82.1.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.82.1/grpc-netty-shaded-1.82.1.pom (2.5 kB at 33 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.82.3/grpc-netty-shaded-1.82.3.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.82.3/grpc-netty-shaded-1.82.3.pom (2.5 kB at 7.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.83.1/grpc-netty-shaded-1.83.1.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.83.1/grpc-netty-shaded-1.83.1.pom (2.5 kB at 39 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.84.0/grpc-netty-shaded-1.84.0.pom
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.84.0/grpc-netty-shaded-1.84.0.pom (2.5 kB at 33 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/maven-metadata.xml (5.7 kB at 124 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml (6.6 kB at 30 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml (6.7 kB at 159 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml (6.3 kB at 25 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml (6.4 kB at 136 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml (6.6 kB at 28 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml (6.7 kB at 148 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/maven-metadata.xml
-Progress (1): 782 B                   Downloaded from central: https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/maven-metadata.xml (782 B at 3.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/0.24.0/perfmark-api-0.24.0.pom
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/0.24.0/perfmark-api-0.24.0.pom (1.5 kB at 4.1 kB/s)
+Progress (1): 782 B                   Downloaded from central: https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/maven-metadata.xml (782 B at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml
-Progress (1): 564 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml (564 B at 6.8 kB/s)
+Progress (1): 564 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml (564 B at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 21 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/maven-metadata.xml
-Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/maven-metadata.xml (2.9 kB at 38 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.21.0/assertj-core-3.21.0.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.21.0/assertj-core-3.21.0.pom (29 kB at 428 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.22.0/assertj-core-3.22.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.22.0/assertj-core-3.22.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent-pom/2.2.14/assertj-parent-pom-2.2.14.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent-pom/2.2.14/assertj-parent-pom-2.2.14.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.23.0/assertj-core-3.23.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.23.0/assertj-core-3.23.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent-pom/2.2.17/assertj-parent-pom-2.2.17.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent-pom/2.2.17/assertj-parent-pom-2.2.17.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-bom/4.5.1/mockito-bom-4.5.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-bom/4.5.1/mockito-bom-4.5.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.23.1/assertj-core-3.23.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.23.1/assertj-core-3.23.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.24.0/assertj-core-3.24.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.24.0/assertj-core-3.24.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent/3.24.0/assertj-parent-3.24.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent/3.24.0/assertj-parent-3.24.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-build/3.24.0/assertj-build-3.24.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-build/3.24.0/assertj-build-3.24.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.24.1/assertj-core-3.24.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.24.1/assertj-core-3.24.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent/3.24.1/assertj-parent-3.24.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent/3.24.1/assertj-parent-3.24.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-build/3.24.1/assertj-build-3.24.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-build/3.24.1/assertj-build-3.24.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent/3.24.2/assertj-parent-3.24.2.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-parent/3.24.2/assertj-parent-3.24.2.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-build/3.24.2/assertj-build-3.24.2.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-build/3.24.2/assertj-build-3.24.2.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.0/assertj-core-3.25.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.0/assertj-core-3.25.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.1/assertj-core-3.25.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.1/assertj-core-3.25.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.2/assertj-core-3.25.2.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.2/assertj-core-3.25.2.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.26.0/assertj-core-3.26.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.26.0/assertj-core-3.26.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.0/assertj-core-3.27.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.0/assertj-core-3.27.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.1/assertj-core-3.27.1.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.1/assertj-core-3.27.1.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.2/assertj-core-3.27.2.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.2/assertj-core-3.27.2.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.3/assertj-core-3.27.3.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.3/assertj-core-3.27.3.pom (0 B at 0 B/s)
+Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/maven-metadata.xml (2.9 kB at 69 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 22 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 124 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB at 3.8 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml
-Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 10 kB/s)
+Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 12 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml (1.5 kB at 7.6 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml (1.5 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml (1.3 kB at 3.1 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml (1.3 kB at 4.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/maven-metadata.xml
-Progress (1): 857 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/maven-metadata.xml (857 B at 3.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/0.10-RC1/reflections-0.10-RC1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/0.10-RC1/reflections-0.10-RC1.pom (9.3 kB at 39 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/0.10-RC2/reflections-0.10-RC2.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/0.10-RC2/reflections-0.10-RC2.pom (9.1 kB at 24 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/0.10/reflections-0.10.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/0.10/reflections-0.10.pom (9.1 kB at 24 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/0.10.1/reflections-0.10.1.pom
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/0.10.1/reflections-0.10.1.pom (9.3 kB at 83 kB/s)
+Progress (1): 857 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/maven-metadata.xml (857 B at 4.0 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: gauge-java
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for gauge-java: pinned=13 upgraded=21 downgraded=0 added=4 removed=0 scope_changed=0
@@ -551,30 +232,30 @@ Audit done.
 Running com.thoughtworks.gauge.UtilTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
 Running com.thoughtworks.gauge.execution.HooksExecutorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec
 Running com.thoughtworks.gauge.execution.StepExecutionStageTest
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.mockito.cglib.core.ReflectUtils$2 (file:/var/maven/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
 WARNING: Please consider reporting this to the maintainers of org.mockito.cglib.core.ReflectUtils$2
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.297 sec
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.463 sec
 Running com.thoughtworks.gauge.execution.ExecutionPipelineTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
 Running com.thoughtworks.gauge.execution.ExecutionInfoMapperTest
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
 Running com.thoughtworks.gauge.execution.parameters.ParametersExtractorTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.TableParameterParserTest
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.PrimitiveParameterParserTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.EnumParameterParserTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.thoughtworks.gauge.execution.parameters.DynamicParametersReplacerTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
 Running com.thoughtworks.gauge.execution.AbstractExecutionStageTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.thoughtworks.gauge.tag.AndMatcherTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.tag.OrMatcherTest
@@ -590,15 +271,15 @@ Running com.thoughtworks.gauge.scan.StepsScannerTest
 {"logLevel":"debug","message":"Loading hello worldvia reflected sources."}
 {"logLevel":"debug","message":"Scanning packages for steps"}
 {"logLevel":"debug","message":"Found hello world {} in current project scope."}
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
 Running com.thoughtworks.gauge.scan.StaticScannerTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.136 sec
 Running com.thoughtworks.gauge.hook.HookTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.refactor.JavaRefactoringTest
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.18 sec
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.171 sec
 Running com.thoughtworks.gauge.processor.StubImplementationCodeProcessorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
 Running com.thoughtworks.gauge.processor.StepPositionsRequestProcessorTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
 Running com.thoughtworks.gauge.processor.DefaultMessageProcessorTest
@@ -606,31 +287,31 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.processor.ValidateStepProcessorTest
 Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
 Running com.thoughtworks.gauge.processor.StepNameRequestProcessorTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
 Running com.thoughtworks.gauge.processor.CacheFileRequestProcessorTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
 Running com.thoughtworks.gauge.ScreenshotCollectorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.registry.StepRegistryTest
 {"logLevel":"debug","message":"Comparing 'com.thoughtworks.gauge.TestStepImplClass.helloWorld' and 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam'"}
 {"logLevel":"debug","message":"Comparing 'com.thoughtworks.gauge.TestStepImplClass.helloWorld' and 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam'"}
 {"logLevel":"debug","message":"Comparing 'com.thoughtworks.gauge.TestStepImplClass.helloWorld' and 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam'"}
 {"logLevel":"debug","message":"Comparing 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam' and 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam'"}
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
 Running com.thoughtworks.gauge.registry.HooksRegistryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
 Running com.thoughtworks.gauge.TableRowTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.TableTest
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
 Running com.thoughtworks.gauge.FileHelperTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
 Running com.thoughtworks.gauge.ExecutionContextTest
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.MessageCollectorTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.ClassInstanceManagerTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
 Results :
 
@@ -1463,8 +1144,8 @@ Generating /var/maven/app/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  53.851 s
-[[1;34mINFO[m] Finished at: 2026-10-05T19:52:59Z
+[[1;34mINFO[m] Total time:  25.314 s
+[[1;34mINFO[m] Finished at: 2026-10-11T01:38:47Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Gauge-java.buildinfo: No such file or directory
 dos2unix: Skipping target/Gauge-java.buildinfo, not a regular file.

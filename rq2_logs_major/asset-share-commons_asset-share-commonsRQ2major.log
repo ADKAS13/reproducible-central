@@ -1,0 +1,1075 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/asset-share-commons/RQ2major/asset-share-commonsRQ2major.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1mcom.adobe.aem.commons[0m
+|      [0;34martifactId[0;97m: [1massetshare[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/com/adobe/aem/commons/assetshare/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/adobe/asset-share-commons.git[0m
+|      [0;34mgitTag[0;97m: [1ma2f294ef6dcd9d14a12dd7a00bd53aa8c314ee2a[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Asset-share-commons.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/adobe/asset-share-commons.git[0m on tag [1ma2f294ef6dcd9d14a12dd7a00bd53aa8c314ee2a[0m
+/home/adkas13/reproducible-central/repos/asset-share-commons/RQ2major/buildcache/assetshare
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/adobe/asset-share-commons.git (fetch)
+origin	https://github.com/adobe/asset-share-commons.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f a2f294ef6dcd9d14a12dd7a00bd53aa8c314ee2a [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/asset-share-commons/RQ2major/buildcache/assetshare
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.adobe.aem.commons:assetshare:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/asset-share-commons/RQ2major/buildcache/assetshare:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Oct 11 07:23:51 UTC 2026.
+Universal Time is now:  Sun Oct 11 07:23:51 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 10 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 10 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Asset Share Commons - Reactor Project                              [pom]
+[[1;34mINFO[m] Asset Share Commons - Core                                         [jar]
+[[1;34mINFO[m] Asset Share Commons - UI Apps Structure                [content-package]
+[[1;34mINFO[m] Asset Share Commons - UI Frontend - Light Theme                    [pom]
+[[1;34mINFO[m] Asset Share Commons - UI Frontend - Dark Theme                     [pom]
+[[1;34mINFO[m] Asset Share Commons - UI Apps                          [content-package]
+[[1;34mINFO[m] Asset Share Commons - UI Content                       [content-package]
+[[1;34mINFO[m] Asset Share Commons - UI Sample Content                [content-package]
+[[1;34mINFO[m] Asset Share Commons - All                              [content-package]
+[[1;34mINFO[m] Asset Share Commons - Dispatcher                                   [pom]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36mcom.adobe.aem.commons:assetshare[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding Asset Share Commons - Reactor Project 2.1.0-SNAPSHOT     [1/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36massetshare[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36massetshare[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36massetshare[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: assetshare
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven)[m @ [36massetshare[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36massetshare[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/com/adobe/aem/commons/assetshare/2.1.0-SNAPSHOT/assetshare-2.1.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mcom.adobe.aem.commons:assetshare.core[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding Asset Share Commons - Core 2.1.0-SNAPSHOT                [2/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/core/target/dependency-tree-before.txt
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-beta-7' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-alpha-30' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.2-0' — falling back to pinned.
+[[1;33mWARNING[m] Non-numeric version segment in '1.0-alpha1' — falling back to pinned.
+[[1;34mINFO[m] Initialized pom.deps.xml with 171 dependencies (version range mode: major).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/antlr/antlr/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml
+Progress (1): 369 BProgress (2): 369 B | 394 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/antlr/antlr/maven-metadata.xml (369 B at 1.2 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml (394 B at 718 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/classworlds/classworlds/maven-metadata.xml
+Progress (1): 368 BProgress (2): 368 B | 839 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/classworlds/classworlds/maven-metadata.xml (368 B at 8.6 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/maven-metadata.xml (839 B at 14 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/adobe/acs/acs-aem-commons-bundle/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/adobe/acs/acs-aem-commons-bundle/maven-metadata.xml
+Progress (1): 3.6 kB                    Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/adobe/acs/acs-aem-commons-bundle/maven-metadata.xml (3.6 kB at 107 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/adobe/acs/acs-aem-commons-bundle/maven-metadata.xml (5.7 kB)
+Downloading from central: https://repo.maven.apache.org/maven2/com/day/commons/day-commons-any/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/day/commons/day-commons-any/maven-metadata.xml
+Progress (1): 358 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/day/commons/day-commons-any/maven-metadata.xml (358 B at 11 kB/s)
+Progress (1): 337 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/day/commons/day-commons-any/maven-metadata.xml (337 B at 780 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/day/commons/day-commons-gfx/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/day/commons/day-commons-gfx/maven-metadata.xml
+Progress (1): 834 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/day/commons/day-commons-gfx/maven-metadata.xml (834 B at 23 kB/s)
+Progress (1): 845 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/day/commons/day-commons-gfx/maven-metadata.xml (845 B at 1.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/day/commons/day-commons-text/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/day/commons/day-commons-text/maven-metadata.xml
+Progress (1): 548 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/day/commons/day-commons-text/maven-metadata.xml (548 B at 20 kB/s)
+Progress (1): 496 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/day/commons/day-commons-text/maven-metadata.xml (496 B at 901 B/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/google/code/findbugs/jsr305/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
+Progress (1): 451 BProgress (2): 451 B | 461 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/google/code/findbugs/jsr305/maven-metadata.xml (451 B at 17 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 8.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/google/guava/guava/maven-metadata.xml
+Progress (1): 472 BProgress (2): 472 B | 4.1 kBProgress (2): 472 B | 6.0 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/google/guava/guava/maven-metadata.xml (472 B at 17 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 118 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-beanutils/commons-beanutils/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/maven-metadata.xml
+Progress (1): 391 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-beanutils/commons-beanutils/maven-metadata.xml (391 B at 12 kB/s)
+Progress (1): 975 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/maven-metadata.xml (975 B at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-chain/commons-chain/maven-metadata.xml
+Progress (1): 406 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/maven-metadata.xml (406 B at 1.4 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-codec/commons-codec/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 25 kB/s)
+Progress (1): 464 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-codec/commons-codec/maven-metadata.xml (464 B at 7.5 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-collections/commons-collections/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml
+Progress (1): 482 BProgress (2): 482 B | 934 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-collections/commons-collections/maven-metadata.xml (482 B at 17 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 20 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-digester/commons-digester/maven-metadata.xml
+Progress (1): 441 BProgress (2): 441 B | 619 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-digester/commons-digester/maven-metadata.xml (441 B at 14 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/maven-metadata.xml (619 B at 2.9 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-io/commons-io/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
+Progress (1): 551 BProgress (2): 551 B | 1.4 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-io/commons-io/maven-metadata.xml (551 B at 21 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 28 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-lang/commons-lang/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml
+Progress (1): 520 BProgress (2): 520 B | 646 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-lang/commons-lang/maven-metadata.xml (520 B at 19 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 12 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-logging/commons-logging/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml
+Progress (1): 478 BProgress (2): 478 B | 879 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-logging/commons-logging/maven-metadata.xml (478 B at 18 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-validator/commons-validator/maven-metadata.xml
+Progress (1): 362 BProgress (2): 362 B | 985 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/commons-validator/commons-validator/maven-metadata.xml (362 B at 9.3 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/maven-metadata.xml (985 B at 4.6 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/dom4j/dom4j/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml
+Progress (1): 367 BProgress (2): 367 B | 795 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/dom4j/dom4j/maven-metadata.xml (367 B at 14 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 16 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/dom4j/dom4j/1.4-dev/dom4j-1.4-dev.pom
+Downloading from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/1.4-dev/dom4j-1.4-dev.pom
+[[1;33mWARNING[m] The POM for dom4j:dom4j:jar:1.4-dev is missing, no dependency information available
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/stax/stax/1.0/stax-1.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/stax/stax/1.0/stax-1.0.pom
+[[1;33mWARNING[m] The POM for stax:stax:jar:1.0 is missing, no dependency information available
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/clover/clover/1.3-rc4/clover-1.3-rc4.pom
+Downloading from central: https://repo.maven.apache.org/maven2/clover/clover/1.3-rc4/clover-1.3-rc4.pom
+[[1;33mWARNING[m] The POM for clover:clover:jar:1.3-rc4 is missing, no dependency information available
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/stax/stax-ri/1.0/stax-ri-1.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/stax/stax-ri/1.0/stax-ri-1.0.pom
+[[1;33mWARNING[m] The POM for stax:stax-ri:jar:1.0 is missing, no dependency information available
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/io/wcm/io.wcm.testing.aem-mock.core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/io/wcm/io.wcm.testing.aem-mock.core/maven-metadata.xml
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/wcm/io.wcm.testing.aem-mock.core/maven-metadata.xml (1.8 kB at 4.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/wcm/io.wcm.testing.aem-mock.junit4/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/io/wcm/io.wcm.testing.aem-mock.junit4/maven-metadata.xml
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/wcm/io.wcm.testing.aem-mock.junit4/maven-metadata.xml (1.8 kB at 3.5 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/io/wcm/io.wcm.testing.junit-commons/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/io/wcm/io.wcm.testing.junit-commons/maven-metadata.xml
+Progress (1): 403 B                   Downloaded from central: https://repo.maven.apache.org/maven2/io/wcm/io.wcm.testing.junit-commons/maven-metadata.xml (403 B at 862 B/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/javax/jcr/jcr/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/javax/jcr/jcr/maven-metadata.xml
+Progress (1): 394 BProgress (2): 394 B | 572 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/javax/jcr/jcr/maven-metadata.xml (572 B at 9.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/javax/jcr/jcr/maven-metadata.xml (394 B at 1.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/javax/servlet/javax.servlet-api/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/javax/servlet/javax.servlet-api/maven-metadata.xml
+Progress (1): 972 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/servlet/javax.servlet-api/maven-metadata.xml (972 B at 19 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/javax/servlet/jsp/jsp-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jsp-api/maven-metadata.xml
+Progress (1): 770 BProgress (2): 770 B | 346 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/javax/servlet/jsp/jsp-api/maven-metadata.xml (346 B at 6.2 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jsp-api/maven-metadata.xml (770 B at 2.9 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/javax/servlet/servlet-api/$%7Bservlet-api.version%7D/servlet-api-$%7Bservlet-api.version%7D.pom
+Downloading from central: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/$%7Bservlet-api.version%7D/servlet-api-$%7Bservlet-api.version%7D.pom
+[[1;33mWARNING[m] The POM for javax.servlet:servlet-api:jar:${servlet-api.version} is missing, no dependency information available
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/javax/el/el-api/$%7Bel-impl.version%7D/el-api-$%7Bel-impl.version%7D.pom
+Downloading from central: https://repo.maven.apache.org/maven2/javax/el/el-api/$%7Bel-impl.version%7D/el-api-$%7Bel-impl.version%7D.pom
+[[1;33mWARNING[m] The POM for javax.el:el-api:jar:${el-impl.version} is missing, no dependency information available
+Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/javax.servlet/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/glassfish/javax.servlet/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/javax.servlet/maven-metadata.xml (5.2 kB at 15 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/javax/el/el-api/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/javax/el/el-api/maven-metadata.xml
+Progress (1): 762 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/el/el-api/maven-metadata.xml (762 B at 2.0 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/joda-time/joda-time/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml
+Progress (1): 2.4 kBProgress (2): 2.4 kB | 400 B                            Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 35 kB/s)
+Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/joda-time/joda-time/maven-metadata.xml (400 B at 5.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/junit/junit/maven-metadata.xml
+Progress (1): 752 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/junit/junit/maven-metadata.xml (752 B at 26 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 19 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/junit-addons/junit-addons/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/junit-addons/junit-addons/maven-metadata.xml
+Progress (1): 346 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/junit-addons/junit-addons/maven-metadata.xml (346 B at 12 kB/s)
+Progress (1): 212 B                   Downloaded from central: https://repo.maven.apache.org/maven2/junit-addons/junit-addons/maven-metadata.xml (212 B at 495 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/net/bytebuddy/byte-buddy/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 49 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 48 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/commons/commons-collections4/maven-metadata.xml
+Progress (1): 623 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/maven-metadata.xml (623 B at 2.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/commons/commons-compress/maven-metadata.xml
+Progress (1): 1.4 kBProgress (2): 1.4 kB | 510 B                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/commons/commons-compress/maven-metadata.xml (510 B at 8.5 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/maven-metadata.xml (1.4 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/commons/commons-lang3/maven-metadata.xml
+Progress (1): 388 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/commons/commons-lang3/maven-metadata.xml (388 B at 14 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.framework/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/felix/org.apache.felix.framework/maven-metadata.xml
+Progress (1): 601 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/felix/org.apache.felix.framework/maven-metadata.xml (601 B at 25 kB/s)
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.framework/maven-metadata.xml (2.3 kB at 9.8 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/geronimo/specs/geronimo-atinject_1.0_spec/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-atinject_1.0_spec/maven-metadata.xml
+Progress (1): 373 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/geronimo/specs/geronimo-atinject_1.0_spec/maven-metadata.xml (373 B at 15 kB/s)
+Progress (1): 444 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-atinject_1.0_spec/maven-metadata.xml (444 B at 1.3 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/geronimo/specs/geronimo-json_1.1_spec/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-json_1.1_spec/maven-metadata.xml
+Progress (1): 493 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-json_1.1_spec/maven-metadata.xml (493 B at 1.6 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/httpcomponents/httpclient/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml
+Progress (1): 2.1 kBProgress (2): 2.1 kB | 452 B                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/httpcomponents/httpclient/maven-metadata.xml (452 B at 7.4 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 33 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/httpcomponents/httpcore/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml
+Progress (1): 421 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/httpcomponents/httpcore/maven-metadata.xml (421 B at 16 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 32 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-api/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/jackrabbit-api/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/jackrabbit-api/maven-metadata.xml (5.3 kB at 213 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-api/maven-metadata.xml (5.8 kB at 9.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-data/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/jackrabbit-data/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-data/maven-metadata.xml (5.6 kB at 13 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/jackrabbit-jcr-commons/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-jcr-commons/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.1 kBProgress (2): 8.1 kB | 4.1 kBProgress (2): 8.1 kB | 5.0 kB                             Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/jackrabbit-jcr-commons/maven-metadata.xml (5.0 kB at 79 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/jackrabbit-jcr-commons/maven-metadata.xml (8.1 kB at 103 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-api/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-api/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-api/maven-metadata.xml (4.5 kB at 6.2 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-blob/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-blob/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10.0 kB                     Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-blob/maven-metadata.xml (10.0 kB at 21 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-blob-plugins/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-blob-plugins/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-blob-plugins/maven-metadata.xml (4.5 kB at 8.6 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-commons/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-commons/maven-metadata.xml
+Progress (1): 515 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-commons/maven-metadata.xml (515 B at 8.2 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-commons/maven-metadata.xml (10 kB at 24 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-core/maven-metadata.xml
+Progress (1): 512 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-core/maven-metadata.xml (512 B at 17 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-core/maven-metadata.xml (10 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-core-spi/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-core-spi/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-core-spi/maven-metadata.xml (4.5 kB at 10 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-jcr/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-jcr/maven-metadata.xml
+Progress (1): 511 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-jcr/maven-metadata.xml (511 B at 8.5 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-jcr/maven-metadata.xml (10 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-query-spi/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-query-spi/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-query-spi/maven-metadata.xml (4.3 kB at 9.7 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-security-spi/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-security-spi/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-security-spi/maven-metadata.xml (4.2 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-store-spi/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/oak-store-spi/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/oak-store-spi/maven-metadata.xml (4.5 kB at 9.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/vault/org.apache.jackrabbit.vault/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/jackrabbit/vault/org.apache.jackrabbit.vault/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jackrabbit/vault/org.apache.jackrabbit.vault/maven-metadata.xml (1.6 kB at 5.8 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/johnzon/johnzon-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/johnzon/johnzon-core/maven-metadata.xml
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/johnzon/johnzon-core/maven-metadata.xml (2.2 kB at 7.9 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-aether-provider/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/maven-metadata.xml
+Progress (1): 851 BProgress (2): 851 B | 396 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-aether-provider/maven-metadata.xml (396 B at 6.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/maven-metadata.xml (851 B at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-artifact/maven-metadata.xml
+Progress (1): 387 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-artifact/maven-metadata.xml (387 B at 12 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml (3.9 kB at 55 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-compat/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/maven-metadata.xml
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/maven-metadata.xml (3.2 kB at 10 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml
+Progress (1): 3.9 kBProgress (2): 3.9 kB | 354 B                            Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml (3.9 kB at 60 kB/s)
+Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-core/maven-metadata.xml (354 B at 4.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-model/maven-metadata.xml
+Progress (1): 446 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-model/maven-metadata.xml (446 B at 13 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml (3.9 kB at 62 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-model-builder/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml
+Progress (1): 394 BProgress (2): 394 B | 3.1 kB                            Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml (3.1 kB at 47 kB/s)
+Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-model-builder/maven-metadata.xml (394 B at 4.9 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-plugin-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml
+Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml (3.8 kB at 61 kB/s)
+Progress (1): 389 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-plugin-api/maven-metadata.xml (389 B at 576 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-repository-metadata/maven-metadata.xml
+Progress (1): 460 BProgress (2): 460 B | 3.5 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-repository-metadata/maven-metadata.xml (460 B at 14 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml (3.5 kB at 57 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-settings/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml
+Progress (1): 358 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-settings/maven-metadata.xml (358 B at 9.9 kB/s)
+Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml (3.8 kB at 52 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/maven-settings-builder/maven-metadata.xml
+Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml (2.9 kB at 48 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-core/maven-metadata.xml
+Progress (1): 1.5 kBProgress (2): 1.5 kB | 354 B                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-core/maven-metadata.xml (354 B at 4.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/maven-metadata.xml (1.5 kB at 5.1 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-decoration-model/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/maven-metadata.xml
+Progress (1): 366 BProgress (2): 366 B | 1.4 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-decoration-model/maven-metadata.xml (366 B at 8.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/maven-metadata.xml (1.4 kB at 4.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml
+Progress (1): 827 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml (827 B at 14 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml
+Progress (1): 1.4 kBProgress (2): 1.4 kB | 360 B                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml (360 B at 5.5 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml (1.4 kB at 4.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml
+Progress (1): 362 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml (362 B at 14 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml (1.1 kB at 3.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml
+Progress (1): 395 BProgress (2): 395 B | 1.5 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml (395 B at 11 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml (1.5 kB at 20 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml
+Progress (1): 363 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml (363 B at 13 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml (1.8 kB at 6.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/plugins/maven-dependency-plugin/maven-metadata.xml
+Progress (1): 369 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/plugins/maven-dependency-plugin/maven-metadata.xml (369 B at 14 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/maven-metadata.xml (1.4 kB at 6.6 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml
+Progress (1): 398 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml (398 B at 12 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml (1.5 kB at 23 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml
+Progress (1): 374 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml (374 B at 13 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml (1.5 kB at 4.6 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/file-management/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/maven-metadata.xml
+Progress (1): 366 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/file-management/maven-metadata.xml (366 B at 14 kB/s)
+Progress (1): 525 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/maven-metadata.xml (525 B at 1.5 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-artifact-transfer/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/maven-metadata.xml
+Progress (1): 546 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/maven-metadata.xml (546 B at 2.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml
+Progress (1): 789 BProgress (2): 789 B | 403 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml (789 B at 9.6 kB/s)
+Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-common-artifact-filters/maven-metadata.xml (403 B at 4.1 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-analyzer/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/maven-metadata.xml
+Progress (1): 370 BProgress (2): 370 B | 1.2 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-analyzer/maven-metadata.xml (370 B at 8.2 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/maven-metadata.xml (1.2 kB at 3.7 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-tree/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/maven-metadata.xml
+Progress (1): 366 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-tree/maven-metadata.xml (366 B at 10 kB/s)
+Progress (1): 746 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/maven-metadata.xml (746 B at 2.7 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-shared-io/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/maven-metadata.xml
+Progress (1): 360 BProgress (2): 360 B | 434 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-shared-io/maven-metadata.xml (360 B at 11 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/maven-metadata.xml (434 B at 1.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml
+Progress (1): 888 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml (888 B at 2.1 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml
+Progress (1): 1.6 kBProgress (2): 1.6 kB | 456 B                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml (456 B at 7.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml (1.6 kB at 23 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.adapter/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.adapter/maven-metadata.xml
+Progress (1): 544 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.adapter/maven-metadata.xml (544 B at 20 kB/s)
+Progress (1): 858 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.adapter/maven-metadata.xml (858 B at 1.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.api/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.api/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.api/maven-metadata.xml (1.6 kB at 60 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.api/maven-metadata.xml (1.7 kB at 5.3 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.commons.classloader/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.commons.classloader/maven-metadata.xml
+Progress (1): 636 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.commons.classloader/maven-metadata.xml (636 B at 22 kB/s)
+Progress (1): 793 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.commons.classloader/maven-metadata.xml (793 B at 1.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.commons.json/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.commons.json/maven-metadata.xml
+Progress (1): 553 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.commons.json/maven-metadata.xml (553 B at 20 kB/s)
+Progress (1): 723 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.commons.json/maven-metadata.xml (723 B at 2.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.commons.mime/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.commons.mime/maven-metadata.xml
+Progress (1): 527 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.commons.mime/maven-metadata.xml (527 B at 20 kB/s)
+Progress (1): 755 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.commons.mime/maven-metadata.xml (755 B at 1.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.commons.osgi/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.commons.osgi/maven-metadata.xml
+Progress (1): 637 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.commons.osgi/maven-metadata.xml (637 B at 24 kB/s)
+Progress (1): 620 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.commons.osgi/maven-metadata.xml (620 B at 1.5 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.contentparser.api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.contentparser.api/maven-metadata.xml
+Progress (1): 357 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.contentparser.api/maven-metadata.xml (357 B at 1.3 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.contentparser.json/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.contentparser.json/maven-metadata.xml
+Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.contentparser.json/maven-metadata.xml (389 B at 815 B/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.i18n/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.i18n/maven-metadata.xml
+Progress (1): 633 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.i18n/maven-metadata.xml (633 B at 9.7 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.i18n/maven-metadata.xml (1.2 kB at 2.8 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.jcr.api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.jcr.api/maven-metadata.xml
+Progress (1): 609 BProgress (2): 609 B | 574 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.jcr.api/maven-metadata.xml (609 B at 18 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.jcr.api/maven-metadata.xml (574 B at 1.9 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.jcr.resource/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.jcr.resource/maven-metadata.xml
+Progress (1): 1.9 kBProgress (2): 1.9 kB | 3.8 kB                             Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.jcr.resource/maven-metadata.xml (3.8 kB at 18 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.jcr.resource/maven-metadata.xml (1.9 kB at 4.2 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.models.api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.models.api/maven-metadata.xml
+Progress (1): 815 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.models.api/maven-metadata.xml (815 B at 1.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.models.impl/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.models.impl/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.models.impl/maven-metadata.xml (1.4 kB at 4.1 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.resourcebuilder/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.resourcebuilder/maven-metadata.xml
+Progress (1): 417 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.resourcebuilder/maven-metadata.xml (417 B at 868 B/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.resourceresolver/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.resourceresolver/maven-metadata.xml
+Progress (1): 408 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.resourceresolver/maven-metadata.xml (408 B at 5.6 kB/s)
+Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.resourceresolver/maven-metadata.xml (2.9 kB at 5.2 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.scripting.api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.scripting.api/maven-metadata.xml
+Progress (1): 477 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.scripting.api/maven-metadata.xml (477 B at 12 kB/s)
+Progress (1): 612 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.scripting.api/maven-metadata.xml (612 B at 1.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.scripting.core/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.scripting.core/maven-metadata.xml
+Progress (1): 553 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.scripting.core/maven-metadata.xml (553 B at 18 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.scripting.core/maven-metadata.xml (1.7 kB at 5.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.serviceusermapper/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.serviceusermapper/maven-metadata.xml
+Progress (1): 946 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.serviceusermapper/maven-metadata.xml (946 B at 2.7 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.servlet-helpers/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.servlet-helpers/maven-metadata.xml
+Progress (1): 759 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.servlet-helpers/maven-metadata.xml (759 B at 1.7 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.settings/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.settings/maven-metadata.xml
+Progress (1): 502 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.settings/maven-metadata.xml (502 B at 6.9 kB/s)
+Progress (1): 752 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.settings/maven-metadata.xml (752 B at 1.6 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.testing.hamcrest/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.hamcrest/maven-metadata.xml
+Progress (1): 418 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.hamcrest/maven-metadata.xml (418 B at 1.3 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.testing.jcr-mock/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.jcr-mock/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.jcr-mock/maven-metadata.xml (1.4 kB at 3.0 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.testing.osgi-mock.core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.osgi-mock.core/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.osgi-mock.core/maven-metadata.xml (1.2 kB at 2.8 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.testing.osgi-mock.junit4/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.osgi-mock.junit4/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.osgi-mock.junit4/maven-metadata.xml (1.2 kB at 2.3 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.testing.resourceresolver-mock/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.resourceresolver-mock/maven-metadata.xml
+Progress (1): 390 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.testing.resourceresolver-mock/maven-metadata.xml (390 B at 5.2 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.resourceresolver-mock/maven-metadata.xml (1.2 kB at 3.0 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.testing.sling-mock.core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.sling-mock.core/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.sling-mock.core/maven-metadata.xml (1.7 kB at 4.8 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.testing.sling-mock.junit4/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.sling-mock.junit4/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.testing.sling-mock.junit4/maven-metadata.xml (1.7 kB at 3.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.xss/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/sling/org.apache.sling.xss/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/sling/org.apache.sling.xss/maven-metadata.xml (1.7 kB at 3.9 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/struts/struts-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-core/maven-metadata.xml
+Progress (1): 431 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-core/maven-metadata.xml (431 B at 1.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-taglib/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/struts/struts-taglib/maven-metadata.xml
+Progress (1): 433 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-taglib/maven-metadata.xml (433 B at 1.2 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/struts/struts-tiles/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-tiles/maven-metadata.xml
+Progress (1): 432 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-tiles/maven-metadata.xml (432 B at 1.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/velocity/velocity/maven-metadata.xml
+Progress (1): 636 BProgress (2): 636 B | 349 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/velocity/velocity/maven-metadata.xml (349 B at 5.1 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/maven-metadata.xml (636 B at 2.6 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/apache/velocity/velocity-tools/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/maven-metadata.xml
+Progress (1): 468 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/maven-metadata.xml (468 B at 1.5 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB at 4.1 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml
+Progress (1): 3.2 kBProgress (2): 3.2 kB | 430 B                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/maven-metadata.xml (430 B at 6.8 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml (3.2 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml
+Progress (1): 390 BProgress (2): 390 B | 1.5 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml (390 B at 11 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml (1.5 kB at 23 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml
+Progress (1): 375 BProgress (2): 375 B | 2.1 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (375 B at 11 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (2.1 kB at 32 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
+Progress (1): 394 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (394 B at 11 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (1.3 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-io/maven-metadata.xml
+Progress (1): 393 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-io/maven-metadata.xml (393 B at 13 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/maven-metadata.xml (2.1 kB at 6.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-utils/maven-metadata.xml
+Progress (1): 634 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-utils/maven-metadata.xml (634 B at 19 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml (3.0 kB at 35 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-velocity/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/maven-metadata.xml
+Progress (1): 362 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/codehaus/plexus/plexus-velocity/maven-metadata.xml (362 B at 11 kB/s)
+Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/maven-metadata.xml (769 B at 2.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/eclipse/aether/aether-util/maven-metadata.xml
+Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/maven-metadata.xml (677 B at 9.1 kB/s)
+Progress (1): 366 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/eclipse/aether/aether-util/maven-metadata.xml (366 B at 3.4 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/hamcrest/hamcrest-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
+Progress (1): 405 BProgress (2): 405 B | 721 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/hamcrest/hamcrest-core/maven-metadata.xml (405 B at 12 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 9.9 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/hamcrest/hamcrest-library/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/maven-metadata.xml
+Progress (1): 379 BProgress (2): 379 B | 753 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/hamcrest/hamcrest-library/maven-metadata.xml (379 B at 11 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/maven-metadata.xml (753 B at 3.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/iq80/snappy/snappy/maven-metadata.xml
+Progress (1): 438 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/maven-metadata.xml (438 B at 1.6 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/javassist/javassist/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml
+Progress (1): 1.5 kBProgress (2): 1.5 kB | 362 B                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/javassist/javassist/maven-metadata.xml (362 B at 5.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml (1.5 kB)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/jetbrains/annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/maven-metadata.xml (1.1 kB at 14 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/mockito/mockito-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (2): 12 kB | 442 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/mockito/mockito-core/maven-metadata.xml (442 B at 5.4 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 52 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/objenesis/objenesis/maven-metadata.xml
+Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 15 kB/s)
+Progress (1): 373 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/objenesis/objenesis/maven-metadata.xml (373 B at 3.4 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/osgi/org.osgi.framework/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.framework/maven-metadata.xml
+Progress (1): 419 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.framework/maven-metadata.xml (419 B at 1.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.cm/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/osgi/org.osgi.service.cm/maven-metadata.xml
+Progress (1): 417 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.cm/maven-metadata.xml (417 B at 1.1 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/osgi/org.osgi.service.event/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.event/maven-metadata.xml
+Progress (1): 420 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.event/maven-metadata.xml (420 B at 1.5 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/osgi/org.osgi.service.log/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.log/maven-metadata.xml
+Progress (1): 418 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.log/maven-metadata.xml (418 B at 914 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.util.converter/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/osgi/org.osgi.util.converter/maven-metadata.xml
+Progress (1): 487 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.util.converter/maven-metadata.xml (487 B at 968 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.util.tracker/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/osgi/org.osgi.util.tracker/maven-metadata.xml
+Progress (1): 450 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.util.tracker/maven-metadata.xml (450 B at 1.3 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/ow2/asm/asm/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml (1.7 kB at 24 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/reflections/reflections/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/maven-metadata.xml
+Progress (1): 857 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/maven-metadata.xml (857 B at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/slf4j/jcl-over-slf4j/maven-metadata.xml
+Progress (1): 3.5 kBProgress (2): 3.5 kB | 507 B                            Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 50 kB/s)
+Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/slf4j/jcl-over-slf4j/maven-metadata.xml (507 B at 6.9 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/slf4j/slf4j-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 689 BProgress (2): 689 B | 3.9 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/slf4j/slf4j-api/maven-metadata.xml (689 B at 11 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 61 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/aether/aether-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/maven-metadata.xml
+Progress (1): 390 BProgress (2): 390 B | 843 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/aether/aether-api/maven-metadata.xml (390 B at 8.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/maven-metadata.xml (843 B at 10 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/aether/aether-impl/maven-metadata.xml
+Progress (1): 391 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/aether/aether-impl/maven-metadata.xml (391 B at 11 kB/s)
+Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/maven-metadata.xml (844 B at 1.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/aether/aether-spi/maven-metadata.xml
+Progress (1): 390 BProgress (2): 390 B | 843 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/aether/aether-spi/maven-metadata.xml (390 B at 11 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/maven-metadata.xml (843 B at 2.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/aether/aether-util/maven-metadata.xml
+Progress (1): 391 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/aether/aether-util/maven-metadata.xml (391 B at 11 kB/s)
+Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/maven-metadata.xml (844 B at 9.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/plexus/plexus-cipher/maven-metadata.xml
+Progress (1): 354 BProgress (2): 354 B | 538 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (354 B at 7.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (538 B at 8.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml
+Progress (1): 362 BProgress (2): 362 B | 599 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (362 B at 9.8 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (599 B at 9.7 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/sisu/sisu-guice/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml
+Progress (1): 355 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/sisu/sisu-guice/maven-metadata.xml (355 B at 9.1 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml (1.3 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml
+Progress (1): 361 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml (361 B at 12 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml (1.2 kB at 19 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml
+Progress (1): 363 BProgress (2): 363 B | 1.2 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml (363 B at 11 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml (1.2 kB at 19 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/tukaani/xz/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/maven-metadata.xml
+Progress (1): 667 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/maven-metadata.xml (667 B at 2.9 kB/s)
+Progress (1): 335 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/org/tukaani/xz/maven-metadata.xml (335 B at 490 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/oro/oro/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/oro/oro/maven-metadata.xml
+Progress (1): 334 BProgress (2): 334 B | 260 B                           Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/oro/oro/maven-metadata.xml (334 B at 10 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/oro/oro/maven-metadata.xml (260 B at 1.1 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/uk/org/lidalia/lidalia-lang/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/uk/org/lidalia/lidalia-lang/maven-metadata.xml
+Progress (1): 379 B                   Downloaded from central: https://repo.maven.apache.org/maven2/uk/org/lidalia/lidalia-lang/maven-metadata.xml (379 B at 1.4 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/uk/org/lidalia/lidalia-slf4j-ext/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/uk/org/lidalia/lidalia-slf4j-ext/maven-metadata.xml
+Progress (1): 384 B                   Downloaded from central: https://repo.maven.apache.org/maven2/uk/org/lidalia/lidalia-slf4j-ext/maven-metadata.xml (384 B at 1.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/uk/org/lidalia/slf4j-test/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/uk/org/lidalia/slf4j-test/maven-metadata.xml
+Progress (1): 460 B                   Downloaded from central: https://repo.maven.apache.org/maven2/uk/org/lidalia/slf4j-test/maven-metadata.xml (460 B at 1.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/xerces/xercesImpl/maven-metadata.xml
+Progress (1): 951 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml (951 B at 13 kB/s)
+Progress (1): 533 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/xerces/xercesImpl/maven-metadata.xml (533 B at 746 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/xerces/xmlParserAPIs/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/xerces/xmlParserAPIs/maven-metadata.xml
+Progress (1): 378 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/xerces/xmlParserAPIs/maven-metadata.xml (378 B at 11 kB/s)
+Progress (1): 502 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xmlParserAPIs/maven-metadata.xml (502 B at 1.8 kB/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/xml-apis/xml-apis/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml
+Progress (1): 504 BProgress (2): 504 B | 567 B                           Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 8.3 kB/s)
+Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/xml-apis/xml-apis/maven-metadata.xml (504 B at 6.9 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: assetshare.core
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/core/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for assetshare.core: pinned=25 upgraded=145 downgraded=0 added=114 removed=1 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: assetshare.core
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/core/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.1:compile[m [1m(default-compile)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 224 source files to /var/maven/app/core/target/classes
+[[1;34mINFO[m] /var/maven/app/core/src/main/java/com/adobe/aem/commons/assetshare/util/impl/RequireAemImpl.java: Some input files use or override a deprecated API.
+[[1;34mINFO[m] /var/maven/app/core/src/main/java/com/adobe/aem/commons/assetshare/util/impl/RequireAemImpl.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] /var/maven/app/core/src/main/java/com/adobe/aem/commons/assetshare/components/actions/impl/ActionHelperImpl.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/core/src/main/java/com/adobe/aem/commons/assetshare/components/actions/impl/ActionHelperImpl.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbnd-maven-plugin:4.2.0:bnd-process[m [1m(bnd-process)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 25 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.1:testCompile[m [1m(default-testCompile)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 40 source files to /var/maven/app/core/target/test-classes
+[[1;34mINFO[m] /var/maven/app/core/src/test/java/com/adobe/aem/commons/assetshare/util/impl/RequireAemImplTest.java: Some input files use or override a deprecated API.
+[[1;34mINFO[m] /var/maven/app/core/src/test/java/com/adobe/aem/commons/assetshare/util/impl/RequireAemImplTest.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.impl.[1mAssetModelImplTest[m
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/var/maven/.m2/repository/uk/org/lidalia/slf4j-test/1.0.1/slf4j-test-1.0.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/var/maven/.m2/repository/com/adobe/aem/aem-sdk-api/2021.3.4997.20210303T022849Z-210225/aem-sdk-api-2021.3.4997.20210303T022849Z-210225.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [uk.org.lidalia.slf4jtest.TestLoggerFactory]
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.817 s - in com.adobe.aem.commons.assetshare.content.impl.[1mAssetModelImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.impl.[1mMetadataSchemaPropertiesImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s - in com.adobe.aem.commons.assetshare.content.impl.[1mMetadataSchemaPropertiesImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mAbstractRenditionDispatcherImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mAbstractRenditionDispatcherImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.async.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 s - in com.adobe.aem.commons.assetshare.content.renditions.download.async.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadRequestTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadRequestTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsExceptionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsExceptionTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadResponseTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadResponseTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.properties.impl.[1mComputedPropertiesImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s - in com.adobe.aem.commons.assetshare.content.properties.impl.[1mComputedPropertiesImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.details.impl.[1mVideoImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m13[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.398 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mVideoImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.details.impl.[1mEditorLinksImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mEditorLinksImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.details.impl.[1mMetadataImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.493 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mMetadataImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.details.impl.[1mImageImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.315 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mImageImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.[1mUrlUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in com.adobe.aem.commons.assetshare.util.[1mUrlUtilTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.impl.[1mOakIndexResolverTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s - in com.adobe.aem.commons.assetshare.util.impl.[1mOakIndexResolverTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.impl.[1mServletHelperImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in com.adobe.aem.commons.assetshare.util.impl.[1mServletHelperImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.[1mPredicateUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.adobe.aem.commons.assetshare.util.[1mPredicateUtilTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.impl.[1mCombinedPropertiesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.144 s - in com.adobe.aem.commons.assetshare.content.impl.[1mCombinedPropertiesTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.impl.datasources.[1mAssetRenditionsDataSourceTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.327 s - in com.adobe.aem.commons.assetshare.content.impl.datasources.[1mAssetRenditionsDataSourceTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionDispatchersImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionDispatchersImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionsImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.181 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionsImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mExternalRedirectRenditionDispatcherImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mExternalRedirectRenditionDispatcherImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mStaticRenditionDispatcherImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.287 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mStaticRenditionDispatcherImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mInternalRedirectRenditionDispatcherImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.231 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mInternalRedirectRenditionDispatcherImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionServletTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.251 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionServletTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.[1mAssetRenditionParametersTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.227 s - in com.adobe.aem.commons.assetshare.content.renditions.[1mAssetRenditionParametersTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsZipperImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.624 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsZipperImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.227 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.actions.impl.[1mActionHelperImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 s - in com.adobe.aem.commons.assetshare.components.actions.impl.[1mActionHelperImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.actions.impl.[1mAssetDownloadHelperImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 s - in com.adobe.aem.commons.assetshare.components.actions.impl.[1mAssetDownloadHelperImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mDownloadImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m15[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.593 s - in com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mDownloadImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 s - in com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.impl.[1mRequireAemImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.207 s - in com.adobe.aem.commons.assetshare.util.impl.[1mRequireAemImplTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPredicateEvaluatorUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPredicateEvaluatorUtilTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPropertyValuesPredicateEvaluatorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.565 s - in com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPropertyValuesPredicateEvaluatorTest[m
+[[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.search.impl.[1mFastPropertiesImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.276 s - in com.adobe.aem.commons.assetshare.search.impl.[1mFastPropertiesImplTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 209, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.1.2:jar[m [1m(default-jar)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/core/target/assetshare.core-2.1.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbnd-baseline-maven-plugin:4.2.0:baseline[m [1m(baseline)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] Determining the baseline version for com.adobe.aem.commons:assetshare.core:jar:(,2.1.0-SNAPSHOT) using repositories [adobe-public-releases (https://repo.adobe.com/nexus/content/groups/public, default, releases), central (https://repo.maven.apache.org/maven2, default, releases)]
+Downloading from central: https://repo.maven.apache.org/maven2/com/adobe/aem/commons/assetshare.core/maven-metadata.xml
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/adobe/aem/commons/assetshare.core/maven-metadata.xml
+Progress (1): 965 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/adobe/aem/commons/assetshare.core/maven-metadata.xml (965 B at 25 kB/s)
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/adobe/aem/commons/assetshare.core/maven-metadata.xml (3.2 kB at 5.9 kB/s)
+[[1;34mINFO[m] The baseline version was found to be 2.0.6
+[[1;34mINFO[m] Baselining check succeeded checking com.adobe.aem.commons:assetshare.core:jar:2.1.0-SNAPSHOT against com.adobe.aem.commons:assetshare.core:jar:2.0.6
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36massetshare.core[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/core/target/assetshare.core-2.1.0-SNAPSHOT.jar to /var/maven/.m2/repository/com/adobe/aem/commons/assetshare.core/2.1.0-SNAPSHOT/assetshare.core-2.1.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/core/pom.xml to /var/maven/.m2/repository/com/adobe/aem/commons/assetshare.core/2.1.0-SNAPSHOT/assetshare.core-2.1.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36mcom.adobe.aem.commons:assetshare.ui.apps.structure[0;1m >---------[m
+[[1;34mINFO[m] [1mBuilding Asset Share Commons - UI Apps Structure 2.1.0-SNAPSHOT   [3/10][m
+[[1;34mINFO[m] [1m--------------------------[ content-package ]---------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/ui.apps.structure/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Flattening leaf module dependencies for: assetshare.ui.apps.structure
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/ui.apps.structure/target/dependency-tree-after.txt
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for assetshare.ui.apps.structure: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] POM updated successfully: assetshare.ui.apps.structure
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/ui.apps.structure/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.1:compile[m [1m(default-compile)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfilevault-package-maven-plugin:1.0.3:check-signature[m [1m(default-check-signature)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] No signature defined. Skipping signature check.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfilevault-package-maven-plugin:1.0.3:analyze-classes[m [1m(default-analyze-classes)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] Analyzing java package dependencies.
+[[1;34mINFO[m] Export package report:
+
+Exported packages   Uses Version   Dependency
+--------------------------------------------------
+
+0 unused bundles
+------------------------------
+
+Packages used in the analyzed classes: 
+------------------------------
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfilevault-package-maven-plugin:1.0.3:generate-metadata[m [1m(default-generate-metadata)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] Generating filter.xml from plugin configuration
+[[1;34mINFO[m] All dependencies satisfied.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/ui.apps.structure/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.1:testCompile[m [1m(default-testCompile)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfilevault-package-maven-plugin:1.0.3:package[m [1m(default-package)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] Scanning files for oak index definitions.
+[INFO] Building content-package: /var/maven/app/ui.apps.structure/target/asset-share-commons.ui.apps.structure-2.1.0-SNAPSHOT.zip
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36massetshare.ui.apps.structure[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/ui.apps.structure/target/asset-share-commons.ui.apps.structure-2.1.0-SNAPSHOT.zip to /var/maven/.m2/repository/com/adobe/aem/commons/assetshare.ui.apps.structure/2.1.0-SNAPSHOT/assetshare.ui.apps.structure-2.1.0-SNAPSHOT.zip
+[[1;34mINFO[m] Installing /var/maven/app/ui.apps.structure/pom.xml to /var/maven/.m2/repository/com/adobe/aem/commons/assetshare.ui.apps.structure/2.1.0-SNAPSHOT/assetshare.ui.apps.structure-2.1.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------< [0;36mcom.adobe.aem.commons:assetshare.ui.frontend.theme.light[0;1m >------[m
+[[1;34mINFO[m] [1mBuilding Asset Share Commons - UI Frontend - Light Theme 2.1.0-SNAPSHOT [4/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/ui.frontend.theme.light/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: assetshare.ui.frontend.theme.light
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:install-node-and-npm[m [1m(install node and npm)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] Installing node version v13.7.0
+[[1;34mINFO[m] Unpacking /var/maven/.m2/repository/com/github/eirslett/node/13.7.0/node-13.7.0-linux-x64.tar.gz into /var/maven/app/ui.frontend.theme.light/node/tmp
+[[1;34mINFO[m] Copying node binary from /var/maven/app/ui.frontend.theme.light/node/tmp/node-v13.7.0-linux-x64/bin/node to /var/maven/app/ui.frontend.theme.light/node/node
+[[1;34mINFO[m] Installed node locally.
+[[1;34mINFO[m] Installing npm version 6.13.1
+[[1;34mINFO[m] Unpacking /var/maven/.m2/repository/com/github/eirslett/npm/6.13.1/npm-6.13.1.tar.gz into /var/maven/app/ui.frontend.theme.light/node/node_modules
+[[1;34mINFO[m] Installed npm locally.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:npm[m [1m(npm install)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] Running 'npm install' in /var/maven/app/ui.frontend.theme.light
+[[1;31mERROR[m] npm notice This endpoint is being retired. Use the bulk advisory endpoint instead. See the following docs for more info: https://api-docs.npmjs.com/#tag/Audit
+[[1;33mWARNING[m] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/webpack/node_modules/fsevents):
+[[1;33mWARNING[m] npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[[1;33mWARNING[m] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/webpack-dev-server/node_modules/fsevents):
+[[1;33mWARNING[m] npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[[1;31mERROR[m] 
+[[1;34mINFO[m] added 1582 packages from 535 contributors and audited 1725 packages in 20.222s
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 29 packages are looking for funding
+[[1;34mINFO[m]   run `npm fund` for details
+[[1;34mINFO[m] 
+[[1;34mINFO[m] found 770 vulnerabilities (44 low, 268 moderate, 393 high, 65 critical)
+[[1;34mINFO[m]   run `npm audit fix` to fix them, or `npm audit` for details
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:npm[m [1m(npm run prod)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] Running 'npm run prod' in /var/maven/app/ui.frontend.theme.light
+[[1;34mINFO[m] 
+[[1;34mINFO[m] > aem-maven-archetype@1.0.0 prod /var/maven/app/ui.frontend.theme.light
+[[1;34mINFO[m] > webpack -p --config ./webpack.prod.js && clientlib --verbose
+[[1;34mINFO[m] 
+[[1;31mERROR[m] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+[[1;34mINFO[m] Hash: 2fd6d7547b4b1779d34c
+[[1;34mINFO[m] Version: webpack 4.41.6
+[[1;34mINFO[m] Time: 14257ms
+[[1;34mINFO[m] Built at: 10/11/2026 7:26:05 AM
+[[1;34mINFO[m]                                                                  Asset      Size  Chunks                    Chunk Names
+[[1;34mINFO[m]                                         ../resources/fonts/LatoWeb.eot   248 KiB          [emitted]  [big]  
+[[1;34mINFO[m]                                         ../resources/fonts/LatoWeb.ttf   593 KiB          [emitted]  [big]  
+[[1;34mINFO[m]                                        ../resources/fonts/LatoWeb.woff   302 KiB          [emitted]  [big]  
+[[1;34mINFO[m]                                       ../resources/fonts/LatoWeb.woff2   178 KiB          [emitted]         
+[[1;34mINFO[m]                                     ../resources/fonts/brand-icons.eot   128 KiB          [emitted]         
+[[1;34mINFO[m]                                     ../resources/fonts/brand-icons.ttf   128 KiB          [emitted]         
+[[1;34mINFO[m]                                    ../resources/fonts/brand-icons.woff  86.4 KiB          [emitted]         
+[[1;34mINFO[m]                                   ../resources/fonts/brand-icons.woff2  73.6 KiB          [emitted]         
+[[1;34mINFO[m]                                           ../resources/fonts/icons.eot   188 KiB          [emitted]         
+[[1;34mINFO[m]                                           ../resources/fonts/icons.ttf   188 KiB          [emitted]         
+[[1;34mINFO[m]                                          ../resources/fonts/icons.woff  96.1 KiB          [emitted]         
+[[1;34mINFO[m]                                         ../resources/fonts/icons.woff2    74 KiB          [emitted]         
+[[1;34mINFO[m]                                   ../resources/fonts/outline-icons.eot  33.6 KiB          [emitted]         
+[[1;34mINFO[m]                                   ../resources/fonts/outline-icons.ttf  33.3 KiB          [emitted]         
+[[1;34mINFO[m]                                  ../resources/fonts/outline-icons.woff  16.4 KiB          [emitted]         
+[[1;34mINFO[m]                                 ../resources/fonts/outline-icons.woff2  13.3 KiB          [emitted]         
+[[1;34mINFO[m]   ../resources/images/brand-icons.svg?9d204f50ec8e5bcc5dcda0132d404b48   687 KiB          [emitted]  [big]  
+[[1;34mINFO[m]         ../resources/images/icons.svg?3d102342391af184d5ae9e7708d8220f   827 KiB          [emitted]  [big]  
+[[1;34mINFO[m] ../resources/images/outline-icons.svg?9443c1e7fdf95d739af3f0901224f90a   142 KiB          [emitted]         
+[[1;34mINFO[m]                                   semanticui-theme/css/site.bundle.css   351 KiB       0  [emitted]  [big]  site
+[[1;34mINFO[m]                                     semanticui-theme/js/site.bundle.js  1.62 KiB       0  [emitted]         site
+[[1;34mINFO[m]                             semanticui-theme/js/vendors~site.bundle.js   341 KiB       1  [emitted]  [big]  vendors~site
+[[1;34mINFO[m] Entrypoint site [big] = semanticui-theme/js/vendors~site.bundle.js semanticui-theme/css/site.bundle.css semanticui-theme/js/site.bundle.js
+[[1;34mINFO[m] 
+[[1;34mINFO[m] start aem-clientlib-generator
+[[1;34mINFO[m]   working directory: /var/maven/app/ui.frontend.theme.light
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] processing clientlib: semanticui-light
+[[1;34mINFO[m] Write node configuration using serialization format: xml
+[[1;34mINFO[m] write clientlib json file: ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/.content.xml
+[[1;34mINFO[m] 
+[[1;34mINFO[m] write clientlib asset txt file (type: js): ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/js.txt
+[[1;34mINFO[m] copy: dist/semanticui-theme/js/vendors~site.bundle.js ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/js/vendors~site.bundle.js
+[[1;34mINFO[m] copy: dist/semanticui-theme/js/site.bundle.js ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/js/site.bundle.js
+[[1;34mINFO[m] 
+[[1;34mINFO[m] write clientlib asset txt file (type: css): ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/css.txt
+[[1;34mINFO[m] copy: dist/semanticui-theme/css/site.bundle.css ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/css/site.bundle.css
+[[1;34mINFO[m] copy: resources/fonts/brand-icons.eot ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/brand-icons.eot
+[[1;34mINFO[m] copy: resources/fonts/brand-icons.ttf ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/brand-icons.ttf
+[[1;34mINFO[m] copy: resources/fonts/brand-icons.woff ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/brand-icons.woff
+[[1;34mINFO[m] copy: resources/fonts/brand-icons.woff2 ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/brand-icons.woff2
+[[1;34mINFO[m] copy: resources/fonts/icons.eot ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/icons.eot
+[[1;34mINFO[m] copy: resources/fonts/icons.ttf ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/icons.ttf
+[[1;34mINFO[m] copy: resources/fonts/icons.woff ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/icons.woff
+[[1;34mINFO[m] copy: resources/fonts/icons.woff2 ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/icons.woff2
+[[1;34mINFO[m] copy: resources/fonts/LatoWeb.eot ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/LatoWeb.eot
+[[1;34mINFO[m] copy: resources/fonts/LatoWeb.ttf ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/LatoWeb.ttf
+[[1;34mINFO[m] copy: resources/fonts/LatoWeb.woff ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/LatoWeb.woff
+[[1;34mINFO[m] copy: resources/fonts/LatoWeb.woff2 ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/LatoWeb.woff2
+[[1;34mINFO[m] copy: resources/fonts/outline-icons.eot ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/outline-icons.eot
+[[1;34mINFO[m] copy: resources/fonts/outline-icons.ttf ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/outline-icons.ttf
+[[1;34mINFO[m] copy: resources/fonts/outline-icons.woff ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/outline-icons.woff
+[[1;34mINFO[m] copy: resources/fonts/outline-icons.woff2 ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/fonts/outline-icons.woff2
+[[1;34mINFO[m] copy: resources/images/brand-icons.svg ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/images/brand-icons.svg
+[[1;34mINFO[m] copy: resources/images/icons.svg ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/images/icons.svg
+[[1;34mINFO[m] copy: resources/images/outline-icons.svg ../ui.apps/src/main/content/jcr_root/apps/asset-share-commons/clientlibs/clientlib-theme/semanticui-light/resources/images/outline-icons.svg
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:3.1.1:single[m [1m(default)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] Reading assembly descriptor: assembly.xml
+[[1;34mINFO[m] Building zip: /var/maven/app/ui.frontend.theme.light/target/assetshare.ui.frontend.theme.light-2.1.0-SNAPSHOT.zip
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/ui.frontend.theme.light/pom.xml to /var/maven/.m2/repository/com/adobe/aem/commons/assetshare.ui.frontend.theme.light/2.1.0-SNAPSHOT/assetshare.ui.frontend.theme.light-2.1.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/ui.frontend.theme.light/target/assetshare.ui.frontend.theme.light-2.1.0-SNAPSHOT.zip to /var/maven/.m2/repository/com/adobe/aem/commons/assetshare.ui.frontend.theme.light/2.1.0-SNAPSHOT/assetshare.ui.frontend.theme.light-2.1.0-SNAPSHOT.zip
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------< [0;36mcom.adobe.aem.commons:assetshare.ui.frontend.theme.dark[0;1m >-------[m
+[[1;34mINFO[m] [1mBuilding Asset Share Commons - UI Frontend - Dark Theme 2.1.0-SNAPSHOT [5/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/ui.frontend.theme.dark/target/dependency-tree-before.txt
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: major).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: assetshare.ui.frontend.theme.dark
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:install-node-and-npm[m [1m(install node and npm)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] Installing node version v13.7.0
+[[1;34mINFO[m] Unpacking /var/maven/.m2/repository/com/github/eirslett/node/13.7.0/node-13.7.0-linux-x64.tar.gz into /var/maven/app/ui.frontend.theme.dark/node/tmp
+[[1;34mINFO[m] Copying node binary from /var/maven/app/ui.frontend.theme.dark/node/tmp/node-v13.7.0-linux-x64/bin/node to /var/maven/app/ui.frontend.theme.dark/node/node
+[[1;34mINFO[m] Installed node locally.
+[[1;34mINFO[m] Installing npm version 6.13.1
+[[1;34mINFO[m] Unpacking /var/maven/.m2/repository/com/github/eirslett/npm/6.13.1/npm-6.13.1.tar.gz into /var/maven/app/ui.frontend.theme.dark/node/node_modules
+[[1;34mINFO[m] Installed npm locally.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:npm[m [1m(npm install)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] Running 'npm install' in /var/maven/app/ui.frontend.theme.dark
+[[1;31mERROR[m] npm notice This endpoint is being retired. Use the bulk advisory endpoint instead. See the following docs for more info: https://api-docs.npmjs.com/#tag/Audit
+^C[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

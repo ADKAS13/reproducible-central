@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Oct  8 15:13:33 UTC 2026.
-Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
+Local time is now:      Sun Oct 11 07:32:52 UTC 2026.
+Universal Time is now:  Sun Oct 11 07:32:52 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -129,7 +129,7 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: auto-table
@@ -150,11 +150,11 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-annotation[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-annotation/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-annotation[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-annotation
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-annotation (0 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-annotation/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-annotation: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-annotation
@@ -193,12 +193,12 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] Building jar: /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2-javadoc.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-annotation[0;1m ---[m
-[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - SHA-1 : 4029a0d88a915671f9330cc9a984db1fe1d4af08
-[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - MD5 : cc5c3eb221436d1e6a508bcfc3efbfd5
-[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - SHA-1 : fc73121ed611100d01a53ffb7e30381ed99ba368
-[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - MD5 : 889b07cf424ebddf607fa9b0e0d40d48
-[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - SHA-1 : 76cce9b9983981c505d257e99a86a89bde42bf55
-[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - MD5 : c312f774be7eabddc8210365392818e4
+[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - SHA-1 : 92aec1d04d8017495c82b65aeb15c0ab9afb29f6
+[[1;34mINFO[m] auto-table-annotation-2.7.2.jar - MD5 : 779e0b7da9308dc537f1c916b72d396f
+[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - SHA-1 : 2e7eb30e8627433e4bea6540c1b3e824f2e2d69f
+[[1;34mINFO[m] auto-table-annotation-2.7.2-sources.jar - MD5 : 93a43b46a0fb7511d2a40670f81609ee
+[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - SHA-1 : 986b3b25ea202154c5d8768b2caf7302850e8075
+[[1;34mINFO[m] auto-table-annotation-2.7.2-javadoc.jar - MD5 : f6052cda2eaadf1c762ebdf9af8b50d4
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-annotation[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/auto-table-annotation/target/auto-table-annotation-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-annotation/2.7.2/auto-table-annotation-2.7.2.jar
@@ -214,11 +214,11 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-core[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-core/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 5 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 5 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-core[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-core
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-core (5 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-core/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-core: pinned=5 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-core
@@ -270,12 +270,12 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] Building jar: /var/maven/app/auto-table-core/target/auto-table-core-2.7.2-javadoc.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-core[0;1m ---[m
-[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - SHA-1 : 0f23152e052a86514f5f522634576740a5f80a47
-[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - MD5 : b07b8a8e908c1fbb659aeeab17171f38
-[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - SHA-1 : 0872b820273a3265199f61050edc006a63cfd56c
-[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - MD5 : d08a76004151c6d06a1ae004138e95ab
-[[1;34mINFO[m] auto-table-core-2.7.2.jar - SHA-1 : 82e06b833ede015c70b07062253c85a1a2de6e4b
-[[1;34mINFO[m] auto-table-core-2.7.2.jar - MD5 : b558beb54ec04c989fb05541dda25928
+[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - SHA-1 : 0d4dd372a650133ec5c278af6cd028befd4e06bf
+[[1;34mINFO[m] auto-table-core-2.7.2-javadoc.jar - MD5 : c7e5616474bee77938f96d50bd8c09b6
+[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - SHA-1 : 77cde73678e11664830309c7d69d9f0a92d82147
+[[1;34mINFO[m] auto-table-core-2.7.2-sources.jar - MD5 : e4d353a7454bea51d113c65b20cd8c32
+[[1;34mINFO[m] auto-table-core-2.7.2.jar - SHA-1 : d44236ac0b54ba350d8305ed00af2ce17d462492
+[[1;34mINFO[m] auto-table-core-2.7.2.jar - MD5 : 77c40ee0c7be1bbe927a2275d1b0c91c
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-core[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/auto-table-core/target/auto-table-core-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-core/2.7.2/auto-table-core-2.7.2.jar
@@ -291,7 +291,7 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: auto-table-strategy
@@ -312,11 +312,11 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-dm[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-dm/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-dm[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-dm
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-dm (6 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-dm/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-dm: pinned=6 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-dm
@@ -367,11 +367,11 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-doris[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-doris/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-doris[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-doris
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-doris (6 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-doris/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-doris: pinned=6 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-doris
@@ -418,11 +418,11 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-h2[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-h2/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-h2[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-h2
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-h2 (6 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-h2/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-h2: pinned=6 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-h2
@@ -469,11 +469,11 @@ Universal Time is now:  Thu Oct  8 15:13:33 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-pgsql[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-pgsql
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-pgsql (14 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-pgsql/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-pgsql: pinned=14 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-pgsql
@@ -534,11 +534,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 7 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 7 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-kingbase[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-kingbase
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-kingbase (7 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-kingbase/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-kingbase: pinned=7 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-kingbase
@@ -589,11 +589,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-mysql[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-mysql
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-mysql (14 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-mysql/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-mysql: pinned=14 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-mysql
@@ -652,11 +652,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 14 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-oracle[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-oracle
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-oracle (14 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-oracle/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-oracle: pinned=14 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-oracle
@@ -713,11 +713,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 15 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 15 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-yashandb[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-yashandb
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-yashandb (15 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-yashandb/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-yashandb: pinned=15 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-yashandb
@@ -774,11 +774,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 15 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 15 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-sqlserver[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-sqlserver
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-sqlserver (15 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlserver/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-sqlserver: pinned=15 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-sqlserver
@@ -812,7 +812,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running org.dromara.autotable.strategy.sqlserver.SqlServerStrategyUnitTest
 Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running org.dromara.autotable.strategy.sqlserver.SqlServerCompareTableInfoTest
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running org.dromara.autotable.strategy.sqlserver.builder.SqlServerColumnMetadataBuilderTest
 Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
@@ -854,11 +854,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 6 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-sqlite[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-sqlite
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-sqlite (6 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-sqlite/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-sqlite: pinned=6 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-sqlite
@@ -905,11 +905,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-strategy-all[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-all/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 15 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 15 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-strategy-all[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-all
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-strategy-all (15 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-strategy/auto-table-strategy-all/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-strategy-all: pinned=15 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-strategy-all
@@ -956,11 +956,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-spring-boot-starter/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 37 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 37 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-spring-boot-starter
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-spring-boot-starter (37 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-spring-boot-starter/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-spring-boot-starter: pinned=37 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-spring-boot-starter
@@ -994,12 +994,12 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] Building jar: /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2-javadoc.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - SHA-1 : bfd081977ee0fa8cfe4805f8ee1b2807521ac7e3
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - MD5 : 52266d09d292191f1f7e70812466b4f5
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - SHA-1 : e463677edd726bbb862ba5084375231e71cb6bc0
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - MD5 : 1e634fb3a7624edf6fc62992f58a0e42
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - SHA-1 : 66fa2eaa2231bab5cf58d730692d60effd106643
-[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - MD5 : 2efac0d43b1609781d1f037e99f9427f
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - SHA-1 : e5d30bd44b8a1147e0c83062ba4756ccfa213bf1
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-javadoc.jar - MD5 : cc26e33f3f8cbfedb31c3089ac4cc83d
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - SHA-1 : 4f3c8410698d2049ecbd80e8c8e5ffd27765be50
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2.jar - MD5 : 66e45c4f07ca6cb6fcd1d173f96cd857
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - SHA-1 : 5fbfd24f77ece1ce8b46f0a77e063fbb9ba54efd
+[[1;34mINFO[m] auto-table-spring-boot-starter-2.7.2-sources.jar - MD5 : efcb8840fff82b31c7d99dccb00aaf2d
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-spring-boot-starter[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/auto-table-spring-boot-starter/target/auto-table-spring-boot-starter-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-spring-boot-starter/2.7.2/auto-table-spring-boot-starter-2.7.2.jar
@@ -1015,11 +1015,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-solon-plugin[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-solon-plugin/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 57 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 57 dependencies (1 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-solon-plugin[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-solon-plugin
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-solon-plugin (57 dependencies, 1 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-solon-plugin/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-solon-plugin: pinned=57 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-solon-plugin
@@ -1061,12 +1061,12 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] Building jar: /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2-javadoc.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mchecksum-maven-plugin:1.4:files[m [1m(checksum-maven-plugin-files)[m @ [36mauto-table-solon-plugin[0;1m ---[m
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - SHA-1 : 38d508f0538c1f71f2c4af4b5690d9d8ddd91c6c
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - MD5 : 969c3e6388eba17fb053029f14207b96
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - SHA-1 : 386404bc22e1cf008aa3b6b78fdf579d19ef6693
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - MD5 : 5ba4f1283a3537bc88265a44e2783f28
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - SHA-1 : f2515a9665c188d566aadb331defb98a7137ab63
-[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - MD5 : 6c2d2d639037ed4aed7989d3d2f3dc41
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - SHA-1 : 08047af04122ff7a79a37c2da1481b2f3d735d19
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-sources.jar - MD5 : 0e08385d2eb98a2ad099559103919f93
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - SHA-1 : 9791843556ee11b72565b405f98384acb92f0e55
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2.jar - MD5 : 435f1c80f433fd473aa58f6aa9742310
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - SHA-1 : 7ecf1464da8142add46649c2530588546a4478bd
+[[1;34mINFO[m] auto-table-solon-plugin-2.7.2-javadoc.jar - MD5 : 47164a82a33bcb10af092215a1a0dee2
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mauto-table-solon-plugin[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/auto-table-solon-plugin/target/auto-table-solon-plugin-2.7.2.jar to /var/maven/.m2/repository/org/dromara/autotable/auto-table-solon-plugin/2.7.2/auto-table-solon-plugin-2.7.2.jar
@@ -1082,7 +1082,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-test[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-test/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 8 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 8 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-test[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: auto-table-test
@@ -1104,11 +1104,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-test-core[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-test/auto-table-test-core/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 50 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 50 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-test-core[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-core
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-core (50 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-test/auto-table-test-core/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-test-core: pinned=50 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-test-core
@@ -1162,11 +1162,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-test/auto-table-test-spring-boot/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 76 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 76 dependencies (2 carrying exclusions, 1180 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-test-spring-boot[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-spring-boot
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-spring-boot (76 dependencies, 2 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-test/auto-table-test-spring-boot/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-test-spring-boot: pinned=76 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-test-spring-boot
@@ -1194,7 +1194,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
  T E S T S
 -------------------------------------------------------
 Running org.dromara.autotable.test.springboot.MyTest
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
 Results :
 
@@ -1222,11 +1222,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-test/auto-table-test-dynamicdatasource/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 46 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 46 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-test-dynamicdatasource[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-dynamicdatasource
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-dynamicdatasource (46 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-test/auto-table-test-dynamicdatasource/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-test-dynamicdatasource: pinned=46 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-test-dynamicdatasource
@@ -1270,11 +1270,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-test/auto-table-test-solon-plugin/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 80 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 80 dependencies (6 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-test-solon-plugin[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-solon-plugin
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-solon-plugin (80 dependencies, 6 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-test/auto-table-test-solon-plugin/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-test-solon-plugin: pinned=80 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-test-solon-plugin
@@ -1330,13 +1330,13 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-test/auto-table-test-spring-boot-dynamicdatasource/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 90 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 90 dependencies (4 carrying exclusions, 1180 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-spring-boot-dynamicdatasource
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-spring-boot-dynamicdatasource (90 dependencies, 4 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-test/auto-table-test-spring-boot-dynamicdatasource/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-test-spring-boot-dynamicdatasource: pinned=90 upgraded=0 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-test-spring-boot-dynamicdatasource: pinned=90 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-test-spring-boot-dynamicdatasource
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mauto-table-test-spring-boot-dynamicdatasource[0;1m ---[m
@@ -1378,11 +1378,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-test-doris[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-test/auto-table-test-doris/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 73 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 73 dependencies (2 carrying exclusions, 1180 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-test-doris[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-doris
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-test-doris (73 dependencies, 2 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-test/auto-table-test-doris/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-test-doris: pinned=73 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-test-doris
@@ -1426,7 +1426,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-adapter[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-adapter/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-adapter[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: auto-table-adapter
@@ -1447,11 +1447,11 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 11 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 11 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-adapter-mybatis-plus[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-adapter-mybatis-plus
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-adapter-mybatis-plus (11 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-adapter-mybatis-plus: pinned=11 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-adapter-mybatis-plus
@@ -1479,7 +1479,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusMetadataAdapterTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m24[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s -- in org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusMetadataAdapterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m24[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s -- in org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusMetadataAdapterTest[m
 [[1;34mINFO[m] Running org.dromara.autotable.adapter.mybatisplus.[1mMybatisPlusJavaTypeToDatabaseTypeConverterTest[m
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
@@ -1515,11 +1515,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 49 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 49 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-adapter-mybatis-plus-spring-boot-starter[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-adapter-mybatis-plus-spring-boot-starter
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-adapter-mybatis-plus-spring-boot-starter (49 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-plus-spring-boot-starter/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-adapter-mybatis-plus-spring-boot-starter: pinned=49 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-adapter-mybatis-plus-spring-boot-starter
@@ -1572,11 +1572,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-adapter-mybatis-flex[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-adapter-mybatis-flex
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-adapter-mybatis-flex (10 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-adapter-mybatis-flex: pinned=10 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-adapter-mybatis-flex
@@ -1625,11 +1625,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 39 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 39 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-adapter-mybatis-flex-spring-boot-starter[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-adapter-mybatis-flex-spring-boot-starter
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-adapter-mybatis-flex-spring-boot-starter (39 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-adapter/auto-table-adapter-mybatis-flex-spring-boot-starter/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-adapter-mybatis-flex-spring-boot-starter: pinned=39 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-adapter-mybatis-flex-spring-boot-starter
@@ -1676,7 +1676,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-support[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-support/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-support[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: auto-table-support
@@ -1697,11 +1697,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mauto-table-support-springdoc[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/auto-table-support/auto-table-support-springdoc/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 29 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 29 dependencies (0 carrying exclusions, 1 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mauto-table-support-springdoc[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-support-springdoc
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: auto-table-support-springdoc (29 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/auto-table-support/auto-table-support-springdoc/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for auto-table-support-springdoc: pinned=29 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: auto-table-support-springdoc
@@ -1742,42 +1742,42 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for org.dromara.autotable:auto-table 2.7.2:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] org.dromara.autotable:auto-table ................... [1;32mSUCCESS[m [  1.207 s]
-[[1;34mINFO[m] auto-table-annotation .............................. [1;32mSUCCESS[m [  2.923 s]
-[[1;34mINFO[m] auto-table-core .................................... [1;32mSUCCESS[m [  4.092 s]
-[[1;34mINFO[m] auto-table-strategy ................................ [1;32mSUCCESS[m [  0.018 s]
-[[1;34mINFO[m] auto-table-strategy-dm ............................. [1;32mSUCCESS[m [  1.832 s]
-[[1;34mINFO[m] auto-table-strategy-doris .......................... [1;32mSUCCESS[m [  2.054 s]
-[[1;34mINFO[m] auto-table-strategy-h2 ............................. [1;32mSUCCESS[m [  1.880 s]
-[[1;34mINFO[m] auto-table-strategy-pgsql .......................... [1;32mSUCCESS[m [  2.540 s]
-[[1;34mINFO[m] auto-table-strategy-kingbase ....................... [1;32mSUCCESS[m [  1.058 s]
-[[1;34mINFO[m] auto-table-strategy-mysql .......................... [1;32mSUCCESS[m [  2.446 s]
-[[1;34mINFO[m] auto-table-strategy-oracle ......................... [1;32mSUCCESS[m [  2.304 s]
-[[1;34mINFO[m] auto-table-strategy-yashandb ....................... [1;32mSUCCESS[m [  2.002 s]
-[[1;34mINFO[m] auto-table-strategy-sqlserver ...................... [1;32mSUCCESS[m [  2.234 s]
-[[1;34mINFO[m] auto-table-strategy-sqlite ......................... [1;32mSUCCESS[m [  1.321 s]
-[[1;34mINFO[m] auto-table-strategy-all ............................ [1;32mSUCCESS[m [  0.849 s]
-[[1;34mINFO[m] auto-table-spring-boot-starter ..................... [1;32mSUCCESS[m [  1.394 s]
-[[1;34mINFO[m] auto-table-solon-plugin ............................ [1;32mSUCCESS[m [  1.435 s]
-[[1;34mINFO[m] auto-table-test .................................... [1;32mSUCCESS[m [  0.015 s]
-[[1;34mINFO[m] auto-table-test-core ............................... [1;32mSUCCESS[m [  2.286 s]
-[[1;34mINFO[m] auto-table-test-spring-boot ........................ [1;32mSUCCESS[m [  1.192 s]
-[[1;34mINFO[m] auto-table-test-dynamicdatasource .................. [1;32mSUCCESS[m [  0.511 s]
-[[1;34mINFO[m] auto-table-test-solon-plugin ....................... [1;32mSUCCESS[m [  1.170 s]
-[[1;34mINFO[m] auto-table-test-spring-boot-dynamicdatasource ...... [1;32mSUCCESS[m [  0.581 s]
-[[1;34mINFO[m] auto-table-test-doris .............................. [1;32mSUCCESS[m [  0.687 s]
-[[1;34mINFO[m] auto-table-adapter ................................. [1;32mSUCCESS[m [  0.016 s]
-[[1;34mINFO[m] auto-table-adapter-mybatis-plus .................... [1;32mSUCCESS[m [  2.279 s]
-[[1;34mINFO[m] auto-table-adapter-mybatis-plus-spring-boot-starter  [1;32mSUCCESS[m [  1.057 s]
-[[1;34mINFO[m] auto-table-adapter-mybatis-flex .................... [1;32mSUCCESS[m [  1.208 s]
-[[1;34mINFO[m] auto-table-adapter-mybatis-flex-spring-boot-starter  [1;32mSUCCESS[m [  1.029 s]
-[[1;34mINFO[m] auto-table-support ................................. [1;32mSUCCESS[m [  0.014 s]
-[[1;34mINFO[m] auto-table-support-springdoc ....................... [1;32mSUCCESS[m [  1.067 s]
+[[1;34mINFO[m] org.dromara.autotable:auto-table ................... [1;32mSUCCESS[m [  1.021 s]
+[[1;34mINFO[m] auto-table-annotation .............................. [1;32mSUCCESS[m [  2.942 s]
+[[1;34mINFO[m] auto-table-core .................................... [1;32mSUCCESS[m [  4.001 s]
+[[1;34mINFO[m] auto-table-strategy ................................ [1;32mSUCCESS[m [  0.015 s]
+[[1;34mINFO[m] auto-table-strategy-dm ............................. [1;32mSUCCESS[m [  1.805 s]
+[[1;34mINFO[m] auto-table-strategy-doris .......................... [1;32mSUCCESS[m [  2.053 s]
+[[1;34mINFO[m] auto-table-strategy-h2 ............................. [1;32mSUCCESS[m [  1.760 s]
+[[1;34mINFO[m] auto-table-strategy-pgsql .......................... [1;32mSUCCESS[m [  2.452 s]
+[[1;34mINFO[m] auto-table-strategy-kingbase ....................... [1;32mSUCCESS[m [  1.061 s]
+[[1;34mINFO[m] auto-table-strategy-mysql .......................... [1;32mSUCCESS[m [  2.498 s]
+[[1;34mINFO[m] auto-table-strategy-oracle ......................... [1;32mSUCCESS[m [  2.686 s]
+[[1;34mINFO[m] auto-table-strategy-yashandb ....................... [1;32mSUCCESS[m [  2.317 s]
+[[1;34mINFO[m] auto-table-strategy-sqlserver ...................... [1;32mSUCCESS[m [  2.519 s]
+[[1;34mINFO[m] auto-table-strategy-sqlite ......................... [1;32mSUCCESS[m [  1.454 s]
+[[1;34mINFO[m] auto-table-strategy-all ............................ [1;32mSUCCESS[m [  0.959 s]
+[[1;34mINFO[m] auto-table-spring-boot-starter ..................... [1;32mSUCCESS[m [  0.159 s]
+[[1;34mINFO[m] auto-table-solon-plugin ............................ [1;32mSUCCESS[m [  1.655 s]
+[[1;34mINFO[m] auto-table-test .................................... [1;32mSUCCESS[m [  0.021 s]
+[[1;34mINFO[m] auto-table-test-core ............................... [1;32mSUCCESS[m [  2.480 s]
+[[1;34mINFO[m] auto-table-test-spring-boot ........................ [1;32mSUCCESS[m [  1.305 s]
+[[1;34mINFO[m] auto-table-test-dynamicdatasource .................. [1;32mSUCCESS[m [  0.546 s]
+[[1;34mINFO[m] auto-table-test-solon-plugin ....................... [1;32mSUCCESS[m [  1.167 s]
+[[1;34mINFO[m] auto-table-test-spring-boot-dynamicdatasource ...... [1;32mSUCCESS[m [  0.630 s]
+[[1;34mINFO[m] auto-table-test-doris .............................. [1;32mSUCCESS[m [  0.684 s]
+[[1;34mINFO[m] auto-table-adapter ................................. [1;32mSUCCESS[m [  0.018 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-plus .................... [1;32mSUCCESS[m [  2.398 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-plus-spring-boot-starter  [1;32mSUCCESS[m [  1.154 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-flex .................... [1;32mSUCCESS[m [  1.231 s]
+[[1;34mINFO[m] auto-table-adapter-mybatis-flex-spring-boot-starter  [1;32mSUCCESS[m [  1.109 s]
+[[1;34mINFO[m] auto-table-support ................................. [1;32mSUCCESS[m [  0.012 s]
+[[1;34mINFO[m] auto-table-support-springdoc ....................... [1;32mSUCCESS[m [  1.106 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  45.310 s
-[[1;34mINFO[m] Finished at: 2026-10-08T15:14:19Z
+[[1;34mINFO[m] Total time:  45.831 s
+[[1;34mINFO[m] Finished at: 2026-10-11T07:33:38Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Auto-table.buildinfo: No such file or directory
 dos2unix: Skipping target/Auto-table.buildinfo, not a regular file.

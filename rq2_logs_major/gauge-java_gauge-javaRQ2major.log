@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Oct  6 03:35:18 UTC 2026.
-Universal Time is now:  Tue Oct  6 03:35:18 UTC 2026.
+Local time is now:      Sat Oct 10 20:56:37 UTC 2026.
+Universal Time is now:  Sat Oct 10 20:56:37 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -111,11 +111,11 @@ Universal Time is now:  Tue Oct  6 03:35:18 UTC 2026.
 [[1;34mINFO[m] [1mBuilding gauge-java 0.7.15[m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml
-Progress (1): 563 B                   Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml (563 B at 2.5 kB/s)
+Progress (1): 563 B                   Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml (563 B at 1.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.6 kB at 130 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.7 kB at 124 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml (5.0 kB at 112 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml (5.1 kB at 81 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgauge-java[0;1m ---[m
 [[1;34mINFO[m] 
@@ -127,71 +127,67 @@ Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from c
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mgauge-java[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/maven-metadata.xml (6.8 kB at 29 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/maven-metadata.xml (6.8 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/stefanbirkner/system-rules/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/stefanbirkner/system-rules/maven-metadata.xml (1.2 kB at 5.0 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/stefanbirkner/system-rules/maven-metadata.xml (1.2 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/android/annotations/maven-metadata.xml
-Progress (1): 342 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/android/annotations/maven-metadata.xml (342 B at 1.4 kB/s)
+Progress (1): 342 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/android/annotations/maven-metadata.xml (342 B at 914 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/maven-metadata.xml (5.7 kB at 28 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/maven-metadata.xml (5.7 kB at 89 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/maven-metadata.xml
-Progress (1): 505 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/maven-metadata.xml (505 B at 2.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/3.0.0/annotations-3.0.0.pom
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/3.0.0/annotations-3.0.0.pom (3.5 kB at 77 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/3.0.1u1/annotations-3.0.1u1.pom
-Progress (1): 4.1 kBProgress (1): 7.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/3.0.1u1/annotations-3.0.1u1.pom (7.0 kB at 21 kB/s)
+Progress (1): 505 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/annotations/maven-metadata.xml (505 B at 2.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 11 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 1.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 37 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 53 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 60 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 2.0 kB/s)
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 7.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 130 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 102 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml
-Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml (476 B at 1.9 kB/s)
+Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/maven-metadata.xml (476 B at 9.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 2.6 kB/s)
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 8.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 38 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 126 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 28 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 20 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml
-Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 3.2 kB/s)
+Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 6.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml (6.1 kB at 27 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml (6.2 kB at 105 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/maven-metadata.xml (5.6 kB at 99 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/maven-metadata.xml (5.7 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml (6.6 kB at 31 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml (6.7 kB at 104 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml (6.3 kB at 28 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml (6.4 kB at 84 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml (6.6 kB at 34 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml (6.7 kB at 104 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/maven-metadata.xml
-Progress (1): 782 B                   Downloaded from central: https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/maven-metadata.xml (782 B at 2.7 kB/s)
+Progress (1): 782 B                   Downloaded from central: https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/maven-metadata.xml (782 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml
-Progress (1): 564 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml (564 B at 9.2 kB/s)
+Progress (1): 564 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/maven-metadata.xml (564 B at 5.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 30 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/maven-metadata.xml
-Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/maven-metadata.xml (2.9 kB at 14 kB/s)
+Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-core/maven-metadata.xml (2.9 kB at 43 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 21 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 98 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB at 5.2 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml
-Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 11 kB/s)
+Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 9.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 18 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml (1.5 kB at 7.1 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml (1.5 kB at 24 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml (1.3 kB at 5.0 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml (1.3 kB at 4.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/maven-metadata.xml
-Progress (1): 857 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/maven-metadata.xml (857 B at 3.0 kB/s)
+Progress (1): 857 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/reflections/reflections/maven-metadata.xml (857 B at 1.9 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: gauge-java
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for gauge-java: pinned=8 upgraded=26 downgraded=0 added=6 removed=0 scope_changed=0
@@ -237,28 +233,28 @@ Audit done.
 Running com.thoughtworks.gauge.UtilTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
 Running com.thoughtworks.gauge.execution.HooksExecutorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec
 Running com.thoughtworks.gauge.execution.StepExecutionStageTest
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.mockito.cglib.core.ReflectUtils$2 (file:/var/maven/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
 WARNING: Please consider reporting this to the maintainers of org.mockito.cglib.core.ReflectUtils$2
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.471 sec
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.463 sec
 Running com.thoughtworks.gauge.execution.ExecutionPipelineTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
 Running com.thoughtworks.gauge.execution.ExecutionInfoMapperTest
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
 Running com.thoughtworks.gauge.execution.parameters.ParametersExtractorTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.TableParameterParserTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.PrimitiveParameterParserTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.EnumParameterParserTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.thoughtworks.gauge.execution.parameters.DynamicParametersReplacerTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
 Running com.thoughtworks.gauge.execution.AbstractExecutionStageTest
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.thoughtworks.gauge.tag.AndMatcherTest
@@ -276,23 +272,23 @@ Running com.thoughtworks.gauge.scan.StepsScannerTest
 {"logLevel":"debug","message":"Loading hello worldvia reflected sources."}
 {"logLevel":"debug","message":"Scanning packages for steps"}
 {"logLevel":"debug","message":"Found hello world {} in current project scope."}
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
 Running com.thoughtworks.gauge.scan.StaticScannerTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 sec
 Running com.thoughtworks.gauge.hook.HookTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.refactor.JavaRefactoringTest
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 sec
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.205 sec
 Running com.thoughtworks.gauge.processor.StubImplementationCodeProcessorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
 Running com.thoughtworks.gauge.processor.StepPositionsRequestProcessorTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
 Running com.thoughtworks.gauge.processor.DefaultMessageProcessorTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.processor.ValidateStepProcessorTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
 Running com.thoughtworks.gauge.processor.StepNameRequestProcessorTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
 Running com.thoughtworks.gauge.processor.CacheFileRequestProcessorTest
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
 Running com.thoughtworks.gauge.ScreenshotCollectorTest
@@ -308,15 +304,15 @@ Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
 Running com.thoughtworks.gauge.TableRowTest
 Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.TableTest
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
 Running com.thoughtworks.gauge.FileHelperTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
 Running com.thoughtworks.gauge.ExecutionContextTest
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.MessageCollectorTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.ClassInstanceManagerTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 
 Results :
 
@@ -1149,8 +1145,8 @@ Generating /var/maven/app/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  29.805 s
-[[1;34mINFO[m] Finished at: 2026-10-06T03:35:48Z
+[[1;34mINFO[m] Total time:  29.842 s
+[[1;34mINFO[m] Finished at: 2026-10-10T20:57:07Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Gauge-java.buildinfo: No such file or directory
 dos2unix: Skipping target/Gauge-java.buildinfo, not a regular file.

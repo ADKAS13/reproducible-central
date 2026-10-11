@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Oct  8 15:16:47 UTC 2026.
-Universal Time is now:  Thu Oct  8 15:16:47 UTC 2026.
+Local time is now:      Sun Oct 11 07:35:33 UTC 2026.
+Universal Time is now:  Sun Oct 11 07:35:33 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -93,11 +93,11 @@ Universal Time is now:  Thu Oct  8 15:16:47 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36measyvcr[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 5 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 5 dependencies (0 carrying exclusions, 0 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36measyvcr[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: easyvcr
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: easyvcr (5 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for easyvcr: pinned=5 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: easyvcr
@@ -135,9 +135,9 @@ Universal Time is now:  Thu Oct  8 15:16:47 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running [1mVCRTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m13[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.974 s - in [1mVCRTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m13[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.024 s - in [1mVCRTest[m
 [[1;34mINFO[m] Running [1mHttpUrlConnectionTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m19[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.38 s - in [1mHttpUrlConnectionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m19[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.828 s - in [1mHttpUrlConnectionTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -284,8 +284,8 @@ Generating /var/maven/app/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  16.976 s
-[[1;34mINFO[m] Finished at: 2026-10-08T15:17:05Z
+[[1;34mINFO[m] Total time:  17.756 s
+[[1;34mINFO[m] Finished at: 2026-10-11T07:35:52Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/easyvcrRQ1.buildinfo: No such file or directory
 dos2unix: Skipping target/easyvcrRQ1.buildinfo, not a regular file.

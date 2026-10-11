@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Oct  8 15:18:11 UTC 2026.
-Universal Time is now:  Thu Oct  8 15:18:11 UTC 2026.
+Local time is now:      Sun Oct 11 07:38:25 UTC 2026.
+Universal Time is now:  Sun Oct 11 07:38:25 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -106,11 +106,11 @@ Universal Time is now:  Thu Oct  8 15:18:11 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mphenopacket-schema[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 33 dependencies (version range mode: pinned).
+[[1;34mINFO[m] Initialized pom.deps.xml with 33 dependencies (0 carrying exclusions, 0 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mphenopacket-schema[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: phenopacket-schema
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: phenopacket-schema (33 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for phenopacket-schema: pinned=33 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: phenopacket-schema
@@ -165,7 +165,7 @@ Universal Time is now:  Thu Oct  8 15:18:11 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.io.[1mPhenopacketFormatTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.33 s - in org.phenopackets.schema.v2.io.[1mPhenopacketFormatTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.358 s - in org.phenopackets.schema.v2.io.[1mPhenopacketFormatTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mPhenopacketTest[m
 ---
 subject:
@@ -545,7 +545,7 @@ htsFiles:
   individualToSampleIdentifiers:
     kindred 1A: "SAME000234"
 
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in org.phenopackets.schema.v2.[1mPhenopacketTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in org.phenopackets.schema.v2.[1mPhenopacketTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mFamilyTest[m
 ---
 id: "kindred 1"
@@ -642,7 +642,7 @@ pedigree:
     sex: "MALE"
     affectedStatus: "UNAFFECTED"
 metaData:
-  created: "2026-10-08T15:18:21.185Z"
+  created: "2026-10-11T07:38:33.091Z"
   createdBy: "Jules J."
   resources:
   - id: "hp"
@@ -672,7 +672,7 @@ metaData:
     description: "Kindred 1 in Ng SB et al. Exome sequencing identifies the cause\
       \ of a mendelian disorder. Nat Genet. 2010;42(1):30-5."
 
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.phenopackets.schema.v2.[1mFamilyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.phenopackets.schema.v2.[1mFamilyTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mInterpretationTest[m
 ---
 id: "kindred 1A"
@@ -739,11 +739,11 @@ interpretations:
         variant:
           hgvsAllele: {}
 
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in org.phenopackets.schema.v2.[1mInterpretationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.phenopackets.schema.v2.[1mInterpretationTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mFhirTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s - in org.phenopackets.schema.v2.[1mFhirTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s - in org.phenopackets.schema.v2.[1mFhirTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.io.[1mPhenopacketFormatTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in org.phenopackets.schema.v1.io.[1mPhenopacketFormatTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in org.phenopackets.schema.v1.io.[1mPhenopacketFormatTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mPhenopacketTest[m
 ---
 subject:
@@ -974,7 +974,7 @@ metaData:
     }
   }]
 }
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in org.phenopackets.schema.v1.[1mPhenopacketTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in org.phenopackets.schema.v1.[1mPhenopacketTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mFamilyTest[m
 ---
 id: "kindred 1"
@@ -1119,7 +1119,7 @@ pedigree:
     sex: "MALE"
     affectedStatus: "UNAFFECTED"
 metaData:
-  created: "2026-10-08T15:18:21.434Z"
+  created: "2026-10-11T07:38:33.342Z"
   createdBy: "Jules J."
   resources:
   - id: "hp"
@@ -1149,7 +1149,7 @@ metaData:
     description: "Kindred 1 in Ng SB et al. Exome sequencing identifies the cause\
       \ of a mendelian disorder. Nat Genet. 2010;42(1):30-5."
 
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.phenopackets.schema.v1.[1mFamilyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.phenopackets.schema.v1.[1mFamilyTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mInterpretationTest[m
 {
   "id": "SOLVERD:0000012456",
@@ -1255,7 +1255,7 @@ metaData:
     }]
   }],
   "metaData": {
-    "created": "2026-10-08T15:18:21.479Z",
+    "created": "2026-10-11T07:38:33.380Z",
     "createdBy": "Jules J.",
     "resources": [{
       "id": "hp",
@@ -1285,11 +1285,11 @@ metaData:
     }]
   }
 }
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.phenopackets.schema.v1.[1mInterpretationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.phenopackets.schema.v1.[1mInterpretationTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mFhirTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.phenopackets.schema.v1.[1mFhirTest[m
 [[1;34mINFO[m] Running org.matchmakerexchange.api.v1.[1mMmeNodeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.matchmakerexchange.api.v1.[1mMmeNodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.matchmakerexchange.api.v1.[1mMmeNodeTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1313,8 +1313,8 @@ metaData:
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  17.026 s
-[[1;34mINFO[m] Finished at: 2026-10-08T15:18:29Z
+[[1;34mINFO[m] Total time:  14.890 s
+[[1;34mINFO[m] Finished at: 2026-10-11T07:38:41Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Phenopacket-schema.buildinfo: No such file or directory
 dos2unix: Skipping target/Phenopacket-schema.buildinfo, not a regular file.

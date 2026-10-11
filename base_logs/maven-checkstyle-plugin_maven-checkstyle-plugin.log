@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Oct  8 11:38:33 UTC 2026.
-Universal Time is now:  Thu Oct  8 11:38:33 UTC 2026.
+Local time is now:      Sun Oct 11 09:31:23 UTC 2026.
+Universal Time is now:  Sun Oct 11 09:31:23 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -160,11 +160,11 @@ Universal Time is now:  Thu Oct  8 11:38:33 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.[1mRuleUtilTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.apache.maven.plugins.checkstyle.[1mRuleUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.apache.maven.plugins.checkstyle.[1mRuleUtilTest[m
 [[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerTest[m
 [[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleResultsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleResultsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleResultsTest[m
 [[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerMultiSourceTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.maven.plugins.checkstyle.exec.[1mCheckstyleReportListenerMultiSourceTest[m
 [[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.[1mCheckstyleReportTest[m
@@ -192,15 +192,15 @@ Audit done.
 [INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
 [INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
 [INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.481 s - in org.apache.maven.plugins.checkstyle.[1mCheckstyleReportTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.083 s - in org.apache.maven.plugins.checkstyle.[1mCheckstyleReportTest[m
 [[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.[1mReportResourceTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.maven.plugins.checkstyle.[1mReportResourceTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.apache.maven.plugins.checkstyle.[1mReportResourceTest[m
 [[1;34mINFO[m] Running org.apache.maven.plugins.checkstyle.[1mCheckstyleViolationCheckMojoTest[m
 [INFO] Unable to perform checkstyle:check, unable to find checkstyle:checkstyle outputFile.
 [INFO] There are 5 errors reported by Checkstyle 8.19 with sun_checks.xml ruleset.
 [WARNING] checkstyle:check violations detected but failOnViolation set to false
 [WARNING] checkstyle:check violations detected but failOnViolation set to false
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.207 s - in org.apache.maven.plugins.checkstyle.[1mCheckstyleViolationCheckMojoTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 s - in org.apache.maven.plugins.checkstyle.[1mCheckstyleViolationCheckMojoTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -225,8 +225,8 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  12.003 s
-[[1;34mINFO[m] Finished at: 2026-10-08T11:38:46Z
+[[1;34mINFO[m] Total time:  14.335 s
+[[1;34mINFO[m] Finished at: 2026-10-11T09:31:38Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Maven-checkstyle-plugin.buildinfo: No such file or directory
 dos2unix: Skipping target/Maven-checkstyle-plugin.buildinfo, not a regular file.

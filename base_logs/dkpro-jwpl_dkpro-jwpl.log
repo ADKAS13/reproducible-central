@@ -1,0 +1,871 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/dkpro-jwpl/base/dkpro-jwpl.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1mde.tudarmstadt.ukp.wikipedia[0m
+|      [0;34martifactId[0;97m: [1mde.tudarmstadt.ukp.wikipedia[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/dkpro/dkpro-jwpl.git[0m
+|      [0;34mgitTag[0;97m: [1m0a0304b6a0aa13acc18838957994e06dd4613a58[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m8[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -Dmaven.test.failure.ignore=true"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Dkpro-jwpl.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/dkpro/dkpro-jwpl.git[0m on tag [1m0a0304b6a0aa13acc18838957994e06dd4613a58[0m
+/home/adkas13/reproducible-central/repos/dkpro-jwpl/base/buildcache/de.tudarmstadt.ukp.wikipedia
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/dkpro/dkpro-jwpl.git (fetch)
+origin	https://github.com/dkpro/dkpro-jwpl.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 0a0304b6a0aa13acc18838957994e06dd4613a58 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/dkpro-jwpl/base/buildcache/de.tudarmstadt.ukp.wikipedia
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:1058280974120b51d18b8f71f941283af8612725fc28a3a72cfb85cf150239c6
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:8514503f3f5516217b6be23a408be73c80c45fc9c054c70b7f26973b7e0100ed
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:80d48831e3263a373a8351d99ce446ede387df085e0783cc6b9649f602eb5da0
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/dkpro-jwpl/base/buildcache/de.tudarmstadt.ukp.wikipedia:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -Dmaven.test.failure.ignore=true" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+javac: invalid flag: --version
+Usage: javac <options> <source files>
+use -help for a list of possible options
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version [0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Oct 11 09:25:43 UTC 2026.
+Universal Time is now:  Sun Oct 11 09:25:43 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] JWPL                                                               [pom]
+[[1;34mINFO[m] Java Wikipedia API                                                 [jar]
+[[1;34mINFO[m] MediaWiki Dumper                                                   [jar]
+[[1;34mINFO[m] WikiMachine                                                        [jar]
+[[1;34mINFO[m] DataMachine                                                        [jar]
+[[1;34mINFO[m] TimeMachine                                                        [jar]
+[[1;34mINFO[m] RevisionMachine                                                    [jar]
+[[1;34mINFO[m] MediaWiki Parser                                                   [jar]
+[[1;34mINFO[m] JWPL API and RevisionAPI Utilities                                 [jar]
+[[1;34mINFO[m] JWPL Tutorial                                                      [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia[0;1m >------[m
+[[1;34mINFO[m] [1mBuilding JWPL 1.2.0-SNAPSHOT                                      [1/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgmavenplus-plugin:1.6:execute[m [1m(read-notice)[m @ [36mde.tudarmstadt.ukp.wikipedia[0;1m ---[m
+[[1;34mINFO[m] Using Groovy 2.4.15 to perform execute.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-remote-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:copy-resources[m [1m(copy-license)[m @ [36mde.tudarmstadt.ukp.wikipedia[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.api[0;1m >----[m
+[[1;34mINFO[m] [1mBuilding Java Wikipedia API 1.2.0-SNAPSHOT                        [2/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgmavenplus-plugin:1.6:execute[m [1m(read-notice)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Using Groovy 2.4.15 to perform execute.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-remote-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:copy-resources[m [1m(copy-license)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 5 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 53 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/target/classes
+[[1;34mINFO[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/src/main/java/de/tudarmstadt/ukp/wikipedia/api/CategoryGraph.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/src/main/java/de/tudarmstadt/ukp/wikipedia/api/CategoryGraph.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.0.0:add-test-source[m [1m(add-integration-test-sources)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Test Source directory: /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/src/it/java added.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.0.0:add-test-resource[m [1m(add-integration-test-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 15 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mWikipediaTest[m
+2026-10-11 09:25:48 WARN  pooling:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m30[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.841 s - in de.tudarmstadt.ukp.wikipedia.api.[1mWikipediaTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mTitleIteratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in de.tudarmstadt.ukp.wikipedia.api.[1mTitleIteratorTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mMetaDataTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in de.tudarmstadt.ukp.wikipedia.api.[1mMetaDataTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mTitleTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in de.tudarmstadt.ukp.wikipedia.api.[1mTitleTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mPageIteratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 s - in de.tudarmstadt.ukp.wikipedia.api.[1mPageIteratorTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mCategoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mCategoryDescendantsIteratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.234 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryDescendantsIteratorTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mCategoryIteratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryIteratorTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mWikiConfigTest[m
+Failed to create WikiConfig for language for Portuguese, using default instead
+Failed to create WikiConfig for language for English, using default instead
+Failed to create WikiConfig for language for French, using default instead
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m1[m, [1;31mFailures: [0;1;31m1[m, Errors: 0, Skipped: 0, Time elapsed: 1.174 s[1;31m <<< FAILURE![m - in de.tudarmstadt.ukp.wikipedia.api.[1mWikiConfigTest[m
+[[1;31mERROR[m] testGetWikiConf(de.tudarmstadt.ukp.wikipedia.api.WikiConfigTest)  Time elapsed: 1.173 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at de.tudarmstadt.ukp.wikipedia.api.WikiConfigTest.testGetWikiConf(WikiConfigTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mCategoryGraphTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryGraphTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.util.[1mGraphSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in de.tudarmstadt.ukp.wikipedia.api.util.[1mGraphSerializationTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mPageTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m32[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 s - in de.tudarmstadt.ukp.wikipedia.api.[1mPageTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mFailures: [m
+[[1;31mERROR[m] [1;31m  WikiConfigTest.testGetWikiConf:34[m
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mTests run: 111, Failures: 1, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;31mERROR[m] There are test failures.
+
+Please refer to /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/target/surefire-reports for the individual test results.
+Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/target/de.tudarmstadt.ukp.wikipedia.api-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:3.1.0:single[m [1m(create-executable-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/felix/maven-bundle-plugin/maven-metadata.xml (1.7 kB at 3.2 kB/s)
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/target/de.tudarmstadt.ukp.wikipedia.api-1.2.0-SNAPSHOT-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-failsafe-plugin:2.21.0:integration-test[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Tests are skipped.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 74 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 71 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-failsafe-plugin:2.21.0:verify[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Tests are skipped.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/target/de.tudarmstadt.ukp.wikipedia.api-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.api/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.api-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.api/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.api-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.mwdumper[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding MediaWiki Dumper 1.2.0-SNAPSHOT                          [3/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 34 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/target/classes
+[[1;34mINFO[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/src/main/java/de/tudarmstadt/ukp/wikipedia/mwdumper/importer/NamespaceSet.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/src/main/java/de/tudarmstadt/ukp/wikipedia/mwdumper/importer/NamespaceSet.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.mwdumper.importer.[1mTitleTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in de.tudarmstadt.ukp.wikipedia.mwdumper.importer.[1mTitleTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 8, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/target/de.tudarmstadt.ukp.wikipedia.mwdumper-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 37 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 37 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.mwdumper[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/target/de.tudarmstadt.ukp.wikipedia.mwdumper-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.mwdumper/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.mwdumper-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.mwdumper/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.mwdumper/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.mwdumper-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.wikimachine[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding WikiMachine 1.2.0-SNAPSHOT                               [4/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 43 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/target/classes
+[[1;33mWARNING[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/src/main/java/de/tudarmstadt/ukp/wikipedia/wikimachine/factory/SpringFactory.java:[22,45] org.springframework.beans.factory.xml.XmlBeanFactory in org.springframework.beans.factory.xml has been deprecated
+[[1;33mWARNING[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/src/main/java/de/tudarmstadt/ukp/wikipedia/wikimachine/factory/SpringFactory.java:[61,24] org.springframework.beans.factory.xml.XmlBeanFactory in org.springframework.beans.factory.xml has been deprecated
+[[1;33mWARNING[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/src/main/java/de/tudarmstadt/ukp/wikipedia/wikimachine/factory/SpringFactory.java:[65,24] org.springframework.beans.factory.xml.XmlBeanFactory in org.springframework.beans.factory.xml has been deprecated
+[[1;33mWARNING[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/src/main/java/de/tudarmstadt/ukp/wikipedia/wikimachine/factory/SpringFactory.java:[72,28] org.springframework.beans.factory.xml.XmlBeanFactory in org.springframework.beans.factory.xml has been deprecated
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/target/de.tudarmstadt.ukp.wikipedia.wikimachine-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 47 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 47 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.wikimachine[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/target/de.tudarmstadt.ukp.wikipedia.wikimachine-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.wikimachine/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.wikimachine-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.wikimachine/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.wikimachine/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.wikimachine-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.datamachine[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding DataMachine 1.2.0-SNAPSHOT                               [5/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgmavenplus-plugin:1.6:execute[m [1m(read-notice)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Using Groovy 2.4.15 to perform execute.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-remote-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:copy-resources[m [1m(copy-license)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 13 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.datamachine/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.datamachine/target/de.tudarmstadt.ukp.wikipedia.datamachine-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:3.1.0:single[m [1m(create-executable-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Reading assembly descriptor: src/main/assembly/assembly.xml
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.datamachine/target/de.tudarmstadt.ukp.wikipedia.datamachine-1.2.0-SNAPSHOT-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 15 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 15 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.datamachine[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.datamachine/target/de.tudarmstadt.ukp.wikipedia.datamachine-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.datamachine/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.datamachine-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.datamachine/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.datamachine/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.datamachine-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.timemachine[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding TimeMachine 1.2.0-SNAPSHOT                               [6/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgmavenplus-plugin:1.6:execute[m [1m(read-notice)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Using Groovy 2.4.15 to perform execute.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-remote-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:copy-resources[m [1m(copy-license)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 20 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.timemachine/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/de.tudarmstadt.ukp.wikipedia.timemachine/src/test/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.timemachine/target/de.tudarmstadt.ukp.wikipedia.timemachine-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:3.1.0:single[m [1m(create-executable-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Reading assembly descriptor: src/main/assembly/assembly.xml
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.timemachine/target/de.tudarmstadt.ukp.wikipedia.timemachine-1.2.0-SNAPSHOT-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 25 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 24 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.timemachine[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.timemachine/target/de.tudarmstadt.ukp.wikipedia.timemachine-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.timemachine/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.timemachine-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.timemachine/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.timemachine/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.timemachine-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding RevisionMachine 1.2.0-SNAPSHOT                           [7/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgmavenplus-plugin:1.6:execute[m [1m(read-notice)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Using Groovy 2.4.15 to perform execute.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-remote-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:copy-resources[m [1m(copy-license)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 133 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/target/classes
+[[1;34mINFO[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/src/main/java/de/tudarmstadt/ukp/wikipedia/revisionmachine/difftool/config/gui/dialogs/InputDialog.java: /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/src/main/java/de/tudarmstadt/ukp/wikipedia/revisionmachine/difftool/config/gui/dialogs/InputDialog.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/src/main/java/de/tudarmstadt/ukp/wikipedia/revisionmachine/difftool/config/gui/dialogs/InputDialog.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.revisionmachine.[1mRevisionIteratorTest[m
+2026-10-11 09:26:01 WARN  pooling:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.243 s - in de.tudarmstadt.ukp.wikipedia.revisionmachine.[1mRevisionIteratorTest[m
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.revisionmachine.[1mRevisionApiTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s - in de.tudarmstadt.ukp.wikipedia.revisionmachine.[1mRevisionApiTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 7, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/target/de.tudarmstadt.ukp.wikipedia.revisionmachine-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:3.1.0:single[m [1m(create-executable-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Reading assembly descriptor: src/main/assembly/assembly.xml
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/target/de.tudarmstadt.ukp.wikipedia.revisionmachine-1.2.0-SNAPSHOT-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 138 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 138 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.revisionmachine[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/target/de.tudarmstadt.ukp.wikipedia.revisionmachine-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.revisionmachine/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.revisionmachine-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.revisionmachine/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.revisionmachine/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.revisionmachine-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.parser[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding MediaWiki Parser 1.2.0-SNAPSHOT                          [8/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgmavenplus-plugin:1.6:execute[m [1m(read-notice)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Using Groovy 2.4.15 to perform execute.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-remote-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:copy-resources[m [1m(copy-license)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/de.tudarmstadt.ukp.wikipedia.parser/src/main/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 39 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.parser/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 2 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.parser/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.parser.[1mParsedPageTest[m
+2026-10-11 09:26:07 WARN  pooling:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.795 s - in de.tudarmstadt.ukp.wikipedia.parser.[1mParsedPageTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.parser/target/de.tudarmstadt.ukp.wikipedia.parser-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 43 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 43 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.parser[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.parser/target/de.tudarmstadt.ukp.wikipedia.parser-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.parser/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.parser-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.parser/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.parser/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.parser-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.util[0;1m >---[m
+[[1;34mINFO[m] [1mBuilding JWPL API and RevisionAPI Utilities 1.2.0-SNAPSHOT        [9/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgmavenplus-plugin:1.6:execute[m [1m(read-notice)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Using Groovy 2.4.15 to perform execute.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-remote-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:copy-resources[m [1m(copy-license)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 13 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/target/classes
+[[1;34mINFO[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/src/main/java/de/tudarmstadt/ukp/wikipedia/util/templates/parser/ParseUtils.java: /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/src/main/java/de/tudarmstadt/ukp/wikipedia/util/templates/parser/ParseUtils.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/src/main/java/de/tudarmstadt/ukp/wikipedia/util/templates/parser/ParseUtils.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/src/test/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/target/de.tudarmstadt.ukp.wikipedia.util-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:3.1.0:single[m [1m(create-executable-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/target/de.tudarmstadt.ukp.wikipedia.util-1.2.0-SNAPSHOT-jar-with-dependencies.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 14 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 14 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.util[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/target/de.tudarmstadt.ukp.wikipedia.util-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.util/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.util-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.util/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.util/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.util-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36mde.tudarmstadt.ukp.wikipedia:de.tudarmstadt.ukp.wikipedia.tutorial[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding JWPL Tutorial 1.2.0-SNAPSHOT                            [10/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.0.0:clean[m [1m(default-clean)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.4.1:enforce[m [1m(enforce-maven)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mgmavenplus-plugin:1.6:execute[m [1m(read-notice)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] Using Groovy 2.4.15 to perform execute.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:process[m [1m(process-remote-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:copy-resources[m [1m(copy-license)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/de.tudarmstadt.ukp.wikipedia.tutorial/src/main/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:compile[m [1m(default-compile)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 16 source files to /var/maven/app/de.tudarmstadt.ukp.wikipedia.tutorial/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/de.tudarmstadt.ukp.wikipedia.tutorial/src/test/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.7.0:testCompile[m [1m(default-testCompile)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.21.0:test[m [1m(default-test)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/de.tudarmstadt.ukp.wikipedia.tutorial/target/de.tudarmstadt.ukp.wikipedia.tutorial-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.12:check[m [1m(default)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 61 implicit excludes (use -debug for more details).
+[[1;34mINFO[m] Exclude: release.properties
+[[1;34mINFO[m] Exclude: CHANGES
+[[1;34mINFO[m] Exclude: CONTRIBUTING.md
+[[1;34mINFO[m] Exclude: CONTRIBUTORS.txt
+[[1;34mINFO[m] Exclude: LICENSE.txt
+[[1;34mINFO[m] Exclude: NOTICE
+[[1;34mINFO[m] Exclude: NOTICE.txt
+[[1;34mINFO[m] Exclude: README.md
+[[1;34mINFO[m] Exclude: README
+[[1;34mINFO[m] Exclude: db/**/*
+[[1;34mINFO[m] Exclude: src/main/resources/**/*
+[[1;34mINFO[m] Exclude: src/test/resources/**/*
+[[1;34mINFO[m] Exclude: .activate_rat-check
+[[1;34mINFO[m] Exclude: src/main/java/de/tudarmstadt/ukp/wikipedia/tutorial/parser/DarmstadtWikipediaArticle.txt
+[[1;34mINFO[m] 17 resources included (use -debug for more details)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 17 licenses.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mde.tudarmstadt.ukp.wikipedia.tutorial[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.tutorial/target/de.tudarmstadt.ukp.wikipedia.tutorial-1.2.0-SNAPSHOT.jar to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.tutorial/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.tutorial-1.2.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/de.tudarmstadt.ukp.wikipedia.tutorial/pom.xml to /var/maven/.m2/repository/de/tudarmstadt/ukp/wikipedia/de.tudarmstadt.ukp.wikipedia.tutorial/1.2.0-SNAPSHOT/de.tudarmstadt.ukp.wikipedia.tutorial-1.2.0-SNAPSHOT.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for JWPL 1.2.0-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] JWPL ............................................... [1;32mSUCCESS[m [  1.476 s]
+[[1;34mINFO[m] Java Wikipedia API ................................. [1;32mSUCCESS[m [ 11.078 s]
+[[1;34mINFO[m] MediaWiki Dumper ................................... [1;32mSUCCESS[m [  0.850 s]
+[[1;34mINFO[m] WikiMachine ........................................ [1;32mSUCCESS[m [  0.280 s]
+[[1;34mINFO[m] DataMachine ........................................ [1;32mSUCCESS[m [  1.101 s]
+[[1;34mINFO[m] TimeMachine ........................................ [1;32mSUCCESS[m [  1.032 s]
+[[1;34mINFO[m] RevisionMachine .................................... [1;32mSUCCESS[m [  6.746 s]
+[[1;34mINFO[m] MediaWiki Parser ................................... [1;32mSUCCESS[m [  2.617 s]
+[[1;34mINFO[m] JWPL API and RevisionAPI Utilities ................. [1;32mSUCCESS[m [  1.921 s]
+[[1;34mINFO[m] JWPL Tutorial ...................................... [1;32mSUCCESS[m [  0.173 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  27.507 s
+[[1;34mINFO[m] Finished at: 2026-10-11T09:26:10Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Dkpro-jwpl.buildinfo: No such file or directory
+dos2unix: Skipping target/Dkpro-jwpl.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m
