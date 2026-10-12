@@ -61,18 +61,23 @@ for spec in "${BUILDSPECS[@]}"; do
 
     echo "[BUILD] ${REPO}/${SPEC_NAME}"
 
+    rm -f "$LOG_FILE"    # never reuse a log from an earlier invocation
+
     if ! reset_run_env "$spec"; then
         echo "        -> RESET FAILED, skipping"
+        echo "reset_run_env failed; no build was run" > "$LOG_FILE"
         ((FAIL++)) || true
         FAIL_LIST+=("${REPO}/${SPEC_NAME}")
         continue
     fi
 
-    timeout --foreground 2h bash "${REBUILD_SH}" "$spec" > "$LOG_FILE" 2>&1 || true
-    docker rm -f rebuild-central >/dev/null 2>&1 || true
-    exit_code=$?
+    exit_code=0
 
-    if grep -q "BUILD SUCCESS" "$LOG_FILE"; then
+    timeout --foreground 2h bash "${REBUILD_SH}" "$spec" > "$LOG_FILE" 2>&1 || exit_code=$?
+    docker rm -f rebuild-central >/dev/null 2>&1 || true
+
+    verdict=$(grep -aoE "BUILD (SUCCESS|FAILURE)" "$LOG_FILE" | tail -n 1 || true)
+    if [ "$verdict" = "BUILD SUCCESS" ]; then
         echo "        -> SUCCESS (log: $LOG_FILE)"
         ((PASS++)) || true
         if [ $exit_code -ne 0 ]; then
@@ -102,6 +107,7 @@ echo "[COLLECT] Running RQ2 Dependency Change Analysis..."
 python3 "${COLLECT_RQ2_SCRIPT}" \
     --root "${RC_ROOT}" \
     --range "${RANGE_MODE}" \
+    --log-dir "${LOG_DIR}" \
     --output "${OUTPUT_CSV}"
 
 echo ""

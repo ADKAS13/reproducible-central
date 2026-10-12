@@ -153,8 +153,8 @@ if os.path.exists(base_csv_path):
     y = np.arange(len(c_repos))
     height = 0.38
 
-    rects1 = ax.barh(y - height / 2, base_rates, height, label="Base Pass Rate", color="#e74c3c")
-    rects2 = ax.barh(y + height / 2, rq1_rates, height, label="RQ1 Pass Rate", color="#2ecc71")
+    rects1 = ax.barh(y - height / 2, base_rates, height, label="Base Pass Rate", color="#2ecc71")
+    rects2 = ax.barh(y + height / 2, rq1_rates, height, label="RQ1 Pass Rate", color="#e74c3c")
 
     ax.set_yticks(y)
     ax.set_yticklabels(c_repos, fontweight="bold")

@@ -5,7 +5,6 @@ import pandas as pd
 import seaborn as sns
 
 # Set visual style
-csv_path = os.path.join("results", "rq1_results.csv")
 sns.set_theme(style="whitegrid")
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 RESULTS_DIR = os.path.join("results")
@@ -33,14 +32,13 @@ for flag in FLAGS:
     if os.path.exists(file_path):
         df = pd.read_csv(file_path)
         df["flag"] = flag
-        # Convert build_success to numeric boolean/percentage float if needed
         df["build_success_num"] = df["build_success"].astype(int)
         flag_dfs[flag] = df
 
 df_all = pd.concat(flag_dfs.values(), ignore_index=True)
 
 # -------------------------------------------------------------------
-# 1. Breakdown per Repository (For Each Flag)
+# 1. Breakdown per Repository (For Each Flag) - Alphabetical
 # -------------------------------------------------------------------
 repo_breakdown_by_flag = {}
 for flag, df in flag_dfs.items():
@@ -59,7 +57,6 @@ for flag, df in flag_dfs.items():
         .reset_index()
     )
 
-    # Flatten column multi-index
     grouped.columns = [
         "repo",
         *NUMERIC_COLS,
@@ -68,14 +65,14 @@ for flag, df in flag_dfs.items():
         "build_success_rate",
     ]
 
+    # Sort alphabetically
+    grouped = grouped.sort_values(by="repo", ascending=True).reset_index(drop=True)
     repo_breakdown_by_flag[flag] = grouped
+    
     grouped.to_csv(
         os.path.join(RESULTS_DIR, f"rq2_breakdown_by_repo_{flag}.csv"),
         index=False,
     )
-    print(f"--- Per-Repo Breakdown for Flag: {flag.upper()} ---")
-    print(grouped[["repo", "upgraded", "pinned", "downgraded", "build_success_rate"]])
-    print("\n")
 
 # -------------------------------------------------------------------
 # 2. Breakdown per Flag with Averages across Repos/Modules
@@ -95,7 +92,6 @@ flag_summary = (
     .reset_index()
 )
 
-# Flatten MultiIndex columns
 flag_summary.columns = [
     "flag",
     "pinned_total",
@@ -122,88 +118,74 @@ flag_summary.columns = [
 flag_summary.to_csv(
     os.path.join(RESULTS_DIR, "rq2_breakdown_per_flag.csv"), index=False
 )
-print("--- Per-Flag Summary & Averages ---")
-print(
-    flag_summary[
-        [
-            "flag",
-            "upgraded_total",
-            "upgraded_avg",
-            "pinned_avg",
-            "downgraded_avg",
-            "build_success_rate",
-        ]
-    ]
-)
 
 # -------------------------------------------------------------------
-# 3. Graph 1: Stacked Dependency Actions Breakdown per Repo & Flag
+# 3. Graph 1: Combined Grouped Horizontal Bar Chart with Numbers (Major vs Minor vs Patch)
 # -------------------------------------------------------------------
-fig, axes = plt.subplots(1, 3, figsize=(18, 5), sharey=True)
+df_major = repo_breakdown_by_flag.get("major", pd.DataFrame())
+df_minor = repo_breakdown_by_flag.get("minor", pd.DataFrame())
+df_patch = repo_breakdown_by_flag.get("patch", pd.DataFrame())
 
-actions = ["upgraded", "pinned", "downgraded", "added", "removed"]
-colors = ["#55a868", "#4c72b0", "#ccb974", "#8172b0", "#c44e52"]
+if not df_major.empty:
+    merged_repo = df_major[["repo"]].copy()
+    merged_repo["Major"] = df_major["upgraded"]
+    merged_repo["Minor"] = df_minor["upgraded"] if not df_minor.empty else 0
+    merged_repo["Patch"] = df_patch["upgraded"] if not df_patch.empty else 0
+    
+    merged_repo = merged_repo.sort_values(by="repo", ascending=False)
+    
+    repos = merged_repo["repo"]
+    y = np.arange(len(repos))
+    height = 0.25
 
-for idx, flag in enumerate(FLAGS):
-    ax = axes[idx]
-    data = repo_breakdown_by_flag[flag]
-    repos = data["repo"]
+    fig, ax = plt.subplots(figsize=(11, max(7, len(repos) * 0.45)))
 
-    bottom = np.zeros(len(repos))
-    for action, color in zip(actions, colors):
-        values = data[action]
-        bars = ax.bar(
-            repos,
-            values,
-            bottom=bottom,
-            label=action.capitalize(),
-            color=color,
-        )
+    rects1 = ax.barh(y - height, merged_repo["Major"], height, label="Major", color="#4c72b0")
+    rects2 = ax.barh(y, merged_repo["Minor"], height, label="Minor", color="#dd8452")
+    rects3 = ax.barh(y + height, merged_repo["Patch"], height, label="Patch", color="#55a868")
 
-        # Add quantity labels inside each bar segment
-        for bar, val, btm in zip(bars, values, bottom):
-            if val > 0:  # Only label non-zero values to avoid clutter
-                # Position text in the vertical center of the segment
-                y_pos = btm + (val / 2.0)
-                ax.text(
-                    bar.get_x() + bar.get_width() / 2.0,
-                    y_pos,
-                    f"{int(val)}",
-                    ha="center",
-                    va="center",
-                    color="white",
-                    fontsize=8,
-                    fontweight="bold",
-                )
+    ax.bar_label(rects1, fmt="%d", padding=3, fontsize=7)
+    ax.bar_label(rects2, fmt="%d", padding=3, fontsize=7)
+    ax.bar_label(rects3, fmt="%d", padding=3, fontsize=7)
 
-        bottom += values
+    ax.set_yticks(y)
+    ax.set_yticklabels(repos, fontsize=9, fontweight="bold")
+    ax.invert_yaxis()
+    
+    ax.set_xlabel("Upgraded Dependency Count", fontweight="bold")
+    ax.set_ylabel("Repositories", fontweight="bold")
+    ax.set_title("Dependency Upgrades by Repository and Flag Scope (RQ2)", fontweight="bold", fontsize=12, pad=15)
+    ax.legend(loc="upper right", frameon=True, framealpha=0.9)
 
-    ax.set_title(f"Flag: {flag.capitalize()}", fontweight="bold")
-    ax.set_xlabel("Repositories", fontweight="bold")
-    ax.tick_params(axis="x", rotation=45)
-    if idx == 0:
-        ax.set_ylabel("Dependency Action Count", fontweight="bold")
-        ax.legend(loc="upper left")
+    total_maj = merged_repo["Major"].sum()
+    total_min = merged_repo["Minor"].sum()
+    total_pat = merged_repo["Patch"].sum()
+    
+    stats_text = (
+        f"Macro Summary:\n"
+        f"• Total Major Upgrades: {total_maj}\n"
+        f"• Total Minor Upgrades: {total_min}\n"
+        f"• Total Patch Upgrades: {total_pat}\n"
+        f"• Mean (Major/Minor/Patch): {merged_repo['Major'].mean():.1f} / {merged_repo['Minor'].mean():.1f} / {merged_repo['Patch'].mean():.1f}"
+    )
+    
+    props = dict(boxstyle="round,pad=0.5", facecolor="white", alpha=0.9, edgecolor="#ccc")
+    ax.text(0.02, 0.98, stats_text, transform=ax.transAxes, fontsize=9,
+            verticalalignment="top", bbox=props)
 
-plt.suptitle(
-    "Dependency Modifications Breakdown by Repository and Flag (RQ2)",
-    fontweight="bold",
-    fontsize=14,
-    y=1.02,
-)
-plt.tight_layout()
-plt.savefig(
-    os.path.join(GRAPHS_DIR, "rq2_repo_dependency_breakdown.png"),
-    dpi=300,
-    bbox_inches="tight",
-)
-plt.close()
+    plt.tight_layout()
+    plt.savefig(
+        os.path.join(GRAPHS_DIR, "rq2_repo_dependency_breakdown.png"),
+        dpi=300,
+        bbox_inches="tight",
+    )
+    plt.close()
 
 # -------------------------------------------------------------------
-# Graph 2: Comparison of Modifications Across Flags (Macro View)
+# Graph 2: Comparison of Modifications Across Flags (Macro View with Numbers)
 # -------------------------------------------------------------------
 fig, ax = plt.subplots(figsize=(9, 5))
-
+actions = ["upgraded", "pinned", "downgraded", "added", "removed"]
 df_flag_melted = flag_summary.melt(
     id_vars=["flag"],
     value_vars=[f"{a}_avg" for a in actions],
@@ -223,140 +205,136 @@ sns.barplot(
     ax=ax,
 )
 
+for container in ax.containers:
+    ax.bar_label(container, fmt="%.1f", padding=3, fontsize=8, fontweight="bold")
+
 ax.set_ylabel("Average Actions per Module", fontweight="bold")
 ax.set_xlabel("Update Flag Scope", fontweight="bold")
-ax.set_title(
-    "Average Dependency Actions Across Update Flags", fontweight="bold"
-)
-ax.legend(title="Action", loc="upper left")
+ax.set_title("Average Dependency Actions Across Update Flags", fontweight="bold", pad=15)
+ax.legend(title="Action", loc="upper left", bbox_to_anchor=(1.02, 1.0))
 
 plt.tight_layout()
 plt.savefig(
-    os.path.join(GRAPHS_DIR, "rq2_flag_action_comparison.png"), dpi=300
+    os.path.join(GRAPHS_DIR, "rq2_flag_action_comparison.png"), dpi=300, bbox_inches="tight"
 )
 plt.close()
 
 # -------------------------------------------------------------------
-# Graph 3: Build Success Rate per Repository across Flags
+# Helper for Horizontal Alphabetical Per-Repo Charts with Mean & Median
 # -------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(10, 5))
+def plot_horizontal_repo_success(df_grouped, title, metric_col, output_path, xlabel):
+    df_sorted = df_grouped.sort_values(by="repo", ascending=False)
+    
+    fig, ax = plt.subplots(figsize=(10, max(6, len(df_sorted) * 0.35)))
+    
+    bars = ax.barh(df_sorted["repo"], df_sorted[metric_col], color="#4c72b0", height=0.6)
+    ax.invert_yaxis()
+    
+    mean_val = df_sorted[metric_col].mean()
+    median_val = df_sorted[metric_col].median()
+    
+    ax.axvline(mean_val, color="#c44e52", linestyle="--", linewidth=1.5, label=f"Mean: {mean_val:.1f}%")
+    ax.axvline(median_val, color="#55a868", linestyle=":", linewidth=1.5, label=f"Median: {median_val:.1f}%")
+    
+    ax.bar_label(bars, fmt="%.1f%%", padding=3, fontsize=9)
+    
+    ax.set_title(title, fontweight="bold", fontsize=12, pad=15)
+    ax.set_xlabel(xlabel, fontweight="bold")
+    ax.set_ylabel("Repository", fontweight="bold")
+    ax.legend(loc="lower right", frameon=True, framealpha=0.9)
+    
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=300, bbox_inches="tight")
+    plt.close()
 
-# Prepare grouped data for build success rates
-success_data = []
-for flag, df_grouped in repo_breakdown_by_flag.items():
-    for _, row in df_grouped.iterrows():
-        success_data.append(
-            {
-                "repo": row["repo"],
-                "flag": flag.capitalize(),
-                "pass_rate": row["build_success_rate"],
-            }
-        )
-df_success = pd.DataFrame(success_data)
-
-x = np.arange(len(df_success["repo"].unique()))
-repos_list = df_success["repo"].unique()
-width = 0.25
-
-for i, flag in enumerate(["Major", "Minor", "Patch"]):
-    flag_rates = df_success[df_success["flag"] == flag]["pass_rate"]
-    offset = (i - 1) * width
-    bars = ax.bar(
-        x + offset, flag_rates, width, label=f"{flag} Flag", alpha=0.9
+# -------------------------------------------------------------------
+# Graph 3: Horizontal Build Success Rate per Repository (Major)
+# -------------------------------------------------------------------
+if "major" in repo_breakdown_by_flag:
+    plot_horizontal_repo_success(
+        repo_breakdown_by_flag["major"],
+        title="Build Success Rate by Repository (Major Scope)",
+        metric_col="build_success_rate",
+        output_path=os.path.join(GRAPHS_DIR, "rq2_build_success_rate.png"),
+        xlabel="Build Success Rate (%)"
     )
-
-    # Annotate bar percentages
-    for bar in bars:
-        height = bar.get_height()
-        ax.text(
-            bar.get_x() + bar.get_width() / 2.0,
-            height + 1.5,
-            f"{height:.0f}%",
-            ha="center",
-            va="bottom",
-            fontsize=8,
-            fontweight="bold",
-        )
-
-ax.set_ylabel("Build Success Rate (%)", fontweight="bold")
-ax.set_xlabel("Repositories", fontweight="bold")
-ax.set_title(
-    "Build Success Rate by Repository and Flag Scope", fontweight="bold"
-)
-ax.set_xticks(x)
-ax.set_xticklabels(repos_list, rotation=30, ha="right")
-ax.set_ylim(0, 115)
-ax.legend(loc="upper left")
-
-plt.tight_layout()
-plt.savefig(os.path.join(GRAPHS_DIR, "rq2_build_success_rate.png"), dpi=300)
-plt.close()
-
 # -------------------------------------------------------------------
-# Graph 4: Test Success Rate per Repository across Flags
+# Graph 4: Horizontal Test Success Rate Comparison (RQ1 vs. Major vs. Minor vs. Patch)
 # -------------------------------------------------------------------
 test_stats_dfs = []
+
+# Load RQ1 results for comparison
+rq1_file = os.path.join(RESULTS_DIR, "rq1_results.csv")
+if os.path.exists(rq1_file):
+    df_rq1_test = pd.read_csv(rq1_file)
+    df_rq1_test["flag"] = "RQ1"
+    if "pass_rate" not in df_rq1_test.columns:
+        df_rq1_test["pass_rate"] = np.where(
+            df_rq1_test["total_tests"] > 0,
+            (df_rq1_test["total_passed"] / df_rq1_test["total_tests"]) * 100,
+            0.0,
+        )
+    test_stats_dfs.append(df_rq1_test[["repo", "pass_rate", "flag"]])
+
+# Load RQ2 flag test results
 for flag in FLAGS:
     file_path = os.path.join(RESULTS_DIR, f"rq1_style_stats_{flag}.csv")
     if os.path.exists(file_path):
         df_test = pd.read_csv(file_path)
         df_test["flag"] = flag.capitalize()
-        # Compute pass_rate (%) if not present, otherwise use existing
         if "pass_rate" not in df_test.columns:
             df_test["pass_rate"] = np.where(
                 df_test["total_tests"] > 0,
                 (df_test["total_passed"] / df_test["total_tests"]) * 100,
                 0.0,
             )
-        test_stats_dfs.append(df_test)
+        test_stats_dfs.append(df_test[["repo", "pass_rate", "flag"]])
 
 if test_stats_dfs:
     df_test_all = pd.concat(test_stats_dfs, ignore_index=True)
-
-    fig, ax = plt.subplots(figsize=(10, 5))
-
-    repos_list_test = df_test_all["repo"].unique()
-    x_test = np.arange(len(repos_list_test))
-    width = 0.25
-
-    for i, flag in enumerate(["Major", "Minor", "Patch"]):
+    repos_list_test = sorted(df_test_all["repo"].unique())
+    y_test = np.arange(len(repos_list_test))
+    
+    flags_to_plot = ["RQ1", "Major", "Minor", "Patch"]
+    height = 0.20
+    colors = ["#4c72b0", "#dd8452", "#55a868", "#8172b3"]
+    
+    fig, ax = plt.subplots(figsize=(11, max(7, len(repos_list_test) * 0.5)))
+    
+    for i, flag in enumerate(flags_to_plot):
         flag_df = df_test_all[df_test_all["flag"] == flag]
-        
-        # Ensure alignment with repos_list_test order
         flag_df = flag_df.set_index("repo").reindex(repos_list_test).reset_index()
         test_rates = flag_df["pass_rate"].fillna(0)
 
-        offset = (i - 1) * width
-        bars = ax.bar(
-            x_test + offset, test_rates, width, label=f"{flag} Flag", alpha=0.9
+        offset = (i - 1.5) * height
+        bars = ax.barh(
+            y_test + offset, test_rates, height, label=flag, color=colors[i % len(colors)], alpha=0.9
         )
 
-        # Annotate bar percentages
-        for bar in bars:
-            height = bar.get_height()
-            ax.text(
-                bar.get_x() + bar.get_width() / 2.0,
-                height + 1.5,
-                f"{height:.0f}%",
-                ha="center",
-                va="bottom",
-                fontsize=8,
-                fontweight="bold",
-            )
+        # Add explicit numerical labels formatted to 2 decimal places
+        ax.bar_label(bars, fmt="%.2f%%", padding=3, fontsize=6)
 
-    ax.set_ylabel("Test Success Rate (%)", fontweight="bold")
-    ax.set_xlabel("Repositories", fontweight="bold")
-    ax.set_title(
-        "Test Success Rate by Repository and Flag Scope", fontweight="bold"
-    )
-    ax.set_xticks(x_test)
-    ax.set_xticklabels(repos_list_test, rotation=30, ha="right")
-    ax.set_ylim(0, 115)
-    ax.legend(loc="upper left")
+    # Add vertical reference lines for overall mean and median test pass rate (formatted to 2 decimal places)
+    overall_mean = df_test_all["pass_rate"].mean()
+    overall_median = df_test_all["pass_rate"].median()
+    
+    ax.axvline(overall_mean, color="#c44e52", linestyle="--", linewidth=1.5, label=f"Mean: {overall_mean:.2f}%")
+    ax.axvline(overall_median, color="#55a868", linestyle=":", linewidth=1.5, label=f"Median: {overall_median:.2f}%")
+
+    ax.set_yticks(y_test)
+    ax.set_yticklabels(repos_list_test, fontsize=9, fontweight="bold")
+    ax.invert_yaxis()  # Enforce alphabetical A-Z order from top to bottom
+    
+    ax.set_xlabel("Test Success Rate (%)", fontweight="bold")
+    ax.set_ylabel("Repositories", fontweight="bold")
+    ax.set_title("Test Success Rate by Repository: RQ1 vs. RQ2 (Major, Minor, Patch)", fontweight="bold", fontsize=12, pad=15)
+    ax.set_xlim(0, 125)
+    ax.legend(loc="lower right", frameon=True, framealpha=0.9)
 
     plt.tight_layout()
-    plt.savefig(os.path.join(GRAPHS_DIR, "rq2_test_success_rate.png"), dpi=300)
+    plt.savefig(os.path.join(GRAPHS_DIR, "rq2_test_success_rate.png"), dpi=300, bbox_inches="tight")
     plt.close()
+    print("Saved horizontal test success rate comparison chart with 2-decimal formatting.")
 
 # -------------------------------------------------------------------
 # Graph 5: Dual-Axis Graph (All Lines: Build/Test Success vs Upgraded Dependencies)
@@ -369,9 +347,8 @@ for flag in ["major", "minor", "patch"]:
     test_rate = 0.0
     if test_stats_dfs:
         f_df = df_test_all[df_test_all["flag"] == flag.capitalize()]
-        tot_tests = f_df["total_tests"].sum()
-        tot_passed = f_df["total_passed"].sum()
-        test_rate = (tot_passed / tot_tests * 100) if tot_tests > 0 else f_df["pass_rate"].mean()
+        if not f_df.empty and "pass_rate" in f_df.columns:
+            test_rate = f_df["pass_rate"].mean()
 
     macro_rates.append({
         "flag": flag.capitalize(),
@@ -414,9 +391,9 @@ ax2.grid(False)
 
 # Add value annotations directly above data points for clarity
 for i in range(len(df_macro)):
-    ax1.text(i, df_macro["build_success_rate"][i] + 2, f"{df_macro['build_success_rate'][i]:.1f}%", color="#4c72b0", fontweight="bold", ha="center")
-    ax1.text(i, df_macro["test_pass_rate"][i] - 4, f"{df_macro['test_pass_rate'][i]:.1f}%", color="#55a868", fontweight="bold", ha="center")
-    ax2.text(i, df_macro["upgraded_avg"][i] + (df_macro["upgraded_avg"].max() * 0.03), f"{df_macro['upgraded_avg'][i]:.1f}", color="#c44e52", fontweight="bold", ha="center")
+    ax1.text(i, df_macro["build_success_rate"][i] + 2, f"{df_macro['build_success_rate'][i]:.2f}%", color="#4c72b0", fontweight="bold", ha="center")
+    ax1.text(i, df_macro["test_pass_rate"][i] - 5, f"{df_macro['test_pass_rate'][i]:.2f}%", color="#55a868", fontweight="bold", ha="center")
+    ax2.text(i, df_macro["upgraded_avg"][i] + (df_macro["upgraded_avg"].max() * 0.03), f"{df_macro['upgraded_avg'][i]:.2f}", color="#c44e52", fontweight="bold", ha="center")
 
 # Consolidate legend and move outside plot box to avoid overlapping content
 lines = line1 + line2 + line3
@@ -427,6 +404,7 @@ plt.title("Build/Test Success vs. Upgraded Dependencies by Flag Scope", fontweig
 plt.tight_layout()
 plt.savefig(os.path.join(GRAPHS_DIR, "rq2_dual_axis_success_vs_upgrades.png"), dpi=300, bbox_inches="tight")
 plt.close()
+
 
 # -------------------------------------------------------------------
 # Graph 6: Pareto Front Trade-off Analysis (Upgraded Deps vs Pass Rate)

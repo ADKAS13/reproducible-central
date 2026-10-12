@@ -1,18 +1,30 @@
 #!/usr/bin/env python3
 """
-collect_rq1_results.py — Collect RQ1 build and equivalence results.
+collect_rq1_results.py — Collect RQ1-style build and equivalence results.
 
 For RQ1 (pinned flattening, no version ranges), checks:
-  1. Did the build compile and pass tests? (from rebuild.sh log)
+  1. Did the build compile and pass tests? (from the rebuild.sh log)
   2. Is the flattened dep tree semantically equivalent to the original?
      Since no ranges are used, UPGRADED/DOWNGRADED should be 0 and
      all deps in the before snapshot should appear in the after snapshot.
      ADDED entries are expected (promoted transitives) and not a failure.
      REMOVED entries indicate a flattening bug.
 
+The same statistics are also collected for the RQ2 flavors (RQ2major, RQ2minor,
+RQ2patch) via --flavor.
+
+Build success
+-------------
+A repo's build succeeded only if the LAST Maven verdict in its log is BUILD SUCCESS.
+The log is the most recent one whose name matches both the repo and the flavor
+(<repo>_<anything containing the flavor>.log). A repo that has a log but produced no
+comparison reports (e.g. the build failed before any module was flattened) is still
+reported, as a failed build with 0 modules.
+
 Usage:
     python collect_rq1_results.py --root ~/reproducible-central --output results/rq1_results.csv
-    python collect_rq1_results.py --root ~/reproducible-central --log-dir ~/reproducible-central/rq1_logs
+    python collect_rq1_results.py --root ~/reproducible-central --flavor RQ2major \
+        --log-dir ~/reproducible-central/rq2_logs --output results/rq1_style_stats_major.csv
 """
 
 import argparse
@@ -86,21 +98,48 @@ class RepoSummary:
             return None
         return round(self.equivalent_modules / checked * 100, 1)
 
+
 ANSI = re.compile(r"\x1b\[[0-9;]*m")
-AGG = re.compile(r"Tests run: (\d+), Failures: (\d+), Errors: (\d+), Skipped: (\d+)\s*$")
 
-def parse_log_test_totals(log_path: Path) -> tuple[int, int, int, int]:
-    run = fail = err = skip = 0
+
+# ----------------------------------------------------------------------------- build success
+# (also imported by collect_results.py)
+
+def log_build_success(log_path: Path) -> bool:
+    """True only if Maven's last verdict in the log is BUILD SUCCESS.
+
+    No verdict at all (docker failure, timeout, aborted run) counts as a failure.
+    """
     try:
-        for line in log_path.read_text(errors="replace").splitlines():
-            m = AGG.search(ANSI.sub("", line))
-            if m:
-                r, f, e, s = map(int, m.groups())
-                run += r; fail += f; err += e; skip += s
-    except Exception:
-        pass
-    return run, fail, err, skip
+        text = ANSI.sub("", log_path.read_text(errors="replace"))
+    except OSError:
+        return False
+    ok = text.rfind("BUILD SUCCESS")
+    bad = text.rfind("BUILD FAILURE")
+    return ok != -1 and ok > bad
 
+
+def find_flavor_log(log_dir: Optional[Path], repo: str, flavor: str) -> Optional[Path]:
+    """Most recent log for this repo AND this flavor, or None.
+
+    Log names look like <repo>_<spec>.log, where the spec name contains the flavor
+    (e.g. juneau_juneauRQ2major.log). Matching on both keeps the major/minor/patch
+    runs of one repo from being mixed up, and the repo is matched exactly as a prefix,
+    so 'api' never picks up the logs of 'api-client'.
+    """
+    if log_dir is None or not log_dir.is_dir():
+        return None
+    prefix = repo.lower() + "_"
+    flavor_l = flavor.lower()
+    matches = []
+    for p in log_dir.glob("*.log"):
+        stem = p.stem.lower()
+        if stem.startswith(prefix) and flavor_l in stem[len(prefix):]:
+            matches.append(p)
+    return max(matches, key=lambda p: p.stat().st_mtime, default=None)
+
+
+# ----------------------------------------------------------------------------- parsing
 
 def parse_comparison_report(report_path: Path, repo: str) -> Optional[ModuleResult]:
     """Parse a dependency-comparison-report.txt into a ModuleResult."""
@@ -126,9 +165,7 @@ def parse_comparison_report(report_path: Path, repo: str) -> Optional[ModuleResu
                 elif line.startswith("SKIPPED=true"):
                     result.skipped_flatten = True
 
-        # Semantic equivalence: no version changes and no removals.
-        # ADDED is allowed (promoted transitives are structural, not semantic changes).
-        # SCOPE_CHANGED is allowed (flattening changes effective scope by depth).
+        # Semantic equivalence: no version changes, no removals and nothing added.
         result.equivalent = (
             result.upgraded == 0
             and result.downgraded == 0
@@ -186,22 +223,17 @@ def parse_surefire_reports(build_root: Path) -> tuple[int, int, int, int]:
 
     return total, failures, errors, skipped
 
-def parse_build_log(log_path: Path) -> bool:
-    """Check if the build log indicates overall success."""
-    if not log_path.exists():
-        return False
-    try:
-        content = log_path.read_text(errors="replace")
-        # Look for the reactor summary success marker
-        return "BUILD SUCCESS" in content
-    except Exception:
-        return False
 
-def collect_repo(buildcache: Path, repo: str, log_dir: Path):
-    """Collect all module results for one repo."""
+# ----------------------------------------------------------------------------- collection
+
+def collect_repo(buildcache: Path, repo: str, log: Path):
+    """Collect all module results for one repo.
+
+    Returns (module results, buildcache-wide test totals, build_success).
+    """
     results = []
 
-    # Find all comparison reports
+    # Find all comparison reports; each lives in <module>/target/
     for report_path in sorted(
         buildcache.rglob("dependency-comparison-report.txt")
     ):
@@ -210,35 +242,24 @@ def collect_repo(buildcache: Path, repo: str, log_dir: Path):
         if not result:
             continue
 
+        # Tests of this module only (its own target/ directory)
+        run, fail, err, skip = parse_surefire_reports(report_path.parent)
+        result.tests_run = run
+        result.tests_failed = fail
+        result.tests_errored = err
+        result.tests_skipped = skip
+
         results.append(result)
 
-    # Find test reports across the ENTIRE RQ1 buildcache.
+    # Find test reports across the ENTIRE buildcache.
     test_totals = parse_surefire_reports(buildcache)
 
-    # Determine overall build success from log.
-    build_success = False
-
-    for log_file in sorted(log_dir.glob("*.log")):
-        if log_file.stem.lower().startswith(repo.lower()):
-            if parse_build_log(log_file):
-                build_success = True
-                break
-
-    if not build_success:
-        for log_file in sorted(log_dir.glob("*.log")):
-            try:
-                content = log_file.read_text(errors="replace")
-            except Exception:
-                continue
-
-            if repo.lower() in content.lower() and "BUILD SUCCESS" in content:
-                build_success = True
-                break
-
+    build_success = log_build_success(log)
     for r in results:
         r.build_success = build_success
 
-    return results, test_totals
+    return results, test_totals, build_success
+
 
 def summarise_repo(
     repo,
@@ -251,9 +272,8 @@ def summarise_repo(
     module_err  = sum(r.tests_errored for r in results)
     module_skip = sum(r.tests_skipped for r in results)
 
-    # Prefer the complete buildcache-wide test discovery.
-    # The per-module values may be unavailable when comparison reports
-    # and Maven target directories are stored in different locations.
+    # Prefer the complete buildcache-wide test discovery; fall back to the
+    # per-module values if it found nothing.
     run, fail, err, skip = test_totals
 
     if run == 0:
@@ -302,9 +322,9 @@ def summarise_repo(
     )
 
 
-def print_summary(summaries: list[RepoSummary]):
+def print_summary(summaries: list[RepoSummary], flavor: str = "RQ1"):
     print(f"\n{'='*80}")
-    print(f"  RQ1 Results — Pinned Flattening")
+    print(f"  RQ1-style Results — {flavor}")
     print(f"{'='*80}")
     print(f"{'Repo':<30} {'Build':>6} {'Tests':>7} {'Pass%':>6} {'Equiv':>6} {'Equiv%':>7} {'Added':>6} {'Removed':>8}")
     print(f"{'-'*80}")
@@ -332,15 +352,7 @@ def print_summary(summaries: list[RepoSummary]):
     print(f"  Equivalence: {total_equiv}/{total_equiv+total_nonequiv} modules equivalent ({total_equiv_rate})")
     print(f"{'='*80}\n")
 
-    # Flag any non-equivalent modules
-    all_results = []
-    for s in summaries:
-        all_results.extend([s.repo])
-
-    non_equiv_detail = []
-    for s in summaries:
-        if s.non_equivalent_modules > 0:
-            non_equiv_detail.append(s)
+    non_equiv_detail = [s for s in summaries if s.non_equivalent_modules > 0]
 
     if non_equiv_detail:
         print("  Non-equivalent modules (potential flattening bugs):")
@@ -351,6 +363,8 @@ def print_summary(summaries: list[RepoSummary]):
 
 def write_csvs(summaries: list[RepoSummary], all_results: list[ModuleResult], output: Path):
     """Write repo-level summary CSV and module-level detail CSV."""
+    output.parent.mkdir(parents=True, exist_ok=True)
+
     # Repo summary CSV
     repo_csv = output
     repo_fields = [f.name for f in fields(RepoSummary)]
@@ -380,38 +394,28 @@ def write_csvs(summaries: list[RepoSummary], all_results: list[ModuleResult], ou
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Collect RQ1 build and equivalence results from reproducible-central builds."
+        description="Collect RQ1-style build and equivalence results from reproducible-central builds."
     )
     parser.add_argument("--root", type=Path, required=True,
                         help="Root of reproducible-central checkout")
     parser.add_argument("--output", type=Path, default=Path("results/rq1_results.csv"),
-                        help="Output CSV file path (default: results/rq1_results.csv)")
+                        help="Output CSV file path (default: results/rq1_results.csv); "
+                             "the module-level CSV is written next to it with a _modules suffix")
     parser.add_argument("--log-dir", type=Path, default=None,
                         help="Directory containing rebuild.sh log files (default: <root>/rq1_logs)")
     parser.add_argument("--summary-only", action="store_true",
                         help="Print summary table but don't write CSV")
-    parser.add_argument("--flavor", default="RQ1")
+    parser.add_argument("--flavor", default="RQ1",
+                        help="Flavor directory to collect, e.g. RQ1, RQ2major, RQ2minor, RQ2patch")
     args = parser.parse_args()
 
     log_dir = args.log_dir or (args.root / "rq1_logs")
+    if not log_dir.is_dir():
+        print(f"[WARN] Log directory {log_dir} does not exist — nothing can be matched to a build result.",
+              file=sys.stderr)
 
-    # Discover repos via buildcache directories
     all_results: list[ModuleResult] = []
     summaries: list[RepoSummary] = []
-
-    # Only process repos for which we have a log file — this ensures we only
-    # report on repos that the pipeline actually ran, not stale buildcaches
-    # from previous experiments.
-    logged_repos = set()
-    for log_file in sorted(log_dir.glob("*.log")):
-        # Log filename format: {repo}_{specname}.log
-        # repo name is the part before the first underscore
-        repo_name = log_file.stem.split("_")[0]
-        logged_repos.add(repo_name.lower())
-
-    if not logged_repos:
-        print(f"[WARN] No log files found in {log_dir} — have you run the pipeline yet?",
-              file=sys.stderr)
 
     for buildcache in sorted(args.root.rglob("buildcache")):
         if not buildcache.is_dir():
@@ -429,31 +433,31 @@ def main():
         if flavor != args.flavor:
             continue
 
-        # Skip repos that weren't part of this pipeline run
-        if logged_repos and repo.lower() not in logged_repos:
+        # Only report repos the pipeline actually ran for THIS flavor: a repo without a
+        # matching log is a stale buildcache from an earlier experiment.
+        log = find_flavor_log(log_dir, repo, args.flavor)
+        if log is None:
+            print(f"[SKIP] {repo}: no {args.flavor} log in {log_dir} (stale buildcache?)", file=sys.stderr)
             continue
 
-        results, test_totals = collect_repo(buildcache, repo, log_dir)
+        results, test_totals, build_success = collect_repo(buildcache, repo, log)
         if not results:
-            print(f"[WARN] No comparison reports found for repo '{repo}' in {buildcache}", file=sys.stderr)
-            continue
+            # Typically the build failed before any module was flattened.
+            # Still record the repo, with its true build status and 0 modules.
+            print(f"[WARN] {repo}: no comparison reports in {buildcache} — recorded as "
+                  f"build={'PASS' if build_success else 'FAIL'} with 0 modules (log: {log.name})",
+                  file=sys.stderr)
 
-        build_success = any(r.build_success for r in results)
-        summary = summarise_repo(
-            repo,
-            results,
-            build_success,
-            test_totals=test_totals
-        )
-        summaries.append(summary)
+        summaries.append(summarise_repo(repo, results, build_success, test_totals=test_totals))
         all_results.extend(results)
-        print(f"[OK]   {repo}: {len(results)} modules, build={'PASS' if build_success else 'FAIL'}", file=sys.stderr)
+        print(f"[OK]   {repo}: {len(results)} modules, build={'PASS' if build_success else 'FAIL'}",
+              file=sys.stderr)
 
     if not summaries:
-        print("No results found. Have you run the RQ1 builds yet?")
+        print(f"No results found for flavor {args.flavor}. Have you run the builds yet?")
         sys.exit(0)
 
-    print_summary(summaries)
+    print_summary(summaries, args.flavor)
 
     if not args.summary_only:
         write_csvs(summaries, all_results, args.output)

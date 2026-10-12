@@ -2,8 +2,9 @@ repo,module,build_success,tests_run,tests_failed,tests_errored,tests_skipped,tes
 Xponents,buildcache/opensextant-xponents,True,12,0,0,0,12,100.0
 animal-sniffer,buildcache/animal-sniffer-parent/animal-sniffer,True,2,0,0,0,2,100.0
 api,buildcache/weld-api-parent/weld-spi,True,10,0,0,0,10,100.0
-arquillian-graphene,buildcache/graphene-parent/ftest,False,287,0,286,0,1,0.3
-arquillian-graphene,buildcache/graphene-parent/impl,False,57,0,0,0,57,100.0
+arquillian-graphene,buildcache/graphene-parent/extension/screenshooter,True,19,14,5,0,0,0.0
+arquillian-graphene,buildcache/graphene-parent/ftest,True,287,0,286,0,1,0.3
+arquillian-graphene,buildcache/graphene-parent/impl,True,57,0,0,0,57,100.0
 asset-share-commons,buildcache/assetshare/core,True,209,0,0,0,209,100.0
 astra,buildcache/astra/astra-core,True,112,0,0,3,109,97.3
 auto-table,buildcache/auto-table/auto-table-adapter/auto-table-adapter-mybatis-plus,True,31,0,0,0,31,100.0
@@ -75,7 +76,7 @@ telegrambots,buildcache/Bots/telegrambots-springboot-longpolling-starter,True,5,
 telegrambots,buildcache/Bots/telegrambots-springboot-webhook-starter,True,7,0,0,0,7,100.0
 telegrambots,buildcache/Bots/telegrambots-webhook,True,10,0,0,0,10,100.0
 turbine,buildcache/turbine,True,157852,0,0,76920,80932,51.3
-wavefront-proxy,buildcache/wavefront/proxy,True,230,0,0,0,230,100.0
+wavefront-proxy,buildcache/wavefront/proxy,True,231,1,0,0,230,99.6
 xwiki-commons,buildcache/xwiki-commons/xwiki-commons-core/xwiki-commons-blame/xwiki-commons-blame-api,True,2,0,0,0,2,100.0
 xwiki-commons,buildcache/xwiki-commons/xwiki-commons-core/xwiki-commons-cache/xwiki-commons-cache-api,True,1,0,0,0,1,100.0
 xwiki-commons,buildcache/xwiki-commons/xwiki-commons-core/xwiki-commons-cache/xwiki-commons-cache-infinispan,True,14,0,0,0,14,100.0
