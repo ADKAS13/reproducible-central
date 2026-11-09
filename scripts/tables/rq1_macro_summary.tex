@@ -1,16 +1,16 @@
 \begin{table}[htbp]
 \centering
-\caption{Macro Summary and Descriptive Statistics of RQ1 Evaluation Metrics ($N = 27$ Repositories)}
+\caption{Macro Summary and Descriptive Statistics: Baseline vs. RQ1 ($N = 28$ Repositories)}
 \label{tab:rq1_macro_summary}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Metric} & \textbf{Mean $\pm$ Std} & \textbf{Median [IQR]} & \textbf{Min / Max} & \textbf{Total} \\
+\textbf{Metric} & \textbf{Baseline (All)} & \textbf{RQ1 (All)} & \textbf{Baseline (Passing)} & \textbf{RQ1 (Passing)} \\
 \midrule
-Build Success Rate & 88.9\% & -- & -- & 24/27 \\
-Test Pass Rate & 90.2\% $\pm$ 25.6 & 100.0\% [0.8] & 0.0\% / 100.0\% & 166,633 tests \\
-Module Equivalence Rate & 100.0\% $\pm$ 0.0 & 100.0\% [0.0] & 100.0\% / 100.0\% & 149 modules \\
-Added Dependencies / Repo & 0.00 & 0.0 & 0 / 0 & 0 \\
+Build Success Rate & 100.0\% (28/28) & 85.7\% (24/28) & 100.0\% (24/24) & 100.0\% (24/24) \\
+Test Pass Rate (Mean $\pm$ Std) & 94.1\% $\pm$ 18.1 & 84.2\% $\pm$ 35.4 & 93.2\% $\pm$ 19.4 & 94.6\% $\pm$ 21.1 \\
+Module Equivalence Rate (Mean) & -- & 96.4\% & -- & 100.0\% \\
+Total Evaluated Tests & 193,151 tests & 193,151 tests & 166,515 tests & 166,515 tests \\
 \bottomrule
 \end{tabular}%
 }

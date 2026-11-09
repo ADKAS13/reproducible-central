@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/mdlz80opt
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Mdlz80optimizer.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.github.santiontanon:mdl:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/mdlz80optimizer/RQ1/buildcache/mdl:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/mdlz80optimizer/RQ1/buildcache/mdl:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 07:37:33 UTC 2026.
-Universal Time is now:  Sun Oct 11 07:37:33 UTC 2026.
+Local time is now:      Sun Oct 11 14:49:04 UTC 2026.
+Universal Time is now:  Sun Oct 11 14:49:04 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -273,7 +273,7 @@ DI:    ds 1, 0  ; this should parse "DI" as a label
 
 --------------------------------------
 
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.22 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.216 sec
 Running test.ExpressionTest
 -(10 << 1)
 #38 & #1c
@@ -314,9 +314,9 @@ Actual:+(-a) - b
 Expected:+(-a) - b
 Actual:0 - a - b
 Expected:0 - a - b
-Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 sec
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec
 Running test.Z80SimulatorTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
 Running test.GenerationTest
 
 --------------------------------------
@@ -381,7 +381,7 @@ ___MDL_SAFETY_LABEL_1:    ret
 
 --------------------------------------
 
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
 Running test.MessagesTest
 ERROR: Cannot find include file "inexistent-include.asm" in data/messagetests/include.asm#3
 ERROR: Error parsing source file data/messagetests/include.asm in data/messagetests/include.asm#3: 	include "inexistent-include.asm"
@@ -390,7 +390,7 @@ ERROR: Problem parsing file data/messagetests/include.asm
 ERROR: Undefined symbol "undefined_symbol" in data/messagetests/undefined-symbol.asm#4
 ERROR: Cannot convert op ld (undefined_symbol), a to bytes in data/messagetests/undefined-symbol.asm#4: 	ld (undefined_symbol), a
 
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
 Running test.SourceLineTrackingTest
 INFO: Pattern-based optimization in data/tests/test29-include.asm#4 (expanded from data/tests/test29.asm#6): Replace ld a,0 with xor a (1 bytes, 3 t-states saved)
 INFO: Pattern-based optimization in data/tests/test29-include.asm#4 (expanded from data/tests/test29.asm#8): Replace ld a,0 with xor a (1 bytes, 3 t-states saved)
@@ -400,9 +400,9 @@ INFO: Pattern-based optimization in data/tests/test1.asm#6: Replace cp 0 with or
 INFO: Pattern-based optimization in data/tests/test1.asm#15: Remove unused ld a,0 (2 bytes, 8 t-states saved)
 INFO: PatternBasedOptimizer: 2 patterns applied, 3 bytes, 11 t-states saved.
 
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec
 Running test.TokenizerTest
-Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
 Running test.ASMSXTest
 INFO: "hello!"
 
@@ -714,11 +714,11 @@ f1:
 
 --------------------------------------
 
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec
 Running test.BinaryGeneratorTest
 INFO: "hello!"
 INFO: "hello!"
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.206 sec
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.319 sec
 Running test.PotentialOptimizationsTest
 INFO: Pattern-based optimization in data/tests/test43.asm#8: Replace inc l; ... inc l with ld a,l; add a,4; ld l,a (0 bytes, 2 t-states saved)
 INFO: Potential optimization (Remove unused ld hl,0) in data/tests/test43.asm#19: 	ld hl, 0
@@ -752,7 +752,7 @@ INFO: PatternBasedOptimizer: 1 patterns applied, 0 bytes, 2 t-states saved.
 EXPTBL: 64705
 --------------------------------------
 
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
 Running test.SymbolTableTest
 
 --------------------------------------
@@ -781,111 +781,115 @@ loop: equ #0106
 
 --------------------------------------
 
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
 Running test.CPUOpSpecTest
 ERROR: No op spec matches with operator in line dummy.asm#0: , arguments: [hl, bc]
 ERROR: expression failed to parse with token list: [++, )]
 ERROR: parseCPUOp: Cannot parse line dummy.asm#0: 
-Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 sec
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec
 Running test.SearchBasedGeneratorTest
 INFO: SearchBasedOptimizer: size 0 complete (1 solutions tested, time elapsed: 0.01s)
 INFO: SearchBasedOptimizer: size 1 complete (2 solutions tested, time elapsed: 0.03s)
 INFO: SearchBasedOptimizer: size 2 complete (12 solutions tested, time elapsed: 0.04s)
-INFO: SearchBasedOptimizer: size 3 complete (113 solutions tested, time elapsed: 0.06s)
+INFO: SearchBasedOptimizer: size 3 complete (113 solutions tested, time elapsed: 0.07s)
 INFO: New solution found (size: 4 bytes, time: 26.9999 t-states):
-INFO: New solution found (size: 4 bytes, time: 26.9999 t-states):
-INFO:     add hl, hl
 INFO:     ld h, l
 INFO: New solution found (size: 4 bytes, time: 26.9999 t-states):
 INFO:     sub a
 INFO:     add hl, hl
+INFO: New solution found (size: 4 bytes, time: 26.9999 t-states):
+INFO:     sub a
+INFO:     add hl, hl
+INFO:     ld l, a
 INFO:     ld h, l
 INFO:     ld l, a
 INFO:     ld h, l
 INFO:     sub a
-INFO:     sub a
-INFO:     ld l, a
 INFO:     add hl, hl
 INFO:     ld l, a
-INFO: New solution found (size: 4 bytes, time: 24.9999 t-states):
-INFO:     ld h, l
-INFO:     ld l, 0
-INFO:     add hl, hl
 INFO: New solution found (size: 4 bytes, time: 24.9999 t-states):
 INFO:     add hl, hl
 INFO:     ld h, l
 INFO:     ld l, 0
-INFO: SearchBasedOptimizer: search ended (1354 solutions tested, time elapsed: 0.07s)
+INFO: New solution found (size: 4 bytes, time: 24.9999 t-states):
+INFO:     ld h, l
+INFO:     ld l, 0
+INFO:     add hl, hl
+INFO: SearchBasedOptimizer: search ended (1354 solutions tested, time elapsed: 0.08s)
 
 --------------------------------------
+    add hl, hl
     ld h, l
     ld l, 0
-    add hl, hl
 
 --------------------------------------
 
 INFO: SearchBasedOptimizer: time 0 complete (1 solutions tested, time elapsed: 0.01s)
 INFO: SearchBasedOptimizer: time 1 complete (1 solutions tested, time elapsed: 0.01s)
-INFO: SearchBasedOptimizer: time 2 complete (1 solutions tested, time elapsed: 0.01s)
+INFO: SearchBasedOptimizer: time 2 complete (1 solutions tested, time elapsed: 0.02s)
 INFO: SearchBasedOptimizer: time 3 complete (1 solutions tested, time elapsed: 0.02s)
-INFO: SearchBasedOptimizer: time 4 complete (1 solutions tested, time elapsed: 0.02s)
+INFO: SearchBasedOptimizer: time 4 complete (1 solutions tested, time elapsed: 0.03s)
 INFO: SearchBasedOptimizer: time 5 complete (1 solutions tested, time elapsed: 0.03s)
-INFO: SearchBasedOptimizer: time 6 complete (1 solutions tested, time elapsed: 0.03s)
+INFO: SearchBasedOptimizer: time 6 complete (1 solutions tested, time elapsed: 0.04s)
 INFO: SearchBasedOptimizer: time 7 complete (1 solutions tested, time elapsed: 0.04s)
-INFO: SearchBasedOptimizer: time 8 complete (1 solutions tested, time elapsed: 0.04s)
-INFO: SearchBasedOptimizer: time 9 complete (1 solutions tested, time elapsed: 0.04s)
+INFO: SearchBasedOptimizer: time 8 complete (1 solutions tested, time elapsed: 0.05s)
+INFO: SearchBasedOptimizer: time 9 complete (1 solutions tested, time elapsed: 0.05s)
 INFO: SearchBasedOptimizer: time 10 complete (3 solutions tested, time elapsed: 0.05s)
-INFO: SearchBasedOptimizer: time 11 complete (4 solutions tested, time elapsed: 0.05s)
-INFO: SearchBasedOptimizer: time 12 complete (5 solutions tested, time elapsed: 0.05s)
-INFO: SearchBasedOptimizer: time 13 complete (9 solutions tested, time elapsed: 0.06s)
-INFO: SearchBasedOptimizer: time 14 complete (9 solutions tested, time elapsed: 0.06s)
-INFO: SearchBasedOptimizer: time 15 complete (30 solutions tested, time elapsed: 0.07s)
-INFO: SearchBasedOptimizer: time 16 complete (34 solutions tested, time elapsed: 0.08s)
-INFO: SearchBasedOptimizer: time 17 complete (45 solutions tested, time elapsed: 0.10s)
-INFO: SearchBasedOptimizer: time 18 complete (64 solutions tested, time elapsed: 0.11s)
-INFO: SearchBasedOptimizer: time 19 complete (64 solutions tested, time elapsed: 0.11s)
-INFO: SearchBasedOptimizer: time 20 complete (326 solutions tested, time elapsed: 0.11s)
-INFO: SearchBasedOptimizer: time 21 complete (452 solutions tested, time elapsed: 0.12s)
-INFO: SearchBasedOptimizer: time 22 complete (674 solutions tested, time elapsed: 0.12s)
+INFO: SearchBasedOptimizer: time 11 complete (4 solutions tested, time elapsed: 0.11s)
+INFO: SearchBasedOptimizer: time 12 complete (5 solutions tested, time elapsed: 0.12s)
+INFO: SearchBasedOptimizer: time 13 complete (9 solutions tested, time elapsed: 0.13s)
+INFO: SearchBasedOptimizer: time 14 complete (9 solutions tested, time elapsed: 0.14s)
+INFO: SearchBasedOptimizer: time 15 complete (30 solutions tested, time elapsed: 0.15s)
+INFO: SearchBasedOptimizer: time 16 complete (34 solutions tested, time elapsed: 0.15s)
+INFO: SearchBasedOptimizer: time 17 complete (45 solutions tested, time elapsed: 0.16s)
+INFO: SearchBasedOptimizer: time 18 complete (64 solutions tested, time elapsed: 0.17s)
+INFO: SearchBasedOptimizer: time 19 complete (64 solutions tested, time elapsed: 0.17s)
+INFO: SearchBasedOptimizer: time 20 complete (326 solutions tested, time elapsed: 0.18s)
+INFO: SearchBasedOptimizer: time 21 complete (452 solutions tested, time elapsed: 0.18s)
+INFO: SearchBasedOptimizer: time 22 complete (674 solutions tested, time elapsed: 0.19s)
 INFO: New solution found (size: 5 bytes, time: 22.9999 t-states):
-INFO: New solution found (size: 5 bytes, time: 22.9999 t-states):
-INFO:     sla l
-INFO:     ld h, l
-INFO:     ld h, l
-INFO:     ld l, 0
-INFO: New solution found (size: 5 bytes, time: 22.9999 t-states):
-INFO:     ld l, 0
 INFO:     ld a, l
 INFO:     add a, l
 INFO:     ld h, a
 INFO:     ld l, 0
+INFO: New solution found (size: 5 bytes, time: 22.9999 t-states):
+INFO:     ld h, l
+INFO:     ld l, 0
 INFO:     sla h
-INFO: SearchBasedOptimizer: search ended (964 solutions tested, time elapsed: 0.13s)
+INFO: New solution found (size: 5 bytes, time: 22.9999 t-states):
+INFO:     sla l
+INFO:     ld h, l
+INFO:     ld l, 0
+INFO: SearchBasedOptimizer: search ended (964 solutions tested, time elapsed: 0.19s)
 
 --------------------------------------
-    sla l
     ld h, l
     ld l, 0
+    sla h
 
 --------------------------------------
 
 INFO: SearchBasedOptimizer: depth 0 complete (1 solutions tested, time elapsed: 0.01s)
 INFO: SearchBasedOptimizer: depth 1 complete (3 solutions tested, time elapsed: 0.01s)
-INFO: SearchBasedOptimizer: depth 2 complete (147 solutions tested, time elapsed: 0.01s)
+INFO: SearchBasedOptimizer: depth 2 complete (147 solutions tested, time elapsed: 0.02s)
 INFO: New solution found (size: 4 bytes, time: 24.9999 t-states):
-INFO:     add hl, hl
-INFO:     ld h, l
-INFO:     ld l, 0
 INFO: New solution found (size: 4 bytes, time: 24.9999 t-states):
 INFO:     ld h, l
 INFO:     ld l, 0
 INFO:     add hl, hl
-INFO: SearchBasedOptimizer: search ended (1093 solutions tested, time elapsed: 0.03s)
+INFO:     add hl, hl
+INFO:     ld h, l
+INFO:     ld l, 0
+INFO: New solution found (size: 5 bytes, time: 22.9999 t-states):
+INFO:     sla l
+INFO:     ld h, l
+INFO:     ld l, 0
+INFO: SearchBasedOptimizer: search ended (2275 solutions tested, time elapsed: 0.03s)
 
 --------------------------------------
-    add hl, hl
     ld h, l
     ld l, 0
+    add hl, hl
 
 --------------------------------------
 
@@ -904,7 +908,7 @@ INFO:     sub 1
 INFO: New solution found (size: 3 bytes, time: 12.9995 t-states):
 INFO:     sub h
 INFO:     sub 1
-INFO: SearchBasedOptimizer: search ended (337 solutions tested, time elapsed: 0.02s)
+INFO: SearchBasedOptimizer: search ended (339 solutions tested, time elapsed: 0.01s)
 
 --------------------------------------
     xor h
@@ -912,7 +916,7 @@ INFO: SearchBasedOptimizer: search ended (337 solutions tested, time elapsed: 0.
 
 --------------------------------------
 
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.861 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.145 sec
 Running test.SearchBasedOptimizerTest
 INFO: Search-based optimization in data/searchtests/opt-test2.asm#4: replace ld b, (7 + 2) * 2; ld c, (7 + 2) * 2 with ld b, (7 + 2) * 2; ld c, b (1 bytes, 3 t-states saved)
 INFO: SearchBasedOptimizer: 1 optimizations applied, 1 bytes, 3 t-states saved.
@@ -954,14 +958,14 @@ var1:    db 1
 
 --------------------------------------
 
-INFO: Search-based optimization in data/searchtests/opt-test1.asm#3: replace ld a, 0; ld b, 0; ld c, 1 with xor a; ld bc, 1 (2 bytes, 8 t-states saved)
+INFO: Search-based optimization in data/searchtests/opt-test1.asm#3: replace ld a, 0; ld b, 0; ld c, 1 with ld bc, 1; and b (2 bytes, 8 t-states saved)
 INFO: SearchBasedOptimizer: 1 optimizations applied, 2 bytes, 8 t-states saved.
 
 --------------------------------------
     org #4000
 
-    xor a
     ld bc, 1
+    and b
     ld hl, var1
     add hl, bc
     ld (hl), a
@@ -974,58 +978,15 @@ var1:    db 1
 
 --------------------------------------
 
-Line 1 was expected to be:
-ld bc, 1
-but was:
-xor a
-
---------------------------------------
-    org #4000
-
-    xor a
-    ld bc, 1
-    ld hl, var1
-    add hl, bc
-    ld (hl), a
-
-loop:
-    jr loop
-
-    org #c000
-var1:    db 1
-
---------------------------------------
-
-INFO: Search-based optimization in data/searchtests/opt-test2.asm#4: replace ld b, (7 + 2) * 2; ld c, (7 + 2) * 2 with ld c, (7 + 2) * 2; ld b, c (1 bytes, 3 t-states saved)
+INFO: Search-based optimization in data/searchtests/opt-test2.asm#4: replace ld b, (7 + 2) * 2; ld c, (7 + 2) * 2 with ld b, (7 + 2) * 2; ld c, b (1 bytes, 3 t-states saved)
 INFO: SearchBasedOptimizer: 1 optimizations applied, 1 bytes, 3 t-states saved.
 
 --------------------------------------
     org #4000
 
     xor a
-    ld c, (7 + 2) * 2
-    ld b, c
-    ld (bc), a
-
-loop:
-    jr loop
-
-    org #c000
-var1:    db 1
-
---------------------------------------
-
-Line 2 was expected to be:
-ld b, (7 + 2) * 2
-but was:
-ld c, (7 + 2) * 2
-
---------------------------------------
-    org #4000
-
-    xor a
-    ld c, (7 + 2) * 2
-    ld b, c
+    ld b, (7 + 2) * 2
+    ld c, b
     ld (bc), a
 
 loop:
@@ -1067,15 +1028,15 @@ label2:
 
 --------------------------------------
 
-INFO: Search-based optimization in data/searchtests/opt-test2.asm#4: replace ld b, (7 + 2) * 2; ld c, (7 + 2) * 2 with ld c, (7 + 2) * 2; ld b, c (1 bytes, 3 t-states saved)
+INFO: Search-based optimization in data/searchtests/opt-test2.asm#4: replace ld b, (7 + 2) * 2; ld c, (7 + 2) * 2 with ld b, (7 + 2) * 2; ld c, b (1 bytes, 3 t-states saved)
 INFO: SearchBasedOptimizer: 1 optimizations applied, 1 bytes, 3 t-states saved.
 
 --------------------------------------
     org #4000
 
     xor a
-    ld c, (7 + 2) * 2
-    ld b, c
+    ld b, (7 + 2) * 2
+    ld c, b
     ld (bc), a
 
 loop:
@@ -1086,28 +1047,7 @@ var1:    db 1
 
 --------------------------------------
 
-Line 2 was expected to be:
-ld b, (7 + 2) * 2
-but was:
-ld c, (7 + 2) * 2
-
---------------------------------------
-    org #4000
-
-    xor a
-    ld c, (7 + 2) * 2
-    ld b, c
-    ld (bc), a
-
-loop:
-    jr loop
-
-    org #c000
-var1:    db 1
-
---------------------------------------
-
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.179 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.144 sec
 Running test.SjasmTest
 
 --------------------------------------
@@ -1953,7 +1893,7 @@ __sjasm_page_0_end:
 
 --------------------------------------
 
-Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 sec
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec
 Running test.TniasmTest
 
 --------------------------------------
@@ -2018,7 +1958,7 @@ text:    db "hello"
 
 --------------------------------------
 
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
 Running test.SDCCTest
 
 --------------------------------------
@@ -4556,7 +4496,7 @@ some_constant .equ 1
 
 --------------------------------------
 
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec
 Running test.ReorganizerTest
 INFO: Reorganization optimization in data/reorganizertests/test-local.asm#15: move lines 15 - 17 to right after data/reorganizertests/test-local.asm#6 (3 bytes, 11 t-states saved)
 INFO: Reorganization optimization in data/reorganizertests/test-local.asm#7: move lines 7 - 11 to right after data/reorganizertests/test-local.asm#17 (3 bytes, 11 t-states saved)
@@ -6303,7 +6243,7 @@ variable:
 
 --------------------------------------
 
-Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 sec
 Running test.Macro80Test
 
 --------------------------------------
@@ -6399,7 +6339,7 @@ LF2:
 
 --------------------------------------
 
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
 Running test.SjasmPlusTest
 
 --------------------------------------
@@ -6981,7 +6921,7 @@ __sjasmplus_dephase_1:    org __sjasmplus_phase_pre_1 + (__sjasmplus_dephase_1 -
 
 --------------------------------------
 
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
 Running test.PatternBasedOptimizerTest
 INFO: Pattern-based optimization in data/tests/test51.asm#6: Replace jp loop1 with jr loop1 (1 bytes, 0 nops saved)
 INFO: PatternBasedOptimizer: 1 patterns applied, 1 bytes, 0 nops saved.
@@ -9117,9 +9057,9 @@ INFO: PatternBasedOptimizer: 0 patterns applied, 0 bytes, 0 t-states saved.
 loop: 4008
 --------------------------------------
 
-Tests run: 65, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.724 sec
+Tests run: 65, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.781 sec
 Running test.ProgramEquivalencyTest
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 sec
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.17 sec
 Running util.TextUtilsTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
@@ -9157,8 +9097,8 @@ Tests run: 279, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  12.049 s
-[[1;34mINFO[m] Finished at: 2026-10-11T07:37:45Z
+[[1;34mINFO[m] Total time:  14.645 s
+[[1;34mINFO[m] Finished at: 2026-10-11T14:49:20Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Mdlz80optimizer.buildinfo: No such file or directory
 dos2unix: Skipping target/Mdlz80optimizer.buildinfo, not a regular file.

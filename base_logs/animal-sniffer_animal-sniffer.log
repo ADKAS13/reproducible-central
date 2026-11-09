@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/animal-sn
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Animal-sniffer.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.codehaus.mojo:animal-sniffer-parent:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/animal-sniffer/base/buildcache/animal-sniffer-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/animal-sniffer/base/buildcache/animal-sniffer-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 09:16:41 UTC 2026.
-Universal Time is now:  Sun Oct 11 09:16:41 UTC 2026.
+Local time is now:      Sun Oct 11 15:26:19 UTC 2026.
+Universal Time is now:  Sun Oct 11 15:26:19 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -201,7 +201,7 @@ Universal Time is now:  Sun Oct 11 09:16:41 UTC 2026.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -348,18 +348,18 @@ Universal Time is now:  Sun Oct 11 09:16:41 UTC 2026.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Animal Sniffer 1.20-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.538 s]
-[[1;34mINFO[m] Java boot classpath detector ....................... [1;32mSUCCESS[m [  1.072 s]
-[[1;34mINFO[m] Animal Sniffer Annotations ......................... [1;32mSUCCESS[m [  0.134 s]
-[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  1.220 s]
-[[1;34mINFO[m] Animal Sniffer Maven Plugin ........................ [1;32mSUCCESS[m [  2.347 s]
-[[1;34mINFO[m] Animal Sniffer Maven Enforcer Rule ................. [1;32mSUCCESS[m [  0.235 s]
-[[1;34mINFO[m] Animal Sniffer Ant Tasks ........................... [1;32mSUCCESS[m [  0.517 s]
+[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.589 s]
+[[1;34mINFO[m] Java boot classpath detector ....................... [1;32mSUCCESS[m [  1.016 s]
+[[1;34mINFO[m] Animal Sniffer Annotations ......................... [1;32mSUCCESS[m [  0.111 s]
+[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  1.128 s]
+[[1;34mINFO[m] Animal Sniffer Maven Plugin ........................ [1;32mSUCCESS[m [  2.093 s]
+[[1;34mINFO[m] Animal Sniffer Maven Enforcer Rule ................. [1;32mSUCCESS[m [  0.191 s]
+[[1;34mINFO[m] Animal Sniffer Ant Tasks ........................... [1;32mSUCCESS[m [  0.446 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  6.272 s
-[[1;34mINFO[m] Finished at: 2026-10-11T09:16:48Z
+[[1;34mINFO[m] Total time:  5.740 s
+[[1;34mINFO[m] Finished at: 2026-10-11T15:26:26Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Animal-sniffer.buildinfo: No such file or directory
 dos2unix: Skipping target/Animal-sniffer.buildinfo, not a regular file.

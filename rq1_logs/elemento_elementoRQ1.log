@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/elemento/
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Elemento.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.jboss.elemento:elemento-parent:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/elemento/RQ1/buildcache/elemento-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/elemento/RQ1/buildcache/elemento-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 07:35:56 UTC 2026.
-Universal Time is now:  Sun Oct 11 07:35:56 UTC 2026.
+Local time is now:      Sun Oct 11 14:47:26 UTC 2026.
+Universal Time is now:  Sun Oct 11 14:47:26 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -111,7 +111,7 @@ Universal Time is now:  Sun Oct 11 07:35:56 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(get-scm-revision)[m @ [36melemento-core[0;1m ---[m
 [[1;33mWARNING[m] Cannot get the revision information from the scm repository, proceeding with revision of UNKNOWN : 
 No such provider: 'git@github.com'.
-[[1;34mINFO[m] Storing buildNumber: UNKNOWN at timestamp: 1791704158098
+[[1;34mINFO[m] Storing buildNumber: UNKNOWN at timestamp: 1791730048475
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 No such provider: 'git@github.com'.
 [[1;33mWARNING[m] Cannot get the branch information from the scm repository, proceeding with UNKNOWN_BRANCH : 
@@ -143,7 +143,7 @@ No such provider: 'git@github.com'.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.jboss.elemento.[1mByTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.jboss.elemento.[1mByTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.jboss.elemento.[1mByTest[m
 [[1;34mINFO[m] Running org.jboss.elemento.[1mIdTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.jboss.elemento.[1mIdTest[m
 [[1;34mINFO[m] 
@@ -189,13 +189,13 @@ No such provider: 'git@github.com'.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Elemento :: Parent HEAD-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Elemento :: Core ................................... [1;32mSUCCESS[m [  3.715 s]
-[[1;34mINFO[m] Elemento :: Parent ................................. [1;32mSUCCESS[m [  0.022 s]
+[[1;34mINFO[m] Elemento :: Core ................................... [1;32mSUCCESS[m [  3.766 s]
+[[1;34mINFO[m] Elemento :: Parent ................................. [1;32mSUCCESS[m [  0.025 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  3.887 s
-[[1;34mINFO[m] Finished at: 2026-10-11T07:36:01Z
+[[1;34mINFO[m] Total time:  3.941 s
+[[1;34mINFO[m] Finished at: 2026-10-11T14:47:31Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Elemento.buildinfo: No such file or directory
 dos2unix: Skipping target/Elemento.buildinfo, not a regular file.

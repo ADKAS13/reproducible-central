@@ -7,11 +7,11 @@ Run from the reproducible-central root (or pass --root):
     python3 graphs/graph_rq2.py --root ~/reproducible-central --exclude zeebe-hazelcast-exporter
 
 Inputs (all re-read on every run; nothing is cached):
-    results/rq2_results_{flag}.csv                dependency changes per module   (collect_rq2_results.py)
-    results/rq1_style_stats_{flag}.csv            tests per repo                   (collect_rq1_results.py)
-    results/rq1_style_stats_{flag}_modules.csv    tests + upgrades per module
-    results/rq1_results.csv                       RQ1 (pinned) baseline per repo
-    rq2_logs_{flag}/*.log                         pipeline logs -> build outcome per repo
+    results/rq2_results_{flag}.csv         dependency changes per module   (collect_rq2_results.py)
+    results/rq1_style_stats_{flag}.csv         tests per repo                 (collect_rq1_results.py)
+    results/rq1_style_stats_{flag}_modules.csv tests + upgrades per module
+    results/rq1_results.csv                    RQ1 (pinned) baseline per repo
+    rq2_logs_{flag}/*.log                  pipeline logs -> build outcome per repo
 
 Build success comes from the logs, not from rq2_results_*.csv: that CSV only has rows for
 modules that produced a comparison report, and its build_success column is always True.
@@ -35,6 +35,15 @@ FLAGS = ["major", "minor", "patch"]
 COLORS = {"major": "#4c72b0", "minor": "#dd8452", "patch": "#55a868", "RQ1": "#8172b3"}
 ACTIONS = ["pinned", "upgraded", "downgraded", "added", "removed", "scope_changed"]
 
+# Additional CSV headers for technical lag and freshness
+LAG_COLUMNS = [
+    "lag_deps", "lag_days_deps", "lag_days_before", "lag_days_after", "lag_days_reduction",
+    "behind_before", "behind_after", "behind_reduction",
+    "stale_major_before", "stale_minor_before", "stale_patch_before",
+    "stale_major_after", "stale_minor_after", "stale_patch_after",
+    "lag_unknown", "not_at_policy_latest"
+]
+
 # The collector counts skipped tests as "not passed". Set True to drop them from the denominator.
 PASS_RATE_EXCLUDES_SKIPPED = False
 
@@ -42,34 +51,6 @@ PASS_RATE_EXCLUDES_SKIPPED = False
 
 def read(path):
     return pd.read_csv(path) if path.exists() else None
-
-
-def outcome_of(path):
-    text = ANSI.sub("", path.read_text(errors="replace"))
-    if "BUILD SUCCESS" in text and "BUILD FAILURE" not in text:
-        return "success"
-    if "BUILD FAILURE" not in text:
-        return "incomplete"
-    m = FAILED_GOAL.search(text)
-    if not m:
-        return "other"
-    goal, msg = m.groups()
-    if "counter-maven-plugin" in goal:
-        return "plugin"
-    if "maven-compiler" in goal:
-        return "compile"
-    if "surefire" in goal or "failsafe" in goal:
-        return "tests"
-    if RESOLVE_MSG.search(msg):
-        return "resolution"
-    return "other"
-
-
-# def repo_of_log(stem, known):
-#     for r in sorted(known, key=len, reverse=True):
-#         if stem.startswith(r + "_"):
-#             return r
-#     return stem.split("_")[0]
 
 
 def drop_flavor_named(df):
@@ -93,8 +74,9 @@ def load_flag(root, flag):
     deps = None
     if mods is not None:
         mods = drop_flavor_named(mods)
-        cols = [c for c in ACTIONS + ["total_before", "total_after"] if c in mods.columns]
-        deps = mods.groupby("repo")[cols].sum()
+        valid_cols = [c for c in ACTIONS + ["total_before", "total_after"] + LAG_COLUMNS if c in mods.columns]
+        # Sum counts/days, or take meaningful averages if appropriate (here summing totals/lag days across modules per repo)
+        deps = mods.groupby("repo")[valid_cols].sum(numeric_only=True)
         deps["modules"] = mods.groupby("repo").size()
         deps = deps.reset_index()
 
@@ -104,7 +86,7 @@ def load_flag(root, flag):
         skipped = tests["total_skipped"] if "total_skipped" in tests else None
         passed, den, rate = pass_rate(tests["total_passed"], tests["total_tests"], skipped)
         tests = pd.DataFrame({"repo": tests["repo"], "tests_passed": passed, "tests_den": den,
-                              "pass_rate": rate, "stats_build_ok": tests["build_success"].astype(bool)})
+                             "pass_rate": rate, "stats_build_ok": tests["build_success"].astype(bool)})
 
     repos = set()
     for d in (deps, tests):
@@ -165,7 +147,7 @@ def save(fig, out, name):
     fig.tight_layout()
     fig.savefig(out / name, dpi=300, bbox_inches="tight")
     plt.close(fig)
-    print(f"  wrote {name}")
+    print(f"   wrote {name}")
 
 
 def label_missing(ax, matrix, labels):
@@ -186,7 +168,7 @@ def pareto_max(points):
     return pts[keep]
 
 
-# ------------------------------------------------------------------------------ graphs
+# ------------------------------------------------------------------------------ existing graphs
 
 def g_upgrades_by_repo(tidy, repos, out):
     up = pivot(tidy, "upgraded", repos)
@@ -317,7 +299,7 @@ def g_macro(tidy, out):
         if t.empty:
             continue
         rows.append({"flag": f.capitalize(), "build": t["built"].mean() * 100,
-                     "tests": t["pass_rate"].mean(),                 # all repos, no tests / failed = 0
+                     "tests": t["pass_rate"].mean(),                # all repos, no tests / failed = 0
                      "upg": t["upgrades_per_module"].mean()})        # repos with >= 1 module
             
 
@@ -364,7 +346,6 @@ def g_upgrades_vs_tests(tidy, out):
                         palette=COLORS, s=90, alpha=0.85, ax=ax)
         if col == "pass_delta":
             ax.axhline(0, color="black", lw=1)
-        # label the interesting points: biggest drops and most upgraded
         ref = dd[col].sort_values().index[:3].tolist() + dd["upgraded_pct"].sort_values().index[-2:].tolist()
         for i in dict.fromkeys(ref):
             ax.annotate(dd.loc[i, "repo"], (dd.loc[i, "upgraded_pct"], dd.loc[i, col]), fontsize=7,
@@ -459,6 +440,83 @@ def g_box(mods_by_flag, out):
     save(fig, out, "rq2_upgraded_distribution_box.png")
 
 
+# ------------------------------------------------------------------------------ new freshness & technical lag graphs
+
+def g_technical_lag_reduction(tidy, out):
+    """New Graph: Compares technical lag days before vs after updating across update flags."""
+    sub = tidy[tidy["built"]].groupby("flag")[["lag_days_before", "lag_days_after"]].mean().reset_index()
+    if sub.empty or sub["lag_days_before"].isna().all():
+        return
+    melted = sub.melt(id_vars="flag", value_vars=["lag_days_before", "lag_days_after"],
+                      var_name="Phase", value_name="Avg Lag Days")
+    melted["Phase"] = melted["Phase"].map({"lag_days_before": "Before Update", "lag_days_after": "After Update"})
+    
+    fig, ax = plt.subplots(figsize=(8, 5))
+    sns.barplot(data=melted, x="flag", y="Avg Lag Days", hue="Phase", order=FLAGS, palette="Set2", ax=ax)
+    for c in ax.containers:
+        ax.bar_label(c, fmt="%.1f", padding=3, fontsize=8)
+    ax.set_xlabel("Update Flag", fontweight="bold")
+    ax.set_ylabel("Average Technical Lag (Days)", fontweight="bold")
+    ax.set_title("Technical Lag (Days) Before vs. After Upgrading", fontweight="bold", pad=15)
+    ax.legend(title="State", loc="upper right")
+    save(fig, out, "rq2_technical_lag_days_comparison.png")
+
+
+def g_stale_dependencies_breakdown(tidy, out):
+    """New Graph: Breakdown of major, minor, and patch stale dependencies before vs after."""
+    cols = ["stale_major_before", "stale_minor_before", "stale_patch_before",
+            "stale_major_after", "stale_minor_after", "stale_patch_after"]
+    if not all(c in tidy.columns for c in cols):
+        return
+    
+    sub = tidy[tidy["built"]][["flag"] + cols].groupby("flag").sum().reset_index()
+    if sub.empty:
+        return
+    
+    rows = []
+    for _, r in sub.iterrows():
+        rows.append({"flag": r["flag"], "Type": "Major", "Phase": "Before", "Count": r["stale_major_before"]})
+        rows.append({"flag": r["flag"], "Type": "Minor", "Phase": "Before", "Count": r["stale_minor_before"]})
+        rows.append({"flag": r["flag"], "Type": "Patch", "Phase": "Before", "Count": r["stale_patch_before"]})
+        rows.append({"flag": r["flag"], "Type": "Major", "Phase": "After", "Count": r["stale_major_after"]})
+        rows.append({"flag": r["flag"], "Type": "Minor", "Phase": "After", "Count": r["stale_minor_after"]})
+        rows.append({"flag": r["flag"], "Type": "Patch", "Phase": "After", "Count": r["stale_patch_after"]})
+    df_stale = pd.DataFrame(rows)
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    sns.barplot(data=df_stale, x="flag", y="Count", hue="Type", order=FLAGS, palette="muted", ax=ax)
+    for c in ax.containers:
+        ax.bar_label(c, fmt="%d", padding=2, fontsize=7)
+    ax.set_xlabel("Update Flag", fontweight="bold")
+    ax.set_ylabel("Total Stale Dependencies", fontweight="bold")
+    ax.set_title("Stale Dependencies Breakdown (Major/Minor/Patch)", fontweight="bold", pad=15)
+    ax.legend(title="Stale Type", loc="upper right", bbox_to_anchor=(1.15, 1.0))
+    save(fig, out, "rq2_stale_dependencies_breakdown.png")
+
+
+def g_lag_days_reduction_repo(tidy, repos, out):
+    """New Graph: Repository-level breakdown of total lag days reduction."""
+    if "lag_days_reduction" not in tidy.columns:
+        return
+    red = pivot(tidy, "lag_days_reduction", repos)
+    built = pivot(tidy, "built", repos).fillna(False).astype(bool)
+    y, h = np.arange(len(repos)), 0.26
+    
+    fig, ax = plt.subplots(figsize=(11, max(7, len(repos) * 0.5)))
+    for i, flag in enumerate(FLAGS):
+        vals = red[flag].fillna(0)
+        bars = ax.barh(y + (i - 1) * h, vals, h, label=flag.capitalize(), color=COLORS[flag])
+        ax.bar_label(bars, labels=[f"{int(v)}" if b else f"{int(v)} ✗" for v, b in zip(vals, built[flag])],
+                     padding=3, fontsize=7)
+    ax.set_yticks(y)
+    ax.set_yticklabels(repos, fontsize=9, fontweight="bold")
+    ax.invert_yaxis()
+    ax.set_xlabel("Total Technical Lag Days Reduced (summed over modules)   ✗ = build failed", fontweight="bold")
+    ax.set_title("Technical Lag Days Reduction by Repository and Flag", fontweight="bold", pad=15)
+    ax.legend(loc="lower right", frameon=True)
+    save(fig, out, "rq2_repo_lag_days_reduction.png")
+
+
 # ------------------------------------------------------------------------------ main
 
 def main():
@@ -480,7 +538,7 @@ def main():
     tidy = tidy[~tidy["repo"].isin(a.exclude)].drop_duplicates(["repo", "flag"])
     mods_by_flag = {f: (m[~m["repo"].isin(a.exclude)] if m is not None else None) for f, m in mods_by_flag.items()}
 
-    for col in ACTIONS + ["total_before", "total_after"]:
+    for col in ACTIONS + ["total_before", "total_after"] + LAG_COLUMNS:
         if col not in tidy:
             tidy[col] = np.nan
     tidy["upgraded_pct"] = np.where(tidy["total_before"] > 0, tidy["upgraded"] / tidy["total_before"] * 100, np.nan)
@@ -495,8 +553,8 @@ def main():
             tidy["net_upgraded"] = tidy["upgraded"] - tidy["rq1_upgraded"]
 
     flag_metrics = [c for c in ACTIONS + ["total_before", "total_after", "modules", "tests_passed", "tests_den",
-                                          "pass_rate", "upgraded_pct", "upgrades_per_module",
-                                          "pass_delta", "net_upgraded"] if c in tidy]
+                                         "pass_rate", "upgraded_pct", "upgrades_per_module",
+                                         "pass_delta", "net_upgraded"] + LAG_COLUMNS if c in tidy]
     tidy.loc[~tidy["built"], flag_metrics] = np.nan
 
     built_repos = {f: set(tidy[(tidy["flag"] == f) & tidy["built"]]["repo"]) for f in FLAGS}
@@ -512,6 +570,7 @@ def main():
     tidy.sort_values(["repo", "flag"]).to_csv(table, index=False)
     print(f"{len(repos)} repositories; table written to {table}")
 
+    # Existing graphs (completely unchanged)
     g_upgrades_by_repo(tidy, repos, out)
     g_upgrade_pct_heatmap(tidy, repos, out)
     g_action_averages(mods_built, out)
@@ -523,6 +582,10 @@ def main():
     g_pareto(root, out, built_repos)
     g_box(mods_built, out)
 
+    # New freshness & technical lag graphs
+    g_technical_lag_reduction(tidy, out)
+    g_stale_dependencies_breakdown(tidy, out)
+    g_lag_days_reduction_repo(tidy, repos, out)
 
 
 if __name__ == "__main__":

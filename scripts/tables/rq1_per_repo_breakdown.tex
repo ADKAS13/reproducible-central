@@ -1,39 +1,40 @@
 \begin{table}[htbp]
 \centering
-\caption{Per-Repository Build Success, Test Pass Rate, and Module Equivalence (RQ1)}
+\caption{Per-Repository Comparison: Build Success, Test Pass Rate, and Module Equivalence (Base vs. RQ1)}
 \label{tab:rq1_repo_breakdown}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{lrrrr}
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Repository} & \textbf{Modules} & \textbf{Build Rate} & \textbf{Test Pass Rate} & \textbf{Equivalence Rate} \\
+\textbf{Repository} & \textbf{Modules} & \textbf{Build (Base / RQ1)} & \textbf{Test Pass (Base / RQ1)} & \textbf{Equivalence (RQ1)} \\
 \midrule
-Xponents & 1 & \cmark & 100.0\% & 100.0\% \\
-animal-sniffer & 6 & \cmark & 100.0\% & 100.0\% \\
-api & 2 & \cmark & 100.0\% & 100.0\% \\
-arquillian-graphene & 5 & \xmark & 16.9\% & 100.0\% \\
-asset-share-commons & 5 & \cmark & 100.0\% & 100.0\% \\
-astra & 4 & \cmark & 97.3\% & 100.0\% \\
-auto-table & 26 & \cmark & 100.0\% & 100.0\% \\
-automatalib & 22 & \cmark & 89.7\% & 100.0\% \\
-cloudtrace & 30 & \cmark & 100.0\% & 100.0\% \\
-cryptolib & 1 & \cmark & 99.4\% & 100.0\% \\
-dkpro-jwpl & 1 & \xmark & 99.1\% & 100.0\% \\
-easyvcr & 1 & \cmark & 100.0\% & 100.0\% \\
-elemento & 1 & \cmark & 100.0\% & 100.0\% \\
-gauge-java & 1 & \cmark & 100.0\% & 100.0\% \\
-maven-checkstyle-plugin & 1 & \cmark & 0.0\% & 100.0\% \\
-mdlz80optimizer & 1 & \cmark & 100.0\% & 100.0\% \\
-peppol-commons & 8 & \cmark & 84.2\% & 100.0\% \\
-phenopacket-schema & 1 & \cmark & 100.0\% & 100.0\% \\
-saucerest-java & 1 & \cmark & 100.0\% & 100.0\% \\
-sokrates & 5 & \cmark & 99.4\% & 100.0\% \\
-sorald & 1 & \cmark & 99.5\% & 100.0\% \\
-teamengine & 6 & \cmark & 100.0\% & 100.0\% \\
-telegrambots & 9 & \cmark & 100.0\% & 100.0\% \\
-turbine & 1 & \cmark & 51.3\% & 100.0\% \\
-wavefront-proxy & 1 & \cmark & 99.6\% & 100.0\% \\
-xwiki-commons & 7 & \xmark & 100.0\% & 100.0\% \\
-yosegi & 1 & \cmark & 100.0\% & 100.0\% \\
+Xponents & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+animal-sniffer & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+api & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+arquillian-graphene & 3 & \cmark / \cmark & 16.0\% / 16.0\% & 100.0\% \\
+asset-share-commons & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+astra & 1 & \cmark / \cmark & 97.3\% / 97.3\% & 100.0\% \\
+auto-table & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+automatalib & 18 & \cmark / \cmark & 89.7\% / 89.7\% & 100.0\% \\
+cloudtrace & 6 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+cryptolib & 1 & \cmark / \cmark & 99.4\% / 99.4\% & 100.0\% \\
+dkpro-jwpl & 4 & \cmark / \xmark & 99.2\% / 86.6\% & 100.0\% \\
+easyvcr & 1 & \cmark / \cmark & 100.0\% / 133.3\% & 100.0\% \\
+elemento & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+gauge-java & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+juneau & 3 & \cmark / \xmark & 99.9\% / 0.0\% & N/A \\
+maven-checkstyle-plugin & 1 & \cmark / \xmark & 100.0\% / 0.0\% & 100.0\% \\
+mdlz80optimizer & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+peppol-commons & 8 & \cmark / \cmark & 84.2\% / 84.2\% & 100.0\% \\
+phenopacket-schema & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+saucerest-java & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+sokrates & 5 & \cmark / \cmark & 99.4\% / 99.4\% & 100.0\% \\
+sorald & 1 & \cmark / \cmark & 99.5\% / 99.5\% & 100.0\% \\
+teamengine & 5 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+telegrambots & 9 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
+turbine & 1 & \cmark / \cmark & 51.3\% / 51.3\% & 100.0\% \\
+wavefront-proxy & 1 & \cmark / \cmark & 99.6\% / 99.6\% & 100.0\% \\
+xwiki-commons & 49 & \cmark / \xmark & 99.8\% / 1.2\% & 100.0\% \\
+yosegi & 1 & \cmark / \cmark & 100.0\% / 100.0\% & 100.0\% \\
 \bottomrule
 \end{tabular}%
 }

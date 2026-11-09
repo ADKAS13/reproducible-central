@@ -1,240 +1,187 @@
-import os
+#!/usr/bin/env python3
+"""
+tables_rq2.py — LaTeX tables for RQ2.
+
+Reads results/rq2_repo_flag_table.csv (written by graphs/graph_rq2.py), so the tables use exactly the
+same numbers as the graphs. Run the graph script first.
+
+Definitions (same as the graphs):
+  * Failed builds are excluded from every statistic except the build success rate.
+  * Test pass rate: mean over built repos of the per-repo rate (std is over the same repos).
+  * Per-module means: mean over built repos of count / modules; repos that did not reach the
+    comparison stage (no modules) are skipped.
+"""
+
+import argparse
+import sys
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 
-# Paths setup
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-RESULTS_DIR = os.path.join("results")
-TABLES_DIR = os.path.join(SCRIPT_DIR, "tables")
-os.makedirs(TABLES_DIR, exist_ok=True)
-
 FLAGS = ["major", "minor", "patch"]
 
-# -------------------------------------------------------------------
-# Data Loading & Processing from Designated CSVs
-# -------------------------------------------------------------------
-repo_breakdown_by_flag = {}
-flag_summary_data = {}
+ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+ap.add_argument("--root", type=Path, default=Path("."), help="reproducible-central root (default: cwd)")
+ap.add_argument("--out", type=Path, default=Path(__file__).resolve().parent / "tables")
+a = ap.parse_args()
 
-for flag in FLAGS:
-    # 1. Load per-repo breakdown for dependency actions & build rates
-    repo_file = os.path.join(RESULTS_DIR, f"rq2_breakdown_by_repo_{flag}.csv")
-    if os.path.exists(repo_file):
-        repo_breakdown_by_flag[flag] = pd.read_csv(repo_file)
-    
-    # 2. Load per-flag summary aggregates
-    summary_file = os.path.join(RESULTS_DIR, "rq2_breakdown_per_flag.csv")
-    # Alternatively check flag-specific summary if structured separately, 
-    # but rq2_breakdown_per_flag.csv contains all flags with a 'flag' column.
+TABLE_CSV = a.root.resolve() / "results" / "rq2_repo_flag_table.csv"
+TABLES_DIR = a.out
+TABLES_DIR.mkdir(parents=True, exist_ok=True)
 
-# Load macro summary from rq2_breakdown_per_flag.csv
-if os.path.exists(os.path.join(RESULTS_DIR, "rq2_breakdown_per_flag.csv")):
-    df_flag_summary = pd.read_csv(os.path.join(RESULTS_DIR, "rq2_breakdown_per_flag.csv"))
-else:
-    df_flag_summary = pd.DataFrame()
+if not TABLE_CSV.exists():
+    sys.exit(f"{TABLE_CSV} not found; run graphs/graph_rq2.py first")
 
-# Get master list of repositories across flag breakdown files
-all_repos = []
-if repo_breakdown_by_flag:
-    sample_df = list(repo_breakdown_by_flag.values())[0]
-    all_repos = sorted([r for r in sample_df["repo"].unique() if not str(r).startswith("RQ")])
+# ------------------------------------------------------------------------------ load
 
-# -------------------------------------------------------------------
-# Table 1: Paginated Longtable (Per-Repository Breakdown)
-# -------------------------------------------------------------------
-rows = []
-for repo in all_repos:
-    for flag in FLAGS:
-        if flag in repo_breakdown_by_flag:
-            df_flag = repo_breakdown_by_flag[flag]
-            repo_data = df_flag[df_flag["repo"] == repo]
-            if not repo_data.empty:
-                r = repo_data.iloc[0]
-                # Determine build status mark from build_success_rate or successful_builds
-                success_rate = r.get("build_success_rate", 0.0)
-                build_mark = "\\cmark" if success_rate >= 100.0 else "\\xmark"
-                
-                rows.append({
-                    "Repository": repo,
-                    "Flag": flag.capitalize(),
-                    "Upgraded": int(r.get("upgraded", 0)),
-                    "Pinned": int(r.get("pinned", 0)),
-                    "Downgraded": int(r.get("downgraded", 0)),
-                    "Build": build_mark,
-                })
+tidy = pd.read_csv(TABLE_CSV)
+if "rq1_built" not in tidy:
+    print("[WARN] no rq1_built column; rerun the updated graph script. Treating RQ1 NaN as failed.",
+          file=sys.stderr)
+    tidy["rq1_built"] = tidy["rq1_pass_rate"].notna()
 
-df_repo_latex = pd.DataFrame(rows)
+repos = sorted(tidy["repo"].unique())
 
-latex_repo_table = """\\onecolumn
-\\begin{small}
-\\setlength{\\tabcolsep}{4pt}
-\\begin{longtable}{llrrrr}
-\\caption{Per-Repository Dependency Actions and Build Status across Update Flags} \\label{tab:repo_breakdown} \\\\
-\\toprule
-\\textbf{Repository} & \\textbf{Flag} & \\textbf{Upgraded} & \\textbf{Pinned} & \\textbf{Downgraded} & \\textbf{Build} \\\\
-\\midrule
-\\endfirsthead
+# one row per (repo, flag); a repo with no row for a flag counts as not built
+full = pd.MultiIndex.from_product([repos, FLAGS], names=["repo", "flag"])
+tidy = tidy.set_index(["repo", "flag"]).reindex(full).reset_index()
+tidy["built"] = tidy["built"].fillna(False).astype(bool)
+for c in ("upgraded", "pinned", "downgraded", "modules"):
+    if c not in tidy:
+        tidy[c] = np.nan
 
-\\multicolumn{6}{c}{{\\tablename\\ \\thetable\\ -- continued from previous page}} \\\\
-\\toprule
-\\textbf{Repository} & \\textbf{Flag} & \\textbf{Upgraded} & \\textbf{Pinned} & \\textbf{Downgraded} & \\textbf{Build} \\\\
-\\midrule
-\\endhead
+# per-repo, per-module ratios; eligibility is the same as upgrades_per_module in the graph script
+eligible = tidy["upgrades_per_module"].notna()
+for c in ("upgraded", "pinned", "downgraded"):
+    tidy[f"{c}_pm"] = np.where(eligible, tidy[c] / tidy["modules"], np.nan)
 
-\\midrule
-\\multicolumn{6}{r}{{Continued on next page}} \\\\
-\\endfoot
+lookup = tidy.set_index(["repo", "flag"])
+rq1_rate = tidy.groupby("repo")["rq1_pass_rate"].first()
+rq1_ok = tidy.groupby("repo")["rq1_built"].first().fillna(False).astype(bool)
 
-\\bottomrule
-\\endlastfoot
-"""
 
-current_repo = ""
-for _, row in df_repo_latex.iterrows():
-    repo_str = row["Repository"] if row["Repository"] != current_repo else ""
-    if current_repo != "" and row["Repository"] != current_repo:
+def cnt(v):
+    return "--" if pd.isna(v) else f"{int(v)}"
+
+
+def num(v, spec=".1f", suffix=""):
+    return "--" if pd.isna(v) else f"{v:{spec}}{suffix}"
+
+
+# ------------------------------------------------------------------------------ Table 1
+
+CMARK, XMARK = r"\cmark", r"\xmark"
+
+head = r"""\textbf{Repository} & \textbf{Flag} & \textbf{Upgraded} & \textbf{Pinned} & \textbf{Downgraded} & \textbf{Build} \\"""
+latex_repo_table = "\n".join([
+    r"\onecolumn",
+    r"\begin{small}",
+    r"\setlength{\tabcolsep}{4pt}",
+    r"\begin{longtable}{llrrrr}",
+    r"\caption{Per-Repository Dependency Actions and Build Status across Update Flags (failed builds excluded: --)} "
+    r"\label{tab:repo_breakdown} \\",
+    r"\toprule", head, r"\midrule", r"\endfirsthead",
+    "",
+    r"\multicolumn{6}{c}{{\tablename\ \thetable\ -- continued from previous page}} \\",
+    r"\toprule", head, r"\midrule", r"\endhead",
+    "",
+    r"\midrule",
+    r"\multicolumn{6}{r}{{Continued on next page}} \\",
+    r"\endfoot",
+    "",
+    r"\bottomrule",
+    r"\endlastfoot",
+]) + "\n"
+
+for n, repo in enumerate(repos):
+    if n:
         latex_repo_table += "\\midrule\n"
-    current_repo = row["Repository"]
+    for i, flag in enumerate(FLAGS):
+        r = lookup.loc[(repo, flag)]
+        ok = bool(r["built"])
+        name = repo if i == 0 else ""
+        mark = CMARK if ok else XMARK
+        latex_repo_table += (f"{name} & {flag.capitalize()} & {cnt(r['upgraded'])} & {cnt(r['pinned'])} & "
+                             f"{cnt(r['downgraded'])} & {mark} \\\\\n")
 
-    latex_repo_table += f"{repo_str} & {row['Flag']} & {row['Upgraded']} & {row['Pinned']} & {row['Downgraded']} & {row['Build']} \\\\\n"
+latex_repo_table += "\\end{longtable}\n\\end{small}\n\\twocolumn"
+(TABLES_DIR / "rq2_per_repo_breakdown.tex").write_text(latex_repo_table)
+print("Saved: rq2_per_repo_breakdown.tex")
 
-latex_repo_table += """\\end{longtable}
-\\end{small}
-\\twocolumn"""
+# ------------------------------------------------------------------------------ Table 2
 
-with open(os.path.join(TABLES_DIR, "rq2_per_repo_breakdown.tex"), "w") as f:
-    f.write(latex_repo_table)
+fmt = {}
+for f in FLAGS:
+    t = tidy[tidy["flag"] == f]
+    ok = t[t["built"]]
+    fmt[f] = {
+        "build": num(t["built"].mean() * 100, ".1f", "\\%"),
+        "tests": num(ok["pass_rate"].mean(), ".1f", "\\%") + " $\\pm$ " + num(ok["pass_rate"].std(), ".1f"),
+        "upg_total": f"{int(ok['upgraded'].sum()):,}",
+        "upg": num(ok["upgraded_pm"].mean(), ".2f"),
+        "pin": num(ok["pinned_pm"].mean(), ".2f"),
+        "down": num(ok["downgraded_pm"].mean(), ".2f"),
+    }
 
-print("Saved: rq2_per_repo_breakdown.tex (Paginated Longtable)")
 
-# -------------------------------------------------------------------
-# Load Test Pass Rates Directly from rq1_style_stats_{flag}.csv
-# -------------------------------------------------------------------
-test_stats = {}
-test_stats_dfs = []
+def cells(key):
+    return " & ".join(fmt[f][key] for f in FLAGS)
 
-# 1. Load RQ1 baseline test stats for comparison
-rq1_file = os.path.join(RESULTS_DIR, "rq1_results.csv")
-df_rq1_repos = pd.DataFrame({"repo": all_repos})
-df_rq1_repos["flag"] = "RQ1"
-if os.path.exists(rq1_file):
-    df_rq1 = pd.read_csv(rq1_file)
-    df_rq1["pass_rate"] = pd.to_numeric(
-        df_rq1["pass_rate"].astype(str).str.replace(r"\.$", "", regex=True), errors="coerce"
-    ).fillna(0.0)
-    df_rq1_repos = pd.merge(df_rq1_repos, df_rq1[["repo", "pass_rate"]], on="repo", how="left")
-else:
-    df_rq1_repos["pass_rate"] = 0.0
-df_rq1_repos["pass_rate"] = df_rq1_repos["pass_rate"].fillna(0.0)
-test_stats_dfs.append(df_rq1_repos[["repo", "pass_rate", "flag"]])
 
-# 2. Load RQ2 flag test stats from rq1_style_stats_{flag}.csv
-for flag in FLAGS:
-    df_flag_repos = pd.DataFrame({"repo": all_repos})
-    df_flag_repos["flag"] = flag.capitalize()
-    
-    file_path = os.path.join(RESULTS_DIR, f"rq1_style_stats_{flag}.csv")
-    if os.path.exists(file_path):
-        df_test = pd.read_csv(file_path)
-        # Ensure pass_rate is calculated properly from total_passed / total_tests if not present or explicit
-        if "pass_rate" not in df_test.columns or df_test["pass_rate"].isna().all():
-            df_test["pass_rate"] = np.where(
-                df_test["total_tests"] > 0,
-                (df_test["total_passed"] / df_test["total_tests"]) * 100,
-                0.0
-            )
-        else:
-            df_test["pass_rate"] = pd.to_numeric(df_test["pass_rate"], errors="coerce").fillna(0.0)
-            
-        df_flag_repos = pd.merge(df_flag_repos, df_test[["repo", "pass_rate"]], on="repo", how="left")
-    else:
-        df_flag_repos["pass_rate"] = 0.0
+latex_summary_table = "\n".join([
+    r"\begin{table}[htbp]",
+    r"\centering",
+    r"\caption{Macro Summary Across Update Scopes (RQ2). Failed builds are excluded from every row except "
+    r"the build success rate; per-module means are averaged over repositories.}",
+    r"\label{tab:rq2_macro_summary}",
+    r"\resizebox{\linewidth}{!}{%",
+    r"\begin{tabular}{lccc}",
+    r"\toprule",
+    r"\textbf{Metric} & \textbf{Major} & \textbf{Minor} & \textbf{Patch} \\",
+    r"\midrule",
+    "Build Success Rate & " + cells("build") + r" \\",
+    r"Test Pass Rate (Mean $\pm$ Std) & " + cells("tests") + r" \\",
+    "Upgraded Dependencies (Total) & " + cells("upg_total") + r" \\",
+    "Upgraded Dependencies (Mean per module) & " + cells("upg") + r" \\",
+    "Pinned Dependencies (Mean per module) & " + cells("pin") + r" \\",
+    "Downgraded Dependencies (Mean per module) & " + cells("down") + r" \\",
+    r"\bottomrule",
+    r"\end{tabular}%",
+    r"}",
+    r"\end{table}",
+])
+(TABLES_DIR / "rq2_per_flag_summary.tex").write_text(latex_summary_table)
+print("Saved: rq2_per_flag_summary.tex")
 
-    df_flag_repos["pass_rate"] = df_flag_repos["pass_rate"].fillna(0.0)
-    
-    # Compute authentic mean and std using actual test execution results
-    mean_val = df_flag_repos["pass_rate"].mean()
-    std_val = df_flag_repos["pass_rate"].std()
-    test_stats[flag] = (mean_val, std_val)
+# ------------------------------------------------------------------------------ Table 3
 
-    test_stats_dfs.append(df_flag_repos[["repo", "pass_rate", "flag"]])
 
-# -------------------------------------------------------------------
-# Table 2: Macro Summary (RQ1-Style with Mean ± Std)
-# -------------------------------------------------------------------
-s_major = df_flag_summary[df_flag_summary["flag"] == "major"].iloc[0] if not df_flag_summary.empty and not df_flag_summary[df_flag_summary["flag"] == "major"].empty else None
-s_minor = df_flag_summary[df_flag_summary["flag"] == "minor"].iloc[0] if not df_flag_summary.empty and not df_flag_summary[df_flag_summary["flag"] == "minor"].empty else None
-s_patch = df_flag_summary[df_flag_summary["flag"] == "patch"].iloc[0] if not df_flag_summary.empty and not df_flag_summary[df_flag_summary["flag"] == "patch"].empty else None
+def pass_cell(v, built):
+    if not built:
+        return XMARK
+    return "n/a" if pd.isna(v) else f"{v:.1f}\\%"
 
-def get_val(row, col, default=0.0):
-    if row is not None and col in row:
-        return row[col]
-    return default
 
-latex_summary_table = f"""\\begin{{table}}[htbp]
-\\centering
-\\caption{{Macro Summary and Descriptive Statistics Across Update Scopes (RQ2)}}
-\\label{{tab:rq2_macro_summary}}
-\\resizebox{{\\linewidth}}{{!}}{{%
-\\begin{{tabular}}{{lccc}}
-\\toprule
-\\textbf{{Metric}} & \\textbf{{Major}} & \\textbf{{Minor}} & \\textbf{{Patch}} \\\\
-\\midrule
-Build Success Rate & {get_val(s_major, 'build_success_rate'):.1f}\\% & {get_val(s_minor, 'build_success_rate'):.1f}\\% & {get_val(s_patch, 'build_success_rate'):.1f}\\% \\\\
-Test Pass Rate (Mean $\\pm$ Std) & {test_stats['major'][0]:.1f}\\% $\\pm$ {test_stats['major'][1]:.1f} & {test_stats['minor'][0]:.1f}\\% $\\pm$ {test_stats['minor'][1]:.1f} & {test_stats['patch'][0]:.1f}\\% $\\pm$ {test_stats['patch'][1]:.1f} \\\\
-Upgraded Dependencies (Total) & {int(get_val(s_major, 'upgraded_total')):,} & {int(get_val(s_minor, 'upgraded_total')):,} & {int(get_val(s_patch, 'upgraded_total')):,} \\\\
-Upgraded Dependencies (Mean) & {get_val(s_major, 'upgraded_avg'):.2f} & {get_val(s_minor, 'upgraded_avg'):.2f} & {get_val(s_patch, 'upgraded_avg'):.2f} \\\\
-Pinned Dependencies (Mean) & {get_val(s_major, 'pinned_avg'):.2f} & {get_val(s_minor, 'pinned_avg'):.2f} & {get_val(s_patch, 'pinned_avg'):.2f} \\\\
-Downgraded Dependencies (Mean) & {get_val(s_major, 'downgraded_avg'):.2f} & {get_val(s_minor, 'downgraded_avg'):.2f} & {get_val(s_patch, 'downgraded_avg'):.2f} \\\\
-\\bottomrule
-\\end{{tabular}}%
-}}
-\\end{{table}}"""
+latex_test_table = "\n".join([
+    r"\begin{table}[htbp]",
+    r"\centering",
+    r"\caption{Test Success Rate (\%) by Repository: RQ1 vs. RQ2 Update Flags (\xmark{} = build failed, excluded)}",
+    r"\label{tab:test_success_rates}",
+    r"\resizebox{\linewidth}{!}{%",
+    r"\begin{tabular}{lrrrr}",
+    r"\toprule",
+    r"\textbf{Repository} & \textbf{RQ1 (\%)} & \textbf{Major (\%)} & \textbf{Minor (\%)} & \textbf{Patch (\%)} \\",
+    r"\midrule",
+]) + "\n"
 
-with open(os.path.join(TABLES_DIR, "rq2_per_flag_summary.tex"), "w") as f:
-    f.write(latex_summary_table)
+for repo in repos:
+    cols = [pass_cell(rq1_rate[repo], rq1_ok[repo])]
+    for f in FLAGS:
+        r = lookup.loc[(repo, f)]
+        cols.append(pass_cell(r["pass_rate"], bool(r["built"])))
+    latex_test_table += f"{repo} & " + " & ".join(cols) + " \\\\\n"
 
-print("Saved: rq2_per_flag_summary.tex (Macro Summary)")
-
-# -------------------------------------------------------------------
-# Table 3: Per-Repository Test Success Rates (Including RQ1)
-# -------------------------------------------------------------------
-if test_stats_dfs:
-    df_test_all = pd.concat(test_stats_dfs, ignore_index=True)
-
-    pivot_test = df_test_all.pivot(
-        index="repo", columns="flag", values="pass_rate"
-    ).reset_index().fillna(0.0)
-
-    cols = ["repo"] + [c for c in ["RQ1", "Major", "Minor", "Patch"] if c in pivot_test.columns]
-    pivot_test = pivot_test[cols]
-
-    latex_test_table = """\\begin{table}[htbp]
-\\centering
-\\caption{Test Success Rate (\\%) by Repository: RQ1 vs. RQ2 Update Flags}
-\\label{tab:test_success_rates}
-\\resizebox{\\linewidth}{!}{%
-\\begin{tabular}{lrrrr}
-\\toprule
-\\textbf{Repository} & \\textbf{RQ1 (\\%)} & \\textbf{Major (\\%)} & \\textbf{Minor (\\%)} & \\textbf{Patch (\\%)} \\\\
-\\midrule
-"""
-
-    for _, row in pivot_test.iterrows():
-        rq1_val = f"{row.get('RQ1', 0.0):.1f}\\%"
-        major_val = f"{row.get('Major', 0.0):.1f}\\%"
-        minor_val = f"{row.get('Minor', 0.0):.1f}\\%"
-        patch_val = f"{row.get('Patch', 0.0):.1f}\\%"
-        latex_test_table += (
-            f"{row['repo']} & {rq1_val} & {major_val} & {minor_val} & {patch_val} \\\\\n"
-        )
-
-    latex_test_table += """\\bottomrule
-\\end{tabular}%
-}
-\\end{table}"""
-
-    with open(os.path.join(TABLES_DIR, "rq2_test_success_rates.tex"), "w") as f:
-        f.write(latex_test_table)
-
-    print("Saved: rq2_test_success_rates.tex (RQ1 vs RQ2 Test Rates)")
+latex_test_table += "\\bottomrule\n\\end{tabular}%\n}\n\\end{table}"
+(TABLES_DIR / "rq2_test_success_rates.tex").write_text(latex_test_table)
+print("Saved: rq2_test_success_rates.tex")

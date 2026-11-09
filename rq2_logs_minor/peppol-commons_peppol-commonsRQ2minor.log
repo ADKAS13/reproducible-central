@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 01:40:40 UTC 2026.
-Universal Time is now:  Sun Oct 11 01:40:40 UTC 2026.
+Local time is now:      Wed Nov  4 23:27:06 UTC 2026.
+Universal Time is now:  Wed Nov  4 23:27:06 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -103,7 +103,7 @@ Downloading from central.snapshots: https://oss.sonatype.org/content/repositorie
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 4 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 4 dependencies (0 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: peppol-commons-parent-pom
@@ -126,38 +126,38 @@ Downloading from central.snapshots: https://oss.sonatype.org/content/repositorie
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-id-datatypes[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/peppol-id-datatypes/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 9 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 9 dependencies (0 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-id-datatypes[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/google/code/findbugs/jsr305/maven-metadata.xml
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 2.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-commons/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/google/code/findbugs/jsr305/maven-metadata.xml
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 3.2 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-commons/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-commons/maven-metadata.xml (2.6 kB at 6.5 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xmldsig/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-commons/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-commons/maven-metadata.xml (2.7 kB at 8.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig/maven-metadata.xml
-Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig/maven-metadata.xml (646 B at 1.6 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xmldsig/maven-metadata.xml
+Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig/maven-metadata.xml (646 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/activation/jakarta.activation-api/maven-metadata.xml
-Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/maven-metadata.xml (844 B at 18 kB/s)
+Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/maven-metadata.xml (844 B at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml
-Progress (1): 872 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml (872 B at 18 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
+Progress (1): 872 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml (872 B at 12 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 28 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 16 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 86 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-simple/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 60 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 87 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-id-datatypes
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-simple/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 59 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-id-datatypes (9 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/peppol-id-datatypes/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-id-datatypes: pinned=5 upgraded=4 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: peppol-id-datatypes
@@ -213,9 +213,9 @@ WARNING: All illegal access operations will be denied in a future release
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.xsds.peppol.id1.[1mSPITest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s - in com.helger.xsds.peppol.id1.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s - in com.helger.xsds.peppol.id1.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.xsds.peppol.id1.[1mCPeppolIDTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.xsds.peppol.id1.[1mCPeppolIDTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.xsds.peppol.id1.[1mCPeppolIDTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -248,51 +248,51 @@ WARNING: All illegal access operations will be denied in a future release
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-id[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/peppol-id/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 23 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 23 dependencies (0 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-id[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 126 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 25 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.6 kB at 147 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.7 kB at 84 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.0 kB at 185 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.1 kB at 100 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/jcodemodel/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/jcodemodel/maven-metadata.xml
-Progress (1): 243 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/jcodemodel/maven-metadata.xml (243 B at 995 B/s)
+Progress (1): 243 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/jcodemodel/maven-metadata.xml (243 B at 835 B/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-jaxb/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb/maven-metadata.xml (2.6 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb-adapter/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb/maven-metadata.xml (2.7 kB at 1.2 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-jaxb-adapter/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb-adapter/maven-metadata.xml (2.6 kB at 6.4 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-xml/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb-adapter/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb-adapter/maven-metadata.xml (2.7 kB at 6.1 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-xml/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-xml/maven-metadata.xml (2.6 kB at 5.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-xml/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-xml/maven-metadata.xml (2.7 kB at 5.7 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-bdxr-smp1/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp1/maven-metadata.xml
-Progress (1): 648 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp1/maven-metadata.xml (648 B at 2.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp2/maven-metadata.xml
+Progress (1): 648 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp1/maven-metadata.xml (648 B at 1.2 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-bdxr-smp2/maven-metadata.xml
-Progress (1): 648 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp2/maven-metadata.xml (648 B at 1.4 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-ccts-cct-schemamodule/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp2/maven-metadata.xml
+Progress (1): 648 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp2/maven-metadata.xml (648 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-ccts-cct-schemamodule/maven-metadata.xml
-Progress (1): 660 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-ccts-cct-schemamodule/maven-metadata.xml (660 B at 2.6 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xades132/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-ccts-cct-schemamodule/maven-metadata.xml
+Progress (1): 660 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-ccts-cct-schemamodule/maven-metadata.xml (660 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades132/maven-metadata.xml
-Progress (1): 647 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades132/maven-metadata.xml (647 B at 1.5 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xades141/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xades132/maven-metadata.xml
+Progress (1): 647 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades132/maven-metadata.xml (647 B at 2.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades141/maven-metadata.xml
-Progress (1): 647 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades141/maven-metadata.xml (647 B at 1.5 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xades141/maven-metadata.xml
+Progress (1): 647 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades141/maven-metadata.xml (647 B at 2.1 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xmldsig11/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig11/maven-metadata.xml
-Progress (1): 648 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig11/maven-metadata.xml (648 B at 1.3 kB/s)
+Progress (1): 648 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig11/maven-metadata.xml (648 B at 2.4 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for peppol-id — falling back to pinned lower bounds: Could not resolve following dependencies: []
-[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-id
+[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-id (23 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/peppol-id/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-id: pinned=23 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: peppol-id
@@ -327,52 +327,52 @@ Progress (1): 648 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.peppolid.[1mCIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s - in com.helger.peppolid.[1mCIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 s - in com.helger.peppolid.[1mCIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.factory.[1mPeppolIdentifierFactoryTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in com.helger.peppolid.factory.[1mPeppolIdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in com.helger.peppolid.factory.[1mPeppolIdentifierFactoryTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.factory.[1mBDXR2IdentifierFactoryTest[m
 [main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
 [main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in com.helger.peppolid.factory.[1mBDXR2IdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in com.helger.peppolid.factory.[1mBDXR2IdentifierFactoryTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.factory.[1mSimpleIdentifierFactoryTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.helger.peppolid.factory.[1mSimpleIdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.helger.peppolid.factory.[1mSimpleIdentifierFactoryTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.factory.[1mBDXR1IdentifierFactoryTest[m
 [main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
 [main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.peppolid.factory.[1mBDXR1IdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.helger.peppolid.factory.[1mBDXR1IdentifierFactoryTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.[1mSPITest[m
 [main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-id/src/main/resources/META-INF/services/com.helger.xml.microdom.convert.IMicroTypeConverterRegistrarSPI
 [main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
 [main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-id/src/main/resources/META-INF/services/com.helger.peppolid.peppol.validator.IParticipantIdentifierValidatorSPI
 [main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in com.helger.peppolid.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in com.helger.peppolid.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.participant.[1mPeppolParticipantIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.711 s - in com.helger.peppolid.peppol.participant.[1mPeppolParticipantIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.601 s - in com.helger.peppolid.peppol.participant.[1mPeppolParticipantIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.validator.[1mIdentifierValidatorTest[m
 [main] INFO com.helger.peppolid.peppol.validator.IdentifierValidator - Loaded 1 SPI implementations of IParticipantIdentifierValidatorSPI
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.peppolid.peppol.validator.[1mIdentifierValidatorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.helger.peppolid.peppol.validator.[1mIdentifierValidatorTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.validator.[1mParticipantIdentifierValidatorNorwayOrgNumberTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.validator.[1mParticipantIdentifierValidatorNorwayOrgNumberTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mPredefinedProcessIdentifierManagerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppolid.peppol.process.[1mPredefinedProcessIdentifierManagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.peppol.process.[1mPredefinedProcessIdentifierManagerTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mPeppolProcessIdentifierTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppolid.peppol.process.[1mPeppolProcessIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mEPredefinedProcessIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.peppol.process.[1mEPredefinedProcessIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.process.[1mEPredefinedProcessIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPredefinedDocumentTypeIdentifierManagerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.helger.peppolid.peppol.doctype.[1mPredefinedDocumentTypeIdentifierManagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.peppolid.peppol.doctype.[1mPredefinedDocumentTypeIdentifierManagerTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mEPredefinedDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.doctype.[1mEPredefinedDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierPartsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierPartsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierPartsTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.issuingagency.[1mParticipantIdentifierSchemeManagerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.issuingagency.[1mParticipantIdentifierSchemeManagerTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.issuingagency.[1mEPredefinedParticipantIdentifierSchemeTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.issuingagency.[1mEPredefinedParticipantIdentifierSchemeTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.simple.participant.[1mSimpleParticipantIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.simple.participant.[1mSimpleParticipantIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.simple.participant.[1mSimpleParticipantIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.simple.process.[1mSimpleProcessIdentifierTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.simple.process.[1mSimpleProcessIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.simple.doctype.[1mSimpleDocumentTypeIdentifierTest[m
@@ -413,30 +413,30 @@ Progress (1): 648 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-commons[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/peppol-commons/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 17 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 17 dependencies (0 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-commons[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/ph-genericode/maven-metadata.xml
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/ph-genericode/maven-metadata.xml
-Progress (1): 925 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/ph-genericode/maven-metadata.xml (925 B at 4.0 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/ph-genericode/maven-metadata.xml
+Progress (1): 925 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/ph-genericode/maven-metadata.xml (925 B at 1.3 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-bc/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-bc/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-bc/maven-metadata.xml (2.6 kB at 5.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-security/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-bc/maven-metadata.xml (2.7 kB at 5.5 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-security/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-security/maven-metadata.xml (2.6 kB at 6.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/net/jodah/expiringmap/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-security/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-security/maven-metadata.xml (2.7 kB at 7.3 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/net/jodah/expiringmap/maven-metadata.xml
-Progress (1): 858 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/jodah/expiringmap/maven-metadata.xml (858 B at 3.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/jodah/expiringmap/maven-metadata.xml
+Progress (1): 858 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/jodah/expiringmap/maven-metadata.xml (858 B at 3.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml (1.0 kB at 4.1 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml (1.0 kB at 15 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml (1.1 kB at 4.4 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml (1.1 kB at 5.8 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for peppol-commons — falling back to pinned lower bounds: Could not resolve following dependencies: []
-[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-commons
+[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-commons (17 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/peppol-commons/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-commons: pinned=17 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: peppol-commons
@@ -471,35 +471,35 @@ Progress (1): 1.1 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxCategoryIDTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in com.helger.peppol.codelist.[1mETaxCategoryIDTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in com.helger.peppol.codelist.[1mETaxCategoryIDTest[m
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxExemptionReasonCodeTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.codelist.[1mETaxExemptionReasonCodeTest[m
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mEDocumentTypeCodeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.codelist.[1mEDocumentTypeCodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.codelist.[1mEDocumentTypeCodeTest[m
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxSchemeIDTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.codelist.[1mETaxSchemeIDTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.codelist.[1mETaxSchemeIDTest[m
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mEInvoiceTypeCodeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.codelist.[1mEInvoiceTypeCodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.codelist.[1mEInvoiceTypeCodeTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sml.[1mESMLTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in com.helger.peppol.sml.[1mESMLTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.helger.peppol.sml.[1mESMLTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sml.[1mSMLInfoTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.563 s - in com.helger.peppol.sml.[1mSMLInfoTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.513 s - in com.helger.peppol.sml.[1mSMLInfoTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sml.[1mCSMLDefaultTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.sml.[1mCSMLDefaultTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.sml.[1mCSMLDefaultTest[m
 [[1;34mINFO[m] Running com.helger.peppol.[1mSPITest[m
 [main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-commons/src/main/resources/META-INF/services/com.helger.xml.microdom.convert.IMicroTypeConverterRegistrarSPI
 [main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in com.helger.peppol.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in com.helger.peppol.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolKeyStoreHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 s - in com.helger.peppol.utils.[1mPeppolKeyStoreHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in com.helger.peppol.utils.[1mPeppolKeyStoreHelperTest[m
 [[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolCertificateCheckerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in com.helger.peppol.utils.[1mPeppolCertificateCheckerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in com.helger.peppol.utils.[1mPeppolCertificateCheckerTest[m
 [[1;34mINFO[m] Running com.helger.peppol.utils.[1mCRLHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.utils.[1mCRLHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.utils.[1mCRLHelperTest[m
 [[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolCertificateHelperTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.utils.[1mPeppolCertificateHelperTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smp.[1mSMPTransportProfileTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in com.helger.peppol.smp.[1mSMPTransportProfileTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in com.helger.peppol.smp.[1mSMPTransportProfileTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -533,11 +533,11 @@ Progress (1): 1.1 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-testfiles[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/peppol-testfiles/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 7 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 7 dependencies (0 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-testfiles[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-testfiles
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-testfiles (7 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/peppol-testfiles/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-testfiles: pinned=2 upgraded=5 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: peppol-testfiles
@@ -582,11 +582,11 @@ Progress (1): 1.1 kB                    Downloaded from central: https://repo.
 [main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDER
 [main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDERINGCATALOGUE
 [main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDERINGCATALOGUE
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.337 s - in com.helger.peppol.testfiles.ubl.[1mPeppolBISV1TestFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.302 s - in com.helger.peppol.testfiles.ubl.[1mPeppolBISV1TestFilesTest[m
 [[1;34mINFO[m] Running com.helger.peppol.testfiles.official.[1mOfficialTestFilesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in com.helger.peppol.testfiles.official.[1mOfficialTestFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in com.helger.peppol.testfiles.official.[1mOfficialTestFilesTest[m
 [[1;34mINFO[m] Running com.helger.peppol.testfiles.sbdh.[1mPeppolSBDHTestFilesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.helger.peppol.testfiles.sbdh.[1mPeppolSBDHTestFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in com.helger.peppol.testfiles.sbdh.[1mPeppolSBDHTestFilesTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -619,23 +619,23 @@ Progress (1): 1.1 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-sbdh[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/peppol-sbdh/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 31 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 31 dependencies (0 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-sbdh[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/ph-sbdh/maven-metadata.xml
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/ph-sbdh/maven-metadata.xml
-Progress (1): 888 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/ph-sbdh/maven-metadata.xml (888 B at 3.4 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/ph-sbdh/maven-metadata.xml
+Progress (1): 888 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/ph-sbdh/maven-metadata.xml (888 B at 1.9 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-datetime/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-datetime/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-datetime/maven-metadata.xml (2.6 kB at 5.7 kB/s)
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-datetime/maven-metadata.xml (2.7 kB at 6.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/activation/jakarta.activation/maven-metadata.xml
-Progress (1): 541 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/maven-metadata.xml (541 B at 2.3 kB/s)
+Progress (1): 541 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/maven-metadata.xml (541 B at 8.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-impl/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/bind/jaxb-impl/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-impl/maven-metadata.xml (6.9 kB at 141 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-sbdh
+Progress (1): 4.1 kBProgress (1): 6.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-impl/maven-metadata.xml (6.9 kB at 100 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-sbdh (35 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/peppol-sbdh/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-sbdh: pinned=17 upgraded=14 downgraded=0 added=4 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: peppol-sbdh
@@ -686,11 +686,11 @@ Progress (1): 4.1 kBProgress (1): 6.9 kB                    Downloaded from c
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mPeppolSBDHDocumentTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.92 s - in com.helger.peppol.sbdh.[1mPeppolSBDHDocumentTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.815 s - in com.helger.peppol.sbdh.[1mPeppolSBDHDocumentTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mCPeppolSBDHTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.sbdh.[1mCPeppolSBDHTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.write.[1mPeppolSBDHDocumentWriterTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s - in com.helger.peppol.sbdh.write.[1mPeppolSBDHDocumentWriterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 s - in com.helger.peppol.sbdh.write.[1mPeppolSBDHDocumentWriterTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.read.[1mPeppolSBDHDocumentReaderTest[m
 [main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-sender-value.xml
 [main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-standard.xml
@@ -806,9 +806,9 @@ Progress (1): 4.1 kBProgress (1): 6.9 kB                    Downloaded from c
 [main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: Content is not allowed in prolog.
 [main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-no-business-scope.xml
 [main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-process-identifier.xml
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.667 s - in com.helger.peppol.sbdh.read.[1mPeppolSBDHDocumentReaderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.648 s - in com.helger.peppol.sbdh.read.[1mPeppolSBDHDocumentReaderTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.read.[1mEPeppolSBDHDocumentReadErrorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.sbdh.read.[1mEPeppolSBDHDocumentReadErrorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.sbdh.read.[1mEPeppolSBDHDocumentReadErrorTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.payload.[1mPeppolSBDHPayloadReaderTest[m
 [main] ERROR com.helger.jaxb.validation.LoggingValidationEventHandler - JAXB [fatal_error] @ (1:79) cvc-elt.1.a: Cannot find the declaration of element 'TextContent'. (org.xml.sax.SAXParseException: cvc-elt.1.a: Cannot find the declaration of element 'TextContent'.)
 org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 79; cvc-elt.1.a: Cannot find the declaration of element 'TextContent'.
@@ -1200,7 +1200,7 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 83; cvc-complex-type
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 [main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'BinaryContent'.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 s - in com.helger.peppol.sbdh.payload.[1mPeppolSBDHPayloadReaderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 s - in com.helger.peppol.sbdh.payload.[1mPeppolSBDHPayloadReaderTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mPeppolSBDHAdditionalAttributesTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.sbdh.[1mPeppolSBDHAdditionalAttributesTest[m
 [[1;34mINFO[m] 
@@ -1235,23 +1235,23 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 83; cvc-complex-type
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/peppol-smp-datatypes/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 15 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 15 dependencies (0 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-wsaddr/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-wsaddr/maven-metadata.xml
-Progress (1): 645 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-wsaddr/maven-metadata.xml (645 B at 1.3 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/jws/jakarta.jws-api/maven-metadata.xml
+Progress (1): 645 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-wsaddr/maven-metadata.xml (645 B at 1.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/jws/jakarta.jws-api/maven-metadata.xml
-Progress (1): 465 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/jws/jakarta.jws-api/maven-metadata.xml (465 B at 1.8 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/jws/jakarta.jws-api/maven-metadata.xml
+Progress (1): 465 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/jws/jakarta.jws-api/maven-metadata.xml (465 B at 7.4 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/xml/soap/jakarta.xml.soap-api/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/xml/soap/jakarta.xml.soap-api/maven-metadata.xml
-Progress (1): 704 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/soap/jakarta.xml.soap-api/maven-metadata.xml (704 B at 3.3 kB/s)
+Progress (1): 704 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/soap/jakarta.xml.soap-api/maven-metadata.xml (704 B at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/xml/ws/jakarta.xml.ws-api/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/xml/ws/jakarta.xml.ws-api/maven-metadata.xml
-Progress (1): 731 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/ws/jakarta.xml.ws-api/maven-metadata.xml (731 B at 14 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-smp-datatypes
+Progress (1): 731 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/ws/jakarta.xml.ws-api/maven-metadata.xml (731 B at 11 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-smp-datatypes (15 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/peppol-smp-datatypes/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-smp-datatypes: pinned=10 upgraded=5 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: peppol-smp-datatypes
@@ -1310,9 +1310,9 @@ Progress (1): 731 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.xsds.peppol.smp1.[1mSPITest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s - in com.helger.xsds.peppol.smp1.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s - in com.helger.xsds.peppol.smp1.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.xsds.peppol.smp1.[1mCSMPDataTypesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in com.helger.xsds.peppol.smp1.[1mCSMPDataTypesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in com.helger.xsds.peppol.smp1.[1mCSMPDataTypesTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1345,91 +1345,95 @@ Progress (1): 731 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-smp-client[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/peppol-smp-client/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 60 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 60 dependencies (7 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-smp-client[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/woodstox/woodstox-core/maven-metadata.xml
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/maven-metadata.xml (1.6 kB at 6.8 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-config/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/woodstox/woodstox-core/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/maven-metadata.xml (1.6 kB at 7.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-config/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-config/maven-metadata.xml (2.6 kB at 5.4 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-config/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-config/maven-metadata.xml (2.7 kB at 5.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-json/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-json/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-json/maven-metadata.xml (2.6 kB at 5.0 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-dns/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-json/maven-metadata.xml (2.7 kB at 5.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-dns/maven-metadata.xml
-Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-dns/maven-metadata.xml (2.2 kB at 4.4 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-dns/maven-metadata.xml
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-dns/maven-metadata.xml (2.2 kB at 4.7 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-http/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-http/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-http/maven-metadata.xml (1.6 kB at 3.2 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-http/maven-metadata.xml (1.6 kB at 5.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-httpclient/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-httpclient/maven-metadata.xml
-Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-httpclient/maven-metadata.xml (2.2 kB at 5.0 kB/s)
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-httpclient/maven-metadata.xml (2.2 kB at 4.2 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-network/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-network/maven-metadata.xml
 Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-network/maven-metadata.xml (2.2 kB at 4.9 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/fastinfoset/FastInfoset/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/maven-metadata.xml
-Progress (1): 601 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/maven-metadata.xml (601 B at 2.8 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/fastinfoset/FastInfoset/maven-metadata.xml
+Progress (1): 601 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/maven-metadata.xml (601 B at 8.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/messaging/saaj/saaj-impl/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/messaging/saaj/saaj-impl/maven-metadata.xml
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/messaging/saaj/saaj-impl/maven-metadata.xml (1.9 kB at 7.3 kB/s)
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/messaging/saaj/saaj-impl/maven-metadata.xml (1.9 kB at 27 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/stream/buffer/streambuffer/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/stream/buffer/streambuffer/maven-metadata.xml
-Progress (1): 664 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/stream/buffer/streambuffer/maven-metadata.xml (664 B at 2.6 kB/s)
+Progress (1): 664 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/stream/buffer/streambuffer/maven-metadata.xml (664 B at 2.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-rt/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/ws/jaxws-rt/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-rt/maven-metadata.xml (5.2 kB at 23 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/policy/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-rt/maven-metadata.xml (5.2 kB at 70 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/ws/policy/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/policy/maven-metadata.xml (1.7 kB at 5.8 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/commons-codec/commons-codec/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/policy/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/policy/maven-metadata.xml (1.7 kB at 6.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 26 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/commons-codec/commons-codec/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/dnsjava/dnsjava/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/maven-metadata.xml (1.4 kB at 5.7 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/maven-metadata.xml (1.5 kB at 6.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/3.7.0/dnsjava-3.7.0.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 37 kBProgress (1): 41 kBProgress (1): 45 kBProgress (1): 49 kBProgress (1): 49 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/3.7.0/dnsjava-3.7.0.pom (49 kB at 641 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/3.7.1/dnsjava-3.7.1.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 37 kBProgress (1): 41 kBProgress (1): 45 kBProgress (1): 49 kBProgress (1): 51 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/3.7.1/dnsjava-3.7.1.pom (51 kB at 662 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml
-Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml (636 B at 15 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/apache/httpcomponents/httpclient/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml
+Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml (636 B at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 46 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/apache/httpcomponents/httpcore/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/apache/httpcomponents/httpclient/maven-metadata.xml
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 47 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/apache/httpcomponents/httpcore/maven-metadata.xml
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 36 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/codehaus/woodstox/stax2-api/maven-metadata.xml
-Progress (1): 959 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/maven-metadata.xml (959 B at 4.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/external/management-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/maven-metadata.xml
+Progress (1): 959 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/maven-metadata.xml (959 B at 15 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/external/management-api/maven-metadata.xml
-Progress (1): 374 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/external/management-api/maven-metadata.xml (374 B at 939 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/external/management-api/maven-metadata.xml
+Progress (1): 374 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/external/management-api/maven-metadata.xml (374 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/gmbal/gmbal/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/gmbal/gmbal/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/gmbal/gmbal/maven-metadata.xml (1.6 kB at 5.7 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/gmbal/gmbal/maven-metadata.xml (1.6 kB at 3.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/ha/ha-api/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/ha/ha-api/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/ha/ha-api/maven-metadata.xml (1.2 kB at 3.9 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/pfl/pfl-basic/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/ha/ha-api/maven-metadata.xml (1.2 kB at 3.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-basic/maven-metadata.xml
-Progress (1): 982 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-basic/maven-metadata.xml (982 B at 3.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-tf/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/pfl/pfl-basic/maven-metadata.xml
+Progress (1): 982 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-basic/maven-metadata.xml (982 B at 2.4 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/pfl/pfl-tf/maven-metadata.xml
-Progress (1): 979 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-tf/maven-metadata.xml (979 B at 3.2 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/jvnet/mimepull/mimepull/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-tf/maven-metadata.xml
+Progress (1): 979 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-tf/maven-metadata.xml (979 B at 3.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml
-Progress (1): 926 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml (926 B at 3.3 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/jvnet/mimepull/mimepull/maven-metadata.xml
+Progress (1): 926 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml (926 B at 2.7 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/jvnet/staxex/stax-ex/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/maven-metadata.xml (1.2 kB at 20 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/maven-metadata.xml (1.2 kB at 18 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/slf4j/jcl-over-slf4j/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 83 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-smp-client
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 57 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-smp-client (69 dependencies, 8 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/peppol-smp-client/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-smp-client: pinned=24 upgraded=36 downgraded=0 added=10 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-smp-client: pinned=24 upgraded=36 downgraded=0 added=9 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: peppol-smp-client
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-smp-client[0;1m ---[m
@@ -1464,51 +1468,51 @@ Progress (1): 3.5 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.smpclient.[1mSPITest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s - in com.helger.smpclient.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s - in com.helger.smpclient.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.smpclient.url.[1mBDXLURLProviderTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.071 s - in com.helger.smpclient.url.[1mBDXLURLProviderTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.068 s - in com.helger.smpclient.url.[1mBDXLURLProviderTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.url.[1mBPCURLProviderSMP1Test[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m2[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.smpclient.url.[1mBPCURLProviderSMP1Test[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m2[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.002 s - in com.helger.smpclient.url.[1mBPCURLProviderSMP1Test[m
 [[1;34mINFO[m] Running com.helger.smpclient.url.[1mPeppolURLProviderTest[m
-104 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
-105 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
-105 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.223 s - in com.helger.smpclient.url.[1mPeppolURLProviderTest[m
+99 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+100 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+100 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s - in com.helger.smpclient.url.[1mPeppolURLProviderTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.url.[1mBPCURLProviderSMP2Test[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m2[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.smpclient.url.[1mBPCURLProviderSMP2Test[m
 [[1;34mINFO[m] Running com.helger.smpclient.bdxr1.[1mBDXRClientReadOnlyTest[m
-412 [main] INFO com.helger.dns.naptr.NaptrLookup - Trying to look up NAPTR on 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' with 1 retries using network mode UDP_TCP
-590 [main] WARN com.helger.dns.naptr.NaptrLookup - Error looking up 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu': host not found
-591 [main] WARN com.helger.dns.naptr.NaptrResolver - No NAPTR records are provided.
-591 [main] WARN com.helger.dns.naptr.NaptrResolver - No matching DNS U-NAPTR records returned for 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu'
-[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m6[m, [1;31mFailures: [0;1;31m1[m, [1;31mErrors: [0;1;31m1[m, [1;33mSkipped: [0;1;33m3[m, Time elapsed: 0.535 s[1;31m <<< FAILURE![m - in com.helger.smpclient.bdxr1.[1mBDXRClientReadOnlyTest[m
-[[1;31mERROR[m] testReadTOOP(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 0.275 s  <<< ERROR!
+320 [main] INFO com.helger.dns.naptr.NaptrLookup - Trying to look up NAPTR on 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' with 1 retries using network mode UDP_TCP
+513 [main] WARN com.helger.dns.naptr.NaptrLookup - Error looking up 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu': host not found
+514 [main] WARN com.helger.dns.naptr.NaptrResolver - No NAPTR records are provided.
+514 [main] WARN com.helger.dns.naptr.NaptrResolver - No matching DNS U-NAPTR records returned for 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu'
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m6[m, [1;31mFailures: [0;1;31m1[m, [1;31mErrors: [0;1;31m1[m, [1;33mSkipped: [0;1;33m3[m, Time elapsed: 0.496 s[1;31m <<< FAILURE![m - in com.helger.smpclient.bdxr1.[1mBDXRClientReadOnlyTest[m
+[[1;31mERROR[m] testReadTOOP(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 0.285 s  <<< ERROR!
 com.helger.smpclient.url.SMPDNSResolutionException: Failed to resolve 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' and service 'Meta:SMP' to a DNS U-NAPTR
 	at com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest.testReadTOOP(BDXRClientReadOnlyTest.java:114)
 
-[[1;31mERROR[m] testGetBDXRHostURI_Peppol_WithBDXR(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 0.259 s  <<< FAILURE!
+[[1;31mERROR[m] testGetBDXRHostURI_Peppol_WithBDXR(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 0.209 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest.testGetBDXRHostURI_Peppol_WithBDXR(BDXRClientReadOnlyTest.java:89)
 
 [[1;34mINFO[m] Running com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerServiceMetadataTypeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.305 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.286 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerServiceMetadataTypeTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerSignedServiceMetadataTypeTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerSignedServiceMetadataTypeTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.bdxr1.utils.[1mBDXRExtensionConverterTest[m
-1688 [main] ERROR com.helger.json.parser.errorhandler.LoggingJsonParseExceptionCallback - Json parse error: Syntax error in JSON. Found 'P'
-1689 [main] WARN com.helger.smpclient.bdxr1.utils.BDXR1ExtensionConverter - Error in parsing extension JSON 'Plain text'
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.52 s - in com.helger.smpclient.bdxr1.utils.[1mBDXRExtensionConverterTest[m
+1501 [main] ERROR com.helger.json.parser.errorhandler.LoggingJsonParseExceptionCallback - Json parse error: Syntax error in JSON. Found 'P'
+1501 [main] WARN com.helger.smpclient.bdxr1.utils.BDXR1ExtensionConverter - Error in parsing extension JSON 'Plain text'
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.476 s - in com.helger.smpclient.bdxr1.utils.[1mBDXRExtensionConverterTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientWithDNSFuncTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.smpclient.peppol.[1mSMPClientWithDNSFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.smpclient.peppol.[1mSMPClientWithDNSFuncTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.marshal.[1mSMPMarshallerSignedServiceMetadataTypeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerSignedServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerSignedServiceMetadataTypeTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.marshal.[1mSMPMarshallerServiceMetadataTypeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerServiceMetadataTypeTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.smpclient.peppol.[1mSMPClientTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.utils.[1mSMPExtensionConverterTest[m
-1824 [main] ERROR com.helger.xml.sax.LoggingSAXErrorHandler - [fatal_error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
-1825 [main] ERROR com.helger.commons.callback.exception.LoggingExceptionCallback - [error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
+1628 [main] ERROR com.helger.xml.sax.LoggingSAXErrorHandler - [fatal_error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
+1629 [main] ERROR com.helger.commons.callback.exception.LoggingExceptionCallback - [error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
 org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
 	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:261)
 	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
@@ -1545,25 +1549,25 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not al
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in com.helger.smpclient.peppol.utils.[1mSMPExtensionConverterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in com.helger.smpclient.peppol.utils.[1mSMPExtensionConverterTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.utils.[1mW3CEndpointReferenceHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 s - in com.helger.smpclient.peppol.utils.[1mW3CEndpointReferenceHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 s - in com.helger.smpclient.peppol.utils.[1mW3CEndpointReferenceHelperTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSignedServiceMetadataTypeFuncTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m3[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m3[m, Time elapsed: 0 s - in com.helger.smpclient.peppol.[1mSignedServiceMetadataTypeFuncTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientPredefinedEndpointAddressFuncTest[m
-1956 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x0aa10649: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@6b3871d6; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
-2083 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x6272c96f: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@6de30571; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
-[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m2[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 0.132 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientPredefinedEndpointAddressFuncTest[m
-[[1;31mERROR[m] testGetEndpointCertificate(com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest)  Time elapsed: 0.122 s  <<< FAILURE!
+1752 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x0aa10649: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@6b3871d6; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
+1846 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x6272c96f: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@6de30571; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m2[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 0.1 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientPredefinedEndpointAddressFuncTest[m
+[[1;31mERROR[m] testGetEndpointCertificate(com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest)  Time elapsed: 0.09 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest.testGetEndpointCertificate(SMPClientPredefinedEndpointAddressFuncTest.java:99)
 
-[[1;31mERROR[m] testGetEndpointAddress(com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest)  Time elapsed: 0.003 s  <<< FAILURE!
+[[1;31mERROR[m] testGetEndpointAddress(com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest)  Time elapsed: 0.002 s  <<< FAILURE!
 java.lang.AssertionError: expected:<https://test.erechnung.gv.at/as4> but was:<null>
 	at com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest.testGetEndpointAddress(SMPClientPredefinedEndpointAddressFuncTest.java:71)
 
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientReadOnlyTest[m
-[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m5[m, [1;31mFailures: [0;1;31m3[m, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 0.005 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientReadOnlyTest[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m5[m, [1;31mFailures: [0;1;31m3[m, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 0.006 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientReadOnlyTest[m
 [[1;31mERROR[m] testInvalidTrustStore(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.001 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testInvalidTrustStore(SMPClientReadOnlyTest.java:111)
@@ -1572,7 +1576,7 @@ java.lang.AssertionError
 java.lang.AssertionError
 	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testGetSMPHostURI_Peppol_WithBOM(SMPClientReadOnlyTest.java:88)
 
-[[1;31mERROR[m] testGetSMPHostURI_Peppol(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.002 s  <<< FAILURE!
+[[1;31mERROR[m] testGetSMPHostURI_Peppol(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.003 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testGetSMPHostURI_Peppol(SMPClientReadOnlyTest.java:63)
 
@@ -1622,28 +1626,28 @@ Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mpeppol-sml-client[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/peppol-sml-client/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 65 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 65 dependencies (8 carrying exclusions, 150 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mpeppol-sml-client[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-scopes/maven-metadata.xml
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-scopes/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-scopes/maven-metadata.xml (2.6 kB at 5.8 kB/s)
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-scopes/maven-metadata.xml (2.7 kB at 6.1 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-wsclient/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-wsclient/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-wsclient/maven-metadata.xml (2.6 kB at 5.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-servlet/maven-metadata.xml
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-wsclient/maven-metadata.xml (2.7 kB at 6.1 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-servlet/maven-metadata.xml
-Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-servlet/maven-metadata.xml (2.2 kB at 4.3 kB/s)
-Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-useragent/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-servlet/maven-metadata.xml
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-servlet/maven-metadata.xml (2.2 kB at 4.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-useragent/maven-metadata.xml
-Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-useragent/maven-metadata.xml (2.2 kB at 5.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-web/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-useragent/maven-metadata.xml
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-useragent/maven-metadata.xml (2.2 kB at 5.1 kB/s)
 Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-web/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-web/maven-metadata.xml
 Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-web/maven-metadata.xml (2.2 kB at 5.3 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-sml-client
+[[1;34mINFO[m] Flattening leaf module dependencies for: peppol-sml-client (74 dependencies, 9 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/peppol-sml-client/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-sml-client: pinned=24 upgraded=41 downgraded=0 added=11 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for peppol-sml-client: pinned=24 upgraded=41 downgraded=0 added=9 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: peppol-sml-client
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mjaxws-maven-plugin:2.6.2:wsimport[m [1m(wsimport1)[m @ [36mpeppol-sml-client[0;1m ---[m
@@ -1767,11 +1771,11 @@ com/helger/peppol/smlclient/bdmsl/package-info.java
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.[1mBDMSLClientTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.01 s - in com.helger.peppol.smlclient.[1mBDMSLClientTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.[1mSPITest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in com.helger.peppol.smlclient.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in com.helger.peppol.smlclient.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mSSLConnectFuncTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.smlclient.client.[1mSSLConnectFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mSSLConnectFuncTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mManageParticipantIdentifierServiceCallerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.342 s - in com.helger.peppol.smlclient.client.[1mManageParticipantIdentifierServiceCallerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.264 s - in com.helger.peppol.smlclient.client.[1mManageParticipantIdentifierServiceCallerTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mDNSRegistrationFuncTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.smlclient.client.[1mDNSRegistrationFuncTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mWildcardFuncTest[m
@@ -1806,20 +1810,20 @@ com/helger/peppol/smlclient/bdmsl/package-info.java
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for peppol-commons-parent-pom 8.6.2-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] peppol-commons-parent-pom .......................... [1;32mSUCCESS[m [  0.335 s]
-[[1;34mINFO[m] peppol-id-datatypes ................................ [1;32mSUCCESS[m [  6.563 s]
-[[1;34mINFO[m] peppol-id .......................................... [1;32mSUCCESS[m [  7.616 s]
-[[1;34mINFO[m] peppol-commons ..................................... [1;32mSUCCESS[m [  4.029 s]
-[[1;34mINFO[m] peppol-testfiles ................................... [1;32mSUCCESS[m [  1.028 s]
-[[1;34mINFO[m] peppol-sbdh ........................................ [1;32mSUCCESS[m [  4.351 s]
-[[1;34mINFO[m] peppol-smp-datatypes ............................... [1;32mSUCCESS[m [  2.306 s]
-[[1;34mINFO[m] peppol-smp-client .................................. [1;32mSUCCESS[m [ 11.421 s]
-[[1;34mINFO[m] peppol-sml-client .................................. [1;32mSUCCESS[m [  6.809 s]
+[[1;34mINFO[m] peppol-commons-parent-pom .......................... [1;32mSUCCESS[m [  0.372 s]
+[[1;34mINFO[m] peppol-id-datatypes ................................ [1;32mSUCCESS[m [  6.026 s]
+[[1;34mINFO[m] peppol-id .......................................... [1;32mSUCCESS[m [  9.647 s]
+[[1;34mINFO[m] peppol-commons ..................................... [1;32mSUCCESS[m [  4.100 s]
+[[1;34mINFO[m] peppol-testfiles ................................... [1;32mSUCCESS[m [  1.927 s]
+[[1;34mINFO[m] peppol-sbdh ........................................ [1;32mSUCCESS[m [  4.054 s]
+[[1;34mINFO[m] peppol-smp-datatypes ............................... [1;32mSUCCESS[m [  2.177 s]
+[[1;34mINFO[m] peppol-smp-client .................................. [1;32mSUCCESS[m [ 10.879 s]
+[[1;34mINFO[m] peppol-sml-client .................................. [1;32mSUCCESS[m [  8.746 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  45.975 s
-[[1;34mINFO[m] Finished at: 2026-10-11T01:41:27Z
+[[1;34mINFO[m] Total time:  49.346 s
+[[1;34mINFO[m] Finished at: 2026-11-04T23:27:56Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Peppol-commons.buildinfo: No such file or directory
 dos2unix: Skipping target/Peppol-commons.buildinfo, not a regular file.

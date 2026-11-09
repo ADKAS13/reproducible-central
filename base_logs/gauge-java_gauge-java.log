@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/gauge-jav
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -Dgpg.skip=true"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install -Dgpg.skip=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Gauge-java.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.thoughtworks.gauge:gauge-java:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/gauge-java/base/buildcache/gauge-java:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install -Dgpg.skip=true" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/gauge-java/base/buildcache/gauge-java:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install -Dgpg.skip=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 09:26:40 UTC 2026.
-Universal Time is now:  Sun Oct 11 09:26:40 UTC 2026.
+Local time is now:      Sun Oct 11 15:37:09 UTC 2026.
+Universal Time is now:  Sun Oct 11 15:37:09 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -111,11 +111,11 @@ Universal Time is now:  Sun Oct 11 09:26:40 UTC 2026.
 [[1;34mINFO[m] [1mBuilding gauge-java 0.7.15[m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml
-Progress (1): 563 B                   Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml (563 B at 1.9 kB/s)
+Progress (1): 563 B                   Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit-dep/maven-metadata.xml (563 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.7 kB at 131 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.7 kB at 97 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml (5.1 kB at 100 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-api/maven-metadata.xml (5.1 kB at 81 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgauge-java[0;1m ---[m
 [[1;34mINFO[m] 
@@ -157,36 +157,36 @@ Audit done.
  T E S T S
 -------------------------------------------------------
 Running com.thoughtworks.gauge.UtilTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
 Running com.thoughtworks.gauge.execution.HooksExecutorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
 Running com.thoughtworks.gauge.execution.StepExecutionStageTest
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.mockito.cglib.core.ReflectUtils$2 (file:/var/maven/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
 WARNING: Please consider reporting this to the maintainers of org.mockito.cglib.core.ReflectUtils$2
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.097 sec
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.444 sec
 Running com.thoughtworks.gauge.execution.ExecutionPipelineTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
 Running com.thoughtworks.gauge.execution.ExecutionInfoMapperTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
 Running com.thoughtworks.gauge.execution.parameters.ParametersExtractorTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.TableParameterParserTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.PrimitiveParameterParserTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
 Running com.thoughtworks.gauge.execution.parameters.parsers.types.EnumParameterParserTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.thoughtworks.gauge.execution.parameters.DynamicParametersReplacerTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
 Running com.thoughtworks.gauge.execution.AbstractExecutionStageTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.thoughtworks.gauge.tag.AndMatcherTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.tag.OrMatcherTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.scan.StepsScannerTest
 {"logLevel":"debug","message":"Scanning packages for steps"}
 {"logLevel":"debug","message":"Loading hello world {}via reflected sources."}
@@ -198,41 +198,41 @@ Running com.thoughtworks.gauge.scan.StepsScannerTest
 {"logLevel":"debug","message":"Loading hello worldvia reflected sources."}
 {"logLevel":"debug","message":"Scanning packages for steps"}
 {"logLevel":"debug","message":"Found hello world {} in current project scope."}
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
 Running com.thoughtworks.gauge.scan.StaticScannerTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.15 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 sec
 Running com.thoughtworks.gauge.hook.HookTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.refactor.JavaRefactoringTest
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.183 sec
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.187 sec
 Running com.thoughtworks.gauge.processor.StubImplementationCodeProcessorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
 Running com.thoughtworks.gauge.processor.StepPositionsRequestProcessorTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
 Running com.thoughtworks.gauge.processor.DefaultMessageProcessorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.processor.ValidateStepProcessorTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
 Running com.thoughtworks.gauge.processor.StepNameRequestProcessorTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
 Running com.thoughtworks.gauge.processor.CacheFileRequestProcessorTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
 Running com.thoughtworks.gauge.ScreenshotCollectorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.registry.StepRegistryTest
 {"logLevel":"debug","message":"Comparing 'com.thoughtworks.gauge.TestStepImplClass.helloWorld' and 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam'"}
 {"logLevel":"debug","message":"Comparing 'com.thoughtworks.gauge.TestStepImplClass.helloWorld' and 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam'"}
 {"logLevel":"debug","message":"Comparing 'com.thoughtworks.gauge.TestStepImplClass.helloWorld' and 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam'"}
 {"logLevel":"debug","message":"Comparing 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam' and 'com.thoughtworks.gauge.TestStepImplClass.helloWorldWithOneParam'"}
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
 Running com.thoughtworks.gauge.registry.HooksRegistryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
 Running com.thoughtworks.gauge.TableRowTest
 Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running com.thoughtworks.gauge.TableTest
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
 Running com.thoughtworks.gauge.FileHelperTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
 Running com.thoughtworks.gauge.ExecutionContextTest
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.thoughtworks.gauge.MessageCollectorTest
@@ -1071,8 +1071,8 @@ Generating /var/maven/app/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  23.324 s
-[[1;34mINFO[m] Finished at: 2026-10-11T09:27:04Z
+[[1;34mINFO[m] Total time:  24.576 s
+[[1;34mINFO[m] Finished at: 2026-10-11T15:37:34Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Gauge-java.buildinfo: No such file or directory
 dos2unix: Skipping target/Gauge-java.buildinfo, not a regular file.

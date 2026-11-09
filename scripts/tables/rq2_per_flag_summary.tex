@@ -1,15 +1,18 @@
 \begin{table}[htbp]
 \centering
-\caption{Macro Summary of Dependency Actions and Average Actions per Module}
-\label{tab:flag_summary}
+\caption{Macro Summary Across Update Scopes (RQ2). Failed builds are excluded from every row except the build success rate; per-module means are averaged over repositories.}
+\label{tab:rq2_macro_summary}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{lrrrrr}
+\begin{tabular}{lccc}
 \toprule
-\textbf{Flag} & \textbf{Upgraded Total} & \textbf{Upgraded Avg} & \textbf{Pinned Avg} & \textbf{Downgraded Avg} & \textbf{Build Success Rate} \\
+\textbf{Metric} & \textbf{Major} & \textbf{Minor} & \textbf{Patch} \\
 \midrule
-Major & 3335 & 16.93 & 12.96 & 0.00 & 100.0\% \\
-Minor & 2169 & 14.46 & 14.42 & 0.00 & 100.0\% \\
-Patch & 2169 & 14.46 & 14.42 & 0.00 & 100.0\% \\
+Build Success Rate & 85.7\% & 85.7\% & 85.7\% \\
+Test Pass Rate (Mean $\pm$ Std) & 93.1\% $\pm$ 19.4 & 92.9\% $\pm$ 19.4 & 93.2\% $\pm$ 19.4 \\
+Upgraded Dependencies (Total) & 2,387 & 2,111 & 1,419 \\
+Upgraded Dependencies (Mean per module) & 14.69 & 13.58 & 10.57 \\
+Pinned Dependencies (Mean per module) & 24.71 & 25.83 & 28.83 \\
+Downgraded Dependencies (Mean per module) & 0.01 & 0.01 & 0.01 \\
 \bottomrule
 \end{tabular}%
 }

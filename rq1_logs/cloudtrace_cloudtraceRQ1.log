@@ -9,14 +9,14 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/cloudtrac
 |      [0;34mgitRepo[0;97m: [1mhttps://github.com/GoogleCloudPlatform/cloud-trace-java.git[0m
 |      [0;34mgitTag[0;97m: [1m9aa2f22e571577887053a86d2236830b3922421b[0m
 | 3. with which rebuild environment?
-|      [0;34mtool[0;97m: [1mmvn-3.8.6[0m
+|      [0;34mtool[0;97m: [1mmvn[0m
 |      [0;34mjdk[0;97m: [1m8[0m
 |      [0;34mnewline[0;97m: [1mlf[0m
 |      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/test.buildinfo[0m
 
@@ -30,7 +30,7 @@ origin	https://github.com/GoogleCloudPlatform/cloud-trace-java.git (push)
 [0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 9aa2f22e571577887053a86d2236830b3922421b [0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/cloudtrace/RQ1/buildcache/root
 
-[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.8.6
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.6.3
 [0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8[0m
 [0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8 /home/adkas13/reproducible-central/bin [0m
 [90m
@@ -40,35 +40,35 @@ DEPRECATED: The legacy builder is deprecated and will be removed in a future rel
 
 sha256:1058280974120b51d18b8f71f941283af8612725fc28a3a72cfb85cf150239c6
 [0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.8.6 /home/adkas13/reproducible-central/bin [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
 [90m
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-sha256:7c062c38d1f2d374955e20ab566659f005a7e645471dea1989b2046f3b140058
+sha256:8514503f3f5516217b6be23a408be73c80c45fc9c054c70b7f26973b7e0100ed
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13 /home/adkas13/reproducible-central/bin [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
 [90m
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-sha256:4634e4df57f2526fb58c834daa9663074d2f8d8356b3c45476562b1807e81a0b
+sha256:80d48831e3263a373a8351d99ce446ede387df085e0783cc6b9649f602eb5da0
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
 [90m
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-sha256:6159ec5824dfb1621785b4ebf694b27d2eef6ad91ff41ba967271c605bd493be
+sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
-[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.google.cloud.trace:root:0.8.0[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/cloudtrace/RQ1/buildcache/root:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/cloudtrace/RQ1/buildcache/root:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 07:34:30 UTC 2026.
-Universal Time is now:  Sun Oct 11 07:34:30 UTC 2026.
+Local time is now:      Sun Oct 11 14:45:51 UTC 2026.
+Universal Time is now:  Sun Oct 11 14:45:51 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -296,17 +296,17 @@ Generating /var/maven/app/sdk/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.core.SpanContextFactoryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec
 Running com.google.cloud.trace.core.SpanContextTest
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.core.SpanIdTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.google.cloud.trace.core.RateLimitingTraceOptionsFactoryTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.316 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.371 sec
 Running com.google.cloud.trace.core.TraceIdTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.core.TraceOptionsTest
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
 
 Results :
 
@@ -546,13 +546,13 @@ Generating /var/maven/app/guice/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.TestTraceIdFactoryTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
 Running com.google.cloud.trace.TestSpanContextHandlerTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
 Running com.google.cloud.trace.TestSpanIdFactoryTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.TestTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
 
 Results :
 
@@ -726,11 +726,11 @@ Generating /var/maven/app/sdk/sink/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.GrpcSpanContextHandlerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
 Running com.google.cloud.trace.SdkVersionTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
 Running com.google.cloud.trace.SpanContextHandlerTracerTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
 
 Results :
 
@@ -988,9 +988,9 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK API v1 Dependencies 0.8.0-SNAPSHOT [13/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.7 kB at 21 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.7 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (7.2 kB at 95 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (7.2 kB at 115 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msink[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1028,7 +1028,7 @@ Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from c
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.v1.consumer.SimpleBufferingTraceConsumerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.321 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.563 sec
 Running com.google.cloud.trace.v1.consumer.SizedBufferingTraceConsumerTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
@@ -1910,7 +1910,7 @@ Generating /var/maven/app/guice/single-thread-scheduler/target/apidocs/help-doc.
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.TraceTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec
 
 Results :
 
@@ -2329,7 +2329,7 @@ Generating /var/maven/app/samples/guice-scheduled-grpc/target/apidocs/help-doc.h
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/samples/guice-servlet-grpc/src/main/webapp]
 [[1;34mINFO[m] Building jar: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT/WEB-INF/lib/guice-servlet-grpc-0.8.0-SNAPSHOT.jar
-[[1;34mINFO[m] Webapp assembled in [152 msecs]
+[[1;34mINFO[m] Webapp assembled in [140 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT.war
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mguice-servlet-grpc[0;1m ---[m
@@ -2632,11 +2632,11 @@ Generating /var/maven/app/samples/stackdriver-trace-api/target/apidocs/help-doc.
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.service.AppEngineSpanContextHandleTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.431 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.416 sec
 Running com.google.cloud.trace.service.AppEngineTraceServiceTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
 Running com.google.cloud.trace.service.AppEngineTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
 
 Results :
 
@@ -2768,49 +2768,49 @@ Generating /var/maven/app/sinks/v1/http-consumer/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Google Cloud Trace Java SDK Root Project 0.8.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  0.849 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.022 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.304 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  2.113 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.015 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  0.778 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  0.933 s]
-[[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.647 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  1.025 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  0.876 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  0.743 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.009 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  2.376 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.637 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  0.865 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.638 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.597 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.557 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.606 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.564 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  0.591 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.660 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.605 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.824 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.008 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.642 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.007 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.600 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.679 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.672 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.500 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.688 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [ 0.-878 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.612 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  2.779 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.633 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  1.121 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.039 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.604 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  2.391 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.019 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  0.838 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  1.188 s]
+[[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.755 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  1.287 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  1.058 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  0.962 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.031 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  3.712 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.753 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  1.038 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.786 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.712 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.702 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.717 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.680 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  0.672 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.775 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.660 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.910 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.016 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.696 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.018 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.670 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.765 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.759 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.760 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.781 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.745 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.654 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  1.270 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.724 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  27.230 s
-[[1;34mINFO[m] Finished at: 2026-10-11T07:34:58Z
+[[1;34mINFO[m] Total time:  32.789 s
+[[1;34mINFO[m] Finished at: 2026-10-11T14:46:25Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[0m[0mdos2unix: target/test.buildinfo: No such file or directory
+dos2unix: target/test.buildinfo: No such file or directory
 dos2unix: Skipping target/test.buildinfo, not a regular file.
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================

@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/sokrates/
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Sokrates.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:43a3c0b00451558265985c3d55337b65aa9b31d9242d6e4fceda17dcf2752f37
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mnl.obren.sokrates:sokrates:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/sokrates/RQ2minor/buildcache/sokrates:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/sokrates/RQ2minor/buildcache/sokrates:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 17.0.20[0m
@@ -76,8 +76,8 @@ sha256:43a3c0b00451558265985c3d55337b65aa9b31d9242d6e4fceda17dcf2752f37
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 01:42:16 UTC 2026.
-Universal Time is now:  Sun Oct 11 01:42:16 UTC 2026.
+Local time is now:      Wed Nov  4 23:28:49 UTC 2026.
+Universal Time is now:  Wed Nov  4 23:28:49 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -99,7 +99,7 @@ Universal Time is now:  Sun Oct 11 01:42:16 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36msokrates[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 32 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 32 dependencies (6 carrying exclusions, 0 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msokrates[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Skipping aggregator/parent module: sokrates
@@ -115,75 +115,83 @@ Universal Time is now:  Sun Oct 11 01:42:16 UTC 2026.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcommon[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/common/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 32 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 32 dependencies (6 carrying exclusions, 0 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcommon[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 14 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.6 kB at 103 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.7 kB at 114 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.0 kB at 140 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.1 kB at 139 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/maven-metadata.xml
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/maven-metadata.xml (2.5 kB at 7.7 kB/s)
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/maven-metadata.xml (2.6 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.21.8/jackson-module-jakarta-xmlbind-annotations-2.21.8.pom
+Progress (1): 4.1 kBProgress (1): 4.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.21.8/jackson-module-jakarta-xmlbind-annotations-2.21.8.pom (4.3 kB at 59 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-modules-base/2.21.8/jackson-modules-base-2.21.8.pom
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-modules-base/2.21.8/jackson-modules-base-2.21.8.pom (4.2 kB at 71 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.22.4/jackson-module-jakarta-xmlbind-annotations-2.22.4.pom
+Progress (1): 4.1 kBProgress (1): 4.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.22.4/jackson-module-jakarta-xmlbind-annotations-2.22.4.pom (4.3 kB at 74 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-modules-base/2.22.4/jackson-modules-base-2.22.4.pom
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-modules-base/2.22.4/jackson-modules-base-2.22.4.pom (4.2 kB at 85 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 28 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 30 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml
-Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 17 kB/s)
+Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/maven-metadata.xml
-Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/maven-metadata.xml (844 B at 17 kB/s)
+Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/maven-metadata.xml (844 B at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml
 Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml (636 B at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml
-Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml (769 B at 3.6 kB/s)
+Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml (769 B at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/ws/rs/jakarta.ws.rs-api/maven-metadata.xml
-Progress (1): 622 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/ws/rs/jakarta.ws.rs-api/maven-metadata.xml (622 B at 3.2 kB/s)
+Progress (1): 662 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/ws/rs/jakarta.ws.rs-api/maven-metadata.xml (662 B at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml
-Progress (1): 872 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml (872 B at 16 kB/s)
+Progress (1): 872 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml (872 B at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 26 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 27 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml
 Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 24 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/maven-metadata.xml
-Progress (1): 603 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/maven-metadata.xml (603 B at 13 kB/s)
+Progress (1): 603 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/maven-metadata.xml (603 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/maven-metadata.xml
 Progress (1): 858 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/maven-metadata.xml (858 B at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/maven-metadata.xml
 Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/maven-metadata.xml (2.8 kB at 55 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/maven-metadata.xml
-Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/maven-metadata.xml (2.8 kB at 63 kB/s)
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/maven-metadata.xml (2.8 kB at 56 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml
-Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 9.3 kB/s)
+Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 9.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/hk2/osgi-resource-locator/maven-metadata.xml
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/hk2/osgi-resource-locator/maven-metadata.xml (1.9 kB at 6.8 kB/s)
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/hk2/osgi-resource-locator/maven-metadata.xml (1.9 kB at 6.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-common/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-common/maven-metadata.xml (5.3 kB at 22 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-common/maven-metadata.xml (5.3 kB at 88 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-entity-filtering/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-entity-filtering/maven-metadata.xml (4.3 kB at 8.9 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-entity-filtering/maven-metadata.xml (4.3 kB at 81 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-json-jackson/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-json-jackson/maven-metadata.xml (5.0 kB at 21 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-json-jackson/maven-metadata.xml (5.0 kB at 20 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
 Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jspecify/jspecify/maven-metadata.xml
-Progress (1): 537 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jspecify/jspecify/maven-metadata.xml (537 B at 2.2 kB/s)
+Progress (1): 537 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jspecify/jspecify/maven-metadata.xml (537 B at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 84 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 82 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 76 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 82 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 84 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 86 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 88 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 72 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/maven-metadata.xml (4.0 kB at 20 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/vintage/junit-vintage-engine/maven-metadata.xml (4.0 kB at 72 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml
-Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 14 kB/s)
+Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 84 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 76 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 85 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: common
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 81 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: common (32 dependencies, 6 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/common/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for common: pinned=8 upgraded=24 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: common
@@ -217,21 +225,21 @@ Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from c
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.common.utils.[1mSystemUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.405 s -- in nl.obren.sokrates.common.utils.[1mSystemUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s -- in nl.obren.sokrates.common.utils.[1mSystemUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.io.[1mJsonMapperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in nl.obren.sokrates.common.io.[1mJsonMapperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.common.io.[1mJsonMapperTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.io.[1mJsonGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.100 s -- in nl.obren.sokrates.common.io.[1mJsonGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.096 s -- in nl.obren.sokrates.common.io.[1mJsonGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.io.[1mUserPropertiesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in nl.obren.sokrates.common.io.[1mUserPropertiesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in nl.obren.sokrates.common.io.[1mUserPropertiesTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.analysis.[1mFindingTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.common.analysis.[1mFindingTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.common.analysis.[1mFindingTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.utils.[1mReflectionUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in nl.obren.sokrates.common.utils.[1mReflectionUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.common.utils.[1mReflectionUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.utils.[1mFormattingUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.common.utils.[1mFormattingUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in nl.obren.sokrates.common.utils.[1mFormattingUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.common.renderingutils.[1mRichTextRenderingUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.common.renderingutils.[1mRichTextRenderingUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.common.renderingutils.[1mRichTextRenderingUtilsTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -253,11 +261,11 @@ Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from c
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcodeanalyzer[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/codeanalyzer/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 33 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 33 dependencies (6 carrying exclusions, 0 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcodeanalyzer[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
-[[1;34mINFO[m] Flattening leaf module dependencies for: codeanalyzer
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
+[[1;34mINFO[m] Flattening leaf module dependencies for: codeanalyzer (33 dependencies, 6 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/codeanalyzer/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for codeanalyzer: pinned=9 upgraded=24 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: codeanalyzer
@@ -302,122 +310,122 @@ Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from c
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mDuplicationInstanceTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.349 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationInstanceTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.308 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationInstanceTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.hack.[1mHackAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in nl.obren.sokrates.sourcecode.lang.hack.[1mHackAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in nl.obren.sokrates.sourcecode.lang.hack.[1mHackAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.thrift.[1mThriftAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.thrift.[1mThriftAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryScopingUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryScopingUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryScopingUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mGitHistoryUtilTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mGitHistoryUtilTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryComponentsHelperTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileHistoryComponentsHelperTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mTemporalDependenciesHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mTemporalDependenciesHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mTemporalDependenciesHelperTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mDateUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mDateUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mDateUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFileModificationHistoryTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileModificationHistoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFileModificationHistoryTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mFilePairsChangedTogetherTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFilePairsChangedTogetherTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mFilePairsChangedTogetherTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.filehistory.[1mComponentUpdateHistoryTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.filehistory.[1mComponentUpdateHistoryTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.files.[1mDuplicationAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mDuplicationAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mDuplicationAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.files.[1mFileHistoryAnalyzerOrderingTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mFileHistoryAnalyzerOrderingTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mFileHistoryAnalyzerOrderingTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.files.[1mUnitsAnalyzerAggregationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mUnitsAnalyzerAggregationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.analysis.files.[1mUnitsAnalyzerAggregationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.threshold.[1mThresholdsTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.threshold.[1mThresholdsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.contributors.[1mContributorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.contributors.[1mContributorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.landscape.[1mVirtualLandscapesConfigTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 s -- in nl.obren.sokrates.sourcecode.landscape.[1mVirtualLandscapesConfigTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.165 s -- in nl.obren.sokrates.sourcecode.landscape.[1mVirtualLandscapesConfigTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.scoping.[1mScopingConventionsHiddenFilesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s -- in nl.obren.sokrates.sourcecode.scoping.[1mScopingConventionsHiddenFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in nl.obren.sokrates.sourcecode.scoping.[1mScopingConventionsHiddenFilesTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryPerExtensionUtilsTest[m
-2026-Oct-11 01:42:32 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading history from file
-2026-Oct-11 01:42:32 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading commit line 1/4: 2020-01-01 alice@org.com c1 src/A.java
-2026-Oct-11 01:42:32 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading commit line 4/4: 2020-01-04 alice@org.com c4 build/pom.xml
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s -- in nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryPerExtensionUtilsTest[m
+2026-Nov-04 23:29:04 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading history from file
+2026-Nov-04 23:29:04 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading commit line 1/4: 2020-01-01 alice@org.com c1 src/A.java
+2026-Nov-04 23:29:04 [main] INFO  nl.obren.sokrates.sourcecode.githistory.GitHistoryUtils - Reading commit line 4/4: 2020-01-04 alice@org.com c4 build/pom.xml
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.060 s -- in nl.obren.sokrates.sourcecode.githistory.[1mGitHistoryPerExtensionUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.githistory.[1mExtractGitHistoryFileHandlerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.githistory.[1mExtractGitHistoryFileHandlerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.githistory.[1mExtractGitHistoryFileHandlerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mSearchResultDependenciesTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 0.015 s -- in nl.obren.sokrates.sourcecode.search.[1mSearchResultDependenciesTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 0.014 s -- in nl.obren.sokrates.sourcecode.search.[1mSearchResultDependenciesTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mExtensionGroupTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.[1mExtensionGroupTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.[1mExtensionGroupTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mFileInfoForDuplicationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mFileInfoForDuplicationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mFileInfoForDuplicationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairsTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangeTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mDuplicateRangePairTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mBlockTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mBlockTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mBlockTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mLineIndexesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mLineIndexesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mLineIndexesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication_alt.[1mLineInfoTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mLineInfoTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication_alt.[1mLineInfoTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mDuplicationUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mDuplicationAggregatorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationAggregatorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationAggregatorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mDuplicationEngineTest[m
-2026-Oct-11 01:42:32 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Starting analysis/duplication/extracting blocks
-2026-Oct-11 01:42:32 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Done 'analysis/duplication/extracting blocks' in 9ms
-2026-Oct-11 01:42:32 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Starting analysis/duplication/getting number of duplicated lines
-2026-Oct-11 01:42:32 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Done 'analysis/duplication/getting number of duplicated lines' in 0ms
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationEngineTest[m
+2026-Nov-04 23:29:04 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Starting analysis/duplication/extracting blocks
+2026-Nov-04 23:29:04 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Done 'analysis/duplication/extracting blocks' in 8ms
+2026-Nov-04 23:29:04 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Starting analysis/duplication/getting number of duplicated lines
+2026-Nov-04 23:29:04 [main] INFO  nl.obren.sokrates.common.utils.ProcessingStopwatch - Done 'analysis/duplication/getting number of duplicated lines' in 0ms
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in nl.obren.sokrates.sourcecode.duplication.[1mDuplicationEngineTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.duplication.[1mSourceFileDuplicationTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.duplication.[1mSourceFileDuplicationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.abap.[1mAbapAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.abap.[1mAbapAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.abap.[1mAbapAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.cpp.[1mCIncludesDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCIncludesDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCIncludesDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.cpp.[1mCppAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCppAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCppAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.cpp.[1mCStyleAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCStyleAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.cpp.[1mCStyleAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasNaturalAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasNaturalAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasNaturalAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.adabasnatural.[1mAdabasDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.r.[1mRAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.r.[1mRAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.swift.[1mSwiftAnalyzerTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m5[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.swift.[1mSwiftAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.ts.[1mTypeScriptAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.ts.[1mTypeScriptAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.ts.[1mTypeScriptAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.shell.[1mShellAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.shell.[1mShellAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.shell.[1mShellAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.jsp.[1mJspAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.jsp.[1mJspAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.jsp.[1mJspAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.lang.plsql.[1mPlSqlAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.java.[1mJavaAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in nl.obren.sokrates.sourcecode.lang.java.[1mJavaAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.sourcecode.lang.java.[1mJavaAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.php.[1mPhpHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.php.[1mPhpHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.php.[1mPhpAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.php.[1mPhpAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.php.[1mPhpAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.yaml.[1mYamlAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.yaml.[1mYamlAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.yaml.[1mYamlAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.[1mDefaultLanguageAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.[1mDefaultLanguageAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.[1mDefaultLanguageAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.vb.[1mVisualBasicAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.vb.[1mVisualBasicAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.vb.[1mVisualBasicAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.go.[1mGoLangHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.go.[1mGoLangHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.go.[1mGoLangAnalyzerTest[m
@@ -425,59 +433,59 @@ Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from c
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.julia.[1mJuliaAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in nl.obren.sokrates.sourcecode.lang.julia.[1mJuliaAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.kotlin.[1mKotlinAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.lang.kotlin.[1mKotlinAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.lang.kotlin.[1mKotlinAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.perl.[1mPerlAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.perl.[1mPerlAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.perl.[1mPerlHeuristicDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.perl.[1mPerlHeuristicDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.perl.[1mPerlHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.html.[1mHtmlAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.html.[1mHtmlAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.clojure.[1mClojureLangAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.clojure.[1mClojureLangAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.lua.[1mLuaAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.lua.[1mLuaAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.lua.[1mLuaAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptHeuristicUnitsExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptHeuristicUnitsExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in nl.obren.sokrates.sourcecode.lang.js.[1mJavaScriptAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpHeuristicDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpHeuristicDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.lang.csharp.[1mCSharpHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.scala.[1mScalaAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.scala.[1mScalaAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.rust.[1mRustAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.rust.[1mRustAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.python.[1mPythonAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.lang.python.[1mPythonAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.python.[1mPythonAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.python.[1mPythonDependenciesExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.python.[1mPythonDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyAnalyzerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyAnalyzerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyHeuristicDependenciesExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyHeuristicDependenciesExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.lang.ruby.[1mRubyHeuristicDependenciesExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.lang.objectpascal.[1mObjectPascalAnalyzerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.lang.objectpascal.[1mObjectPascalAnalyzerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.metrics.[1mMetricsListTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.metrics.[1mMetricsListTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.metrics.[1mMetricsListTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.[1mDuplicationMetricTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.analysis.[1mDuplicationMetricTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.analysis.[1mDuplicationMetricTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.analysis.[1mAnalyzerOverrideTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.analysis.[1mAnalyzerOverrideTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSearcheableFilesCacheTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.[1mSearcheableFilesCacheTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.[1mSearcheableFilesCacheTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceCodeFilesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in nl.obren.sokrates.sourcecode.[1mSourceCodeFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in nl.obren.sokrates.sourcecode.[1mSourceCodeFilesTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.aspects.[1mMetaRulesProcessorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.aspects.[1mMetaRulesProcessorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.aspects.[1mMetaRulesProcessorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.aspects.[1mRangeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in nl.obren.sokrates.sourcecode.aspects.[1mRangeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.aspects.[1mRangeTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.aspects.[1mNamedSourceCodeAspectTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.cleaners.[1mCodeBlockParserTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mCodeBlockParserTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.cleaners.[1mCommentsCleanerUtilsTest[m
@@ -485,54 +493,54 @@ Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from c
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.cleaners.[1mCommentsAndEmptyLinesCleanerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mCommentsAndEmptyLinesCleanerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.cleaners.[1mSourceCodeCleanerUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mSourceCodeCleanerUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.cleaners.[1mSourceCodeCleanerUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mCodeConfigurationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.[1mCodeConfigurationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.[1mCodeConfigurationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.dependencies.[1mDependencyAnchorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyAnchorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.dependencies.[1mComponentDependencyTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mComponentDependencyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mComponentDependencyTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.dependencies.[1mDependencyTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.dependencies.[1mDependencyUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.dependencies.[1mDependencyUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceFileTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceFileFilterTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileFilterTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.scoping.[1mConventionUtilsTest[m
-2026-Oct-11 01:42:33 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*[.]java" / content like ""
-2026-Oct-11 01:42:33 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*/a/.*" / content like ""
-2026-Oct-11 01:42:33 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 3:   - path like ".*[.]java" / content like ""
-2026-Oct-11 01:42:33 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*[.]java" / content like ""
-2026-Oct-11 01:42:33 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*/a/.*" / content like ""
+2026-Nov-04 23:29:05 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*[.]java" / content like ""
+2026-Nov-04 23:29:05 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*/a/.*" / content like ""
+2026-Nov-04 23:29:05 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 3:   - path like ".*[.]java" / content like ""
+2026-Nov-04 23:29:05 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*[.]java" / content like ""
+2026-Nov-04 23:29:05 [main] INFO  nl.obren.sokrates.sourcecode.scoping.ConventionUtils - 1 / 1:   - path like ".*/a/.*" / content like ""
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in nl.obren.sokrates.sourcecode.scoping.[1mConventionUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.units.[1mUnitsExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.units.[1mUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.units.[1mUnitUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.units.[1mUnitUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in nl.obren.sokrates.sourcecode.units.[1mUnitUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.units.[1mCStyleHeuristicUnitsExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in nl.obren.sokrates.sourcecode.units.[1mCStyleHeuristicUnitsExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.units.[1mCStyleHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.units.[1mPythonHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.units.[1mPythonHeuristicUnitsExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mExtensionGroupExtractorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.sourcecode.[1mExtensionGroupExtractorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.sourcecode.[1mExtensionGroupExtractorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceFileSizeDistributionTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileSizeDistributionTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mSourceFileWithSearchDataTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.[1mSourceFileWithSearchDataTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.githistory.[1mAuthorCommitTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.githistory.[1mAuthorCommitTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.githistory.[1mAuthorCommitTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.[1mStringOperationFactoryTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.[1mStringOperationFactoryTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mRemoveRegexOperationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mRemoveRegexOperationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mRemoveRegexOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mExtractRegexOperationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mExtractRegexOperationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mExtractRegexOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mNoOpsOperationTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mNoOpsOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mUpperCaseOperationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mUpperCaseOperationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mUpperCaseOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mPrependOperationTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.operations.impl.[1mPrependOperationTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.operations.impl.[1mAppendOperationTest[m
@@ -548,13 +556,13 @@ Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from c
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.[1mLogicalDecompositionTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in nl.obren.sokrates.sourcecode.[1mLogicalDecompositionTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mFoundLineTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.sourcecode.search.[1mFoundLineTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.sourcecode.search.[1mFoundLineTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mSearchExpressionTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.search.[1mSearchExpressionTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mSearchResultCleanerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in nl.obren.sokrates.sourcecode.search.[1mSearchResultCleanerTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.sourcecode.search.[1mReplacePairTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in nl.obren.sokrates.sourcecode.search.[1mReplacePairTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in nl.obren.sokrates.sourcecode.search.[1mReplacePairTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -576,13 +584,13 @@ Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from c
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mreports[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/reports/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 35 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 35 dependencies (6 carrying exclusions, 0 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mreports[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml
-Progress (1): 788 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml (788 B at 4.0 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: reports
+Progress (1): 788 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml (788 B at 4.2 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: reports (35 dependencies, 6 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/reports/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for reports: pinned=10 upgraded=25 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: reports
@@ -614,27 +622,27 @@ Progress (1): 788 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 s -- in nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.198 s -- in nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.landscape.data.[1mContributorIndividualReportExportTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in nl.obren.sokrates.reports.landscape.data.[1mContributorIndividualReportExportTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.050 s -- in nl.obren.sokrates.reports.landscape.data.[1mContributorIndividualReportExportTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.landscape.data.[1mRepositoryExportTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.267 s -- in nl.obren.sokrates.reports.landscape.data.[1mRepositoryExportTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.258 s -- in nl.obren.sokrates.reports.landscape.data.[1mRepositoryExportTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.landscape.data.[1mContributorReportExportTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in nl.obren.sokrates.reports.landscape.data.[1mContributorReportExportTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in nl.obren.sokrates.reports.landscape.data.[1mContributorReportExportTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.landscape.statichtml.[1mVirtualLandscapeBuilderTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s -- in nl.obren.sokrates.reports.landscape.statichtml.[1mVirtualLandscapeBuilderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 s -- in nl.obren.sokrates.reports.landscape.statichtml.[1mVirtualLandscapeBuilderTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.statichtml.[1mDuplicationReportGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mDuplicationReportGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mDuplicationReportGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.statichtml.[1mMetricsListReportGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mMetricsListReportGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mMetricsListReportGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.statichtml.[1mControlsReportGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mControlsReportGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mControlsReportGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.statichtml.[1mFindingsReportGeneratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mFindingsReportGeneratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in nl.obren.sokrates.reports.generators.statichtml.[1mFindingsReportGeneratorTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.generators.explorers.[1mFilesExplorerGeneratorsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in nl.obren.sokrates.reports.generators.explorers.[1mFilesExplorerGeneratorsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in nl.obren.sokrates.reports.generators.explorers.[1mFilesExplorerGeneratorsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.core.[1mReportFileExporterTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in nl.obren.sokrates.reports.core.[1mReportFileExporterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in nl.obren.sokrates.reports.core.[1mReportFileExporterTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -656,17 +664,17 @@ Progress (1): 788 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcli[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/cli/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 39 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 39 dependencies (6 carrying exclusions, 0 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcli[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/maven-metadata.xml
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/maven-metadata.xml (2.7 kB at 10 kB/s)
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/googlecode/javaewah/JavaEWAH/maven-metadata.xml (2.7 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/maven-metadata.xml (8.4 kB at 41 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: cli
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jgit/org.eclipse.jgit/maven-metadata.xml (8.4 kB at 45 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: cli (39 dependencies, 6 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/cli/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for cli: pinned=12 upgraded=27 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: cli
@@ -696,11 +704,11 @@ Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.4 kB                 
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.cli.[1mPathStringsToTreeStructureTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 s -- in nl.obren.sokrates.cli.[1mPathStringsToTreeStructureTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.290 s -- in nl.obren.sokrates.cli.[1mPathStringsToTreeStructureTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.cli.[1mCommandsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in nl.obren.sokrates.cli.[1mCommandsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in nl.obren.sokrates.cli.[1mCommandsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.cli.[1mSokratesFileUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in nl.obren.sokrates.cli.[1mSokratesFileUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in nl.obren.sokrates.cli.[1mSokratesFileUtilsTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1228,23 +1236,25 @@ Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.4 kB                 
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mcodeexplorer[0;1m ---[m
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/codeexplorer/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 51 dependencies (version range mode: minor).
+[[1;34mINFO[m] Initialized pom.deps.xml with 51 dependencies (6 carrying exclusions, 0 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcodeexplorer[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading configured version ranges...
+[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/org/controlsfx/controlsfx/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/controlsfx/controlsfx/maven-metadata.xml (1.5 kB at 4.6 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/controlsfx/controlsfx/maven-metadata.xml (1.5 kB at 5.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/controlsfx/controlsfx/11.2.6/controlsfx-11.2.6.pom
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/controlsfx/controlsfx/11.2.6/controlsfx-11.2.6.pom (1.3 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-base/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-base/maven-metadata.xml (11 kB at 37 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-base/maven-metadata.xml (11 kB at 38 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-controls/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-controls/maven-metadata.xml (11 kB at 46 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-controls/maven-metadata.xml (11 kB at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-graphics/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-graphics/maven-metadata.xml (11 kB at 43 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-graphics/maven-metadata.xml (11 kB at 45 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-media/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-media/maven-metadata.xml (11 kB at 44 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-media/maven-metadata.xml (11 kB at 46 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-web/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-web/maven-metadata.xml (11 kB at 38 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: codeexplorer
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/openjfx/javafx-web/maven-metadata.xml (11 kB at 25 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: codeexplorer (51 dependencies, 6 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/codeexplorer/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for codeexplorer: pinned=18 upgraded=28 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: codeexplorer
@@ -1277,11 +1287,11 @@ Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                  
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in nl.obren.sokrates.reports.utils.[1mDataImageUtilsTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.codeexplorer.common.[1mPathCellRendererTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in nl.obren.sokrates.codeexplorer.common.[1mPathCellRendererTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in nl.obren.sokrates.codeexplorer.common.[1mPathCellRendererTest[m
 [[1;34mINFO[m] Running nl.obren.sokrates.codeexplorer.io.[1mRegexUtilsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s -- in nl.obren.sokrates.codeexplorer.io.[1mRegexUtilsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.296 s -- in nl.obren.sokrates.codeexplorer.io.[1mRegexUtilsTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1991,17 +2001,17 @@ Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                  
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for sokrates 1.0:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] sokrates ........................................... [1;32mSUCCESS[m [  0.586 s]
-[[1;34mINFO[m] common ............................................. [1;32mSUCCESS[m [  8.977 s]
-[[1;34mINFO[m] codeanalyzer ....................................... [1;32mSUCCESS[m [  6.589 s]
-[[1;34mINFO[m] reports ............................................ [1;32mSUCCESS[m [  3.810 s]
-[[1;34mINFO[m] cli ................................................ [1;32mSUCCESS[m [  4.107 s]
-[[1;34mINFO[m] codeexplorer ....................................... [1;32mSUCCESS[m [ 11.053 s]
+[[1;34mINFO[m] sokrates ........................................... [1;32mSUCCESS[m [  0.538 s]
+[[1;34mINFO[m] common ............................................. [1;32mSUCCESS[m [  7.198 s]
+[[1;34mINFO[m] codeanalyzer ....................................... [1;32mSUCCESS[m [  7.438 s]
+[[1;34mINFO[m] reports ............................................ [1;32mSUCCESS[m [  3.372 s]
+[[1;34mINFO[m] cli ................................................ [1;32mSUCCESS[m [  4.716 s]
+[[1;34mINFO[m] codeexplorer ....................................... [1;32mSUCCESS[m [ 10.906 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  35.260 s
-[[1;34mINFO[m] Finished at: 2026-10-11T01:42:52Z
+[[1;34mINFO[m] Total time:  34.312 s
+[[1;34mINFO[m] Finished at: 2026-11-04T23:29:24Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Sokrates.buildinfo: No such file or directory
 dos2unix: Skipping target/Sokrates.buildinfo, not a regular file.

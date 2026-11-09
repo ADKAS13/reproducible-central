@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/asset-sha
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Asset-share-commons.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.adobe.aem.commons:assetshare:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/asset-share-commons/base/buildcache/assetshare:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/asset-share-commons/base/buildcache/assetshare:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 09:21:13 UTC 2026.
-Universal Time is now:  Sun Oct 11 09:21:13 UTC 2026.
+Local time is now:      Sun Oct 11 15:30:47 UTC 2026.
+Universal Time is now:  Sun Oct 11 15:30:47 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -152,75 +152,75 @@ SLF4J: Found binding in [jar:file:/var/maven/.m2/repository/uk/org/lidalia/slf4j
 SLF4J: Found binding in [jar:file:/var/maven/.m2/repository/com/adobe/aem/aem-sdk-api/2021.3.4997.20210303T022849Z-210225/aem-sdk-api-2021.3.4997.20210303T022849Z-210225.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
 SLF4J: Actual binding is of type [uk.org.lidalia.slf4jtest.TestLoggerFactory]
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.863 s - in com.adobe.aem.commons.assetshare.content.impl.[1mAssetModelImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.279 s - in com.adobe.aem.commons.assetshare.content.impl.[1mAssetModelImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.impl.[1mMetadataSchemaPropertiesImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 s - in com.adobe.aem.commons.assetshare.content.impl.[1mMetadataSchemaPropertiesImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 s - in com.adobe.aem.commons.assetshare.content.impl.[1mMetadataSchemaPropertiesImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mAbstractRenditionDispatcherImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mAbstractRenditionDispatcherImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mAbstractRenditionDispatcherImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.async.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 s - in com.adobe.aem.commons.assetshare.content.renditions.download.async.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s - in com.adobe.aem.commons.assetshare.content.renditions.download.async.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadRequestTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadRequestTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadRequestTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsExceptionTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsExceptionTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadResponseTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadResponseTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionDownloadResponseTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.properties.impl.[1mComputedPropertiesImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s - in com.adobe.aem.commons.assetshare.content.properties.impl.[1mComputedPropertiesImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s - in com.adobe.aem.commons.assetshare.content.properties.impl.[1mComputedPropertiesImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.details.impl.[1mVideoImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m13[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: -1.41 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mVideoImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m13[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.03 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mVideoImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.details.impl.[1mEditorLinksImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.162 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mEditorLinksImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mEditorLinksImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.details.impl.[1mMetadataImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mMetadataImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.285 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mMetadataImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.details.impl.[1mImageImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.264 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mImageImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.975 s - in com.adobe.aem.commons.assetshare.components.details.impl.[1mImageImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.[1mUrlUtilTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in com.adobe.aem.commons.assetshare.util.[1mUrlUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in com.adobe.aem.commons.assetshare.util.[1mUrlUtilTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.impl.[1mOakIndexResolverTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in com.adobe.aem.commons.assetshare.util.impl.[1mOakIndexResolverTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 s - in com.adobe.aem.commons.assetshare.util.impl.[1mOakIndexResolverTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.impl.[1mServletHelperImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in com.adobe.aem.commons.assetshare.util.impl.[1mServletHelperImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 s - in com.adobe.aem.commons.assetshare.util.impl.[1mServletHelperImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.[1mPredicateUtilTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.adobe.aem.commons.assetshare.util.[1mPredicateUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.adobe.aem.commons.assetshare.util.[1mPredicateUtilTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.impl.[1mCombinedPropertiesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.212 s - in com.adobe.aem.commons.assetshare.content.impl.[1mCombinedPropertiesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.664 s - in com.adobe.aem.commons.assetshare.content.impl.[1mCombinedPropertiesTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.impl.datasources.[1mAssetRenditionsDataSourceTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.284 s - in com.adobe.aem.commons.assetshare.content.impl.datasources.[1mAssetRenditionsDataSourceTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.34 s - in com.adobe.aem.commons.assetshare.content.impl.datasources.[1mAssetRenditionsDataSourceTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionDispatchersImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionDispatchersImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionDispatchersImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionsImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionsImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.218 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionsImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mExternalRedirectRenditionDispatcherImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.198 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mExternalRedirectRenditionDispatcherImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mExternalRedirectRenditionDispatcherImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mStaticRenditionDispatcherImplTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.285 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mStaticRenditionDispatcherImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mInternalRedirectRenditionDispatcherImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mInternalRedirectRenditionDispatcherImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.255 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.dispatchers.[1mInternalRedirectRenditionDispatcherImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionServletTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.255 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionServletTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.247 s - in com.adobe.aem.commons.assetshare.content.renditions.impl.[1mAssetRenditionServletTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.[1mAssetRenditionParametersTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.216 s - in com.adobe.aem.commons.assetshare.content.renditions.[1mAssetRenditionParametersTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.213 s - in com.adobe.aem.commons.assetshare.content.renditions.[1mAssetRenditionParametersTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsZipperImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.603 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsZipperImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.638 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsZipperImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsDownloadServletTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.22 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.221 s - in com.adobe.aem.commons.assetshare.content.renditions.download.impl.[1mAssetRenditionsDownloadServletTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.actions.impl.[1mActionHelperImplTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s - in com.adobe.aem.commons.assetshare.components.actions.impl.[1mActionHelperImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.actions.impl.[1mAssetDownloadHelperImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 s - in com.adobe.aem.commons.assetshare.components.actions.impl.[1mAssetDownloadHelperImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 s - in com.adobe.aem.commons.assetshare.components.actions.impl.[1mAssetDownloadHelperImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mDownloadImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m15[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.556 s - in com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mDownloadImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m15[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.6 s - in com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mDownloadImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.09 s - in com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 s - in com.adobe.aem.commons.assetshare.components.actions.download.impl.[1mAsyncAssetRenditionsDownloadServletTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.util.impl.[1mRequireAemImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.195 s - in com.adobe.aem.commons.assetshare.util.impl.[1mRequireAemImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.208 s - in com.adobe.aem.commons.assetshare.util.impl.[1mRequireAemImplTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPredicateEvaluatorUtilTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPredicateEvaluatorUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPredicateEvaluatorUtilTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPropertyValuesPredicateEvaluatorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.505 s - in com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPropertyValuesPredicateEvaluatorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.53 s - in com.adobe.aem.commons.assetshare.search.impl.predicateevaluators.[1mPropertyValuesPredicateEvaluatorTest[m
 [[1;34mINFO[m] Running com.adobe.aem.commons.assetshare.search.impl.[1mFastPropertiesImplTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.244 s - in com.adobe.aem.commons.assetshare.search.impl.[1mFastPropertiesImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.279 s - in com.adobe.aem.commons.assetshare.search.impl.[1mFastPropertiesImplTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -232,10 +232,10 @@ SLF4J: Actual binding is of type [uk.org.lidalia.slf4jtest.TestLoggerFactory]
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mbnd-baseline-maven-plugin:4.2.0:baseline[m [1m(baseline)[m @ [36massetshare.core[0;1m ---[m
 [[1;34mINFO[m] Determining the baseline version for com.adobe.aem.commons:assetshare.core:jar:(,2.1.0-SNAPSHOT) using repositories [adobe-public-releases (https://repo.adobe.com/nexus/content/groups/public, default, releases), central (https://repo.maven.apache.org/maven2, default, releases)]
-Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/adobe/aem/commons/assetshare.core/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/adobe/aem/commons/assetshare.core/maven-metadata.xml
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/adobe/aem/commons/assetshare.core/maven-metadata.xml (3.2 kB at 3.9 kB/s)
-Progress (1): 965 B                   Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/adobe/aem/commons/assetshare.core/maven-metadata.xml (965 B at 808 B/s)
+Downloading from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/adobe/aem/commons/assetshare.core/maven-metadata.xml
+Progress (1): 965 BProgress (2): 965 B | 3.2 kB                            Downloaded from adobe-public-releases: https://repo.adobe.com/nexus/content/groups/public/com/adobe/aem/commons/assetshare.core/maven-metadata.xml (965 B at 1.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/adobe/aem/commons/assetshare.core/maven-metadata.xml (3.2 kB at 5.3 kB/s)
 [[1;34mINFO[m] The baseline version was found to be 2.0.6
 [[1;34mINFO[m] Baselining check succeeded checking com.adobe.aem.commons:assetshare.core:jar:2.1.0-SNAPSHOT against com.adobe.aem.commons:assetshare.core:jar:2.0.6
 [[1;34mINFO[m] 
@@ -306,6 +306,7 @@ Packages used in the analyzed classes:
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:install-node-and-npm[m [1m(install node and npm)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] testFailureIgnore property is ignored in non test phases
 [[1;34mINFO[m] Installing node version v13.7.0
 [[1;34mINFO[m] Unpacking /var/maven/.m2/repository/com/github/eirslett/node/13.7.0/node-13.7.0-linux-x64.tar.gz into /var/maven/app/ui.frontend.theme.light/node/tmp
 [[1;34mINFO[m] Copying node binary from /var/maven/app/ui.frontend.theme.light/node/tmp/node-v13.7.0-linux-x64/bin/node to /var/maven/app/ui.frontend.theme.light/node/node
@@ -315,6 +316,7 @@ Packages used in the analyzed classes:
 [[1;34mINFO[m] Installed npm locally.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:npm[m [1m(npm install)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] testFailureIgnore property is ignored in non test phases
 [[1;34mINFO[m] Running 'npm install' in /var/maven/app/ui.frontend.theme.light
 [[1;31mERROR[m] npm notice This endpoint is being retired. Use the bulk advisory endpoint instead. See the following docs for more info: https://api-docs.npmjs.com/#tag/Audit
 [[1;33mWARNING[m] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/webpack/node_modules/fsevents):
@@ -322,7 +324,7 @@ Packages used in the analyzed classes:
 [[1;33mWARNING[m] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/webpack-dev-server/node_modules/fsevents):
 [[1;33mWARNING[m] npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
 [[1;31mERROR[m] 
-[[1;34mINFO[m] added 1582 packages from 535 contributors and audited 1725 packages in 18.689s
+[[1;34mINFO[m] added 1582 packages from 535 contributors and audited 1725 packages in 19.399s
 [[1;34mINFO[m] 
 [[1;34mINFO[m] 29 packages are looking for funding
 [[1;34mINFO[m]   run `npm fund` for details
@@ -331,6 +333,7 @@ Packages used in the analyzed classes:
 [[1;34mINFO[m]   run `npm audit fix` to fix them, or `npm audit` for details
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:npm[m [1m(npm run prod)[m @ [36massetshare.ui.frontend.theme.light[0;1m ---[m
+[[1;34mINFO[m] testFailureIgnore property is ignored in non test phases
 [[1;34mINFO[m] Running 'npm run prod' in /var/maven/app/ui.frontend.theme.light
 [[1;34mINFO[m] 
 [[1;34mINFO[m] > aem-maven-archetype@1.0.0 prod /var/maven/app/ui.frontend.theme.light
@@ -339,8 +342,8 @@ Packages used in the analyzed classes:
 [[1;31mERROR[m] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
 [[1;34mINFO[m] Hash: 2fd6d7547b4b1779d34c
 [[1;34mINFO[m] Version: webpack 4.41.6
-[[1;34mINFO[m] Time: 13185ms
-[[1;34mINFO[m] Built at: 10/11/2026 9:22:07 AM
+[[1;34mINFO[m] Time: 13100ms
+[[1;34mINFO[m] Built at: 10/11/2026 3:31:50 PM
 [[1;34mINFO[m]                                                                  Asset      Size  Chunks                    Chunk Names
 [[1;34mINFO[m]                                         ../resources/fonts/LatoWeb.eot   248 KiB          [emitted]  [big]  
 [[1;34mINFO[m]                                         ../resources/fonts/LatoWeb.ttf   593 KiB          [emitted]  [big]  
@@ -417,6 +420,7 @@ Packages used in the analyzed classes:
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:install-node-and-npm[m [1m(install node and npm)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] testFailureIgnore property is ignored in non test phases
 [[1;34mINFO[m] Installing node version v13.7.0
 [[1;34mINFO[m] Unpacking /var/maven/.m2/repository/com/github/eirslett/node/13.7.0/node-13.7.0-linux-x64.tar.gz into /var/maven/app/ui.frontend.theme.dark/node/tmp
 [[1;34mINFO[m] Copying node binary from /var/maven/app/ui.frontend.theme.dark/node/tmp/node-v13.7.0-linux-x64/bin/node to /var/maven/app/ui.frontend.theme.dark/node/node
@@ -426,6 +430,7 @@ Packages used in the analyzed classes:
 [[1;34mINFO[m] Installed npm locally.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:npm[m [1m(npm install)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] testFailureIgnore property is ignored in non test phases
 [[1;34mINFO[m] Running 'npm install' in /var/maven/app/ui.frontend.theme.dark
 [[1;31mERROR[m] npm notice This endpoint is being retired. Use the bulk advisory endpoint instead. See the following docs for more info: https://api-docs.npmjs.com/#tag/Audit
 [[1;33mWARNING[m] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/webpack/node_modules/fsevents):
@@ -433,7 +438,7 @@ Packages used in the analyzed classes:
 [[1;33mWARNING[m] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/webpack-dev-server/node_modules/fsevents):
 [[1;33mWARNING[m] npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
 [[1;31mERROR[m] 
-[[1;34mINFO[m] added 1582 packages from 535 contributors and audited 1725 packages in 14.23s
+[[1;34mINFO[m] added 1582 packages from 535 contributors and audited 1725 packages in 16.832s
 [[1;34mINFO[m] 
 [[1;34mINFO[m] 29 packages are looking for funding
 [[1;34mINFO[m]   run `npm fund` for details
@@ -442,6 +447,7 @@ Packages used in the analyzed classes:
 [[1;34mINFO[m]   run `npm audit fix` to fix them, or `npm audit` for details
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mfrontend-maven-plugin:1.7.6:npm[m [1m(npm run prod)[m @ [36massetshare.ui.frontend.theme.dark[0;1m ---[m
+[[1;34mINFO[m] testFailureIgnore property is ignored in non test phases
 [[1;34mINFO[m] Running 'npm run prod' in /var/maven/app/ui.frontend.theme.dark
 [[1;34mINFO[m] 
 [[1;34mINFO[m] > aem-maven-archetype@1.0.0 prod /var/maven/app/ui.frontend.theme.dark
@@ -450,8 +456,8 @@ Packages used in the analyzed classes:
 [[1;31mERROR[m] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
 [[1;34mINFO[m] Hash: f0b86a59e435432e282d
 [[1;34mINFO[m] Version: webpack 4.41.6
-[[1;34mINFO[m] Time: 14432ms
-[[1;34mINFO[m] Built at: 10/11/2026 9:22:41 AM
+[[1;34mINFO[m] Time: 16945ms
+[[1;34mINFO[m] Built at: 10/11/2026 3:32:30 PM
 [[1;34mINFO[m]                                                                  Asset      Size  Chunks                    Chunk Names
 [[1;34mINFO[m]                                         ../resources/fonts/LatoWeb.eot   248 KiB          [emitted]  [big]  
 [[1;34mINFO[m]                                         ../resources/fonts/LatoWeb.ttf   593 KiB          [emitted]  [big]  
@@ -535,7 +541,7 @@ Packages used in the analyzed classes:
 [[1;34mINFO[m] Nothing to compile - all classes are up to date
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mhtl-maven-plugin:1.3.4-1.4.0:validate[m [1m(default)[m @ [36massetshare.ui.apps[0;1m ---[m
-[[1;34mINFO[m] Processed 60 files in 618ms
+[[1;34mINFO[m] Processed 60 files in 713ms
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mfilevault-package-maven-plugin:1.0.3:check-signature[m [1m(default-check-signature)[m @ [36massetshare.ui.apps[0;1m ---[m
 [[1;34mINFO[m] No signature defined. Skipping signature check.
@@ -2799,21 +2805,21 @@ Packages used in the analyzed classes:
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Asset Share Commons - Reactor Project 2.1.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Asset Share Commons - Reactor Project .............. [1;32mSUCCESS[m [  0.213 s]
-[[1;34mINFO[m] Asset Share Commons - Core ......................... [1;32mSUCCESS[m [ 16.590 s]
-[[1;34mINFO[m] Asset Share Commons - UI Apps Structure ............ [1;32mSUCCESS[m [  0.536 s]
-[[1;34mINFO[m] Asset Share Commons - UI Frontend - Light Theme .... [1;32mSUCCESS[m [ 35.820 s]
-[[1;34mINFO[m] Asset Share Commons - UI Frontend - Dark Theme ..... [1;32mSUCCESS[m [ 33.626 s]
-[[1;34mINFO[m] Asset Share Commons - UI Apps ...................... [1;32mSUCCESS[m [  3.784 s]
-[[1;34mINFO[m] Asset Share Commons - UI Content ................... [1;32mSUCCESS[m [  0.149 s]
-[[1;34mINFO[m] Asset Share Commons - UI Sample Content ............ [1;32mSUCCESS[m [  2.207 s]
-[[1;34mINFO[m] Asset Share Commons - All .......................... [1;32mSUCCESS[m [  0.326 s]
-[[1;34mINFO[m] Asset Share Commons - Dispatcher ................... [1;32mSUCCESS[m [  0.051 s]
+[[1;34mINFO[m] Asset Share Commons - Reactor Project .............. [1;32mSUCCESS[m [  0.232 s]
+[[1;34mINFO[m] Asset Share Commons - Core ......................... [1;32mSUCCESS[m [ 22.607 s]
+[[1;34mINFO[m] Asset Share Commons - UI Apps Structure ............ [1;32mSUCCESS[m [  0.547 s]
+[[1;34mINFO[m] Asset Share Commons - UI Frontend - Light Theme .... [1;32mSUCCESS[m [ 37.804 s]
+[[1;34mINFO[m] Asset Share Commons - UI Frontend - Dark Theme ..... [1;32mSUCCESS[m [ 39.750 s]
+[[1;34mINFO[m] Asset Share Commons - UI Apps ...................... [1;32mSUCCESS[m [  4.552 s]
+[[1;34mINFO[m] Asset Share Commons - UI Content ................... [1;32mSUCCESS[m [  0.160 s]
+[[1;34mINFO[m] Asset Share Commons - UI Sample Content ............ [1;32mSUCCESS[m [  2.647 s]
+[[1;34mINFO[m] Asset Share Commons - All .......................... [1;32mSUCCESS[m [  0.388 s]
+[[1;34mINFO[m] Asset Share Commons - Dispatcher ................... [1;32mSUCCESS[m [  0.171 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  01:34 min
-[[1;34mINFO[m] Finished at: 2026-10-11T09:22:48Z
+[[1;34mINFO[m] Total time:  01:50 min
+[[1;34mINFO[m] Finished at: 2026-10-11T15:32:39Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Asset-share-commons.buildinfo: No such file or directory
 dos2unix: Skipping target/Asset-share-commons.buildinfo, not a regular file.

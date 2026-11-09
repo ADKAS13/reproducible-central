@@ -39,6 +39,8 @@ from pathlib import Path
 from dataclasses import dataclass, fields, asdict
 from typing import Optional
 
+import technical_lag  # lives next to this script
+
 from collect_rq1_results import find_flavor_log, log_build_success
 
 NO_REPORT = "<no-report>"
@@ -58,6 +60,24 @@ class ModuleResult:
     total_before: int = 0
     total_after: int = 0
     build_success: bool = False
+
+    # technical lag, filled in when run with --lag (see technical_lag.py)
+    lag_deps: int = 0
+    lag_days_deps: int = 0
+    lag_days_before: float = 0.0
+    lag_days_after: float = 0.0
+    lag_days_reduction: float = 0.0
+    behind_before: int = 0
+    behind_after: int = 0
+    behind_reduction: int = 0
+    stale_major_before: int = 0
+    stale_minor_before: int = 0
+    stale_patch_before: int = 0
+    stale_major_after: int = 0
+    stale_minor_after: int = 0
+    stale_patch_after: int = 0
+    lag_unknown: int = 0
+    not_at_policy_latest: int = 0
 
     @property
     def total_changed(self):
@@ -264,6 +284,17 @@ def main():
     parser.add_argument("--summary-only", action="store_true",
                         help="Print summary table but don't write CSV")
 
+    parser.add_argument("--lag", action="store_true",
+                        help="Also measure technical lag (version and time) before vs after the update")
+    parser.add_argument("--lag-cache", type=Path, default=Path("results/.lag_cache.json"),
+                        help="Frozen Maven Central snapshot used as 'latest' (delete it to start a new one)")
+    parser.add_argument("--lag-refresh", action="store_true",
+                        help="Refetch the release lists even if they are cached")
+    parser.add_argument("--lag-scopes", type=str, default=None,
+                        help="Comma separated scopes to include, e.g. compile,runtime (default: all)")
+    parser.add_argument("--lag-workers", type=int, default=4,
+                        help="Parallel requests to Maven Central (default 4; keep low, Central rate-limits)")
+
     args = parser.parse_args()
 
     log_dir = args.log_dir or ((args.root or Path.cwd()) / "rq2_logs")
@@ -298,6 +329,13 @@ def main():
     if not results:
         print("No results found. Have you run the builds yet (and is --log-dir correct)?")
         sys.exit(0)
+
+    if args.lag:
+        out = args.output or Path(f"results_{args.range}.csv")
+        technical_lag.enrich(results, args.range, args.lag_cache, refresh=args.lag_refresh,
+                             workers=args.lag_workers, root=getattr(args, "root", None), buildcache=getattr(args, "buildcache", None),
+                             scopes=set(args.lag_scopes.split(",")) if args.lag_scopes else None,
+                             detail_path=out.with_name(out.stem + "_lag_detail.csv"))
 
     # Print summary
     print_summary(results, args.range)

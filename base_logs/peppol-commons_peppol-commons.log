@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 09:33:55 UTC 2026.
-Universal Time is now:  Sun Oct 11 09:33:55 UTC 2026.
+Local time is now:      Sun Oct 11 15:41:28 UTC 2026.
+Universal Time is now:  Sun Oct 11 15:41:28 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -167,9 +167,9 @@ WARNING: All illegal access operations will be denied in a future release
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.xsds.peppol.id1.[1mSPITest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in com.helger.xsds.peppol.id1.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in com.helger.xsds.peppol.id1.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.xsds.peppol.id1.[1mCPeppolIDTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.xsds.peppol.id1.[1mCPeppolIDTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.xsds.peppol.id1.[1mCPeppolIDTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -230,40 +230,40 @@ WARNING: All illegal access operations will be denied in a future release
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.peppolid.[1mCIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 s - in com.helger.peppolid.[1mCIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s - in com.helger.peppolid.[1mCIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.factory.[1mPeppolIdentifierFactoryTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in com.helger.peppolid.factory.[1mPeppolIdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in com.helger.peppolid.factory.[1mPeppolIdentifierFactoryTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.factory.[1mBDXR2IdentifierFactoryTest[m
 [main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
 [main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in com.helger.peppolid.factory.[1mBDXR2IdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in com.helger.peppolid.factory.[1mBDXR2IdentifierFactoryTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.factory.[1mSimpleIdentifierFactoryTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.helger.peppolid.factory.[1mSimpleIdentifierFactoryTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.factory.[1mBDXR1IdentifierFactoryTest[m
 [main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
 [main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.peppolid.factory.[1mBDXR1IdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.helger.peppolid.factory.[1mBDXR1IdentifierFactoryTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.[1mSPITest[m
 [main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-id/src/main/resources/META-INF/services/com.helger.xml.microdom.convert.IMicroTypeConverterRegistrarSPI
 [main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
 [main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-id/src/main/resources/META-INF/services/com.helger.peppolid.peppol.validator.IParticipantIdentifierValidatorSPI
 [main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in com.helger.peppolid.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in com.helger.peppolid.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.participant.[1mPeppolParticipantIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.695 s - in com.helger.peppolid.peppol.participant.[1mPeppolParticipantIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.672 s - in com.helger.peppolid.peppol.participant.[1mPeppolParticipantIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.validator.[1mIdentifierValidatorTest[m
 [main] INFO com.helger.peppolid.peppol.validator.IdentifierValidator - Loaded 1 SPI implementations of IParticipantIdentifierValidatorSPI
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.peppolid.peppol.validator.[1mIdentifierValidatorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.helger.peppolid.peppol.validator.[1mIdentifierValidatorTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.validator.[1mParticipantIdentifierValidatorNorwayOrgNumberTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.peppol.validator.[1mParticipantIdentifierValidatorNorwayOrgNumberTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.validator.[1mParticipantIdentifierValidatorNorwayOrgNumberTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mPredefinedProcessIdentifierManagerTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.process.[1mPredefinedProcessIdentifierManagerTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mPeppolProcessIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppolid.peppol.process.[1mPeppolProcessIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.helger.peppolid.peppol.process.[1mPeppolProcessIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mEPredefinedProcessIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.process.[1mEPredefinedProcessIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.peppol.process.[1mEPredefinedProcessIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPredefinedDocumentTypeIdentifierManagerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in com.helger.peppolid.peppol.doctype.[1mPredefinedDocumentTypeIdentifierManagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.peppolid.peppol.doctype.[1mPredefinedDocumentTypeIdentifierManagerTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mEPredefinedDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppolid.peppol.doctype.[1mEPredefinedDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierPartsTest[m
@@ -271,17 +271,17 @@ WARNING: All illegal access operations will be denied in a future release
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.issuingagency.[1mParticipantIdentifierSchemeManagerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.issuingagency.[1mParticipantIdentifierSchemeManagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.peppol.issuingagency.[1mParticipantIdentifierSchemeManagerTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.peppol.issuingagency.[1mEPredefinedParticipantIdentifierSchemeTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.issuingagency.[1mEPredefinedParticipantIdentifierSchemeTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.simple.participant.[1mSimpleParticipantIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.simple.participant.[1mSimpleParticipantIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.simple.participant.[1mSimpleParticipantIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.simple.process.[1mSimpleProcessIdentifierTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.simple.process.[1mSimpleProcessIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.simple.process.[1mSimpleProcessIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.simple.doctype.[1mSimpleDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.simple.doctype.[1mSimpleDocumentTypeIdentifierTest[m
 [[1;34mINFO[m] Running com.helger.peppolid.simple.doctype.[1mBusdoxDocumentTypeIdentifierPartsTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.simple.doctype.[1mBusdoxDocumentTypeIdentifierPartsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.simple.doctype.[1mBusdoxDocumentTypeIdentifierPartsTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -344,35 +344,35 @@ WARNING: All illegal access operations will be denied in a future release
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxCategoryIDTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 s - in com.helger.peppol.codelist.[1mETaxCategoryIDTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s - in com.helger.peppol.codelist.[1mETaxCategoryIDTest[m
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxExemptionReasonCodeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.codelist.[1mETaxExemptionReasonCodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.codelist.[1mETaxExemptionReasonCodeTest[m
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mEDocumentTypeCodeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.codelist.[1mEDocumentTypeCodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.codelist.[1mEDocumentTypeCodeTest[m
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxSchemeIDTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.codelist.[1mETaxSchemeIDTest[m
 [[1;34mINFO[m] Running com.helger.peppol.codelist.[1mEInvoiceTypeCodeTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.codelist.[1mEInvoiceTypeCodeTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sml.[1mESMLTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.helger.peppol.sml.[1mESMLTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in com.helger.peppol.sml.[1mESMLTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sml.[1mSMLInfoTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.617 s - in com.helger.peppol.sml.[1mSMLInfoTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.604 s - in com.helger.peppol.sml.[1mSMLInfoTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sml.[1mCSMLDefaultTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.sml.[1mCSMLDefaultTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.sml.[1mCSMLDefaultTest[m
 [[1;34mINFO[m] Running com.helger.peppol.[1mSPITest[m
 [main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-commons/src/main/resources/META-INF/services/com.helger.xml.microdom.convert.IMicroTypeConverterRegistrarSPI
 [main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in com.helger.peppol.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in com.helger.peppol.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolKeyStoreHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s - in com.helger.peppol.utils.[1mPeppolKeyStoreHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in com.helger.peppol.utils.[1mPeppolKeyStoreHelperTest[m
 [[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolCertificateCheckerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in com.helger.peppol.utils.[1mPeppolCertificateCheckerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in com.helger.peppol.utils.[1mPeppolCertificateCheckerTest[m
 [[1;34mINFO[m] Running com.helger.peppol.utils.[1mCRLHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.utils.[1mCRLHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.utils.[1mCRLHelperTest[m
 [[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolCertificateHelperTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.utils.[1mPeppolCertificateHelperTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.utils.[1mPeppolCertificateHelperTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smp.[1mSMPTransportProfileTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.smp.[1mSMPTransportProfileTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.helger.peppol.smp.[1mSMPTransportProfileTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -444,11 +444,11 @@ WARNING: All illegal access operations will be denied in a future release
 [main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDER
 [main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDERINGCATALOGUE
 [main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDERINGCATALOGUE
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.355 s - in com.helger.peppol.testfiles.ubl.[1mPeppolBISV1TestFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 s - in com.helger.peppol.testfiles.ubl.[1mPeppolBISV1TestFilesTest[m
 [[1;34mINFO[m] Running com.helger.peppol.testfiles.official.[1mOfficialTestFilesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in com.helger.peppol.testfiles.official.[1mOfficialTestFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in com.helger.peppol.testfiles.official.[1mOfficialTestFilesTest[m
 [[1;34mINFO[m] Running com.helger.peppol.testfiles.sbdh.[1mPeppolSBDHTestFilesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in com.helger.peppol.testfiles.sbdh.[1mPeppolSBDHTestFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in com.helger.peppol.testfiles.sbdh.[1mPeppolSBDHTestFilesTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -525,11 +525,11 @@ WARNING: All illegal access operations will be denied in a future release
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mPeppolSBDHDocumentTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.874 s - in com.helger.peppol.sbdh.[1mPeppolSBDHDocumentTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.808 s - in com.helger.peppol.sbdh.[1mPeppolSBDHDocumentTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mCPeppolSBDHTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.sbdh.[1mCPeppolSBDHTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.write.[1mPeppolSBDHDocumentWriterTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s - in com.helger.peppol.sbdh.write.[1mPeppolSBDHDocumentWriterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.122 s - in com.helger.peppol.sbdh.write.[1mPeppolSBDHDocumentWriterTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.read.[1mPeppolSBDHDocumentReaderTest[m
 [main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-sender-value.xml
 [main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-standard.xml
@@ -645,9 +645,9 @@ WARNING: All illegal access operations will be denied in a future release
 [main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: Content is not allowed in prolog.
 [main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-no-business-scope.xml
 [main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-process-identifier.xml
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.76 s - in com.helger.peppol.sbdh.read.[1mPeppolSBDHDocumentReaderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.719 s - in com.helger.peppol.sbdh.read.[1mPeppolSBDHDocumentReaderTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.read.[1mEPeppolSBDHDocumentReadErrorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.sbdh.read.[1mEPeppolSBDHDocumentReadErrorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.sbdh.read.[1mEPeppolSBDHDocumentReadErrorTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.payload.[1mPeppolSBDHPayloadReaderTest[m
 [main] ERROR com.helger.jaxb.validation.LoggingValidationEventHandler - JAXB [fatal_error] @ (1:79) cvc-elt.1.a: Cannot find the declaration of element 'TextContent'. (org.xml.sax.SAXParseException: cvc-elt.1.a: Cannot find the declaration of element 'TextContent'.)
 org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 79; cvc-elt.1.a: Cannot find the declaration of element 'TextContent'.
@@ -1039,9 +1039,9 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 83; cvc-complex-type
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 [main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'BinaryContent'.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 s - in com.helger.peppol.sbdh.payload.[1mPeppolSBDHPayloadReaderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.205 s - in com.helger.peppol.sbdh.payload.[1mPeppolSBDHPayloadReaderTest[m
 [[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mPeppolSBDHAdditionalAttributesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.sbdh.[1mPeppolSBDHAdditionalAttributesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.sbdh.[1mPeppolSBDHAdditionalAttributesTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1126,9 +1126,9 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 83; cvc-complex-type
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.xsds.peppol.smp1.[1mSPITest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in com.helger.xsds.peppol.smp1.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s - in com.helger.xsds.peppol.smp1.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.xsds.peppol.smp1.[1mCSMPDataTypesTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in com.helger.xsds.peppol.smp1.[1mCSMPDataTypesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in com.helger.xsds.peppol.smp1.[1mCSMPDataTypesTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1191,51 +1191,51 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 83; cvc-complex-type
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.smpclient.[1mSPITest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 s - in com.helger.smpclient.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s - in com.helger.smpclient.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.smpclient.url.[1mBDXLURLProviderTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.116 s - in com.helger.smpclient.url.[1mBDXLURLProviderTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.07 s - in com.helger.smpclient.url.[1mBDXLURLProviderTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.url.[1mBPCURLProviderSMP1Test[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m2[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.002 s - in com.helger.smpclient.url.[1mBPCURLProviderSMP1Test[m
 [[1;34mINFO[m] Running com.helger.smpclient.url.[1mPeppolURLProviderTest[m
-162 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
-163 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
-163 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.223 s - in com.helger.smpclient.url.[1mPeppolURLProviderTest[m
+113 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+114 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+114 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.15 s - in com.helger.smpclient.url.[1mPeppolURLProviderTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.url.[1mBPCURLProviderSMP2Test[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m2[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.smpclient.url.[1mBPCURLProviderSMP2Test[m
 [[1;34mINFO[m] Running com.helger.smpclient.bdxr1.[1mBDXRClientReadOnlyTest[m
-486 [main] INFO com.helger.dns.naptr.NaptrLookup - Trying to look up NAPTR on 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' with 1 retries using network mode UDP_TCP
-706 [main] WARN com.helger.dns.naptr.NaptrLookup - Error looking up 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu': host not found
-707 [main] WARN com.helger.dns.naptr.NaptrResolver - No NAPTR records are provided.
-707 [main] WARN com.helger.dns.naptr.NaptrResolver - No matching DNS U-NAPTR records returned for 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu'
-[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m6[m, [1;31mFailures: [0;1;31m1[m, [1;31mErrors: [0;1;31m1[m, [1;33mSkipped: [0;1;33m3[m, Time elapsed: 0.595 s[1;31m <<< FAILURE![m - in com.helger.smpclient.bdxr1.[1mBDXRClientReadOnlyTest[m
-[[1;31mERROR[m] testReadTOOP(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 0.331 s  <<< ERROR!
+338 [main] INFO com.helger.dns.naptr.NaptrLookup - Trying to look up NAPTR on 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' with 1 retries using network mode UDP_TCP
+467 [main] WARN com.helger.dns.naptr.NaptrLookup - Error looking up 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu': host not found
+467 [main] WARN com.helger.dns.naptr.NaptrResolver - No NAPTR records are provided.
+467 [main] WARN com.helger.dns.naptr.NaptrResolver - No matching DNS U-NAPTR records returned for 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu'
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m6[m, [1;31mFailures: [0;1;31m1[m, [1;31mErrors: [0;1;31m1[m, [1;33mSkipped: [0;1;33m3[m, Time elapsed: 0.496 s[1;31m <<< FAILURE![m - in com.helger.smpclient.bdxr1.[1mBDXRClientReadOnlyTest[m
+[[1;31mERROR[m] testReadTOOP(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 0.224 s  <<< ERROR!
 com.helger.smpclient.url.SMPDNSResolutionException: Failed to resolve 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' and service 'Meta:SMP' to a DNS U-NAPTR
 	at com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest.testReadTOOP(BDXRClientReadOnlyTest.java:114)
 
-[[1;31mERROR[m] testGetBDXRHostURI_Peppol_WithBDXR(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 0.263 s  <<< FAILURE!
+[[1;31mERROR[m] testGetBDXRHostURI_Peppol_WithBDXR(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 0.27 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest.testGetBDXRHostURI_Peppol_WithBDXR(BDXRClientReadOnlyTest.java:89)
 
 [[1;34mINFO[m] Running com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerServiceMetadataTypeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.315 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.306 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerServiceMetadataTypeTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerSignedServiceMetadataTypeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerSignedServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerSignedServiceMetadataTypeTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.bdxr1.utils.[1mBDXRExtensionConverterTest[m
-1869 [main] ERROR com.helger.json.parser.errorhandler.LoggingJsonParseExceptionCallback - Json parse error: Syntax error in JSON. Found 'P'
-1869 [main] WARN com.helger.smpclient.bdxr1.utils.BDXR1ExtensionConverter - Error in parsing extension JSON 'Plain text'
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.567 s - in com.helger.smpclient.bdxr1.utils.[1mBDXRExtensionConverterTest[m
+1583 [main] ERROR com.helger.json.parser.errorhandler.LoggingJsonParseExceptionCallback - Json parse error: Syntax error in JSON. Found 'P'
+1583 [main] WARN com.helger.smpclient.bdxr1.utils.BDXR1ExtensionConverter - Error in parsing extension JSON 'Plain text'
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.515 s - in com.helger.smpclient.bdxr1.utils.[1mBDXRExtensionConverterTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientWithDNSFuncTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.smpclient.peppol.[1mSMPClientWithDNSFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.smpclient.peppol.[1mSMPClientWithDNSFuncTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.marshal.[1mSMPMarshallerSignedServiceMetadataTypeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.139 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerSignedServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerSignedServiceMetadataTypeTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.marshal.[1mSMPMarshallerServiceMetadataTypeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerServiceMetadataTypeTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.smpclient.peppol.[1mSMPClientTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.utils.[1mSMPExtensionConverterTest[m
-2039 [main] ERROR com.helger.xml.sax.LoggingSAXErrorHandler - [fatal_error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
-2040 [main] ERROR com.helger.commons.callback.exception.LoggingExceptionCallback - [error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
+1711 [main] ERROR com.helger.xml.sax.LoggingSAXErrorHandler - [fatal_error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
+1712 [main] ERROR com.helger.commons.callback.exception.LoggingExceptionCallback - [error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
 org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
 	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:261)
 	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
@@ -1272,16 +1272,16 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not al
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in com.helger.smpclient.peppol.utils.[1mSMPExtensionConverterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in com.helger.smpclient.peppol.utils.[1mSMPExtensionConverterTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.utils.[1mW3CEndpointReferenceHelperTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s - in com.helger.smpclient.peppol.utils.[1mW3CEndpointReferenceHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 s - in com.helger.smpclient.peppol.utils.[1mW3CEndpointReferenceHelperTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSignedServiceMetadataTypeFuncTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m3[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m3[m, Time elapsed: 0 s - in com.helger.smpclient.peppol.[1mSignedServiceMetadataTypeFuncTest[m
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientPredefinedEndpointAddressFuncTest[m
-2174 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x2ca6546f: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@43826ec; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
-2319 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x48c4245d: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@3df978b9; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
-[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m2[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 0.149 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientPredefinedEndpointAddressFuncTest[m
-[[1;31mERROR[m] testGetEndpointCertificate(com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest)  Time elapsed: 0.141 s  <<< FAILURE!
+1855 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x0aa10649: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@6b3871d6; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
+1938 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x6272c96f: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@6de30571; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m2[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 0.09 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientPredefinedEndpointAddressFuncTest[m
+[[1;31mERROR[m] testGetEndpointCertificate(com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest)  Time elapsed: 0.079 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest.testGetEndpointCertificate(SMPClientPredefinedEndpointAddressFuncTest.java:99)
 
@@ -1291,15 +1291,15 @@ java.lang.AssertionError: expected:<https://test.erechnung.gv.at/as4> but was:<n
 
 [[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientReadOnlyTest[m
 [[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m5[m, [1;31mFailures: [0;1;31m3[m, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 0.008 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientReadOnlyTest[m
-[[1;31mERROR[m] testInvalidTrustStore(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0 s  <<< FAILURE!
+[[1;31mERROR[m] testInvalidTrustStore(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.001 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testInvalidTrustStore(SMPClientReadOnlyTest.java:111)
 
-[[1;31mERROR[m] testGetSMPHostURI_Peppol_WithBOM(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.005 s  <<< FAILURE!
+[[1;31mERROR[m] testGetSMPHostURI_Peppol_WithBOM(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.004 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testGetSMPHostURI_Peppol_WithBOM(SMPClientReadOnlyTest.java:88)
 
-[[1;31mERROR[m] testGetSMPHostURI_Peppol(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.002 s  <<< FAILURE!
+[[1;31mERROR[m] testGetSMPHostURI_Peppol(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.003 s  <<< FAILURE!
 java.lang.AssertionError
 	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testGetSMPHostURI_Peppol(SMPClientReadOnlyTest.java:63)
 
@@ -1466,21 +1466,21 @@ com/helger/peppol/smlclient/bdmsl/package-info.java
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.[1mBDMSLClientTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.017 s - in com.helger.peppol.smlclient.[1mBDMSLClientTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.01 s - in com.helger.peppol.smlclient.[1mBDMSLClientTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.[1mSPITest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 s - in com.helger.peppol.smlclient.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in com.helger.peppol.smlclient.[1mSPITest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mSSLConnectFuncTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mSSLConnectFuncTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mManageParticipantIdentifierServiceCallerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.334 s - in com.helger.peppol.smlclient.client.[1mManageParticipantIdentifierServiceCallerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.283 s - in com.helger.peppol.smlclient.client.[1mManageParticipantIdentifierServiceCallerTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mDNSRegistrationFuncTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.smlclient.client.[1mDNSRegistrationFuncTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mWildcardFuncTest[m
 [[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mWildcardFuncTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mSMKFuncTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.smlclient.client.[1mSMKFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mSMKFuncTest[m
 [[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mSMLFuncTest[m
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.smlclient.client.[1mSMLFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mSMLFuncTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1507,20 +1507,20 @@ com/helger/peppol/smlclient/bdmsl/package-info.java
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for peppol-commons-parent-pom 8.6.2-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] peppol-commons-parent-pom .......................... [1;32mSUCCESS[m [  0.324 s]
-[[1;34mINFO[m] peppol-id-datatypes ................................ [1;32mSUCCESS[m [  4.946 s]
-[[1;34mINFO[m] peppol-id .......................................... [1;32mSUCCESS[m [  3.630 s]
-[[1;34mINFO[m] peppol-commons ..................................... [1;32mSUCCESS[m [  2.338 s]
-[[1;34mINFO[m] peppol-testfiles ................................... [1;32mSUCCESS[m [  2.148 s]
-[[1;34mINFO[m] peppol-sbdh ........................................ [1;32mSUCCESS[m [  3.186 s]
+[[1;34mINFO[m] peppol-commons-parent-pom .......................... [1;32mSUCCESS[m [  0.334 s]
+[[1;34mINFO[m] peppol-id-datatypes ................................ [1;32mSUCCESS[m [  5.311 s]
+[[1;34mINFO[m] peppol-id .......................................... [1;32mSUCCESS[m [  3.584 s]
+[[1;34mINFO[m] peppol-commons ..................................... [1;32mSUCCESS[m [  2.401 s]
+[[1;34mINFO[m] peppol-testfiles ................................... [1;32mSUCCESS[m [  2.156 s]
+[[1;34mINFO[m] peppol-sbdh ........................................ [1;32mSUCCESS[m [  3.026 s]
 [[1;34mINFO[m] peppol-smp-datatypes ............................... [1;32mSUCCESS[m [  1.343 s]
-[[1;34mINFO[m] peppol-smp-client .................................. [1;32mSUCCESS[m [  4.616 s]
-[[1;34mINFO[m] peppol-sml-client .................................. [1;32mSUCCESS[m [  3.590 s]
+[[1;34mINFO[m] peppol-smp-client .................................. [1;32mSUCCESS[m [  3.706 s]
+[[1;34mINFO[m] peppol-sml-client .................................. [1;32mSUCCESS[m [  4.460 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  27.068 s
-[[1;34mINFO[m] Finished at: 2026-10-11T09:34:23Z
+[[1;34mINFO[m] Total time:  27.212 s
+[[1;34mINFO[m] Finished at: 2026-10-11T15:41:56Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Peppol-commons.buildinfo: No such file or directory
 dos2unix: Skipping target/Peppol-commons.buildinfo, not a regular file.

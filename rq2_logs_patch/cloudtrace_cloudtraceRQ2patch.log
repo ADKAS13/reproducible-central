@@ -9,14 +9,14 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/cloudtrac
 |      [0;34mgitRepo[0;97m: [1mhttps://github.com/GoogleCloudPlatform/cloud-trace-java.git[0m
 |      [0;34mgitTag[0;97m: [1m9aa2f22e571577887053a86d2236830b3922421b[0m
 | 3. with which rebuild environment?
-|      [0;34mtool[0;97m: [1mmvn-3.8.6[0m
+|      [0;34mtool[0;97m: [1mmvn[0m
 |      [0;34mjdk[0;97m: [1m8[0m
 |      [0;34mnewline[0;97m: [1mlf[0m
 |      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/test.buildinfo[0m
 
@@ -30,7 +30,7 @@ origin	https://github.com/GoogleCloudPlatform/cloud-trace-java.git (push)
 [0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 9aa2f22e571577887053a86d2236830b3922421b [0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/cloudtrace/RQ2patch/buildcache/root
 
-[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.8.6
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk8-toolchains***-maven-3.6.3
 [0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8[0m
 [0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8 /home/adkas13/reproducible-central/bin [0m
 [90m
@@ -40,35 +40,35 @@ DEPRECATED: The legacy builder is deprecated and will be removed in a future rel
 
 sha256:1058280974120b51d18b8f71f941283af8612725fc28a3a72cfb85cf150239c6
 [0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.8.6 /home/adkas13/reproducible-central/bin [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
 [90m
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-sha256:7c062c38d1f2d374955e20ab566659f005a7e645471dea1989b2046f3b140058
+sha256:8514503f3f5516217b6be23a408be73c80c45fc9c054c70b7f26973b7e0100ed
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13 /home/adkas13/reproducible-central/bin [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
 [90m
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-sha256:4634e4df57f2526fb58c834daa9663074d2f8d8356b3c45476562b1807e81a0b
+sha256:80d48831e3263a373a8351d99ce446ede387df085e0783cc6b9649f602eb5da0
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
 [90m
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-sha256:6159ec5824dfb1621785b4ebf694b27d2eef6ad91ff41ba967271c605bd493be
+sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
-[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.google.cloud.trace:root:0.8.0[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/cloudtrace/RQ2patch/buildcache/root:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.8.6-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/cloudtrace/RQ2patch/buildcache/root:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 12:18:09 UTC 2026.
-Universal Time is now:  Sun Oct 11 12:18:09 UTC 2026.
+Local time is now:      Wed Nov  4 21:57:18 UTC 2026.
+Universal Time is now:  Wed Nov  4 21:57:18 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -269,21 +269,21 @@ Generating /var/maven/app/sdk/annotation/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mcore[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 5.5 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 8.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.0 kB at 80 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.1 kB at 75 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml (1.6 kB at 3.6 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml (1.6 kB at 7.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 16 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 142 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 148 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 113 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 124 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 7.5 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 8.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 144 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 136 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
 Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 12 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: core (10 dependencies, 0 carrying exclusions)
@@ -316,13 +316,13 @@ Progress (1): 907 B                   Downloaded from central: https://repo.ma
 Running com.google.cloud.trace.core.SpanContextFactoryTest
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
 Running com.google.cloud.trace.core.SpanContextTest
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.core.SpanIdTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.core.RateLimitingTraceOptionsFactoryTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.269 sec
 Running com.google.cloud.trace.core.TraceIdTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.core.TraceOptionsTest
 Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 
@@ -463,11 +463,11 @@ Generating /var/maven/app/sdk/core/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-annotation[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml
-Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 2.2 kB/s)
+Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 2.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 15 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/extensions/guice-multibindings/maven-metadata.xml
-Progress (1): 735 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/extensions/guice-multibindings/maven-metadata.xml (735 B at 1.8 kB/s)
+Progress (1): 735 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/extensions/guice-multibindings/maven-metadata.xml (735 B at 3.0 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: guice-annotation (7 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/annotation/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-annotation: pinned=7 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
@@ -571,13 +571,13 @@ Generating /var/maven/app/guice/annotation/target/apidocs/help-doc.html...
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.TestTraceIdFactoryTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
 Running com.google.cloud.trace.TestSpanContextHandlerTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.google.cloud.trace.TestSpanIdFactoryTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 Running com.google.cloud.trace.TestTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
 
 Results :
 
@@ -724,7 +724,7 @@ Generating /var/maven/app/sdk/sink/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mimplementation[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml (6.2 kB at 23 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-context/maven-metadata.xml (6.3 kB at 26 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: implementation (10 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/implementation/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for implementation: pinned=8 upgraded=2 downgraded=0 added=0 removed=0 scope_changed=0
@@ -753,11 +753,11 @@ Progress (1): 4.1 kBProgress (1): 6.2 kB                    Downloaded from c
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.GrpcSpanContextHandlerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
 Running com.google.cloud.trace.SdkVersionTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running com.google.cloud.trace.SpanContextHandlerTracerTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec
 
 Results :
 
@@ -922,25 +922,25 @@ Generating /var/maven/app/guice/core/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-google-auth[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.6 kB at 61 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.7 kB at 84 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-credentials/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-credentials/maven-metadata.xml (4.0 kB at 14 kB/s)
+Progress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-credentials/maven-metadata.xml (4.1 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-oauth2-http/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-oauth2-http/maven-metadata.xml (4.0 kB at 12 kB/s)
+Progress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/auth/google-auth-library-oauth2-http/maven-metadata.xml (4.1 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 5.0 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client/maven-metadata.xml (3.3 kB at 7.0 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client/maven-metadata.xml (3.3 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-jackson2/maven-metadata.xml
 Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/http-client/google-http-client-jackson2/maven-metadata.xml (3.0 kB at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 15 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml
-Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 3.7 kB/s)
+Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 27 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 25 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 26 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 8.6 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for guice-google-auth — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: guice-google-auth (14 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/google-auth/target/dependency-tree-after.txt
@@ -1038,9 +1038,9 @@ Generating /var/maven/app/guice/google-auth/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1mBuilding Google Cloud Trace Java SDK API v1 Dependencies 0.8.0-SNAPSHOT [13/36][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.7 kB at 86 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-core/maven-metadata.xml (6.8 kB at 94 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (7.2 kB at 83 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/maven-metadata.xml (7.3 kB at 87 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36msink[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1053,72 +1053,102 @@ Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from c
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36msink[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/api-common/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/api-common/maven-metadata.xml (4.6 kB at 8.1 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/api-common/maven-metadata.xml (4.6 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/gax/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/gax/maven-metadata.xml (9.1 kB at 36 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/gax/maven-metadata.xml (9.2 kB at 43 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/gax-grpc/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/gax-grpc/maven-metadata.xml (7.6 kB at 31 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/gax-grpc/maven-metadata.xml (7.7 kB at 37 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-cloud-trace-v1/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-cloud-trace-v1/maven-metadata.xml (8.2 kB at 26 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 8.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-cloud-trace-v1/maven-metadata.xml (8.3 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-cloud-trace-v2/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-cloud-trace-v2/maven-metadata.xml (7.8 kB at 26 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-cloud-trace-v2/maven-metadata.xml (7.8 kB at 27 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/maven-metadata.xml
 Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/maven-metadata.xml (5.7 kB at 25 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-iam-v1/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-iam-v1/maven-metadata.xml (6.6 kB at 22 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-iam-v1/maven-metadata.xml (6.7 kB at 24 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core/maven-metadata.xml (11 kB at 42 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core/maven-metadata.xml (11 kB at 46 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core-grpc/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core-grpc/maven-metadata.xml (9.9 kB at 38 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-core-grpc/maven-metadata.xml (9.9 kB at 43 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-trace/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-trace/maven-metadata.xml (9.8 kB at 27 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 9.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/cloud/google-cloud-trace/maven-metadata.xml (9.8 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 20 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 7.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/instrumentation/instrumentation-api/maven-metadata.xml
-Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/instrumentation/instrumentation-api/maven-metadata.xml (476 B)
+Progress (1): 476 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/instrumentation/instrumentation-api/maven-metadata.xml (476 B at 1.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 102 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 98 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/maven-metadata.xml (7.3 kB at 22 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/maven-metadata.xml (7.3 kB at 27 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-auth/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-auth/maven-metadata.xml (6.7 kB at 28 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-auth/maven-metadata.xml (6.8 kB at 29 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty/maven-metadata.xml (6.7 kB at 25 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-netty/maven-metadata.xml (6.8 kB at 31 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml (6.7 kB at 28 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/maven-metadata.xml (6.8 kB at 34 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml (6.4 kB at 25 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/maven-metadata.xml (6.5 kB at 27 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml (6.7 kB at 27 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/maven-metadata.xml (6.8 kB at 31 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/maven-metadata.xml (10 kB at 145 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/maven-metadata.xml (10 kB at 49 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/4.1.140.Final/netty-buffer-4.1.140.Final.pom
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/4.1.140.Final/netty-buffer-4.1.140.Final.pom (2.2 kB at 29 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-parent/4.1.140.Final/netty-parent-4.1.140.Final.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 37 kBProgress (1): 41 kBProgress (1): 45 kBProgress (1): 49 kBProgress (1): 53 kBProgress (1): 57 kBProgress (1): 61 kBProgress (1): 66 kBProgress (1): 70 kBProgress (1): 74 kBProgress (1): 78 kBProgress (1): 82 kBProgress (1): 86 kBProgress (1): 90 kBProgress (1): 94 kBProgress (1): 98 kBProgress (1): 102 kBProgress (1): 106 kBProgress (1): 110 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-parent/4.1.140.Final/netty-parent-4.1.140.Final.pom (110 kB at 996 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/4.1.140.Final/netty-common-4.1.140.Final.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/4.1.140.Final/netty-common-4.1.140.Final.pom (10 kB at 138 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/maven-metadata.xml (10 kB at 96 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/maven-metadata.xml (10 kB at 38 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/4.1.140.Final/netty-codec-4.1.140.Final.pom
+Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec/4.1.140.Final/netty-codec-4.1.140.Final.pom (6.1 kB at 70 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/4.1.140.Final/netty-transport-4.1.140.Final.pom
+Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/4.1.140.Final/netty-transport-4.1.140.Final.pom (2.9 kB at 38 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/4.1.140.Final/netty-resolver-4.1.140.Final.pom
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/4.1.140.Final/netty-resolver-4.1.140.Final.pom (2.2 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/maven-metadata.xml (10 kB at 101 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/maven-metadata.xml (10 kB at 43 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/4.1.140.Final/netty-codec-http-4.1.140.Final.pom
+Progress (1): 4.1 kBProgress (1): 5.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http/4.1.140.Final/netty-codec-http-4.1.140.Final.pom (5.0 kB at 67 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/4.1.140.Final/netty-handler-4.1.140.Final.pom
+Progress (1): 4.1 kBProgress (1): 5.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/4.1.140.Final/netty-handler-4.1.140.Final.pom (5.4 kB at 77 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-unix-common/4.1.140.Final/netty-transport-native-unix-common-4.1.140.Final.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 34 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport-native-unix-common/4.1.140.Final/netty-transport-native-unix-common-4.1.140.Final.pom (34 kB at 427 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/4.1.140.Final/netty-codec-http2-4.1.140.Final.pom
+Progress (1): 4.1 kBProgress (1): 6.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-http2/4.1.140.Final/netty-codec-http2-4.1.140.Final.pom (6.5 kB at 86 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-socks/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-socks/maven-metadata.xml (10 kB at 106 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-socks/maven-metadata.xml (10 kB at 45 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-socks/4.1.140.Final/netty-codec-socks-4.1.140.Final.pom
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-codec-socks/4.1.140.Final/netty-codec-socks-4.1.140.Final.pom (3.1 kB at 47 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/maven-metadata.xml (10 kB at 96 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/maven-metadata.xml (10 kB at 38 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/maven-metadata.xml (10 kB at 127 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler/maven-metadata.xml (10 kB at 51 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler-proxy/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler-proxy/maven-metadata.xml (7.3 kB at 76 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler-proxy/maven-metadata.xml (7.3 kB at 34 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler-proxy/4.1.140.Final/netty-handler-proxy-4.1.140.Final.pom
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-handler-proxy/4.1.140.Final/netty-handler-proxy-4.1.140.Final.pom (4.2 kB at 54 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/maven-metadata.xml (7.2 kB at 54 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-resolver/maven-metadata.xml (7.3 kB at 29 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-boringssl-static/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-boringssl-static/maven-metadata.xml (4.4 kB at 28 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-boringssl-static/maven-metadata.xml (4.4 kB at 20 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-parent/2.0.37.Final/netty-tcnative-parent-2.0.37.Final.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.85.Final/netty-tcnative-boringssl-static-2.0.85.Final.pom
+Progress (1): 4.1 kBProgress (1): 5.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.85.Final/netty-tcnative-boringssl-static-2.0.85.Final.pom (5.8 kB at 52 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-classes/2.0.85.Final/netty-tcnative-classes-2.0.85.Final.pom
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-classes/2.0.85.Final/netty-tcnative-classes-2.0.85.Final.pom (2.0 kB at 28 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-parent/2.0.85.Final/netty-tcnative-parent-2.0.85.Final.pom
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 25 kBProgress (1): 29 kBProgress (1): 33 kBProgress (1): 37 kBProgress (1): 41 kBProgress (1): 44 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-parent/2.0.85.Final/netty-tcnative-parent-2.0.85.Final.pom (44 kB at 503 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/maven-metadata.xml (10 kB at 86 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-transport/maven-metadata.xml (10 kB at 46 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/opencensus/opencensus-api/maven-metadata.xml
-Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/opencensus/opencensus-api/maven-metadata.xml (1.8 kB at 4.0 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/opencensus/opencensus-api/maven-metadata.xml (1.8 kB at 7.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/opencensus/opencensus-contrib-grpc-metrics/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/opencensus/opencensus-contrib-grpc-metrics/maven-metadata.xml (1.7 kB at 5.8 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/opencensus/opencensus-contrib-grpc-metrics/maven-metadata.xml (1.7 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 31 kB/s)
+Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/threeten/threetenbp/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/threeten/threetenbp/maven-metadata.xml (1.6 kB at 6.7 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/threeten/threetenbp/maven-metadata.xml (1.6 kB at 5.8 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for sink — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: sink (57 dependencies, 13 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sinks/v1/sink/target/dependency-tree-after.txt
@@ -1148,7 +1178,7 @@ Progress (1): 1.6 kB                    Downloaded from central: https://repo.
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.v1.consumer.SimpleBufferingTraceConsumerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.405 sec
 Running com.google.cloud.trace.v1.consumer.SizedBufferingTraceConsumerTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
@@ -1791,7 +1821,7 @@ Generating /var/maven/app/guice/joda-timestamp/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mservlet[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/maven-metadata.xml
-Progress (1): 566 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/maven-metadata.xml (566 B at 1.9 kB/s)
+Progress (1): 566 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/servlet/servlet-api/maven-metadata.xml (566 B at 1.2 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: servlet (3 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/sdk/servlet/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for servlet: pinned=3 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
@@ -1868,7 +1898,7 @@ Generating /var/maven/app/sdk/servlet/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mguice-servlet[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/extensions/guice-servlet/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/extensions/guice-servlet/maven-metadata.xml (1.0 kB at 4.4 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/extensions/guice-servlet/maven-metadata.xml (1.0 kB at 4.6 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: guice-servlet (11 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/guice/servlet/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for guice-servlet: pinned=11 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
@@ -2299,9 +2329,10 @@ Generating /var/maven/app/samples/basic-logging/target/apidocs/help-doc.html...
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mbuffering-grpc[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
-[[1;34mINFO[m] Flattening leaf module dependencies for: buffering-grpc (61 dependencies, 14 carrying exclusions)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for buffering-grpc — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;34mINFO[m] Flattening leaf module dependencies for: buffering-grpc (54 dependencies, 13 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/samples/buffering-grpc/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for buffering-grpc: pinned=22 upgraded=32 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for buffering-grpc: pinned=54 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: buffering-grpc
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mbuffering-grpc[0;1m ---[m
@@ -2478,7 +2509,7 @@ Generating /var/maven/app/samples/guice-scheduled-grpc/target/apidocs/help-doc.h
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/samples/guice-servlet-grpc/src/main/webapp]
 [[1;34mINFO[m] Building jar: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT/WEB-INF/lib/guice-servlet-grpc-0.8.0-SNAPSHOT.jar
-[[1;34mINFO[m] Webapp assembled in [112 msecs]
+[[1;34mINFO[m] Webapp assembled in [91 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/samples/guice-servlet-grpc/target/guice-servlet-grpc-0.8.0-SNAPSHOT.war
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.0.1:jar-no-fork[m [1m(attach-sources)[m @ [36mguice-servlet-grpc[0;1m ---[m
@@ -2681,9 +2712,10 @@ Generating /var/maven/app/services/trace-grpc-api-service/target/apidocs/help-do
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mstackdriver-trace-api[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
-[[1;34mINFO[m] Flattening leaf module dependencies for: stackdriver-trace-api (63 dependencies, 14 carrying exclusions)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for stackdriver-trace-api — falling back to pinned lower bounds: Could not resolve following dependencies: []
+[[1;34mINFO[m] Flattening leaf module dependencies for: stackdriver-trace-api (56 dependencies, 13 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/samples/stackdriver-trace-api/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for stackdriver-trace-api: pinned=24 upgraded=32 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for stackdriver-trace-api: pinned=56 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: stackdriver-trace-api
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mstackdriver-trace-api[0;1m ---[m
@@ -2754,13 +2786,12 @@ Generating /var/maven/app/samples/stackdriver-trace-api/target/apidocs/help-doc.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mappengine-standard-service[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/appengine/appengine-api-1.0-sdk/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/appengine/appengine-api-1.0-sdk/maven-metadata.xml (6.6 kB at 14 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/appengine/appengine-api-1.0-sdk/maven-metadata.xml (6.6 kB at 25 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/appengine/appengine-api-labs/maven-metadata.xml
-Progress (1): 700 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/appengine/appengine-api-labs/maven-metadata.xml (700 B at 1.3 kB/s)
-[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for appengine-standard-service — falling back to pinned lower bounds: Could not resolve following dependencies: []
-[[1;34mINFO[m] Flattening leaf module dependencies for: appengine-standard-service (63 dependencies, 13 carrying exclusions)
+Progress (1): 700 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/appengine/appengine-api-labs/maven-metadata.xml (700 B at 1.7 kB/s)
+[[1;34mINFO[m] Flattening leaf module dependencies for: appengine-standard-service (71 dependencies, 14 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/services/appengine-standard-service/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for appengine-standard-service: pinned=63 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for appengine-standard-service: pinned=28 upgraded=35 downgraded=0 added=3 removed=0 scope_changed=0
 [[1;34mINFO[m] POM updated successfully: appengine-standard-service
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.5.0:compile[m [1m(default)[m @ [36mappengine-standard-service[0;1m ---[m
@@ -2793,11 +2824,11 @@ Progress (1): 700 B                   Downloaded from central: https://repo.ma
  T E S T S
 -------------------------------------------------------
 Running com.google.cloud.trace.service.AppEngineSpanContextHandleTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.468 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.355 sec
 Running com.google.cloud.trace.service.AppEngineTraceServiceTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
 Running com.google.cloud.trace.service.AppEngineTracerTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
 
 Results :
 
@@ -2931,49 +2962,49 @@ Generating /var/maven/app/sinks/v1/http-consumer/target/apidocs/help-doc.html...
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Google Cloud Trace Java SDK Root Project 0.8.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  0.945 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.024 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.326 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  3.927 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.013 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  1.320 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  0.968 s]
-[[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.643 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  1.200 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  0.838 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  2.804 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.011 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  9.472 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.833 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  1.031 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.838 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.622 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  0.589 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.593 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.576 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  0.869 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.914 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.601 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.796 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.008 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.694 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.009 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.647 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.692 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.659 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.571 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.824 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.750 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.648 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  3.976 s]
-[[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.698 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Root Project ........... [1;32mSUCCESS[m [  0.871 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Parent Project ......... [1;32mSUCCESS[m [  0.028 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotations ............ [1;32mSUCCESS[m [  1.312 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components ........ [1;32mSUCCESS[m [  3.320 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Support Libraries  [1;32mSUCCESS[m [  0.017 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Annotation Support Guice Modules [1;32mSUCCESS[m [  1.128 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Testing Components  [1;32mSUCCESS[m [  0.965 s]
+[[1;34mINFO[m] sdk-sink ........................................... [1;32mSUCCESS[m [  0.627 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Components Implementations [1;32mSUCCESS[m [  1.171 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Core Guice Modules ..... [1;32mSUCCESS[m [  0.809 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Google Auth Guice Modules [1;32mSUCCESS[m [  2.523 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [  0.014 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API v1 Dependencies .... [1;32mSUCCESS[m [ 13.815 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink .............. [1;32mSUCCESS[m [  0.857 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK API V1 Guice Modules ... [1;32mSUCCESS[m [  0.926 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Sink Guice Modules  [1;32mSUCCESS[m [  0.696 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Utilities [1;32mSUCCESS[m [  0.593 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Java Timestamp Guice Modules [1;32mSUCCESS[m [  2.461 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Utilities [1;32mSUCCESS[m [  0.600 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Joda Timestamp Guice Modules [1;32mSUCCESS[m [  0.578 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Utilities ...... [1;32mSUCCESS[m [  1.036 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Servlet Support Guice Modules [1;32mSUCCESS[m [  0.866 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Single Thread Scheduler Guice Modules [1;32mSUCCESS[m [  0.588 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Service Definition ..... [1;32mSUCCESS[m [  0.789 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Services ............... [1;32mSUCCESS[m [  0.016 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Logging Service ........ [1;32mSUCCESS[m [  0.664 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Samples ................ [1;32mSUCCESS[m [  0.015 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Basic Logging Sample ... [1;32mSUCCESS[m [  0.633 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Buffering gRPC Sample .. [1;32mSUCCESS[m [  0.671 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Scheduled gRPC Sample [1;32mSUCCESS[m [  0.650 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Guice Servlet Sample ... [1;32mSUCCESS[m [  1.392 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Managed gRPC Sample .... [1;32mSUCCESS[m [  0.760 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK gRPC Trace API Service . [1;32mSUCCESS[m [  0.701 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK Stackdriver Trace API example [1;32mSUCCESS[m [  0.678 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK App Engine Standard Service [1;32mSUCCESS[m [  3.416 s]
+[[1;34mINFO[m] Google Cloud Trace Java SDK HTTP Sink .............. [1;32mSUCCESS[m [  0.720 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  43.386 s
-[[1;34mINFO[m] Finished at: 2026-10-11T12:18:53Z
+[[1;34mINFO[m] Total time:  47.390 s
+[[1;34mINFO[m] Finished at: 2026-11-04T21:58:06Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[0m[0mdos2unix: target/test.buildinfo: No such file or directory
+dos2unix: target/test.buildinfo: No such file or directory
 dos2unix: Skipping target/test.buildinfo, not a regular file.
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================

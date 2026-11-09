@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/turbine/R
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Turbine.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.google.turbine:turbine:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/turbine/RQ2patch/buildcache/turbine:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/turbine/RQ2patch/buildcache/turbine:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 12:30:34 UTC 2026.
-Universal Time is now:  Sun Oct 11 12:30:34 UTC 2026.
+Local time is now:      Wed Nov  4 22:10:08 UTC 2026.
+Universal Time is now:  Wed Nov  4 22:10:08 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -109,39 +109,39 @@ Universal Time is now:  Sun Oct 11 12:30:34 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mturbine[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 1.0 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 1.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
 Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 43 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 5.5 kB/s)
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 4.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 6.5 kB/s)
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 6.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/maven-metadata.xml
-Progress (1): 609 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/maven-metadata.xml (609 B at 2.5 kB/s)
+Progress (1): 609 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/maven-metadata.xml (609 B at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 24 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 99 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml (1.6 kB at 21 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml (1.6 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-java8-extension/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-java8-extension/maven-metadata.xml (1.4 kB at 4.3 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-java8-extension/maven-metadata.xml (1.4 kB at 5.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-liteproto-extension/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-liteproto-extension/maven-metadata.xml (1.4 kB at 1.9 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-liteproto-extension/maven-metadata.xml (1.4 kB at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-proto-extension/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-proto-extension/maven-metadata.xml (1.4 kB at 4.8 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-proto-extension/maven-metadata.xml (1.4 kB at 3.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 13 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 53 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 81 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 2.2 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml (1.7 kB at 21 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml (1.8 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/maven-metadata.xml (1.7 kB at 6.9 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/maven-metadata.xml (1.8 kB at 7.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/maven-metadata.xml (1.7 kB at 5.9 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/maven-metadata.xml (1.8 kB at 6.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/maven-metadata.xml (1.7 kB at 6.7 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/maven-metadata.xml (1.8 kB at 7.5 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: turbine (22 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for turbine: pinned=16 upgraded=6 downgraded=0 added=0 removed=0 scope_changed=0
@@ -179,53 +179,53 @@ Progress (1): 1.7 kB                    Downloaded from central: https://repo.
  T E S T S
 -------------------------------------------------------
 Running com.google.turbine.parse.UnicodeEscapePreprocessorTest
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec - in com.google.turbine.parse.UnicodeEscapePreprocessorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in com.google.turbine.parse.UnicodeEscapePreprocessorTest
 Running com.google.turbine.parse.LexerTest
-Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 sec - in com.google.turbine.parse.LexerTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in com.google.turbine.parse.LexerTest
 Running com.google.turbine.parse.ExpressionParserTest
-Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in com.google.turbine.parse.ExpressionParserTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in com.google.turbine.parse.ExpressionParserTest
 Running com.google.turbine.parse.VariableDeclarationTest
-Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec - in com.google.turbine.parse.VariableDeclarationTest
+Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec - in com.google.turbine.parse.VariableDeclarationTest
 Running com.google.turbine.parse.CommentParserTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in com.google.turbine.parse.CommentParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in com.google.turbine.parse.CommentParserTest
 Running com.google.turbine.parse.ParseErrorTest
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in com.google.turbine.parse.ParseErrorTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in com.google.turbine.parse.ParseErrorTest
 Running com.google.turbine.parse.ParserIntegrationTest
-Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in com.google.turbine.parse.ParserIntegrationTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in com.google.turbine.parse.ParserIntegrationTest
 Running com.google.turbine.parse.VariableInitializerTest
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.google.turbine.parse.VariableInitializerTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.turbine.parse.VariableInitializerTest
 Running com.google.turbine.deps.DependenciesTest
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.711 sec - in com.google.turbine.deps.DependenciesTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.65 sec - in com.google.turbine.deps.DependenciesTest
 Running com.google.turbine.deps.TransitiveTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.291 sec - in com.google.turbine.deps.TransitiveTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.269 sec - in com.google.turbine.deps.TransitiveTest
 Running com.google.turbine.diag.LineMapTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.diag.LineMapTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.turbine.diag.LineMapTest
 Running com.google.turbine.options.TurbineOptionsTest
-Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in com.google.turbine.options.TurbineOptionsTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in com.google.turbine.options.TurbineOptionsTest
 Running com.google.turbine.main.ReducedClasspathTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.218 sec - in com.google.turbine.main.ReducedClasspathTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.201 sec - in com.google.turbine.main.ReducedClasspathTest
 Running com.google.turbine.main.MainTest
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.23 sec - in com.google.turbine.main.MainTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 sec - in com.google.turbine.main.MainTest
 Running com.google.turbine.lower.ModuleIntegrationTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.292 sec - in com.google.turbine.lower.ModuleIntegrationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.299 sec - in com.google.turbine.lower.ModuleIntegrationTest
 Running com.google.turbine.lower.LowerIntegrationTest
-Tests run: 261, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.444 sec - in com.google.turbine.lower.LowerIntegrationTest
+Tests run: 261, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.118 sec - in com.google.turbine.lower.LowerIntegrationTest
 Running com.google.turbine.lower.LowerSignatureTest
 Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.lower.LowerSignatureTest
 Running com.google.turbine.lower.LowerTest
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in com.google.turbine.lower.LowerTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec - in com.google.turbine.lower.LowerTest
 Running com.google.turbine.zip.ZipTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.872 sec - in com.google.turbine.zip.ZipTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.43 sec - in com.google.turbine.zip.ZipTest
 Running com.google.turbine.type.TypeTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.google.turbine.type.TypeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in com.google.turbine.type.TypeTest
 Running com.google.turbine.processing.TurbineElementsTest
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.166 sec - in com.google.turbine.processing.TurbineElementsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.194 sec - in com.google.turbine.processing.TurbineElementsTest
 Running com.google.turbine.processing.TurbineTypesFactoryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in com.google.turbine.processing.TurbineTypesFactoryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.google.turbine.processing.TurbineTypesFactoryTest
 Running com.google.turbine.processing.TurbineFilerTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.google.turbine.processing.TurbineFilerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.turbine.processing.TurbineFilerTest
 Running com.google.turbine.processing.TurbineTypesIsAssignableTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 3.734 sec - in com.google.turbine.processing.TurbineTypesIsAssignableTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 5.709 sec - in com.google.turbine.processing.TurbineTypesIsAssignableTest
 Running com.google.turbine.processing.TurbineElementsGetAllMembersTest
 Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineElementsGetAllMembersTest
 Running com.google.turbine.processing.TurbineAnnotationMirrorTest
@@ -233,23 +233,23 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.g
 Running com.google.turbine.processing.TurbineTypeMirrorTest
 Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineTypeMirrorTest
 Running com.google.turbine.processing.TurbineTypesIsSameTypeTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.411 sec - in com.google.turbine.processing.TurbineTypesIsSameTypeTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.393 sec - in com.google.turbine.processing.TurbineTypesIsSameTypeTest
 Running com.google.turbine.processing.TurbineAnnotationProxyTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineAnnotationProxyTest
 Running com.google.turbine.processing.TurbineNameTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineNameTest
 Running com.google.turbine.processing.TurbineTypesUnaryTest
-Tests run: 3136, Failures: 0, Errors: 0, Skipped: 903, Time elapsed: 0.009 sec - in com.google.turbine.processing.TurbineTypesUnaryTest
+Tests run: 3136, Failures: 0, Errors: 0, Skipped: 903, Time elapsed: 0.157 sec - in com.google.turbine.processing.TurbineTypesUnaryTest
 Running com.google.turbine.processing.TurbineTypesIsSubtypeTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 4.65 sec - in com.google.turbine.processing.TurbineTypesIsSubtypeTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 4.47 sec - in com.google.turbine.processing.TurbineTypesIsSubtypeTest
 Running com.google.turbine.processing.ProcessingIntegrationTest
 Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.ProcessingIntegrationTest
 Running com.google.turbine.processing.TurbineTypesIsSubsignatureTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 30066, Time elapsed: 7.066 sec - in com.google.turbine.processing.TurbineTypesIsSubsignatureTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 30066, Time elapsed: 6.806 sec - in com.google.turbine.processing.TurbineTypesIsSubsignatureTest
 Running com.google.turbine.processing.TurbineMessagerTest
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineMessagerTest
 Running com.google.turbine.processing.TurbineTypesContainsTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 14508, Time elapsed: 3.343 sec - in com.google.turbine.processing.TurbineTypesContainsTest
+Tests run: 30788, Failures: 0, Errors: 0, Skipped: 14508, Time elapsed: 3.336 sec - in com.google.turbine.processing.TurbineTypesContainsTest
 Running com.google.turbine.processing.TurbineElementTest
 Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineElementTest
 Running com.google.turbine.binder.ClassPathBinderTest
@@ -261,7 +261,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.g
 Running com.google.turbine.binder.lookup.TopLevelIndexTest
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.lookup.TopLevelIndexTest
 Running com.google.turbine.binder.BinderErrorTest
-Tests run: 110, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.BinderErrorTest
+Tests run: 110, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.google.turbine.binder.BinderErrorTest
 Running com.google.turbine.binder.BinderTest
 Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.BinderTest
 Running com.google.turbine.binder.ProcessingTest
@@ -275,9 +275,9 @@ Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.g
 Running com.google.turbine.bytecode.sig.SigRegressionTest
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.bytecode.sig.SigRegressionTest
 Running com.google.turbine.bytecode.sig.SigIntegrationTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.664 sec - in com.google.turbine.bytecode.sig.SigIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.199 sec - in com.google.turbine.bytecode.sig.SigIntegrationTest
 Running com.google.turbine.bytecode.ClassReaderTest
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.turbine.bytecode.ClassReaderTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.turbine.bytecode.ClassReaderTest
 
 Results :
 
@@ -306,7 +306,7 @@ Tests run: 157852, Failures: 0, Errors: 0, Skipped: 76920
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] Total time:  01:04 min
-[[1;34mINFO[m] Finished at: 2026-10-11T12:31:40Z
+[[1;34mINFO[m] Finished at: 2026-11-04T22:11:13Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Turbine.buildinfo: No such file or directory
 dos2unix: Skipping target/Turbine.buildinfo, not a regular file.

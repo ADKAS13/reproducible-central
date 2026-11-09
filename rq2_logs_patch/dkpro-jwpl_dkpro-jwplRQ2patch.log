@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 12:19:23 UTC 2026.
-Universal Time is now:  Sun Oct 11 12:19:23 UTC 2026.
+Local time is now:      Wed Nov  4 21:58:37 UTC 2026.
+Universal Time is now:  Wed Nov  4 21:58:37 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -138,70 +138,70 @@ Universal Time is now:  Sun Oct 11 12:19:23 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mde.tudarmstadt.ukp.wikipedia.api[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml
-Progress (1): 394 B                   Downloaded from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml (394 B at 942 B/s)
+Progress (1): 394 B                   Downloaded from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml (394 B at 794 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/classmate/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/classmate/maven-metadata.xml (1.0 kB at 9.0 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/classmate/maven-metadata.xml (1.0 kB at 3.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/mchange/c3p0/maven-metadata.xml
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/mchange/c3p0/maven-metadata.xml (1.9 kB at 6.8 kB/s)
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/mchange/c3p0/maven-metadata.xml (1.9 kB at 8.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/mchange/mchange-commons-java/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/mchange/mchange-commons-java/maven-metadata.xml (1.4 kB at 4.8 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/mchange/mchange-commons-java/maven-metadata.xml (1.4 kB at 5.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/neovisionaries/nv-i18n/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/neovisionaries/nv-i18n/maven-metadata.xml (1.2 kB at 5.2 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/neovisionaries/nv-i18n/maven-metadata.xml (1.2 kB at 5.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-impl/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-impl/maven-metadata.xml (6.9 kB at 25 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-impl/maven-metadata.xml (6.9 kB at 27 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 14 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 4.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml
-Progress (1): 934 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 12 kB/s)
+Progress (1): 934 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 4.3 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml
-Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 12 kB/s)
+Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/de/fau/cs/osr/ptk/ptk-common/maven-metadata.xml
 Progress (1): 584 B                   Downloaded from central: https://repo.maven.apache.org/maven2/de/fau/cs/osr/ptk/ptk-common/maven-metadata.xml (584 B at 1.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/de/fau/cs/osr/utils/utils/maven-metadata.xml
-Progress (1): 581 B                   Downloaded from central: https://repo.maven.apache.org/maven2/de/fau/cs/osr/utils/utils/maven-metadata.xml (581 B at 1.1 kB/s)
+Progress (1): 581 B                   Downloaded from central: https://repo.maven.apache.org/maven2/de/fau/cs/osr/utils/utils/maven-metadata.xml (581 B at 1.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml
-Progress (1): 795 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 10 kB/s)
+Progress (1): 795 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 2.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
 Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml
-Progress (1): 750 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml (750 B at 9.7 kB/s)
+Progress (1): 750 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml (750 B at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/maven-metadata.xml
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/maven-metadata.xml (3.2 kB at 12 kB/s)
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/maven-metadata.xml (3.2 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 15 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 11 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 9.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hibernate/hibernate-c3p0/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hibernate/hibernate-c3p0/maven-metadata.xml (22 kB at 273 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hibernate/hibernate-c3p0/maven-metadata.xml (22 kB at 95 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/maven-metadata.xml (22 kB at 92 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/maven-metadata.xml (22 kB at 88 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hibernate/common/hibernate-commons-annotations/maven-metadata.xml
-Progress (1): 890 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hibernate/common/hibernate-commons-annotations/maven-metadata.xml (890 B at 3.4 kB/s)
+Progress (1): 890 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hibernate/common/hibernate-commons-annotations/maven-metadata.xml (890 B at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/maven-metadata.xml
 Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/maven-metadata.xml (677 B at 2.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hsqldb/hsqldb/maven-metadata.xml
-Progress (1): 912 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hsqldb/hsqldb/maven-metadata.xml (912 B at 3.0 kB/s)
+Progress (1): 912 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hsqldb/hsqldb/maven-metadata.xml (912 B at 4.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml (1.5 kB at 5.5 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/javassist/javassist/maven-metadata.xml (1.5 kB at 7.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/jandex/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/jandex/maven-metadata.xml (3.0 kB at 13 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/jandex/maven-metadata.xml (3.0 kB at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/maven-metadata.xml (1.7 kB at 18 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/maven-metadata.xml (1.7 kB at 7.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/maven-metadata.xml
-Progress (1): 718 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/maven-metadata.xml (718 B at 2.9 kB/s)
+Progress (1): 718 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/maven-metadata.xml (718 B at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jgrapht/jgrapht-jdk1.5/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 36 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 40 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/maven-metadata.xml (4.1 kB at 43 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-log4j12/maven-metadata.xml (4.1 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sweble/wikitext/swc-engine/maven-metadata.xml
-Progress (1): 648 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sweble/wikitext/swc-engine/maven-metadata.xml (648 B at 1.0 kB/s)
+Progress (1): 648 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sweble/wikitext/swc-engine/maven-metadata.xml (648 B at 939 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sweble/wikitext/swc-parser-lazy/maven-metadata.xml
-Progress (1): 653 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sweble/wikitext/swc-parser-lazy/maven-metadata.xml (653 B at 1.4 kB/s)
+Progress (1): 653 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sweble/wikitext/swc-parser-lazy/maven-metadata.xml (653 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xtc/rats-runtime/maven-metadata.xml
-Progress (1): 385 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xtc/rats-runtime/maven-metadata.xml (385 B at 705 B/s)
+Progress (1): 385 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xtc/rats-runtime/maven-metadata.xml (385 B at 779 B/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for de.tudarmstadt.ukp.wikipedia.api — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: de.tudarmstadt.ukp.wikipedia.api (33 dependencies, 2 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/target/dependency-tree-after.txt
@@ -252,28 +252,28 @@ Progress (1): 385 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mWikipediaTest[m
-2026-10-11 12:19:38 WARN  pooling:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m30[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.874 s - in de.tudarmstadt.ukp.wikipedia.api.[1mWikipediaTest[m
+2026-11-04 21:58:52 WARN  pooling:73 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m30[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.716 s - in de.tudarmstadt.ukp.wikipedia.api.[1mWikipediaTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mTitleIteratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in de.tudarmstadt.ukp.wikipedia.api.[1mTitleIteratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in de.tudarmstadt.ukp.wikipedia.api.[1mTitleIteratorTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mMetaDataTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in de.tudarmstadt.ukp.wikipedia.api.[1mMetaDataTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in de.tudarmstadt.ukp.wikipedia.api.[1mMetaDataTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mTitleTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in de.tudarmstadt.ukp.wikipedia.api.[1mTitleTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mPageIteratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 s - in de.tudarmstadt.ukp.wikipedia.api.[1mPageIteratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 s - in de.tudarmstadt.ukp.wikipedia.api.[1mPageIteratorTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mCategoryTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.09 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mCategoryDescendantsIteratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.227 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryDescendantsIteratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.22 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryDescendantsIteratorTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mCategoryIteratorTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryIteratorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryIteratorTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mWikiConfigTest[m
 Failed to create WikiConfig for language for Portuguese, using default instead
 Failed to create WikiConfig for language for English, using default instead
 Failed to create WikiConfig for language for French, using default instead
-[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m1[m, [1;31mFailures: [0;1;31m1[m, Errors: 0, Skipped: 0, Time elapsed: 1.184 s[1;31m <<< FAILURE![m - in de.tudarmstadt.ukp.wikipedia.api.[1mWikiConfigTest[m
-[[1;31mERROR[m] testGetWikiConf(de.tudarmstadt.ukp.wikipedia.api.WikiConfigTest)  Time elapsed: 1.184 s  <<< FAILURE!
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m1[m, [1;31mFailures: [0;1;31m1[m, Errors: 0, Skipped: 0, Time elapsed: 1.328 s[1;31m <<< FAILURE![m - in de.tudarmstadt.ukp.wikipedia.api.[1mWikiConfigTest[m
+[[1;31mERROR[m] testGetWikiConf(de.tudarmstadt.ukp.wikipedia.api.WikiConfigTest)  Time elapsed: 1.328 s  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -306,11 +306,11 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
 
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mCategoryGraphTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryGraphTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in de.tudarmstadt.ukp.wikipedia.api.[1mCategoryGraphTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.util.[1mGraphSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in de.tudarmstadt.ukp.wikipedia.api.util.[1mGraphSerializationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in de.tudarmstadt.ukp.wikipedia.api.util.[1mGraphSerializationTest[m
 [[1;34mINFO[m] Running de.tudarmstadt.ukp.wikipedia.api.[1mPageTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m32[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 s - in de.tudarmstadt.ukp.wikipedia.api.[1mPageTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m32[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.126 s - in de.tudarmstadt.ukp.wikipedia.api.[1mPageTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -359,8 +359,8 @@ Progress (1): 1.7 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for JWPL 1.2.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] JWPL ............................................... [1;32mSUCCESS[m [  1.595 s]
-[[1;34mINFO[m] Java Wikipedia API ................................. [1;31mFAILURE[m [ 16.001 s]
+[[1;34mINFO[m] JWPL ............................................... [1;32mSUCCESS[m [  1.517 s]
+[[1;34mINFO[m] Java Wikipedia API ................................. [1;31mFAILURE[m [ 21.138 s]
 [[1;34mINFO[m] MediaWiki Dumper ................................... [1;33mSKIPPED[m
 [[1;34mINFO[m] WikiMachine ........................................ [1;33mSKIPPED[m
 [[1;34mINFO[m] DataMachine ........................................ [1;33mSKIPPED[m
@@ -372,8 +372,8 @@ Progress (1): 1.7 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  17.819 s
-[[1;34mINFO[m] Finished at: 2026-10-11T12:19:42Z
+[[1;34mINFO[m] Total time:  22.872 s
+[[1;34mINFO[m] Finished at: 2026-11-04T21:59:01Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;31mERROR[m] Failed to execute goal [32morg.apache.rat:apache-rat-plugin:0.12:check[m [1m(default)[m on project [36mde.tudarmstadt.ukp.wikipedia.api[m: [1;31mToo many files with unapproved license: 2 See RAT report in: /var/maven/app/de.tudarmstadt.ukp.wikipedia.api/target/rat.txt[m -> [1m[Help 1][m
 [[1;31mERROR[m] 

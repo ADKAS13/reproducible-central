@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/phenopack
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Phenopacket-schema.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.phenopackets:phenopacket-schema:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/phenopacket-schema/RQ2patch/buildcache/phenopacket-schema:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/phenopacket-schema/RQ2patch/buildcache/phenopacket-schema:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 12:23:28 UTC 2026.
-Universal Time is now:  Sun Oct 11 12:23:28 UTC 2026.
+Local time is now:      Wed Nov  4 22:03:06 UTC 2026.
+Universal Time is now:  Wed Nov  4 22:03:06 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -113,67 +113,67 @@ Universal Time is now:  Sun Oct 11 12:23:28 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mphenopacket-schema[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-base/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-base/maven-metadata.xml (4.9 kB at 8.4 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-base/maven-metadata.xml (4.9 kB at 9.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-structures-r4/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-structures-r4/maven-metadata.xml (4.2 kB at 14 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-structures-r4/maven-metadata.xml (4.3 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-utilities/maven-metadata.xml
-Progress (1): 590 B                   Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-utilities/maven-metadata.xml (590 B at 2.0 kB/s)
+Progress (1): 590 B                   Downloaded from central: https://repo.maven.apache.org/maven2/ca/uhn/hapi/fhir/hapi-fhir-utilities/maven-metadata.xml (590 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 92 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 69 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.6 kB at 102 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.7 kB at 96 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.0 kB at 101 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.1 kB at 89 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/maven-metadata.xml (6.3 kB at 91 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/maven-metadata.xml (6.3 kB at 75 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 6.7 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 6.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 27 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 50 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 7.2 kB/s)
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 7.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 7.9 kB/s)
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 6.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 115 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 168 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/maven-metadata.xml (7.3 kB at 125 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/maven-metadata.xml (7.3 kB at 84 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 21 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 23 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 18 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/maven-metadata.xml
-Progress (1): 858 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/maven-metadata.xml (858 B at 13 kB/s)
+Progress (1): 858 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/maven-metadata.xml (858 B at 3.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml
-Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 6.6 kB/s)
+Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 7.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/maven-metadata.xml
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/maven-metadata.xml (1.9 kB at 7.7 kB/s)
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/maven-metadata.xml (1.9 kB at 8.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 2.5 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 3.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 43 kB/s)
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 42 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 66 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 63 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 73 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 49 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 68 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 47 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 66 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 40 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 75 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 51 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml
-Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 11 kB/s)
+Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 7.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 62 kB/s)
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 54 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 66 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 58 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 25 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 27 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: phenopacket-schema (33 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for phenopacket-schema: pinned=19 upgraded=14 downgraded=0 added=0 removed=0 scope_changed=0
@@ -229,7 +229,7 @@ Progress (1): 1.4 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.io.[1mPhenopacketFormatTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.389 s - in org.phenopackets.schema.v2.io.[1mPhenopacketFormatTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.334 s - in org.phenopackets.schema.v2.io.[1mPhenopacketFormatTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mPhenopacketTest[m
 ---
 subject:
@@ -609,7 +609,7 @@ htsFiles:
   individualToSampleIdentifiers:
     kindred 1A: "SAME000234"
 
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in org.phenopackets.schema.v2.[1mPhenopacketTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s - in org.phenopackets.schema.v2.[1mPhenopacketTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mFamilyTest[m
 ---
 id: "kindred 1"
@@ -706,7 +706,7 @@ pedigree:
     sex: "MALE"
     affectedStatus: "UNAFFECTED"
 metaData:
-  created: "2026-10-11T12:23:43.156Z"
+  created: "2026-11-04T22:03:19.773Z"
   createdBy: "Jules J."
   resources:
   - id: "hp"
@@ -736,7 +736,7 @@ metaData:
     description: "Kindred 1 in Ng SB et al. Exome sequencing identifies the cause\
       \ of a mendelian disorder. Nat Genet. 2010;42(1):30-5."
 
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.phenopackets.schema.v2.[1mFamilyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.phenopackets.schema.v2.[1mFamilyTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mInterpretationTest[m
 ---
 id: "kindred 1A"
@@ -805,9 +805,9 @@ interpretations:
 
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.phenopackets.schema.v2.[1mInterpretationTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v2.[1mFhirTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 s - in org.phenopackets.schema.v2.[1mFhirTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 s - in org.phenopackets.schema.v2.[1mFhirTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.io.[1mPhenopacketFormatTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s - in org.phenopackets.schema.v1.io.[1mPhenopacketFormatTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in org.phenopackets.schema.v1.io.[1mPhenopacketFormatTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mPhenopacketTest[m
 ---
 subject:
@@ -1038,7 +1038,7 @@ metaData:
     }
   }]
 }
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in org.phenopackets.schema.v1.[1mPhenopacketTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.phenopackets.schema.v1.[1mPhenopacketTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mFamilyTest[m
 ---
 id: "kindred 1"
@@ -1183,7 +1183,7 @@ pedigree:
     sex: "MALE"
     affectedStatus: "UNAFFECTED"
 metaData:
-  created: "2026-10-11T12:23:43.443Z"
+  created: "2026-11-04T22:03:20.008Z"
   createdBy: "Jules J."
   resources:
   - id: "hp"
@@ -1213,7 +1213,7 @@ metaData:
     description: "Kindred 1 in Ng SB et al. Exome sequencing identifies the cause\
       \ of a mendelian disorder. Nat Genet. 2010;42(1):30-5."
 
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.phenopackets.schema.v1.[1mFamilyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.phenopackets.schema.v1.[1mFamilyTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mInterpretationTest[m
 {
   "id": "SOLVERD:0000012456",
@@ -1319,7 +1319,7 @@ metaData:
     }]
   }],
   "metaData": {
-    "created": "2026-10-11T12:23:43.491Z",
+    "created": "2026-11-04T22:03:20.043Z",
     "createdBy": "Jules J.",
     "resources": [{
       "id": "hp",
@@ -1349,11 +1349,11 @@ metaData:
     }]
   }
 }
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s - in org.phenopackets.schema.v1.[1mInterpretationTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.phenopackets.schema.v1.[1mInterpretationTest[m
 [[1;34mINFO[m] Running org.phenopackets.schema.v1.[1mFhirTest[m
 [[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.phenopackets.schema.v1.[1mFhirTest[m
 [[1;34mINFO[m] Running org.matchmakerexchange.api.v1.[1mMmeNodeTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.matchmakerexchange.api.v1.[1mMmeNodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.matchmakerexchange.api.v1.[1mMmeNodeTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -1377,8 +1377,8 @@ metaData:
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  21.485 s
-[[1;34mINFO[m] Finished at: 2026-10-11T12:23:50Z
+[[1;34mINFO[m] Total time:  20.668 s
+[[1;34mINFO[m] Finished at: 2026-11-04T22:03:27Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Phenopacket-schema.buildinfo: No such file or directory
 dos2unix: Skipping target/Phenopacket-schema.buildinfo, not a regular file.
