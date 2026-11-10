@@ -1,0 +1,16 @@
+groupId=org.alfasoftware
+artifactId=astra
+version=9
+
+gitRepo=https://github.com/alfasoftware/astra.git
+gitTag=bbc6407425ec3d7613cc4c3ee003e5480d78dedd
+
+tool=mvn
+jdk=17
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=patch &&
+    mvn clean install -Dmaven.javadoc.skip=true\""
+
+buildinfo=target/Astra.buildinfo

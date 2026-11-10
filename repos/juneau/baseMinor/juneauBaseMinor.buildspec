@@ -1,0 +1,16 @@
+groupId=org.apache.juneau
+artifactId=juneau
+version=9
+
+gitRepo=https://github.com/apache/juneau.git
+gitTag=801c636e9badfa6c38e15d5590bfb0b6ec0caa00
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=minor &&
+    mvn clean install\""
+
+buildinfo=target/Juneau.buildinfo

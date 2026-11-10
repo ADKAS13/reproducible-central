@@ -1,0 +1,16 @@
+groupId=nl.obren.sokrates
+artifactId=sokrates
+version=9
+
+gitRepo=https://github.com/zeljkoobrenovic/sokrates.git
+gitTag=3e7b48d43e2ecd1f6b10722530a67694514376b2
+
+tool=mvn
+jdk=17
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=minor &&
+    mvn clean install\""
+
+buildinfo=target/Sokrates.buildinfo

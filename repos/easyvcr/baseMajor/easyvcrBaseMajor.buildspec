@@ -1,0 +1,17 @@
+# easyvcr.buildspec
+groupId=com.easypost
+artifactId=easyvcr
+version=0.5.3
+
+gitRepo=https://github.com/EasyPost/easyvcr-java.git
+gitTag=cbf2d23208565bb2cc8a23d39479f3952800b10a
+
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=major &&
+    mvn clean install -Dcheckstyle.skip=true -Denforcer.skip=true -Dgpg.skip=true -DargLine="-Dhttp.timeout=5000"\""
+buildinfo=target/easyvcr.buildinfo

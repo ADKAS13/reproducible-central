@@ -1,0 +1,16 @@
+groupId=org.apache.maven.plugins
+artifactId=maven-checkstyle-plugin
+version=9
+
+gitRepo=https://github.com/apache/maven-checkstyle-plugin.git
+gitTag=b1ad0bbbf077d5670cf679043076b9a1691ce4cc
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=patch &&
+    mvn clean install\""
+
+buildinfo=target/Maven-checkstyle-plugin.buildinfo

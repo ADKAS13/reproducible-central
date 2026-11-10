@@ -1,0 +1,16 @@
+groupId=org.opensextant
+artifactId=opensextant-xponents
+version=9
+
+gitRepo=https://github.com/OpenSextant/Xponents.git
+gitTag=4ea69afcc22aa417c72f34c068cadce9796bd251
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=minor &&
+    mvn clean install\""
+
+buildinfo=target/Xponents.buildinfo

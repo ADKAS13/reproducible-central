@@ -1,0 +1,16 @@
+groupId=org.cryptomator
+artifactId=cryptolib
+version=9
+
+gitRepo=https://github.com/cryptomator/cryptolib.git
+gitTag=e3ee3de00010ee7e4cdf538333e3ae0d99c82b08
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=major &&
+    mvn clean install\""
+
+buildinfo=target/Crypto.buildinfo

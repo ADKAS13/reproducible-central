@@ -1,0 +1,16 @@
+groupId=com.github.santiontanon
+artifactId=mdl
+version=9
+
+gitRepo=https://github.com/santiontanon/mdlz80optimizer.git
+gitTag=ca40546db0806bcc3751de8d4eced23794d8ca00
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=patch &&
+    mvn clean install\""
+
+buildinfo=target/Mdlz80optimizer.buildinfo

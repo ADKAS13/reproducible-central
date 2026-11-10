@@ -1,0 +1,16 @@
+groupId=org.jboss.weld
+artifactId=weld-api-parent
+version=9
+
+gitRepo=https://github.com/weld/api.git
+gitTag=db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=major &&
+    mvn clean install\""
+
+buildinfo=target/Api.buildinfo

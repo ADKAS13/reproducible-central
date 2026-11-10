@@ -1,0 +1,16 @@
+groupId=com.google.turbine
+artifactId=turbine
+version=9
+
+gitRepo=https://github.com/google/turbine.git
+gitTag=3d2be5ebe001f9cf7e51c770d1583d87ad2ea084
+
+tool=mvn
+jdk=11
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=patch &&
+    mvn clean install\""
+
+buildinfo=target/Turbine.buildinfo

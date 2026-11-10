@@ -1,0 +1,16 @@
+groupId=de.tudarmstadt.ukp.wikipedia
+artifactId=de.tudarmstadt.ukp.wikipedia
+version=9
+
+gitRepo=https://github.com/dkpro/dkpro-jwpl.git
+gitTag=0a0304b6a0aa13acc18838957994e06dd4613a58
+
+tool=mvn
+jdk=8
+newline=lf
+umask=022
+
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=minor &&
+    mvn clean install -Dmaven.test.failure.ignore=true\""
+
+buildinfo=target/Dkpro-jwpl.buildinfo
