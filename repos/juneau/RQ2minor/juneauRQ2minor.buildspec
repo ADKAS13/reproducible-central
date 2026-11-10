@@ -10,6 +10,6 @@ jdk=8
 newline=lf
 umask=022
 
-command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install\""
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn clean install\""
 
 buildinfo=target/Juneau.buildinfo

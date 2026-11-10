@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/astra/RQ2
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dmaven.javadoc.skip=true"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn clean install -Dmaven.javadoc.skip=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Astra.buildinfo[0m
 
@@ -68,16 +68,16 @@ sha256:43a3c0b00451558265985c3d55337b65aa9b31d9242d6e4fceda17dcf2752f37
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.alfasoftware:astra:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/astra/RQ2patch/buildcache/astra:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dmaven.javadoc.skip=true" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/astra/RQ2patch/buildcache/astra:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk17-toolchains-17-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn clean install -Dmaven.javadoc.skip=true" [0m
 [90m
-[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+^X[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 17.0.20[0m
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Nov  4 21:15:09 UTC 2026.
-Universal Time is now:  Wed Nov  4 21:15:09 UTC 2026.
+Local time is now:      Tue Nov 10 09:44:56 UTC 2026.
+Universal Time is now:  Tue Nov 10 09:44:56 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -108,7 +108,7 @@ Universal Time is now:  Wed Nov  4 21:15:09 UTC 2026.
 [[1;34mINFO[m] Copying 0 resource
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.2.0:jar[m [1m(attach-javadocs)[m @ [36mastra[0;1m ---[m
-[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] Not executing Javadoc as the project is not a Java classpath-capable package
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mastra[0;1m ---[m
 [[1;34mINFO[m] 
@@ -119,33 +119,33 @@ Universal Time is now:  Wed Nov  4 21:15:09 UTC 2026.
 [[1;34mINFO[m] [1mBuilding astra-core 1.3.7                                          [2/5][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 2.2 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.resources/maven-metadata.xml (1.5 kB at 2.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml (1.1 kB at 10 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.expressions/maven-metadata.xml (1.1 kB at 9.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml (1.4 kB at 12 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.runtime/maven-metadata.xml (1.4 kB at 6.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 6.9 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.osgi/maven-metadata.xml (1.6 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 5.6 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.common/maven-metadata.xml (1.4 kB at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 13 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.jobs/maven-metadata.xml (1.5 kB at 6.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 12 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.registry/maven-metadata.xml (1.2 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 11 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.preferences/maven-metadata.xml (1.2 kB at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml
-Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 4.7 kB/s)
+Progress (1): 389 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.service.prefs/maven-metadata.xml (389 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 12 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.contenttype/maven-metadata.xml (1.2 kB at 5.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml (1.1 kB at 12 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.equinox.app/maven-metadata.xml (1.1 kB at 5.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml (1.2 kB at 4.5 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.filesystem/maven-metadata.xml (1.2 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 15 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.text/maven-metadata.xml (1.3 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 12 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/platform/org.eclipse.core.commands/maven-metadata.xml (1.2 kB at 19 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mastra-core[0;1m ---[m
 [[1;34mINFO[m] 
@@ -156,19 +156,19 @@ Progress (1): 1.2 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra-core[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 17 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml
-Progress (1): 750 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml (750 B at 3.3 kB/s)
+Progress (1): 750 B                   Downloaded from central: https://repo.maven.apache.org/maven2/log4j/log4j/maven-metadata.xml (750 B at 9.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/maven-metadata.xml (2.0 kB at 22 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/maven-metadata.xml (2.0 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/maven-metadata.xml (1.4 kB at 15 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/maven-metadata.xml (1.4 kB at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jdt/org.eclipse.jdt.core/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jdt/org.eclipse.jdt.core/maven-metadata.xml (1.7 kB at 11 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jdt/org.eclipse.jdt.core/maven-metadata.xml (1.7 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 9.7 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 9.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/osgi/osgi.annotation/maven-metadata.xml
-Progress (1): 506 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/osgi.annotation/maven-metadata.xml (506 B at 2.2 kB/s)
+Progress (1): 506 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/osgi/osgi.annotation/maven-metadata.xml (506 B at 6.7 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: astra-core (21 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/astra-core/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for astra-core: pinned=20 upgraded=1 downgraded=0 added=0 removed=0 scope_changed=0
@@ -191,170 +191,7 @@ Progress (1): 506 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] Compiling 180 source files to /var/maven/app/astra-core/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mastra-core[0;1m ---[m
-[[1;34mINFO[m] Surefire report directory: /var/maven/app/astra-core/target/surefire-reports
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running org.alfasoftware.astra.core.analysis.assignment.TestAssignmentAnalysis
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.618 sec
-Running org.alfasoftware.astra.core.matchers.TestAnnotationMatcher
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 sec
-Running org.alfasoftware.astra.core.matchers.TestTypeMatcher
-Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 sec
-Running org.alfasoftware.astra.core.matchers.TestMethodMatcher
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.665 sec
-Running org.alfasoftware.astra.core.refactoring.annotations.TestAnnotationsRefactor
-INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
-INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
-INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
-INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
-INFO - Removing annotation [org.alfasoftware.astra.core.matchers.AnnotationMatcher@20960b51] in [org.alfasoftware.astra.core.refactoring.annotations.AnnotationRemovalExample]
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 sec
-Running org.alfasoftware.astra.core.refactoring.methods.methoddeclaration.TestMethodDeclarationRefactor
-INFO - Removing method declaration [org.alfasoftware.astra.core.refactoring.methods.methoddeclaration.RemoveMethodDeclarationExample#doThing(String thing)]
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
-Running org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.TestMethodDeclaringTypeRefactor
-INFO - Refactoring method declaration type of method [doBar] from [FooBar] to [Bar] in [org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.bar.CallerBar]
-INFO - Refactoring method declaration type of method [doBar] from [FooBar] to [Bar] in [org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.bar.CallerBar]
-INFO - Refactoring method declaration type of method [doBar] from [FooBar] to [Bar] in [org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.foobar.CallerFooBar]
-INFO - Refactoring method declaration type of method [doBar] from [FooBar] to [Bar] in [org.alfasoftware.astra.core.refactoring.methods.methoddeclaringtype.foobar.CallerFooBar]
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec
-Running org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.TestInvocationRemovalRefactor
-INFO - Unwrapping method invocation [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.sub.ExampleTestingModule]] Optional[method name is [module]]] to [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.sub.ReplacementRule replacementRuleFor] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.UnwrapInvocationAndChangeMethodParentTypeExample]
-INFO - Unwrapping method invocation [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.sub.ExampleTestingModule]] Optional[method name is [module]]] to [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.sub.ReplacementRule module] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.removal.UnwrapInvocationAndChangeConstructorParentTypeExample]
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.416 sec
-Running org.alfasoftware.astra.core.refactoring.methods.methodInvocation.TestMethodInvocationRefactor
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticOne] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeWithAnotherUseOfImport]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A doFoo] to [org.alfasoftware.astra.exampleTypes.A getClass] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeInheritedFromInterfaceExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticMultipleExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticMultipleExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticMultipleExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticMultipleExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticMultipleExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.B staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticMultipleExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A doFoo] to [org.alfasoftware.astra.exampleTypes.A getClass] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeInheritedFromInterfaceExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.a.A staticOne] to [org.alfasoftware.astra.exampleTypes.a.A staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticDifferentPackageExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A notify] to [org.alfasoftware.astra.exampleTypes.A getClass] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeOutsideClassQualifiedExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A notify] to [org.alfasoftware.astra.exampleTypes.A getClass] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeInheritedFromSuperclassExample]
-INFO - Refactoring variable name [a] to [c] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChainedExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.A] to [org.alfasoftware.astra.exampleTypes.C] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChainedExample]
-INFO - Refactoring simple type [A] to [C] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChainedExample]
-INFO - Refactoring simple type [A] to [C] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChainedExample]
-INFO - Refactoring simple type [A] to [C] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChainedExample]
-INFO - Refactoring variable name [a] to [c] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChainedExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.C staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticSameNameExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticOne] to [org.alfasoftware.astra.exampleTypes.C staticTwo] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeStaticSameNameExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A overloaded] to [org.alfasoftware.astra.exampleTypes.A overloaded] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.InvocationChangeNewParameterStringLast]
-INFO - Refactoring method invocation [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.transform.ReturnsObject get] to [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.transform.ReturnsObject get] in [org.alfasoftware.astra.core.refactoring.methods.methodInvocation.transform.InvocationTransformExample]
-Tests run: 17, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.424 sec
-Running org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.TestConstructorToBuilderRefactor
-INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.constructor.ConstructorType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderExternalBuilderExample]
-INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.constructor.ConstructorType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderExternalBuilderExample]
-INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.constructor.ConstructorType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderExternalBuilderExample]
-INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.builder.BuiltType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderInnerClassBuilderExample]
-INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.builder.BuiltType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderInnerClassBuilderExample]
-INFO - Refactoring constructor [Optional[FQ type is [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.builder.BuiltType]]] to builder in [org.alfasoftware.astra.core.refactoring.methods.constructortobuilder.ConstructorToBuilderInnerClassBuilderExample]
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.129 sec
-Running org.alfasoftware.astra.core.refactoring.methods.constructortostaticmethod.TestConversionRefactor
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec
-Running org.alfasoftware.astra.core.refactoring.imports.TestImportsRefactor
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticFour] to [org.alfasoftware.astra.exampleTypes.A staticFour] in [org.alfasoftware.astra.core.refactoring.imports.DuplicateStaticImportExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.B staticThree] to [org.alfasoftware.astra.exampleTypes.A staticFour] in [org.alfasoftware.astra.core.refactoring.imports.StaticToDuplicateExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.A staticFour] to [org.alfasoftware.astra.exampleTypes.B staticThree] in [org.alfasoftware.astra.core.refactoring.imports.DuplicateStaticImportExample]
-INFO - Refactoring method invocation [org.alfasoftware.astra.exampleTypes.B staticThree] to [org.alfasoftware.astra.exampleTypes.B staticThree] in [org.alfasoftware.astra.core.refactoring.imports.StaticToDuplicateExample]
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.873 sec
-Running org.alfasoftware.astra.core.refactoring.javadoc.TestJavadocTagsRefactor
-INFO - Refactoring javadoc tag [@link] to [@linkplain] in [org.alfasoftware.astra.core.refactoring.javadoc.JavadocTagExample]
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
-Running org.alfasoftware.astra.core.refactoring.interfaces.removepublic.TestRemovePublicModifierFromInterfaces
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
-Running org.alfasoftware.astra.core.refactoring.interfaces.inlining.TestInlineRefactor
-INFO - Inlining interface [org.alfasoftware.astra.core.refactoring.interfaces.inlining.SampleInterface] onto [InlineInterfaceExample]
-INFO - Inlining interface [org.alfasoftware.astra.core.refactoring.interfaces.inlining.BaseInterface] onto [FooAccess]
-INFO - Inlining interface [org.alfasoftware.astra.core.refactoring.interfaces.inlining.BaseInterface] onto [InlineEdgeCasesExample]
-INFO - Inlining interface [org.alfasoftware.astra.core.refactoring.interfaces.inlining.SampleInterface] onto [InlineInterfaceGenericsExample]
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 sec
-Running org.alfasoftware.astra.core.refactoring.types.TestTypeReferenceRefactor
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.A] to [org.alfasoftware.astra.exampleTypes.B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring variable name [a] to [b] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type in Javadoc [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring variable name [a] to [b] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring variable name [a] to [b] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeAndRenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring variable name [constructorDirectName] to [nameAfter] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.A] to [org.alfasoftware.astra.exampleTypes.B] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring variable name [directFieldName] to [nameAfter] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring variable name [directFieldName] to [nameAfter] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring variable name [directFieldName] to [nameAfter] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring variable name [directFieldName] to [nameAfter] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring variable name [constructorDirectName] to [nameAfter] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.RenameExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.EnumA] to [org.alfasoftware.astra.exampleTypes.EnumB] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeInEnumExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.EnumA] to [org.alfasoftware.astra.exampleTypes.EnumB] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeInEnumExample]
-INFO - Refactoring simple type [EnumA] to [EnumB] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeInEnumExample]
-INFO - Refactoring simple type [EnumA] to [EnumB] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeInEnumExample]
-INFO - Refactoring simple type [EnumA] to [EnumB] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeInEnumExample]
-INFO - Refactoring simple type [EnumA] to [EnumB] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeInEnumExample]
-INFO - Refactoring simple type [EnumA] to [EnumB] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeInEnumExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.A] to [org.alfasoftware.astra.exampleTypes.B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeExtendedTypeExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.ChangeTypeExtendedTypeExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.A] to [org.alfasoftware.astra.exampleTypes.B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type in Javadoc [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.exampleTypes.A] to [org.alfasoftware.astra.exampleTypes.B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-INFO - Refactoring simple type [A] to [B] in [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample]
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.139 sec
-Running org.alfasoftware.astra.core.refactoring.types.TestUpdateTypeRefactor
-INFO - Refactoring package declaration [org.alfasoftware.astra.core.refactoring.types] to [org.alfasoftware.astra.core.refactoring.types.newpackage] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-INFO - Adding import [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-INFO - Adding import [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-INFO - Adding import [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-INFO - Adding import [org.alfasoftware.astra.core.refactoring.types.TypeReferenceExample] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-INFO - Refactoring qualified type [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample] to [org.alfasoftware.astra.core.refactoring.types.newpackage.UpdatedTypeExampleAfter] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-INFO - Refactoring simple type [UpdateTypeToChangeExample] to [UpdatedTypeExampleAfter] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-INFO - Refactoring simple type [UpdateTypeToChangeExample] to [UpdatedTypeExampleAfter] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-INFO - Refactoring simple type [UpdateTypeToChangeExample] to [UpdatedTypeExampleAfter] in [org.alfasoftware.astra.core.refactoring.types.UpdateTypeToChangeExample]
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
-Running org.alfasoftware.astra.core.refactoring.javapattern.substitutemethod.staticmethodinvocation.TestStaticMethodInvocationMatching
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec
-Running org.alfasoftware.astra.core.refactoring.javapattern.substitutemethod.TestSubstituteMethodExampleMatching
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec
-Running org.alfasoftware.astra.core.refactoring.javapattern.parametermatching.TestParameterMatchingExample
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec
-
-Results :
-
-Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
-
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:copy-resources[m [1m(copy-resources)[m @ [36mastra-core[0;1m ---[m
 [[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
@@ -364,588 +201,33 @@ Tests run: 112, Failures: 0, Errors: 0, Skipped: 3
 [[1;34mINFO[m] Building jar: /var/maven/app/astra-core/target/astra-core-1.3.7.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.2.0:jar[m [1m(attach-javadocs)[m @ [36mastra-core[0;1m ---[m
-[[1;34mINFO[m] Skipping javadoc generation
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mastra-core[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/astra-core/target/astra-core-1.3.7-sources.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:test-jar[m [1m(default)[m @ [36mastra-core[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/astra-core/target/astra-core-1.3.7-tests.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mastra-core[0;1m ---[m
-[[1;34mINFO[m] Installing /var/maven/app/astra-core/target/astra-core-1.3.7.jar to /var/maven/.m2/repository/org/alfasoftware/astra-core/1.3.7/astra-core-1.3.7.jar
-[[1;34mINFO[m] Installing /var/maven/app/astra-core/pom.xml to /var/maven/.m2/repository/org/alfasoftware/astra-core/1.3.7/astra-core-1.3.7.pom
-[[1;34mINFO[m] Installing /var/maven/app/astra-core/target/astra-core-1.3.7-sources.jar to /var/maven/.m2/repository/org/alfasoftware/astra-core/1.3.7/astra-core-1.3.7-sources.jar
-[[1;34mINFO[m] Installing /var/maven/app/astra-core/target/astra-core-1.3.7-tests.jar to /var/maven/.m2/repository/org/alfasoftware/astra-core/1.3.7/astra-core-1.3.7-tests.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m-------------------< [0;36morg.alfasoftware:astra-example[0;1m >-------------------[m
-[[1;34mINFO[m] [1mBuilding astra-example 1.3.7                                       [3/5][m
-[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/astra-example/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 22 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
-[[1;34mINFO[m] Flattening leaf module dependencies for: astra-example (22 dependencies, 0 carrying exclusions)
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/astra-example/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for astra-example: pinned=21 upgraded=1 downgraded=0 added=0 removed=0 scope_changed=0
-[[1;34mINFO[m] POM updated successfully: astra-example
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/astra-example/src/main/resources
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Changes detected - recompiling the module!
-[[1;34mINFO[m] Compiling 5 source files to /var/maven/app/astra-example/target/classes
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/astra-example/src/test/resources
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] No sources to compile
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:copy-resources[m [1m(copy-resources)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] Copying 1 resource
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/astra-example/target/astra-example-1.3.7.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.2.0:jar[m [1m(attach-javadocs)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Skipping javadoc generation
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/astra-example/target/astra-example-1.3.7-sources.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mastra-example[0;1m ---[m
-[[1;34mINFO[m] Installing /var/maven/app/astra-example/target/astra-example-1.3.7.jar to /var/maven/.m2/repository/org/alfasoftware/astra-example/1.3.7/astra-example-1.3.7.jar
-[[1;34mINFO[m] Installing /var/maven/app/astra-example/pom.xml to /var/maven/.m2/repository/org/alfasoftware/astra-example/1.3.7/astra-example-1.3.7.pom
-[[1;34mINFO[m] Installing /var/maven/app/astra-example/target/astra-example-1.3.7-sources.jar to /var/maven/.m2/repository/org/alfasoftware/astra-example/1.3.7/astra-example-1.3.7-sources.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m---------------------< [0;36morg.alfasoftware:astra-cli[0;1m >---------------------[m
-[[1;34mINFO[m] [1mBuilding astra-cli 1.3.7                                           [4/5][m
-[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/astra-cli/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 23 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
-Downloading from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/maven-metadata.xml (3.1 kB at 12 kB/s)
-[[1;34mINFO[m] Flattening leaf module dependencies for: astra-cli (23 dependencies, 0 carrying exclusions)
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/astra-cli/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for astra-cli: pinned=21 upgraded=2 downgraded=0 added=0 removed=0 scope_changed=0
-[[1;34mINFO[m] POM updated successfully: astra-cli
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] Copying 1 resource
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Changes detected - recompiling the module!
-[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/astra-cli/target/classes
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] Copying 5 resources
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] No sources to compile
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:copy-resources[m [1m(copy-resources)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] Copying 1 resource
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/astra-cli/target/astra-cli-1.3.7.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.2.0:jar[m [1m(attach-javadocs)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Skipping javadoc generation
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/astra-cli/target/astra-cli-1.3.7-sources.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.2-beta-5:single[m [1m(default)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] artifact org.eclipse.platform:org.eclipse.core.resources: checking for updates from central
-[[1;34mINFO[m] artifact org.eclipse.platform:org.eclipse.core.runtime: checking for updates from central
-[[1;34mINFO[m] artifact org.eclipse.platform:org.eclipse.core.filesystem: checking for updates from central
-[[1;34mINFO[m] artifact org.eclipse.platform:org.eclipse.text: checking for updates from central
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/eclipse.inf already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/runtime/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] org/eclipse/equinox/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] about_files/ already added, skipping
-[[1;34mINFO[m] about_files/LICENSE-2.0.txt already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/preferences/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] about_files/ already added, skipping
-[[1;34mINFO[m] about_files/LICENSE-2.0.txt already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/maven/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/osgi/ already added, skipping
-[[1;34mINFO[m] org/osgi/service/ already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/NOTICE already added, skipping
-[[1;34mINFO[m] META-INF/maven/ already added, skipping
-[[1;34mINFO[m] META-INF/maven/org.osgi/ already added, skipping
-[[1;34mINFO[m] OSGI-OPT/ already added, skipping
-[[1;34mINFO[m] OSGI-OPT/src/ already added, skipping
-[[1;34mINFO[m] OSGI-OPT/src/org/ already added, skipping
-[[1;34mINFO[m] OSGI-OPT/src/org/osgi/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/osgi/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] OSGI-INF/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/osgi/ already added, skipping
-[[1;34mINFO[m] org/osgi/service/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/equinox/ already added, skipping
-[[1;34mINFO[m] about_files/ already added, skipping
-[[1;34mINFO[m] about_files/LICENSE-2.0.txt already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] com/ already added, skipping
-[[1;34mINFO[m] com/sun/ already added, skipping
-[[1;34mINFO[m] com/sun/jna/ already added, skipping
-[[1;34mINFO[m] META-INF/AL2.0 already added, skipping
-[[1;34mINFO[m] META-INF/LGPL2.1 already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/NOTICE already added, skipping
-[[1;34mINFO[m] META-INF/maven/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/apache/ already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] log4j.properties already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] Building jar: /var/maven/app/astra-cli/target/astra-cli-1.3.7-jar-with-dependencies.jar
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/eclipse.inf already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/runtime/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] org/eclipse/equinox/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] about_files/ already added, skipping
-[[1;34mINFO[m] about_files/LICENSE-2.0.txt already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/preferences/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] about_files/ already added, skipping
-[[1;34mINFO[m] about_files/LICENSE-2.0.txt already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/maven/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/osgi/ already added, skipping
-[[1;34mINFO[m] org/osgi/service/ already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/NOTICE already added, skipping
-[[1;34mINFO[m] META-INF/maven/ already added, skipping
-[[1;34mINFO[m] META-INF/maven/org.osgi/ already added, skipping
-[[1;34mINFO[m] OSGI-OPT/ already added, skipping
-[[1;34mINFO[m] OSGI-OPT/src/ already added, skipping
-[[1;34mINFO[m] OSGI-OPT/src/org/ already added, skipping
-[[1;34mINFO[m] OSGI-OPT/src/org/osgi/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/osgi/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/runtime/ already added, skipping
-[[1;34mINFO[m] OSGI-INF/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] .options already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/osgi/ already added, skipping
-[[1;34mINFO[m] org/osgi/service/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/equinox/ already added, skipping
-[[1;34mINFO[m] about_files/ already added, skipping
-[[1;34mINFO[m] about_files/LICENSE-2.0.txt already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] plugin.xml already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] com/ already added, skipping
-[[1;34mINFO[m] com/sun/ already added, skipping
-[[1;34mINFO[m] com/sun/jna/ already added, skipping
-[[1;34mINFO[m] META-INF/AL2.0 already added, skipping
-[[1;34mINFO[m] META-INF/LGPL2.1 already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/eclipse/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/ already added, skipping
-[[1;34mINFO[m] org/eclipse/core/internal/ already added, skipping
-[[1;34mINFO[m] .api_description already added, skipping
-[[1;34mINFO[m] about.html already added, skipping
-[[1;34mINFO[m] plugin.properties already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] META-INF/NOTICE already added, skipping
-[[1;34mINFO[m] META-INF/maven/ already added, skipping
-[[1;34mINFO[m] org/ already added, skipping
-[[1;34mINFO[m] org/apache/ already added, skipping
-[[1;34mINFO[m] META-INF/ already added, skipping
-[[1;34mINFO[m] META-INF/MANIFEST.MF already added, skipping
-[[1;34mINFO[m] log4j.properties already added, skipping
-[[1;34mINFO[m] META-INF/LICENSE already added, skipping
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mastra-cli[0;1m ---[m
-[[1;34mINFO[m] Installing /var/maven/app/astra-cli/target/astra-cli-1.3.7.jar to /var/maven/.m2/repository/org/alfasoftware/astra-cli/1.3.7/astra-cli-1.3.7.jar
-[[1;34mINFO[m] Installing /var/maven/app/astra-cli/pom.xml to /var/maven/.m2/repository/org/alfasoftware/astra-cli/1.3.7/astra-cli-1.3.7.pom
-[[1;34mINFO[m] Installing /var/maven/app/astra-cli/target/astra-cli-1.3.7-sources.jar to /var/maven/.m2/repository/org/alfasoftware/astra-cli/1.3.7/astra-cli-1.3.7-sources.jar
-[[1;34mINFO[m] Installing /var/maven/app/astra-cli/target/astra-cli-1.3.7-jar-with-dependencies.jar to /var/maven/.m2/repository/org/alfasoftware/astra-cli/1.3.7/astra-cli-1.3.7-jar-with-dependencies.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m-------------------< [0;36morg.alfasoftware:astra-testing[0;1m >-------------------[m
-[[1;34mINFO[m] [1mBuilding astra-testing 1.3.7                                       [5/5][m
-[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/astra-testing/target/dependency-tree-before.txt
-[[1;34mINFO[m] Initialized pom.deps.xml with 22 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: patch).
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
-[[1;34mINFO[m] Flattening leaf module dependencies for: astra-testing (22 dependencies, 0 carrying exclusions)
-[[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/astra-testing/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for astra-testing: pinned=21 upgraded=1 downgraded=0 added=0 removed=0 scope_changed=0
-[[1;34mINFO[m] POM updated successfully: astra-testing
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/astra-testing/src/main/resources
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] No sources to compile
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/astra-testing/src/test/resources
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] No sources to compile
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:copy-resources[m [1m(copy-resources)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
-[[1;34mINFO[m] Copying 1 resource
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/astra-testing/target/astra-testing-1.3.7.jar
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:3.2.0:jar[m [1m(attach-javadocs)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] Skipping javadoc generation
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] No sources in project. Archive not created.
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mastra-testing[0;1m ---[m
-[[1;34mINFO[m] Installing /var/maven/app/astra-testing/target/astra-testing-1.3.7.jar to /var/maven/.m2/repository/org/alfasoftware/astra-testing/1.3.7/astra-testing-1.3.7.jar
-[[1;34mINFO[m] Installing /var/maven/app/astra-testing/pom.xml to /var/maven/.m2/repository/org/alfasoftware/astra-testing/1.3.7/astra-testing-1.3.7.pom
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for astra 1.3.7:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] astra .............................................. [1;32mSUCCESS[m [  6.818 s]
-[[1;34mINFO[m] astra-core ......................................... [1;32mSUCCESS[m [ 13.917 s]
-[[1;34mINFO[m] astra-example ...................................... [1;32mSUCCESS[m [  0.472 s]
-[[1;34mINFO[m] astra-cli .......................................... [1;32mSUCCESS[m [  3.310 s]
-[[1;34mINFO[m] astra-testing ...................................... [1;32mSUCCESS[m [  0.204 s]
+[[1;34mINFO[m] astra .............................................. [1;32mSUCCESS[m [ 10.555 s]
+[[1;34mINFO[m] astra-core ......................................... [1;31mFAILURE[m [  7.419 s]
+[[1;34mINFO[m] astra-example ...................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] astra-cli .......................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] astra-testing ...................................... [1;33mSKIPPED[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  24.855 s
-[[1;34mINFO[m] Finished at: 2026-11-04T21:15:35Z
+[[1;34mINFO[m] Total time:  18.098 s
+[[1;34mINFO[m] Finished at: 2026-11-10T09:45:15Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-dos2unix: target/Astra.buildinfo: No such file or directory
-dos2unix: Skipping target/Astra.buildinfo, not a regular file.
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-javadoc-plugin:3.2.0:jar[m [1m(attach-javadocs)[m on project [36mastra-core[m: [1;31mMavenReportException: Error while generating Javadoc: Unable to find javadoc command: The environment variable JAVA_HOME is not correctly set.[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[[1;31mERROR[m] 
+[[1;31mERROR[m] After correcting the problems, you can resume the build with the command
+[[1;31mERROR[m]   [1mmvn <args> -rf :astra-core[m
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
-[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
 [0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
 [0m
