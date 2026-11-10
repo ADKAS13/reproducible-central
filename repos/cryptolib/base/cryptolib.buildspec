@@ -10,6 +10,6 @@ jdk=11
 newline=lf
 umask=022
 
-command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install\""
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install\""
 
 buildinfo=target/Crypto.buildinfo

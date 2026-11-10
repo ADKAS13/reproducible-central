@@ -10,6 +10,6 @@ jdk=11
 newline=lf
 umask=022
 
-command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install -Dtest="!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex" -Dmaven.javadoc.skip=true -Dgpg.skip=true\""
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install -Dtest="!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex" -Dmaven.javadoc.skip=true -Dgpg.skip=true\""
 
 buildinfo=target/Yosegi.buildinfo

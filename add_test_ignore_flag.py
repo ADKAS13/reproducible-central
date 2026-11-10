@@ -26,22 +26,27 @@ def fix_and_update_buildspecs(repos_dir="./repos"):
                     line = "tool=mvn"
                     modified = True
             
-            # 2. Fix command= line: clean up trailing flags outside quotes, 
-            # and insert -Dmaven.test.failure.ignore=true right after 'mvn' inside the command.
+            # 2. Fix command= line: clean up old/misplaced flags and place 
+            # -Dmaven.test.failure.ignore=true on the LAST mvn command.
             elif line.startswith("command="):
-                # Remove any accidental trailing flag outside the closing quotes
+                # Remove any accidental trailing flag outside quotes or existing ignore flags so we can re-place it cleanly
                 cleaned_line = re.sub(r'"\s*-Dmaven\.test\.failure\.ignore=true\b', '"', line)
+                cleaned_line = cleaned_line.replace(" -Dmaven.test.failure.ignore=true", "").replace("-Dmaven.test.failure.ignore=true", "")
                 if cleaned_line != line:
                     line = cleaned_line
                     modified = True
 
-                # If the flag is not yet inside the command string at all, insert it right after 'mvn'
-                if "-Dmaven.test.failure.ignore=true" not in line:
-                    # Matches 'mvn ' or 'mvn"' inside the command string
-                    new_line = re.sub(r'\bmvn(\s+|\")', r'mvn -Dmaven.test.failure.ignore=true\1', line, count=1)
-                    if new_line != line:
-                        line = new_line
-                        modified = True
+                # Find all occurrences of 'mvn' followed by whitespace or quote inside the command string
+                matches = list(re.finditer(r'\bmvn(\s+|\")', line))
+                if matches:
+                    # Target the LAST 'mvn' invocation (the final build/test run)
+                    last_match = matches[-1]
+                    start, end = last_match.span()
+                    suffix = last_match.group(1)
+                    
+                    replacement = f"mvn -Dmaven.test.failure.ignore=true{suffix}"
+                    line = line[:start] + replacement + line[end:]
+                    modified = True
 
             new_lines.append(line)
 

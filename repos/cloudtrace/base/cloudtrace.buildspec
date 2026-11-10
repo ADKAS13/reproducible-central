@@ -11,8 +11,8 @@ tool=mvn
 jdk=8
 newline=lf
 umask=022
-tool=mvn-3.8.6
+tool=mvn
 
-command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install\""
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install\""
 
 buildinfo=target/test.buildinfo

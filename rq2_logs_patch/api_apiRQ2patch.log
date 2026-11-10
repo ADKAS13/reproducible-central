@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/api/RQ2pa
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn clean install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Api.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.jboss.weld:weld-api-parent:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/api/RQ2patch/buildcache/weld-api-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn clean install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/api/RQ2patch/buildcache/weld-api-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Nov 10 09:38:55 UTC 2026.
-Universal Time is now:  Tue Nov 10 09:38:55 UTC 2026.
+Local time is now:      Tue Nov 10 10:11:11 UTC 2026.
+Universal Time is now:  Tue Nov 10 10:11:11 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -134,7 +134,7 @@ Downloading from jboss-public-repository-group: https://repository.jboss.org/nex
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api-parent[0;1m ---[m
 [[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' 'HEAD'
 [[1;34mINFO[m] Working directory: /var/maven/app
-[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 10, 2026 9:38:59 AM UTC
+[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 10, 2026 10:11:15 AM UTC
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -179,15 +179,15 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mweld-api[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml
-Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml (636 B at 1.7 kB/s)
+Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml (636 B at 1.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/enterprise/jakarta.enterprise.cdi-api/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/enterprise/jakarta.enterprise.cdi-api/maven-metadata.xml (1.5 kB at 15 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/enterprise/jakarta.enterprise.cdi-api/maven-metadata.xml (1.5 kB at 5.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml
-Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml (769 B at 8.1 kB/s)
+Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml (769 B at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/maven-metadata.xml
-Progress (1): 779 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/maven-metadata.xml (779 B at 3.7 kB/s)
+Progress (1): 779 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/maven-metadata.xml (779 B at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/servlet/jakarta.servlet-api/maven-metadata.xml
-Progress (1): 706 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/servlet/jakarta.servlet-api/maven-metadata.xml (706 B at 6.9 kB/s)
+Progress (1): 706 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/servlet/jakarta.servlet-api/maven-metadata.xml (706 B at 7.0 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: weld-api (5 dependencies, 2 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/weld/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for weld-api: pinned=2 upgraded=3 downgraded=0 added=0 removed=0 scope_changed=0
@@ -273,17 +273,17 @@ Audit done.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mweld-spi[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/ejb/jakarta.ejb-api/maven-metadata.xml
-Progress (1): 558 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/ejb/jakarta.ejb-api/maven-metadata.xml (558 B at 7.9 kB/s)
+Progress (1): 558 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/ejb/jakarta.ejb-api/maven-metadata.xml (558 B at 1.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/maven-metadata.xml (1.1 kB at 13 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/maven-metadata.xml (1.1 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/maven-metadata.xml
-Progress (1): 613 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/maven-metadata.xml (613 B at 7.7 kB/s)
+Progress (1): 613 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/maven-metadata.xml (613 B at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/maven-metadata.xml
-Progress (1): 675 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/maven-metadata.xml (675 B at 2.9 kB/s)
+Progress (1): 675 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/maven-metadata.xml (675 B at 9.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 16 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 20 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 26 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 55 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: weld-spi (12 dependencies, 3 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/weld-spi/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for weld-spi: pinned=5 upgraded=7 downgraded=0 added=0 removed=0 scope_changed=0
@@ -365,15 +365,15 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Weld APIs Parent 4.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.261 s]
-[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  1.131 s]
-[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  2.882 s]
-[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  1.636 s]
+[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.268 s]
+[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  1.080 s]
+[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  3.199 s]
+[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  1.916 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  7.662 s
-[[1;34mINFO[m] Finished at: 2026-11-10T09:39:04Z
+[[1;34mINFO[m] Total time:  8.301 s
+[[1;34mINFO[m] Finished at: 2026-11-10T10:11:20Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -384,8 +384,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Nov 10 09:39:04 UTC 2026.
-Universal Time is now:  Tue Nov 10 09:39:04 UTC 2026.
+Local time is now:      Tue Nov 10 10:11:20 UTC 2026.
+Universal Time is now:  Tue Nov 10 10:11:20 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -426,7 +426,7 @@ Universal Time is now:  Tue Nov 10 09:39:04 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api-parent[0;1m ---[m
 [[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' 'HEAD'
 [[1;34mINFO[m] Working directory: /var/maven/app
-[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 10, 2026 9:39:05 AM UTC
+[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 10, 2026 10:11:22 AM UTC
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -461,12 +461,6 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m----------------------< [0;36morg.jboss.weld:weld-api[0;1m >-----------------------[m
 [[1;34mINFO[m] [1mBuilding Weld APIs 4.0-SNAPSHOT                                    [3/4][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-Downloading from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/2.0.1.MR/jakarta.inject-api-2.0.1.MR.jar
-Downloading from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/2.0.1/jakarta.interceptor-api-2.0.1.jar
-Downloading from central: https://repo.maven.apache.org/maven2/jakarta/enterprise/jakarta.enterprise.cdi-api/3.0.1/jakarta.enterprise.cdi-api-3.0.1.jar
-Progress (1): 3.3/122 kBProgress (1): 6.0/122 kBProgress (1): 8.8/122 kBProgress (1): 11/122 kB Progress (1): 14/122 kBProgress (1): 17/122 kBProgress (1): 20/122 kBProgress (2): 20/122 kB | 3.3/25 kBProgress (2): 22/122 kB | 3.3/25 kBProgress (2): 22/122 kB | 6.0/25 kBProgress (2): 25/122 kB | 6.0/25 kBProgress (2): 25/122 kB | 8.8/25 kBProgress (2): 28/122 kB | 8.8/25 kBProgress (2): 28/122 kB | 11/25 kB Progress (2): 30/122 kB | 11/25 kBProgress (2): 30/122 kB | 14/25 kBProgress (2): 33/122 kB | 14/25 kBProgress (2): 33/122 kB | 17/25 kBProgress (2): 36/122 kB | 17/25 kBProgress (2): 36/122 kB | 20/25 kBProgress (2): 38/122 kB | 20/25 kBProgress (3): 38/122 kB | 20/25 kB | 3.3/11 kBProgress (3): 38/122 kB | 22/25 kB | 3.3/11 kBProgress (3): 38/122 kB | 25/25 kB | 3.3/11 kBProgress (3): 41/122 kB | 25/25 kB | 3.3/11 kBProgress (3): 41/122 kB | 25 kB | 3.3/11 kB   Progress (3): 41/122 kB | 25 kB | 6.0/11 kBProgress (3): 44/122 kB | 25 kB | 6.0/11 kBProgress (3): 44/122 kB | 25 kB | 8.8/11 kBProgress (3): 46/122 kB | 25 kB | 8.8/11 kBProgress (3): 46/122 kB | 25 kB | 11 kB    Progress (3): 49/122 kB | 25 kB | 11 kBProgress (3): 52/122 kB | 25 kB | 11 kBProgress (3): 55/122 kB | 25 kB | 11 kBProgress (3): 59/122 kB | 25 kB | 11 kBProgress (3): 61/122 kB | 25 kB | 11 kBProgress (3): 66/122 kB | 25 kB | 11 kBProgress (3): 70/122 kB | 25 kB | 11 kBProgress (3): 74/122 kB | 25 kB | 11 kBProgress (3): 78/122 kB | 25 kB | 11 kBProgress (3): 82/122 kB | 25 kB | 11 kBProgress (3): 86/122 kB | 25 kB | 11 kBProgress (3): 90/122 kB | 25 kB | 11 kBProgress (3): 94/122 kB | 25 kB | 11 kBProgress (3): 98/122 kB | 25 kB | 11 kBProgress (3): 102/122 kB | 25 kB | 11 kBProgress (3): 106/122 kB | 25 kB | 11 kBProgress (3): 111/122 kB | 25 kB | 11 kBProgress (3): 115/122 kB | 25 kB | 11 kBProgress (3): 119/122 kB | 25 kB | 11 kBProgress (3): 122 kB | 25 kB | 11 kB                                        Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/2.0.1.MR/jakarta.inject-api-2.0.1.MR.jar (11 kB at 20 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/enterprise/jakarta.enterprise.cdi-api/3.0.1/jakarta.enterprise.cdi-api-3.0.1.jar (122 kB at 217 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/2.0.1/jakarta.interceptor-api-2.0.1.jar (25 kB at 45 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-api[0;1m ---[m
 [[1;34mINFO[m] Deleting /var/maven/app/weld/target
@@ -540,12 +534,6 @@ Audit done.
 [[1;34mINFO[m] [1m----------------------< [0;36morg.jboss.weld:weld-spi[0;1m >-----------------------[m
 [[1;34mINFO[m] [1mBuilding Weld SPIs for container integration 4.0-SNAPSHOT          [4/4][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-Downloading from central: https://repo.maven.apache.org/maven2/jakarta/ejb/jakarta.ejb-api/4.0.1/jakarta.ejb-api-4.0.1.jar
-Downloading from central: https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar
-Downloading from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar
-Progress (1): 3.4/29 kBProgress (1): 7.5/29 kBProgress (1): 12/29 kB Progress (1): 16/29 kBProgress (1): 20/29 kBProgress (1): 24/29 kBProgress (1): 28/29 kBProgress (1): 29 kB   Progress (2): 29 kB | 3.3/62 kBProgress (2): 29 kB | 6.0/62 kBProgress (2): 29 kB | 8.8/62 kBProgress (2): 29 kB | 11/62 kB Progress (2): 29 kB | 14/62 kBProgress (2): 29 kB | 17/62 kBProgress (2): 29 kB | 20/62 kBProgress (2): 29 kB | 22/62 kBProgress (2): 29 kB | 25/62 kBProgress (2): 29 kB | 28/62 kBProgress (2): 29 kB | 31/62 kBProgress (2): 29 kB | 34/62 kBProgress (2): 29 kB | 36/62 kBProgress (2): 29 kB | 39/62 kBProgress (2): 29 kB | 43/62 kBProgress (2): 29 kB | 47/62 kBProgress (2): 29 kB | 51/62 kBProgress (2): 29 kB | 56/62 kBProgress (2): 29 kB | 60/62 kBProgress (2): 29 kB | 62 kB                              Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar (29 kB at 520 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/ejb/jakarta.ejb-api/4.0.1/jakarta.ejb-api-4.0.1.jar (62 kB at 937 kB/s)
-Progress (1): 3.3/93 kBProgress (1): 6.0/93 kBProgress (1): 8.8/93 kBProgress (1): 11/93 kB Progress (1): 14/93 kBProgress (1): 17/93 kBProgress (1): 20/93 kBProgress (1): 22/93 kBProgress (1): 25/93 kBProgress (1): 29/93 kBProgress (1): 33/93 kBProgress (1): 37/93 kBProgress (1): 42/93 kBProgress (1): 46/93 kBProgress (1): 50/93 kBProgress (1): 52/93 kBProgress (1): 56/93 kBProgress (1): 60/93 kBProgress (1): 64/93 kBProgress (1): 68/93 kBProgress (1): 72/93 kBProgress (1): 77/93 kBProgress (1): 81/93 kBProgress (1): 85/93 kBProgress (1): 89/93 kBProgress (1): 93/93 kBProgress (1): 93 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar (93 kB at 483 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-spi[0;1m ---[m
 [[1;34mINFO[m] Deleting /var/maven/app/weld-spi/target
@@ -601,7 +589,7 @@ Audit done.
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 s - in [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 s - in [1mTestSuite[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
@@ -636,15 +624,15 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Weld APIs Parent 4.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.160 s]
-[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  0.917 s]
-[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  2.473 s]
-[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  1.596 s]
+[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.169 s]
+[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  0.963 s]
+[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  1.644 s]
+[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  1.461 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  5.263 s
-[[1;34mINFO[m] Finished at: 2026-11-10T09:39:10Z
+[[1;34mINFO[m] Total time:  4.361 s
+[[1;34mINFO[m] Finished at: 2026-11-10T10:11:25Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Api.buildinfo: No such file or directory
 dos2unix: Skipping target/Api.buildinfo, not a regular file.

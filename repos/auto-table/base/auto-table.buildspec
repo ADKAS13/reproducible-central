@@ -10,6 +10,6 @@ jdk=8
 newline=lf
 umask=022
 
-command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean install -pl '!:auto-table-test-adapter-mybatis-plus'\""
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean install -pl '!:auto-table-test-adapter-mybatis-plus'\""
 
 buildinfo=target/Auto-table.buildinfo

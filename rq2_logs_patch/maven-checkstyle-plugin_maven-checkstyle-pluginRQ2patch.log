@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/maven-che
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Maven-checkstyle-plugin.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.apache.maven.plugins:maven-checkstyle-plugin:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/maven-checkstyle-plugin/RQ2patch/buildcache/maven-checkstyle-plugin:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/maven-checkstyle-plugin/RQ2patch/buildcache/maven-checkstyle-plugin:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=patch com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Nov  4 22:01:26 UTC 2026.
-Universal Time is now:  Wed Nov  4 22:01:26 UTC 2026.
+Local time is now:      Tue Nov 10 11:11:07 UTC 2026.
+Universal Time is now:  Tue Nov 10 11:11:07 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -103,251 +103,251 @@ Universal Time is now:  Wed Nov  4 22:01:26 UTC 2026.
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/antlr/antlr/maven-metadata.xml
-Progress (1): 394 B                   Downloaded from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml (394 B at 1.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
+Progress (1): 394 B                   Downloaded from central: https://repo.maven.apache.org/maven2/antlr/antlr/maven-metadata.xml (394 B at 725 B/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 3.9 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 4.9 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 32 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 31 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 4.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 1.6 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 4.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 6.3 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/com/ibm/icu/icu4j/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/maven-metadata.xml
-Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/maven-metadata.xml (2.3 kB at 10 kB/s)
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/maven-metadata.xml (2.3 kB at 20 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/com/puppycrawl/tools/checkstyle/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/maven-metadata.xml (6.3 kB at 25 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/maven-metadata.xml (6.3 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-beanutils/commons-beanutils/maven-metadata.xml
-Progress (1): 975 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/maven-metadata.xml (975 B at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/maven-metadata.xml
+Progress (1): 975 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/maven-metadata.xml (975 B at 9.9 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-chain/commons-chain/maven-metadata.xml
-Progress (1): 406 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/maven-metadata.xml (406 B at 4.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/maven-metadata.xml
+Progress (1): 406 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-chain/commons-chain/maven-metadata.xml (406 B at 941 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 11 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 14 kB/s)
 Progress (1): 503 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/commons-codec/commons-codec/maven-metadata.xml (503 B at 3.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-collections/commons-collections/maven-metadata.xml
-Progress (1): 934 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 9.3 kB/s)
+Progress (1): 934 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 14 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-digester/commons-digester/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/maven-metadata.xml
-Progress (1): 619 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/maven-metadata.xml (619 B at 4.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
+Progress (1): 619 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-digester/commons-digester/maven-metadata.xml (619 B at 9.4 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 16 kB/s)
-Progress (1): 318 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/commons-io/commons-io/maven-metadata.xml (318 B at 2.1 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-lang/commons-lang/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 19 kB/s)
+Progress (1): 318 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/commons-io/commons-io/maven-metadata.xml (318 B at 2.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml
-Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 6.2 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-logging/commons-logging/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-lang/commons-lang/maven-metadata.xml
+Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 8.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml
-Progress (1): 879 BProgress (2): 879 B | 387 B                           Downloaded from apache.snapshots: https://repository.apache.org/snapshots/commons-logging/commons-logging/maven-metadata.xml (387 B at 2.6 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 5.6 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-validator/commons-validator/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-logging/commons-logging/maven-metadata.xml
+Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 9.7 kB/s)
+Progress (1): 387 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/commons-logging/commons-logging/maven-metadata.xml (387 B at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/maven-metadata.xml
-Progress (1): 471 BProgress (2): 471 B | 985 B                           Downloaded from apache.snapshots: https://repository.apache.org/snapshots/commons-validator/commons-validator/maven-metadata.xml (471 B at 5.8 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/maven-metadata.xml (985 B at 8.4 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/dom4j/dom4j/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/commons-validator/commons-validator/maven-metadata.xml
+Progress (1): 985 BProgress (2): 985 B | 471 B                           Downloaded from apache.snapshots: https://repository.apache.org/snapshots/commons-validator/commons-validator/maven-metadata.xml (471 B at 6.0 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-validator/commons-validator/maven-metadata.xml (985 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml
-Progress (1): 795 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 7.4 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/info/picocli/picocli/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/dom4j/dom4j/maven-metadata.xml
+Progress (1): 795 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 9.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/maven-metadata.xml (3.1 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/info/picocli/picocli/maven-metadata.xml
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/maven-metadata.xml (3.1 kB at 13 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/javax/xml/bind/jaxb-api/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/maven-metadata.xml (1.6 kB at 6.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/maven-metadata.xml (1.6 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 12 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/net/sf/saxon/Saxon-HE/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml (3.3 kB at 9.7 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml (3.3 kB at 11 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/antlr/antlr4-runtime/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/maven-metadata.xml (1.3 kB at 9.5 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpclient/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/maven-metadata.xml (1.3 kB at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 20 kB/s)
-Progress (1): 449 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpclient/maven-metadata.xml (449 B at 3.0 kB/s)
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpclient/maven-metadata.xml
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 27 kB/s)
+Progress (1): 449 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpclient/maven-metadata.xml (449 B at 2.9 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcore/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml
-Progress (1): 400 BProgress (2): 400 B | 2.0 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcore/maven-metadata.xml (400 B at 5.1 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 21 kB/s)
+Progress (1): 2.0 kBProgress (2): 2.0 kB | 400 B                            Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 28 kB/s)
+Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcore/maven-metadata.xml (400 B at 4.9 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcore/4.0.2-SNAPSHOT/maven-metadata.xml
-Progress (1): 279 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcore/4.0.2-SNAPSHOT/maven-metadata.xml (279 B at 3.4 kB/s)
+Progress (1): 279 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcore/4.0.2-SNAPSHOT/maven-metadata.xml (279 B at 3.2 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcomponents-core/4.0.2-SNAPSHOT/maven-metadata.xml
-Progress (1): 290 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcomponents-core/4.0.2-SNAPSHOT/maven-metadata.xml (290 B at 3.8 kB/s)
+Progress (1): 290 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/httpcomponents/httpcomponents-core/4.0.2-SNAPSHOT/maven-metadata.xml (290 B at 3.5 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-aether-provider/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/maven-metadata.xml
-Progress (1): 851 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/maven-metadata.xml (851 B at 7.7 kB/s)
+Progress (1): 851 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/maven-metadata.xml (851 B at 2.5 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-artifact/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml
-Progress (1): 3.9 kBProgress (2): 3.9 kB | 488 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-artifact/maven-metadata.xml (488 B at 3.3 kB/s)
+Progress (1): 3.9 kBProgress (2): 3.9 kB | 488 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-artifact/maven-metadata.xml (488 B at 3.0 kB/s)
 Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/maven-metadata.xml (3.9 kB at 15 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-compat/maven-metadata.xml
-Progress (1): 3.2 kBProgress (2): 3.2 kB | 486 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-compat/maven-metadata.xml (486 B at 6.0 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/maven-metadata.xml (3.2 kB at 22 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/maven-metadata.xml
+Progress (1): 486 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-compat/maven-metadata.xml (486 B at 5.7 kB/s)
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/maven-metadata.xml (3.2 kB at 6.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-core/maven-metadata.xml
-Progress (1): 3.9 kBProgress (2): 3.9 kB | 484 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-core/maven-metadata.xml (484 B at 6.0 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml (3.9 kB at 13 kB/s)
+Progress (1): 484 BProgress (2): 484 B | 3.9 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-core/maven-metadata.xml (484 B at 5.8 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/maven-metadata.xml (3.9 kB at 16 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-model/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml
-Progress (1): 485 BProgress (2): 485 B | 3.9 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-model/maven-metadata.xml (485 B at 6.2 kB/s)
+Progress (1): 3.9 kBProgress (2): 3.9 kB | 485 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-model/maven-metadata.xml (485 B at 5.8 kB/s)
 Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml (3.9 kB at 16 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-model-builder/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml
-Progress (1): 493 BProgress (2): 493 B | 3.1 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-model-builder/maven-metadata.xml (493 B at 6.2 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml (3.1 kB at 9.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 493 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-model-builder/maven-metadata.xml (493 B at 5.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml (3.1 kB at 11 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-plugin-api/maven-metadata.xml
-Progress (1): 3.8 kBProgress (2): 3.8 kB | 490 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-plugin-api/maven-metadata.xml (490 B at 6.3 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml (3.8 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml
+Progress (1): 3.8 kBProgress (2): 3.8 kB | 490 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-plugin-api/maven-metadata.xml (490 B at 5.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata.xml (3.8 kB at 16 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-repository-metadata/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml
-Progress (1): 3.5 kBProgress (2): 3.5 kB | 499 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-repository-metadata/maven-metadata.xml (499 B at 6.4 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml (3.5 kB at 40 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-settings/maven-metadata.xml
+Progress (1): 3.5 kBProgress (2): 3.5 kB | 499 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-repository-metadata/maven-metadata.xml (499 B at 5.8 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml (3.5 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml
-Progress (1): 488 BProgress (2): 488 B | 3.8 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-settings/maven-metadata.xml (488 B at 6.0 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml (3.8 kB at 13 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-settings-builder/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-settings/maven-metadata.xml
+Progress (1): 3.8 kBProgress (2): 3.8 kB | 488 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-settings/maven-metadata.xml (488 B at 6.2 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml (3.8 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml
-Progress (1): 496 BProgress (2): 496 B | 2.9 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-settings-builder/maven-metadata.xml (496 B at 6.2 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml (2.9 kB at 29 kB/s)
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-settings-builder/maven-metadata.xml
+Progress (1): 2.9 kBProgress (2): 2.9 kB | 496 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/maven-settings-builder/maven-metadata.xml (496 B at 6.2 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml (2.9 kB at 13 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-core/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/maven-metadata.xml
-Progress (1): 368 BProgress (2): 368 B | 1.6 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-core/maven-metadata.xml (368 B at 4.6 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/maven-metadata.xml (1.6 kB at 12 kB/s)
+Progress (1): 368 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-core/maven-metadata.xml (368 B at 4.5 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/maven-metadata.xml (1.6 kB at 3.4 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-decoration-model/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/maven-metadata.xml (1.4 kB at 15 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-decoration-model/maven-metadata.xml (1.4 kB at 608 B/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-integration-tools/maven-metadata.xml
-Progress (1): 381 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-integration-tools/maven-metadata.xml (381 B at 2.5 kB/s)
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/maven-metadata.xml (1.4 kB at 2.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/maven-metadata.xml
+Progress (1): 1.4 kBProgress (2): 1.4 kB | 381 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-integration-tools/maven-metadata.xml (381 B at 2.5 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/maven-metadata.xml (1.4 kB at 3.6 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml
-Progress (1): 827 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml (827 B at 6.8 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml
+Progress (1): 827 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/maven-metadata.xml (827 B at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml (1.5 kB at 18 kB/s)
-Progress (1): 374 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml (374 B at 2.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml
+Progress (1): 1.5 kBProgress (2): 1.5 kB | 374 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml (374 B at 2.4 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-fml/maven-metadata.xml (1.5 kB at 5.6 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml (1.1 kB at 9.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml/maven-metadata.xml (1.1 kB at 3.6 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml
-Progress (1): 372 B                   Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml (372 B at 2.5 kB/s)
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml (1.6 kB at 7.1 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml
+Progress (1): 1.6 kBProgress (2): 1.6 kB | 372 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml (372 B at 2.5 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/maven-metadata.xml (1.6 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml
-Progress (1): 377 BProgress (2): 377 B | 1.8 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml (377 B at 4.8 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml (1.8 kB at 20 kB/s)
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml
+Progress (1): 377 BProgress (2): 377 B | 1.8 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml (377 B at 4.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/maven-metadata.xml (1.8 kB at 6.6 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/plugin-testing/maven-plugin-testing-harness/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-testing/maven-plugin-testing-harness/maven-metadata.xml
-Progress (1): 570 BProgress (2): 570 B | 949 B                           Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/plugin-testing/maven-plugin-testing-harness/maven-metadata.xml (570 B at 7.2 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-testing/maven-plugin-testing-harness/maven-metadata.xml (949 B at 3.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml
+Progress (1): 570 BProgress (2): 570 B | 949 B                           Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/plugin-testing/maven-plugin-testing-harness/maven-metadata.xml (570 B at 7.0 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-testing/maven-plugin-testing-harness/maven-metadata.xml (949 B at 3.5 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml
-Progress (1): 381 BProgress (2): 381 B | 1.6 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml (381 B at 4.8 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml (1.6 kB at 15 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml
+Progress (1): 1.6 kBProgress (2): 1.6 kB | 381 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml (381 B at 4.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/maven-metadata.xml (1.6 kB at 5.3 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml
-Progress (1): 403 BProgress (2): 403 B | 1.5 kB                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml (403 B at 5.1 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml (1.5 kB at 12 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml
+Progress (1): 1.5 kBProgress (2): 1.5 kB | 382 B                            Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml (382 B at 3.2 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/maven-metadata.xml (1.5 kB at 5.1 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml
-Progress (1): 398 BProgress (2): 398 B | 888 B                           Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml (398 B at 5.0 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml (888 B at 8.6 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml
+Progress (1): 888 BProgress (2): 888 B | 377 B                           Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml (377 B at 4.7 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/maven-metadata.xml (888 B at 3.4 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts-core/maven-metadata.xml
-Progress (1): 431 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-core/maven-metadata.xml (431 B at 2.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-core/maven-metadata.xml
+Progress (1): 431 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-core/maven-metadata.xml (431 B at 1.1 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts-taglib/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-taglib/maven-metadata.xml
-Progress (1): 433 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-taglib/maven-metadata.xml (433 B at 5.0 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts-tiles/maven-metadata.xml
+Progress (1): 433 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-taglib/maven-metadata.xml (433 B at 921 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-tiles/maven-metadata.xml
-Progress (1): 432 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-tiles/maven-metadata.xml (432 B at 4.7 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/velocity/velocity/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts-tiles/maven-metadata.xml
+Progress (1): 432 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/struts/struts-tiles/maven-metadata.xml (432 B at 1.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/maven-metadata.xml
-Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/maven-metadata.xml (636 B at 6.2 kB/s)
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/velocity/velocity/maven-metadata.xml
+Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity/maven-metadata.xml (636 B at 6.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/velocity/velocity-tools/maven-metadata.xml
-Progress (1): 468 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/maven-metadata.xml (468 B at 5.0 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
+Progress (1): 468 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-tools/maven-metadata.xml (468 B at 6.3 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 58 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 69 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.2 kB at 3.7 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-archiver/maven-metadata.xml
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml (3.2 kB at 17 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/maven-metadata.xml (3.2 kB at 10.0 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml (1.5 kB at 4.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/maven-metadata.xml (1.5 kB at 5.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (2.1 kB at 27 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (2.1 kB at 7.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (1.3 kB at 15 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-io/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (1.3 kB at 4.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/maven-metadata.xml (2.1 kB at 21 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-io/maven-metadata.xml
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/maven-metadata.xml (2.1 kB at 6.5 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-resources/maven-metadata.xml
-Progress (1): 645 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/maven-metadata.xml (645 B at 2.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/maven-metadata.xml
+Progress (1): 676 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/maven-metadata.xml (676 B at 1.3 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-utils/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml (3.0 kB at 9.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml (3.0 kB at 12 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/codehaus/plexus/plexus-velocity/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/maven-metadata.xml
-Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/maven-metadata.xml (769 B at 8.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/maven-metadata.xml
+Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/maven-metadata.xml (769 B at 2.7 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/aether/aether-api/maven-metadata.xml
-Progress (1): 843 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/maven-metadata.xml (843 B at 5.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/maven-metadata.xml
+Progress (1): 843 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/maven-metadata.xml (843 B at 2.5 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/aether/aether-impl/maven-metadata.xml
-Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/maven-metadata.xml (844 B at 10 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/maven-metadata.xml
+Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/maven-metadata.xml (844 B at 2.5 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/aether/aether-spi/maven-metadata.xml
-Progress (1): 843 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/maven-metadata.xml (843 B at 9.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/maven-metadata.xml
+Progress (1): 843 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/maven-metadata.xml (843 B at 1.8 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/aether/aether-util/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/maven-metadata.xml
-Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/maven-metadata.xml (844 B at 9.2 kB/s)
+Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/maven-metadata.xml (844 B at 2.9 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/plexus/plexus-cipher/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml
-Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (538 B at 6.5 kB/s)
+Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (538 B at 2.3 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml
-Progress (1): 599 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (599 B at 7.9 kB/s)
-Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/sisu/sisu-guice/maven-metadata.xml
+Progress (1): 599 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (599 B at 2.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml (1.3 kB at 5.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml
+Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/sisu/sisu-guice/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml (1.3 kB at 4.6 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml (1.2 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/maven-metadata.xml (1.2 kB at 4.8 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml (1.2 kB at 14 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/oro/oro/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/maven-metadata.xml (1.2 kB at 5.2 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/oro/oro/maven-metadata.xml
-Progress (1): 260 B                   Downloaded from central: https://repo.maven.apache.org/maven2/oro/oro/maven-metadata.xml (260 B at 992 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/oro/oro/maven-metadata.xml
+Progress (1): 260 B                   Downloaded from central: https://repo.maven.apache.org/maven2/oro/oro/maven-metadata.xml (260 B at 1.1 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/xerces/xercesImpl/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml
-Progress (1): 951 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml (951 B at 3.8 kB/s)
+Progress (1): 951 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml (951 B at 11 kB/s)
 Downloading from apache.snapshots: https://repository.apache.org/snapshots/xml-apis/xml-apis/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml
-Progress (1): 567 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 2.0 kB/s)
+Progress (1): 567 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 8.1 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for maven-checkstyle-plugin — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: maven-checkstyle-plugin (81 dependencies, 39 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
@@ -384,8 +384,8 @@ Progress (1): 567 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  15.509 s
-[[1;34mINFO[m] Finished at: 2026-11-04T22:01:43Z
+[[1;34mINFO[m] Total time:  22.905 s
+[[1;34mINFO[m] Finished at: 2026-11-10T11:11:30Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;31mERROR[m] Failed to execute goal [32morg.apache.rat:apache-rat-plugin:0.12:check[m [1m(rat-check)[m on project [36mmaven-checkstyle-plugin[m: [1;31mToo many files with unapproved license: 2 See RAT report in: /var/maven/app/target/rat.txt[m -> [1m[Help 1][m
 [[1;31mERROR[m] 

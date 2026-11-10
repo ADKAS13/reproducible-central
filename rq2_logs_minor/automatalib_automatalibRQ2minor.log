@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/automatal
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/AutomataRQ2-minor.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mnet.automatalib:automata-parent:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/automatalib/RQ2minor/buildcache/automata-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/automatalib/RQ2minor/buildcache/automata-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Nov  4 23:20:52 UTC 2026.
-Universal Time is now:  Wed Nov  4 23:20:52 UTC 2026.
+Local time is now:      Tue Nov 10 12:22:42 UTC 2026.
+Universal Time is now:  Tue Nov 10 12:22:42 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -187,31 +187,23 @@ Universal Time is now:  Wed Nov  4 23:20:52 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml
-Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 749 B/s)
+Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 429 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 5.0 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 44 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.51.0/error_prone_annotations-2.51.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.51.0/error_prone_annotations-2.51.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.51.0/error_prone_parent-2.51.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.51.0/error_prone_parent-2.51.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.52.0/error_prone_annotations-2.52.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.52.0/error_prone_annotations-2.52.0.pom (0 B at 0 B/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.52.0/error_prone_parent-2.52.0.pom
-Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.52.0/error_prone_parent-2.52.0.pom (0 B at 0 B/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 37 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 1.8 kB/s)
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 1.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 4.9 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 4.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 2.1 kB/s)
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 85 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 59 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 52 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 49 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 25 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 22 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-commons-smartcollections (15 dependencies, 5 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/commons/smartcollections/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-commons-smartcollections: pinned=5 upgraded=7 downgraded=0 added=3 removed=0 scope_changed=0
@@ -234,17 +226,7 @@ Progress (1): 1.4 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] Compiling 4 source files to /var/maven/app/commons/smartcollections/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.321 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/commons/smartcollections/target/automata-commons-smartcollections-0.10.0-SNAPSHOT.jar
@@ -269,7 +251,7 @@ Progress (1): 1.4 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-commons-util[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 53 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 56 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-commons-util (16 dependencies, 5 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/commons/util/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for automata-commons-util: pinned=6 upgraded=8 downgraded=0 added=2 removed=0 scope_changed=0
@@ -292,20 +274,7 @@ Progress (1): 3.9 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] Compiling 14 source files to /var/maven/app/commons/util/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-commons-util[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.484 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 38, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-commons-util[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/commons/util/target/automata-commons-util-0.10.0-SNAPSHOT.jar
@@ -351,20 +320,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 8 source files to /var/maven/app/api/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-api[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m79[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.469 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 79, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-api[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/api/target/automata-api-0.10.0-SNAPSHOT.jar
@@ -389,11 +345,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-core[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 177 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 155 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 185 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 52 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 208 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 153 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
 Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 16 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-core (23 dependencies, 5 carrying exclusions)
@@ -418,20 +374,7 @@ Progress (1): 907 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] Compiling 49 source files to /var/maven/app/core/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-core[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m248[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.241 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 248, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-core[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/core/target/automata-core-0.10.0-SNAPSHOT.jar
@@ -477,20 +420,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 37 source files to /var/maven/app/util/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-util[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m154[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.143 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 154, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-util[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/util/target/automata-util-0.10.0-SNAPSHOT.jar
@@ -553,20 +483,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/adapters/brics/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-brics[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running net.automatalib.brics.[1mBricsDFATest[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.307 s - in net.automatalib.brics.[1mBricsDFATest[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 4, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-brics[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/adapters/brics/target/automata-brics-0.10.0-SNAPSHOT.jar
@@ -607,40 +524,40 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-jung-visualizer[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/misberner/graphviz-awt-shapes/graphviz-awt-shapes/maven-metadata.xml
-Progress (1): 366 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/misberner/graphviz-awt-shapes/graphviz-awt-shapes/maven-metadata.xml (366 B at 600 B/s)
+Progress (1): 366 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/misberner/graphviz-awt-shapes/graphviz-awt-shapes/maven-metadata.xml (366 B at 835 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/jidesoft/jide-oss/maven-metadata.xml
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/jidesoft/jide-oss/maven-metadata.xml (2.5 kB at 8.3 kB/s)
+Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/jidesoft/jide-oss/maven-metadata.xml (2.5 kB at 5.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
 Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 19 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 27 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-shared/maven-metadata.xml
-Progress (1): 451 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-shared/maven-metadata.xml (451 B at 809 B/s)
+Progress (1): 451 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-shared/maven-metadata.xml (451 B at 905 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-tta/maven-metadata.xml
-Progress (1): 448 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-tta/maven-metadata.xml (448 B at 1.1 kB/s)
+Progress (1): 448 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/java/openjdk/cacio/cacio-tta/maven-metadata.xml (448 B at 1.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/jcip/jcip-annotations/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-algorithms/maven-metadata.xml
-Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-algorithms/maven-metadata.xml (362 B at 830 B/s)
+Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-algorithms/maven-metadata.xml (362 B at 973 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/maven-metadata.xml
-Progress (1): 355 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/maven-metadata.xml (355 B at 1.3 kB/s)
+Progress (1): 355 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/maven-metadata.xml (355 B at 685 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-graph-impl/maven-metadata.xml
-Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-graph-impl/maven-metadata.xml (362 B at 1.3 kB/s)
+Progress (1): 362 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-graph-impl/maven-metadata.xml (362 B at 937 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-visualization/maven-metadata.xml
 Progress (1): 365 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jung/jung-visualization/maven-metadata.xml (365 B at 1.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml
-Progress (1): 464 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml (464 B at 7.2 kB/s)
+Progress (1): 464 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml (464 B at 1.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-reflect/maven-metadata.xml
-Progress (1): 471 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-reflect/maven-metadata.xml (471 B at 1.8 kB/s)
+Progress (1): 471 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-reflect/maven-metadata.xml (471 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing/maven-metadata.xml
 Progress (1): 475 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing/maven-metadata.xml (475 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit/maven-metadata.xml
-Progress (1): 481 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit/maven-metadata.xml (481 B at 1.2 kB/s)
+Progress (1): 481 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit/maven-metadata.xml (481 B at 1.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit-4.5/maven-metadata.xml
-Progress (1): 485 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit-4.5/maven-metadata.xml (485 B at 1.1 kB/s)
+Progress (1): 485 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-swing-junit-4.5/maven-metadata.xml (485 B at 1.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml
-Progress (1): 751 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml (751 B at 3.4 kB/s)
+Progress (1): 751 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml (751 B at 3.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 14 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 3.5 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-jung-visualizer — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-jung-visualizer (37 dependencies, 5 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/visualization/jung-visualizer/target/dependency-tree-after.txt
@@ -664,20 +581,7 @@ Progress (1): 721 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/visualization/jung-visualizer/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-jung-visualizer[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running net.automatalib.visualization.jung.[1mProviderTest[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.526 s - in net.automatalib.visualization.jung.[1mProviderTest[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 2, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-jung-visualizer[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/visualization/jung-visualizer/target/automata-jung-visualizer-0.10.0-SNAPSHOT.jar
@@ -724,20 +628,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 10 source files to /var/maven/app/incremental/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-incremental[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m69[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.788 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 69, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-incremental[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/incremental/target/automata-incremental-0.10.0-SNAPSHOT.jar
@@ -797,7 +688,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-core[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-core[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/serialization/core/target/automata-serialization-core-0.10.0-SNAPSHOT.jar
@@ -843,17 +734,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 3 source files to /var/maven/app/serialization/etf/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-etf[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.364 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 7, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-etf[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/serialization/etf/target/automata-serialization-etf-0.10.0-SNAPSHOT.jar
@@ -899,20 +780,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 4 source files to /var/maven/app/serialization/fsm/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-fsm[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 10, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-fsm[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/serialization/fsm/target/automata-serialization-fsm-0.10.0-SNAPSHOT.jar
@@ -969,20 +837,7 @@ Parser generated successfully.
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/taf/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-taf[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running net.automatalib.serialization.taf.[1mTAFSerializationTest[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.345 s - in net.automatalib.serialization.taf.[1mTAFSerializationTest[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 4, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-taf[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/serialization/taf/target/automata-serialization-taf-0.10.0-SNAPSHOT.jar
@@ -1054,20 +909,7 @@ Parser generated successfully.
 [[1;34mINFO[m] Compiling 18 source files to /var/maven/app/modelchecking/ltsmin/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m89[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m76[m, Time elapsed: 0.496 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;33mWARNING[m] [1;33mTests run: 63, Failures: 0, Errors: 0, Skipped: 50[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-modelchecking-ltsmin[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/modelchecking/ltsmin/target/automata-modelchecking-ltsmin-0.10.0-SNAPSHOT.jar
@@ -1113,17 +955,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/aut/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-aut[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running net.automatalib.serialization.aut.[1mAUTSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.319 s - in net.automatalib.serialization.aut.[1mAUTSerializationTest[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 5, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-aut[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/serialization/aut/target/automata-serialization-aut-0.10.0-SNAPSHOT.jar
@@ -1180,20 +1012,7 @@ Parser generated successfully.
 [[1;34mINFO[m] Compiling 4 source files to /var/maven/app/serialization/dot/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-dot[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.4 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 18, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-dot[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/serialization/dot/target/automata-serialization-dot-0.10.0-SNAPSHOT.jar
@@ -1239,17 +1058,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/learnlibv2/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.318 s - in net.automatalib.serialization.learnlibv2.[1mLearnLibV2SerializationTest[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 3, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-learnlibv2[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/serialization/learnlibv2/target/automata-serialization-learnlibv2-0.10.0-SNAPSHOT.jar
@@ -1295,17 +1104,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/serialization/saf/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-serialization-saf[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running net.automatalib.serialization.saf.[1mSAFSerializationTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.332 s - in net.automatalib.serialization.saf.[1mSAFSerializationTest[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 4, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-serialization-saf[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/serialization/saf/target/automata-serialization-saf-0.10.0-SNAPSHOT.jar
@@ -1352,20 +1151,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] Compiling 4 source files to /var/maven/app/visualization/dot-visualizer/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-dot-visualizer[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.067 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 4, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-dot-visualizer[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/visualization/dot-visualizer/target/automata-dot-visualizer-0.10.0-SNAPSHOT.jar
@@ -1430,9 +1216,9 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [[1;34mINFO[m] [1mBuilding AutomataLib :: Archetypes :: Basic 0.10.0-SNAPSHOT      [28/31][m
 [[1;34mINFO[m] [1m--------------------------[ maven-archetype ]---------------------------[m
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml (1.1 kB at 20 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml (1.1 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (1.0 kB at 22 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (1.0 kB at 17 kB/s)
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbasic[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1503,8 +1289,6 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [INFO] -------------------------< archetype.it:basic >-------------------------
 [[1;34mINFO[m] [INFO] Building basic 0.1-SNAPSHOT
 [[1;34mINFO[m] [INFO] --------------------------------[ jar ]---------------------------------
-[[1;34mINFO[m] [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.52.0/error_prone_annotations-2.52.0.jar
-[[1;34mINFO[m] [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.52.0/error_prone_annotations-2.52.0.jar (21 kB at 9.3 kB/s)
 [[1;34mINFO[m] [INFO] 
 [[1;34mINFO[m] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ basic ---
 [[1;34mINFO[m] [INFO] Using 'UTF-8' encoding to copy filtered resources.
@@ -1529,8 +1313,8 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] [INFO] BUILD SUCCESS
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
-[[1;34mINFO[m] [INFO] Total time:  3.412 s
-[[1;34mINFO[m] [INFO] Finished at: 2026-11-04T23:21:38Z
+[[1;34mINFO[m] [INFO] Total time:  0.908 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-11-10T12:23:08Z
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
 [[1;34mINFO[m] 
@@ -1637,8 +1421,8 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] [INFO] BUILD SUCCESS
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
-[[1;34mINFO[m] [INFO] Total time:  1.078 s
-[[1;34mINFO[m] [INFO] Finished at: 2026-11-04T23:21:40Z
+[[1;34mINFO[m] [INFO] Total time:  0.907 s
+[[1;34mINFO[m] [INFO] Finished at: 2026-11-10T12:23:10Z
 [[1;34mINFO[m] [INFO] ------------------------------------------------------------------------
 [[1;34mINFO[m] Post-archetype-generation invoker exit code: 0
 [[1;34mINFO[m] 
@@ -1680,7 +1464,7 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-build-tools[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-build-tools[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/build-tools/target/automata-build-tools-0.10.0-SNAPSHOT.jar
@@ -1706,9 +1490,9 @@ Progress (1): 1.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mautomata-examples[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml (6.0 kB at 110 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/maven-metadata.xml (6.0 kB at 99 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml (6.0 kB at 119 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/maven-metadata.xml (6.0 kB at 89 kB/s)
 [[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for automata-examples — falling back to pinned lower bounds: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: automata-examples (42 dependencies, 5 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/examples/target/dependency-tree-after.txt
@@ -1732,56 +1516,7 @@ Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from c
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/examples/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mautomata-examples[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running net.automatalib.examples.[1mExamplesTest[m
-[INFO] IncrementalDFAExample: Incremental construction using a Tree
-[INFO] IncrementalDFAExample:   Inserting a b c as accepted
-[INFO] IncrementalDFAExample:   Inserting a c as rejected
-[INFO] IncrementalDFAExample:   Inserting a c b as accepted
-[INFO] IncrementalDFAExample:   Inserting ε as accepted
-[INFO] IncrementalDFAExample: Incremental construction using a DAG
-[INFO] IncrementalDFAExample:   Inserting a b c as accepted
-[INFO] IncrementalDFAExample:   Inserting a c as rejected
-[INFO] IncrementalDFAExample:   Inserting a c b as accepted
-[INFO] IncrementalDFAExample:   Inserting ε as accepted
-[INFO] IncrementalMealyExample: Incremental construction using a tree
-[INFO] IncrementalMealyExample:   Inserting a b c / x y z
-[INFO] IncrementalMealyExample:   Inserting a c / x w
-[INFO] IncrementalMealyExample:   Inserting a c b / x w u
-[INFO] IncrementalMealyExample: Incremental construction using a DAG
-[INFO] IncrementalMealyExample:   Inserting a b c / x y z
-[INFO] IncrementalMealyExample:   Inserting a c / x w
-[INFO] IncrementalMealyExample:   Inserting a c b / x w u
-[INFO] IncrementalPCDFAExample: Incremental construction using a tree
-[INFO] IncrementalPCDFAExample:   Inserting a b c as accepted
-[INFO] IncrementalPCDFAExample:   Inserting a c b as rejected
-[INFO] IncrementalPCDFAExample:   Inserting a c as accepted
-[INFO] IncrementalPCDFAExample: Incremental construction using a DAG
-[INFO] IncrementalPCDFAExample:   Inserting a b c as accepted
-[INFO] IncrementalPCDFAExample:   Inserting a c b as rejected
-[INFO] IncrementalPCDFAExample:   Inserting a c as accepted
-[INFO] LTSminUtil: Could not find binary 'etf2lts-mc' of the LTSmin installation. LTSmin can be obtained at https://ltsmin.utwente.nl. If you installed LTSmin in a non standard location you can set the property: 'automatalib.ltsmin.path'. Setting the $PATH variable works too.
-[INFO] LTSminUtil: Could not find binary 'ltsmin-convert' of the LTSmin installation. LTSmin can be obtained at https://ltsmin.utwente.nl. If you installed LTSmin in a non standard location you can set the property: 'automatalib.ltsmin.path'. Setting the $PATH variable works too.
-[INFO] OneSEVPAExample: The VPA does accept the word 'i'
-[INFO] OneSEVPAExample: The VPA does accept the word 'cir'
-[INFO] OneSEVPAExample: The VPA does accept the word 'cccirrr'
-[INFO] OneSEVPAExample: The VPA does not accept the word 'cirrr'
-[INFO] OneSEVPAExample: The VPA does not accept the word 'cccir'
-[INFO] OneSEVPAExample: The VPA does accept the word 'cciiirr'
-[INFO] OneSEVPAExample: The VPA does not accept the word 'cirircr'
-[INFO] SimpleBricsExample: Output for a b d is true
-[INFO] SimpleBricsExample: Output for a b b c is true
-[INFO] SimpleBricsExample: Output for a b b b b b d e is true
-[INFO] SimpleBricsExample: Output for a d e is false
-[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m10[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 1.569 s - in net.automatalib.examples.[1mExamplesTest[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;33mWARNING[m] [1;33mTests run: 10, Failures: 0, Errors: 0, Skipped: 2[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mautomata-examples[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/examples/target/automata-examples-0.10.0-SNAPSHOT.jar
@@ -1792,48 +1527,230 @@ Progress (1): 4.1 kBProgress (1): 6.0 kB                    Downloaded from c
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for AutomataLib 0.10.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  0.961 s]
-[[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.021 s]
-[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.020 s]
-[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  4.170 s]
-[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  4.734 s]
-[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  2.272 s]
-[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  5.711 s]
-[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  3.147 s]
-[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.014 s]
-[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  1.018 s]
-[[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;32mSUCCESS[m [  0.012 s]
-[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  6.402 s]
-[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  1.538 s]
-[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.012 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.065 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  0.924 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  0.914 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  1.167 s]
-[[1;34mINFO[m] AutomataLib :: Model Checking ...................... [1;32mSUCCESS[m [  0.011 s]
-[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  1.449 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  0.851 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  1.055 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.864 s]
-[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [  0.875 s]
-[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  1.722 s]
-[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.022 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.069 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  4.757 s]
-[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  2.030 s]
-[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.031 s]
-[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  2.687 s]
+[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  0.980 s]
+[[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.019 s]
+[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.015 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;32mSUCCESS[m [  3.237 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;32mSUCCESS[m [  0.866 s]
+[[1;34mINFO[m] AutomataLib :: API ................................. [1;32mSUCCESS[m [  1.313 s]
+[[1;34mINFO[m] AutomataLib :: Core ................................ [1;32mSUCCESS[m [  6.469 s]
+[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;32mSUCCESS[m [  1.723 s]
+[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;32mSUCCESS[m [  0.013 s]
+[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;32mSUCCESS[m [  0.153 s]
+[[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;32mSUCCESS[m [  0.013 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;32mSUCCESS[m [  6.047 s]
+[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;32mSUCCESS[m [  0.278 s]
+[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;32mSUCCESS[m [  0.050 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;32mSUCCESS[m [  0.095 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;32mSUCCESS[m [  0.118 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;32mSUCCESS[m [  0.347 s]
+[[1;34mINFO[m] AutomataLib :: Model Checking ...................... [1;32mSUCCESS[m [  0.013 s]
+[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;32mSUCCESS[m [  0.472 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;32mSUCCESS[m [  0.090 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;32mSUCCESS[m [  0.197 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;32mSUCCESS[m [  0.088 s]
+[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;32mSUCCESS[m [  0.104 s]
+[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;32mSUCCESS[m [  0.203 s]
+[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;32mSUCCESS[m [  0.021 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;32mSUCCESS[m [  0.042 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;32mSUCCESS[m [  2.160 s]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;32mSUCCESS[m [  1.698 s]
+[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;32mSUCCESS[m [  0.025 s]
+[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;32mSUCCESS[m [  0.584 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  49.850 s
-[[1;34mINFO[m] Finished at: 2026-11-04T23:21:43Z
+[[1;34mINFO[m] Total time:  27.736 s
+[[1;34mINFO[m] Finished at: 2026-11-10T12:23:11Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-dos2unix: target/AutomataRQ2-minor.buildinfo: No such file or directory
-dos2unix: Skipping target/AutomataRQ2-minor.buildinfo, not a regular file.
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+javac: invalid flag: --version
+Usage: javac <options> <source files>
+use -help for a list of possible options
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version [0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Tue Nov 10 12:23:11 UTC 2026.
+Universal Time is now:  Tue Nov 10 12:23:11 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] AutomataLib                                                        [pom]
+[[1;34mINFO[m] AutomataLib :: Build Parent                                        [pom]
+[[1;34mINFO[m] AutomataLib :: Commons                                             [pom]
+[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections                        [jar]
+[[1;34mINFO[m] AutomataLib :: Commons :: Utilities                                [jar]
+[[1;34mINFO[m] AutomataLib :: API                                                 [jar]
+[[1;34mINFO[m] AutomataLib :: Core                                                [jar]
+[[1;34mINFO[m] AutomataLib :: Utilities                                           [jar]
+[[1;34mINFO[m] AutomataLib :: Adapters                                            [pom]
+[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS                                   [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization                                       [pom]
+[[1;34mINFO[m] AutomataLib :: Serialization :: Core                               [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: DOT                                [jar]
+[[1;34mINFO[m] AutomataLib :: Visualization                                       [pom]
+[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer                     [jar]
+[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer                    [jar]
+[[1;34mINFO[m] AutomataLib :: Incremental                                         [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: ETF                                [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: FSM                                [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: TAF                                [jar]
+[[1;34mINFO[m] AutomataLib :: Model Checking                                      [pom]
+[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin                            [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: AUT                                [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2                         [jar]
+[[1;34mINFO[m] AutomataLib :: Serialization :: SAF                                [jar]
+[[1;34mINFO[m] AutomataLib :: Distribution                                        [pom]
+[[1;34mINFO[m] AutomataLib :: Archetypes                                          [pom]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic                     [maven-archetype]
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete                  [maven-archetype]
+[[1;34mINFO[m] AutomataLib :: Build Tools                                         [jar]
+[[1;34mINFO[m] AutomataLib :: Examples                                            [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36mnet.automatalib:automata-parent[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib 0.10.0-SNAPSHOT                              [1/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-parent[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.8.2:attach-descriptor[m [1m(attach-descriptor)[m @ [36mautomata-parent[0;1m ---[m
+[[1;34mINFO[m] Attaching 'src/site/site.xml' site descriptor with classifier 'site'.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-parent/0.10.0-SNAPSHOT/automata-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/target/automata-parent-0.10.0-SNAPSHOT-site.xml to /var/maven/.m2/repository/net/automatalib/automata-parent/0.10.0-SNAPSHOT/automata-parent-0.10.0-SNAPSHOT-site.xml
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mnet.automatalib:automata-build-parent[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Build Parent 0.10.0-SNAPSHOT              [2/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-build-parent[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/build-parent/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-build-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/build-parent/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-build-parent/0.10.0-SNAPSHOT/automata-build-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36mnet.automatalib:automata-commons-parent[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Commons 0.10.0-SNAPSHOT                   [3/31][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-commons-parent[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/commons/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mautomata-commons-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/commons/pom.xml to /var/maven/.m2/repository/net/automatalib/automata-commons-parent/0.10.0-SNAPSHOT/automata-commons-parent-0.10.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------< [0;36mnet.automatalib:automata-commons-smartcollections[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding AutomataLib :: Commons :: Smart Collections 0.10.0-SNAPSHOT [4/31][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.82/jcommander-1.82.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/7.12.0/testng-7.12.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.55.1/checker-qual-3.55.1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/jcommander/jcommander/1.83/jcommander-1.83.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/4.2.3/guice-4.2.3-no_aop.jar
+Progress (1): 3.3/530 kBProgress (2): 3.3/530 kB | 4.1/993 kBProgress (3): 3.3/530 kB | 4.1/993 kB | 3.3/90 kBProgress (4): 3.3/530 kB | 4.1/993 kB | 3.3/90 kB | 3.3/242 kBProgress (4): 3.3/530 kB | 4.1/993 kB | 3.3/90 kB | 6.0/242 kBProgress (4): 3.3/530 kB | 4.1/993 kB | 3.3/90 kB | 8.8/242 kBProgress (4): 3.3/530 kB | 4.1/993 kB | 6.0/90 kB | 8.8/242 kBProgress (4): 3.3/530 kB | 8.2/993 kB | 6.0/90 kB | 8.8/242 kBProgress (4): 6.0/530 kB | 8.2/993 kB | 6.0/90 kB | 8.8/242 kBProgress (4): 6.0/530 kB | 12/993 kB | 6.0/90 kB | 8.8/242 kB Progress (4): 6.0/530 kB | 12/993 kB | 8.8/90 kB | 8.8/242 kBProgress (4): 6.0/530 kB | 12/993 kB | 8.8/90 kB | 11/242 kB Progress (4): 6.0/530 kB | 12/993 kB | 12/90 kB | 11/242 kB Progress (4): 6.0/530 kB | 16/993 kB | 12/90 kB | 11/242 kBProgress (4): 8.8/530 kB | 16/993 kB | 12/90 kB | 11/242 kBProgress (4): 8.8/530 kB | 21/993 kB | 12/90 kB | 11/242 kBProgress (5): 8.8/530 kB | 21/993 kB | 12/90 kB | 11/242 kB | 3.3/88 kBProgress (5): 8.8/530 kB | 21/993 kB | 14/90 kB | 11/242 kB | 3.3/88 kBProgress (5): 8.8/530 kB | 21/993 kB | 14/90 kB | 14/242 kB | 3.3/88 kBProgress (5): 8.8/530 kB | 21/993 kB | 17/90 kB | 14/242 kB | 3.3/88 kBProgress (5): 8.8/530 kB | 21/993 kB | 17/90 kB | 14/242 kB | 6.0/88 kBProgress (5): 8.8/530 kB | 25/993 kB | 17/90 kB | 14/242 kB | 6.0/88 kBProgress (5): 11/530 kB | 25/993 kB | 17/90 kB | 14/242 kB | 6.0/88 kB Progress (5): 11/530 kB | 29/993 kB | 17/90 kB | 14/242 kB | 6.0/88 kBProgress (5): 11/530 kB | 29/993 kB | 17/90 kB | 14/242 kB | 8.8/88 kBProgress (5): 11/530 kB | 29/993 kB | 20/90 kB | 14/242 kB | 8.8/88 kBProgress (5): 11/530 kB | 29/993 kB | 20/90 kB | 17/242 kB | 8.8/88 kBProgress (5): 11/530 kB | 29/993 kB | 22/90 kB | 17/242 kB | 8.8/88 kBProgress (5): 11/530 kB | 33/993 kB | 22/90 kB | 17/242 kB | 8.8/88 kBProgress (5): 11/530 kB | 33/993 kB | 22/90 kB | 17/242 kB | 12/88 kB Progress (5): 14/530 kB | 33/993 kB | 22/90 kB | 17/242 kB | 12/88 kBProgress (5): 14/530 kB | 33/993 kB | 22/90 kB | 17/242 kB | 14/88 kBProgress (5): 14/530 kB | 37/993 kB | 22/90 kB | 17/242 kB | 14/88 kBProgress (5): 14/530 kB | 37/993 kB | 25/90 kB | 17/242 kB | 14/88 kBProgress (5): 14/530 kB | 37/993 kB | 25/90 kB | 20/242 kB | 14/88 kBProgress (5): 14/530 kB | 37/993 kB | 28/90 kB | 20/242 kB | 14/88 kBProgress (5): 14/530 kB | 41/993 kB | 28/90 kB | 20/242 kB | 14/88 kBProgress (5): 14/530 kB | 41/993 kB | 28/90 kB | 20/242 kB | 17/88 kBProgress (5): 17/530 kB | 41/993 kB | 28/90 kB | 20/242 kB | 17/88 kBProgress (5): 17/530 kB | 41/993 kB | 28/90 kB | 20/242 kB | 20/88 kBProgress (5): 17/530 kB | 45/993 kB | 28/90 kB | 20/242 kB | 20/88 kBProgress (5): 17/530 kB | 45/993 kB | 31/90 kB | 20/242 kB | 20/88 kBProgress (5): 17/530 kB | 45/993 kB | 31/90 kB | 22/242 kB | 20/88 kBProgress (5): 17/530 kB | 45/993 kB | 33/90 kB | 22/242 kB | 20/88 kBProgress (5): 17/530 kB | 45/993 kB | 33/90 kB | 22/242 kB | 22/88 kBProgress (5): 20/530 kB | 45/993 kB | 33/90 kB | 22/242 kB | 22/88 kBProgress (5): 20/530 kB | 45/993 kB | 33/90 kB | 22/242 kB | 25/88 kBProgress (5): 20/530 kB | 45/993 kB | 36/90 kB | 22/242 kB | 25/88 kBProgress (5): 20/530 kB | 45/993 kB | 36/90 kB | 25/242 kB | 25/88 kBProgress (5): 20/530 kB | 49/993 kB | 36/90 kB | 25/242 kB | 25/88 kBProgress (5): 20/530 kB | 49/993 kB | 36/90 kB | 28/242 kB | 25/88 kBProgress (5): 20/530 kB | 49/993 kB | 39/90 kB | 28/242 kB | 25/88 kBProgress (5): 20/530 kB | 49/993 kB | 39/90 kB | 28/242 kB | 28/88 kBProgress (5): 22/530 kB | 49/993 kB | 39/90 kB | 28/242 kB | 28/88 kBProgress (5): 22/530 kB | 49/993 kB | 39/90 kB | 28/242 kB | 31/88 kBProgress (5): 22/530 kB | 49/993 kB | 42/90 kB | 28/242 kB | 31/88 kBProgress (5): 22/530 kB | 49/993 kB | 42/90 kB | 31/242 kB | 31/88 kBProgress (5): 22/530 kB | 53/993 kB | 42/90 kB | 31/242 kB | 31/88 kBProgress (5): 22/530 kB | 53/993 kB | 42/90 kB | 34/242 kB | 31/88 kBProgress (5): 22/530 kB | 53/993 kB | 44/90 kB | 34/242 kB | 31/88 kBProgress (5): 22/530 kB | 53/993 kB | 44/90 kB | 36/242 kB | 31/88 kBProgress (5): 22/530 kB | 53/993 kB | 44/90 kB | 36/242 kB | 34/88 kBProgress (5): 25/530 kB | 53/993 kB | 44/90 kB | 36/242 kB | 34/88 kBProgress (5): 25/530 kB | 53/993 kB | 44/90 kB | 36/242 kB | 36/88 kBProgress (5): 25/530 kB | 53/993 kB | 44/90 kB | 39/242 kB | 36/88 kBProgress (5): 25/530 kB | 53/993 kB | 47/90 kB | 39/242 kB | 36/88 kBProgress (5): 25/530 kB | 62/993 kB | 47/90 kB | 39/242 kB | 36/88 kBProgress (5): 25/530 kB | 62/993 kB | 50/90 kB | 39/242 kB | 36/88 kBProgress (5): 25/530 kB | 62/993 kB | 50/90 kB | 42/242 kB | 36/88 kBProgress (5): 25/530 kB | 62/993 kB | 50/90 kB | 42/242 kB | 39/88 kBProgress (5): 28/530 kB | 62/993 kB | 50/90 kB | 42/242 kB | 39/88 kBProgress (5): 28/530 kB | 62/993 kB | 50/90 kB | 42/242 kB | 42/88 kBProgress (5): 28/530 kB | 62/993 kB | 50/90 kB | 42/242 kB | 45/88 kBProgress (5): 28/530 kB | 62/993 kB | 50/90 kB | 45/242 kB | 45/88 kBProgress (5): 28/530 kB | 62/993 kB | 50/90 kB | 45/242 kB | 47/88 kBProgress (5): 28/530 kB | 62/993 kB | 53/90 kB | 45/242 kB | 47/88 kBProgress (5): 28/530 kB | 66/993 kB | 53/90 kB | 45/242 kB | 47/88 kBProgress (5): 28/530 kB | 66/993 kB | 55/90 kB | 45/242 kB | 47/88 kBProgress (5): 28/530 kB | 66/993 kB | 55/90 kB | 47/242 kB | 47/88 kBProgress (5): 28/530 kB | 66/993 kB | 59/90 kB | 47/242 kB | 47/88 kBProgress (5): 28/530 kB | 66/993 kB | 59/90 kB | 47/242 kB | 50/88 kBProgress (5): 28/530 kB | 66/993 kB | 64/90 kB | 47/242 kB | 50/88 kBProgress (5): 31/530 kB | 66/993 kB | 64/90 kB | 47/242 kB | 50/88 kBProgress (5): 31/530 kB | 66/993 kB | 68/90 kB | 47/242 kB | 50/88 kBProgress (5): 31/530 kB | 66/993 kB | 68/90 kB | 47/242 kB | 53/88 kBProgress (5): 31/530 kB | 66/993 kB | 68/90 kB | 50/242 kB | 53/88 kBProgress (5): 31/530 kB | 70/993 kB | 68/90 kB | 50/242 kB | 53/88 kBProgress (5): 31/530 kB | 70/993 kB | 68/90 kB | 53/242 kB | 53/88 kBProgress (5): 31/530 kB | 70/993 kB | 68/90 kB | 53/242 kB | 57/88 kBProgress (5): 31/530 kB | 70/993 kB | 72/90 kB | 53/242 kB | 57/88 kBProgress (5): 33/530 kB | 70/993 kB | 72/90 kB | 53/242 kB | 57/88 kBProgress (5): 33/530 kB | 70/993 kB | 76/90 kB | 53/242 kB | 57/88 kBProgress (5): 33/530 kB | 70/993 kB | 76/90 kB | 53/242 kB | 61/88 kBProgress (5): 33/530 kB | 70/993 kB | 76/90 kB | 57/242 kB | 61/88 kBProgress (5): 33/530 kB | 74/993 kB | 76/90 kB | 57/242 kB | 61/88 kBProgress (5): 33/530 kB | 74/993 kB | 76/90 kB | 61/242 kB | 61/88 kBProgress (5): 33/530 kB | 74/993 kB | 76/90 kB | 61/242 kB | 65/88 kBProgress (5): 33/530 kB | 74/993 kB | 80/90 kB | 61/242 kB | 65/88 kBProgress (5): 36/530 kB | 74/993 kB | 80/90 kB | 61/242 kB | 65/88 kBProgress (5): 36/530 kB | 74/993 kB | 84/90 kB | 61/242 kB | 65/88 kBProgress (5): 36/530 kB | 74/993 kB | 84/90 kB | 61/242 kB | 69/88 kBProgress (5): 36/530 kB | 74/993 kB | 84/90 kB | 65/242 kB | 69/88 kBProgress (5): 36/530 kB | 78/993 kB | 84/90 kB | 65/242 kB | 69/88 kBProgress (5): 36/530 kB | 78/993 kB | 84/90 kB | 69/242 kB | 69/88 kBProgress (5): 36/530 kB | 78/993 kB | 84/90 kB | 69/242 kB | 73/88 kBProgress (5): 36/530 kB | 78/993 kB | 88/90 kB | 69/242 kB | 73/88 kBProgress (5): 39/530 kB | 78/993 kB | 88/90 kB | 69/242 kB | 73/88 kBProgress (5): 39/530 kB | 78/993 kB | 88/90 kB | 69/242 kB | 77/88 kBProgress (5): 39/530 kB | 78/993 kB | 88/90 kB | 73/242 kB | 77/88 kBProgress (5): 39/530 kB | 83/993 kB | 88/90 kB | 73/242 kB | 77/88 kBProgress (5): 39/530 kB | 83/993 kB | 88/90 kB | 77/242 kB | 77/88 kBProgress (5): 39/530 kB | 83/993 kB | 88/90 kB | 77/242 kB | 80/88 kBProgress (5): 42/530 kB | 83/993 kB | 88/90 kB | 77/242 kB | 80/88 kBProgress (5): 42/530 kB | 83/993 kB | 90 kB | 77/242 kB | 80/88 kB   Progress (5): 44/530 kB | 83/993 kB | 90 kB | 77/242 kB | 80/88 kBProgress (5): 44/530 kB | 83/993 kB | 90 kB | 77/242 kB | 84/88 kBProgress (5): 44/530 kB | 83/993 kB | 90 kB | 81/242 kB | 84/88 kBProgress (5): 44/530 kB | 83/993 kB | 90 kB | 81/242 kB | 88/88 kBProgress (5): 44/530 kB | 87/993 kB | 90 kB | 81/242 kB | 88/88 kBProgress (5): 44/530 kB | 87/993 kB | 90 kB | 81/242 kB | 88 kB   Progress (5): 44/530 kB | 87/993 kB | 90 kB | 86/242 kB | 88 kBProgress (5): 47/530 kB | 87/993 kB | 90 kB | 86/242 kB | 88 kBProgress (5): 47/530 kB | 87/993 kB | 90 kB | 90/242 kB | 88 kBProgress (5): 47/530 kB | 91/993 kB | 90 kB | 90/242 kB | 88 kBProgress (5): 49/530 kB | 91/993 kB | 90 kB | 90/242 kB | 88 kBProgress (5): 49/530 kB | 91/993 kB | 90 kB | 94/242 kB | 88 kBProgress (5): 52/530 kB | 91/993 kB | 90 kB | 94/242 kB | 88 kBProgress (5): 52/530 kB | 95/993 kB | 90 kB | 94/242 kB | 88 kBProgress (5): 55/530 kB | 95/993 kB | 90 kB | 94/242 kB | 88 kBProgress (5): 55/530 kB | 95/993 kB | 90 kB | 98/242 kB | 88 kBProgress (5): 59/530 kB | 95/993 kB | 90 kB | 98/242 kB | 88 kBProgress (5): 59/530 kB | 100/993 kB | 90 kB | 98/242 kB | 88 kBProgress (5): 63/530 kB | 100/993 kB | 90 kB | 98/242 kB | 88 kBProgress (5): 63/530 kB | 100/993 kB | 90 kB | 102/242 kB | 88 kBProgress (5): 67/530 kB | 100/993 kB | 90 kB | 102/242 kB | 88 kBProgress (5): 67/530 kB | 104/993 kB | 90 kB | 102/242 kB | 88 kBProgress (5): 71/530 kB | 104/993 kB | 90 kB | 102/242 kB | 88 kBProgress (5): 71/530 kB | 104/993 kB | 90 kB | 106/242 kB | 88 kBProgress (5): 75/530 kB | 104/993 kB | 90 kB | 106/242 kB | 88 kBProgress (5): 75/530 kB | 108/993 kB | 90 kB | 106/242 kB | 88 kBProgress (5): 75/530 kB | 108/993 kB | 90 kB | 110/242 kB | 88 kBProgress (5): 75/530 kB | 112/993 kB | 90 kB | 110/242 kB | 88 kBProgress (5): 79/530 kB | 112/993 kB | 90 kB | 110/242 kB | 88 kBProgress (5): 79/530 kB | 117/993 kB | 90 kB | 110/242 kB | 88 kBProgress (5): 79/530 kB | 117/993 kB | 90 kB | 114/242 kB | 88 kBProgress (5): 79/530 kB | 121/993 kB | 90 kB | 114/242 kB | 88 kBProgress (5): 83/530 kB | 121/993 kB | 90 kB | 114/242 kB | 88 kBProgress (5): 83/530 kB | 125/993 kB | 90 kB | 114/242 kB | 88 kBProgress (5): 83/530 kB | 125/993 kB | 90 kB | 118/242 kB | 88 kBProgress (5): 83/530 kB | 129/993 kB | 90 kB | 118/242 kB | 88 kBProgress (5): 87/530 kB | 129/993 kB | 90 kB | 118/242 kB | 88 kBProgress (5): 87/530 kB | 135/993 kB | 90 kB | 118/242 kB | 88 kBProgress (5): 87/530 kB | 135/993 kB | 90 kB | 122/242 kB | 88 kBProgress (5): 87/530 kB | 140/993 kB | 90 kB | 122/242 kB | 88 kBProgress (5): 91/530 kB | 140/993 kB | 90 kB | 122/242 kB | 88 kBProgress (5): 91/530 kB | 144/993 kB | 90 kB | 122/242 kB | 88 kBProgress (5): 91/530 kB | 144/993 kB | 90 kB | 125/242 kB | 88 kBProgress (5): 91/530 kB | 148/993 kB | 90 kB | 125/242 kB | 88 kBProgress (5): 96/530 kB | 148/993 kB | 90 kB | 125/242 kB | 88 kBProgress (5): 96/530 kB | 152/993 kB | 90 kB | 125/242 kB | 88 kBProgress (5): 96/530 kB | 152/993 kB | 90 kB | 129/242 kB | 88 kBProgress (5): 96/530 kB | 156/993 kB | 90 kB | 129/242 kB | 88 kBProgress (5): 100/530 kB | 156/993 kB | 90 kB | 129/242 kB | 88 kBProgress (5): 100/530 kB | 161/993 kB | 90 kB | 129/242 kB | 88 kBProgress (5): 100/530 kB | 161/993 kB | 90 kB | 133/242 kB | 88 kBProgress (5): 100/530 kB | 165/993 kB | 90 kB | 133/242 kB | 88 kBProgress (5): 104/530 kB | 165/993 kB | 90 kB | 133/242 kB | 88 kBProgress (5): 104/530 kB | 169/993 kB | 90 kB | 133/242 kB | 88 kBProgress (5): 104/530 kB | 169/993 kB | 90 kB | 137/242 kB | 88 kBProgress (5): 104/530 kB | 173/993 kB | 90 kB | 137/242 kB | 88 kBProgress (5): 108/530 kB | 173/993 kB | 90 kB | 137/242 kB | 88 kBProgress (5): 108/530 kB | 178/993 kB | 90 kB | 137/242 kB | 88 kBProgress (5): 112/530 kB | 178/993 kB | 90 kB | 137/242 kB | 88 kBProgress (5): 112/530 kB | 178/993 kB | 90 kB | 141/242 kB | 88 kBProgress (5): 115/530 kB | 178/993 kB | 90 kB | 141/242 kB | 88 kBProgress (5): 115/530 kB | 178/993 kB | 90 kB | 145/242 kB | 88 kBProgress (5): 115/530 kB | 182/993 kB | 90 kB | 145/242 kB | 88 kBProgress (5): 115/530 kB | 182/993 kB | 90 kB | 149/242 kB | 88 kBProgress (5): 119/530 kB | 182/993 kB | 90 kB | 149/242 kB | 88 kBProgress (5): 119/530 kB | 182/993 kB | 90 kB | 153/242 kB | 88 kBProgress (5): 119/530 kB | 186/993 kB | 90 kB | 153/242 kB | 88 kBProgress (5): 119/530 kB | 186/993 kB | 90 kB | 157/242 kB | 88 kBProgress (5): 123/530 kB | 186/993 kB | 90 kB | 157/242 kB | 88 kBProgress (5): 123/530 kB | 186/993 kB | 90 kB | 161/242 kB | 88 kBProgress (5): 123/530 kB | 190/993 kB | 90 kB | 161/242 kB | 88 kBProgress (5): 123/530 kB | 190/993 kB | 90 kB | 166/242 kB | 88 kBProgress (5): 127/530 kB | 190/993 kB | 90 kB | 166/242 kB | 88 kBProgress (5): 127/530 kB | 190/993 kB | 90 kB | 170/242 kB | 88 kBProgress (5): 127/530 kB | 195/993 kB | 90 kB | 170/242 kB | 88 kBProgress (5): 127/530 kB | 195/993 kB | 90 kB | 174/242 kB | 88 kBProgress (5): 131/530 kB | 195/993 kB | 90 kB | 174/242 kB | 88 kBProgress (5): 131/530 kB | 195/993 kB | 90 kB | 178/242 kB | 88 kBProgress (5): 131/530 kB | 199/993 kB | 90 kB | 178/242 kB | 88 kBProgress (5): 131/530 kB | 199/993 kB | 90 kB | 182/242 kB | 88 kBProgress (5): 135/530 kB | 199/993 kB | 90 kB | 182/242 kB | 88 kBProgress (5): 135/530 kB | 199/993 kB | 90 kB | 186/242 kB | 88 kBProgress (5): 135/530 kB | 203/993 kB | 90 kB | 186/242 kB | 88 kBProgress (5): 135/530 kB | 203/993 kB | 90 kB | 190/242 kB | 88 kBProgress (5): 139/530 kB | 203/993 kB | 90 kB | 190/242 kB | 88 kBProgress (5): 139/530 kB | 203/993 kB | 90 kB | 192/242 kB | 88 kBProgress (5): 139/530 kB | 207/993 kB | 90 kB | 192/242 kB | 88 kBProgress (5): 139/530 kB | 207/993 kB | 90 kB | 196/242 kB | 88 kBProgress (5): 143/530 kB | 207/993 kB | 90 kB | 196/242 kB | 88 kBProgress (5): 143/530 kB | 207/993 kB | 90 kB | 200/242 kB | 88 kBProgress (5): 143/530 kB | 211/993 kB | 90 kB | 200/242 kB | 88 kBProgress (5): 143/530 kB | 211/993 kB | 90 kB | 204/242 kB | 88 kBProgress (5): 147/530 kB | 211/993 kB | 90 kB | 204/242 kB | 88 kBProgress (5): 147/530 kB | 211/993 kB | 90 kB | 209/242 kB | 88 kBProgress (5): 147/530 kB | 216/993 kB | 90 kB | 209/242 kB | 88 kBProgress (5): 147/530 kB | 216/993 kB | 90 kB | 213/242 kB | 88 kBProgress (5): 152/530 kB | 216/993 kB | 90 kB | 213/242 kB | 88 kBProgress (5): 152/530 kB | 216/993 kB | 90 kB | 217/242 kB | 88 kBProgress (5): 152/530 kB | 220/993 kB | 90 kB | 217/242 kB | 88 kBProgress (5): 152/530 kB | 220/993 kB | 90 kB | 221/242 kB | 88 kB                                                                  Downloaded from central: https://repo.maven.apache.org/maven2/org/jcommander/jcommander/1.83/jcommander-1.83.jar (90 kB at 152 kB/s)
+Progress (4): 156/530 kB | 220/993 kB | 221/242 kB | 88 kB                                                          Downloading from central: https://repo.maven.apache.org/maven2/org/webjars/jquery/3.7.1/jquery-3.7.1.jar
+Progress (4): 156/530 kB | 220/993 kB | 225/242 kB | 88 kBProgress (4): 156/530 kB | 220/993 kB | 229/242 kB | 88 kBProgress (4): 156/530 kB | 228/993 kB | 229/242 kB | 88 kBProgress (4): 156/530 kB | 228/993 kB | 233/242 kB | 88 kBProgress (4): 160/530 kB | 228/993 kB | 233/242 kB | 88 kBProgress (4): 160/530 kB | 228/993 kB | 237/242 kB | 88 kBProgress (4): 160/530 kB | 236/993 kB | 237/242 kB | 88 kBProgress (4): 160/530 kB | 236/993 kB | 241/242 kB | 88 kBProgress (4): 164/530 kB | 236/993 kB | 241/242 kB | 88 kBProgress (4): 164/530 kB | 244/993 kB | 241/242 kB | 88 kBProgress (4): 164/530 kB | 244/993 kB | 242 kB | 88 kB    Progress (4): 164/530 kB | 253/993 kB | 242 kB | 88 kBProgress (4): 168/530 kB | 253/993 kB | 242 kB | 88 kBProgress (4): 168/530 kB | 261/993 kB | 242 kB | 88 kBProgress (4): 172/530 kB | 261/993 kB | 242 kB | 88 kBProgress (4): 172/530 kB | 269/993 kB | 242 kB | 88 kBProgress (4): 176/530 kB | 269/993 kB | 242 kB | 88 kBProgress (4): 176/530 kB | 277/993 kB | 242 kB | 88 kBProgress (4): 180/530 kB | 277/993 kB | 242 kB | 88 kBProgress (4): 180/530 kB | 285/993 kB | 242 kB | 88 kBProgress (4): 182/530 kB | 285/993 kB | 242 kB | 88 kBProgress (4): 182/530 kB | 294/993 kB | 242 kB | 88 kBProgress (4): 186/530 kB | 294/993 kB | 242 kB | 88 kBProgress (4): 186/530 kB | 302/993 kB | 242 kB | 88 kBProgress (4): 191/530 kB | 302/993 kB | 242 kB | 88 kBProgress (4): 191/530 kB | 310/993 kB | 242 kB | 88 kBProgress (4): 195/530 kB | 310/993 kB | 242 kB | 88 kBProgress (4): 199/530 kB | 310/993 kB | 242 kB | 88 kBProgress (4): 203/530 kB | 310/993 kB | 242 kB | 88 kBProgress (4): 207/530 kB | 310/993 kB | 242 kB | 88 kBProgress (4): 211/530 kB | 310/993 kB | 242 kB | 88 kBProgress (4): 211/530 kB | 318/993 kB | 242 kB | 88 kBProgress (4): 215/530 kB | 318/993 kB | 242 kB | 88 kBProgress (4): 215/530 kB | 326/993 kB | 242 kB | 88 kBProgress (4): 219/530 kB | 326/993 kB | 242 kB | 88 kBProgress (4): 219/530 kB | 335/993 kB | 242 kB | 88 kBProgress (4): 223/530 kB | 335/993 kB | 242 kB | 88 kBProgress (4): 223/530 kB | 343/993 kB | 242 kB | 88 kBProgress (4): 227/530 kB | 343/993 kB | 242 kB | 88 kBProgress (4): 232/530 kB | 343/993 kB | 242 kB | 88 kBProgress (4): 236/530 kB | 343/993 kB | 242 kB | 88 kBProgress (4): 240/530 kB | 343/993 kB | 242 kB | 88 kBProgress (4): 244/530 kB | 343/993 kB | 242 kB | 88 kBProgress (4): 248/530 kB | 343/993 kB | 242 kB | 88 kB                                                      Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.82/jcommander-1.82.jar (88 kB at 145 kB/s)
+Progress (3): 252/530 kB | 343/993 kB | 242 kBProgress (3): 252/530 kB | 351/993 kB | 242 kBProgress (3): 256/530 kB | 351/993 kB | 242 kB                                              Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.33/snakeyaml-1.33.jar
+Progress (3): 260/530 kB | 351/993 kB | 242 kBProgress (3): 260/530 kB | 359/993 kB | 242 kBProgress (3): 264/530 kB | 359/993 kB | 242 kBProgress (3): 264/530 kB | 367/993 kB | 242 kBProgress (3): 268/530 kB | 367/993 kB | 242 kBProgress (3): 268/530 kB | 376/993 kB | 242 kBProgress (3): 272/530 kB | 376/993 kB | 242 kBProgress (3): 277/530 kB | 376/993 kB | 242 kBProgress (3): 277/530 kB | 384/993 kB | 242 kBProgress (3): 277/530 kB | 392/993 kB | 242 kBProgress (3): 281/530 kB | 392/993 kB | 242 kBProgress (3): 285/530 kB | 392/993 kB | 242 kBProgress (3): 285/530 kB | 400/993 kB | 242 kBProgress (3): 289/530 kB | 400/993 kB | 242 kBProgress (3): 289/530 kB | 408/993 kB | 242 kBProgress (3): 293/530 kB | 408/993 kB | 242 kBProgress (3): 293/530 kB | 416/993 kB | 242 kBProgress (3): 297/530 kB | 416/993 kB | 242 kBProgress (3): 297/530 kB | 425/993 kB | 242 kBProgress (3): 301/530 kB | 425/993 kB | 242 kBProgress (3): 305/530 kB | 425/993 kB | 242 kBProgress (3): 309/530 kB | 425/993 kB | 242 kBProgress (3): 313/530 kB | 425/993 kB | 242 kBProgress (3): 313/530 kB | 433/993 kB | 242 kBProgress (3): 318/530 kB | 433/993 kB | 242 kBProgress (3): 318/530 kB | 441/993 kB | 242 kBProgress (3): 322/530 kB | 441/993 kB | 242 kBProgress (3): 326/530 kB | 441/993 kB | 242 kBProgress (3): 330/530 kB | 441/993 kB | 242 kBProgress (3): 334/530 kB | 441/993 kB | 242 kBProgress (3): 334/530 kB | 449/993 kB | 242 kBProgress (3): 338/530 kB | 449/993 kB | 242 kBProgress (3): 338/530 kB | 457/993 kB | 242 kBProgress (3): 342/530 kB | 457/993 kB | 242 kBProgress (3): 342/530 kB | 466/993 kB | 242 kBProgress (3): 346/530 kB | 466/993 kB | 242 kBProgress (3): 346/530 kB | 474/993 kB | 242 kBProgress (3): 350/530 kB | 474/993 kB | 242 kBProgress (4): 350/530 kB | 474/993 kB | 242 kB | 3.4/308 kBProgress (4): 354/530 kB | 474/993 kB | 242 kB | 3.4/308 kBProgress (4): 354/530 kB | 474/993 kB | 242 kB | 7.5/308 kBProgress (4): 358/530 kB | 474/993 kB | 242 kB | 7.5/308 kBProgress (4): 358/530 kB | 474/993 kB | 242 kB | 12/308 kB Progress (4): 363/530 kB | 474/993 kB | 242 kB | 12/308 kBProgress (4): 363/530 kB | 474/993 kB | 242 kB | 16/308 kBProgress (4): 367/530 kB | 474/993 kB | 242 kB | 16/308 kBProgress (4): 367/530 kB | 474/993 kB | 242 kB | 20/308 kBProgress (4): 371/530 kB | 474/993 kB | 242 kB | 20/308 kBProgress (4): 371/530 kB | 474/993 kB | 242 kB | 24/308 kBProgress (4): 375/530 kB | 474/993 kB | 242 kB | 24/308 kBProgress (4): 375/530 kB | 474/993 kB | 242 kB | 28/308 kBProgress (4): 379/530 kB | 474/993 kB | 242 kB | 28/308 kBProgress (4): 379/530 kB | 474/993 kB | 242 kB | 32/308 kBProgress (4): 383/530 kB | 474/993 kB | 242 kB | 32/308 kBProgress (4): 383/530 kB | 474/993 kB | 242 kB | 36/308 kBProgress (4): 387/530 kB | 474/993 kB | 242 kB | 36/308 kBProgress (4): 387/530 kB | 474/993 kB | 242 kB | 40/308 kBProgress (4): 391/530 kB | 474/993 kB | 242 kB | 40/308 kBProgress (4): 391/530 kB | 474/993 kB | 242 kB | 44/308 kBProgress (4): 391/530 kB | 474/993 kB | 242 kB | 48/308 kBProgress (4): 391/530 kB | 474/993 kB | 242 kB | 53/308 kBProgress (4): 391/530 kB | 474/993 kB | 242 kB | 57/308 kBProgress (4): 391/530 kB | 482/993 kB | 242 kB | 57/308 kBProgress (4): 395/530 kB | 482/993 kB | 242 kB | 57/308 kBProgress (4): 395/530 kB | 482/993 kB | 242 kB | 61/308 kBProgress (4): 399/530 kB | 482/993 kB | 242 kB | 61/308 kBProgress (4): 399/530 kB | 490/993 kB | 242 kB | 61/308 kBProgress (4): 404/530 kB | 490/993 kB | 242 kB | 61/308 kBProgress (4): 404/530 kB | 498/993 kB | 242 kB | 61/308 kBProgress (4): 404/530 kB | 498/993 kB | 242 kB | 65/308 kBProgress (4): 404/530 kB | 507/993 kB | 242 kB | 65/308 kBProgress (4): 408/530 kB | 507/993 kB | 242 kB | 65/308 kBProgress (4): 408/530 kB | 507/993 kB | 242 kB | 69/308 kBProgress (4): 412/530 kB | 507/993 kB | 242 kB | 69/308 kBProgress (4): 412/530 kB | 515/993 kB | 242 kB | 69/308 kBProgress (4): 416/530 kB | 515/993 kB | 242 kB | 69/308 kBProgress (4): 416/530 kB | 515/993 kB | 242 kB | 73/308 kBProgress (4): 420/530 kB | 515/993 kB | 242 kB | 73/308 kBProgress (4): 420/530 kB | 523/993 kB | 242 kB | 73/308 kBProgress (4): 424/530 kB | 523/993 kB | 242 kB | 73/308 kBProgress (4): 424/530 kB | 531/993 kB | 242 kB | 73/308 kBProgress (4): 428/530 kB | 531/993 kB | 242 kB | 73/308 kBProgress (4): 428/530 kB | 531/993 kB | 242 kB | 77/308 kBProgress (4): 432/530 kB | 531/993 kB | 242 kB | 77/308 kBProgress (4): 436/530 kB | 531/993 kB | 242 kB | 77/308 kBProgress (4): 436/530 kB | 539/993 kB | 242 kB | 77/308 kBProgress (4): 440/530 kB | 539/993 kB | 242 kB | 77/308 kBProgress (4): 440/530 kB | 539/993 kB | 242 kB | 81/308 kBProgress (4): 444/530 kB | 539/993 kB | 242 kB | 81/308 kBProgress (4): 444/530 kB | 548/993 kB | 242 kB | 81/308 kBProgress (4): 449/530 kB | 548/993 kB | 242 kB | 81/308 kBProgress (4): 449/530 kB | 548/993 kB | 242 kB | 83/308 kBProgress (4): 453/530 kB | 548/993 kB | 242 kB | 83/308 kBProgress (4): 453/530 kB | 556/993 kB | 242 kB | 83/308 kBProgress (4): 457/530 kB | 556/993 kB | 242 kB | 83/308 kBProgress (4): 457/530 kB | 556/993 kB | 242 kB | 87/308 kB                                                          Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.55.1/checker-qual-3.55.1.jar (242 kB at 379 kB/s)
+Progress (3): 461/530 kB | 556/993 kB | 87/308 kBProgress (3): 461/530 kB | 556/993 kB | 90/308 kBProgress (3): 461/530 kB | 564/993 kB | 90/308 kBProgress (3): 461/530 kB | 564/993 kB | 94/308 kBProgress (3): 465/530 kB | 564/993 kB | 94/308 kBProgress (3): 465/530 kB | 564/993 kB | 98/308 kBProgress (3): 465/530 kB | 572/993 kB | 98/308 kBProgress (3): 465/530 kB | 572/993 kB | 102/308 kBProgress (3): 469/530 kB | 572/993 kB | 102/308 kBProgress (3): 469/530 kB | 572/993 kB | 106/308 kBProgress (3): 469/530 kB | 580/993 kB | 106/308 kBProgress (3): 469/530 kB | 580/993 kB | 110/308 kBProgress (3): 473/530 kB | 580/993 kB | 110/308 kBProgress (3): 473/530 kB | 580/993 kB | 114/308 kBProgress (3): 473/530 kB | 589/993 kB | 114/308 kBProgress (3): 473/530 kB | 589/993 kB | 118/308 kBProgress (3): 477/530 kB | 589/993 kB | 118/308 kBProgress (3): 477/530 kB | 597/993 kB | 118/308 kBProgress (3): 477/530 kB | 597/993 kB | 122/308 kBProgress (3): 477/530 kB | 605/993 kB | 122/308 kBProgress (3): 481/530 kB | 605/993 kB | 122/308 kBProgress (3): 481/530 kB | 613/993 kB | 122/308 kBProgress (3): 481/530 kB | 613/993 kB | 127/308 kBProgress (3): 481/530 kB | 621/993 kB | 127/308 kBProgress (3): 485/530 kB | 621/993 kB | 127/308 kBProgress (3): 485/530 kB | 621/993 kB | 131/308 kBProgress (3): 485/530 kB | 629/993 kB | 131/308 kBProgress (3): 490/530 kB | 629/993 kB | 131/308 kBProgress (3): 490/530 kB | 638/993 kB | 131/308 kBProgress (3): 490/530 kB | 638/993 kB | 135/308 kBProgress (3): 490/530 kB | 638/993 kB | 139/308 kBProgress (3): 494/530 kB | 638/993 kB | 139/308 kBProgress (3): 494/530 kB | 638/993 kB | 143/308 kBProgress (3): 494/530 kB | 646/993 kB | 143/308 kBProgress (3): 494/530 kB | 646/993 kB | 147/308 kBProgress (3): 498/530 kB | 646/993 kB | 147/308 kBProgress (3): 498/530 kB | 646/993 kB | 151/308 kBProgress (3): 498/530 kB | 654/993 kB | 151/308 kBProgress (3): 498/530 kB | 654/993 kB | 155/308 kBProgress (3): 502/530 kB | 654/993 kB | 155/308 kBProgress (3): 502/530 kB | 662/993 kB | 155/308 kBProgress (3): 502/530 kB | 662/993 kB | 159/308 kBProgress (3): 502/530 kB | 670/993 kB | 159/308 kBProgress (3): 506/530 kB | 670/993 kB | 159/308 kBProgress (3): 506/530 kB | 670/993 kB | 163/308 kBProgress (3): 506/530 kB | 679/993 kB | 163/308 kBProgress (3): 506/530 kB | 679/993 kB | 167/308 kBProgress (3): 506/530 kB | 679/993 kB | 172/308 kBProgress (3): 510/530 kB | 679/993 kB | 172/308 kBProgress (3): 510/530 kB | 679/993 kB | 176/308 kBProgress (3): 510/530 kB | 687/993 kB | 176/308 kBProgress (3): 510/530 kB | 687/993 kB | 180/308 kBProgress (3): 514/530 kB | 687/993 kB | 180/308 kBProgress (3): 514/530 kB | 695/993 kB | 180/308 kBProgress (3): 514/530 kB | 695/993 kB | 184/308 kBProgress (3): 518/530 kB | 695/993 kB | 184/308 kBProgress (3): 518/530 kB | 695/993 kB | 188/308 kBProgress (3): 518/530 kB | 703/993 kB | 188/308 kBProgress (3): 518/530 kB | 703/993 kB | 192/308 kBProgress (3): 522/530 kB | 703/993 kB | 192/308 kBProgress (3): 522/530 kB | 711/993 kB | 192/308 kBProgress (3): 526/530 kB | 711/993 kB | 192/308 kBProgress (3): 526/530 kB | 711/993 kB | 196/308 kB                                                  Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.33/snakeyaml-1.33.jar (0 B at 0 B/s)
+Progress (3): 530 kB | 711/993 kB | 196/308 kBProgress (3): 530 kB | 720/993 kB | 196/308 kBProgress (3): 530 kB | 720/993 kB | 200/308 kBProgress (3): 530 kB | 720/993 kB | 204/308 kBProgress (3): 530 kB | 720/993 kB | 208/308 kBProgress (3): 530 kB | 728/993 kB | 208/308 kBProgress (3): 530 kB | 728/993 kB | 213/308 kBProgress (3): 530 kB | 736/993 kB | 213/308 kBProgress (3): 530 kB | 736/993 kB | 217/308 kBProgress (3): 530 kB | 744/993 kB | 217/308 kBProgress (3): 530 kB | 744/993 kB | 221/308 kBProgress (3): 530 kB | 752/993 kB | 221/308 kBProgress (3): 530 kB | 752/993 kB | 225/308 kBProgress (3): 530 kB | 752/993 kB | 229/308 kBProgress (3): 530 kB | 761/993 kB | 229/308 kBProgress (3): 530 kB | 769/993 kB | 229/308 kBProgress (3): 530 kB | 769/993 kB | 233/308 kBProgress (3): 530 kB | 769/993 kB | 237/308 kBProgress (3): 530 kB | 777/993 kB | 237/308 kBProgress (3): 530 kB | 777/993 kB | 241/308 kBProgress (3): 530 kB | 785/993 kB | 241/308 kBProgress (3): 530 kB | 785/993 kB | 245/308 kBProgress (3): 530 kB | 793/993 kB | 245/308 kBProgress (3): 530 kB | 793/993 kB | 249/308 kBProgress (3): 530 kB | 802/993 kB | 249/308 kBProgress (3): 530 kB | 802/993 kB | 253/308 kBProgress (3): 530 kB | 802/993 kB | 258/308 kBProgress (3): 530 kB | 802/993 kB | 262/308 kBProgress (3): 530 kB | 810/993 kB | 262/308 kBProgress (3): 530 kB | 818/993 kB | 262/308 kBProgress (3): 530 kB | 818/993 kB | 266/308 kBProgress (3): 530 kB | 818/993 kB | 270/308 kBProgress (3): 530 kB | 826/993 kB | 270/308 kBProgress (3): 530 kB | 826/993 kB | 274/308 kBProgress (3): 530 kB | 834/993 kB | 274/308 kBProgress (3): 530 kB | 834/993 kB | 278/308 kBProgress (3): 530 kB | 842/993 kB | 278/308 kBProgress (3): 530 kB | 842/993 kB | 282/308 kBProgress (3): 530 kB | 851/993 kB | 282/308 kBProgress (3): 530 kB | 851/993 kB | 286/308 kBProgress (3): 530 kB | 851/993 kB | 290/308 kBProgress (3): 530 kB | 859/993 kB | 290/308 kBProgress (3): 530 kB | 859/993 kB | 294/308 kBProgress (3): 530 kB | 867/993 kB | 294/308 kBProgress (3): 530 kB | 867/993 kB | 299/308 kBProgress (3): 530 kB | 867/993 kB | 303/308 kBProgress (3): 530 kB | 875/993 kB | 303/308 kBProgress (3): 530 kB | 875/993 kB | 307/308 kBProgress (3): 530 kB | 883/993 kB | 307/308 kBProgress (3): 530 kB | 883/993 kB | 308 kB    Progress (3): 530 kB | 892/993 kB | 308 kBProgress (3): 530 kB | 900/993 kB | 308 kBProgress (3): 530 kB | 908/993 kB | 308 kBProgress (3): 530 kB | 916/993 kB | 308 kBProgress (3): 530 kB | 924/993 kB | 308 kBProgress (3): 530 kB | 933/993 kB | 308 kBProgress (3): 530 kB | 941/993 kB | 308 kBProgress (3): 530 kB | 949/993 kB | 308 kBProgress (3): 530 kB | 957/993 kB | 308 kBProgress (3): 530 kB | 965/993 kB | 308 kBProgress (3): 530 kB | 974/993 kB | 308 kBProgress (3): 530 kB | 982/993 kB | 308 kBProgress (3): 530 kB | 990/993 kB | 308 kBProgress (3): 530 kB | 993 kB | 308 kB                                          Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/4.2.3/guice-4.2.3-no_aop.jar (530 kB at 755 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/webjars/jquery/3.7.1/jquery-3.7.1.jar (308 kB at 440 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/7.12.0/testng-7.12.0.jar (993 kB at 1.4 MB/s)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/maven/app/commons/smartcollections/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/commons/smartcollections/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 23 source files to /var/maven/app/commons/smartcollections/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/commons/smartcollections/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mautomata-commons-smartcollections[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 4 source files to /var/maven/app/commons/smartcollections/target/test-classes
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] COMPILATION ERROR : 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] /var/maven/app/commons/smartcollections/src/test/java/net/automatalib/commons/smartcollections/UnorderedCollectionTest.java:[23,18] cannot access org.testng.Assert
+  bad class file: /var/maven/.m2/repository/org/testng/testng/7.12.0/testng-7.12.0.jar(org/testng/Assert.class)
+    class file has wrong version 55.0, should be 52.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[[1;34mINFO[m] 1 error
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for AutomataLib 0.10.0-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] AutomataLib ........................................ [1;32mSUCCESS[m [  0.711 s]
+[[1;34mINFO[m] AutomataLib :: Build Parent ........................ [1;32mSUCCESS[m [  0.014 s]
+[[1;34mINFO[m] AutomataLib :: Commons ............................. [1;32mSUCCESS[m [  0.011 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Smart Collections ........ [1;31mFAILURE[m [  1.851 s]
+[[1;34mINFO[m] AutomataLib :: Commons :: Utilities ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: API ................................. [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Core ................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Utilities ........................... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Adapters ............................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Adapters :: BRICS ................... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization ....................... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization :: Core ............... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization :: DOT ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Visualization ....................... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Visualization :: DOT Visualizer ..... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Visualization :: JUNG Visualizer .... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Incremental ......................... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization :: ETF ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization :: FSM ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization :: TAF ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Model Checking ...................... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Model Checking :: LTSmin ............ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization :: AUT ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization :: LearnLibV2 ......... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Serialization :: SAF ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Distribution ........................ [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Archetypes .......................... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Basic ................. [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Archetypes :: Complete .............. [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Build Tools ......................... [1;33mSKIPPED[m
+[[1;34mINFO[m] AutomataLib :: Examples ............................ [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  2.855 s
+[[1;34mINFO[m] Finished at: 2026-11-10T12:23:15Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m on project [36mautomata-commons-smartcollections[m: [1;31mCompilation failure[m
+[[1;31mERROR[m] [1;31m/var/maven/app/commons/smartcollections/src/test/java/net/automatalib/commons/smartcollections/UnorderedCollectionTest.java:[23,18] cannot access org.testng.Assert[m
+[[1;31mERROR[m] [1;31m  bad class file: /var/maven/.m2/repository/org/testng/testng/7.12.0/testng-7.12.0.jar(org/testng/Assert.class)[m
+[[1;31mERROR[m] [1;31m    class file has wrong version 55.0, should be 52.0[m
+[[1;31mERROR[m] [1;31m    Please remove or make sure it appears in the correct subdirectory of the classpath.[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[[1;31mERROR[m] 
+[[1;31mERROR[m] After correcting the problems, you can resume the build with the command
+[[1;31mERROR[m]   [1mmvn <args> -rf :automata-commons-smartcollections[m
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
-[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
 [0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
 [0m
