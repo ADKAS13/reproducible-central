@@ -105,18 +105,18 @@ ANSI = re.compile(r"\x1b\[[0-9;]*m")
 # ----------------------------------------------------------------------------- build success
 # (also imported by collect_results.py)
 
-def log_build_success(log_path: Path) -> bool:
-    """True only if Maven's last verdict in the log is BUILD SUCCESS.
-
-    No verdict at all (docker failure, timeout, aborted run) counts as a failure.
-    """
+# collect_rq1_results.py
+def log_build_success(log_path: Path, stages: int = 1) -> bool:
     try:
         text = ANSI.sub("", log_path.read_text(errors="replace"))
     except OSError:
         return False
     ok = text.rfind("BUILD SUCCESS")
     bad = text.rfind("BUILD FAILURE")
-    return ok != -1 and ok > bad
+    return ok != -1 and ok > bad and text.count("BUILD SUCCESS") >= stages
+
+def expected_stages(flavor: str) -> int:
+    return 3 if flavor.lower().startswith("base") else 1   # range-test, range-compare, build
 
 
 def find_flavor_log(log_dir: Optional[Path], repo: str, flavor: str) -> Optional[Path]:
@@ -328,6 +328,10 @@ def print_summary(summaries: list[RepoSummary], flavor: str = "RQ1"):
     print(f"{'='*80}")
     print(f"{'Repo':<30} {'Build':>6} {'Tests':>7} {'Pass%':>6} {'Equiv':>6} {'Equiv%':>7} {'Added':>6} {'Removed':>8}")
     print(f"{'-'*80}")
+    label = ("Modules with dependency changes (expected for ranges)"
+         if flavor.lower().startswith("base")
+         else "Non-equivalent modules (potential flattening bugs)")
+    print(f"  {label}:")
 
     for s in sorted(summaries, key=lambda x: x.repo):
         build  = "PASS" if s.build_success else "FAIL"
