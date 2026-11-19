@@ -22,7 +22,7 @@ PATTERN="${2:-*Base${RANGE_MODE}.buildspec}"
 FLAVOR_DIR="base${RANGE_MODE}"
 RC_ROOT="$(pwd)"
 REBUILD_SH="${RC_ROOT}/rebuild.sh"
-COLLECT_BASE_RANGE_SCRIPT="$(dirname "$0")/scripts/collect_base_ranges_results.py"
+COLLECT_RQ2_SCRIPT="$(dirname "$0")/scripts/collect_rq2_results.py"
 COLLECT_RQ1_SCRIPT="$(dirname "$0")/scripts/collect_rq1_results.py"
 
 OUTPUT_CSV="${RC_ROOT}/results/base_results_${RANGE_MODE_LC}.csv"
@@ -154,12 +154,13 @@ echo ""
 
 # 1. Collect Dependency Change Summary
 echo "[COLLECT] Running Dependency Change Analysis (base${RANGE_MODE})..."
-python3 "${COLLECT_BASE_RANGE_SCRIPT}" \
+python3 "${COLLECT_RQ2_SCRIPT}" \
     --root "${RC_ROOT}" \
     --range "${RANGE_MODE_LC}" \
     --log-dir "${LOG_DIR}" \
-    --output "${OUTPUT_CSV}"
-
+    --output "${OUTPUT_CSV}" \
+    --mode "base" \
+    --lag
 echo ""
 
 # 2. Collect RQ1-style Build, Test, and Binary Equivalence Stats

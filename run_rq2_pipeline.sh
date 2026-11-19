@@ -108,7 +108,9 @@ python3 "${COLLECT_RQ2_SCRIPT}" \
     --root "${RC_ROOT}" \
     --range "${RANGE_MODE}" \
     --log-dir "${LOG_DIR}" \
-    --output "${OUTPUT_CSV}"
+    --output "${OUTPUT_CSV}" \
+    --mode "rq2" \
+    --lag
 
 echo ""
 

@@ -322,14 +322,34 @@ def g_test_strip(tidy, repos, out):
 
 
 def g_macro(tidy, out):
+    """
+    Survivorship-aware Dual-Axis Macro Graph:
+    - Build Success Rate (% of repos that built)
+    - Test Pass Rate (%)
+    - Average Versions Jumped per Module across ALL repositories 
+      (unbuilt/failed repos contribute 0 jumps, properly reflecting survivorship bias)
+    """
     rows = []
     for f in FLAGS:
         t = tidy[tidy["flag"] == f]
         if t.empty:
             continue
-        rows.append({"flag": f.capitalize(), "build": t["built"].mean() * 100,
-                     "tests": t["pass_rate"].mean(),                # all repos, no tests / failed = 0
-                     "upg": t["upgrades_per_module"].mean()})        # repos with >= 1 module
+        
+        built_mask = t["built"].astype(bool)
+        build_rate = built_mask.mean() * 100
+        test_rate = t[built_mask]["pass_rate"].mean() if "pass_rate" in t else np.nan
+        
+        # Survivorship-corrected version jumps per module: include ALL repos (failed = 0 jumps)
+        total_jumped = t["versions_jumped"].fillna(0).sum() if "versions_jumped" in t else 0
+        total_modules = t["modules"].fillna(0).sum()
+        jumped_all_repos = total_jumped / total_modules if total_modules > 0 else 0
+        
+        rows.append({
+            "flag": f.capitalize(),
+            "build": build_rate,
+            "tests": test_rate,
+            "jumped": jumped_all_repos
+        })
 
     d = pd.DataFrame(rows)
     if d.empty:
@@ -343,22 +363,29 @@ def g_macro(tidy, out):
     ax1.set_ylim(0, 108)
     ax1.set_xlabel("Update flag", fontweight="bold")
     ax1.set_ylabel("Rate (%)", fontweight="bold")
+    
     ax2 = ax1.twinx()
-    l3 = ax2.plot(x, d["upg"], color="#c44e52", marker="o", lw=2.5, ms=8, ls="--", label="Avg upgraded deps / module")
-    ax2.set_ylabel("Upgraded dependencies per module", fontweight="bold", color="#c44e52")
+    l3 = ax2.plot(x, d["jumped"], color="#c44e52", marker="o", lw=2.5, ms=8, ls="--", label="Avg versions jumped / module (incl. failed)")
+    ax2.set_ylabel("Average versions jumped per module (incl. failed builds)", fontweight="bold", color="#c44e52")
     ax2.tick_params(axis="y", labelcolor="#c44e52")
     ax2.grid(False)
+    
     for i, r in d.iterrows():
         ax1.text(i, r["build"] + 2, f"{r['build']:.1f}%", color="#4c72b0", fontweight="bold", ha="center")
         if not pd.isna(r["tests"]):
             ax1.text(i, r["tests"] - 6, f"{r['tests']:.1f}%", color="#55a868", fontweight="bold", ha="center")
-        if not pd.isna(r["upg"]):
-            ax2.text(i, r["upg"] + 0.1, f"{r['upg']:.2f}", color="#c44e52", fontweight="bold", ha="center")
+        if not pd.isna(r["jumped"]):
+            ax2.text(i, r["jumped"] + 0.1, f"{r['jumped']:.2f}", color="#c44e52", fontweight="bold", ha="center")
+            
     lines = l1 + l2 + l3
     ax1.legend(lines, [l.get_label() for l in lines], loc="upper left", bbox_to_anchor=(1.15, 1.0))
-    ax1.set_title(f"Build/Test Success vs. Upgraded Dependencies by Flag ({LABEL})", fontweight="bold", pad=15)
-    save(fig, out, f"{IMG}dual_axis_success_vs_upgrades.png")
-
+    
+    # Adapt title and filename prefix dynamically based on script constants
+    label_str = f" ({LABEL})" if 'LABEL' in globals() else ""
+    img_prefix = IMG if 'IMG' in globals() else "rq2_"
+    
+    ax1.set_title(f"Build Success & Survivorship-Adjusted Version Jumps by Flag{label_str}", fontweight="bold", pad=15)
+    save(fig, out, f"{img_prefix}dual_axis_success_vs_upgrades.png")
 
 def g_upgrades_vs_tests(tidy, out):
     d = tidy[tidy["built"]].dropna(subset=["pass_rate", "upgraded_pct"])
@@ -594,6 +621,8 @@ def main():
     ap.add_argument("--keep-failed-deps", action="store_true",
                     help="keep dependency-change numbers for repos whose build failed (only test numbers are blanked). "
                          "For base ranges the comparison report is valid even when the later build/tests fail.")
+    ap.add_argument("--common-built-only", action="store_true",
+                    help="Filter analysis to repositories that successfully built across ALL flags (major, minor, patch)")
     a = ap.parse_args()
     root, out = a.root.resolve(), a.out
     out.mkdir(parents=True, exist_ok=True)
@@ -622,12 +651,26 @@ def main():
         if "rq1_upgraded" in tidy:
             tidy["net_upgraded"] = tidy["upgraded"] - tidy["rq1_upgraded"]
 
+    built_repos = {f: set(tidy[(tidy["flag"] == f) & tidy["built"].astype(bool)]["repo"]) for f in FLAGS}
+
+    # Log build success counts and intersection for survivorship bias transparency
+    common_repos = set.intersection(*built_repos.values()) if built_repos else set()
+    print(f"\n[SURVIVORSHIP BIAS AUDIT]")
+    for f in FLAGS:
+        print(f"  - Built successfully ({f}): {len(built_repos[f])} repositories")
+    print(f"  - Built successfully across ALL flags (common intersection): {len(common_repos)} repositories\n")
+
+    if a.common_built_only:
+        print(f"[INFO] Filtering dataset to the {len(common_repos)} common successfully built repositories (--common-built-only enabled).")
+        tidy = tidy[tidy["repo"].isin(common_repos)]
+        mods_by_flag = {f: (m[m["repo"].isin(common_repos)] if m is not None else None) for f, m in mods_by_flag.items()}
+        built_repos = {f: set(tidy[(tidy["flag"] == f) & tidy["built"].astype(bool)]["repo"]) for f in FLAGS}
+
     data_check(tidy, a.keep_failed_deps)
     dep_ok = dep_data_ok(tidy, a.keep_failed_deps)
     tidy.loc[~dep_ok, [c for c in DEP_METRICS if c in tidy]] = np.nan
     tidy.loc[~tidy["built"].astype(bool), [c for c in TEST_METRICS if c in tidy]] = np.nan
 
-    built_repos = {f: set(tidy[(tidy["flag"] == f) & tidy["built"].astype(bool)]["repo"]) for f in FLAGS}
     dep_repos = {f: set(tidy[(tidy["flag"] == f) & dep_ok]["repo"]) for f in FLAGS}
     mods_built = {f: (m[m["repo"].isin(dep_repos[f])] if m is not None else None)
                   for f, m in mods_by_flag.items()}

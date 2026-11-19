@@ -67,6 +67,7 @@ LAG_FIELDS = [
     ("stale_patch_after", 0),
     ("lag_unknown", 0),            # compared dependencies with no usable Maven Central data
     ("not_at_policy_latest", 0),   # after-version below the newest version the range allowed
+    ("versions_jumped", 0),        # actual number of intermediate stable releases skipped/jumped across
 ]
 
 
@@ -394,6 +395,13 @@ def compute_lag(client, modules, mode, scopes=None):
             lvl_b, lvl_a = staleness(b, lat), staleness(a, lat)
             m["behind_before"] += beh_b
             m["behind_after"] += beh_a
+
+           # Count actual intermediate stable releases jumped between b (before) and a (after)
+            if cmp_versions(b, a) < 0:
+                sorted_stable = sorted(stable, key=cmp_to_key(cmp_versions))
+                jumped = max(0, sum(1 for v in sorted_stable if cmp_versions(b, v) < 0 and cmp_versions(v, a) <= 0) - 1)
+                m["versions_jumped"] += jumped
+
             if lvl_b != "current":
                 m[f"stale_{lvl_b}_before"] += 1
             if lvl_a != "current":
@@ -689,21 +697,21 @@ def enrich(results, mode, cache_path, refresh=False, workers=4, scopes=None, det
     print_coverage(stats)
     print_summary(results, client.as_of)
 
-    # build time and outcome from the logs
-    if log_dir is None and root is not None:
-        log_dir = root / f"rq2_logs_{mode}"
-    if baseline_dirs is None and root is not None:
-        baseline_dirs = {n: root / d for n, d in (("rq1", "rq1_logs"), ("base", "base_logs")) if (root / d).is_dir()}
-    repos = repo_rows(results, mode, log_dir, baseline_dirs)
-    for r in results:
-        outcome, _ = build_info(log_dir, r.repo)
-        if outcome is not None:
-            r.build_success = outcome == "success"
-    print_build_summary(repos)
-    if repo_csv_path is None and detail_path:
-        repo_csv_path = Path(detail_path).with_name(Path(detail_path).name.replace("_lag_detail", "_repos"))
-    if repo_csv_path and repos:
-        write_repo_rows(repos, repo_csv_path)
+    # # build time and outcome from the logs
+    # if log_dir is None and root is not None:
+    #     log_dir = root / f"rq2_logs_{mode}"
+    # if baseline_dirs is None and root is not None:
+    #     baseline_dirs = {n: root / d for n, d in (("rq1", "rq1_logs"), ("base", "base_logs")) if (root / d).is_dir()}
+    # repos = repo_rows(results, mode, log_dir, baseline_dirs)
+    # for r in results:
+    #     outcome, _ = build_info(log_dir, r.repo)
+    #     if outcome is not None:
+    #         r.build_success = outcome == "success"
+    # print_build_summary(repos)
+    # if repo_csv_path is None and detail_path:
+    #     repo_csv_path = Path(detail_path).with_name(Path(detail_path).name.replace("_lag_detail", "_repos"))
+    # if repo_csv_path and repos:
+    #     write_repo_rows(repos, repo_csv_path)
 
 
 # ------------------------------------------------------------------------------ command line

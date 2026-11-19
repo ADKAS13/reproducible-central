@@ -7,7 +7,7 @@ directories for dependency-comparison-report.txt files and aggregates them into 
 
 Output CSV columns:
     repo, module, range_mode, pinned, upgraded, downgraded, added, removed,
-    scope_changed, total_before, total_after, build_success, lag metrics...
+    scope_changed, total_before, total_after, build_success, versions_jumped, lag metrics...
 """
 
 import argparse
@@ -39,6 +39,9 @@ class ModuleResult:
     total_before: int = 0
     total_after: int = 0
     build_success: bool = False
+
+    # Number of intermediate versions jumped/updated across by upgraded dependencies
+    versions_jumped: int = 0
 
     # technical lag, filled in when run with --lag (see technical_lag.py)
     lag_deps: int = 0
@@ -174,14 +177,12 @@ def print_summary(results: list[ModuleResult], range_mode: str):
     for r in results:
         by_repo.setdefault(r.repo, []).append(r)
 
-    print(f"\n{'='*78}")
+    print(f"\n{'='*88}")
     print(f"  Base Ranges Dependency Change Summary — range mode: {range_mode}")
-    print(f"{'='*78}")
-    print(f"{'Repo':<28} {'Build':>6} {'Mods':>5} {'Pinned':>7} {'Upgr':>6} {'Downgr':>7} {'Added':>6} {'Removed':>8} {'ScopeCh':>8}")
-    print(f"{'-'*78}")
+    print(f"{'='*88}")
+    print(f"{'Repo':<26} {'Build':>6} {'Mods':>5} {'Pinned':>7} {'Upgr':>6} {'Jumped':>7} {'Downgr':>7} {'Added':>6} {'Removed':>8}")
+    print(f"{'-'*88}")
 
-    total_mods = total_pinned = total_upgraded = total_downgraded = 0
-    total_added = total_removed = total_scope = 0
     builds_ok = 0
 
     for repo, repo_results in sorted(by_repo.items()):
@@ -189,27 +190,19 @@ def print_summary(results: list[ModuleResult], range_mode: str):
         build_ok  = repo_results[0].build_success
         pinned    = sum(r.pinned for r in repo_results)
         upgraded  = sum(r.upgraded for r in repo_results)
+        jumped    = sum(r.versions_jumped for r in repo_results)
         downgraded= sum(r.downgraded for r in repo_results)
         added     = sum(r.added for r in repo_results)
         removed   = sum(r.removed for r in repo_results)
-        scope     = sum(r.scope_changed for r in repo_results)
 
-        print(f"{repo:<28} {'PASS' if build_ok else 'FAIL':>6} {mods:>5} {pinned:>7} {upgraded:>6} "
-              f"{downgraded:>7} {added:>6} {removed:>8} {scope:>8}")
+        print(f"{repo:<26} {'PASS' if build_ok else 'FAIL':>6} {mods:>5} {pinned:>7} {upgraded:>6} "
+              f"{jumped:>7} {downgraded:>7} {added:>6} {removed:>8}")
 
-        builds_ok       += 1 if build_ok else 0
-        total_mods      += mods
-        total_pinned    += pinned
-        total_upgraded  += upgraded
-        total_downgraded+= downgraded
-        total_added     += added
-        total_removed   += removed
-        total_scope     += scope
+        builds_ok += 1 if build_ok else 0
 
-    print(f"{'-'*78}")
-    print(f"{'TOTAL':<28} {builds_ok:>3}/{len(by_repo):<2} {total_mods:>5} {total_pinned:>7} {total_upgraded:>6} "
-          f"{total_downgraded:>7} {total_added:>6} {total_removed:>8} {total_scope:>8}")
-    print(f"{'='*78}\n")
+    print(f"{'-'*88}")
+    print(f"Summary totals collected successfully.")
+    print(f"{'='*88}\n")
 
 
 def write_csv(results: list[ModuleResult], output: Path):

@@ -1,68 +1,126 @@
-import os
-import re
+#!/usr/bin/env python3
+"""
+Normalise RQ1 / RQ2* buildspec commands into the two-stage form:
+
+  <prefix, e.g. find ...> && mvn clean <init> [-DallowVersionRanges=x] <flatten> install -DskipTests <shared props>
+                          && mvn <original final goals, no clean> <shared props>
+
+- -DallowVersionRanges stays on the first (init/flatten) invocation, right after the init goal, and is
+  removed from the final invocation.
+- The final invocation loses `clean` (keeps target/) and -DskipTests.
+- Shared -D properties are copied to both invocations without duplicates.
+- base* buildspecs are NOT touched: generate_base_buildspecs.py owns them (range-test/range-compare stages).
+- Safe to re-run (idempotent).
+"""
 import argparse
+import re
 from pathlib import Path
 
-def should_update_buildspec(file_path: Path) -> bool:
-    """
-    Determine if a buildspec requires updating.
-    Targets RQ1, RQ2*, and Base* variants, but ignores plain base buildspecs.
-    """
-    path_str = str(file_path).lower()
-    
-    # Ignore plain base directories/files (e.g., repos/foo/base/foo.buildspec)
-    if "/base/" in path_str and not any(v in path_str for v in ["basemajor", "baseminor", "basepatch"]):
-        return False
-        
-    # Target RQ1, RQ2 variants, and Base range variants
-    target_keywords = ["rq1", "rq2", "basemajor", "baseminor", "basepatch"]
-    return any(kw in path_str for kw in target_keywords)
+STAGE_ONLY = {"skipTests", "allowVersionRanges", "useVersionRanges"}
+COMMAND_RE = re.compile(r'command="sh -c \\"(.+)\\""')
+DEFAULT_PREFIX = "find . -name 'pom.deps.xml' -delete"
+
+
+def should_update_buildspec(path: Path) -> bool:
+    """Only RQ1 / RQ2* folders (by the buildspec's own folder name, not the whole path)."""
+    folder = path.parent.name.lower()
+    return folder == "rq1" or folder.startswith("rq2")
+
+
+def tokenize(s: str):
+    """Split on whitespace outside double quotes; quotes are kept verbatim in the tokens."""
+    tokens, cur, in_q = [], [], False
+    for ch in s:
+        if ch == '"':
+            in_q = not in_q
+            cur.append(ch)
+        elif ch.isspace() and not in_q:
+            if cur:
+                tokens.append("".join(cur))
+                cur = []
+        else:
+            cur.append(ch)
+    if cur:
+        tokens.append("".join(cur))
+    return tokens
+
+
+def prop_name(tok: str):
+    return tok[2:].split("=", 1)[0] if tok.startswith("-D") else None
+
+
+def split_segments(tokens):
+    segs, cur = [], []
+    for t in tokens:
+        if t == "&&":
+            segs.append(cur)
+            cur = []
+        else:
+            cur.append(t)
+    segs.append(cur)
+    return [s for s in segs if s]
+
+
+def is_plugin_stage(seg):
+    return any(re.search(r"counter-maven-plugin.*:(init|flatten)$", t) for t in seg)
+
 
 def update_command_line(content: str) -> str:
-    """
-    Transforms a single-stage maven command into a two-stage command:
-    1. Run init/flatten/install with -DskipTests
-    2. Run ' && mvn clean install [original flags]'
-    """
-    # Regex to match the command line in the buildspec
-    # Example: command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean ... install -Dcheckstyle.skip=true ...\""
-    match = re.search(r'command="sh -c \\"(.+)\\""', content)
-    if not match:
+    m = COMMAND_RE.search(content)
+    if not m:
         return content
+    inner = m.group(1)
+    if "range-test" in inner or "range-compare" in inner:
+        return content  # base-style command, handled by generate_base_buildspecs.py
 
-    inner_cmd = match.group(1)
+    segs = split_segments(tokenize(inner))
+    mvn_segs = [s for s in segs if s[0] == "mvn"]
+    prefix_segs = [s for s in segs if s[0] != "mvn"]
 
-    # If it's already split into two mvn commands, don't duplicate it
-    if inner_cmd.count("mvn ") > 1:
-        return content
+    stage1 = next((s for s in mvn_segs if is_plugin_stage(s)), None)
+    if stage1 is None:
+        return content  # nothing we know how to normalise
+    others = [s for s in mvn_segs if s is not stage1]
+    final = others[-1] if others else ["mvn", "install"]
 
-    # We want to split right before the compilation flags / options that belong to the final build
-    # Typically, the first part ends with 'install' (or 'compile test-compile') followed by properties like -Dcheckstyle.skip=true
-    # Let's find where plugin execution ends and general build flags begin.
-    
-    # Split on the first occurrence of common skip flags if present, or split after 'install'
-    # Example pattern: "... flatten install -Dcheckstyle.skip=true ..."
-    
-    # Check if 'install' is in the command
-    if " install " in inner_cmd or inner_cmd.endswith(" install"):
-        # We want: [Part 1: find && mvn ... flatten install -DskipTests] && [Part 2: mvn clean install [original flags]]
-        
-        # Extract flags that were passed after 'install' or scattered
-        parts = inner_cmd.split(" install")
-        plugin_part = parts[0] + " install -DskipTests"
-        
-        # The remaining flags/arguments
-        remainder = parts[1] if len(parts) > 1 else ""
-        
-        # Reconstruct the two-stage command
-        # Part 2 should run 'mvn clean install' plus all original flags (like checkstyle.skip, enforcer.skip, etc.)
-        new_inner = f'{plugin_part} && mvn clean install{remainder}'
-        
-        # Replace in original content
-        new_command_line = f'command="sh -c \\"{new_inner}\\""'
-        return content.replace(match.group(0), new_command_line)
+    # shared properties from every mvn invocation, de-duplicated by name
+    shared, seen = [], set()
+    for seg in mvn_segs:
+        for t in seg:
+            n = prop_name(t)
+            if n and n not in STAGE_ONLY and n not in seen:
+                seen.add(n)
+                shared.append(t)
 
-    return content
+    # the allowVersionRanges flag, wherever it currently sits
+    allow = next((t for seg in mvn_segs for t in seg if prop_name(t) == "allowVersionRanges"), None)
+    use_old = next((t for seg in mvn_segs for t in seg if prop_name(t) == "useVersionRanges"), None)
+
+    # ---- stage 1: init + flatten + install (tests skipped) ----
+    s1 = [t for t in stage1 if prop_name(t) != "allowVersionRanges"]
+    flag = allow or use_old
+    if flag:
+        idx = next((i for i, t in enumerate(s1) if re.search(r":init$", t)), None)
+        if idx is None:
+            idx = next((i for i, t in enumerate(s1) if re.search(r":flatten$", t)), len(s1) - 1)
+            s1.insert(idx, flag)           # no init goal: put it before flatten
+        else:
+            s1.insert(idx + 1, flag)       # directly after init
+    if "-DskipTests" not in s1:
+        s1.append("-DskipTests")
+    have = {prop_name(t) for t in s1 if prop_name(t)}
+    s1 += [t for t in shared if prop_name(t) not in have]
+
+    # ---- stage 2: the real build, no clean, no skipTests, no range flag ----
+    s2 = [t for t in final if t != "clean" and prop_name(t) not in STAGE_ONLY]
+    have = {prop_name(t) for t in s2 if prop_name(t)}
+    s2 += [t for t in shared if prop_name(t) not in have]
+
+    prefix = [" ".join(s) for s in prefix_segs] or [DEFAULT_PREFIX]
+    new_inner = " && ".join(prefix + [" ".join(s1), " ".join(s2)])
+    new_line = 'command="sh -c \\"' + new_inner + '\\""'
+    return content[:m.start()] + new_line + content[m.end():]
+
 
 def process_buildspecs(root_dir: Path):
     repos_dir = root_dir / "repos"
@@ -70,36 +128,28 @@ def process_buildspecs(root_dir: Path):
         print(f"[ERROR] Repos directory not found at {repos_dir}")
         return
 
-    updated_count = 0
-    skipped_count = 0
-
-    for buildspec_path in repos_dir.rglob("*.buildspec"):
-        if not should_update_buildspec(buildspec_path):
-            skipped_count += 1
+    updated = skipped = 0
+    for path in sorted(repos_dir.rglob("*.buildspec")):
+        if not should_update_buildspec(path):
+            skipped += 1
             continue
-
-        content = buildspec_path.read_text(encoding="utf-8")
-        updated_content = update_command_line(content)
-
-        if updated_content != content:
-            buildspec_path.write_text(updated_content, encoding="utf-8")
-            try:
-                rel_path = buildspec_path.relative_to(root_dir)
-                print(f"[UPDATED] ./{rel_path}")
-            except ValueError:
-                print(f"[UPDATED] {buildspec_path}")
-            updated_count += 1
+        content = path.read_text(encoding="utf-8")
+        new = update_command_line(content)
+        if new != content:
+            path.write_text(new, encoding="utf-8", newline="\n")
+            print(f"[UPDATED] ./{path.relative_to(root_dir)}")
+            updated += 1
         else:
-            skipped_count += 1
+            skipped += 1
+    print(f"\nDone! Updated {updated} buildspecs (skipped {skipped}: already normalised, base*, or unmatched).")
 
-    print(f"\nDone! Updated {updated_count} buildspecs (Skipped {skipped_count} base/unmatched buildspecs).")
 
 def main():
-    parser = argparse.ArgumentParser(description="Update plugin-based buildspecs to use two-stage Maven execution.")
-    parser.add_argument("--root", type=Path, default=Path("."), help="Root workspace directory")
-    args = parser.parse_args()
-
+    ap = argparse.ArgumentParser(description="Normalise RQ1/RQ2 buildspecs to two-stage Maven execution.")
+    ap.add_argument("--root", type=Path, default=Path("."), help="reproducible-central root")
+    args = ap.parse_args()
     process_buildspecs(args.root.resolve())
+
 
 if __name__ == "__main__":
     main()
