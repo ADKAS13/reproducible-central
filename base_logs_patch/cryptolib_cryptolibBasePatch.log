@@ -1,0 +1,485 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/cryptolib/basePatch/cryptolibBasePatch.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1morg.cryptomator[0m
+|      [0;34martifactId[0;97m: [1mcryptolib[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/org/cryptomator/cryptolib/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/cryptomator/cryptolib.git[0m
+|      [0;34mgitTag[0;97m: [1me3ee3de00010ee7e4cdf538333e3ae0d99c82b08[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete &&
+    mvn -Dmaven.test.failure.ignore=true com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=patch install &&
+    find . -type d \( -name surefire-reports -o -name failsafe-reports \) -exec rm -rf {} + &&
+    mvn -Dmaven.test.failure.ignore=true -DskipTests com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-compare install &&
+    find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Crypto.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/cryptomator/cryptolib.git[0m on tag [1me3ee3de00010ee7e4cdf538333e3ae0d99c82b08[0m
+/home/adkas13/reproducible-central/repos/cryptolib/basePatch/buildcache/cryptolib
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/cryptomator/cryptolib.git (fetch)
+origin	https://github.com/cryptomator/cryptolib.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f e3ee3de00010ee7e4cdf538333e3ae0d99c82b08 [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/cryptolib/basePatch/buildcache/cryptolib
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.cryptomator:cryptolib:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/cryptolib/basePatch/buildcache/cryptolib:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=patch install && find . -type d \( -name surefire-reports -o -name failsafe-reports \) -exec rm -rf {} + && mvn -Dmaven.test.failure.ignore=true -DskipTests com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-compare install && find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Nov 15 11:59:22 UTC 2026.
+Universal Time is now:  Sun Nov 15 11:59:22 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------------< [0;36morg.cryptomator:cryptolib[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding Cryptomator Crypto Library 2.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/com/google/code/gson/gson/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 1.8 kB/s)
+Progress (1): 1.7 kB                    Downloaded from bintray: https://jcenter.bintray.com/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 946 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/com/google/guava/failureaccess/maven-metadata.xml
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 6.0 kB/s)
+Progress (1): 427 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/guava/failureaccess/maven-metadata.xml (427 B at 1.5 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/com/google/code/findbugs/jsr305/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 5.7 kB/s)
+Progress (1): 461 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 1.7 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/checkerframework/checker-qual/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 91 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 12 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/com/google/errorprone/error_prone_annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 55 kB/s)
+Progress (1): 3.3 kB                    Downloaded from bintray: https://jcenter.bintray.com/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 7.7 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 8.6 kB/s)
+Progress (1): 514 B                   Downloaded from bintray: https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 1.2 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 68 kB/s)
+Progress (1): 3.9 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 9.0 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 63 kB/s)
+Progress (1): 3.2 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter/maven-metadata.xml (3.2 kB at 12 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
+Progress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.1 kB at 81 kB/s)
+Progress (1): 4.1 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.1 kB at 9.6 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/apiguardian/apiguardian-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml
+Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 7.5 kB/s)
+Progress (1): 430 B                   Downloaded from bintray: https://jcenter.bintray.com/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 905 B/s)
+Downloading from bintray: https://jcenter.bintray.com/org/opentest4j/opentest4j/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml
+Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 12 kB/s)
+Progress (1): 699 B                   Downloaded from bintray: https://jcenter.bintray.com/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 1.4 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-commons/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml
+Progress (1): 4.1 kBProgress (2): 4.1 kB | 4.1 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.1 kB at 19 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.1 kB at 8.7 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml
+Progress (1): 4.0 kBProgress (2): 4.0 kB | 4.0 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (4.0 kB at 21 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (4.0 kB at 10.0 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
+Progress (1): 4.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.1 kB at 80 kB/s)
+Progress (1): 4.1 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.1 kB at 10.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-engine/maven-metadata.xml
+Progress (1): 4.1 kBProgress (2): 4.1 kB | 4.1 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.1 kB at 19 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.1 kB at 10 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/mockito/mockito-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 237 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from bintray: https://jcenter.bintray.com/org/mockito/mockito-core/maven-metadata.xml (12 kB at 29 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 215 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy/maven-metadata.xml (11 kB at 26 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 191 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 11 kB                    Downloaded from bintray: https://jcenter.bintray.com/net/bytebuddy/byte-buddy-agent/maven-metadata.xml (11 kB at 27 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/org/objenesis/objenesis/maven-metadata.xml
+Progress (1): 907 BProgress (2): 907 B | 907 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 3.9 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/objenesis/objenesis/maven-metadata.xml (907 B at 3.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/org/hamcrest/hamcrest/maven-metadata.xml
+Progress (1): 577 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 10 kB/s)
+Progress (1): 577 B                   Downloaded from bintray: https://jcenter.bintray.com/org/hamcrest/hamcrest/maven-metadata.xml (577 B at 1.3 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-simple/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.2 kBProgress (2): 4.2 kB | 4.1 kBProgress (2): 4.2 kB | 4.2 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 19 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 9.3 kB/s)
+Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/maven-metadata.xml
+Progress (1): 3.4 kBProgress (2): 3.4 kB | 3.4 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-core/maven-metadata.xml (3.4 kB at 9.8 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-core/maven-metadata.xml (3.4 kB at 7.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/maven-metadata.xml
+Progress (1): 1.8 kBProgress (2): 1.8 kB | 1.8 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/maven-metadata.xml (1.8 kB at 8.2 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/net/sf/jopt-simple/jopt-simple/maven-metadata.xml (1.8 kB at 3.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/maven-metadata.xml
+Progress (1): 603 BProgress (2): 603 B | 603 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-math3/maven-metadata.xml (603 B at 2.3 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/apache/commons/commons-math3/maven-metadata.xml (603 B at 1.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml
+Downloading from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 3.1 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml (3.1 kB at 13 kB/s)
+Downloaded from bintray: https://jcenter.bintray.com/org/openjdk/jmh/jmh-generator-annprocess/maven-metadata.xml (3.1 kB at 6.7 kB/s)
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/pom.xml in-place (28 dependencies: 25 ranged, 3 pinned, 0 carrying exclusions, 28 managed entries, mode: patch, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for cryptolib: pinned=14 upgraded=14 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 43 source files to /var/maven/app/target/classes
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/cryptomator/cryptolib/v1/FileHeaderImpl.java: Some input files use or override a deprecated API.
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/cryptomator/cryptolib/v1/FileHeaderImpl.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 37 source files to /var/maven/app/target/test-classes
+[[1;34mINFO[m] /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java: /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.797 s - in org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s - in org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mScryptTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.146 s - in org.cryptomator.cryptolib.common.[1mScryptTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 s - in org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 s - in org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s - in org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.508 s - in org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.163 s - in org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 s - in org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s - in org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.003 s - in org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.cryptomator.cryptolib.v2.[1mCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m20[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s - in org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m306[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.183 s - in org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileHeaderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m22[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mCryptorsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m26[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in org.cryptomator.cryptolib.[1mCryptorsTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m6[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.094 s - in org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mEncryptingReadableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.cryptomator.cryptolib.[1mEncryptingReadableByteChannelTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;33mWARNING[m] [1;33mTests run: 477, Failures: 0, Errors: 0, Skipped: 3[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/cryptolib-2.0.0.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/cryptolib-2.0.0.jar to /var/maven/.m2/repository/org/cryptomator/cryptolib/2.0.0/cryptolib-2.0.0.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/cryptomator/cryptolib/2.0.0/cryptolib-2.0.0.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  20.036 s
+[[1;34mINFO[m] Finished at: 2026-11-15T11:59:43Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Nov 15 11:59:44 UTC 2026.
+Universal Time is now:  Sun Nov 15 11:59:44 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------------< [0;36morg.cryptomator:cryptolib[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding Cryptomator Crypto Library 2.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from java.net: http://download.java.net/maven/2/net/sf/jopt-simple/jopt-simple/maven-metadata.xml
+Downloading from java.net: http://download.java.net/maven/2/org/apache/commons/commons-math3/maven-metadata.xml
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-compare[m [1m(default-cli)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] [RANGE-COMPARE] Dependency comparison for cryptolib: pinned=14 upgraded=14 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 43 source files to /var/maven/app/target/classes
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/cryptomator/cryptolib/v1/FileHeaderImpl.java: Some input files use or override a deprecated API.
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/cryptomator/cryptolib/v1/FileHeaderImpl.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 37 source files to /var/maven/app/target/test-classes
+[[1;33mWARNING[m] Implicitly compiled files were not subject to annotation processing.
+  Use -proc:none to disable annotation processing or -implicit to specify a policy for implicit compilation.
+[[1;34mINFO[m] /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java: /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Tests are skipped.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/cryptolib-2.0.0.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/cryptolib-2.0.0.jar to /var/maven/.m2/repository/org/cryptomator/cryptolib/2.0.0/cryptolib-2.0.0.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/cryptomator/cryptolib/2.0.0/cryptolib-2.0.0.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  8.853 s
+[[1;34mINFO[m] Finished at: 2026-11-15T11:59:52Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Nov 15 11:59:53 UTC 2026.
+Universal Time is now:  Sun Nov 15 11:59:53 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------------< [0;36morg.cryptomator:cryptolib[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding Cryptomator Crypto Library 2.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 43 source files to /var/maven/app/target/classes
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/cryptomator/cryptolib/v1/FileHeaderImpl.java: Some input files use or override a deprecated API.
+[[1;34mINFO[m] /var/maven/app/src/main/java/org/cryptomator/cryptolib/v1/FileHeaderImpl.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 37 source files to /var/maven/app/target/test-classes
+[[1;33mWARNING[m] Implicitly compiled files were not subject to annotation processing.
+  Use -proc:none to disable annotation processing or -implicit to specify a policy for implicit compilation.
+[[1;34mINFO[m] /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java: /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java uses unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/src/test/java/org/cryptomator/cryptolib/common/MasterkeyFileAccessTest.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.843 s - in org.cryptomator.cryptolib.common.[1mReseedingSecureRandomTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.cryptomator.cryptolib.common.[1mMessageDigestSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.cryptomator.cryptolib.common.[1mCipherSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mScryptTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 s - in org.cryptomator.cryptolib.common.[1mScryptTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 s - in org.cryptomator.cryptolib.common.[1mMacSupplierTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 s - in org.cryptomator.cryptolib.common.[1mDestroyablesTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 s - in org.cryptomator.cryptolib.common.[1mByteBuffersTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.64 s - in org.cryptomator.cryptolib.common.[1mMasterkeyFileAccessTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.common.[1mAesKeyWrapTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s - in org.cryptomator.cryptolib.common.[1mMasterkeyTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.199 s - in org.cryptomator.cryptolib.[1mEncryptingWritableByteChannelTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in org.cryptomator.cryptolib.v2.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 s - in org.cryptomator.cryptolib.v2.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.cryptomator.cryptolib.v2.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v2.[1mBenchmarkTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.cryptomator.cryptolib.v2.[1mCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m20[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 s - in org.cryptomator.cryptolib.v2.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mCryptorProviderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m306[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 s - in org.cryptomator.cryptolib.v1.[1mFileNameCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mBenchmarkTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileHeaderImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mFileHeaderImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.cryptomator.cryptolib.v1.[1mCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m22[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in org.cryptomator.cryptolib.v1.[1mFileContentCryptorImplTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.[1mDecryptingReadableByteChannelTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mCryptorsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m26[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.cryptomator.cryptolib.[1mCryptorsTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m6[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.101 s - in org.cryptomator.cryptolib.[1mCryptoLibIntegrationTest[m
+[[1;34mINFO[m] Running org.cryptomator.cryptolib.[1mEncryptingReadableByteChannelTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.cryptomator.cryptolib.[1mEncryptingReadableByteChannelTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;33mWARNING[m] [1;33mTests run: 477, Failures: 0, Errors: 0, Skipped: 3[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/cryptolib-2.0.0.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mcryptolib[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/cryptolib-2.0.0.jar to /var/maven/.m2/repository/org/cryptomator/cryptolib/2.0.0/cryptolib-2.0.0.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/cryptomator/cryptolib/2.0.0/cryptolib-2.0.0.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  8.478 s
+[[1;34mINFO[m] Finished at: 2026-11-15T12:00:02Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+dos2unix: target/Crypto.buildinfo: No such file or directory
+dos2unix: Skipping target/Crypto.buildinfo, not a regular file.
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m

@@ -1,0 +1,1858 @@
+Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/peppol-commons/baseMinor/peppol-commonsBaseMinor.buildspec[0m
+| 1. rebuild what binaries?
+|      [0;34mreferenceRepo[0;97m: Using default value [1mhttps://repo.maven.apache.org/maven2/[0m
+|      [0;34mgroupId[0;97m: [1mcom.helger.peppol[0m
+|      [0;34martifactId[0;97m: [1mpeppol-commons-parent-pom[0m
+|      [0;34mversion[0;97m: [1m9[0m
+|    => https://repo.maven.apache.org/maven2/com/helger/peppol/peppol-commons-parent-pom/9
+| 2. from which sources?
+|      [0;34mgitRepo[0;97m: [1mhttps://github.com/phax/peppol-commons.git[0m
+|      [0;34mgitTag[0;97m: [1m86ea56872d3f1ed495dc78e247b874d2dfcc27bb[0m
+| 3. with which rebuild environment?
+|      [0;34mtool[0;97m: [1mmvn[0m
+|      [0;34mjdk[0;97m: [1m11[0m
+|      [0;34mnewline[0;97m: [1mlf[0m
+|      [0;34mtimezone[0;97m: Using default value [1mUTC[0m
+|      [0;34mlocale[0;97m: Using default value [1men_US[0m
+|      [0;34mumask[0;97m: [1m022[0m
+| 4. how?
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete &&
+    mvn -Dmaven.test.failure.ignore=true com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=minor install &&
+    find . -type d \( -name surefire-reports -o -name failsafe-reports \) -exec rm -rf {} + &&
+    mvn -Dmaven.test.failure.ignore=true -DskipTests com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-compare install &&
+    find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true install"[0m
+| 5. expected results?
+|      [0;34mbuildinfo[0;97m: [1mtarget/Peppol-commons.buildinfo[0m
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mFetching source code from Git [1mhttps://github.com/phax/peppol-commons.git[0m on tag [1m86ea56872d3f1ed495dc78e247b874d2dfcc27bb[0m
+/home/adkas13/reproducible-central/repos/peppol-commons/baseMinor/buildcache/peppol-commons-parent-pom
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit remote -v [0m
+[90m
+origin	https://github.com/phax/peppol-commons.git (fetch)
+origin	https://github.com/phax/peppol-commons.git (push)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit fetch [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mgit checkout -q -f 86ea56872d3f1ed495dc78e247b874d2dfcc27bb [0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mSource code available in: /home/adkas13/reproducible-central/repos/peppol-commons/baseMinor/buildcache/peppol-commons-parent-pom
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mPreparing custom Reproducible Builder image rb-ubuntu-jdk11-toolchains***-maven-3.6.3
+[0m[0;97m[[1;94mINFO[0;97m] [0mBuilding base Reproducible Builder toolchains image [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11[0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:785b12195de01060b9100e4a46784506772f47e9c60a71b3caa0230e07ad2e28
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for installation of maven
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a12f3d294aa2293ed07505680fbdbdbac020e4da99e83f179d0dfa534b96423a
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for local user
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:012dfc9d72e197078dfe2e89a0ce2e1446fd0badc5583a8c940473013e12ee98
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mAdding layer to rebuilder container image for environment settings (umask, timezone, ...)
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker build -q -t ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 -f /home/adkas13/reproducible-central/bin/docker/tmp/Dockerfile-rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 /home/adkas13/reproducible-central/bin [0m
+[90m
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
+
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
+[0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.helger.peppol:peppol-commons-parent-pom:9[0m release
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/peppol-commons/baseMinor/buildcache/peppol-commons-parent-pom:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=minor install && find . -type d \( -name surefire-reports -o -name failsafe-reports \) -exec rm -rf {} + && mvn -Dmaven.test.failure.ignore=true -DskipTests com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-compare install && find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true install" [0m
+[90m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Nov 15 14:37:29 UTC 2026.
+Universal Time is now:  Sun Nov 15 14:37:29 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] peppol-commons-parent-pom                                          [pom]
+[[1;34mINFO[m] peppol-id-datatypes                                             [bundle]
+[[1;34mINFO[m] peppol-id                                                       [bundle]
+[[1;34mINFO[m] peppol-commons                                                  [bundle]
+[[1;34mINFO[m] peppol-testfiles                                                [bundle]
+[[1;34mINFO[m] peppol-sbdh                                                     [bundle]
+[[1;34mINFO[m] peppol-smp-datatypes                                            [bundle]
+[[1;34mINFO[m] peppol-smp-client                                               [bundle]
+[[1;34mINFO[m] peppol-sml-client                                               [bundle]
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/baeldung/counter-maven-plugin/1.0-SNAPSHOT/maven-metadata.xml
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36mcom.helger.peppol:peppol-commons-parent-pom[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding peppol-commons-parent-pom 8.6.2-SNAPSHOT                  [1/9][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Skipping aggregator/parent module: peppol-commons-parent-pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] Not executing buildinfo plugin because the packaging 'pom' is ignored.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-commons-parent-pom/8.6.2-SNAPSHOT/peppol-commons-parent-pom-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mcom.helger.peppol:peppol-id-datatypes[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding peppol-id-datatypes 8.6.2-SNAPSHOT                        [2/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/peppol-id-datatypes/target/dependency-tree-before.txt
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-commons/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-commons/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-commons/maven-metadata.xml (2.8 kB at 4.5 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/google/code/findbugs/jsr305/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 7.3 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xmldsig/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig/maven-metadata.xml
+Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig/maven-metadata.xml (677 B at 2.1 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml
+Progress (1): 872 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/maven-metadata.xml (872 B at 4.1 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/activation/jakarta.activation-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/maven-metadata.xml
+Progress (1): 844 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/maven-metadata.xml (844 B at 12 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-simple/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/maven-metadata.xml (4.2 kB at 56 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/slf4j/slf4j-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 62 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/junit/junit/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 19 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/hamcrest/hamcrest-core/maven-metadata.xml
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 12 kB/s)
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/peppol-id-datatypes/pom.xml in-place (9 dependencies: 9 ranged, 0 pinned, 0 carrying exclusions, 9 managed entries, mode: minor, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for peppol-id-datatypes: pinned=5 upgraded=4 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jaxb2-plugin:0.14.0:generate[m [1m(default)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.sun.xml.bind.v2.runtime.reflect.opt.Injector (file:/var/maven/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.0/jaxb-runtime-2.3.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int)
+WARNING: Please consider reporting this to the maintainers of com.sun.xml.bind.v2.runtime.reflect.opt.Injector
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[[1;34mINFO[m] Default Locale was set to 'en_US'
+[[1;34mINFO[m] Sources are not up-to-date, XJC will be executed.
+[[1;34mINFO[m] Running JAXB plugin -Xph-annotate
+[[1;34mINFO[m] Running JAXB plugin -Xph-fields-private
+[[1;34mINFO[m] Running JAXB plugin -Xph-code-quality
+[[1;34mINFO[m] Running JAXB plugin -Xph-implements
+[[1;34mINFO[m] Running JAXB plugin -Xph-equalshashcode
+[[1;34mINFO[m] Running JAXB plugin -Xph-tostring
+[[1;34mINFO[m] Running JAXB plugin -Xph-list-extension
+[[1;34mINFO[m] Running JAXB plugin -Xph-csu
+[[1;34mINFO[m] Running JAXB plugin -Xph-cloneable2
+[[1;34mINFO[m] Running JAXB plugin -Xph-offset-dt-extension
+[[1;34mINFO[m] Episode file [/var/maven/app/peppol-id-datatypes/target/generated-sources/xjc/META-INF/sun-jaxb.episode] was augmented with if-exists="true" attributes.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Successfully created temp directory buildinfo-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 4 resources
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 1 resource to META-INF
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 16 source files to /var/maven/app/peppol-id-datatypes/target/classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 0 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 2 source files to /var/maven/app/peppol-id-datatypes/target/test-classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.helger.xsds.peppol.id1.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 s - in com.helger.xsds.peppol.id1.[1mSPITest[m
+[[1;34mINFO[m] Running com.helger.xsds.peppol.id1.[1mCPeppolIDTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.xsds.peppol.id1.[1mCPeppolIDTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 2, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:bundle[m [1m(default-bundle)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-id-datatypes/target/peppol-id-datatypes-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-id-datatypes/target/peppol-id-datatypes-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/peppol-id-datatypes/target/peppol-id-datatypes-8.6.2-SNAPSHOT.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-id-datatypes/8.6.2-SNAPSHOT/peppol-id-datatypes-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-id-datatypes/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-id-datatypes/8.6.2-SNAPSHOT/peppol-id-datatypes-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/peppol-id-datatypes/target/peppol-id-datatypes-8.6.2-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-id-datatypes/8.6.2-SNAPSHOT/peppol-id-datatypes-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-id-datatypes/target/peppol-id-datatypes-8.6.2-SNAPSHOT-test-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-id-datatypes/8.6.2-SNAPSHOT/peppol-id-datatypes-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:install[m [1m(default-install)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] Installing com/helger/peppol/peppol-id-datatypes/8.6.2-SNAPSHOT/peppol-id-datatypes-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Writing OBR metadata
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mcom.helger.peppol:peppol-id[0;1m >---------------------[m
+[[1;34mINFO[m] [1mBuilding peppol-id 8.6.2-SNAPSHOT                                  [3/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/peppol-id/target/dependency-tree-before.txt
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-xml/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-xml/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-xml/maven-metadata.xml (2.8 kB at 7.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp1/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-bdxr-smp1/maven-metadata.xml
+Progress (1): 679 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp1/maven-metadata.xml (679 B at 1.3 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-jaxb-adapter/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb-adapter/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb-adapter/maven-metadata.xml (2.8 kB at 9.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp2/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-bdxr-smp2/maven-metadata.xml
+Progress (1): 679 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-bdxr-smp2/maven-metadata.xml (679 B at 1.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig11/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xmldsig11/maven-metadata.xml
+Progress (1): 679 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig11/maven-metadata.xml (679 B at 2.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades132/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xades132/maven-metadata.xml
+Progress (1): 678 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades132/maven-metadata.xml (678 B at 1.4 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-xades141/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades141/maven-metadata.xml
+Progress (1): 678 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xades141/maven-metadata.xml (678 B at 1.2 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-ccts-cct-schemamodule/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-ccts-cct-schemamodule/maven-metadata.xml
+Progress (1): 691 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-ccts-cct-schemamodule/maven-metadata.xml (691 B at 2.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/jcodemodel/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/jcodemodel/maven-metadata.xml
+Progress (1): 243 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/jcodemodel/maven-metadata.xml (243 B at 542 B/s)
+[[1;33mWARNING[m] [RANGE-TEST] No resolvable versions for com.helger:jcodemodel:[3.4.0,4.0.0-alpha), pinning 3.4.0
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-jaxb/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-jaxb/maven-metadata.xml (2.8 kB at 7.9 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 8.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.1 kB at 137 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 120 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.7 kB at 127 kB/s)
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/peppol-id/pom.xml in-place (23 dependencies: 21 ranged, 2 pinned (1 pinned because the range had no resolvable versions), 0 carrying exclusions, 23 managed entries, mode: minor, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for peppol-id: pinned=13 upgraded=10 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Successfully created temp directory buildinfo-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 8 resources
+[[1;34mINFO[m] Copying 1 resource to META-INF
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 66 source files to /var/maven/app/peppol-id/target/classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 0 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 24 source files to /var/maven/app/peppol-id/target/test-classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.helger.peppolid.[1mCIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s - in com.helger.peppolid.[1mCIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.factory.[1mPeppolIdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in com.helger.peppolid.factory.[1mPeppolIdentifierFactoryTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.factory.[1mBDXR2IdentifierFactoryTest[m
+[main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
+[main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in com.helger.peppolid.factory.[1mBDXR2IdentifierFactoryTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.factory.[1mSimpleIdentifierFactoryTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.helger.peppolid.factory.[1mSimpleIdentifierFactoryTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.factory.[1mBDXR1IdentifierFactoryTest[m
+[main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
+[main] WARN com.helger.commons.url.URLHelper - Debug warn: failed to convert 'bla::#:///:::#' to a URI!
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.peppolid.factory.[1mBDXR1IdentifierFactoryTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.[1mSPITest[m
+[main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-id/src/main/resources/META-INF/services/com.helger.xml.microdom.convert.IMicroTypeConverterRegistrarSPI
+[main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
+[main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-id/src/main/resources/META-INF/services/com.helger.peppolid.peppol.validator.IParticipantIdentifierValidatorSPI
+[main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in com.helger.peppolid.[1mSPITest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.participant.[1mPeppolParticipantIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.755 s - in com.helger.peppolid.peppol.participant.[1mPeppolParticipantIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.validator.[1mIdentifierValidatorTest[m
+[main] INFO com.helger.peppolid.peppol.validator.IdentifierValidator - Loaded 1 SPI implementations of IParticipantIdentifierValidatorSPI
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.helger.peppolid.peppol.validator.[1mIdentifierValidatorTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.validator.[1mParticipantIdentifierValidatorNorwayOrgNumberTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.validator.[1mParticipantIdentifierValidatorNorwayOrgNumberTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mPredefinedProcessIdentifierManagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppolid.peppol.process.[1mPredefinedProcessIdentifierManagerTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mPeppolProcessIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.process.[1mPeppolProcessIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.process.[1mEPredefinedProcessIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.process.[1mEPredefinedProcessIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPredefinedDocumentTypeIdentifierManagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in com.helger.peppolid.peppol.doctype.[1mPredefinedDocumentTypeIdentifierManagerTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mEPredefinedDocumentTypeIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.doctype.[1mEPredefinedDocumentTypeIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierPartsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierPartsTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.helger.peppolid.peppol.doctype.[1mPeppolDocumentTypeIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.issuingagency.[1mParticipantIdentifierSchemeManagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.peppol.issuingagency.[1mParticipantIdentifierSchemeManagerTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.peppol.issuingagency.[1mEPredefinedParticipantIdentifierSchemeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.peppol.issuingagency.[1mEPredefinedParticipantIdentifierSchemeTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.simple.participant.[1mSimpleParticipantIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.simple.participant.[1mSimpleParticipantIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.simple.process.[1mSimpleProcessIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.simple.process.[1mSimpleProcessIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.simple.doctype.[1mSimpleDocumentTypeIdentifierTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppolid.simple.doctype.[1mSimpleDocumentTypeIdentifierTest[m
+[[1;34mINFO[m] Running com.helger.peppolid.simple.doctype.[1mBusdoxDocumentTypeIdentifierPartsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppolid.simple.doctype.[1mBusdoxDocumentTypeIdentifierPartsTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 73, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:bundle[m [1m(default-bundle)[m @ [36mpeppol-id[0;1m ---[m
+[[1;33mWARNING[m] Bundle com.helger.peppol:peppol-id:bundle:8.6.2-SNAPSHOT : osgi.serviceloader capability found with no 'register:' directive. Descriptor cannot be managed for osgi.serviceloader;osgi.serviceloader="com.helger.peppolid.peppol.validator.IParticipantIdentifierValidatorSPI"
+[[1;33mWARNING[m] Bundle com.helger.peppol:peppol-id:bundle:8.6.2-SNAPSHOT : osgi.serviceloader capability found with no 'register:' directive. Descriptor cannot be managed for osgi.serviceloader;osgi.serviceloader="com.helger.xml.microdom.convert.IMicroTypeConverterRegistrarSPI"
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-id/target/peppol-id-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-id/target/peppol-id-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/peppol-id/target/peppol-id-8.6.2-SNAPSHOT.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-id/8.6.2-SNAPSHOT/peppol-id-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-id/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-id/8.6.2-SNAPSHOT/peppol-id-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/peppol-id/target/peppol-id-8.6.2-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-id/8.6.2-SNAPSHOT/peppol-id-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-id/target/peppol-id-8.6.2-SNAPSHOT-test-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-id/8.6.2-SNAPSHOT/peppol-id-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:install[m [1m(default-install)[m @ [36mpeppol-id[0;1m ---[m
+[[1;34mINFO[m] Installing com/helger/peppol/peppol-id/8.6.2-SNAPSHOT/peppol-id-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Writing OBR metadata
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36mcom.helger.peppol:peppol-commons[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding peppol-commons 8.6.2-SNAPSHOT                             [4/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/peppol-commons/target/dependency-tree-before.txt
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-security/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-security/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-security/maven-metadata.xml (2.8 kB at 9.6 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-bc/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-bc/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-bc/maven-metadata.xml (2.8 kB at 9.5 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml (1.1 kB at 4.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml (1.0 kB at 4.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/jodah/expiringmap/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/net/jodah/expiringmap/maven-metadata.xml
+Progress (1): 858 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/jodah/expiringmap/maven-metadata.xml (858 B at 2.8 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/ph-genericode/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/ph-genericode/maven-metadata.xml
+Progress (1): 925 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/ph-genericode/maven-metadata.xml (925 B at 2.1 kB/s)
+[[1;33mWARNING[m] [RANGE-TEST] No resolvable versions for com.helger:jcodemodel:[3.4.0,4.0.0-alpha), pinning 3.4.0
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/peppol-commons/pom.xml in-place (17 dependencies: 16 ranged, 1 pinned (1 pinned because the range had no resolvable versions), 0 carrying exclusions, 17 managed entries, mode: minor, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for peppol-commons: pinned=6 upgraded=11 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Successfully created temp directory buildinfo-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 31 resources
+[[1;34mINFO[m] Copying 1 resource to META-INF
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 25 source files to /var/maven/app/peppol-commons/target/classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 16 source files to /var/maven/app/peppol-commons/target/test-classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxCategoryIDTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s - in com.helger.peppol.codelist.[1mETaxCategoryIDTest[m
+[[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxExemptionReasonCodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.codelist.[1mETaxExemptionReasonCodeTest[m
+[[1;34mINFO[m] Running com.helger.peppol.codelist.[1mEDocumentTypeCodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.codelist.[1mEDocumentTypeCodeTest[m
+[[1;34mINFO[m] Running com.helger.peppol.codelist.[1mETaxSchemeIDTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.codelist.[1mETaxSchemeIDTest[m
+[[1;34mINFO[m] Running com.helger.peppol.codelist.[1mEInvoiceTypeCodeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.codelist.[1mEInvoiceTypeCodeTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sml.[1mESMLTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in com.helger.peppol.sml.[1mESMLTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sml.[1mSMLInfoTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.605 s - in com.helger.peppol.sml.[1mSMLInfoTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sml.[1mCSMLDefaultTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.peppol.sml.[1mCSMLDefaultTest[m
+[[1;34mINFO[m] Running com.helger.peppol.[1mSPITest[m
+[main] INFO com.helger.commons.mock.SPITestHelper - Checking SPI file /var/maven/app/peppol-commons/src/main/resources/META-INF/services/com.helger.xml.microdom.convert.IMicroTypeConverterRegistrarSPI
+[main] INFO com.helger.commons.mock.SPITestHelper -   All implementations (1) are valid!
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in com.helger.peppol.[1mSPITest[m
+[[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolKeyStoreHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in com.helger.peppol.utils.[1mPeppolKeyStoreHelperTest[m
+[[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolCertificateCheckerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s - in com.helger.peppol.utils.[1mPeppolCertificateCheckerTest[m
+[[1;34mINFO[m] Running com.helger.peppol.utils.[1mCRLHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.utils.[1mCRLHelperTest[m
+[[1;34mINFO[m] Running com.helger.peppol.utils.[1mPeppolCertificateHelperTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.utils.[1mPeppolCertificateHelperTest[m
+[[1;34mINFO[m] Running com.helger.peppol.smp.[1mSMPTransportProfileTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in com.helger.peppol.smp.[1mSMPTransportProfileTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;33mWARNING[m] [1;33mTests run: 20, Failures: 0, Errors: 0, Skipped: 1[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:bundle[m [1m(default-bundle)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;33mWARNING[m] Bundle com.helger.peppol:peppol-commons:bundle:8.6.2-SNAPSHOT : osgi.serviceloader capability found with no 'register:' directive. Descriptor cannot be managed for osgi.serviceloader;osgi.serviceloader="com.helger.xml.microdom.convert.IMicroTypeConverterRegistrarSPI"
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-commons/target/peppol-commons-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-commons/target/peppol-commons-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/peppol-commons/target/peppol-commons-8.6.2-SNAPSHOT.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-commons/8.6.2-SNAPSHOT/peppol-commons-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-commons/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-commons/8.6.2-SNAPSHOT/peppol-commons-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/peppol-commons/target/peppol-commons-8.6.2-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-commons/8.6.2-SNAPSHOT/peppol-commons-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-commons/target/peppol-commons-8.6.2-SNAPSHOT-test-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-commons/8.6.2-SNAPSHOT/peppol-commons-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:install[m [1m(default-install)[m @ [36mpeppol-commons[0;1m ---[m
+[[1;34mINFO[m] Installing com/helger/peppol/peppol-commons/8.6.2-SNAPSHOT/peppol-commons-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Writing OBR metadata
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------< [0;36mcom.helger.peppol:peppol-testfiles[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding peppol-testfiles 8.6.2-SNAPSHOT                           [5/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/peppol-testfiles/target/dependency-tree-before.txt
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/peppol-testfiles/pom.xml in-place (7 dependencies: 7 ranged, 0 pinned, 0 carrying exclusions, 7 managed entries, mode: minor, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for peppol-testfiles: pinned=2 upgraded=5 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Successfully created temp directory buildinfo-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 445 resources
+[[1;34mINFO[m] Copying 1 resource to META-INF
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 7 source files to /var/maven/app/peppol-testfiles/target/classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 0 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /var/maven/app/peppol-testfiles/target/test-classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.helger.peppol.testfiles.ubl.[1mPeppolBISV1TestFilesTest[m
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type CALLFORTENDERS
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type CALLFORTENDERS
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type CATALOGUE
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type CATALOGUE
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type ORDERRESPONSE
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type ORDERRESPONSE
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDER
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDER
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDERINGCATALOGUE
+[main] WARN com.helger.peppol.testfiles.ubl.PeppolBISV1TestFiles - No error test files present for type TENDERINGCATALOGUE
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.392 s - in com.helger.peppol.testfiles.ubl.[1mPeppolBISV1TestFilesTest[m
+[[1;34mINFO[m] Running com.helger.peppol.testfiles.official.[1mOfficialTestFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s - in com.helger.peppol.testfiles.official.[1mOfficialTestFilesTest[m
+[[1;34mINFO[m] Running com.helger.peppol.testfiles.sbdh.[1mPeppolSBDHTestFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in com.helger.peppol.testfiles.sbdh.[1mPeppolSBDHTestFilesTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 3, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:bundle[m [1m(default-bundle)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-testfiles/target/peppol-testfiles-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-testfiles/target/peppol-testfiles-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/peppol-testfiles/target/peppol-testfiles-8.6.2-SNAPSHOT.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-testfiles/8.6.2-SNAPSHOT/peppol-testfiles-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-testfiles/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-testfiles/8.6.2-SNAPSHOT/peppol-testfiles-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/peppol-testfiles/target/peppol-testfiles-8.6.2-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-testfiles/8.6.2-SNAPSHOT/peppol-testfiles-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-testfiles/target/peppol-testfiles-8.6.2-SNAPSHOT-test-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-testfiles/8.6.2-SNAPSHOT/peppol-testfiles-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:install[m [1m(default-install)[m @ [36mpeppol-testfiles[0;1m ---[m
+[[1;34mINFO[m] Installing com/helger/peppol/peppol-testfiles/8.6.2-SNAPSHOT/peppol-testfiles-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Writing OBR metadata
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36mcom.helger.peppol:peppol-sbdh[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding peppol-sbdh 8.6.2-SNAPSHOT                                [6/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/peppol-sbdh/target/dependency-tree-before.txt
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-datetime/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-datetime/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-datetime/maven-metadata.xml (2.8 kB at 11 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/ph-sbdh/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/ph-sbdh/maven-metadata.xml
+Progress (1): 888 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/ph-sbdh/maven-metadata.xml (888 B at 3.0 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/bind/jaxb-impl/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-impl/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 6.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-impl/maven-metadata.xml (6.9 kB at 108 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/activation/jakarta.activation/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/maven-metadata.xml
+Progress (1): 541 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/activation/jakarta.activation/maven-metadata.xml (541 B at 1.8 kB/s)
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/peppol-sbdh/pom.xml in-place (31 dependencies: 27 ranged, 4 pinned, 0 carrying exclusions, 31 managed entries, mode: minor, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for peppol-sbdh: pinned=17 upgraded=14 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jaxb2-plugin:0.14.0:generate[m [1m(default)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Default Locale was set to 'en_US'
+[[1;34mINFO[m] Sources are not up-to-date, XJC will be executed.
+[[1;34mINFO[m] Running JAXB plugin -Xph-annotate
+[[1;34mINFO[m] Running JAXB plugin -Xph-fields-private
+[[1;34mINFO[m] Running JAXB plugin -Xph-code-quality
+[[1;34mINFO[m] Running JAXB plugin -Xph-implements
+[[1;34mINFO[m] Running JAXB plugin -Xph-equalshashcode
+[[1;34mINFO[m] Running JAXB plugin -Xph-tostring
+[[1;34mINFO[m] Running JAXB plugin -Xph-list-extension
+[[1;34mINFO[m] Running JAXB plugin -Xph-csu
+[[1;34mINFO[m] Running JAXB plugin -Xph-cloneable2
+[[1;34mINFO[m] Running JAXB plugin -Xph-offset-dt-extension
+[[1;34mINFO[m] Episode file [/var/maven/app/peppol-sbdh/target/generated-sources/xjc/META-INF/sun-jaxb.episode] was augmented with if-exists="true" attributes.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Successfully created temp directory buildinfo-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 1 resource to META-INF
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 15 source files to /var/maven/app/peppol-sbdh/target/classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 0 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 7 source files to /var/maven/app/peppol-sbdh/target/test-classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mPeppolSBDHDocumentTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.939 s - in com.helger.peppol.sbdh.[1mPeppolSBDHDocumentTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mCPeppolSBDHTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.sbdh.[1mCPeppolSBDHTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sbdh.write.[1mPeppolSBDHDocumentWriterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 s - in com.helger.peppol.sbdh.write.[1mPeppolSBDHDocumentWriterTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sbdh.read.[1mPeppolSBDHDocumentReaderTest[m
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-sender-value.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-standard.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-type-version.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-instance-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-receiver-authority.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-header-version.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-receiver-value.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-type.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-too-few-scopes.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-no-business-message.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.3: Element 'StandardBusinessDocument' cannot have character [children], because the type's content type is element-only.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-no-sbdh.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-too-many-receivers.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-too-few-senders.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Receiver}'. One of '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Sender}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-no-document-type-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-business-message.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.b: The content of element 'StandardBusinessDocument' is not complete. One of '{WC[##other:"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"]}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-sender-authority.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-creation-date-and-time.xml
+[main] WARN com.helger.jaxb.adapter.AdapterXMLOffsetDateTime - Failed to parse '' to an XMLOffsetDateTime
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-datatype-valid.1.2.1: '' is not a valid value for 'dateTime'.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-too-many-senders.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-too-few-receivers.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":DocumentIdentification}'. One of '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Sender, "http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Receiver}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-document-type-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-no-process-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-no-xml.txt
+[main] ERROR com.helger.xml.sax.LoggingSAXErrorHandler - [fatal_error] @ jar:file:/var/maven/app/peppol-testfiles/target/peppol-testfiles-8.6.2-SNAPSHOT.jar!/sbdh/bad/bad-no-xml.txt(1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-no-business-scope.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Node): sbdh/bad/bad-invalid-process-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Res): /sbdh/good/good.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Res): /sbdh/good/good-v11.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Res): /sbdh/good/good-additional-scopes.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Res): /sbdh/good/good-bis3.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Res): /sbdh/good/good-order-with-qty-ph.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Res): /sbdh/good/good-to-9915-test.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Res): /sbdh/good/good-type-version-20.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (IS): /sbdh/good/good.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (IS): /sbdh/good/good-v11.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (IS): /sbdh/good/good-additional-scopes.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (IS): /sbdh/good/good-bis3.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (IS): /sbdh/good/good-order-with-qty-ph.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (IS): /sbdh/good/good-to-9915-test.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (IS): /sbdh/good/good-type-version-20.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-sender-value.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-standard.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-type-version.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-instance-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-receiver-authority.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-header-version.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-receiver-value.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-type.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-too-few-scopes.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-no-business-message.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.3: Element 'StandardBusinessDocument' cannot have character [children], because the type's content type is element-only.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-no-sbdh.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-too-many-receivers.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-too-few-senders.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Receiver}'. One of '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Sender}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-no-document-type-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-business-message.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.b: The content of element 'StandardBusinessDocument' is not complete. One of '{WC[##other:"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"]}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-sender-authority.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-creation-date-and-time.xml
+[main] WARN com.helger.jaxb.adapter.AdapterXMLOffsetDateTime - Failed to parse '' to an XMLOffsetDateTime
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-datatype-valid.1.2.1: '' is not a valid value for 'dateTime'.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-too-many-senders.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-too-few-receivers.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":DocumentIdentification}'. One of '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Sender, "http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Receiver}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-document-type-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-no-process-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-no-xml.txt
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: Content is not allowed in prolog.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-no-business-scope.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (Res): sbdh/bad/bad-invalid-process-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Node): /sbdh/good/good.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Node): /sbdh/good/good-v11.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Node): /sbdh/good/good-additional-scopes.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Node): /sbdh/good/good-bis3.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Node): /sbdh/good/good-order-with-qty-ph.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Node): /sbdh/good/good-to-9915-test.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Good (Node): /sbdh/good/good-type-version-20.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-sender-value.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-standard.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-type-version.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-instance-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-receiver-authority.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-header-version.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-receiver-value.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-type.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-too-few-scopes.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-no-business-message.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.3: Element 'StandardBusinessDocument' cannot have character [children], because the type's content type is element-only.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-no-sbdh.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-too-many-receivers.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-too-few-senders.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Receiver}'. One of '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Sender}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-no-document-type-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-business-message.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.b: The content of element 'StandardBusinessDocument' is not complete. One of '{WC[##other:"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"]}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-sender-authority.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-creation-date-and-time.xml
+[main] WARN com.helger.jaxb.adapter.AdapterXMLOffsetDateTime - Failed to parse '' to an XMLOffsetDateTime
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-datatype-valid.1.2.1: '' is not a valid value for 'dateTime'.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-too-many-senders.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-too-few-receivers.xml
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":DocumentIdentification}'. One of '{"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Sender, "http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader":Receiver}' is expected.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-document-type-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-no-process-identifier.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-no-xml.txt
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: Content is not allowed in prolog.
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-no-business-scope.xml
+[main] INFO com.helger.peppol.sbdh.read.PeppolSBDHDocumentReaderTest - Bad (IS): sbdh/bad/bad-invalid-process-identifier.xml
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.831 s - in com.helger.peppol.sbdh.read.[1mPeppolSBDHDocumentReaderTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sbdh.read.[1mEPeppolSBDHDocumentReadErrorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.helger.peppol.sbdh.read.[1mEPeppolSBDHDocumentReadErrorTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sbdh.payload.[1mPeppolSBDHPayloadReaderTest[m
+[main] ERROR com.helger.jaxb.validation.LoggingValidationEventHandler - JAXB [fatal_error] @ (1:79) cvc-elt.1.a: Cannot find the declaration of element 'TextContent'. (org.xml.sax.SAXParseException: cvc-elt.1.a: Cannot find the declaration of element 'TextContent'.)
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 79; cvc-elt.1.a: Cannot find the declaration of element 'TextContent'.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:135)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:2132)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:829)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorHandlerImpl.startElement(ValidatorHandlerImpl.java:570)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.ValidatingUnmarshaller.startElement(ValidatingUnmarshaller.java:71)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.SAXConnector.startElement(SAXConnector.java:137)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:510)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:613)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3063)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:534)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1216)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(UnmarshallerImpl.java:228)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:206)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:258)
+	at com.helger.jaxb.IJAXBReader.lambda$read$0(IJAXBReader.java:326)
+	at com.helger.jaxb.builder.JAXBReaderBuilder.read(JAXBReaderBuilder.java:172)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:326)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:127)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:97)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:167)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:284)
+	at com.helger.peppol.sbdh.payload.PeppolSBDHPayloadReaderTest.testText(PeppolSBDHPayloadReaderTest.java:65)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-elt.1.a: Cannot find the declaration of element 'TextContent'.
+[main] ERROR com.helger.jaxb.validation.LoggingValidationEventHandler - JAXB [fatal_error] @ (1:81) cvc-elt.1.a: Cannot find the declaration of element 'TextContent2'. (org.xml.sax.SAXParseException: cvc-elt.1.a: Cannot find the declaration of element 'TextContent2'.)
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 81; cvc-elt.1.a: Cannot find the declaration of element 'TextContent2'.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:135)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:2132)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:829)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorHandlerImpl.startElement(ValidatorHandlerImpl.java:570)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.ValidatingUnmarshaller.startElement(ValidatingUnmarshaller.java:71)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.SAXConnector.startElement(SAXConnector.java:137)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:510)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:613)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3063)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:534)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1216)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(UnmarshallerImpl.java:228)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:206)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:258)
+	at com.helger.jaxb.IJAXBReader.lambda$read$0(IJAXBReader.java:326)
+	at com.helger.jaxb.builder.JAXBReaderBuilder.read(JAXBReaderBuilder.java:172)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:326)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:127)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:97)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:167)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:284)
+	at com.helger.peppol.sbdh.payload.PeppolSBDHPayloadReaderTest.testText(PeppolSBDHPayloadReaderTest.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-elt.1.a: Cannot find the declaration of element 'TextContent2'.
+[main] ERROR com.helger.jaxb.validation.LoggingValidationEventHandler - JAXB [fatal_error] @ (1:81) cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'TextContent'. (org.xml.sax.SAXParseException: cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'TextContent'.)
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 81; cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'TextContent'.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:135)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator$XSIErrorReporter.reportError(XMLSchemaValidator.java:511)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.reportSchemaError(XMLSchemaValidator.java:3599)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.processAttributes(XMLSchemaValidator.java:2992)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:2286)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:829)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorHandlerImpl.startElement(ValidatorHandlerImpl.java:570)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.ValidatingUnmarshaller.startElement(ValidatingUnmarshaller.java:71)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.SAXConnector.startElement(SAXConnector.java:137)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:510)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:613)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3063)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:534)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1216)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(UnmarshallerImpl.java:228)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:206)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:258)
+	at com.helger.jaxb.IJAXBReader.lambda$read$0(IJAXBReader.java:326)
+	at com.helger.jaxb.builder.JAXBReaderBuilder.read(JAXBReaderBuilder.java:172)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:326)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:127)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:97)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:167)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:284)
+	at com.helger.peppol.sbdh.payload.PeppolSBDHPayloadReaderTest.testText(PeppolSBDHPayloadReaderTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'TextContent'.
+[main] ERROR com.helger.jaxb.validation.LoggingValidationEventHandler - JAXB [fatal_error] @ (1:81) cvc-elt.1.a: Cannot find the declaration of element 'BinaryContent'. (org.xml.sax.SAXParseException: cvc-elt.1.a: Cannot find the declaration of element 'BinaryContent'.)
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 81; cvc-elt.1.a: Cannot find the declaration of element 'BinaryContent'.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:135)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:2132)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:829)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorHandlerImpl.startElement(ValidatorHandlerImpl.java:570)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.ValidatingUnmarshaller.startElement(ValidatingUnmarshaller.java:71)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.SAXConnector.startElement(SAXConnector.java:137)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:510)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:613)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3063)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:534)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1216)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(UnmarshallerImpl.java:228)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:206)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:258)
+	at com.helger.jaxb.IJAXBReader.lambda$read$0(IJAXBReader.java:326)
+	at com.helger.jaxb.builder.JAXBReaderBuilder.read(JAXBReaderBuilder.java:172)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:326)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:127)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:97)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:167)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:284)
+	at com.helger.peppol.sbdh.payload.PeppolSBDHPayloadReaderTest.testBinary(PeppolSBDHPayloadReaderTest.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-elt.1.a: Cannot find the declaration of element 'BinaryContent'.
+[main] ERROR com.helger.jaxb.validation.LoggingValidationEventHandler - JAXB [fatal_error] @ (1:83) cvc-elt.1.a: Cannot find the declaration of element 'BinaryContent2'. (org.xml.sax.SAXParseException: cvc-elt.1.a: Cannot find the declaration of element 'BinaryContent2'.)
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 83; cvc-elt.1.a: Cannot find the declaration of element 'BinaryContent2'.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:135)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:2132)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:829)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorHandlerImpl.startElement(ValidatorHandlerImpl.java:570)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.ValidatingUnmarshaller.startElement(ValidatingUnmarshaller.java:71)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.SAXConnector.startElement(SAXConnector.java:137)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:510)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:613)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3063)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:534)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1216)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(UnmarshallerImpl.java:228)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:206)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:258)
+	at com.helger.jaxb.IJAXBReader.lambda$read$0(IJAXBReader.java:326)
+	at com.helger.jaxb.builder.JAXBReaderBuilder.read(JAXBReaderBuilder.java:172)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:326)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:127)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:97)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:167)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:284)
+	at com.helger.peppol.sbdh.payload.PeppolSBDHPayloadReaderTest.testBinary(PeppolSBDHPayloadReaderTest.java:123)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-elt.1.a: Cannot find the declaration of element 'BinaryContent2'.
+[main] ERROR com.helger.jaxb.validation.LoggingValidationEventHandler - JAXB [fatal_error] @ (1:83) cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'BinaryContent'. (org.xml.sax.SAXParseException: cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'BinaryContent'.)
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 83; cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'BinaryContent'.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:135)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator$XSIErrorReporter.reportError(XMLSchemaValidator.java:511)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.reportSchemaError(XMLSchemaValidator.java:3599)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.processAttributes(XMLSchemaValidator.java:2992)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:2286)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:829)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorHandlerImpl.startElement(ValidatorHandlerImpl.java:570)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.ValidatingUnmarshaller.startElement(ValidatingUnmarshaller.java:71)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.SAXConnector.startElement(SAXConnector.java:137)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:510)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:613)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3063)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:836)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:534)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1216)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(UnmarshallerImpl.java:228)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:206)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:258)
+	at com.helger.jaxb.IJAXBReader.lambda$read$0(IJAXBReader.java:326)
+	at com.helger.jaxb.builder.JAXBReaderBuilder.read(JAXBReaderBuilder.java:172)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:326)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:127)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:97)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:167)
+	at com.helger.jaxb.IJAXBReader.read(IJAXBReader.java:284)
+	at com.helger.peppol.sbdh.payload.PeppolSBDHPayloadReaderTest.testBinary(PeppolSBDHPayloadReaderTest.java:128)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[main] ERROR com.helger.jaxb.LoggingJAXBReadExceptionHandler - Failed to parse XML document: cvc-complex-type.3.2.2: Attribute 'mimeType2' is not allowed to appear in element 'BinaryContent'.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.191 s - in com.helger.peppol.sbdh.payload.[1mPeppolSBDHPayloadReaderTest[m
+[[1;34mINFO[m] Running com.helger.peppol.sbdh.[1mPeppolSBDHAdditionalAttributesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.peppol.sbdh.[1mPeppolSBDHAdditionalAttributesTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 22, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:bundle[m [1m(default-bundle)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-sbdh/target/peppol-sbdh-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-sbdh/target/peppol-sbdh-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/peppol-sbdh/target/peppol-sbdh-8.6.2-SNAPSHOT.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-sbdh/8.6.2-SNAPSHOT/peppol-sbdh-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-sbdh/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-sbdh/8.6.2-SNAPSHOT/peppol-sbdh-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/peppol-sbdh/target/peppol-sbdh-8.6.2-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-sbdh/8.6.2-SNAPSHOT/peppol-sbdh-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-sbdh/target/peppol-sbdh-8.6.2-SNAPSHOT-test-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-sbdh/8.6.2-SNAPSHOT/peppol-sbdh-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:install[m [1m(default-install)[m @ [36mpeppol-sbdh[0;1m ---[m
+[[1;34mINFO[m] Installing com/helger/peppol/peppol-sbdh/8.6.2-SNAPSHOT/peppol-sbdh-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Writing OBR metadata
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mcom.helger.peppol:peppol-smp-datatypes[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding peppol-smp-datatypes 8.6.2-SNAPSHOT                       [7/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/peppol-smp-datatypes/target/dependency-tree-before.txt
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/xml/ws/jakarta.xml.ws-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/jakarta/xml/ws/jakarta.xml.ws-api/maven-metadata.xml
+Progress (1): 731 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/ws/jakarta.xml.ws-api/maven-metadata.xml (731 B at 3.1 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/xml/soap/jakarta.xml.soap-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/jakarta/xml/soap/jakarta.xml.soap-api/maven-metadata.xml
+Progress (1): 704 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/xml/soap/jakarta.xml.soap-api/maven-metadata.xml (704 B at 3.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/jakarta/jws/jakarta.jws-api/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/jws/jakarta.jws-api/maven-metadata.xml
+Progress (1): 465 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/jws/jakarta.jws-api/maven-metadata.xml (465 B at 2.1 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/xsd/ph-xsds-wsaddr/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-wsaddr/maven-metadata.xml
+Progress (1): 676 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-wsaddr/maven-metadata.xml (676 B at 1.3 kB/s)
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/peppol-smp-datatypes/pom.xml in-place (15 dependencies: 14 ranged, 1 pinned, 0 carrying exclusions, 15 managed entries, mode: minor, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for peppol-smp-datatypes: pinned=10 upgraded=5 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jaxb2-plugin:0.14.0:generate[m [1m(default)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Default Locale was set to 'en_US'
+[[1;34mINFO[m] Sources are not up-to-date, XJC will be executed.
+[[1;34mINFO[m] Running JAXB plugin -Xph-annotate
+[[1;34mINFO[m] Running JAXB plugin -Xph-fields-private
+[[1;34mINFO[m] Running JAXB plugin -Xph-code-quality
+[[1;34mINFO[m] Running JAXB plugin -Xph-implements
+[[1;34mINFO[m] Running JAXB plugin -Xph-equalshashcode
+[[1;34mINFO[m] Running JAXB plugin -Xph-tostring
+[[1;34mINFO[m] Running JAXB plugin -Xph-list-extension
+[[1;34mINFO[m] Running JAXB plugin -Xph-csu
+[[1;34mINFO[m] Running JAXB plugin -Xph-cloneable2
+[[1;34mINFO[m] Running JAXB plugin -Xph-value-extender
+[[1;34mINFO[m]   Found OffsetDTExtension plugin
+[[1;34mINFO[m] Running JAXB plugin -Xph-offset-dt-extension
+[[1;34mINFO[m] Episode file [/var/maven/app/peppol-smp-datatypes/target/generated-sources/xjc/META-INF/sun-jaxb.episode] was augmented with if-exists="true" attributes.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-antrun-plugin:3.0.0:run[m [1m(default)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Executing tasks
+[[1;34mINFO[m]    [delete] Deleting directory /var/maven/app/peppol-smp-datatypes/target/generated-sources/xjc/com/helger/xsds/peppol/id1
+[[1;34mINFO[m]    [delete] Deleting directory /var/maven/app/peppol-smp-datatypes/target/generated-sources/xjc/com/helger/xsds/xmldsig
+[[1;34mINFO[m] Executed tasks
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Successfully created temp directory buildinfo-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 1 resource to META-INF
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 18 source files to /var/maven/app/peppol-smp-datatypes/target/classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 0 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 2 source files to /var/maven/app/peppol-smp-datatypes/target/test-classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.helger.xsds.peppol.smp1.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in com.helger.xsds.peppol.smp1.[1mSPITest[m
+[[1;34mINFO[m] Running com.helger.xsds.peppol.smp1.[1mCSMPDataTypesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in com.helger.xsds.peppol.smp1.[1mCSMPDataTypesTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 2, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:bundle[m [1m(default-bundle)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-smp-datatypes/target/peppol-smp-datatypes-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-smp-datatypes/target/peppol-smp-datatypes-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/peppol-smp-datatypes/target/peppol-smp-datatypes-8.6.2-SNAPSHOT.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-smp-datatypes/8.6.2-SNAPSHOT/peppol-smp-datatypes-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-smp-datatypes/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-smp-datatypes/8.6.2-SNAPSHOT/peppol-smp-datatypes-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/peppol-smp-datatypes/target/peppol-smp-datatypes-8.6.2-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-smp-datatypes/8.6.2-SNAPSHOT/peppol-smp-datatypes-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-smp-datatypes/target/peppol-smp-datatypes-8.6.2-SNAPSHOT-test-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-smp-datatypes/8.6.2-SNAPSHOT/peppol-smp-datatypes-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:install[m [1m(default-install)[m @ [36mpeppol-smp-datatypes[0;1m ---[m
+[[1;34mINFO[m] Installing com/helger/peppol/peppol-smp-datatypes/8.6.2-SNAPSHOT/peppol-smp-datatypes-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Writing OBR metadata
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36mcom.helger.peppol:peppol-smp-client[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding peppol-smp-client 8.6.2-SNAPSHOT                          [8/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/peppol-smp-client/target/dependency-tree-before.txt
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-json/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-json/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-json/maven-metadata.xml (2.8 kB at 5.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-config/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-config/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-config/maven-metadata.xml (2.8 kB at 9.3 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-dns/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-dns/maven-metadata.xml
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-dns/maven-metadata.xml (2.3 kB at 4.8 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-httpclient/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-httpclient/maven-metadata.xml
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-httpclient/maven-metadata.xml (2.3 kB at 5.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-http/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-http/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-http/maven-metadata.xml (1.6 kB at 6.0 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-network/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-network/maven-metadata.xml
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-network/maven-metadata.xml (2.3 kB at 9.1 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/apache/httpcomponents/httpclient/maven-metadata.xml
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 33 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/apache/httpcomponents/httpcore/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 34 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/commons-codec/commons-codec/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 19 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/slf4j/jcl-over-slf4j/maven-metadata.xml
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/maven-metadata.xml (3.5 kB at 60 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/dnsjava/dnsjava/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/maven-metadata.xml
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/dnsjava/dnsjava/maven-metadata.xml (1.5 kB at 5.3 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/ws/jaxws-rt/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-rt/maven-metadata.xml
+Progress (1): 4.1 kBProgress (1): 5.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-rt/maven-metadata.xml (5.2 kB at 18 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/ws/policy/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/policy/maven-metadata.xml
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/policy/maven-metadata.xml (1.7 kB at 6.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/ha/ha-api/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/ha/ha-api/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/ha/ha-api/maven-metadata.xml (1.2 kB at 3.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/external/management-api/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/external/management-api/maven-metadata.xml
+Progress (1): 374 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/external/management-api/maven-metadata.xml (374 B at 1.2 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/gmbal/gmbal/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/gmbal/gmbal/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/gmbal/gmbal/maven-metadata.xml (1.6 kB at 3.1 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/pfl/pfl-tf/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-tf/maven-metadata.xml
+Progress (1): 979 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-tf/maven-metadata.xml (979 B at 2.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-basic/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/glassfish/pfl/pfl-basic/maven-metadata.xml
+Progress (1): 982 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/pfl/pfl-basic/maven-metadata.xml (982 B at 2.2 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/jvnet/staxex/stax-ex/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/maven-metadata.xml
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/maven-metadata.xml (1.2 kB at 17 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/stream/buffer/streambuffer/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/stream/buffer/streambuffer/maven-metadata.xml
+Progress (1): 664 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/stream/buffer/streambuffer/maven-metadata.xml (664 B at 2.3 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/jvnet/mimepull/mimepull/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml
+Progress (1): 926 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml (926 B at 3.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/maven-metadata.xml
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/fastinfoset/FastInfoset/maven-metadata.xml
+Progress (1): 601 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/maven-metadata.xml (601 B at 1.5 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/sun/xml/messaging/saaj/saaj-impl/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/messaging/saaj/saaj-impl/maven-metadata.xml
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/messaging/saaj/saaj-impl/maven-metadata.xml (1.9 kB at 7.3 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/fasterxml/woodstox/woodstox-core/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/maven-metadata.xml
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/maven-metadata.xml (1.6 kB at 6.8 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/org/codehaus/woodstox/stax2-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/maven-metadata.xml
+Progress (1): 959 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/maven-metadata.xml (959 B at 4.4 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml
+Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml (636 B at 10 kB/s)
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/peppol-smp-client/pom.xml in-place (60 dependencies: 56 ranged, 4 pinned, 7 carrying exclusions, 60 managed entries, mode: minor, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for peppol-smp-client: pinned=24 upgraded=36 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Successfully created temp directory buildinfo-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 1 resource to META-INF
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 56 source files to /var/maven/app/peppol-smp-client/target/classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] /var/maven/app/peppol-smp-client/src/main/java/com/helger/smpclient/bdxr2/marshal/BDXR2NamespaceContext.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/peppol-smp-client/src/main/java/com/helger/smpclient/bdxr2/marshal/BDXR2NamespaceContext.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 8 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 37 source files to /var/maven/app/peppol-smp-client/target/test-classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.helger.smpclient.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s - in com.helger.smpclient.[1mSPITest[m
+[[1;34mINFO[m] Running com.helger.smpclient.url.[1mBDXLURLProviderTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m4[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.083 s - in com.helger.smpclient.url.[1mBDXLURLProviderTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.url.[1mBPCURLProviderSMP1Test[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m2[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.002 s - in com.helger.smpclient.url.[1mBPCURLProviderSMP1Test[m
+[[1;34mINFO[m] Running com.helger.smpclient.url.[1mPeppolURLProviderTest[m
+113 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+113 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+113 [main] WARN com.helger.smpclient.url.PeppolURLProvider - Invalid Peppol participant identifier scheme '' used
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.617 s - in com.helger.smpclient.url.[1mPeppolURLProviderTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.url.[1mBPCURLProviderSMP2Test[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m2[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.smpclient.url.[1mBPCURLProviderSMP2Test[m
+[[1;34mINFO[m] Running com.helger.smpclient.bdxr1.[1mBDXRClientReadOnlyTest[m
+4817 [main] INFO com.helger.dns.naptr.NaptrLookup - Trying to look up NAPTR on 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' with 1 retries using network mode UDP_TCP
+8467 [main] WARN com.helger.dns.naptr.NaptrLookup - Error looking up 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu': host not found
+8468 [main] WARN com.helger.dns.naptr.LoggingNaptrLookupTimeExceededCallback - Looking up NAPTR record of 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' with 1 retries took 3649ms (limit is 1000 ms)
+8468 [main] WARN com.helger.dns.naptr.NaptrResolver - No NAPTR records are provided.
+8468 [main] WARN com.helger.dns.naptr.NaptrResolver - No matching DNS U-NAPTR records returned for 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu'
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m6[m, [1;31mFailures: [0;1;31m1[m, [1;31mErrors: [0;1;31m1[m, [1;33mSkipped: [0;1;33m3[m, Time elapsed: 5.301 s[1;31m <<< FAILURE![m - in com.helger.smpclient.bdxr1.[1mBDXRClientReadOnlyTest[m
+[[1;31mERROR[m] testReadTOOP(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 3.74 s  <<< ERROR!
+com.helger.smpclient.url.SMPDNSResolutionException: Failed to resolve 'CLN4WCJRNYLYKAHRFZYRJB66LRIEB4CGZBEAYAKWNLGTAJZCKJBQ.iso6523-actorid-upis.toop.acc.edelivery.tech.ec.europa.eu' and service 'Meta:SMP' to a DNS U-NAPTR
+	at com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest.testReadTOOP(BDXRClientReadOnlyTest.java:114)
+
+[[1;31mERROR[m] testGetBDXRHostURI_Peppol_WithBDXR(com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest)  Time elapsed: 1.559 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.helger.smpclient.bdxr1.BDXRClientReadOnlyTest.testGetBDXRHostURI_Peppol_WithBDXR(BDXRClientReadOnlyTest.java:89)
+
+[[1;34mINFO[m] Running com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.322 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerServiceMetadataTypeTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerSignedServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in com.helger.smpclient.bdxr1.marshal.[1mBDXR1MarshallerSignedServiceMetadataTypeTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.bdxr1.utils.[1mBDXRExtensionConverterTest[m
+10891 [main] ERROR com.helger.json.parser.errorhandler.LoggingJsonParseExceptionCallback - Json parse error: Syntax error in JSON. Found 'P'
+10891 [main] WARN com.helger.smpclient.bdxr1.utils.BDXR1ExtensionConverter - Error in parsing extension JSON 'Plain text'
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.525 s - in com.helger.smpclient.bdxr1.utils.[1mBDXRExtensionConverterTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientWithDNSFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.smpclient.peppol.[1mSMPClientWithDNSFuncTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.marshal.[1mSMPMarshallerSignedServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerSignedServiceMetadataTypeTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.marshal.[1mSMPMarshallerServiceMetadataTypeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.helger.smpclient.peppol.marshal.[1mSMPMarshallerServiceMetadataTypeTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.smpclient.peppol.[1mSMPClientTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.utils.[1mSMPExtensionConverterTest[m
+11041 [main] ERROR com.helger.xml.sax.LoggingSAXErrorHandler - [fatal_error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
+11042 [main] ERROR com.helger.commons.callback.exception.LoggingExceptionCallback - [error] @ (1:1) [SAX] Content is not allowed in prolog. (org.xml.sax.SAXParseException: Content is not allowed in prolog.)
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:261)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at com.helger.xml.serialize.read.DOMReader.readXMLDOM(DOMReader.java:325)
+	at com.helger.xml.serialize.read.DOMReader.readXMLDOM(DOMReader.java:197)
+	at com.helger.xml.serialize.read.DOMReader.readXMLDOM(DOMReader.java:191)
+	at com.helger.smpclient.peppol.utils.SMPExtensionConverter.convert(SMPExtensionConverter.java:88)
+	at com.helger.smpclient.peppol.utils.SMPExtensionConverterTest.testConvertFromString(SMPExtensionConverterTest.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in com.helger.smpclient.peppol.utils.[1mSMPExtensionConverterTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.utils.[1mW3CEndpointReferenceHelperTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.13 s - in com.helger.smpclient.peppol.utils.[1mW3CEndpointReferenceHelperTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSignedServiceMetadataTypeFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m3[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m3[m, Time elapsed: 0.001 s - in com.helger.smpclient.peppol.[1mSignedServiceMetadataTypeFuncTest[m
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientPredefinedEndpointAddressFuncTest[m
+11198 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x11a7ba62: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@340b7ef6; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
+11977 [main] INFO com.helger.smpclient.config.SMPClientConfiguration - The SMPClient configuration provider was changed to [Config@0x4cd1c1dc: ValueProvider=com.helger.config.source.MultiConfigurationValueProvider@47f08b81; KeyFoundConsumer=null; KeyNotFoundConsumer=null]
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m2[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 0.785 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientPredefinedEndpointAddressFuncTest[m
+[[1;31mERROR[m] testGetEndpointCertificate(com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest)  Time elapsed: 0.775 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest.testGetEndpointCertificate(SMPClientPredefinedEndpointAddressFuncTest.java:99)
+
+[[1;31mERROR[m] testGetEndpointAddress(com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest)  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: expected:<https://test.erechnung.gv.at/as4> but was:<null>
+	at com.helger.smpclient.peppol.SMPClientPredefinedEndpointAddressFuncTest.testGetEndpointAddress(SMPClientPredefinedEndpointAddressFuncTest.java:71)
+
+[[1;34mINFO[m] Running com.helger.smpclient.peppol.[1mSMPClientReadOnlyTest[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m5[m, [1;31mFailures: [0;1;31m3[m, Errors: 0, [1;33mSkipped: [0;1;33m2[m, Time elapsed: 0.004 s[1;31m <<< FAILURE![m - in com.helger.smpclient.peppol.[1mSMPClientReadOnlyTest[m
+[[1;31mERROR[m] testInvalidTrustStore(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testInvalidTrustStore(SMPClientReadOnlyTest.java:111)
+
+[[1;31mERROR[m] testGetSMPHostURI_Peppol_WithBOM(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testGetSMPHostURI_Peppol_WithBOM(SMPClientReadOnlyTest.java:88)
+
+[[1;31mERROR[m] testGetSMPHostURI_Peppol(com.helger.smpclient.peppol.SMPClientReadOnlyTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.helger.smpclient.peppol.SMPClientReadOnlyTest.testGetSMPHostURI_Peppol(SMPClientReadOnlyTest.java:63)
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mFailures: [m
+[[1;31mERROR[m] [1;31m  BDXRClientReadOnlyTest.testGetBDXRHostURI_Peppol_WithBDXR:89[m
+[[1;31mERROR[m] [1;31m  SMPClientPredefinedEndpointAddressFuncTest.testGetEndpointAddress:71 expected:<https://test.erechnung.gv.at/as4> but was:<null>[m
+[[1;31mERROR[m] [1;31m  SMPClientPredefinedEndpointAddressFuncTest.testGetEndpointCertificate:99[m
+[[1;31mERROR[m] [1;31m  SMPClientReadOnlyTest.testGetSMPHostURI_Peppol:63[m
+[[1;31mERROR[m] [1;31m  SMPClientReadOnlyTest.testGetSMPHostURI_Peppol_WithBOM:88[m
+[[1;31mERROR[m] [1;31m  SMPClientReadOnlyTest.testInvalidTrustStore:111[m
+[[1;31mERROR[m] [1;31mErrors: [m
+[[1;31mERROR[m] [1;31m  BDXRClientReadOnlyTest.testReadTOOP:114 » SMPDNSResolution Failed to resolve '...[m
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mTests run: 41, Failures: 6, Errors: 1, Skipped: 13[m
+[[1;34mINFO[m] 
+[[1;31mERROR[m] There are test failures.
+
+Please refer to /var/maven/app/peppol-smp-client/target/surefire-reports for the individual test results.
+Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:bundle[m [1m(default-bundle)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-smp-client/target/peppol-smp-client-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-smp-client/target/peppol-smp-client-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/peppol-smp-client/target/peppol-smp-client-8.6.2-SNAPSHOT.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-smp-client/8.6.2-SNAPSHOT/peppol-smp-client-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-smp-client/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-smp-client/8.6.2-SNAPSHOT/peppol-smp-client-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/peppol-smp-client/target/peppol-smp-client-8.6.2-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-smp-client/8.6.2-SNAPSHOT/peppol-smp-client-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-smp-client/target/peppol-smp-client-8.6.2-SNAPSHOT-test-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-smp-client/8.6.2-SNAPSHOT/peppol-smp-client-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:install[m [1m(default-install)[m @ [36mpeppol-smp-client[0;1m ---[m
+[[1;34mINFO[m] Installing com/helger/peppol/peppol-smp-client/8.6.2-SNAPSHOT/peppol-smp-client-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Writing OBR metadata
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36mcom.helger.peppol:peppol-sml-client[0;1m >-----------------[m
+[[1;34mINFO[m] [1mBuilding peppol-sml-client 8.6.2-SNAPSHOT                          [9/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-test[m [1m(default-cli)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] [RANGE-TEST] Writing dependency tree snapshot to: /var/maven/app/peppol-sml-client/target/dependency-tree-before.txt
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-wsclient/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-wsclient/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-wsclient/maven-metadata.xml (2.8 kB at 9.8 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-web/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-web/maven-metadata.xml
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-web/maven-metadata.xml (2.3 kB at 5.3 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/commons/ph-scopes/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-scopes/maven-metadata.xml
+Progress (1): 2.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/commons/ph-scopes/maven-metadata.xml (2.8 kB at 5.6 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-servlet/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-servlet/maven-metadata.xml
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-servlet/maven-metadata.xml (2.3 kB at 4.3 kB/s)
+Downloading from central.snapshots: https://oss.sonatype.org/content/repositories/snapshots/com/helger/web/ph-useragent/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-useragent/maven-metadata.xml
+Progress (1): 2.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/helger/web/ph-useragent/maven-metadata.xml (2.3 kB at 4.9 kB/s)
+[[1;34mINFO[m] [RANGE-TEST] Updated /var/maven/app/peppol-sml-client/pom.xml in-place (65 dependencies: 60 ranged, 5 pinned, 8 carrying exclusions, 65 managed entries, mode: minor, order: resolution).
+[[1;34mINFO[m] [RANGE-TEST] (predicted) Dependency comparison for peppol-sml-client: pinned=24 upgraded=41 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjaxws-maven-plugin:2.6.2:wsimport[m [1m(wsimport1)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Processing: file:/var/maven/app/peppol-sml-client/src/main/resources/WEB-INF/wsdl/ManageBusinessIdentifierService-1.0.wsdl
+[[1;34mINFO[m] jaxws:wsimport args: [-keep, -s, '/var/maven/app/peppol-sml-client/target/generated-sources/xjc', -d, '/var/maven/app/peppol-sml-client/target/classes', -verbose, -encoding, UTF-8, -extension, -Xnocompile, -ph-csu, -p, com.helger.peppol.smlclient.participant, -wsdllocation, /WEB-INF/wsdl/ManageBusinessIdentifierService-1.0.wsdl, -target, 2.1, -B-no-header, -B-Xph-default-locale, en_US, -B-Xph-annotate, -B-Xph-fields-private, -B-Xph-code-quality, -B-Xph-implements, java.io.Serializable, -B-Xph-equalshashcode, -B-Xph-tostring, -B-Xph-list-extension, -B-Xph-offset-dt-extension, -B-extension, -B-b, src/main/jaxb/peppol-commons.episode, -b, 'file:/var/maven/app/peppol-sml-client/src/main/jaxb/peppol-sml-client.xjb', "file:/var/maven/app/peppol-sml-client/src/main/resources/WEB-INF/wsdl/ManageBusinessIdentifierService-1.0.wsdl"]
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+parsing WSDL...
+
+
+[WARNING] fault "NotFoundFault" in portType operation "Create" does not match any fault in the corresponding binding operation
+  line 91 of file:/var/maven/app/peppol-sml-client/src/main/resources/WEB-INF/wsdl/ManageBusinessIdentifierService-1.0.wsdl
+
+
+Generating code...
+
+com/helger/peppol/smlclient/participant/BadRequestFault.java
+com/helger/peppol/smlclient/participant/FaultType.java
+com/helger/peppol/smlclient/participant/InternalErrorFault.java
+com/helger/peppol/smlclient/participant/ManageBusinessIdentifierService.java
+com/helger/peppol/smlclient/participant/ManageBusinessIdentifierServiceSoap.java
+com/helger/peppol/smlclient/participant/MigrationRecordType.java
+com/helger/peppol/smlclient/participant/NotFoundFault.java
+com/helger/peppol/smlclient/participant/ObjectFactory.java
+com/helger/peppol/smlclient/participant/PageRequestType.java
+com/helger/peppol/smlclient/participant/ParticipantIdentifierPageType.java
+com/helger/peppol/smlclient/participant/ServiceMetadataPublisherServiceForParticipantType.java
+com/helger/peppol/smlclient/participant/UnauthorizedFault.java
+com/helger/peppol/smlclient/participant/package-info.java
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjaxws-maven-plugin:2.6.2:wsimport[m [1m(wsimport2)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Processing: file:/var/maven/app/peppol-sml-client/src/main/resources/WEB-INF/wsdl/ManageServiceMetadataService-1.0.wsdl
+[[1;34mINFO[m] jaxws:wsimport args: [-keep, -s, '/var/maven/app/peppol-sml-client/target/generated-sources/xjc', -d, '/var/maven/app/peppol-sml-client/target/classes', -verbose, -encoding, UTF-8, -extension, -Xnocompile, -ph-csu, -p, com.helger.peppol.smlclient.smp, -wsdllocation, /WEB-INF/wsdl/ManageServiceMetadataService-1.0.wsdl, -target, 2.1, -B-no-header, -B-Xph-default-locale, en_US, -B-Xph-annotate, -B-Xph-fields-private, -B-Xph-code-quality, -B-Xph-implements, java.io.Serializable, -B-Xph-equalshashcode, -B-Xph-tostring, -B-Xph-list-extension, -B-Xph-offset-dt-extension, -B-extension, -B-b, src/main/jaxb/peppol-commons.episode, -b, 'file:/var/maven/app/peppol-sml-client/src/main/jaxb/peppol-sml-client.xjb', "file:/var/maven/app/peppol-sml-client/src/main/resources/WEB-INF/wsdl/ManageServiceMetadataService-1.0.wsdl"]
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+parsing WSDL...
+
+
+
+Generating code...
+
+com/helger/peppol/smlclient/smp/BadRequestFault.java
+com/helger/peppol/smlclient/smp/FaultType.java
+com/helger/peppol/smlclient/smp/InternalErrorFault.java
+com/helger/peppol/smlclient/smp/ManageServiceMetadataService.java
+com/helger/peppol/smlclient/smp/ManageServiceMetadataServiceSoap.java
+com/helger/peppol/smlclient/smp/NotFoundFault.java
+com/helger/peppol/smlclient/smp/ObjectFactory.java
+com/helger/peppol/smlclient/smp/PublisherEndpointType.java
+com/helger/peppol/smlclient/smp/ServiceMetadataPublisherServiceType.java
+com/helger/peppol/smlclient/smp/UnauthorizedFault.java
+com/helger/peppol/smlclient/smp/package-info.java
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjaxws-maven-plugin:2.6.2:wsimport[m [1m(wsimport3)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Processing: file:/var/maven/app/peppol-sml-client/src/main/resources/WEB-INF/wsdl/BDMSLService-1.0.wsdl
+[[1;34mINFO[m] jaxws:wsimport args: [-keep, -s, '/var/maven/app/peppol-sml-client/target/generated-sources/xjc', -d, '/var/maven/app/peppol-sml-client/target/classes', -verbose, -encoding, UTF-8, -extension, -Xnocompile, -ph-csu, -p, com.helger.peppol.smlclient.bdmsl, -wsdllocation, /WEB-INF/wsdl/BDMSLService-1.0.wsdl, -target, 2.1, -B-no-header, -B-Xph-default-locale, en_US, -B-Xph-annotate, -B-Xph-fields-private, -B-Xph-code-quality, -B-Xph-implements, java.io.Serializable, -B-Xph-equalshashcode, -B-Xph-tostring, -B-Xph-list-extension, -B-Xph-offset-dt-extension, -B-extension, -B-b, src/main/jaxb/peppol-commons.episode, -b, 'file:/var/maven/app/peppol-sml-client/src/main/jaxb/peppol-sml-client.xjb', "file:/var/maven/app/peppol-sml-client/src/main/resources/WEB-INF/wsdl/BDMSLService-1.0.wsdl"]
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+parsing WSDL...
+
+
+[WARNING] fault "InternalErrorFault" in portType operation "IsAlive" does not match any fault in the corresponding binding operation
+  line 86 of file:/var/maven/app/peppol-sml-client/src/main/resources/WEB-INF/wsdl/BDMSLService-1.0.wsdl
+
+
+Generating code...
+
+com/helger/peppol/smlclient/bdmsl/BDMSLService.java
+com/helger/peppol/smlclient/bdmsl/BDMSLServiceSoap.java
+com/helger/peppol/smlclient/bdmsl/BadRequestFault.java
+com/helger/peppol/smlclient/bdmsl/FaultType.java
+com/helger/peppol/smlclient/bdmsl/InternalErrorFault.java
+com/helger/peppol/smlclient/bdmsl/IsAliveType.java
+com/helger/peppol/smlclient/bdmsl/ListParticipantsType.java
+com/helger/peppol/smlclient/bdmsl/MigrationRecordType.java
+com/helger/peppol/smlclient/bdmsl/NotFoundFault.java
+com/helger/peppol/smlclient/bdmsl/ObjectFactory.java
+com/helger/peppol/smlclient/bdmsl/PageRequestType.java
+com/helger/peppol/smlclient/bdmsl/ParticipantIdentifierPageType.java
+com/helger/peppol/smlclient/bdmsl/ParticipantsType.java
+com/helger/peppol/smlclient/bdmsl/PrepareChangeCertificateType.java
+com/helger/peppol/smlclient/bdmsl/PublisherEndpointType.java
+com/helger/peppol/smlclient/bdmsl/SMPAdvancedServiceForParticipantType.java
+com/helger/peppol/smlclient/bdmsl/ServiceMetadataPublisherServiceForParticipantType.java
+com/helger/peppol/smlclient/bdmsl/ServiceMetadataPublisherServiceType.java
+com/helger/peppol/smlclient/bdmsl/UnauthorizedFault.java
+com/helger/peppol/smlclient/bdmsl/package-info.java
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Successfully created temp directory buildinfo-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 10 resources
+[[1;34mINFO[m] Copying 1 resource to META-INF
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 53 source files to /var/maven/app/peppol-sml-client/target/classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 12 source files to /var/maven/app/peppol-sml-client/target/test-classes
+[[1;33mWARNING[m] bootstrap class path not set in conjunction with -source 8
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.helger.peppol.smlclient.[1mBDMSLClientTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.011 s - in com.helger.peppol.smlclient.[1mBDMSLClientTest[m
+[[1;34mINFO[m] Running com.helger.peppol.smlclient.[1mSPITest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s - in com.helger.peppol.smlclient.[1mSPITest[m
+[[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mSSLConnectFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mSSLConnectFuncTest[m
+[[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mManageParticipantIdentifierServiceCallerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.309 s - in com.helger.peppol.smlclient.client.[1mManageParticipantIdentifierServiceCallerTest[m
+[[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mDNSRegistrationFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mDNSRegistrationFuncTest[m
+[[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mWildcardFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mWildcardFuncTest[m
+[[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mSMKFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0 s - in com.helger.peppol.smlclient.client.[1mSMKFuncTest[m
+[[1;34mINFO[m] Running com.helger.peppol.smlclient.client.[1mSMLFuncTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m1[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m1[m, Time elapsed: 0.001 s - in com.helger.peppol.smlclient.client.[1mSMLFuncTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;33mWARNING[m] [1;33mTests run: 8, Failures: 0, Errors: 0, Skipped: 6[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:bundle[m [1m(default-bundle)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-sml-client/target/peppol-sml-client-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/peppol-sml-client/target/peppol-sml-client-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/peppol-sml-client/target/peppol-sml-client-8.6.2-SNAPSHOT.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-sml-client/8.6.2-SNAPSHOT/peppol-sml-client-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-sml-client/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-sml-client/8.6.2-SNAPSHOT/peppol-sml-client-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/peppol-sml-client/target/peppol-sml-client-8.6.2-SNAPSHOT-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-sml-client/8.6.2-SNAPSHOT/peppol-sml-client-8.6.2-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/peppol-sml-client/target/peppol-sml-client-8.6.2-SNAPSHOT-test-sources.jar to /var/maven/.m2/repository/com/helger/peppol/peppol-sml-client/8.6.2-SNAPSHOT/peppol-sml-client-8.6.2-SNAPSHOT-test-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:5.1.1:install[m [1m(default-install)[m @ [36mpeppol-sml-client[0;1m ---[m
+[[1;34mINFO[m] Installing com/helger/peppol/peppol-sml-client/8.6.2-SNAPSHOT/peppol-sml-client-8.6.2-SNAPSHOT.jar
+[[1;34mINFO[m] Writing OBR metadata
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for peppol-commons-parent-pom 8.6.2-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] peppol-commons-parent-pom .......................... [1;32mSUCCESS[m [  0.398 s]
+[[1;34mINFO[m] peppol-id-datatypes ................................ [1;32mSUCCESS[m [  7.192 s]
+[[1;34mINFO[m] peppol-id .......................................... [1;32mSUCCESS[m [  7.835 s]
+[[1;34mINFO[m] peppol-commons ..................................... [1;32mSUCCESS[m [  3.139 s]
+[[1;34mINFO[m] peppol-testfiles ................................... [1;32mSUCCESS[m [  2.344 s]
+[[1;34mINFO[m] peppol-sbdh ........................................ [1;32mSUCCESS[m [  4.396 s]
+[[1;34mINFO[m] peppol-smp-datatypes ............................... [1;32mSUCCESS[m [  2.634 s]
+[[1;34mINFO[m] peppol-smp-client .................................. [1;32mSUCCESS[m [ 21.438 s]
+[[1;34mINFO[m] peppol-sml-client .................................. [1;32mSUCCESS[m [  7.164 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  58.592 s
+[[1;34mINFO[m] Finished at: 2026-11-15T14:38:28Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sun Nov 15 14:38:29 UTC 2026.
+Universal Time is now:  Sun Nov 15 14:38:29 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] peppol-commons-parent-pom                                          [pom]
+[[1;34mINFO[m] peppol-id-datatypes                                             [bundle]
+[[1;34mINFO[m] peppol-id                                                       [bundle]
+[[1;34mINFO[m] peppol-commons                                                  [bundle]
+[[1;34mINFO[m] peppol-testfiles                                                [bundle]
+[[1;34mINFO[m] peppol-sbdh                                                     [bundle]
+[[1;34mINFO[m] peppol-smp-datatypes                                            [bundle]
+[[1;34mINFO[m] peppol-smp-client                                               [bundle]
+[[1;34mINFO[m] peppol-sml-client                                               [bundle]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36mcom.helger.peppol:peppol-commons-parent-pom[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding peppol-commons-parent-pom 8.6.2-SNAPSHOT                  [1/9][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-compare[m [1m(default-cli)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] [RANGE-COMPARE] Skipping aggregator/parent module: peppol-commons-parent-pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mph-buildinfo-maven-plugin:3.0.1:generate-buildinfo[m [1m(default)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] Not executing buildinfo plugin because the packaging 'pom' is ignored.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar-no-fork[m [1m(attach-sources)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:test-jar-no-fork[m [1m(attach-test-sources)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mpeppol-commons-parent-pom[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/com/helger/peppol/peppol-commons-parent-pom/8.6.2-SNAPSHOT/peppol-commons-parent-pom-8.6.2-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------< [0;36mcom.helger.peppol:peppol-id-datatypes[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding peppol-id-datatypes 8.6.2-SNAPSHOT                        [2/9][m
+[[1;34mINFO[m] [1m-------------------------------[ bundle ]-------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:range-compare[m [1m(default-cli)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+[[1;34mINFO[m] [RANGE-COMPARE] Dependency comparison for peppol-id-datatypes: pinned=5 upgraded=4 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jaxb2-plugin:0.14.0:generate[m [1m(default)[m @ [36mpeppol-id-datatypes[0;1m ---[m
+Downloading from central: https://repo.maven.apache.org/maven2/com/helger/xsd/ph-xsds-xmldsig/%5B2.6.0,3.0.0-alpha)/ph-xsds-xmldsig-%5B2.6.0,3.0.0-alpha).jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for peppol-commons-parent-pom 8.6.2-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] peppol-commons-parent-pom .......................... [1;32mSUCCESS[m [  0.359 s]
+[[1;34mINFO[m] peppol-id-datatypes ................................ [1;31mFAILURE[m [  1.411 s]
+[[1;34mINFO[m] peppol-id .......................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] peppol-commons ..................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] peppol-testfiles ................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] peppol-sbdh ........................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] peppol-smp-datatypes ............................... [1;33mSKIPPED[m
+[[1;34mINFO[m] peppol-smp-client .................................. [1;33mSKIPPED[m
+[[1;34mINFO[m] peppol-sml-client .................................. [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  2.605 s
+[[1;34mINFO[m] Finished at: 2026-11-15T14:38:32Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.jvnet.jaxb2.maven2:maven-jaxb2-plugin:0.14.0:generate[m [1m(default)[m on project [36mpeppol-id-datatypes[m: [1;31mArtifact not found.[m: Could not find artifact com.helger.xsd:ph-xsds-xmldsig:jar:[2.6.0,3.0.0-alpha) in central (https://repo.maven.apache.org/maven2)
+[[1;31mERROR[m] 
+[[1;31mERROR[m] Try downloading the file manually from the project website.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] Then, install it using the command: 
+[[1;31mERROR[m]     mvn install:install-file -DgroupId=com.helger.xsd -DartifactId=ph-xsds-xmldsig -Dversion=null -Dpackaging=jar -Dfile=/path/to/file
+[[1;31mERROR[m] 
+[[1;31mERROR[m] Alternatively, if you host your own repository you can deploy the file there: 
+[[1;31mERROR[m]     mvn deploy:deploy-file -DgroupId=com.helger.xsd -DartifactId=ph-xsds-xmldsig -Dversion=null -Dpackaging=jar -Dfile=/path/to/file -Durl=[url] -DrepositoryId=[id]
+[[1;31mERROR[m] 
+[[1;31mERROR[m] 
+[[1;31mERROR[m]   com.helger.xsd:ph-xsds-xmldsig:jar:null
+[[1;31mERROR[m] 
+[[1;31mERROR[m] from the specified remote repositories:
+[[1;31mERROR[m]   central.snapshots (https://oss.sonatype.org/content/repositories/snapshots/, releases=false, snapshots=true),
+[[1;31mERROR[m]   central (https://repo.maven.apache.org/maven2, releases=true, snapshots=false)
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[[1;31mERROR[m] 
+[[1;31mERROR[m] After correcting the problems, you can resume the build with the command
+[[1;31mERROR[m]   [1mmvn <args> -rf :peppol-id-datatypes[m
+[0m
+[0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
+[0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
+[0m
