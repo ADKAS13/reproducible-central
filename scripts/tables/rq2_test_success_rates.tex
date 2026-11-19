@@ -1,40 +1,40 @@
 \begin{table}[htbp]
 \centering
-\caption{Test Success Rate (\%) by Repository: RQ1 vs. RQ2 Update Flags (\xmark{} = build failed, excluded)}
-\label{tab:test_success_rates}
+\caption{Test Success Rate (\%) by Repository Across Update Flags (\xmark{} = build failed, excluded).}
+\label{tab:rq2_test_success_rates}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
 \textbf{Repository} & \textbf{RQ1 (\%)} & \textbf{Major (\%)} & \textbf{Minor (\%)} & \textbf{Patch (\%)} \\
 \midrule
-Xponents & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-animal-sniffer & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-api & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-arquillian-graphene & 16.0\% & 16.0\% & 16.0\% & 16.0\% \\
-asset-share-commons & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-astra & 97.3\% & 97.3\% & 97.3\% & 97.3\% \\
-auto-table & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-automatalib & 89.7\% & 89.7\% & 89.7\% & 89.7\% \\
-cloudtrace & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-cryptolib & 99.4\% & 99.4\% & 99.4\% & 99.4\% \\
+Xponents & \xmark & 100.0\% & 100.0\% & 100.0\% \\
+animal-sniffer & \xmark & \xmark & \xmark & \xmark \\
+api & \xmark & 100.0\% & \xmark & 100.0\% \\
+arquillian-graphene & \xmark & \xmark & \xmark & 16.0\% \\
+asset-share-commons & \xmark & \xmark & \xmark & \xmark \\
+astra & \xmark & 97.3\% & 97.3\% & 97.3\% \\
+auto-table & \xmark & \xmark & \xmark & \xmark \\
+automatalib & \xmark & \xmark & \xmark & 89.7\% \\
+cloudtrace & \xmark & \xmark & \xmark & 100.0\% \\
+cryptolib & \xmark & \xmark & n/a & 99.4\% \\
 dkpro-jwpl & \xmark & \xmark & \xmark & \xmark \\
-easyvcr & 100.0\% & 96.9\% & 93.8\% & 100.0\% \\
-elemento & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-gauge-java & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
+easyvcr & \xmark & \xmark & 96.9\% & 100.0\% \\
+elemento & \xmark & n/a & n/a & 100.0\% \\
+gauge-java & \xmark & 72.9\% & 81.4\% & 92.1\% \\
 juneau & \xmark & \xmark & \xmark & \xmark \\
 maven-checkstyle-plugin & \xmark & \xmark & \xmark & \xmark \\
-mdlz80optimizer & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-peppol-commons & 84.2\% & 84.2\% & 84.2\% & 84.2\% \\
-phenopacket-schema & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-saucerest-java & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-sokrates & 99.4\% & 99.4\% & 99.4\% & 99.4\% \\
-sorald & 99.5\% & 99.5\% & 99.5\% & 99.5\% \\
-teamengine & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-telegrambots & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-turbine & 51.3\% & 51.3\% & 51.3\% & 51.3\% \\
-wavefront-proxy & 99.1\% & 99.6\% & 100.0\% & 100.0\% \\
+mdlz80optimizer & \xmark & 100.0\% & 100.0\% & 100.0\% \\
+peppol-commons & \xmark & \xmark & 73.0\% & 83.0\% \\
+phenopacket-schema & \xmark & 100.0\% & n/a & 100.0\% \\
+saucerest-java & \xmark & n/a & n/a & 100.0\% \\
+sokrates & \xmark & 96.6\% & 99.4\% & 99.4\% \\
+sorald & \xmark & 38.4\% & 38.4\% & 38.4\% \\
+teamengine & \xmark & \xmark & 91.9\% & 93.2\% \\
+telegrambots & \xmark & \xmark & 86.6\% & 86.6\% \\
+turbine & \xmark & \xmark & \xmark & 51.3\% \\
+wavefront-proxy & \xmark & 100.0\% & 99.6\% & \xmark \\
 xwiki-commons & \xmark & \xmark & \xmark & \xmark \\
-yosegi & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
+yosegi & \xmark & \xmark & \xmark & 99.3\% \\
 \bottomrule
 \end{tabular}%
 }

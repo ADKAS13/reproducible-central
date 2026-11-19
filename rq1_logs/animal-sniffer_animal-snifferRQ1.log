@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/animal-sn
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -Dmaven.test.failure.ignore=true && mvn install -Dmaven.test.failure.ignore=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Animal-sniffer.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.codehaus.mojo:animal-sniffer-parent:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/animal-sniffer/RQ1/buildcache/animal-sniffer-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/animal-sniffer/RQ1/buildcache/animal-sniffer-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -Dmaven.test.failure.ignore=true && mvn install -Dmaven.test.failure.ignore=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 14:37:41 UTC 2026.
-Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
+Local time is now:      Thu Nov 19 02:57:34 UTC 2026.
+Universal Time is now:  Thu Nov 19 02:57:34 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -99,6 +99,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-parent[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for animal-sniffer-parent
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -117,6 +118,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for java-boot-classpath-detector
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/java-boot-classpath-detector/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -125,6 +127,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] Flattening leaf module dependencies for: java-boot-classpath-detector (0 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/java-boot-classpath-detector/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for java-boot-classpath-detector: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: java-boot-classpath-detector
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
@@ -145,7 +148,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/java-boot-classpath-detector/target/java-boot-classpath-detector-1.20-SNAPSHOT.jar
@@ -161,6 +164,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-annotations[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for animal-sniffer-annotations
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer-annotations/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -169,6 +173,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer-annotations (0 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer-annotations/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer-annotations: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: animal-sniffer-annotations
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-annotations[0;1m ---[m
@@ -191,7 +196,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-annotations[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-annotations[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer-annotations/target/animal-sniffer-annotations-1.20-SNAPSHOT.jar
@@ -207,6 +212,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for animal-sniffer
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 3 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -215,6 +221,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer (3 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer: pinned=3 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: animal-sniffer
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer[0;1m ---[m
@@ -236,17 +243,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/animal-sniffer/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 2, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer/target/animal-sniffer-1.20-SNAPSHOT.jar
@@ -262,6 +259,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for animal-sniffer-maven-plugin
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer-maven-plugin/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 60 dependencies (13 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -270,6 +268,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer-maven-plugin (60 dependencies, 13 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer-maven-plugin/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer-maven-plugin: pinned=60 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: animal-sniffer-maven-plugin
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
@@ -312,7 +311,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer-maven-plugin/target/animal-sniffer-maven-plugin-1.20-SNAPSHOT.jar
@@ -330,6 +329,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for animal-sniffer-enforcer-rule
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer-enforcer-rule/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 56 dependencies (13 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -338,6 +338,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer-enforcer-rule (56 dependencies, 13 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer-enforcer-rule/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer-enforcer-rule: pinned=56 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: animal-sniffer-enforcer-rule
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
@@ -360,7 +361,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-enforcer-rule[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer-enforcer-rule/target/animal-sniffer-enforcer-rule-1.20-SNAPSHOT.jar
@@ -376,6 +377,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for animal-sniffer-ant-tasks
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/animal-sniffer-ant-tasks/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 4 dependencies (0 carrying exclusions, 4 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -384,6 +386,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] Flattening leaf module dependencies for: animal-sniffer-ant-tasks (4 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/animal-sniffer-ant-tasks/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for animal-sniffer-ant-tasks: pinned=4 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: animal-sniffer-ant-tasks
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
@@ -404,7 +407,7 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-ant-tasks[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/animal-sniffer-ant-tasks/target/animal-sniffer-ant-tasks-1.20-SNAPSHOT.jar
@@ -421,24 +424,212 @@ Universal Time is now:  Sun Oct 11 14:37:41 UTC 2026.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Animal Sniffer 1.20-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.504 s]
-[[1;34mINFO[m] Java boot classpath detector ....................... [1;32mSUCCESS[m [  0.956 s]
-[[1;34mINFO[m] Animal Sniffer Annotations ......................... [1;32mSUCCESS[m [  0.098 s]
-[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.987 s]
-[[1;34mINFO[m] Animal Sniffer Maven Plugin ........................ [1;32mSUCCESS[m [  1.788 s]
-[[1;34mINFO[m] Animal Sniffer Maven Enforcer Rule ................. [1;32mSUCCESS[m [  0.178 s]
-[[1;34mINFO[m] Animal Sniffer Ant Tasks ........................... [1;32mSUCCESS[m [  0.429 s]
+[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.494 s]
+[[1;34mINFO[m] Java boot classpath detector ....................... [1;32mSUCCESS[m [  0.933 s]
+[[1;34mINFO[m] Animal Sniffer Annotations ......................... [1;32mSUCCESS[m [  0.114 s]
+[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.455 s]
+[[1;34mINFO[m] Animal Sniffer Maven Plugin ........................ [1;32mSUCCESS[m [  1.961 s]
+[[1;34mINFO[m] Animal Sniffer Maven Enforcer Rule ................. [1;32mSUCCESS[m [  0.236 s]
+[[1;34mINFO[m] Animal Sniffer Ant Tasks ........................... [1;32mSUCCESS[m [  0.419 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  5.139 s
-[[1;34mINFO[m] Finished at: 2026-10-11T14:37:47Z
+[[1;34mINFO[m] Total time:  4.800 s
+[[1;34mINFO[m] Finished at: 2026-11-19T02:57:40Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-dos2unix: target/Animal-sniffer.buildinfo: No such file or directory
-dos2unix: Skipping target/Animal-sniffer.buildinfo, not a regular file.
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Thu Nov 19 02:57:40 UTC 2026.
+Universal Time is now:  Thu Nov 19 02:57:40 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Animal Sniffer                                                     [pom]
+[[1;34mINFO[m] Java boot classpath detector                                       [jar]
+[[1;34mINFO[m] Animal Sniffer Annotations                                         [jar]
+[[1;34mINFO[m] Animal Sniffer                                                     [jar]
+[[1;34mINFO[m] Animal Sniffer Maven Plugin                               [maven-plugin]
+[[1;34mINFO[m] Animal Sniffer Maven Enforcer Rule                                 [jar]
+[[1;34mINFO[m] Animal Sniffer Ant Tasks                                           [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36morg.codehaus.mojo:animal-sniffer-parent[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer 1.20-SNAPSHOT                              [1/7][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-parent/1.20-SNAPSHOT/animal-sniffer-parent-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.codehaus.mojo:java-boot-classpath-detector[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding Java boot classpath detector 1.20-SNAPSHOT                [2/7][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/java-boot-classpath-detector/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/java-boot-classpath-detector/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mjava-boot-classpath-detector[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/java-boot-classpath-detector/target/java-boot-classpath-detector-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/java-boot-classpath-detector/1.20-SNAPSHOT/java-boot-classpath-detector-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/java-boot-classpath-detector/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/java-boot-classpath-detector/1.20-SNAPSHOT/java-boot-classpath-detector-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.codehaus.mojo:animal-sniffer-annotations[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer Annotations 1.20-SNAPSHOT                  [3/7][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer-annotations/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer-annotations/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer-annotations[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-annotations/target/animal-sniffer-annotations-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.20-SNAPSHOT/animal-sniffer-annotations-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer-annotations/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.20-SNAPSHOT/animal-sniffer-annotations-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36morg.codehaus.mojo:animal-sniffer[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer 1.20-SNAPSHOT                              [4/7][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/animal-sniffer/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:testResources[m [1m(default-testResources)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.0:test[m [1m(default-test)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.codehaus.mojo.animal_sniffer.[1mSignatureCheckerTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 2, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36manimal-sniffer[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer/target/animal-sniffer-1.20-SNAPSHOT.jar to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer/1.20-SNAPSHOT/animal-sniffer-1.20-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/animal-sniffer/pom.xml to /var/maven/.m2/repository/org/codehaus/mojo/animal-sniffer/1.20-SNAPSHOT/animal-sniffer-1.20-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36morg.codehaus.mojo:animal-sniffer-maven-plugin[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding Animal Sniffer Maven Plugin 1.20-SNAPSHOT                 [5/7][m
+[[1;34mINFO[m] [1m----------------------------[ maven-plugin ]----------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(mojo-enforcer-rules)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5.2:helpmojo[m [1m(help-mojo)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] java-annotations mojo extractor found 3 mojo descriptors.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-plugin-plugin:3.5.2:helpmojo[m [1m(help-goal)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] java-annotations mojo extractor found 3 mojo descriptors.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.0.2:resources[m [1m(default-resources)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36manimal-sniffer-maven-plugin[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 7 source files to /var/maven/app/animal-sniffer-maven-plugin/target/classes
+[[1;34mINFO[m] /var/maven/app/animal-sniffer-maven-plugin/src/main/java/org/codehaus/mojo/animal_sniffer/maven/CheckSignatureMojo.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /var/maven/app/animal-sniffer-maven-plugin/src/main/java/org/codehaus/mojo/animal_sniffer/maven/CheckSignatureMojo.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] COMPILATION ERROR : 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] /var/maven/app/animal-sniffer-maven-plugin/src/main/java/org/codehaus/mojo/animal_sniffer/maven/JdkToolchainConverter.java:[78,44] unreported exception org.codehaus.plexus.configuration.PlexusConfigurationException; must be caught or declared to be thrown
+[[1;34mINFO[m] 1 error
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for Animal Sniffer 1.20-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.392 s]
+[[1;34mINFO[m] Java boot classpath detector ....................... [1;32mSUCCESS[m [  0.479 s]
+[[1;34mINFO[m] Animal Sniffer Annotations ......................... [1;32mSUCCESS[m [  0.046 s]
+[[1;34mINFO[m] Animal Sniffer ..................................... [1;32mSUCCESS[m [  0.669 s]
+[[1;34mINFO[m] Animal Sniffer Maven Plugin ........................ [1;31mFAILURE[m [  1.452 s]
+[[1;34mINFO[m] Animal Sniffer Maven Enforcer Rule ................. [1;33mSKIPPED[m
+[[1;34mINFO[m] Animal Sniffer Ant Tasks ........................... [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.186 s
+[[1;34mINFO[m] Finished at: 2026-11-19T02:57:44Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m on project [36manimal-sniffer-maven-plugin[m: [1;31mCompilation failure[m
+[[1;31mERROR[m] [1;31m/var/maven/app/animal-sniffer-maven-plugin/src/main/java/org/codehaus/mojo/animal_sniffer/maven/JdkToolchainConverter.java:[78,44] unreported exception org.codehaus.plexus.configuration.PlexusConfigurationException; must be caught or declared to be thrown[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[[1;31mERROR[m] 
+[[1;31mERROR[m] After correcting the problems, you can resume the build with the command
+[[1;31mERROR[m]   [1mmvn <args> -rf :animal-sniffer-maven-plugin[m
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
-[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
 [0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
 [0m

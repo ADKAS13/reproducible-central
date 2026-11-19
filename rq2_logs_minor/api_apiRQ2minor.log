@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/api/RQ2mi
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=minor -Dmaven.test.failure.ignore=true && mvn install -DallowVersionRanges=minor -Dmaven.test.failure.ignore=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Api.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.jboss.weld:weld-api-parent:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/api/RQ2minor/buildcache/weld-api-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/api/RQ2minor/buildcache/weld-api-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=minor -Dmaven.test.failure.ignore=true && mvn install -DallowVersionRanges=minor -Dmaven.test.failure.ignore=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Nov 10 11:23:51 UTC 2026.
-Universal Time is now:  Tue Nov 10 11:23:51 UTC 2026.
+Local time is now:      Thu Nov 12 22:21:56 UTC 2026.
+Universal Time is now:  Thu Nov 12 22:21:56 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -92,7 +92,6 @@ Universal Time is now:  Tue Nov 10 11:23:51 UTC 2026.
 [[1;34mINFO[m] Weld APIs Parent                                                   [pom]
 [[1;34mINFO[m] Weld APIs                                                          [jar]
 [[1;34mINFO[m] Weld SPIs for container integration                                [jar]
-Downloading from jboss-public-repository-group: https://repository.jboss.org/nexus/content/groups/public/com/baeldung/counter-maven-plugin/1.0-SNAPSHOT/maven-metadata.xml
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------------< [0;36morg.jboss.weld:weld-api-bom[0;1m >---------------------[m
 [[1;34mINFO[m] [1mBuilding Weld APIs BOM 4.0-SNAPSHOT                                [1/4][m
@@ -101,6 +100,7 @@ Downloading from jboss-public-repository-group: https://repository.jboss.org/nex
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mweld-api-bom[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mweld-api-bom[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for weld-api-bom
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/bom/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 2 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
@@ -117,6 +117,7 @@ Downloading from jboss-public-repository-group: https://repository.jboss.org/nex
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-api-parent[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for weld-api-parent
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 11 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
@@ -134,7 +135,7 @@ Downloading from jboss-public-repository-group: https://repository.jboss.org/nex
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api-parent[0;1m ---[m
 [[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' 'HEAD'
 [[1;34mINFO[m] Working directory: /var/maven/app
-[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 10, 2026 11:23:54 AM UTC
+[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 12, 2026 10:21:58 PM UTC
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -173,24 +174,26 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-api[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for weld-api
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/weld/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 5 dependencies (2 carrying exclusions, 11 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mweld-api[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml
-Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml (636 B at 1.8 kB/s)
+Progress (1): 636 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/maven-metadata.xml (636 B at 815 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/enterprise/jakarta.enterprise.cdi-api/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/enterprise/jakarta.enterprise.cdi-api/maven-metadata.xml (1.5 kB at 5.5 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/enterprise/jakarta.enterprise.cdi-api/maven-metadata.xml (1.5 kB at 4.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml
-Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml (769 B at 12 kB/s)
+Progress (1): 769 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/maven-metadata.xml (769 B at 3.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/maven-metadata.xml
-Progress (1): 779 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/maven-metadata.xml (779 B at 3.5 kB/s)
+Progress (1): 779 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/maven-metadata.xml (779 B at 3.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/servlet/jakarta.servlet-api/maven-metadata.xml
-Progress (1): 706 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/servlet/jakarta.servlet-api/maven-metadata.xml (706 B at 8.5 kB/s)
+Progress (1): 706 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/servlet/jakarta.servlet-api/maven-metadata.xml (706 B at 3.4 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: weld-api (5 dependencies, 2 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/weld/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for weld-api: pinned=1 upgraded=4 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: weld-api
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api[0;1m ---[m
@@ -267,27 +270,29 @@ Audit done.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-spi[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for weld-spi
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/weld-spi/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 12 dependencies (3 carrying exclusions, 11 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mweld-spi[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/ejb/jakarta.ejb-api/maven-metadata.xml
-Progress (1): 558 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/ejb/jakarta.ejb-api/maven-metadata.xml (558 B at 1.7 kB/s)
+Progress (1): 558 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/ejb/jakarta.ejb-api/maven-metadata.xml (558 B at 1.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/maven-metadata.xml (1.1 kB at 13 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/maven-metadata.xml (1.1 kB at 5.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/maven-metadata.xml
-Progress (1): 613 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/maven-metadata.xml (613 B at 6.3 kB/s)
+Progress (1): 613 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/maven-metadata.xml (613 B at 3.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/maven-metadata.xml
-Progress (1): 675 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/maven-metadata.xml (675 B at 11 kB/s)
+Progress (1): 675 B                   Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/maven-metadata.xml (675 B at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 19 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 24 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 49 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 12 kB/s)
 [[1;33mWARNING[m] The POM for org.testng:testng:jar:jdk15:5.14.3 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
 [[1;34mINFO[m] Flattening leaf module dependencies for: weld-spi (15 dependencies, 3 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/weld-spi/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for weld-spi: pinned=2 upgraded=10 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: weld-spi
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-spi[0;1m ---[m
@@ -366,15 +371,15 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Weld APIs Parent 4.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.201 s]
-[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  0.919 s]
-[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  2.822 s]
-[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  1.755 s]
+[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.269 s]
+[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  1.169 s]
+[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  4.410 s]
+[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  2.496 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  7.729 s
-[[1;34mINFO[m] Finished at: 2026-11-10T11:23:59Z
+[[1;34mINFO[m] Total time:  8.506 s
+[[1;34mINFO[m] Finished at: 2026-11-12T22:22:05Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -385,8 +390,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Nov 10 11:24:00 UTC 2026.
-Universal Time is now:  Tue Nov 10 11:24:00 UTC 2026.
+Local time is now:      Thu Nov 12 22:22:06 UTC 2026.
+Universal Time is now:  Thu Nov 12 22:22:06 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -403,18 +408,12 @@ Universal Time is now:  Tue Nov 10 11:24:00 UTC 2026.
 [[1;34mINFO[m] [1mBuilding Weld APIs BOM 4.0-SNAPSHOT                                [1/4][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mweld-api-bom[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/bom/target
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mweld-api-bom[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/bom/pom.xml to /var/maven/.m2/repository/org/jboss/weld/weld-api-bom/4.0-SNAPSHOT/weld-api-bom-4.0-SNAPSHOT.pom
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m-------------------< [0;36morg.jboss.weld:weld-api-parent[0;1m >-------------------[m
 [[1;34mINFO[m] [1mBuilding Weld APIs Parent 4.0-SNAPSHOT                             [2/4][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-api-parent[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api-parent[0;1m ---[m
 [[1;34mINFO[m] 
@@ -427,7 +426,7 @@ Universal Time is now:  Tue Nov 10 11:24:00 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api-parent[0;1m ---[m
 [[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' 'HEAD'
 [[1;34mINFO[m] Working directory: /var/maven/app
-[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 10, 2026 11:24:01 AM UTC
+[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 12, 2026 10:22:07 PM UTC
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -462,11 +461,6 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m----------------------< [0;36morg.jboss.weld:weld-api[0;1m >-----------------------[m
 [[1;34mINFO[m] [1mBuilding Weld APIs 4.0-SNAPSHOT                                    [3/4][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-Downloading from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/2.2.0/jakarta.interceptor-api-2.2.0.jar
-Progress (1): 3.3/24 kBProgress (1): 6.0/24 kBProgress (1): 8.8/24 kBProgress (1): 11/24 kB Progress (1): 14/24 kBProgress (1): 17/24 kBProgress (1): 20/24 kBProgress (1): 22/24 kBProgress (1): 24 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/interceptor/jakarta.interceptor-api/2.2.0/jakarta.interceptor-api-2.2.0.jar (24 kB at 46 kB/s)
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-api[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/weld/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api[0;1m ---[m
 [[1;34mINFO[m] 
@@ -489,46 +483,84 @@ Progress (1): 3.3/24 kBProgress (1): 6.0/24 kBProgress (1): 8.8/24 kBProgress
 [[1;34mINFO[m] Copying 2 resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1-jboss-1:compile[m [1m(default-compile)[m @ [36mweld-api[0;1m ---[m
-[[1;34mINFO[m] Changes detected - recompiling the module!
-[[1;34mINFO[m] Compiling 38 source files to /var/maven/app/weld/target/classes
-[[1;34mINFO[m] -------------------------------------------------------------
-[[1;31mERROR[m] COMPILATION ERROR : 
-[[1;34mINFO[m] -------------------------------------------------------------
-[[1;31mERROR[m] /var/maven/app/weld/src/main/java/org/jboss/weld/bootstrap/event/InterceptorConfigurator.java:[27,27] cannot access jakarta.interceptor.InvocationContext
-  bad class file: /var/maven/.m2/repository/jakarta/interceptor/jakarta.interceptor-api/2.2.0/jakarta.interceptor-api-2.2.0.jar(jakarta/interceptor/InvocationContext.class)
-    class file has wrong version 55.0, should be 52.0
-    Please remove or make sure it appears in the correct subdirectory of the classpath.
-[[1;34mINFO[m] 1 error
-[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:3.1.1:checkstyle[m [1m(check-style)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Starting audit...
+Audit done.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/weld/src/test/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1-jboss-1:testCompile[m [1m(default-testCompile)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/weld/target/weld-api-4.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[0;1m > [0;1mgenerate-sources[m @ [36mweld-api[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven-version)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:maven-version[m [1m(default)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:parse-version[m [1m(default)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[0;1m < [0;1mgenerate-sources[m @ [36mweld-api[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/weld/target/weld-api-4.0-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/weld/target/weld-api-4.0-SNAPSHOT.jar to /var/maven/.m2/repository/org/jboss/weld/weld-api/4.0-SNAPSHOT/weld-api-4.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/weld/pom.xml to /var/maven/.m2/repository/org/jboss/weld/weld-api/4.0-SNAPSHOT/weld-api-4.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/weld/target/weld-api-4.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/org/jboss/weld/weld-api/4.0-SNAPSHOT/weld-api-4.0-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------------< [0;36morg.jboss.weld:weld-spi[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding Weld SPIs for container integration 4.0-SNAPSHOT          [4/4][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from central: https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/3.2.0/jakarta.persistence-api-3.2.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.12/jcommander-1.12.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/5.14.10/testng-5.14.10-jdk15.jar
+Downloading from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/3.1.1/jakarta.validation-api-3.1.1.jar
+Progress (1): 3.2/196 kBProgress (2): 3.2/196 kB | 3.3/106 kBProgress (3): 3.2/196 kB | 3.3/106 kB | 3.3/232 kBProgress (4): 3.2/196 kB | 3.3/106 kB | 3.3/232 kB | 3.3/31 kBProgress (4): 3.2/196 kB | 6.0/106 kB | 3.3/232 kB | 3.3/31 kBProgress (4): 5.9/196 kB | 6.0/106 kB | 3.3/232 kB | 3.3/31 kBProgress (4): 5.9/196 kB | 6.0/106 kB | 3.3/232 kB | 6.0/31 kBProgress (4): 5.9/196 kB | 6.0/106 kB | 6.0/232 kB | 6.0/31 kBProgress (4): 8.7/196 kB | 6.0/106 kB | 6.0/232 kB | 6.0/31 kBProgress (4): 8.7/196 kB | 8.8/106 kB | 6.0/232 kB | 6.0/31 kBProgress (4): 11/196 kB | 8.8/106 kB | 6.0/232 kB | 6.0/31 kB Progress (4): 11/196 kB | 8.8/106 kB | 8.6/232 kB | 6.0/31 kBProgress (4): 11/196 kB | 8.8/106 kB | 8.6/232 kB | 9.1/31 kBProgress (4): 11/196 kB | 8.8/106 kB | 11/232 kB | 9.1/31 kB Progress (4): 14/196 kB | 8.8/106 kB | 11/232 kB | 9.1/31 kBProgress (4): 14/196 kB | 11/106 kB | 11/232 kB | 9.1/31 kB Progress (4): 17/196 kB | 11/106 kB | 11/232 kB | 9.1/31 kBProgress (4): 17/196 kB | 11/106 kB | 14/232 kB | 9.1/31 kBProgress (4): 17/196 kB | 11/106 kB | 14/232 kB | 12/31 kB Progress (4): 17/196 kB | 11/106 kB | 17/232 kB | 12/31 kBProgress (4): 20/196 kB | 11/106 kB | 17/232 kB | 12/31 kBProgress (4): 20/196 kB | 14/106 kB | 17/232 kB | 12/31 kBProgress (4): 22/196 kB | 14/106 kB | 17/232 kB | 12/31 kBProgress (4): 22/196 kB | 14/106 kB | 20/232 kB | 12/31 kBProgress (4): 22/196 kB | 14/106 kB | 20/232 kB | 15/31 kBProgress (4): 22/196 kB | 14/106 kB | 22/232 kB | 15/31 kBProgress (4): 25/196 kB | 14/106 kB | 22/232 kB | 15/31 kBProgress (4): 25/196 kB | 17/106 kB | 22/232 kB | 15/31 kBProgress (4): 28/196 kB | 17/106 kB | 22/232 kB | 15/31 kBProgress (4): 28/196 kB | 20/106 kB | 22/232 kB | 15/31 kBProgress (4): 28/196 kB | 20/106 kB | 25/232 kB | 15/31 kBProgress (4): 28/196 kB | 20/106 kB | 25/232 kB | 17/31 kBProgress (4): 28/196 kB | 20/106 kB | 28/232 kB | 17/31 kBProgress (4): 28/196 kB | 22/106 kB | 28/232 kB | 17/31 kBProgress (4): 30/196 kB | 22/106 kB | 28/232 kB | 17/31 kBProgress (4): 30/196 kB | 25/106 kB | 28/232 kB | 17/31 kBProgress (4): 30/196 kB | 25/106 kB | 31/232 kB | 17/31 kBProgress (4): 30/196 kB | 25/106 kB | 31/232 kB | 20/31 kBProgress (4): 30/196 kB | 25/106 kB | 33/232 kB | 20/31 kBProgress (4): 30/196 kB | 28/106 kB | 33/232 kB | 20/31 kBProgress (4): 33/196 kB | 28/106 kB | 33/232 kB | 20/31 kBProgress (4): 33/196 kB | 31/106 kB | 33/232 kB | 20/31 kBProgress (4): 33/196 kB | 31/106 kB | 36/232 kB | 20/31 kBProgress (4): 33/196 kB | 31/106 kB | 36/232 kB | 23/31 kBProgress (4): 33/196 kB | 31/106 kB | 39/232 kB | 23/31 kBProgress (4): 33/196 kB | 33/106 kB | 39/232 kB | 23/31 kBProgress (4): 36/196 kB | 33/106 kB | 39/232 kB | 23/31 kBProgress (4): 36/196 kB | 36/106 kB | 39/232 kB | 23/31 kBProgress (4): 36/196 kB | 36/106 kB | 41/232 kB | 23/31 kBProgress (4): 36/196 kB | 36/106 kB | 41/232 kB | 26/31 kBProgress (4): 36/196 kB | 36/106 kB | 44/232 kB | 26/31 kBProgress (4): 36/196 kB | 39/106 kB | 44/232 kB | 26/31 kBProgress (4): 39/196 kB | 39/106 kB | 44/232 kB | 26/31 kBProgress (4): 39/196 kB | 42/106 kB | 44/232 kB | 26/31 kBProgress (4): 39/196 kB | 42/106 kB | 47/232 kB | 26/31 kBProgress (4): 39/196 kB | 42/106 kB | 47/232 kB | 28/31 kBProgress (4): 39/196 kB | 42/106 kB | 50/232 kB | 28/31 kBProgress (4): 39/196 kB | 44/106 kB | 50/232 kB | 28/31 kBProgress (4): 41/196 kB | 44/106 kB | 50/232 kB | 28/31 kBProgress (4): 41/196 kB | 47/106 kB | 50/232 kB | 28/31 kBProgress (4): 41/196 kB | 50/106 kB | 50/232 kB | 28/31 kBProgress (4): 41/196 kB | 53/106 kB | 50/232 kB | 28/31 kBProgress (4): 41/196 kB | 55/106 kB | 50/232 kB | 28/31 kBProgress (4): 41/196 kB | 55/106 kB | 52/232 kB | 28/31 kBProgress (4): 41/196 kB | 55/106 kB | 52/232 kB | 31/31 kBProgress (4): 44/196 kB | 55/106 kB | 52/232 kB | 31/31 kBProgress (4): 44/196 kB | 55/106 kB | 52/232 kB | 31 kB   Progress (4): 44/196 kB | 55/106 kB | 55/232 kB | 31 kBProgress (4): 44/196 kB | 59/106 kB | 55/232 kB | 31 kBProgress (4): 44/196 kB | 59/106 kB | 59/232 kB | 31 kBProgress (4): 47/196 kB | 59/106 kB | 59/232 kB | 31 kBProgress (4): 47/196 kB | 59/106 kB | 63/232 kB | 31 kBProgress (4): 47/196 kB | 62/106 kB | 63/232 kB | 31 kBProgress (4): 47/196 kB | 62/106 kB | 67/232 kB | 31 kBProgress (4): 50/196 kB | 62/106 kB | 67/232 kB | 31 kBProgress (4): 50/196 kB | 62/106 kB | 72/232 kB | 31 kBProgress (4): 50/196 kB | 66/106 kB | 72/232 kB | 31 kBProgress (4): 50/196 kB | 66/106 kB | 76/232 kB | 31 kBProgress (4): 52/196 kB | 66/106 kB | 76/232 kB | 31 kBProgress (4): 52/196 kB | 66/106 kB | 80/232 kB | 31 kBProgress (4): 52/196 kB | 70/106 kB | 80/232 kB | 31 kBProgress (4): 52/196 kB | 70/106 kB | 84/232 kB | 31 kBProgress (4): 55/196 kB | 70/106 kB | 84/232 kB | 31 kBProgress (4): 55/196 kB | 70/106 kB | 88/232 kB | 31 kBProgress (4): 55/196 kB | 74/106 kB | 88/232 kB | 31 kBProgress (4): 59/196 kB | 74/106 kB | 88/232 kB | 31 kBProgress (4): 59/196 kB | 74/106 kB | 92/232 kB | 31 kBProgress (4): 63/196 kB | 74/106 kB | 92/232 kB | 31 kBProgress (4): 63/196 kB | 78/106 kB | 92/232 kB | 31 kBProgress (4): 67/196 kB | 78/106 kB | 92/232 kB | 31 kBProgress (4): 67/196 kB | 78/106 kB | 94/232 kB | 31 kBProgress (4): 72/196 kB | 78/106 kB | 94/232 kB | 31 kBProgress (4): 72/196 kB | 82/106 kB | 94/232 kB | 31 kBProgress (4): 76/196 kB | 82/106 kB | 94/232 kB | 31 kBProgress (4): 76/196 kB | 82/106 kB | 98/232 kB | 31 kBProgress (4): 80/196 kB | 82/106 kB | 98/232 kB | 31 kBProgress (4): 80/196 kB | 86/106 kB | 98/232 kB | 31 kBProgress (4): 84/196 kB | 86/106 kB | 98/232 kB | 31 kBProgress (4): 84/196 kB | 90/106 kB | 98/232 kB | 31 kBProgress (4): 84/196 kB | 90/106 kB | 102/232 kB | 31 kBProgress (4): 84/196 kB | 94/106 kB | 102/232 kB | 31 kBProgress (4): 84/196 kB | 94/106 kB | 107/232 kB | 31 kBProgress (4): 86/196 kB | 94/106 kB | 107/232 kB | 31 kBProgress (4): 86/196 kB | 94/106 kB | 111/232 kB | 31 kBProgress (4): 86/196 kB | 98/106 kB | 111/232 kB | 31 kBProgress (4): 86/196 kB | 98/106 kB | 115/232 kB | 31 kBProgress (4): 90/196 kB | 98/106 kB | 115/232 kB | 31 kBProgress (4): 90/196 kB | 98/106 kB | 119/232 kB | 31 kBProgress (4): 90/196 kB | 103/106 kB | 119/232 kB | 31 kBProgress (4): 90/196 kB | 103/106 kB | 123/232 kB | 31 kBProgress (4): 90/196 kB | 106 kB | 123/232 kB | 31 kB    Progress (4): 94/196 kB | 106 kB | 123/232 kB | 31 kBProgress (4): 94/196 kB | 106 kB | 127/232 kB | 31 kBProgress (4): 98/196 kB | 106 kB | 127/232 kB | 31 kBProgress (4): 98/196 kB | 106 kB | 130/232 kB | 31 kBProgress (4): 102/196 kB | 106 kB | 130/232 kB | 31 kBProgress (4): 102/196 kB | 106 kB | 134/232 kB | 31 kBProgress (4): 106/196 kB | 106 kB | 134/232 kB | 31 kBProgress (4): 106/196 kB | 106 kB | 138/232 kB | 31 kBProgress (4): 110/196 kB | 106 kB | 138/232 kB | 31 kBProgress (4): 110/196 kB | 106 kB | 142/232 kB | 31 kBProgress (4): 115/196 kB | 106 kB | 142/232 kB | 31 kBProgress (4): 115/196 kB | 106 kB | 147/232 kB | 31 kBProgress (4): 119/196 kB | 106 kB | 147/232 kB | 31 kBProgress (4): 119/196 kB | 106 kB | 151/232 kB | 31 kBProgress (4): 123/196 kB | 106 kB | 151/232 kB | 31 kBProgress (4): 126/196 kB | 106 kB | 151/232 kB | 31 kBProgress (4): 126/196 kB | 106 kB | 155/232 kB | 31 kBProgress (4): 130/196 kB | 106 kB | 155/232 kB | 31 kBProgress (4): 130/196 kB | 106 kB | 159/232 kB | 31 kBProgress (4): 134/196 kB | 106 kB | 159/232 kB | 31 kBProgress (4): 134/196 kB | 106 kB | 163/232 kB | 31 kBProgress (4): 138/196 kB | 106 kB | 163/232 kB | 31 kBProgress (4): 138/196 kB | 106 kB | 167/232 kB | 31 kBProgress (4): 142/196 kB | 106 kB | 167/232 kB | 31 kBProgress (4): 142/196 kB | 106 kB | 171/232 kB | 31 kBProgress (4): 147/196 kB | 106 kB | 171/232 kB | 31 kBProgress (4): 147/196 kB | 106 kB | 175/232 kB | 31 kBProgress (4): 151/196 kB | 106 kB | 175/232 kB | 31 kBProgress (4): 151/196 kB | 106 kB | 179/232 kB | 31 kBProgress (4): 155/196 kB | 106 kB | 179/232 kB | 31 kBProgress (4): 155/196 kB | 106 kB | 183/232 kB | 31 kBProgress (4): 159/196 kB | 106 kB | 183/232 kB | 31 kBProgress (4): 159/196 kB | 106 kB | 187/232 kB | 31 kBProgress (4): 163/196 kB | 106 kB | 187/232 kB | 31 kBProgress (4): 163/196 kB | 106 kB | 192/232 kB | 31 kBProgress (4): 167/196 kB | 106 kB | 192/232 kB | 31 kBProgress (4): 167/196 kB | 106 kB | 196/232 kB | 31 kBProgress (4): 171/196 kB | 106 kB | 196/232 kB | 31 kBProgress (4): 171/196 kB | 106 kB | 200/232 kB | 31 kBProgress (4): 175/196 kB | 106 kB | 200/232 kB | 31 kBProgress (4): 175/196 kB | 106 kB | 204/232 kB | 31 kBProgress (4): 179/196 kB | 106 kB | 204/232 kB | 31 kBProgress (4): 179/196 kB | 106 kB | 208/232 kB | 31 kBProgress (4): 183/196 kB | 106 kB | 208/232 kB | 31 kBProgress (4): 183/196 kB | 106 kB | 212/232 kB | 31 kBProgress (4): 187/196 kB | 106 kB | 212/232 kB | 31 kBProgress (4): 187/196 kB | 106 kB | 216/232 kB | 31 kBProgress (4): 192/196 kB | 106 kB | 216/232 kB | 31 kBProgress (4): 194/196 kB | 106 kB | 216/232 kB | 31 kBProgress (4): 194/196 kB | 106 kB | 220/232 kB | 31 kBProgress (4): 196 kB | 106 kB | 220/232 kB | 31 kB    Progress (4): 196 kB | 106 kB | 224/232 kB | 31 kBProgress (4): 196 kB | 106 kB | 228/232 kB | 31 kBProgress (4): 196 kB | 106 kB | 232 kB | 31 kB                                                  Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.12/jcommander-1.12.jar (31 kB at 50 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/3.1.1/jakarta.validation-api-3.1.1.jar (106 kB at 169 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/3.2.0/jakarta.persistence-api-3.2.0.jar (196 kB at 304 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar (232 kB at 359 kB/s)
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Weld APIs Parent 4.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.154 s]
-[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  1.029 s]
-[[1;34mINFO[m] Weld APIs .......................................... [1;31mFAILURE[m [  1.261 s]
-[[1;34mINFO[m] Weld SPIs for container integration ................ [1;33mSKIPPED[m
+[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.180 s]
+[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  1.078 s]
+[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  1.379 s]
+[[1;34mINFO[m] Weld SPIs for container integration ................ [1;31mFAILURE[m [  1.081 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  2.565 s
-[[1;34mINFO[m] Finished at: 2026-11-10T11:24:03Z
+[[1;34mINFO[m] Total time:  3.888 s
+[[1;34mINFO[m] Finished at: 2026-11-12T22:22:10Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.8.1-jboss-1:compile[m [1m(default-compile)[m on project [36mweld-api[m: [1;31mCompilation failure[m
-[[1;31mERROR[m] [1;31m/var/maven/app/weld/src/main/java/org/jboss/weld/bootstrap/event/InterceptorConfigurator.java:[27,27] cannot access jakarta.interceptor.InvocationContext[m
-[[1;31mERROR[m] [1;31m  bad class file: /var/maven/.m2/repository/jakarta/interceptor/jakarta.interceptor-api/2.2.0/jakarta.interceptor-api-2.2.0.jar(jakarta/interceptor/InvocationContext.class)[m
-[[1;31mERROR[m] [1;31m    class file has wrong version 55.0, should be 52.0[m
-[[1;31mERROR[m] [1;31m    Please remove or make sure it appears in the correct subdirectory of the classpath.[m
-[[1;31mERROR[m] [1;31m[m
-[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] Failed to execute goal on project [36mweld-spi[m: [1;31mCould not resolve dependencies for project org.jboss.weld:weld-spi:jar:4.0-SNAPSHOT: Could not find artifact org.testng:testng:jar:jdk15:5.14.10 in central (https://repo.maven.apache.org/maven2)[m -> [1m[Help 1][m
 [[1;31mERROR[m] 
 [[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
 [[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
 [[1;31mERROR[m] 
 [[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
-[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
 [[1;31mERROR[m] 
 [[1;31mERROR[m] After correcting the problems, you can resume the build with the command
-[[1;31mERROR[m]   [1mmvn <args> -rf :weld-api[m
+[[1;31mERROR[m]   [1mmvn <args> -rf :weld-spi[m
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m

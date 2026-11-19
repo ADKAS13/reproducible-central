@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/teamengin
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dmaven.javadoc.skip=true -Denforcer.skip=true"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=major -Dmaven.test.failure.ignore=true -Dmaven.javadoc.skip=true -Denforcer.skip=true && mvn install -DallowVersionRanges=major -Dmaven.test.failure.ignore=true -Dmaven.javadoc.skip=true -Denforcer.skip=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/beekeeper.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.opengis.cite:teamengine:4.0.0[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/teamengine/RQ2major/buildcache/teamengine:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dmaven.javadoc.skip=true -Denforcer.skip=true" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/teamengine/RQ2major/buildcache/teamengine:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=major -Dmaven.test.failure.ignore=true -Dmaven.javadoc.skip=true -Denforcer.skip=true && mvn install -DallowVersionRanges=major -Dmaven.test.failure.ignore=true -Dmaven.javadoc.skip=true -Denforcer.skip=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Nov  5 01:29:49 UTC 2026.
-Universal Time is now:  Thu Nov  5 01:29:49 UTC 2026.
+Local time is now:      Fri Nov 13 01:31:09 UTC 2026.
+Universal Time is now:  Fri Nov 13 01:31:09 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -105,6 +105,7 @@ Universal Time is now:  Thu Nov  5 01:29:49 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 2 dependencyManagement entries, version range mode: major).
 [[1;34mINFO[m] 
@@ -134,29 +135,31 @@ asciidoctor: WARNING: <stdin>: line 143: list item index: expected 4, got 1
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-realm[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-realm
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-realm/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 10 dependencies (0 carrying exclusions, 2 dependencyManagement entries, version range mode: major).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-realm[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 4.4 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 2.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 15 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 252 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/maven-metadata.xml (12 kB at 50 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
-Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 5.0 kB/s)
+Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 18 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-realm (13 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-realm/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-realm: pinned=6 upgraded=4 downgraded=0 added=3 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: teamengine-realm
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-realm[0;1m ---[m
 [[1;34mINFO[m] ShortRevision tag detected. The value is '10'.
 [[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app/teamengine-realm' && 'git' 'rev-parse' '--verify' '--short=10' 'HEAD'
 [[1;34mINFO[m] Working directory: /var/maven/app/teamengine-realm
-[[1;34mINFO[m] Storing buildNumber: 7b6c97a7a1 at timestamp: 1793842195625
+[[1;34mINFO[m] Storing buildNumber: 7b6c97a7a1 at timestamp: 1794533477625
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -182,23 +185,7 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] Compiling 3 source files to /var/maven/app/teamengine-realm/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-realm[0;1m ---[m
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running com.occamlab.te.realm.UserFilesRealmTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.occamlab.te.realm.UserFilesRealmTest
-Running com.occamlab.te.realm.VerifyPBKDF2Realm
-Nov 05, 2026 1:29:56 AM com.occamlab.te.realm.PBKDF2Realm authenticate
-WARNING: Fields are missing from the password hash.
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 sec - in com.occamlab.te.realm.VerifyPBKDF2Realm
-Running com.occamlab.te.realm.VerifyPasswordStorage
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec - in com.occamlab.te.realm.VerifyPasswordStorage
-
-Results :
-
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
-
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-realm[0;1m ---[m
 [[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
@@ -222,6 +209,7 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-resources[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-resources
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-resources/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 2 dependencyManagement entries, version range mode: major).
 [[1;34mINFO[m] 
@@ -230,6 +218,7 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-resources (0 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-resources/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-resources: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: teamengine-resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:bundle[m [1m(default)[m @ [36mteamengine-resources[0;1m ---[m
@@ -249,7 +238,7 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-resources[0;1m ---[m
-[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-resources[0;1m ---[m
 [[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
@@ -270,6 +259,7 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-core[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-core[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-core
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-core/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Version '20091111' has fewer than 2 segments — falling back to pinned.
 [[1;33mWARNING[m] Version '20030108' has fewer than 2 segments — falling back to pinned.
@@ -280,23 +270,23 @@ Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-core[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/andrewoma/dexx/collection/maven-metadata.xml
-Progress (1): 454 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/andrewoma/dexx/collection/maven-metadata.xml (454 B at 1.0 kB/s)
+Progress (1): 454 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/github/andrewoma/dexx/collection/maven-metadata.xml (454 B at 976 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 9.6 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 9.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
 Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 69 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
 Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/maven-metadata.xml
-Progress (1): 344 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/maven-metadata.xml (344 B at 1.1 kB/s)
+Progress (1): 344 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/maven-metadata.xml (344 B at 1.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml
-Progress (1): 788 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml (788 B at 15 kB/s)
+Progress (1): 788 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/maven-metadata.xml (788 B at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 24 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 25 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 5.6 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml
-Progress (1): 795 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 14 kB/s)
+Progress (1): 795 B                   Downloaded from central: https://repo.maven.apache.org/maven2/dom4j/dom4j/maven-metadata.xml (795 B at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/stax/stax/1.0/stax-1.0.pom
 [[1;33mWARNING[m] The POM for stax:stax:jar:1.0 is missing, no dependency information available
 Downloading from central: https://repo.maven.apache.org/maven2/stax/stax-ri/1.0/stax-ri-1.0.pom
@@ -304,44 +294,45 @@ Downloading from central: https://repo.maven.apache.org/maven2/stax/stax-ri/1.0/
 Downloading from central: https://repo.maven.apache.org/maven2/clover/clover/1.3-rc4/clover-1.3-rc4.pom
 [[1;33mWARNING[m] The POM for clover:clover:jar:1.3-rc4 is missing, no dependency information available
 Downloading from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 34 kB/s)
+Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 33 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml (3.3 kB at 60 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/maven-metadata.xml (3.3 kB at 66 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/maven-metadata.xml (5.4 kB at 23 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/maven-metadata.xml (5.4 kB at 87 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-base/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-base/maven-metadata.xml (1.7 kB at 4.1 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-base/maven-metadata.xml (1.7 kB at 4.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-core/maven-metadata.xml
-Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-core/maven-metadata.xml (2.2 kB at 7.8 kB/s)
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-core/maven-metadata.xml (2.2 kB at 7.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri/maven-metadata.xml (2.1 kB at 5.2 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri/maven-metadata.xml (2.1 kB at 3.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-shaded-guava/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-shaded-guava/maven-metadata.xml (1.3 kB at 5.6 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-shaded-guava/maven-metadata.xml (1.3 kB at 4.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 107 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 111 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.1 kB at 22 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/maven-metadata.xml (1.2 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/maven-metadata.xml
-Progress (1): 443 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/maven-metadata.xml (443 B at 1.8 kB/s)
+Progress (1): 443 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/maven-metadata.xml (443 B at 1.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/opengis/cite/saxon/saxon9/maven-metadata.xml
-Progress (1): 341 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opengis/cite/saxon/saxon9/maven-metadata.xml (341 B at 698 B/s)
+Progress (1): 341 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opengis/cite/saxon/saxon9/maven-metadata.xml (341 B at 620 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 90 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 83 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml
-Progress (1): 680 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml (680 B at 2.6 kB/s)
+Progress (1): 680 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml (680 B at 2.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml
 Progress (1): 951 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml (951 B at 20 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml
-Progress (1): 567 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 12 kB/s)
+Progress (1): 567 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/maven-metadata.xml
-Progress (1): 375 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/maven-metadata.xml (375 B at 1.4 kB/s)
+Progress (1): 375 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/maven-metadata.xml (375 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/maven-metadata.xml
-Progress (1): 539 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/maven-metadata.xml (539 B at 1.6 kB/s)
+Progress (1): 539 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xmlunit/xmlunit/maven-metadata.xml (539 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xom/xom/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/xom/xom/maven-metadata.xml (1.1 kB at 3.6 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/xom/xom/maven-metadata.xml (1.1 kB at 3.9 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-core (57 dependencies, 16 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-core/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-core: pinned=10 upgraded=24 downgraded=0 added=22 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-core: pinned=10 upgraded=24 downgraded=0 added=23 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: teamengine-core
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-core[0;1m ---[m
@@ -365,265 +356,7 @@ Progress (1): 1.1 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] Compiling 13 source files to /var/maven/app/teamengine-core/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-core[0;1m ---[m
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running com.occamlab.te.parsers.HttpParserTest
-Nov 05, 2026 1:30:08 AM com.occamlab.te.parsers.ImageParser parse
-WARNING: Failed to parse text/plain resource from file:/var/maven/app/teamengine-core/target/test-classes/jabberwocky.txt 
- null
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.403 sec - in com.occamlab.te.parsers.HttpParserTest
-Running com.occamlab.te.parsers.xml.FileSchemaSupplierTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.252 sec - in com.occamlab.te.parsers.xml.FileSchemaSupplierTest
-Running com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in com.occamlab.te.parsers.xml.UrlSchemaSupplierTest
-Running com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in com.occamlab.te.parsers.xml.InMemorySchemaSupplierTest
-Running com.occamlab.te.parsers.SchematronValidatingParserTest
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.373 sec - in com.occamlab.te.parsers.SchematronValidatingParserTest
-Running com.occamlab.te.parsers.XMLValidatingParserTest
-Nov 05, 2026 1:30:08 AM com.occamlab.te.parsers.XMLValidatingParser parse
-INFO: Error parsing InputStream
-org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
-	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
-	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
-	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:121)
-	at com.occamlab.te.parsers.XMLValidatingParser.parse(XMLValidatingParser.java:266)
-	at com.occamlab.te.parsers.XMLValidatingParser.parse(XMLValidatingParser.java:225)
-	at com.occamlab.te.parsers.XMLValidatingParserTest.parseNonXMLResource(XMLValidatingParserTest.java:219)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)
-	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 sec - in com.occamlab.te.parsers.XMLValidatingParserTest
-Running com.occamlab.te.parsers.ImageParserTest
-Nov 05, 2026 1:30:08 AM com.occamlab.te.parsers.ImageParser parse
-WARNING: Failed to parse text/plain resource from file:/var/maven/app/teamengine-core/target/test-classes/jabberwocky.txt 
- null
-Nov 05, 2026 1:30:08 AM com.occamlab.te.parsers.ImageParser parse
-WARNING: Failed to parse content/unknown resource from file:/var/maven/app/teamengine-core/target/test-classes/img/fjord.webp 
- null
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec - in com.occamlab.te.parsers.ImageParserTest
-Running com.occamlab.te.SetupOptionsTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.occamlab.te.SetupOptionsTest
-Running com.occamlab.te.TECoreTest
-Testing suite test:suite in Test Mode with defaultResult of Pass ...
-******************************************************************************************************************************
-   Testing test:main type Mandatory in Test Mode with defaultResult Pass (null)...
-      Assertion: main test is valid
-******************************************************************************************************************************
-      Testing test:testA type Mandatory in Test Mode with defaultResult Pass (null/d1e24_1)...
-         Assertion: testA is valid
-******************************************************************************************************************************
-         Testing test:testA1 type Mandatory in Test Mode with defaultResult Pass (null/d1e24_1/d1e39_1)...
-            Assertion: testA1 is valid
-         Test test:testA1 Passed
-******************************************************************************************************************************
-         Testing test:testA2 type Mandatory in Test Mode with defaultResult Pass (null/d1e24_1/d1e41_1)...
-            Assertion: testA2 is valid
-         Test test:testA2 Failed
-******************************************************************************************************************************
-         Testing test:testA3 type Mandatory in Test Mode with defaultResult Pass (null/d1e24_1/d1e43_1)...
-            Assertion: testA3 is valid
-         Test test:testA3 Passed
-      Test test:testA Failed - Inherited
-******************************************************************************************************************************
-      Testing test:testB type Mandatory in Test Mode with defaultResult Pass (null/d1e26_1)...
-         Assertion: testB is valid
-******************************************************************************************************************************
-         Testing test:testB1 type Mandatory in Test Mode with defaultResult Pass (null/d1e26_1/d1e54_1)...
-            Assertion: testB1 is valid
-         Test test:testB1 Passed
-******************************************************************************************************************************
-         Testing test:testB2 type Mandatory in Test Mode with defaultResult Pass (null/d1e26_1/d1e56_1)...
-            Assertion: testB2 is valid
-         Test test:testB2 Passed
-******************************************************************************************************************************
-         Testing test:testB3 type Mandatory in Test Mode with defaultResult Pass (null/d1e26_1/d1e58_1)...
-            Assertion: testB3 is valid
-         Test test:testB3 Passed
-      Test test:testB Passed
-   Test test:main Failed - Inherited
-			See the detail test Report null/log.xml
-Suite test:suite Failed
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 sec - in com.occamlab.te.TECoreTest
-Running com.occamlab.te.html.EarlToHtmlTransformationTest
-Nov 05, 2026 1:30:09 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
-SEVERE: Transformation of EARL to HTML failed.
-java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
-	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1368)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1268)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1237)
-	at com.occamlab.te.html.EarlToHtmlTransformation.earlHtmlReport(EarlToHtmlTransformation.java:52)
-	at com.occamlab.te.html.EarlToHtmlTransformationTest.testEarlHtmlReport_TestNG(EarlToHtmlTransformationTest.java:37)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-
-Nov 05, 2026 1:30:09 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
-SEVERE: Transformation of EARL to HTML failed.
-java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
-	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1368)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1268)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1237)
-	at com.occamlab.te.html.EarlToHtmlTransformation.earlHtmlReport(EarlToHtmlTransformation.java:52)
-	at com.occamlab.te.html.EarlToHtmlTransformationTest.testEarlHtmlReport_Ctl_WithHierarchy_WithInheritedFailure(EarlToHtmlTransformationTest.java:59)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-
-Nov 05, 2026 1:30:10 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
-SEVERE: Transformation of EARL to HTML failed.
-java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
-	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1368)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1268)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1237)
-	at com.occamlab.te.html.EarlToHtmlTransformation.earlHtmlReport(EarlToHtmlTransformation.java:52)
-	at com.occamlab.te.html.EarlToHtmlTransformationTest.testEarlHtmlReport_Ctl_WithHierarchy(EarlToHtmlTransformationTest.java:48)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-
-Nov 05, 2026 1:30:10 AM com.occamlab.te.html.EarlToHtmlTransformation earlHtmlReport
-SEVERE: Transformation of EARL to HTML failed.
-java.io.FileNotFoundException: Source 'file:/var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar!/com/occamlab/te/earl/lib' does not exist
-	at org.apache.commons.io.FileUtils.checkFileRequirements(FileUtils.java:1405)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1368)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1268)
-	at org.apache.commons.io.FileUtils.copyDirectory(FileUtils.java:1237)
-	at com.occamlab.te.html.EarlToHtmlTransformation.earlHtmlReport(EarlToHtmlTransformation.java:52)
-	at com.occamlab.te.html.EarlToHtmlTransformationTest.testEarlHtmlReport_Ctl_WithHierarchy_MissingElements(EarlToHtmlTransformationTest.java:85)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.314 sec - in com.occamlab.te.html.EarlToHtmlTransformationTest
-Running com.occamlab.te.util.DateTimeUtilsTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.occamlab.te.util.DateTimeUtilsTest
-Running com.occamlab.te.util.XMLParserUtilsTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in com.occamlab.te.util.XMLParserUtilsTest
-Running com.occamlab.te.CtlEarlReporterTest
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.942 sec - in com.occamlab.te.CtlEarlReporterTest
-
-Results :
-
-Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
-
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-core[0;1m ---[m
 [[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
@@ -647,6 +380,7 @@ Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-spi[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-spi[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-spi
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-spi/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Version '20091111' has fewer than 2 segments — falling back to pinned.
 [[1;33mWARNING[m] Version '20030108' has fewer than 2 segments — falling back to pinned.
@@ -657,28 +391,29 @@ Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-spi[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml
-Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 3.4 kB/s)
+Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 3.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 25 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/maven-metadata.xml (1.4 kB at 30 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 5.0 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/inject/guice/maven-metadata.xml (1.1 kB at 3.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-core/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-core/maven-metadata.xml (1.6 kB at 6.6 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-core/maven-metadata.xml (1.6 kB at 7.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-server/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-server/maven-metadata.xml (1.6 kB at 7.2 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-server/maven-metadata.xml (1.6 kB at 7.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jersey/contribs/jersey-multipart/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/contribs/jersey-multipart/maven-metadata.xml (1.6 kB at 5.5 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/contribs/jersey-multipart/maven-metadata.xml (1.6 kB at 6.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml
-Progress (1): 926 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml (926 B at 4.6 kB/s)
+Progress (1): 926 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jvnet/mimepull/mimepull/maven-metadata.xml (926 B at 3.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/maven-metadata.xml (4.2 kB at 23 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/maven-metadata.xml (4.2 kB at 21 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 14 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/testng/testng/maven-metadata.xml (3.1 kB at 51 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcommander/1.66/jcommander-1.66.pom
 [[1;33mWARNING[m] The POM for com.beust:jcommander:jar:1.66 is missing, no dependency information available
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-spi (54 dependencies, 22 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-spi/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-spi: pinned=14 upgraded=27 downgraded=0 added=13 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: teamengine-spi
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-spi[0;1m ---[m
@@ -700,113 +435,7 @@ Downloading from central: https://repo.maven.apache.org/maven2/com/beust/jcomman
 [[1;34mINFO[m] Compiling 4 source files to /var/maven/app/teamengine-spi/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-spi[0;1m ---[m
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in com.occamlab.te.spi.jaxrs.VerifyTestSuiteRegistry
-Running com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec - in com.occamlab.te.spi.jaxrs.resources.VerifyTestSuitesResource
-Running com.occamlab.te.spi.executors.testng.VerifyEarlReporter
-java.io.FileNotFoundException: /var/maven/teamengine/config.xml (No such file or directory)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(FileInputStream.java:195)
-	at java.io.FileInputStream.<init>(FileInputStream.java:138)
-	at java.io.FileInputStream.<init>(FileInputStream.java:93)
-	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
-	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
-	at org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
-	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
-	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
-	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
-	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
-	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
-	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
-	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:205)
-	at com.occamlab.te.vocabulary.Config.<init>(Config.java:73)
-	at com.occamlab.te.spi.executors.testng.EarlReporter.<init>(EarlReporter.java:88)
-	at com.occamlab.te.spi.executors.testng.VerifyEarlReporter.writeModel(VerifyEarlReporter.java:70)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)
-	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-java.io.FileNotFoundException: /var/maven/teamengine/config.xml (No such file or directory)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(FileInputStream.java:195)
-	at java.io.FileInputStream.<init>(FileInputStream.java:138)
-	at java.io.FileInputStream.<init>(FileInputStream.java:93)
-	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
-	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
-	at org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
-	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
-	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
-	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
-	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
-	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
-	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
-	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:205)
-	at com.occamlab.te.vocabulary.Config.<init>(Config.java:73)
-	at com.occamlab.te.spi.executors.testng.EarlReporter.<init>(EarlReporter.java:88)
-	at com.occamlab.te.spi.executors.testng.VerifyEarlReporter.initializeModel(VerifyEarlReporter.java:56)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)
-	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.351 sec - in com.occamlab.te.spi.executors.testng.VerifyEarlReporter
-Running com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.occamlab.te.spi.executors.testng.VerifyBasicXMLReporter
-
-Results :
-
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
-
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-spi[0;1m ---[m
 [[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
@@ -830,6 +459,7 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-spi-ctl[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-spi-ctl[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-spi-ctl
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-spi-ctl/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Version '20091111' has fewer than 2 segments — falling back to pinned.
 [[1;33mWARNING[m] Version '20030108' has fewer than 2 segments — falling back to pinned.
@@ -840,10 +470,11 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-spi-ctl[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/maven-metadata.xml
-Progress (1): 731 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/maven-metadata.xml (731 B at 3.5 kB/s)
+Progress (1): 731 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/maven-metadata.xml (731 B at 3.3 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-spi-ctl (54 dependencies, 20 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-spi-ctl/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-spi-ctl: pinned=14 upgraded=27 downgraded=0 added=13 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: teamengine-spi-ctl
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-spi-ctl[0;1m ---[m
@@ -865,17 +496,7 @@ Progress (1): 731 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] Compiling 1 source file to /var/maven/app/teamengine-spi-ctl/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-spi-ctl[0;1m ---[m
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running com.occamlab.te.spi.ctl.VerifyCtlExecutor
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.263 sec - in com.occamlab.te.spi.ctl.VerifyCtlExecutor
-
-Results :
-
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
-
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-spi-ctl[0;1m ---[m
 [[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
@@ -899,6 +520,7 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-web[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-web[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-web
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-web/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Version '20091111' has fewer than 2 segments — falling back to pinned.
 [[1;33mWARNING[m] Version '20030108' has fewer than 2 segments — falling back to pinned.
@@ -909,29 +531,30 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mteamengine-web[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-servlet/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-servlet/maven-metadata.xml (1.4 kB at 6.3 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/jersey/jersey-servlet/maven-metadata.xml (1.4 kB at 5.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-fileupload/commons-fileupload/maven-metadata.xml
-Progress (1): 635 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-fileupload/commons-fileupload/maven-metadata.xml (635 B at 3.7 kB/s)
+Progress (1): 635 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-fileupload/commons-fileupload/maven-metadata.xml (635 B at 3.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/activation/activation/maven-metadata.xml
-Progress (1): 498 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/activation/activation/maven-metadata.xml (498 B at 2.6 kB/s)
+Progress (1): 498 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/activation/activation/maven-metadata.xml (498 B at 2.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/mail/mail/maven-metadata.xml
-Progress (1): 867 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/mail/mail/maven-metadata.xml (867 B at 4.5 kB/s)
+Progress (1): 867 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/mail/mail/maven-metadata.xml (867 B at 4.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jstl/jstl-api/maven-metadata.xml
-Progress (1): 331 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jstl/jstl-api/maven-metadata.xml (331 B at 1.4 kB/s)
+Progress (1): 331 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/servlet/jsp/jstl/jstl-api/maven-metadata.xml (331 B at 1.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/derby/derby/maven-metadata.xml
-Progress (1): 928 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/derby/derby/maven-metadata.xml (928 B at 4.5 kB/s)
+Progress (1): 928 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/derby/derby/maven-metadata.xml (928 B at 4.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-api/maven-metadata.xml
-Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-api/maven-metadata.xml (3.7 kB at 13 kB/s)
+Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-api/maven-metadata.xml (3.7 kB at 7.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-ri-bom-ext/3.0.1-b02/jaxws-ri-bom-ext-3.0.1-b02.pom
 Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/ws/jaxws-ri-bom/3.0.1-b02/jaxws-ri-bom-3.0.1-b02.pom
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-rt/maven-metadata.xml
-Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-rt/maven-metadata.xml (3.7 kB at 7.3 kB/s)
+Progress (1): 3.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/metro/webservices-rt/maven-metadata.xml (3.7 kB at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/web/javax.servlet.jsp.jstl/maven-metadata.xml
-Progress (1): 575 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/web/javax.servlet.jsp.jstl/maven-metadata.xml (575 B at 2.1 kB/s)
-[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for teamengine-web — falling back to pinned lower bounds: Could not resolve following dependencies: []
+Progress (1): 575 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/web/javax.servlet.jsp.jstl/maven-metadata.xml (575 B at 1.7 kB/s)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for teamengine-web — falling back to pinned lower bounds. Cause: org.apache.maven.shared.dependency.graph.DependencyGraphBuilderException: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: teamengine-web (55 dependencies, 13 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/teamengine-web/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for teamengine-web: pinned=55 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: teamengine-web
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-web[0;1m ---[m
@@ -957,68 +580,7 @@ Progress (1): 575 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] Compiling 3 source files to /var/maven/app/teamengine-web/target/test-classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-web[0;1m ---[m
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running com.occamlab.te.web.VerifyTestSuite
-******************************************************************************************************************************
-Testing ex:num-parity-main type Mandatory in Test Mode with defaultResult Pass (58c393db-538c-4104-96bd-5cd288fe3e24)...
-   Assertion: The input number satisfies all constraints.
-******************************************************************************************************************************
-   Testing ex:is-even type Mandatory in Test Mode with defaultResult Pass (58c393db-538c-4104-96bd-5cd288fe3e24/d68e28_1)...
-      Assertion: The integer is even.
-   Test ex:is-even Passed
-Test ex:num-parity-main Passed
-Report file "/var/maven/app/teamengine-web/target/te-base/users/adkas13/58c393db-538c-4104-96bd-5cd288fe3e24/report.html" created!
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.667 sec - in com.occamlab.te.web.VerifyTestSuite
-Running com.occamlab.te.web.CoverageMonitorTest
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.CoverageMonitor <init>
-WARNING: InputStream cannot be null
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in com.occamlab.te.web.CoverageMonitorTest
-Running com.occamlab.te.web.ConfigFileCreatorTest
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
-INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator process
-INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/scripts
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
-INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-no-config-in-test/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
-INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator process
-INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/scripts
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
-INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-empty/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
-INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator process
-INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/scripts
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
-INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-hidden-files/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
-INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator process
-INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/scripts
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
-INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-versions-of-a-test/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
-INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator process
-INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/scripts
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
-INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase-multiple-organizations/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator deleteConfigFile
-INFO: Config file not removed, since there was no file at /var/maven/app/teamengine-web/target/test-classes/tebase/config.xml
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator process
-INFO: Scripts directory found at /var/maven/app/teamengine-web/target/test-classes/tebase/scripts
-Nov 05, 2026 1:30:21 AM com.occamlab.te.web.ConfigFileCreator saveConfigFile
-INFO: SUCCESSFULLY created config.xml at /var/maven/app/teamengine-web/target/test-classes/tebase/config.xml
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.09 sec - in com.occamlab.te.web.ConfigFileCreatorTest
-
-Results :
-
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
-
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-web[0;1m ---[m
 [[1;34mINFO[m] Rendering site with org.apache.maven.skins:maven-fluido-skin:jar:1.6 skin.
@@ -1030,7 +592,7 @@ Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] Processing war project
 [[1;34mINFO[m] Copying webapp webResources [/var/maven/app/teamengine-web/src/main/webapp] to [/var/maven/app/teamengine-web/target/teamengine]
 [[1;34mINFO[m] Copying webapp resources [/var/maven/app/teamengine-web/src/main/webapp]
-[[1;34mINFO[m] Webapp assembled in [186 msecs]
+[[1;34mINFO[m] Webapp assembled in [351 msecs]
 [[1;34mINFO[m] Building war: /var/maven/app/teamengine-web/target/teamengine.war
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-assembly-plugin:2.6:single[m [1m(default)[m @ [36mteamengine-web[0;1m ---[m
@@ -1052,6 +614,7 @@ Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-console[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-console[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-console
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-console/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Version '20091111' has fewer than 2 segments — falling back to pinned.
 [[1;33mWARNING[m] Version '20030108' has fewer than 2 segments — falling back to pinned.
@@ -1086,6 +649,7 @@ Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-virtualization[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-virtualization[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-virtualization
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-virtualization/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Version '20091111' has fewer than 2 segments — falling back to pinned.
 [[1;33mWARNING[m] Version '20030108' has fewer than 2 segments — falling back to pinned.
@@ -1171,6 +735,7 @@ Downloading from smartbear-sweden-plugin-repository: http://www.soapui.org/repos
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mteamengine-tests[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mteamengine-tests[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for teamengine-tests
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/teamengine-tests/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 2 dependencyManagement entries, version range mode: major).
 [[1;34mINFO[m] 
@@ -1187,27 +752,246 @@ Downloading from smartbear-sweden-plugin-repository: http://www.soapui.org/repos
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for TEAM Engine 5.5-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] TEAM Engine ........................................ [1;32mSUCCESS[m [  3.701 s]
-[[1;34mINFO[m] TEAM Engine - Tomcat Realm ......................... [1;32mSUCCESS[m [  3.865 s]
-[[1;34mINFO[m] TEAM Engine - Shared Resources ..................... [1;32mSUCCESS[m [  0.187 s]
-[[1;34mINFO[m] TEAM Engine - Core Module .......................... [1;32mSUCCESS[m [ 13.981 s]
-[[1;34mINFO[m] TEAM Engine - Service Providers .................... [1;32mSUCCESS[m [  3.171 s]
-[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers ............. [1;32mSUCCESS[m [  1.086 s]
-[[1;34mINFO[m] TEAM Engine - Web Application ...................... [1;32mSUCCESS[m [  6.926 s]
-[[1;34mINFO[m] TEAM Engine - Console Application .................. [1;32mSUCCESS[m [  0.916 s]
-[[1;34mINFO[m] TEAM Engine - Virtualization ....................... [1;32mSUCCESS[m [  0.315 s]
-[[1;34mINFO[m] TEAM Engine - Tests ................................ [1;32mSUCCESS[m [  0.949 s]
+[[1;34mINFO[m] TEAM Engine ........................................ [1;32mSUCCESS[m [  5.794 s]
+[[1;34mINFO[m] TEAM Engine - Tomcat Realm ......................... [1;32mSUCCESS[m [  2.291 s]
+[[1;34mINFO[m] TEAM Engine - Shared Resources ..................... [1;32mSUCCESS[m [  0.253 s]
+[[1;34mINFO[m] TEAM Engine - Core Module .......................... [1;32mSUCCESS[m [  8.839 s]
+[[1;34mINFO[m] TEAM Engine - Service Providers .................... [1;32mSUCCESS[m [  2.361 s]
+[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers ............. [1;32mSUCCESS[m [  0.439 s]
+[[1;34mINFO[m] TEAM Engine - Web Application ...................... [1;32mSUCCESS[m [  7.602 s]
+[[1;34mINFO[m] TEAM Engine - Console Application .................. [1;32mSUCCESS[m [  1.487 s]
+[[1;34mINFO[m] TEAM Engine - Virtualization ....................... [1;32mSUCCESS[m [  0.664 s]
+[[1;34mINFO[m] TEAM Engine - Tests ................................ [1;32mSUCCESS[m [  2.524 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  35.258 s
-[[1;34mINFO[m] Finished at: 2026-11-05T01:30:25Z
+[[1;34mINFO[m] Total time:  32.512 s
+[[1;34mINFO[m] Finished at: 2026-11-13T01:31:43Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-dos2unix: target/beekeeper.buildinfo: No such file or directory
-dos2unix: Skipping target/beekeeper.buildinfo, not a regular file.
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+javac: invalid flag: --version
+Usage: javac <options> <source files>
+use -help for a list of possible options
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version [0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Fri Nov 13 01:31:43 UTC 2026.
+Universal Time is now:  Fri Nov 13 01:31:43 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] TEAM Engine                                                        [pom]
+[[1;34mINFO[m] TEAM Engine - Tomcat Realm                                         [jar]
+[[1;34mINFO[m] TEAM Engine - Shared Resources                                     [jar]
+[[1;34mINFO[m] TEAM Engine - Core Module                                          [jar]
+[[1;34mINFO[m] TEAM Engine - Service Providers                                    [jar]
+[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers                             [jar]
+[[1;34mINFO[m] TEAM Engine - Web Application                                      [war]
+[[1;34mINFO[m] TEAM Engine - Console Application                                  [pom]
+[[1;34mINFO[m] TEAM Engine - Virtualization                                       [pom]
+[[1;34mINFO[m] TEAM Engine - Tests                                                [pom]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36morg.opengis.cite:teamengine[0;1m >---------------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine 5.5-SNAPSHOT                                 [1/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/target/teamengine-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/5.5-SNAPSHOT/teamengine-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/target/teamengine-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/5.5-SNAPSHOT/teamengine-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.opengis.cite.teamengine:teamengine-realm[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Tomcat Realm 5.5-SNAPSHOT                  [2/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(default)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] ShortRevision tag detected. The value is '10'.
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app/teamengine-realm' && 'git' 'rev-parse' '--verify' '--short=10' 'HEAD'
+[[1;34mINFO[m] Working directory: /var/maven/app/teamengine-realm
+[[1;34mINFO[m] Storing buildNumber: 7b6c97a7a1 at timestamp: 1794533506522
+[[1;33mWARNING[m] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[[1;34mINFO[m] ShortRevision tag detected. The value is '10'.
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app/teamengine-realm' && 'git' 'rev-parse' '--verify' '--short=10' 'HEAD'
+[[1;34mINFO[m] Working directory: /var/maven/app/teamengine-realm
+[[1;34mINFO[m] Storing buildScmBranch: UNKNOWN
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:compile[m [1m(default-compile)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/teamengine-realm/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:testCompile[m [1m(default-testCompile)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-realm[0;1m ---[m
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.occamlab.te.realm.UserFilesRealmTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 sec - in com.occamlab.te.realm.UserFilesRealmTest
+Running com.occamlab.te.realm.VerifyPBKDF2Realm
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: -1.637 sec <<< FAILURE! - in com.occamlab.te.realm.VerifyPBKDF2Realm
+invalidHash(com.occamlab.te.realm.VerifyPBKDF2Realm)  Time elapsed: 0.006 sec  <<< ERROR!
+java.lang.UnsupportedClassVersionError: org/mockito/Mockito has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+	at com.occamlab.te.realm.VerifyPBKDF2Realm.invalidHash(VerifyPBKDF2Realm.java:48)
+
+correctPassword(com.occamlab.te.realm.VerifyPBKDF2Realm)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.UnsupportedClassVersionError: org/mockito/Mockito has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+	at com.occamlab.te.realm.VerifyPBKDF2Realm.correctPassword(VerifyPBKDF2Realm.java:28)
+
+incorrectPassword(com.occamlab.te.realm.VerifyPBKDF2Realm)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.UnsupportedClassVersionError: org/mockito/Mockito has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+	at com.occamlab.te.realm.VerifyPBKDF2Realm.incorrectPassword(VerifyPBKDF2Realm.java:37)
+
+Running com.occamlab.te.realm.VerifyPasswordStorage
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 sec - in com.occamlab.te.realm.VerifyPasswordStorage
+
+Results :
+
+Tests in error: 
+  VerifyPBKDF2Realm.correctPassword:28 UnsupportedClassVersion org/mockito/Mocki...
+  VerifyPBKDF2Realm.incorrectPassword:37 UnsupportedClassVersion org/mockito/Moc...
+  VerifyPBKDF2Realm.invalidHash:48 » UnsupportedClassVersion org/mockito/Mockito...
+
+Tests run: 5, Failures: 0, Errors: 3, Skipped: 0
+
+[[1;31mERROR[m] There are test failures.
+
+Please refer to /var/maven/app/teamengine-realm/target/surefire-reports for the individual test results.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-javadoc-plugin:2.10.4:jar[m [1m(attach-javadocs)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Skipping javadoc generation
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-realm[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-realm/5.5-SNAPSHOT/teamengine-realm-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-realm/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-realm/5.5-SNAPSHOT/teamengine-realm-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-realm/target/teamengine-realm-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-realm/5.5-SNAPSHOT/teamengine-realm-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36morg.opengis.cite.teamengine:teamengine-resources[0;1m >----------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Shared Resources 5.5-SNAPSHOT              [3/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.5:bundle[m [1m(default)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 65 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:compile[m [1m(default-compile)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/teamengine-resources/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.6.0:testCompile[m [1m(default-testCompile)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-site-plugin:3.6:jar[m [1m(site-package)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.0.2:jar[m [1m(default-jar)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mteamengine-resources[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-resources/5.5-SNAPSHOT/teamengine-resources-5.5-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-resources/pom.xml to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-resources/5.5-SNAPSHOT/teamengine-resources-5.5-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/teamengine-resources/target/teamengine-resources-5.5-SNAPSHOT-site.jar to /var/maven/.m2/repository/org/opengis/cite/teamengine/teamengine-resources/5.5-SNAPSHOT/teamengine-resources-5.5-SNAPSHOT-site.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36morg.opengis.cite.teamengine:teamengine-core[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding TEAM Engine - Core Module 5.5-SNAPSHOT                   [4/10][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;33mWARNING[m] The POM for clover:clover:jar:1.3-rc4 is missing, no dependency information available
+[[1;33mWARNING[m] The POM for stax:stax:jar:1.0 is missing, no dependency information available
+[[1;33mWARNING[m] The POM for stax:stax-ri:jar:1.0 is missing, no dependency information available
+Downloading from central: https://repo.maven.apache.org/maven2/clover/clover/1.3-rc4/clover-1.3-rc4.jar
+Downloading from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/4.5.2/equalsverifier-4.5.2.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/github/ben-manes/caffeine/caffeine/3.2.4/caffeine-3.2.4.jar
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/13.1/Saxon-HE-13.1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.18.5/byte-buddy-1.18.5.jar
+Progress (1): 0/1.0 MBProgress (2): 0/1.0 MB | 3.2/278 kBProgress (2): 0/1.0 MB | 5.9/278 kBProgress (2): 0/1.0 MB | 5.9/278 kBProgress (2): 0/1.0 MB | 8.6/278 kBProgress (2): 0/1.0 MB | 8.6/278 kBProgress (3): 0/1.0 MB | 8.6/278 kB | 0/6.3 MBProgress (3): 0/1.0 MB | 11/278 kB | 0/6.3 MB Progress (3): 0/1.0 MB | 11/278 kB | 0.1/6.3 MBProgress (4): 0/1.0 MB | 11/278 kB | 0.1/6.3 MB | 0/9.2 MBProgress (4): 0/1.0 MB | 11/278 kB | 0.1/6.3 MB | 0/9.2 MBProgress (4): 0/1.0 MB | 14/278 kB | 0.1/6.3 MB | 0/9.2 MBProgress (4): 0/1.0 MB | 14/278 kB | 0.1/6.3 MB | 0/9.2 MBProgress (4): 0/1.0 MB | 17/278 kB | 0.1/6.3 MB | 0/9.2 MBProgress (4): 0/1.0 MB | 17/278 kB | 0.1/6.3 MB | 0/9.2 MBProgress (4): 0/1.0 MB | 17/278 kB | 0.1/6.3 MB | 0/9.2 MBProgress (4): 0/1.0 MB | 17/278 kB | 0.1/6.3 MB | 0/9.2 MBProgress (4): 0/1.0 MB | 17/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 20/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 20/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 20/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 22/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 22/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 25/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 25/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 28/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 28/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 30/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 30/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 33/278 kB | 0.1/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 33/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0/1.0 MB | 36/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 36/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 39/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 39/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 41/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 41/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 41/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 44/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 47/278 kB | 0.2/6.3 MB | 0.1/9.2 MBProgress (4): 0.1/1.0 MB | 47/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 47/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 50/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 50/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 52/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 52/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 52/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 52/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 55/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 55/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 59/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 59/278 kB | 0.2/6.3 MB | 0.2/9.2 MBProgress (4): 0.1/1.0 MB | 59/278 kB | 0.2/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 59/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 63/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 63/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 67/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 67/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 67/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 71/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 71/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 76/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 76/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 80/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 80/278 kB | 0.3/6.3 MB | 0.3/9.2 MBProgress (4): 0.1/1.0 MB | 80/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 84/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 84/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 84/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 84/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 84/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 86/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 86/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 90/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 90/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 94/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 94/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 98/278 kB | 0.3/6.3 MB | 0.4/9.2 MBProgress (4): 0.1/1.0 MB | 98/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 102/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 102/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 106/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 106/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 110/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 110/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 115/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 115/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 115/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 115/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 119/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 119/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.1/1.0 MB | 123/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.2/1.0 MB | 123/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.2/1.0 MB | 126/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.2/1.0 MB | 130/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.2/1.0 MB | 130/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.2/1.0 MB | 134/278 kB | 0.3/6.3 MB | 0.5/9.2 MBProgress (4): 0.2/1.0 MB | 134/278 kB | 0.3/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 134/278 kB | 0.3/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 138/278 kB | 0.3/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 138/278 kB | 0.3/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 142/278 kB | 0.3/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 142/278 kB | 0.3/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 142/278 kB | 0.3/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 142/278 kB | 0.4/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 147/278 kB | 0.4/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.6/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.7/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.7/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.8/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.8/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.8/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.8/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.8/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.8/9.2 MBProgress (4): 0.2/1.0 MB | 151/278 kB | 0.4/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 155/278 kB | 0.4/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 155/278 kB | 0.4/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 155/278 kB | 0.4/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 159/278 kB | 0.4/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 159/278 kB | 0.4/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 163/278 kB | 0.4/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 163/278 kB | 0.5/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 167/278 kB | 0.5/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 167/278 kB | 0.5/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 167/278 kB | 0.5/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 171/278 kB | 0.5/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 171/278 kB | 0.5/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 175/278 kB | 0.5/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 179/278 kB | 0.5/6.3 MB | 0.9/9.2 MBProgress (4): 0.2/1.0 MB | 179/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 183/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 183/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 183/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 183/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 183/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 183/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 187/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 187/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 192/278 kB | 0.5/6.3 MB | 1.0/9.2 MBProgress (4): 0.2/1.0 MB | 192/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 192/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 196/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 196/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 200/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 200/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 200/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 204/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 208/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 212/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 216/278 kB | 0.5/6.3 MB | 1.1/9.2 MBProgress (4): 0.2/1.0 MB | 216/278 kB | 0.5/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 216/278 kB | 0.5/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 216/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 220/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 224/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 228/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 233/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 237/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 237/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 241/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 245/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 249/278 kB | 0.6/6.3 MB | 1.2/9.2 MBProgress (4): 0.2/1.0 MB | 249/278 kB | 0.6/6.3 MB | 1.3/9.2 MBProgress (4): 0.2/1.0 MB | 249/278 kB | 0.6/6.3 MB | 1.3/9.2 MBProgress (4): 0.2/1.0 MB | 249/278 kB | 0.6/6.3 MB | 1.3/9.2 MBProgress (4): 0.3/1.0 MB | 249/278 kB | 0.6/6.3 MB | 1.3/9.2 MBProgress (4): 0.3/1.0 MB | 249/278 kB | 0.6/6.3 MB | 1.3/9.2 MBProgress (4): 0.3/1.0 MB | 249/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 249/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 253/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 253/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 257/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 257/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 261/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 265/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 265/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 265/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 269/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 273/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 278/278 kB | 0.6/6.3 MB | 1.4/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.6/6.3 MB | 1.4/9.2 MB    Progress (4): 0.3/1.0 MB | 278 kB | 0.6/6.3 MB | 1.5/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.6/6.3 MB | 1.5/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.5/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.5/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.5/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.5/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.5/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.6/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.6/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.6/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.6/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.6/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.7/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.7/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.7/6.3 MB | 1.7/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.8/6.3 MB | 1.7/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.8/6.3 MB | 1.8/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.8/6.3 MB | 1.8/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.8/6.3 MB | 1.8/9.2 MBProgress (4): 0.3/1.0 MB | 278 kB | 0.8/6.3 MB | 1.8/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 1.8/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 1.8/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 1.9/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 1.9/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 1.9/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 1.9/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.8/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.0/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.1/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.1/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.1/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.1/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.1/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.1/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.1/9.2 MBProgress (4): 0.4/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.2/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.3/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 0.9/6.3 MB | 2.3/9.2 MBProgress (4): 0.5/1.0 MB | 278 kB | 1.0/6.3 MB | 2.3/9.2 MB                                                           Downloaded from central: https://repo.maven.apache.org/maven2/nl/jqno/equalsverifier/equalsverifier/4.5.2/equalsverifier-4.5.2.jar (278 kB at 311 kB/s)
+Progress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.3/9.2 MB                                                  Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-base/6.2.0/jena-base-6.2.0.jar
+Progress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.3/9.2 MBProgress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.3/9.2 MBProgress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.3/9.2 MBProgress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.3/9.2 MBProgress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.5/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.6/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.6/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.6/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.6/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.6/1.0 MB | 1.0/6.3 MB | 2.4/9.2 MBProgress (3): 0.6/1.0 MB | 1.0/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.6/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.7/1.0 MB | 1.1/6.3 MB | 2.5/9.2 MBProgress (3): 0.7/1.0 MB | 1.1/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.1/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.1/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.6/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.7/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.7/9.2 MBProgress (3): 0.7/1.0 MB | 1.2/6.3 MB | 2.7/9.2 MBProgress (3): 0.7/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MBProgress (3): 0.7/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MBProgress (3): 0.7/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MBProgress (3): 0.7/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MBProgress (3): 0.8/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MB | 3.2/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MB | 3.2/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MB | 7.3/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.7/9.2 MB | 11/264 kB Progress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 11/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 11/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 15/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 20/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 20/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 20/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 20/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 24/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 24/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.8/9.2 MB | 28/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 28/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 28/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 32/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 36/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 40/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 44/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 44/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 44/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 48/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 48/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 52/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 52/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 56/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 61/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 61/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 61/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 65/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 2.9/9.2 MB | 69/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 3.0/9.2 MB | 69/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 3.0/9.2 MB | 73/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 3.0/9.2 MB | 77/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 3.0/9.2 MB | 77/264 kBProgress (4): 0.8/1.0 MB | 1.3/6.3 MB | 3.0/9.2 MB | 77/264 kBProgress (4): 0.8/1.0 MB | 1.4/6.3 MB | 3.0/9.2 MB | 77/264 kBProgress (4): 0.8/1.0 MB | 1.4/6.3 MB | 3.0/9.2 MB | 77/264 kBProgress (4): 0.8/1.0 MB | 1.4/6.3 MB | 3.0/9.2 MB | 81/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.0/9.2 MB | 81/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.0/9.2 MB | 85/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.0/9.2 MB | 85/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.0/9.2 MB | 89/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 89/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 89/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 93/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 93/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 93/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 97/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 101/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 106/264 kB                                                               Progress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 110/264 kB                                                               Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-core/6.2.0/jena-core-6.2.0.jar
+Progress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 110/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 110/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 114/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 114/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 118/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 118/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 122/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.1/9.2 MB | 126/264 kBProgress (4): 0.9/1.0 MB | 1.4/6.3 MB | 3.2/9.2 MB | 126/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.2/9.2 MB | 126/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.2/9.2 MB | 126/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.2/9.2 MB | 126/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.2/9.2 MB | 126/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.2/9.2 MB | 130/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 130/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 130/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 134/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 138/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 142/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 142/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 147/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 147/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 151/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 155/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 159/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 159/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 159/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 159/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 159/264 kBProgress (4): 0.9/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 159/264 kBProgress (4): 1.0/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 159/264 kBProgress (4): 1.0/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 163/264 kBProgress (4): 1.0/1.0 MB | 1.5/6.3 MB | 3.3/9.2 MB | 167/264 kBProgress (4): 1.0/1.0 MB | 1.5/6.3 MB | 3.4/9.2 MB | 167/264 kBProgress (4): 1.0/1.0 MB | 1.5/6.3 MB | 3.4/9.2 MB | 167/264 kBProgress (4): 1.0/1.0 MB | 1.5/6.3 MB | 3.4/9.2 MB | 171/264 kBProgress (4): 1.0/1.0 MB | 1.5/6.3 MB | 3.4/9.2 MB | 175/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 175/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 175/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 175/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 179/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 183/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 187/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 187/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 192/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.4/9.2 MB | 192/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 192/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 196/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 196/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 200/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 200/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 200/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 204/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 208/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 208/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 208/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 208/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 212/264 kBProgress (4): 1.0/1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 212/264 kBProgress (4): 1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 212/264 kB    Progress (4): 1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 216/264 kBProgress (4): 1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 220/264 kBProgress (4): 1.0 MB | 1.6/6.3 MB | 3.5/9.2 MB | 224/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.5/9.2 MB | 224/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.6/9.2 MB | 224/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.6/9.2 MB | 228/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.6/9.2 MB | 233/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.6/9.2 MB | 237/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.6/9.2 MB | 237/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.6/9.2 MB | 241/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.6/9.2 MB | 241/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 241/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 245/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 249/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 253/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 257/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 261/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 261/264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 264 kB    Progress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.7/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.8/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.7/6.3 MB | 3.8/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.8/6.3 MB | 3.8/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.8/6.3 MB | 3.9/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.8/6.3 MB | 3.9/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.8/6.3 MB | 3.9/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.8/6.3 MB | 4.0/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.8/6.3 MB | 4.0/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.9/6.3 MB | 4.0/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.9/6.3 MB | 4.0/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.9/6.3 MB | 4.1/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.9/6.3 MB | 4.1/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.9/6.3 MB | 4.1/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.9/6.3 MB | 4.1/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.9/6.3 MB | 4.2/9.2 MB | 264 kBProgress (4): 1.0 MB | 1.9/6.3 MB | 4.2/9.2 MB | 264 kBProgress (4): 1.0 MB | 2.0/6.3 MB | 4.2/9.2 MB | 264 kBProgress (4): 1.0 MB | 2.0/6.3 MB | 4.3/9.2 MB | 264 kBProgress (4): 1.0 MB | 2.0/6.3 MB | 4.3/9.2 MB | 264 kB                                                       Downloaded from central: https://repo.maven.apache.org/maven2/com/github/ben-manes/caffeine/caffeine/3.2.4/caffeine-3.2.4.jar (1.0 MB at 974 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri/5.6.0/jena-iri-5.6.0.jar
+Progress (3): 2.0/6.3 MB | 4.3/9.2 MB | 264 kBProgress (3): 2.0/6.3 MB | 4.3/9.2 MB | 264 kBProgress (3): 2.0/6.3 MB | 4.4/9.2 MB | 264 kBProgress (3): 2.1/6.3 MB | 4.4/9.2 MB | 264 kB                                              Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-base/6.2.0/jena-base-6.2.0.jar (264 kB at 249 kB/s)
+Progress (2): 2.1/6.3 MB | 4.4/9.2 MB                                     Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri3986/6.2.0/jena-iri3986-6.2.0.jar
+Progress (2): 2.1/6.3 MB | 4.4/9.2 MBProgress (2): 2.1/6.3 MB | 4.5/9.2 MBProgress (2): 2.1/6.3 MB | 4.5/9.2 MBProgress (2): 2.1/6.3 MB | 4.5/9.2 MBProgress (2): 2.1/6.3 MB | 4.6/9.2 MBProgress (2): 2.2/6.3 MB | 4.6/9.2 MBProgress (2): 2.2/6.3 MB | 4.6/9.2 MBProgress (2): 2.2/6.3 MB | 4.7/9.2 MBProgress (2): 2.2/6.3 MB | 4.7/9.2 MBProgress (2): 2.2/6.3 MB | 4.7/9.2 MBProgress (2): 2.2/6.3 MB | 4.7/9.2 MBProgress (2): 2.2/6.3 MB | 4.8/9.2 MBProgress (2): 2.2/6.3 MB | 4.8/9.2 MBProgress (2): 2.3/6.3 MB | 4.8/9.2 MBProgress (2): 2.3/6.3 MB | 4.8/9.2 MBProgress (2): 2.3/6.3 MB | 4.8/9.2 MBProgress (3): 2.3/6.3 MB | 4.8/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 4.8/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 4.9/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 4.9/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 4.9/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 4.9/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 4.9/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 4.9/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 5.0/9.2 MB | 0/1.7 MBProgress (3): 2.3/6.3 MB | 5.0/9.2 MB | 0.1/1.7 MBProgress (3): 2.4/6.3 MB | 5.0/9.2 MB | 0.1/1.7 MBProgress (3): 2.4/6.3 MB | 5.0/9.2 MB | 0.1/1.7 MBProgress (3): 2.4/6.3 MB | 5.0/9.2 MB | 0.1/1.7 MBProgress (3): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MBProgress (3): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MBProgress (4): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 3.2/86 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 3.2/86 kB | 3.2/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 7.3/86 kB | 3.2/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 7.3/86 kB | 7.3/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 11/86 kB | 7.3/139 kB Progress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 11/86 kB | 11/139 kB Progress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 15/86 kB | 11/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 15/86 kB | 15/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 15/86 kB | 15/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 15/86 kB | 20/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 15/86 kB | 20/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 20/86 kB | 20/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 20/86 kB | 24/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 24/86 kB | 24/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 24/86 kB | 28/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 28/86 kB | 28/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 28/86 kB | 32/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 28/86 kB | 36/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 28/86 kB | 40/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 28/86 kB | 44/139 kBProgress (5): 2.4/6.3 MB | 5.1/9.2 MB | 0.1/1.7 MB | 32/86 kB | 44/139 kBProgress (5): 2.4/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 32/86 kB | 44/139 kBProgress (5): 2.4/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 32/86 kB | 48/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 32/86 kB | 48/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 36/86 kB | 48/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 36/86 kB | 52/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 40/86 kB | 52/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 40/86 kB | 56/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 44/86 kB | 56/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 44/86 kB | 56/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 44/86 kB | 61/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 48/86 kB | 61/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 48/86 kB | 61/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 52/86 kB | 61/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 52/86 kB | 65/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 56/86 kB | 65/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 56/86 kB | 65/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 56/86 kB | 69/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 61/86 kB | 69/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 61/86 kB | 69/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 65/86 kB | 69/139 kBProgress (5): 2.5/6.3 MB | 5.2/9.2 MB | 0.1/1.7 MB | 65/86 kB | 73/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 65/86 kB | 73/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 69/86 kB | 73/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 69/86 kB | 77/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 69/86 kB | 77/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 73/86 kB | 77/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 73/86 kB | 81/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 77/86 kB | 81/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 77/86 kB | 85/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 77/86 kB | 85/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 81/86 kB | 85/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 81/86 kB | 85/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 85/86 kB | 85/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 85/86 kB | 89/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 89/139 kB   Progress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 93/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 93/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 93/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 97/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 101/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 106/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 110/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 114/139 kBProgress (5): 2.5/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 114/139 kBProgress (5): 2.6/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 114/139 kBProgress (5): 2.6/6.3 MB | 5.3/9.2 MB | 0.1/1.7 MB | 86 kB | 118/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 118/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 122/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 122/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 126/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 126/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 130/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 134/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 134/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 134/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 134/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 138/139 kBProgress (5): 2.6/6.3 MB | 5.4/9.2 MB | 0.1/1.7 MB | 86 kB | 138/139 kBProgress (5): 2.6/6.3 MB | 5.5/9.2 MB | 0.1/1.7 MB | 86 kB | 138/139 kBProgress (5): 2.6/6.3 MB | 5.5/9.2 MB | 0.1/1.7 MB | 86 kB | 139 kB    Progress (5): 2.6/6.3 MB | 5.5/9.2 MB | 0.1/1.7 MB | 86 kB | 139 kBProgress (5): 2.6/6.3 MB | 5.5/9.2 MB | 0.1/1.7 MB | 86 kB | 139 kBProgress (5): 2.6/6.3 MB | 5.6/9.2 MB | 0.1/1.7 MB | 86 kB | 139 kBProgress (5): 2.6/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.6/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.6/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.6/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.6/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.7/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.7/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.7/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.7/6.3 MB | 5.7/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.7/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.7/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.7/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.7/9.2 MB | 0.2/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.7/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.8/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.9/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.9/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.9/9.2 MB | 0.3/1.7 MB | 86 kB | 139 kBProgress (5): 2.8/6.3 MB | 5.9/9.2 MB | 0.4/1.7 MB | 86 kB | 139 kB                                                                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri3986/6.2.0/jena-iri3986-6.2.0.jar (86 kB at 73 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-langtag/6.2.0/jena-langtag-6.2.0.jar
+Progress (4): 2.8/6.3 MB | 5.9/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.8/6.3 MB | 5.9/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 5.9/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.4/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.0/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 2.9/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.1/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.5/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.2/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.6/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MB | 139 kBProgress (4): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MB | 139 kB                                                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-iri/5.6.0/jena-iri-5.6.0.jar (139 kB at 113 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-shaded-guava/4.8.0/jena-shaded-guava-4.8.0.jar
+Progress (3): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MBProgress (3): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MBProgress (3): 3.0/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MBProgress (3): 3.1/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MBProgress (3): 3.1/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MBProgress (3): 3.1/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MBProgress (3): 3.1/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MBProgress (3): 3.1/6.3 MB | 6.3/9.2 MB | 0.7/1.7 MBProgress (3): 3.1/6.3 MB | 6.3/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.3/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.3/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.8/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.1/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.2/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.2/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (3): 3.2/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MBProgress (4): 3.2/6.3 MB | 6.4/9.2 MB | 0.9/1.7 MB | 4.1/34 kBProgress (4): 3.2/6.3 MB | 6.4/9.2 MB | 1.0/1.7 MB | 4.1/34 kBProgress (4): 3.2/6.3 MB | 6.4/9.2 MB | 1.0/1.7 MB | 4.1/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 4.1/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 7.4/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 7.4/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 7.4/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 11/34 kB Progress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 11/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 16/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 16/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 20/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 20/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 24/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 24/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 28/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 28/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 32/34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 34 kB   Progress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.0/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.1/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.5/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.2/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.3/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.6/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.2/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.4/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.7/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.5/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.6/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.7/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.7/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.7/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.7/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.7/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.7/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.7/1.7 MB | 34 kBProgress (4): 3.3/6.3 MB | 6.8/9.2 MB | 1.7 MB | 34 kB    Progress (4): 3.4/6.3 MB | 6.8/9.2 MB | 1.7 MB | 34 kBProgress (4): 3.4/6.3 MB | 6.8/9.2 MB | 1.7 MB | 34 kBProgress (4): 3.4/6.3 MB | 6.8/9.2 MB | 1.7 MB | 34 kBProgress (5): 3.4/6.3 MB | 6.8/9.2 MB | 1.7 MB | 34 kB | 0/3.1 MBProgress (5): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 34 kB | 0/3.1 MBProgress (5): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 34 kB | 0/3.1 MBProgress (5): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 34 kB | 0/3.1 MBProgress (5): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 34 kB | 0.1/3.1 MBProgress (5): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 34 kB | 0.1/3.1 MBProgress (5): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 34 kB | 0.1/3.1 MBProgress (5): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 34 kB | 0.1/3.1 MBProgress (5): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 34 kB | 0.1/3.1 MB                                                                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-langtag/6.2.0/jena-langtag-6.2.0.jar (34 kB at 26 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/2.0.2/jdom-2.0.2.jar
+Progress (4): 3.4/6.3 MB | 6.9/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.4/6.3 MB | 7.0/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.4/6.3 MB | 7.0/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.4/6.3 MB | 7.0/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.5/6.3 MB | 7.0/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.5/6.3 MB | 7.1/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.5/6.3 MB | 7.1/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.5/6.3 MB | 7.1/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.5/6.3 MB | 7.1/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.6/6.3 MB | 7.1/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.6/6.3 MB | 7.1/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.6/6.3 MB | 7.2/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.6/6.3 MB | 7.2/9.2 MB | 1.7 MB | 0.1/3.1 MBProgress (4): 3.6/6.3 MB | 7.2/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.2/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.2/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.2/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.2/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.3/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.3/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.3/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.3/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.3/9.2 MB | 1.7 MB | 0.2/3.1 MBProgress (4): 3.6/6.3 MB | 7.3/9.2 MB | 1.7 MB | 0.3/3.1 MB                                                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-core/6.2.0/jena-core-6.2.0.jar (1.7 MB at 1.3 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/roaringbitmap/RoaringBitmap/1.6.15/RoaringBitmap-1.6.15.jar
+Progress (3): 3.6/6.3 MB | 7.4/9.2 MB | 0.3/3.1 MBProgress (3): 3.7/6.3 MB | 7.4/9.2 MB | 0.3/3.1 MBProgress (3): 3.7/6.3 MB | 7.4/9.2 MB | 0.3/3.1 MBProgress (3): 3.7/6.3 MB | 7.4/9.2 MB | 0.3/3.1 MBProgress (3): 3.7/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MBProgress (3): 3.7/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MBProgress (3): 3.7/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MBProgress (3): 3.7/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MBProgress (3): 3.7/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MBProgress (3): 3.8/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MBProgress (4): 3.8/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MB | 4.1/295 kBProgress (4): 3.8/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MB | 7.4/295 kBProgress (4): 3.8/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MB | 11/295 kB Progress (4): 3.8/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MB | 11/295 kBProgress (4): 3.8/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MB | 16/295 kBProgress (4): 3.8/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MB | 20/295 kBProgress (4): 3.8/6.3 MB | 7.5/9.2 MB | 0.3/3.1 MB | 24/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 24/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 28/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 28/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 32/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 32/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 36/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 36/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 36/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 36/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 40/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 44/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 48/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 52/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 57/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 61/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.3/3.1 MB | 65/295 kBProgress (4): 3.8/6.3 MB | 7.6/9.2 MB | 0.4/3.1 MB | 65/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 65/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 65/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 69/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 73/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 73/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 73/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 77/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 81/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 85/295 kBProgress (4): 3.8/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 89/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 89/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 89/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 89/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 93/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 97/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 102/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 106/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 110/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 114/295 kBProgress (4): 3.9/6.3 MB | 7.7/9.2 MB | 0.4/3.1 MB | 114/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.4/3.1 MB | 114/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.4/3.1 MB | 114/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.4/3.1 MB | 114/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.4/3.1 MB | 114/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.4/3.1 MB | 114/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.4/3.1 MB | 114/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.4/3.1 MB | 118/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.5/3.1 MB | 118/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.5/3.1 MB | 122/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.5/3.1 MB | 126/295 kBProgress (4): 3.9/6.3 MB | 7.8/9.2 MB | 0.5/3.1 MB | 130/295 kBProgress (5): 3.9/6.3 MB | 7.8/9.2 MB | 0.5/3.1 MB | 130/295 kB | 4.1/477 kBProgress (5): 3.9/6.3 MB | 7.8/9.2 MB | 0.5/3.1 MB | 130/295 kB | 7.4/477 kBProgress (5): 3.9/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 7.4/477 kBProgress (5): 3.9/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 11/477 kB Progress (5): 3.9/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 16/477 kBProgress (5): 3.9/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 20/477 kBProgress (5): 3.9/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 24/477 kBProgress (5): 3.9/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 28/477 kBProgress (5): 3.9/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 32/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 32/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 36/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 40/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 44/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 48/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 52/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 57/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 57/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 61/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 65/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 69/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 73/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 130/295 kB | 77/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 134/295 kB | 77/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 134/295 kB | 81/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 138/295 kB | 81/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 138/295 kB | 85/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 143/295 kB | 85/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 143/295 kB | 89/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 89/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 93/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 97/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 102/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 106/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 106/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 110/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 114/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 118/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 147/295 kB | 122/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 151/295 kB | 122/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 155/295 kB | 122/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 155/295 kB | 122/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 155/295 kB | 126/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 159/295 kB | 126/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 159/295 kB | 130/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 130/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 134/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 138/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 143/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 143/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 147/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 151/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 155/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 159/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 163/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 167/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 171/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 175/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 179/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 183/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 188/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 192/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 196/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 200/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 204/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 208/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 212/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 216/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 220/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 163/295 kB | 220/477 kBProgress (5): 4.0/6.3 MB | 7.9/9.2 MB | 0.5/3.1 MB | 167/295 kB | 220/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 167/295 kB | 220/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 167/295 kB | 224/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 171/295 kB | 224/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 171/295 kB | 229/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 171/295 kB | 229/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 171/295 kB | 229/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 175/295 kB | 229/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 175/295 kB | 233/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 179/295 kB | 233/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 179/295 kB | 237/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 179/295 kB | 241/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 179/295 kB | 245/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 179/295 kB | 245/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 179/295 kB | 249/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 179/295 kB | 253/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 183/295 kB | 253/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 183/295 kB | 253/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 188/295 kB | 253/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 188/295 kB | 257/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 192/295 kB | 257/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 192/295 kB | 261/477 kBProgress (5): 4.0/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 196/295 kB | 261/477 kBProgress (5): 4.1/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 196/295 kB | 261/477 kBProgress (5): 4.1/6.3 MB | 8.0/9.2 MB | 0.5/3.1 MB | 196/295 kB | 265/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.5/3.1 MB | 196/295 kB | 265/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.5/3.1 MB | 200/295 kB | 265/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.5/3.1 MB | 200/295 kB | 270/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.5/3.1 MB | 204/295 kB | 270/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.5/3.1 MB | 204/295 kB | 274/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.5/3.1 MB | 208/295 kB | 274/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.5/3.1 MB | 208/295 kB | 278/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 208/295 kB | 278/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 278/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 282/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 282/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 286/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 290/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 294/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 298/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 302/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 306/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 310/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 315/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 319/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 212/295 kB | 323/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 216/295 kB | 323/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 216/295 kB | 327/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 220/295 kB | 327/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 220/295 kB | 327/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 220/295 kB | 327/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 220/295 kB | 331/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 220/295 kB | 335/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 220/295 kB | 335/477 kBProgress (5): 4.1/6.3 MB | 8.1/9.2 MB | 0.6/3.1 MB | 224/295 kB | 335/477 kBProgress (5): 4.1/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 224/295 kB | 335/477 kBProgress (5): 4.1/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 224/295 kB | 339/477 kBProgress (5): 4.1/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 224/295 kB | 339/477 kBProgress (5): 4.1/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 224/295 kB | 343/477 kBProgress (5): 4.1/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 343/477 kBProgress (5): 4.1/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 347/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 347/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 347/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 351/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 351/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 356/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 356/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 360/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 364/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 368/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 372/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 376/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 380/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 384/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 384/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 384/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 388/477 kBProgress (5): 4.2/6.3 MB | 8.2/9.2 MB | 0.6/3.1 MB | 229/295 kB | 392/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 392/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 396/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 401/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 405/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 409/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 413/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 417/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 421/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 425/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 229/295 kB | 429/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 233/295 kB | 429/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.6/3.1 MB | 233/295 kB | 433/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 233/295 kB | 433/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 233/295 kB | 433/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 233/295 kB | 433/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 233/295 kB | 433/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 233/295 kB | 437/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 237/295 kB | 437/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 237/295 kB | 442/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 241/295 kB | 442/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 241/295 kB | 446/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 245/295 kB | 446/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 245/295 kB | 450/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 249/295 kB | 450/477 kBProgress (5): 4.2/6.3 MB | 8.3/9.2 MB | 0.7/3.1 MB | 249/295 kB | 454/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 249/295 kB | 454/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 253/295 kB | 454/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 253/295 kB | 458/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 253/295 kB | 458/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 257/295 kB | 458/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 257/295 kB | 462/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 257/295 kB | 466/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 261/295 kB | 466/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 261/295 kB | 470/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 261/295 kB | 470/477 kBProgress (5): 4.2/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 265/295 kB | 470/477 kBProgress (5): 4.3/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 265/295 kB | 470/477 kBProgress (5): 4.3/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 265/295 kB | 470/477 kBProgress (5): 4.3/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 265/295 kB | 474/477 kBProgress (5): 4.3/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 270/295 kB | 474/477 kBProgress (5): 4.3/6.3 MB | 8.4/9.2 MB | 0.7/3.1 MB | 270/295 kB | 477 kB    Progress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 270/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 274/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 274/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 274/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 278/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 282/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 286/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 290/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 294/295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 295 kB | 477 kB    Progress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.7/3.1 MB | 295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.3/6.3 MB | 8.5/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.5/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.6/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.6/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.6/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.6/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.6/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.6/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.6/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.7/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.7/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.7/9.2 MB | 0.8/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.7/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.8/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.4/6.3 MB | 8.8/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.8/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.8/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.8/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.8/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.8/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.9/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.9/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.9/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.9/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.5/6.3 MB | 8.9/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kBProgress (5): 4.6/6.3 MB | 8.9/9.2 MB | 0.9/3.1 MB | 295 kB | 477 kB                                                                    Downloaded from central: https://repo.maven.apache.org/maven2/org/roaringbitmap/RoaringBitmap/1.6.15/RoaringBitmap-1.6.15.jar (477 kB at 315 kB/s)
+Progress (4): 4.6/6.3 MB | 8.9/9.2 MB | 1.0/3.1 MB | 295 kB                                                           Downloading from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/6.1.0/xmlresolver-6.1.0.jar
+Progress (4): 4.6/6.3 MB | 9.0/9.2 MB | 1.0/3.1 MB | 295 kBProgress (4): 4.6/6.3 MB | 9.0/9.2 MB | 1.0/3.1 MB | 295 kBProgress (4): 4.6/6.3 MB | 9.0/9.2 MB | 1.0/3.1 MB | 295 kBProgress (4): 4.6/6.3 MB | 9.0/9.2 MB | 1.0/3.1 MB | 295 kB                                                           Downloaded from central: https://repo.maven.apache.org/maven2/org/jdom/jdom/2.0.2/jdom-2.0.2.jar (295 kB at 194 kB/s)
+Progress (3): 4.6/6.3 MB | 9.0/9.2 MB | 1.0/3.1 MBProgress (3): 4.6/6.3 MB | 9.0/9.2 MB | 1.0/3.1 MBProgress (3): 4.6/6.3 MB | 9.0/9.2 MB | 1.0/3.1 MB                                                  Downloading from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/6.1.0/xmlresolver-6.1.0-data.jar
+Progress (3): 4.6/6.3 MB | 9.1/9.2 MB | 1.0/3.1 MBProgress (3): 4.6/6.3 MB | 9.1/9.2 MB | 1.0/3.1 MBProgress (3): 4.6/6.3 MB | 9.1/9.2 MB | 1.0/3.1 MBProgress (3): 4.6/6.3 MB | 9.1/9.2 MB | 1.0/3.1 MBProgress (3): 4.7/6.3 MB | 9.1/9.2 MB | 1.0/3.1 MBProgress (3): 4.7/6.3 MB | 9.2/9.2 MB | 1.0/3.1 MBProgress (3): 4.7/6.3 MB | 9.2/9.2 MB | 1.0/3.1 MBProgress (3): 4.7/6.3 MB | 9.2/9.2 MB | 1.0/3.1 MBProgress (3): 4.7/6.3 MB | 9.2/9.2 MB | 1.1/3.1 MBProgress (3): 4.7/6.3 MB | 9.2/9.2 MB | 1.1/3.1 MBProgress (3): 4.7/6.3 MB | 9.2/9.2 MB | 1.1/3.1 MBProgress (3): 4.7/6.3 MB | 9.2/9.2 MB | 1.1/3.1 MBProgress (3): 4.7/6.3 MB | 9.2/9.2 MB | 1.1/3.1 MBProgress (3): 4.8/6.3 MB | 9.2/9.2 MB | 1.1/3.1 MBProgress (3): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MB    Progress (3): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MBProgress (3): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MBProgress (3): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MBProgress (3): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MB | 3.2/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MB | 7.3/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MB | 11/182 kB Progress (4): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MB | 15/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.1/3.1 MB | 20/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 20/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 24/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 28/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 32/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 36/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 40/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 40/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 44/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 48/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 52/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 56/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 61/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 65/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 69/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 73/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 77/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 81/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 85/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 89/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 93/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 97/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 101/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 106/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 106/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 110/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 110/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 114/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 118/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 122/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 126/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 130/182 kBProgress (4): 4.8/6.3 MB | 9.2 MB | 1.2/3.1 MB | 134/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 134/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 138/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 138/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 142/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 147/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 151/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 155/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 159/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 163/182 kBProgress (4): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 163/182 kBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 163/182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 167/182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 167/182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 167/182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 171/182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 175/182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 179/182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 182 kB | 0/1.1 MB    Progress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.2/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 4.9/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 5.0/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 5.0/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 5.0/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 5.0/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 5.0/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 5.0/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 5.0/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MBProgress (5): 5.0/6.3 MB | 9.2 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MB                                                                  Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.18.5/byte-buddy-1.18.5.jar (9.2 MB at 5.9 MB/s)
+Progress (4): 5.1/6.3 MB | 1.3/3.1 MB | 182 kB | 0/1.1 MB                                                         Downloading from central: https://repo.maven.apache.org/maven2/stax/stax/1.0/stax-1.0.jar
+Progress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.1/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.2/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.2/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.2/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.2/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.2/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MBProgress (4): 5.2/6.3 MB | 1.4/3.1 MB | 182 kB | 0.1/1.1 MB                                                           Downloaded from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/6.1.0/xmlresolver-6.1.0.jar (182 kB at 114 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/stax/stax-ri/1.0/stax-ri-1.0.jar
+Progress (3): 5.2/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.2/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.2/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.2/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.2/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.2/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.2/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.3/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.3/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.3/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.3/6.3 MB | 1.5/3.1 MB | 0.1/1.1 MBProgress (3): 5.3/6.3 MB | 1.5/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.5/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.5/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.5/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.3/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MB                                                  Progress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.6/3.1 MB | 0.2/1.1 MBProgress (3): 5.4/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.2/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.3/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.3/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.3/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.3/1.1 MBProgress (3): 5.5/6.3 MB | 1.7/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.7/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.7/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.7/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.6/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.8/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.9/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.9/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.9/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.9/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.9/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.9/3.1 MB | 0.3/1.1 MBProgress (3): 5.7/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 1.9/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.8/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.0/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.1/3.1 MB | 0.4/1.1 MBProgress (3): 5.9/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.0/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.1/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.1/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.5/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.6/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.6/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.6/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.6/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.6/1.1 MBProgress (3): 6.2/6.3 MB | 2.2/3.1 MB | 0.6/1.1 MBProgress (3): 6.2/6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.2/6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MB    Progress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.3/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.6/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.4/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.5/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.5/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.5/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.5/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.5/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.5/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.5/3.1 MB | 0.7/1.1 MBProgress (3): 6.3 MB | 2.5/3.1 MB | 0.7/1.1 MB                                              Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/13.1/Saxon-HE-13.1.jar (6.3 MB at 3.6 MB/s)
+Progress (2): 2.5/3.1 MB | 0.7/1.1 MBProgress (2): 2.5/3.1 MB | 0.7/1.1 MBProgress (2): 2.5/3.1 MB | 0.7/1.1 MBProgress (2): 2.5/3.1 MB | 0.7/1.1 MBProgress (2): 2.6/3.1 MB | 0.7/1.1 MBProgress (2): 2.6/3.1 MB | 0.7/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.6/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.8/1.1 MBProgress (2): 2.7/3.1 MB | 0.9/1.1 MBProgress (2): 2.7/3.1 MB | 0.9/1.1 MBProgress (2): 2.7/3.1 MB | 0.9/1.1 MBProgress (2): 2.7/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.8/3.1 MB | 0.9/1.1 MBProgress (2): 2.9/3.1 MB | 0.9/1.1 MBProgress (2): 2.9/3.1 MB | 0.9/1.1 MBProgress (2): 2.9/3.1 MB | 0.9/1.1 MBProgress (2): 2.9/3.1 MB | 0.9/1.1 MBProgress (2): 2.9/3.1 MB | 0.9/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 2.9/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MB                                     Progress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.0/3.1 MB | 1.0/1.1 MBProgress (2): 3.1/3.1 MB | 1.0/1.1 MBProgress (2): 3.1/3.1 MB | 1.0/1.1 MBProgress (2): 3.1/3.1 MB | 1.0/1.1 MBProgress (2): 3.1/3.1 MB | 1.0/1.1 MBProgress (2): 3.1/3.1 MB | 1.0/1.1 MBProgress (2): 3.1/3.1 MB | 1.0/1.1 MBProgress (2): 3.1/3.1 MB | 1.0/1.1 MBProgress (2): 3.1/3.1 MB | 1.0/1.1 MBProgress (2): 3.1 MB | 1.0/1.1 MB    Progress (2): 3.1 MB | 1.1/1.1 MBProgress (2): 3.1 MB | 1.1/1.1 MBProgress (2): 3.1 MB | 1.1/1.1 MBProgress (2): 3.1 MB | 1.1/1.1 MBProgress (2): 3.1 MB | 1.1/1.1 MBProgress (2): 3.1 MB | 1.1 MB                                 Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/jena/jena-shaded-guava/4.8.0/jena-shaded-guava-4.8.0.jar (3.1 MB at 1.7 MB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/6.1.0/xmlresolver-6.1.0-data.jar (1.1 MB at 602 kB/s)
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for TEAM Engine 5.5-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] TEAM Engine ........................................ [1;32mSUCCESS[m [  0.989 s]
+[[1;34mINFO[m] TEAM Engine - Tomcat Realm ......................... [1;32mSUCCESS[m [  0.251 s]
+[[1;34mINFO[m] TEAM Engine - Shared Resources ..................... [1;32mSUCCESS[m [  0.228 s]
+[[1;34mINFO[m] TEAM Engine - Core Module .......................... [1;31mFAILURE[m [  2.164 s]
+[[1;34mINFO[m] TEAM Engine - Service Providers .................... [1;33mSKIPPED[m
+[[1;34mINFO[m] TEAM Engine - CTL Test Suite Providers ............. [1;33mSKIPPED[m
+[[1;34mINFO[m] TEAM Engine - Web Application ...................... [1;33mSKIPPED[m
+[[1;34mINFO[m] TEAM Engine - Console Application .................. [1;33mSKIPPED[m
+[[1;34mINFO[m] TEAM Engine - Virtualization ....................... [1;33mSKIPPED[m
+[[1;34mINFO[m] TEAM Engine - Tests ................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.788 s
+[[1;34mINFO[m] Finished at: 2026-11-13T01:31:48Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal on project [36mteamengine-core[m: [1;31mCould not resolve dependencies for project org.opengis.cite.teamengine:teamengine-core:jar:5.5-SNAPSHOT: The following artifacts could not be resolved: clover:clover:jar:1.3-rc4, stax:stax:jar:1.0, stax:stax-ri:jar:1.0: Could not find artifact clover:clover:jar:1.3-rc4 in central (https://repo.maven.apache.org/maven2)[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[[1;31mERROR[m] 
+[[1;31mERROR[m] After correcting the problems, you can resume the build with the command
+[[1;31mERROR[m]   [1mmvn <args> -rf :teamengine-core[m
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
-[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
 [0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
 [0m

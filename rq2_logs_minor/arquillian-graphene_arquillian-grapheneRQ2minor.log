@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/arquillia
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=minor -Dmaven.test.failure.ignore=true && mvn install -DallowVersionRanges=minor -Dmaven.test.failure.ignore=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Arquillian-graphene.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.jboss.arquillian.graphene:graphene-parent:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/arquillian-graphene/RQ2minor/buildcache/graphene-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=minor com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/arquillian-graphene/RQ2minor/buildcache/graphene-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=minor -Dmaven.test.failure.ignore=true && mvn install -DallowVersionRanges=minor -Dmaven.test.failure.ignore=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Nov 10 11:24:10 UTC 2026.
-Universal Time is now:  Tue Nov 10 11:24:10 UTC 2026.
+Local time is now:      Thu Nov 12 22:22:15 UTC 2026.
+Universal Time is now:  Thu Nov 12 22:22:15 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -104,6 +104,7 @@ Universal Time is now:  Tue Nov 10 11:24:10 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-parent[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgraphene-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for graphene-parent
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 77 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
@@ -119,7 +120,7 @@ Universal Time is now:  Tue Nov 10 11:24:10 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.3:create[m [1m(get-scm-revision)[m @ [36mgraphene-parent[0;1m ---[m
 [[1;34mINFO[m] Executing: /bin/sh -c cd /var/maven/app && git rev-parse --verify HEAD
 [[1;34mINFO[m] Working directory: /var/maven/app
-[[1;34mINFO[m] Storing buildNumber: 6f2930652c58c5299915f6beb9eed5a96b5474c6 at timestamp: 1794309851550
+[[1;34mINFO[m] Storing buildNumber: 6f2930652c58c5299915f6beb9eed5a96b5474c6 at timestamp: 1794522136861
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -139,6 +140,7 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-build-resources[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgraphene-build-resources[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for graphene-build-resources
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/build/resources/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 77 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
@@ -147,6 +149,7 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] Flattening leaf module dependencies for: graphene-build-resources (0 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/build/resources/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for graphene-build-resources: pinned=0 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: graphene-build-resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-build-resources[0;1m ---[m
@@ -197,26 +200,28 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for graphene-webdriver-spi
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/spi/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 51 dependencies (40 carrying exclusions, 77 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 2.0 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 2.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 4.0 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-api/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-api/maven-metadata.xml (3.0 kB at 7.6 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-api/maven-metadata.xml (3.0 kB at 9.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-spi/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-spi/maven-metadata.xml (3.0 kB at 12 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-spi/maven-metadata.xml (3.0 kB at 5.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-api/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-api/maven-metadata.xml (3.0 kB at 10 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-api/maven-metadata.xml (3.0 kB at 8.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-spi/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-spi/maven-metadata.xml (3.0 kB at 10 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-spi/maven-metadata.xml (3.0 kB at 5.4 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: graphene-webdriver-spi (51 dependencies, 40 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/spi/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for graphene-webdriver-spi: pinned=46 upgraded=5 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: graphene-webdriver-spi
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
@@ -286,6 +291,7 @@ Progress (1): 3.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-webdriver-api[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for graphene-webdriver-api
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/api/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 23 dependencies (5 carrying exclusions, 77 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
@@ -294,6 +300,7 @@ Progress (1): 3.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] Flattening leaf module dependencies for: graphene-webdriver-api (23 dependencies, 5 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/api/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for graphene-webdriver-api: pinned=18 upgraded=5 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: graphene-webdriver-api
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-api[0;1m ---[m
@@ -363,50 +370,52 @@ Progress (1): 3.0 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for graphene-webdriver-impl
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/impl/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 69 dependencies (33 carrying exclusions, 77 dependencyManagement entries, version range mode: minor).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/asm/asm/maven-metadata.xml
-Progress (1): 898 B                   Downloaded from central: https://repo.maven.apache.org/maven2/asm/asm/maven-metadata.xml (898 B at 3.0 kB/s)
+Progress (1): 898 B                   Downloaded from central: https://repo.maven.apache.org/maven2/asm/asm/maven-metadata.xml (898 B at 3.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/cglib/cglib/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/cglib/cglib/maven-metadata.xml (1.2 kB at 10.0 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/cglib/cglib/maven-metadata.xml (1.2 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-api/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-api/maven-metadata.xml (3.0 kB at 11 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-api/maven-metadata.xml (3.0 kB at 8.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-impl-base/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-impl-base/maven-metadata.xml (3.0 kB at 9.6 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-impl-base/maven-metadata.xml (3.0 kB at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-spi/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-spi/maven-metadata.xml (3.0 kB at 11 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-spi/maven-metadata.xml (3.0 kB at 5.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-api/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-api/maven-metadata.xml (3.0 kB at 7.0 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-api/maven-metadata.xml (3.0 kB at 8.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-spi/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-spi/maven-metadata.xml (3.0 kB at 13 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-spi/maven-metadata.xml (3.0 kB at 6.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-impl-base/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-impl-base/maven-metadata.xml (3.0 kB at 11 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-impl-base/maven-metadata.xml (3.0 kB at 9.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-api/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-api/maven-metadata.xml (2.6 kB at 8.1 kB/s)
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-api/maven-metadata.xml (2.6 kB at 5.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-configuration/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-configuration/maven-metadata.xml (2.6 kB at 9.4 kB/s)
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-configuration/maven-metadata.xml (2.6 kB at 5.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-impl/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-impl/maven-metadata.xml (2.6 kB at 7.7 kB/s)
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-impl/maven-metadata.xml (2.6 kB at 9.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-spi/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-spi/maven-metadata.xml (2.6 kB at 5.1 kB/s)
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-spi/maven-metadata.xml (2.6 kB at 5.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-impl-base/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-impl-base/maven-metadata.xml (3.0 kB at 11 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-impl-base/maven-metadata.xml (3.0 kB at 7.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-api/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-api/maven-metadata.xml (2.0 kB at 5.0 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-api/maven-metadata.xml (2.0 kB at 4.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/maven-metadata.xml
-Progress (1): 839 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/maven-metadata.xml (839 B at 1.8 kB/s)
+Progress (1): 839 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/maven-metadata.xml (839 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/maven-metadata.xml (1.1 kB at 4.1 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/maven-metadata.xml (1.1 kB at 2.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml (1.3 kB at 12 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-all/maven-metadata.xml (1.3 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml
-Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 8.3 kB/s)
+Progress (1): 907 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/maven-metadata.xml (907 B at 11 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: graphene-webdriver-impl (70 dependencies, 33 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/impl/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for graphene-webdriver-impl: pinned=46 upgraded=19 downgraded=2 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for graphene-webdriver-impl: pinned=46 upgraded=23 downgraded=0 added=1 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: graphene-webdriver-impl
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
@@ -516,6 +525,7 @@ Downloading from central: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-webdriver[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgraphene-webdriver[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for graphene-webdriver
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/build/depchains/graphene-webdriver/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Non-numeric version segment in '2.1_3' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
@@ -544,6 +554,7 @@ Downloading from central: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36marquillian-graphene[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36marquillian-graphene[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for arquillian-graphene
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/build/depchains/arquillian-graphene/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Non-numeric version segment in '2.1_3' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
@@ -572,6 +583,7 @@ Downloading from central: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-webdriver-ftest[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mgraphene-webdriver-ftest[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for graphene-webdriver-ftest
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/ftest/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Non-numeric version segment in '2.1_3' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
@@ -581,241 +593,234 @@ Downloading from central: https://repo.maven.apache.org/maven2/asm/asm/3.3.1/asm
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mgraphene-webdriver-ftest[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml
-Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 2.6 kB/s)
+Progress (1): 210 B                   Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/maven-metadata.xml (210 B at 1.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/codeborne/phantomjsdriver/maven-metadata.xml
-Progress (1): 552 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/codeborne/phantomjsdriver/maven-metadata.xml (552 B at 2.5 kB/s)
+Progress (1): 552 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/codeborne/phantomjsdriver/maven-metadata.xml (552 B at 1.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 8.9 kB/s)
+Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/gson/gson/maven-metadata.xml (1.7 kB at 24 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.1 kB at 98 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/maven-metadata.xml (6.1 kB at 63 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 104 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 91 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/opera/operadriver/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/opera/operadriver/maven-metadata.xml (1.0 kB at 3.6 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/opera/operadriver/maven-metadata.xml (1.0 kB at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/opera/operalaunchers/maven-metadata.xml
-Progress (1): 556 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/opera/operalaunchers/maven-metadata.xml (556 B at 1.1 kB/s)
+Progress (1): 556 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/opera/operalaunchers/maven-metadata.xml (556 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 3.5 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml
-Progress (1): 934 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 14 kB/s)
+Progress (1): 934 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/maven-metadata.xml (934 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 21 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml (1.4 kB at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-jxpath/commons-jxpath/maven-metadata.xml
-Progress (1): 385 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-jxpath/commons-jxpath/maven-metadata.xml (385 B at 1.8 kB/s)
+Progress (1): 385 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-jxpath/commons-jxpath/maven-metadata.xml (385 B at 1.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml
-Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 11 kB/s)
+Progress (1): 646 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/maven-metadata.xml (646 B at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml
-Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 12 kB/s)
+Progress (1): 879 B                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/maven-metadata.xml (879 B at 3.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty/maven-metadata.xml (3.0 kB at 13 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty/maven-metadata.xml (3.0 kB at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/maven-metadata.xml
-Progress (1): 300 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/maven-metadata.xml (300 B at 1.3 kB/s)
+Progress (1): 300 B                   Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/maven-metadata.xml (300 B at 3.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/maven-metadata.xml (1.6 kB at 23 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/maven-metadata.xml (1.6 kB at 6.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/mx4j/mx4j-tools/maven-metadata.xml
-Progress (1): 358 B                   Downloaded from central: https://repo.maven.apache.org/maven2/mx4j/mx4j-tools/maven-metadata.xml (358 B at 761 B/s)
+Progress (1): 358 B                   Downloaded from central: https://repo.maven.apache.org/maven2/mx4j/mx4j-tools/maven-metadata.xml (358 B at 1.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/maven-metadata.xml (2.0 kB at 14 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/maven-metadata.xml (2.0 kB at 25 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/maven-metadata.xml (1.4 kB at 12 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/maven-metadata.xml (1.4 kB at 5.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/jcip/jcip-annotations/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/net/sourceforge/cssparser/cssparser/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/cssparser/cssparser/maven-metadata.xml (1.1 kB at 2.8 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/cssparser/cssparser/maven-metadata.xml (1.1 kB at 3.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit/maven-metadata.xml
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit/maven-metadata.xml (2.7 kB at 10 kB/s)
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit/maven-metadata.xml (2.7 kB at 9.0 kB/s)
 Downloading from OSS Sonatype snapshots: https://oss.sonatype.org/content/repositories/snapshots/net/sourceforge/htmlunit/htmlunit-xpath/2.65.0-SNAPSHOT/maven-metadata.xml
 Downloading from OSS Sonatype snapshots: https://oss.sonatype.org/content/repositories/snapshots/net/sourceforge/htmlunit/htmlunit-xpath/2.65.0-SNAPSHOT/htmlunit-xpath-2.65.0-SNAPSHOT.pom
 [[1;33mWARNING[m] The POM for net.sourceforge.htmlunit:htmlunit-xpath:jar:2.65.0-SNAPSHOT is missing, no dependency information available
 Downloading from central: https://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit-core-js/maven-metadata.xml
-Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit-core-js/maven-metadata.xml (2.2 kB at 8.7 kB/s)
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit-core-js/maven-metadata.xml (2.2 kB at 6.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/sourceforge/nekohtml/nekohtml/maven-metadata.xml
-Progress (1): 840 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/nekohtml/nekohtml/maven-metadata.xml (840 B at 8.8 kB/s)
+Progress (1): 840 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/sourceforge/nekohtml/nekohtml/maven-metadata.xml (840 B at 3.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/maven-metadata.xml
-Progress (1): 517 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/maven-metadata.xml (517 B at 4.0 kB/s)
+Progress (1): 517 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/maven-metadata.xml (517 B at 6.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.1 kB at 7.4 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/maven-metadata.xml (1.2 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 20 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/maven-metadata.xml (2.1 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 25 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/maven-metadata.xml (2.0 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/maven-metadata.xml (2.0 kB at 21 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/maven-metadata.xml (2.0 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/maven-metadata.xml
-Progress (1): 851 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/maven-metadata.xml (851 B at 11 kB/s)
+Progress (1): 851 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/maven-metadata.xml (851 B at 2.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml (3.9 kB at 50 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/maven-metadata.xml (3.9 kB at 54 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml
-Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml (3.1 kB at 44 kB/s)
+Progress (1): 3.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/maven-metadata.xml (3.1 kB at 29 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml
-Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml (3.5 kB at 31 kB/s)
+Progress (1): 3.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/maven-metadata.xml (3.5 kB at 50 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml (3.8 kB at 51 kB/s)
+Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/maven-metadata.xml (3.8 kB at 50 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml
 Progress (1): 2.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata.xml (2.9 kB at 38 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-file/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-file/maven-metadata.xml (1.6 kB at 5.8 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-file/maven-metadata.xml (1.6 kB at 4.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-http-lightweight/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-http-lightweight/maven-metadata.xml (1.6 kB at 2.8 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-http-lightweight/maven-metadata.xml (1.6 kB at 4.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-http-shared/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-http-shared/maven-metadata.xml (1.4 kB at 3.3 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-http-shared/maven-metadata.xml (1.4 kB at 3.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml (1.6 kB at 5.9 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/maven-metadata.xml (1.6 kB at 5.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml
-Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml (1.0 kB at 7.8 kB/s)
+Progress (1): 1.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/maven-metadata.xml (1.0 kB at 4.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml (1.1 kB at 13 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/maven-metadata.xml (1.1 kB at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/maven-metadata.xml
-Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/maven-metadata.xml (1.8 kB at 4.5 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.18.0/plexus-compiler-api-2.18.0.pom
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.18.0/plexus-compiler-api-2.18.0.pom (1.6 kB at 3.2 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.18.0/plexus-compiler-2.18.0.pom
-Progress (1): 4.1 kBProgress (1): 6.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.18.0/plexus-compiler-2.18.0.pom (6.9 kB at 3.3 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/maven-metadata.xml (1.8 kB at 5.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/maven-metadata.xml
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/maven-metadata.xml (1.9 kB at 3.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.18.0/plexus-compiler-javac-2.18.0.pom
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.18.0/plexus-compiler-javac-2.18.0.pom (1.6 kB at 4.1 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.18.0/plexus-compilers-2.18.0.pom
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.18.0/plexus-compilers-2.18.0.pom (1.3 kB at 3.7 kB/s)
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/maven-metadata.xml (1.9 kB at 6.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (2.1 kB at 21 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/maven-metadata.xml (2.1 kB at 29 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (1.3 kB at 14 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/maven-metadata.xml (1.3 kB at 17 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml (3.0 kB at 39 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/maven-metadata.xml (3.0 kB at 38 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/maven-metadata.xml
-Progress (1): 676 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/maven-metadata.xml (676 B at 8.7 kB/s)
+Progress (1): 676 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/maven-metadata.xml (676 B at 7.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-connector-wagon/maven-metadata.xml
-Progress (1): 390 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-connector-wagon/maven-metadata.xml (390 B at 845 B/s)
+Progress (1): 390 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-connector-wagon/maven-metadata.xml (390 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/maven-metadata.xml
-Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/maven-metadata.xml (677 B at 6.6 kB/s)
+Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/maven-metadata.xml (677 B at 8.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/maven-metadata.xml
-Progress (1): 676 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/maven-metadata.xml (676 B at 6.8 kB/s)
+Progress (1): 676 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/maven-metadata.xml (676 B at 7.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/maven-metadata.xml
-Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/maven-metadata.xml (677 B at 5.2 kB/s)
+Progress (1): 677 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/maven-metadata.xml (677 B at 7.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 17 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/maven-metadata.xml (17 kB at 116 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 17 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/maven-metadata.xml (17 kB at 223 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 17 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/maven-metadata.xml (17 kB at 140 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 17 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/maven-metadata.xml (17 kB at 59 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/maven-metadata.xml (7.9 kB at 77 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/maven-metadata.xml (7.9 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-client/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-client/maven-metadata.xml (8.0 kB at 93 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-client/maven-metadata.xml (8.0 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-common/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-common/maven-metadata.xml (7.9 kB at 35 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-common/maven-metadata.xml (7.9 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/maven-metadata.xml (1.3 kB at 17 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/maven-metadata.xml (1.3 kB at 18 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/maven-metadata.xml
 Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/maven-metadata.xml (1.3 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-all/maven-metadata.xml
-Progress (1): 404 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-all/maven-metadata.xml (404 B at 1.3 kB/s)
+Progress (1): 404 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-all/maven-metadata.xml (404 B at 5.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ini4j/ini4j/maven-metadata.xml
 Progress (1): 321 B                   [WARNING] Checksum validation failed, expected 1bb344a0219450e2ff293a167858eccdc197c897 but is c33af61242ea3a4cf8a3e90c3ff0124a1fa5ea62 from central for https://repo.maven.apache.org/maven2/org/ini4j/ini4j/maven-metadata.xml
 Progress (1): 321 B[[1;33mWARNING[m] Could not validate integrity of download from https://repo.maven.apache.org/maven2/org/ini4j/ini4j/maven-metadata.xml: Checksum validation failed, expected 1bb344a0219450e2ff293a167858eccdc197c897 but is c33af61242ea3a4cf8a3e90c3ff0124a1fa5ea62
                    [WARNING] Checksum validation failed, expected 1bb344a0219450e2ff293a167858eccdc197c897 but is c33af61242ea3a4cf8a3e90c3ff0124a1fa5ea62 from central for https://repo.maven.apache.org/maven2/org/ini4j/ini4j/maven-metadata.xml
-Downloaded from central: https://repo.maven.apache.org/maven2/org/ini4j/ini4j/maven-metadata.xml (321 B at 732 B/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/ini4j/ini4j/maven-metadata.xml (321 B at 827 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-impl-base/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-impl-base/maven-metadata.xml (3.0 kB at 12 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-impl-base/maven-metadata.xml (3.0 kB at 6.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-impl-base/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-impl-base/maven-metadata.xml (3.0 kB at 8.3 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-impl-base/maven-metadata.xml (3.0 kB at 9.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-tomcat-common/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-tomcat-common/maven-metadata.xml (1.1 kB at 2.5 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-tomcat-common/maven-metadata.xml (1.1 kB at 2.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-tomcat-managed-7/maven-metadata.xml
-Progress (1): 806 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-tomcat-managed-7/maven-metadata.xml (806 B at 2.7 kB/s)
+Progress (1): 806 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-tomcat-managed-7/maven-metadata.xml (806 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-selenium-server/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-selenium-server/maven-metadata.xml (1.5 kB at 4.4 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-selenium-server/maven-metadata.xml (1.5 kB at 5.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-webdriver/maven-metadata.xml
-Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-webdriver/maven-metadata.xml (2.6 kB at 7.5 kB/s)
+Progress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-webdriver/maven-metadata.xml (2.6 kB at 5.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-webdriver-depchain/maven-metadata.xml
-Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-webdriver-depchain/maven-metadata.xml (2.5 kB at 8.6 kB/s)
+Progress (1): 2.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-webdriver-depchain/maven-metadata.xml (2.5 kB at 4.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-phantom-driver/maven-metadata.xml
-Progress (1): 695 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-phantom-driver/maven-metadata.xml (695 B at 3.1 kB/s)
+Progress (1): 695 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-phantom-driver/maven-metadata.xml (695 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/junit/arquillian-junit-container/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/junit/arquillian-junit-container/maven-metadata.xml (3.0 kB at 14 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/junit/arquillian-junit-container/maven-metadata.xml (3.0 kB at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/junit/arquillian-junit-core/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/junit/arquillian-junit-core/maven-metadata.xml (3.0 kB at 13 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/junit/arquillian-junit-core/maven-metadata.xml (3.0 kB at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/protocol/arquillian-protocol-servlet/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/protocol/arquillian-protocol-servlet/maven-metadata.xml (3.0 kB at 15 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/protocol/arquillian-protocol-servlet/maven-metadata.xml (3.0 kB at 7.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-cdi/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-cdi/maven-metadata.xml (3.3 kB at 9.0 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-cdi/maven-metadata.xml (3.3 kB at 7.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-initialcontext/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-initialcontext/maven-metadata.xml (3.0 kB at 10.0 kB/s)
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-initialcontext/maven-metadata.xml (3.0 kB at 8.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-resource/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-resource/maven-metadata.xml (3.3 kB at 7.3 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/testenricher/arquillian-testenricher-resource/maven-metadata.xml (3.3 kB at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-impl-base/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-impl-base/maven-metadata.xml (2.0 kB at 4.4 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-impl-base/maven-metadata.xml (2.0 kB at 6.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-spi/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-spi/maven-metadata.xml (2.0 kB at 5.0 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-spi/maven-metadata.xml (2.0 kB at 6.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api/maven-metadata.xml
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api/maven-metadata.xml (2.7 kB at 7.1 kB/s)
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api/maven-metadata.xml (2.7 kB at 8.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api-maven/maven-metadata.xml
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api-maven/maven-metadata.xml (2.7 kB at 11 kB/s)
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api-maven/maven-metadata.xml (2.7 kB at 5.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api-maven-archive/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api-maven-archive/maven-metadata.xml (2.1 kB at 6.0 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api-maven-archive/maven-metadata.xml (2.1 kB at 6.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-depchain/maven-metadata.xml
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-depchain/maven-metadata.xml (2.4 kB at 6.1 kB/s)
+Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-depchain/maven-metadata.xml (2.4 kB at 4.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-impl-maven/maven-metadata.xml
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-impl-maven/maven-metadata.xml (2.7 kB at 6.2 kB/s)
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-impl-maven/maven-metadata.xml (2.7 kB at 7.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-impl-maven-archive/maven-metadata.xml
-Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-impl-maven-archive/maven-metadata.xml (2.2 kB at 5.9 kB/s)
+Progress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-impl-maven-archive/maven-metadata.xml (2.2 kB at 4.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi/maven-metadata.xml (2.1 kB at 11 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi/maven-metadata.xml (2.1 kB at 6.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi-maven/maven-metadata.xml
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi-maven/maven-metadata.xml (1.9 kB at 7.4 kB/s)
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi-maven/maven-metadata.xml (1.9 kB at 4.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi-maven-archive/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi-maven-archive/maven-metadata.xml (2.0 kB at 6.0 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-spi-maven-archive/maven-metadata.xml (2.0 kB at 4.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/maven-metadata.xml
-Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/maven-metadata.xml (2.1 kB at 7.7 kB/s)
+Progress (1): 2.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/maven-metadata.xml (2.1 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api-2.5/maven-metadata.xml
-Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api-2.5/maven-metadata.xml (1.9 kB at 4.3 kB/s)
+Progress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/mortbay/jetty/servlet-api-2.5/maven-metadata.xml (1.9 kB at 6.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/jetty-repacked/maven-metadata.xml
-Progress (1): 778 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/jetty-repacked/maven-metadata.xml (778 B at 2.1 kB/s)
+Progress (1): 778 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/jetty-repacked/maven-metadata.xml (778 B at 2.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/maven-metadata.xml (6.5 kB at 80 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/maven-metadata.xml (6.5 kB at 88 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/maven-metadata.xml (6.7 kB at 46 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/maven-metadata.xml (6.7 kB at 76 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-edge-driver/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 4.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-edge-driver/maven-metadata.xml (4.5 kB at 52 kB/s)
+Progress (1): 4.1 kBProgress (1): 4.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-edge-driver/maven-metadata.xml (4.5 kB at 20 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-firefox-driver/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-firefox-driver/maven-metadata.xml (6.7 kB at 67 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-firefox-driver/maven-metadata.xml (6.7 kB at 94 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-htmlunit-driver/maven-metadata.xml
-Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-htmlunit-driver/maven-metadata.xml (2.7 kB at 9.3 kB/s)
+Progress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-htmlunit-driver/maven-metadata.xml (2.7 kB at 8.2 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-ie-driver/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-ie-driver/maven-metadata.xml (6.7 kB at 108 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-ie-driver/maven-metadata.xml (6.7 kB at 83 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/maven-metadata.xml
 Progress (1): 4.1 kBProgress (1): 6.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/maven-metadata.xml (6.4 kB at 73 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-leg-rc/maven-metadata.xml
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-leg-rc/maven-metadata.xml (2.4 kB at 6.1 kB/s)
+Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-leg-rc/maven-metadata.xml (2.4 kB at 8.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/maven-metadata.xml (6.5 kB at 83 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/maven-metadata.xml (6.5 kB at 73 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-safari-driver/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-safari-driver/maven-metadata.xml (5.6 kB at 61 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-safari-driver/maven-metadata.xml (5.6 kB at 23 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-server/maven-metadata.xml
-Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-server/maven-metadata.xml (3.8 kB at 16 kB/s)
+Progress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-server/maven-metadata.xml (3.8 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/maven-metadata.xml (6.7 kB at 87 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/maven-metadata.xml (6.7 kB at 84 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml
-Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (538 B at 8.7 kB/s)
+Progress (1): 538 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/maven-metadata.xml (538 B at 8.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml
-Progress (1): 599 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (599 B at 6.0 kB/s)
+Progress (1): 599 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/maven-metadata.xml (599 B at 8.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml (1.3 kB at 8.8 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/maven-metadata.xml (1.3 kB at 14 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/w3c/css/sac/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/webbitserver/webbit/maven-metadata.xml
-Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/webbitserver/webbit/maven-metadata.xml (1.5 kB at 2.2 kB/s)
+Progress (1): 1.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/webbitserver/webbit/maven-metadata.xml (1.5 kB at 2.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 11 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/maven-metadata.xml (1.4 kB at 26 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xalan/serializer/maven-metadata.xml
 Progress (1): 405 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xalan/serializer/maven-metadata.xml (405 B at 1.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml
-Progress (1): 680 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml (680 B at 9.9 kB/s)
+Progress (1): 680 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xalan/xalan/maven-metadata.xml (680 B at 13 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml
-Progress (1): 951 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml (951 B at 14 kB/s)
+Progress (1): 951 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/maven-metadata.xml (951 B at 3.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml
-Progress (1): 567 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 9.4 kB/s)
-[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for graphene-webdriver-ftest — falling back to pinned lower bounds: Could not resolve following dependencies: []
+Progress (1): 567 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xml-apis/xml-apis/maven-metadata.xml (567 B at 12 kB/s)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for graphene-webdriver-ftest — falling back to pinned lower bounds. Cause: org.apache.maven.shared.dependency.graph.DependencyGraphBuilderException: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: graphene-webdriver-ftest (142 dependencies, 28 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/ftest/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for graphene-webdriver-ftest: pinned=141 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for graphene-webdriver-ftest: pinned=142 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: graphene-webdriver-ftest
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-ftest[0;1m ---[m
@@ -893,6 +898,7 @@ Progress (1): 567 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36marquillian-browser-screenshooter[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36marquillian-browser-screenshooter[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for arquillian-browser-screenshooter
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/extension/screenshooter/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Non-numeric version segment in '2.1_3' — falling back to pinned.
 [[1;33mWARNING[m] Version '1' has fewer than 2 segments — falling back to pinned.
@@ -901,41 +907,42 @@ Progress (1): 567 B                   Downloaded from central: https://repo.ma
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36marquillian-browser-screenshooter[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/jhlabs/filters/maven-metadata.xml
-Progress (1): 336 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/jhlabs/filters/maven-metadata.xml (336 B at 2.6 kB/s)
+Progress (1): 336 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/jhlabs/filters/maven-metadata.xml (336 B at 4.6 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-api/maven-metadata.xml
-Progress (1): 935 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-api/maven-metadata.xml (935 B at 2.4 kB/s)
+Progress (1): 935 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-api/maven-metadata.xml (935 B at 1.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-api/maven-metadata.xml
-Progress (1): 944 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-api/maven-metadata.xml (944 B at 2.2 kB/s)
+Progress (1): 944 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-api/maven-metadata.xml (944 B at 2.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-impl/maven-metadata.xml
-Progress (1): 945 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-impl/maven-metadata.xml (945 B at 1.8 kB/s)
+Progress (1): 945 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-impl/maven-metadata.xml (945 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-spi/maven-metadata.xml
-Progress (1): 944 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-spi/maven-metadata.xml (944 B at 2.7 kB/s)
+Progress (1): 944 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-reporter-spi/maven-metadata.xml (944 B at 1.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-api/maven-metadata.xml
-Progress (1): 949 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-api/maven-metadata.xml (949 B at 2.1 kB/s)
+Progress (1): 949 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-api/maven-metadata.xml (949 B)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-impl-base/maven-metadata.xml
-Progress (1): 955 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-impl-base/maven-metadata.xml (955 B at 3.1 kB/s)
+Progress (1): 955 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-impl-base/maven-metadata.xml (955 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-spi/maven-metadata.xml
-Progress (1): 949 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-spi/maven-metadata.xml (949 B at 1.9 kB/s)
+Progress (1): 949 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-screenshooter-spi/maven-metadata.xml (949 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-spi/maven-metadata.xml
-Progress (1): 935 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-spi/maven-metadata.xml (935 B at 3.3 kB/s)
+Progress (1): 935 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-spi/maven-metadata.xml (935 B at 1.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-video-api/maven-metadata.xml
-Progress (1): 941 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-video-api/maven-metadata.xml (941 B at 1.7 kB/s)
+Progress (1): 941 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/arquillian/extension/arquillian-recorder-video-api/maven-metadata.xml (941 B at 2.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml
-Progress (1): 464 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml (464 B at 1.7 kB/s)
+Progress (1): 464 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-assert/maven-metadata.xml (464 B at 1.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml
-Progress (1): 751 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml (751 B at 7.6 kB/s)
+Progress (1): 751 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/easytesting/fest-util/maven-metadata.xml (751 B at 2.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.antlr/maven-metadata.xml
 Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.antlr/maven-metadata.xml (3.2 kB at 11 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/maven-metadata.xml
-Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/maven-metadata.xml (3.2 kB at 20 kB/s)
+Progress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/maven-metadata.xml (3.2 kB at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/maven-metadata.xml (5.6 kB at 25 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/maven-metadata.xml (5.6 kB at 21 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.moxy/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.moxy/maven-metadata.xml (5.6 kB at 23 kB/s)
-[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for arquillian-browser-screenshooter — falling back to pinned lower bounds: Could not resolve following dependencies: []
+Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.moxy/maven-metadata.xml (5.6 kB at 16 kB/s)
+[[1;33mWARNING[m] [LOCK-PLUGIN] Range resolution failed for arquillian-browser-screenshooter — falling back to pinned lower bounds. Cause: org.apache.maven.shared.dependency.graph.DependencyGraphBuilderException: Could not resolve following dependencies: []
 [[1;34mINFO[m] Flattening leaf module dependencies for: arquillian-browser-screenshooter (147 dependencies, 18 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/extension/screenshooter/target/dependency-tree-after.txt
-[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for arquillian-browser-screenshooter: pinned=145 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for arquillian-browser-screenshooter: pinned=147 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: arquillian-browser-screenshooter
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36marquillian-browser-screenshooter[0;1m ---[m
@@ -1011,20 +1018,20 @@ Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from c
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Graphene: Parent 2.1.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Graphene: Parent ................................... [1;32mSUCCESS[m [  0.703 s]
-[[1;34mINFO[m] Graphene: Build Resources .......................... [1;32mSUCCESS[m [  0.503 s]
-[[1;34mINFO[m] Graphene: SPI ...................................... [1;32mSUCCESS[m [  4.298 s]
-[[1;34mINFO[m] Graphene: API ...................................... [1;32mSUCCESS[m [  0.812 s]
-[[1;34mINFO[m] Graphene: Implementation ........................... [1;32mSUCCESS[m [  9.867 s]
-[[1;34mINFO[m] Graphene: Dependency Chain for Graphene WebDriver .. [1;32mSUCCESS[m [  0.095 s]
-[[1;34mINFO[m] Graphene: Dependency Chain for Graphene ............ [1;32mSUCCESS[m [  0.036 s]
-[[1;34mINFO[m] Graphene: Functional Test .......................... [1;32mSUCCESS[m [ 33.825 s]
-[[1;34mINFO[m] Graphene Screenshooter ............................. [1;32mSUCCESS[m [  7.524 s]
+[[1;34mINFO[m] Graphene: Parent ................................... [1;32mSUCCESS[m [  0.832 s]
+[[1;34mINFO[m] Graphene: Build Resources .......................... [1;32mSUCCESS[m [  0.444 s]
+[[1;34mINFO[m] Graphene: SPI ...................................... [1;32mSUCCESS[m [  4.988 s]
+[[1;34mINFO[m] Graphene: API ...................................... [1;32mSUCCESS[m [  0.931 s]
+[[1;34mINFO[m] Graphene: Implementation ........................... [1;32mSUCCESS[m [ 11.706 s]
+[[1;34mINFO[m] Graphene: Dependency Chain for Graphene WebDriver .. [1;32mSUCCESS[m [  0.196 s]
+[[1;34mINFO[m] Graphene: Dependency Chain for Graphene ............ [1;32mSUCCESS[m [  0.060 s]
+[[1;34mINFO[m] Graphene: Functional Test .......................... [1;32mSUCCESS[m [ 34.508 s]
+[[1;34mINFO[m] Graphene Screenshooter ............................. [1;32mSUCCESS[m [  8.241 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  57.828 s
-[[1;34mINFO[m] Finished at: 2026-11-10T11:25:08Z
+[[1;34mINFO[m] Total time:  01:02 min
+[[1;34mINFO[m] Finished at: 2026-11-12T22:23:18Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -1035,8 +1042,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Tue Nov 10 11:25:09 UTC 2026.
-Universal Time is now:  Tue Nov 10 11:25:09 UTC 2026.
+Local time is now:      Thu Nov 12 22:23:18 UTC 2026.
+Universal Time is now:  Thu Nov 12 22:23:18 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -1057,9 +1064,6 @@ Universal Time is now:  Tue Nov 10 11:25:09 UTC 2026.
 [[1;34mINFO[m] [1mBuilding Graphene: Parent 2.1.0-SNAPSHOT                           [1/9][m
 [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-parent[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/target
-[[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-parent[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-maven-version)[m @ [36mgraphene-parent[0;1m ---[m
@@ -1069,7 +1073,7 @@ Universal Time is now:  Tue Nov 10 11:25:09 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.3:create[m [1m(get-scm-revision)[m @ [36mgraphene-parent[0;1m ---[m
 [[1;34mINFO[m] Executing: /bin/sh -c cd /var/maven/app && git rev-parse --verify HEAD
 [[1;34mINFO[m] Working directory: /var/maven/app
-[[1;34mINFO[m] Storing buildNumber: 6f2930652c58c5299915f6beb9eed5a96b5474c6 at timestamp: 1794309910358
+[[1;34mINFO[m] Storing buildNumber: 6f2930652c58c5299915f6beb9eed5a96b5474c6 at timestamp: 1794522200297
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -1085,9 +1089,6 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m-------< [0;36morg.jboss.arquillian.graphene:graphene-build-resources[0;1m >-------[m
 [[1;34mINFO[m] [1mBuilding Graphene: Build Resources 2.1.0-SNAPSHOT                  [2/9][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-build-resources[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/build/resources/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-build-resources[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1115,14 +1116,11 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.5:jar[m [1m(default-jar)[m @ [36mgraphene-build-resources[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/build/resources/target/graphene-build-resources-2.1.0-SNAPSHOT.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:2.3:jar-no-fork[m [1m(attach-sources)[m @ [36mgraphene-build-resources[0;1m ---[m
-[[1;34mINFO[m] Building jar: /var/maven/app/build/resources/target/graphene-build-resources-2.1.0-SNAPSHOT-sources.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.5:test-jar[m [1m(default)[m @ [36mgraphene-build-resources[0;1m ---[m
 [[1;33mWARNING[m] JAR will be empty - no content was marked for inclusion!
-[[1;34mINFO[m] Building jar: /var/maven/app/build/resources/target/graphene-build-resources-2.1.0-SNAPSHOT-tests.jar
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.1:install[m [1m(default-install)[m @ [36mgraphene-build-resources[0;1m ---[m
 [[1;34mINFO[m] Installing /var/maven/app/build/resources/target/graphene-build-resources-2.1.0-SNAPSHOT.jar to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-build-resources/2.1.0-SNAPSHOT/graphene-build-resources-2.1.0-SNAPSHOT.jar
@@ -1133,17 +1131,6 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m--------< [0;36morg.jboss.arquillian.graphene:graphene-webdriver-spi[0;1m >--------[m
 [[1;34mINFO[m] [1mBuilding Graphene: SPI 2.1.0-SNAPSHOT                              [3/9][m
 [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
-Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-api/1.11.0.CR1/arquillian-test-api-1.11.0.CR1.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-spi/1.11.0.CR1/arquillian-test-spi-1.11.0.CR1.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-spi/1.11.0.CR1/arquillian-core-spi-1.11.0.CR1.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-api/1.11.0.CR1/arquillian-core-api-1.11.0.CR1.jar
-Progress (1): 3.3/3.6 kBProgress (1): 3.6 kB    Progress (2): 3.6 kB | 3.2/29 kBProgress (3): 3.6 kB | 3.2/29 kB | 3.3/49 kBProgress (4): 3.6 kB | 3.2/29 kB | 3.3/49 kB | 3.3/9.5 kBProgress (4): 3.6 kB | 5.9/29 kB | 3.3/49 kB | 3.3/9.5 kBProgress (4): 3.6 kB | 5.9/29 kB | 6.0/49 kB | 3.3/9.5 kBProgress (4): 3.6 kB | 5.9/29 kB | 6.0/49 kB | 6.0/9.5 kBProgress (4): 3.6 kB | 8.7/29 kB | 6.0/49 kB | 6.0/9.5 kBProgress (4): 3.6 kB | 8.7/29 kB | 9.1/49 kB | 6.0/9.5 kBProgress (4): 3.6 kB | 8.7/29 kB | 9.1/49 kB | 9.1/9.5 kBProgress (4): 3.6 kB | 8.7/29 kB | 12/49 kB | 9.1/9.5 kB Progress (4): 3.6 kB | 11/29 kB | 12/49 kB | 9.1/9.5 kB Progress (4): 3.6 kB | 11/29 kB | 15/49 kB | 9.1/9.5 kBProgress (4): 3.6 kB | 11/29 kB | 15/49 kB | 9.5 kB    Progress (4): 3.6 kB | 11/29 kB | 17/49 kB | 9.5 kBProgress (4): 3.6 kB | 14/29 kB | 17/49 kB | 9.5 kBProgress (4): 3.6 kB | 14/29 kB | 20/49 kB | 9.5 kBProgress (4): 3.6 kB | 17/29 kB | 20/49 kB | 9.5 kBProgress (4): 3.6 kB | 17/29 kB | 23/49 kB | 9.5 kBProgress (4): 3.6 kB | 20/29 kB | 23/49 kB | 9.5 kBProgress (4): 3.6 kB | 20/29 kB | 25/49 kB | 9.5 kBProgress (4): 3.6 kB | 22/29 kB | 25/49 kB | 9.5 kBProgress (4): 3.6 kB | 22/29 kB | 28/49 kB | 9.5 kBProgress (4): 3.6 kB | 22/29 kB | 31/49 kB | 9.5 kBProgress (4): 3.6 kB | 25/29 kB | 31/49 kB | 9.5 kBProgress (4): 3.6 kB | 25/29 kB | 34/49 kB | 9.5 kBProgress (4): 3.6 kB | 28/29 kB | 34/49 kB | 9.5 kBProgress (4): 3.6 kB | 28/29 kB | 36/49 kB | 9.5 kBProgress (4): 3.6 kB | 29 kB | 36/49 kB | 9.5 kB   Progress (4): 3.6 kB | 29 kB | 39/49 kB | 9.5 kBProgress (4): 3.6 kB | 29 kB | 42/49 kB | 9.5 kBProgress (4): 3.6 kB | 29 kB | 45/49 kB | 9.5 kBProgress (4): 3.6 kB | 29 kB | 47/49 kB | 9.5 kBProgress (4): 3.6 kB | 29 kB | 49 kB | 9.5 kB                                                Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-api/1.11.0.CR1/arquillian-test-api-1.11.0.CR1.jar (3.6 kB at 1.3 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-api/1.11.0.CR1/arquillian-core-api-1.11.0.CR1.jar (9.5 kB at 3.5 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-spi/1.11.0.CR1/arquillian-test-spi-1.11.0.CR1.jar (49 kB at 18 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-spi/1.11.0.CR1/arquillian-core-spi-1.11.0.CR1.jar (29 kB at 10 kB/s)
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
-[[1;34mINFO[m] Deleting /var/maven/app/spi/target
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
 [[1;34mINFO[m] 
@@ -1158,23 +1145,185 @@ Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquilli
 [[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/spi/src/main/resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
-[[1;34mINFO[m] Changes detected - recompiling the module!
-[[1;34mINFO[m] Compiling 16 source files to /var/maven/app/spi/target/classes
-[[1;34mINFO[m] -------------------------------------------------------------
-[[1;31mERROR[m] COMPILATION ERROR : 
-[[1;34mINFO[m] -------------------------------------------------------------
-[[1;31mERROR[m] To suppress warnings about obsolete options, use -Xlint:-options.
-/var/maven/app/spi/src/main/java/org/jboss/arquillian/graphene/spi/page/PageExtensionProvider.java:[26,36] error: cannot access TestClass
-[[1;34mINFO[m] 1 error
-[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/spi/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.17:test[m [1m(default-test)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-surefire-report-plugin:2.12:report-only[m [1m(default)[0;1m > [0;1m[surefire]validate[m @ [36mgraphene-webdriver-spi[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-maven-version)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-surefire-report-plugin:2.12:report-only[m [1m(default)[0;1m < [0;1m[surefire]validate[m @ [36mgraphene-webdriver-spi[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-report-plugin:2.12:report-only[m [1m(default)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;33mWARNING[m] Unable to locate Test Source XRef to link to - DISABLED
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.5:jar[m [1m(default-jar)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:2.3:jar-no-fork[m [1m(attach-sources)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.5:test-jar[m [1m(default)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;33mWARNING[m] JAR will be empty - no content was marked for inclusion!
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:2.9.1:check[m [1m(checkstyle-report)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-license-plugin:1.9.0:check[m [1m(graphene-license-check)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] Checking licenses...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.1:install[m [1m(default-install)[m @ [36mgraphene-webdriver-spi[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/spi/target/graphene-webdriver-spi-2.1.0-SNAPSHOT.jar to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-webdriver-spi/2.1.0-SNAPSHOT/graphene-webdriver-spi-2.1.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/spi/pom.xml to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-webdriver-spi/2.1.0-SNAPSHOT/graphene-webdriver-spi-2.1.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/spi/target/graphene-webdriver-spi-2.1.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-webdriver-spi/2.1.0-SNAPSHOT/graphene-webdriver-spi-2.1.0-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/spi/target/graphene-webdriver-spi-2.1.0-SNAPSHOT-tests.jar to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-webdriver-spi/2.1.0-SNAPSHOT/graphene-webdriver-spi-2.1.0-SNAPSHOT-tests.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------< [0;36morg.jboss.arquillian.graphene:graphene-webdriver-api[0;1m >--------[m
+[[1;34mINFO[m] [1mBuilding Graphene: API 2.1.0-SNAPSHOT                              [4/9][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-maven-version)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.3:create-timestamp[m [1m(get-build-timestamp)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.3:create[m [1m(get-scm-revision)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/api/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/api/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.17:test[m [1m(default-test)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-surefire-report-plugin:2.12:report-only[m [1m(default)[0;1m > [0;1m[surefire]validate[m @ [36mgraphene-webdriver-api[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-maven-version)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-surefire-report-plugin:2.12:report-only[m [1m(default)[0;1m < [0;1m[surefire]validate[m @ [36mgraphene-webdriver-api[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-report-plugin:2.12:report-only[m [1m(default)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;33mWARNING[m] Unable to locate Test Source XRef to link to - DISABLED
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.5:jar[m [1m(default-jar)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:2.3:jar-no-fork[m [1m(attach-sources)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.5:test-jar[m [1m(default)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;33mWARNING[m] JAR will be empty - no content was marked for inclusion!
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:2.9.1:check[m [1m(checkstyle-report)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-license-plugin:1.9.0:check[m [1m(graphene-license-check)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] Checking licenses...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.1:install[m [1m(default-install)[m @ [36mgraphene-webdriver-api[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/api/target/graphene-webdriver-api-2.1.0-SNAPSHOT.jar to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-webdriver-api/2.1.0-SNAPSHOT/graphene-webdriver-api-2.1.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/api/pom.xml to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-webdriver-api/2.1.0-SNAPSHOT/graphene-webdriver-api-2.1.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/api/target/graphene-webdriver-api-2.1.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-webdriver-api/2.1.0-SNAPSHOT/graphene-webdriver-api-2.1.0-SNAPSHOT-sources.jar
+[[1;34mINFO[m] Installing /var/maven/app/api/target/graphene-webdriver-api-2.1.0-SNAPSHOT-tests.jar to /var/maven/.m2/repository/org/jboss/arquillian/graphene/graphene-webdriver-api/2.1.0-SNAPSHOT/graphene-webdriver-api-2.1.0-SNAPSHOT-tests.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------< [0;36morg.jboss.arquillian.graphene:graphene-webdriver-impl[0;1m >--------[m
+[[1;34mINFO[m] [1mBuilding Graphene: Implementation 2.1.0-SNAPSHOT                   [5/9][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-api/1.11.0.CR1/arquillian-config-api-1.11.0.CR1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-spi/1.11.0.CR1/arquillian-container-spi-1.11.0.CR1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-api/1.11.0.CR1/arquillian-container-test-api-1.11.0.CR1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-spi/1.1.9.Final/arquillian-config-spi-1.1.9.Final.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-impl-base/1.11.0.CR1/arquillian-config-impl-base-1.11.0.CR1.jar
+Progress (1): 3.3/7.0 kBProgress (2): 3.3/7.0 kB | 3.3/47 kBProgress (3): 3.3/7.0 kB | 3.3/47 kB | 3.3/15 kBProgress (4): 3.3/7.0 kB | 3.3/47 kB | 3.3/15 kB | 2.7/55 kBProgress (4): 3.3/7.0 kB | 6.0/47 kB | 3.3/15 kB | 2.7/55 kBProgress (4): 3.3/7.0 kB | 8.8/47 kB | 3.3/15 kB | 2.7/55 kBProgress (4): 6.0/7.0 kB | 8.8/47 kB | 3.3/15 kB | 2.7/55 kBProgress (4): 6.0/7.0 kB | 11/47 kB | 3.3/15 kB | 2.7/55 kB Progress (4): 6.0/7.0 kB | 11/47 kB | 3.3/15 kB | 5.5/55 kBProgress (4): 6.0/7.0 kB | 11/47 kB | 6.0/15 kB | 5.5/55 kBProgress (4): 6.0/7.0 kB | 11/47 kB | 6.0/15 kB | 8.2/55 kBProgress (4): 6.0/7.0 kB | 14/47 kB | 6.0/15 kB | 8.2/55 kBProgress (4): 7.0 kB | 14/47 kB | 6.0/15 kB | 8.2/55 kB    Progress (4): 7.0 kB | 14/47 kB | 6.0/15 kB | 11/55 kB Progress (4): 7.0 kB | 14/47 kB | 8.2/15 kB | 11/55 kBProgress (4): 7.0 kB | 14/47 kB | 8.2/15 kB | 14/55 kBProgress (4): 7.0 kB | 17/47 kB | 8.2/15 kB | 14/55 kBProgress (4): 7.0 kB | 17/47 kB | 8.2/15 kB | 16/55 kBProgress (4): 7.0 kB | 17/47 kB | 11/15 kB | 16/55 kB Progress (4): 7.0 kB | 17/47 kB | 11/15 kB | 19/55 kBProgress (4): 7.0 kB | 20/47 kB | 11/15 kB | 19/55 kBProgress (4): 7.0 kB | 20/47 kB | 11/15 kB | 22/55 kBProgress (4): 7.0 kB | 20/47 kB | 14/15 kB | 22/55 kBProgress (4): 7.0 kB | 20/47 kB | 14/15 kB | 25/55 kBProgress (4): 7.0 kB | 22/47 kB | 14/15 kB | 25/55 kBProgress (4): 7.0 kB | 22/47 kB | 14/15 kB | 27/55 kBProgress (4): 7.0 kB | 22/47 kB | 15 kB | 27/55 kB   Progress (4): 7.0 kB | 22/47 kB | 15 kB | 30/55 kBProgress (4): 7.0 kB | 25/47 kB | 15 kB | 30/55 kBProgress (4): 7.0 kB | 25/47 kB | 15 kB | 33/55 kBProgress (4): 7.0 kB | 28/47 kB | 15 kB | 33/55 kBProgress (4): 7.0 kB | 28/47 kB | 15 kB | 36/55 kBProgress (4): 7.0 kB | 31/47 kB | 15 kB | 36/55 kBProgress (4): 7.0 kB | 33/47 kB | 15 kB | 36/55 kBProgress (4): 7.0 kB | 33/47 kB | 15 kB | 38/55 kBProgress (4): 7.0 kB | 36/47 kB | 15 kB | 38/55 kBProgress (4): 7.0 kB | 36/47 kB | 15 kB | 41/55 kBProgress (4): 7.0 kB | 36/47 kB | 15 kB | 44/55 kBProgress (4): 7.0 kB | 39/47 kB | 15 kB | 44/55 kBProgress (4): 7.0 kB | 42/47 kB | 15 kB | 44/55 kBProgress (4): 7.0 kB | 42/47 kB | 15 kB | 46/55 kBProgress (4): 7.0 kB | 44/47 kB | 15 kB | 46/55 kBProgress (4): 7.0 kB | 44/47 kB | 15 kB | 49/55 kBProgress (4): 7.0 kB | 47 kB | 15 kB | 49/55 kB   Progress (4): 7.0 kB | 47 kB | 15 kB | 52/55 kBProgress (4): 7.0 kB | 47 kB | 15 kB | 55/55 kBProgress (4): 7.0 kB | 47 kB | 15 kB | 55 kB   Progress (5): 7.0 kB | 47 kB | 15 kB | 55 kB | 2.7/3.2 kBProgress (5): 7.0 kB | 47 kB | 15 kB | 55 kB | 3.2 kB                                                         Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-spi/1.11.0.CR1/arquillian-container-spi-1.11.0.CR1.jar (55 kB at 56 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-spi/1.11.0.CR1/arquillian-container-test-spi-1.11.0.CR1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-impl-base/1.11.0.CR1/arquillian-config-impl-base-1.11.0.CR1.jar (47 kB at 47 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-impl-base/1.11.0.CR1/arquillian-core-impl-base-1.11.0.CR1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-api/1.11.0.CR1/arquillian-config-api-1.11.0.CR1.jar (7.0 kB at 7.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-impl-base/1.11.0.CR1/arquillian-core-impl-base-1.11.0.CR1-tests.jar
+Progress (3): 15 kB | 3.2 kB | 3.3/28 kBProgress (3): 15 kB | 3.2 kB | 6.0/28 kBProgress (3): 15 kB | 3.2 kB | 10/28 kB Progress (3): 15 kB | 3.2 kB | 14/28 kBProgress (3): 15 kB | 3.2 kB | 18/28 kBProgress (3): 15 kB | 3.2 kB | 22/28 kBProgress (3): 15 kB | 3.2 kB | 27/28 kBProgress (3): 15 kB | 3.2 kB | 28 kB                                       Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-api/1.11.0.CR1/arquillian-container-test-api-1.11.0.CR1.jar (15 kB at 15 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-api/2.5.6/arquillian-drone-api-2.5.6.jar
+Progress (3): 3.2 kB | 28 kB | 3.4/69 kBProgress (3): 3.2 kB | 28 kB | 7.5/69 kBProgress (3): 3.2 kB | 28 kB | 12/69 kB Progress (3): 3.2 kB | 28 kB | 16/69 kBProgress (3): 3.2 kB | 28 kB | 20/69 kBProgress (3): 3.2 kB | 28 kB | 24/69 kBProgress (3): 3.2 kB | 28 kB | 28/69 kBProgress (4): 3.2 kB | 28 kB | 28/69 kB | 3.3/6.1 kBProgress (4): 3.2 kB | 28 kB | 32/69 kB | 3.3/6.1 kBProgress (4): 3.2 kB | 28 kB | 32/69 kB | 6.0/6.1 kBProgress (4): 3.2 kB | 28 kB | 36/69 kB | 6.0/6.1 kBProgress (4): 3.2 kB | 28 kB | 36/69 kB | 6.1 kB    Progress (4): 3.2 kB | 28 kB | 40/69 kB | 6.1 kBProgress (4): 3.2 kB | 28 kB | 44/69 kB | 6.1 kBProgress (4): 3.2 kB | 28 kB | 48/69 kB | 6.1 kBProgress (4): 3.2 kB | 28 kB | 53/69 kB | 6.1 kBProgress (4): 3.2 kB | 28 kB | 57/69 kB | 6.1 kBProgress (4): 3.2 kB | 28 kB | 61/69 kB | 6.1 kBProgress (4): 3.2 kB | 28 kB | 65/69 kB | 6.1 kBProgress (4): 3.2 kB | 28 kB | 69/69 kB | 6.1 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 6.1 kB                                                Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-api/2.5.6/arquillian-drone-api-2.5.6.jar (6.1 kB at 5.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-configuration/2.5.6/arquillian-drone-configuration-2.5.6.jar
+Progress (4): 3.2 kB | 28 kB | 69 kB | 3.3/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 6.0/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 9.1/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 12/36 kB Progress (4): 3.2 kB | 28 kB | 69 kB | 15/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 17/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 20/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 23/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 25/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 30/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 34/36 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 36 kB                                               Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-configuration/2.5.6/arquillian-drone-configuration-2.5.6.jar (36 kB at 30 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-impl/2.5.6/arquillian-drone-impl-2.5.6.jar
+Progress (4): 3.2 kB | 28 kB | 69 kB | 2.7/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 5.5/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 8.2/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 11/80 kB Progress (4): 3.2 kB | 28 kB | 69 kB | 14/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 16/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 19/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 22/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 25/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 27/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 30/80 kBProgress (4): 3.2 kB | 28 kB | 69 kB | 33/80 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 3.4/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 7.5/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 12/67 kB Progress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 16/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 20/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 24/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 28/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 32/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 36/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 40/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 44/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 48/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 53/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 33/80 kB | 57/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 36/80 kB | 57/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 36/80 kB | 61/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 38/80 kB | 61/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 38/80 kB | 65/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 41/80 kB | 65/67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 41/80 kB | 67 kB   Progress (5): 3.2 kB | 28 kB | 69 kB | 44/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 48/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 52/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 56/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 60/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 64/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 68/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 72/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 76/80 kB | 67 kBProgress (5): 3.2 kB | 28 kB | 69 kB | 80 kB | 67 kB                                                       Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/config/arquillian-config-spi/1.1.9.Final/arquillian-config-spi-1.1.9.Final.jar (3.2 kB at 2.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-spi/2.5.6/arquillian-drone-spi-2.5.6.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-impl/2.5.6/arquillian-drone-impl-2.5.6.jar (67 kB at 52 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-impl-base/1.11.0.CR1/arquillian-test-impl-base-1.11.0.CR1.jar
+Progress (4): 28 kB | 69 kB | 80 kB | 3.3/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 6.0/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 8.8/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 11/30 kB Progress (4): 28 kB | 69 kB | 80 kB | 14/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 17/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 20/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 22/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 25/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 28/30 kBProgress (4): 28 kB | 69 kB | 80 kB | 30 kB                                              Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/container/arquillian-container-test-spi/1.11.0.CR1/arquillian-container-test-spi-1.11.0.CR1.jar (28 kB at 21 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-impl-base/1.11.0.CR1/arquillian-test-impl-base-1.11.0.CR1-tests.jar
+Progress (4): 69 kB | 80 kB | 30 kB | 3.4/30 kBProgress (4): 69 kB | 80 kB | 30 kB | 7.5/30 kBProgress (4): 69 kB | 80 kB | 30 kB | 12/30 kB Progress (4): 69 kB | 80 kB | 30 kB | 16/30 kBProgress (4): 69 kB | 80 kB | 30 kB | 20/30 kBProgress (4): 69 kB | 80 kB | 30 kB | 24/30 kBProgress (4): 69 kB | 80 kB | 30 kB | 28/30 kBProgress (4): 69 kB | 80 kB | 30 kB | 30 kB                                              Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-spi/2.5.6/arquillian-drone-spi-2.5.6.jar (30 kB at 22 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/1.4/objenesis-1.4.jar
+Progress (4): 69 kB | 80 kB | 30 kB | 3.3/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 6.0/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 8.8/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 12/45 kB Progress (4): 69 kB | 80 kB | 30 kB | 14/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 18/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 22/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 27/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 31/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 35/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 39/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 41/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 45/45 kBProgress (4): 69 kB | 80 kB | 30 kB | 45 kB                                              Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-impl-base/1.11.0.CR1/arquillian-core-impl-base-1.11.0.CR1.jar (69 kB at 46 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/core/arquillian-core-impl-base/1.11.0.CR1/arquillian-core-impl-base-1.11.0.CR1-tests.jar (80 kB at 52 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/1.4/objenesis-1.4.jar (45 kB at 29 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-impl-base/1.11.0.CR1/arquillian-test-impl-base-1.11.0.CR1.jar (30 kB at 19 kB/s)
+Progress (1): 3.4/22 kBProgress (1): 7.5/22 kBProgress (1): 12/22 kB Progress (1): 16/22 kBProgress (1): 20/22 kBProgress (1): 22 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/test/arquillian-test-impl-base/1.11.0.CR1/arquillian-test-impl-base-1.11.0.CR1-tests.jar (22 kB at 11 kB/s)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-java-version)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:1.3.1:enforce[m [1m(enforce-maven-version)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.3:create-timestamp[m [1m(get-build-timestamp)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.3:create[m [1m(get-scm-revision)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 6 resources
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 9 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.17:test[m [1m(default-test)[m @ [36mgraphene-webdriver-impl[0;1m ---[m
+[[1;34mINFO[m] Surefire report directory: /var/maven/app/impl/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Graphene: Parent 2.1.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Graphene: Parent ................................... [1;32mSUCCESS[m [  0.601 s]
-[[1;34mINFO[m] Graphene: Build Resources .......................... [1;32mSUCCESS[m [  0.484 s]
-[[1;34mINFO[m] Graphene: SPI ...................................... [1;31mFAILURE[m [  3.557 s]
-[[1;34mINFO[m] Graphene: API ...................................... [1;33mSKIPPED[m
-[[1;34mINFO[m] Graphene: Implementation ........................... [1;33mSKIPPED[m
+[[1;34mINFO[m] Graphene: Parent ................................... [1;32mSUCCESS[m [  0.864 s]
+[[1;34mINFO[m] Graphene: Build Resources .......................... [1;32mSUCCESS[m [  0.535 s]
+[[1;34mINFO[m] Graphene: SPI ...................................... [1;32mSUCCESS[m [  1.318 s]
+[[1;34mINFO[m] Graphene: API ...................................... [1;32mSUCCESS[m [  0.259 s]
+[[1;34mINFO[m] Graphene: Implementation ........................... [1;31mFAILURE[m [  2.696 s]
 [[1;34mINFO[m] Graphene: Dependency Chain for Graphene WebDriver .. [1;33mSKIPPED[m
 [[1;34mINFO[m] Graphene: Dependency Chain for Graphene ............ [1;33mSKIPPED[m
 [[1;34mINFO[m] Graphene: Functional Test .......................... [1;33mSKIPPED[m
@@ -1182,12 +1331,42 @@ Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquilli
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  4.816 s
-[[1;34mINFO[m] Finished at: 2026-11-10T11:25:14Z
+[[1;34mINFO[m] Total time:  5.862 s
+[[1;34mINFO[m] Finished at: 2026-11-12T22:23:25Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.1:compile[m [1m(default-compile)[m on project [36mgraphene-webdriver-spi[m: [1;31mCompilation failure[m
-[[1;31mERROR[m] [1;31mTo suppress warnings about obsolete options, use -Xlint:-options.[m
-[[1;31mERROR[m] [1;31m/var/maven/app/spi/src/main/java/org/jboss/arquillian/graphene/spi/page/PageExtensionProvider.java:[26,36] error: cannot access TestClass[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:2.17:test[m [1m(default-test)[m on project [36mgraphene-webdriver-impl[m: [1;31mExecution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:2.17:test failed: There was an error in the forked process[m
+[[1;31mERROR[m] [1;31mjava.lang.UnsupportedClassVersionError: org/jboss/arquillian/test/test/AbstractTestTestBase has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0[m
+[[1;31mERROR[m] [1;31m	at java.lang.ClassLoader.defineClass1(Native Method)[m
+[[1;31mERROR[m] [1;31m	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)[m
+[[1;31mERROR[m] [1;31m	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader.defineClass(URLClassLoader.java:473)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)[m
+[[1;31mERROR[m] [1;31m	at java.security.AccessController.doPrivileged(Native Method)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)[m
+[[1;31mERROR[m] [1;31m	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)[m
+[[1;31mERROR[m] [1;31m	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)[m
+[[1;31mERROR[m] [1;31m	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)[m
+[[1;31mERROR[m] [1;31m	at java.lang.ClassLoader.defineClass1(Native Method)[m
+[[1;31mERROR[m] [1;31m	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)[m
+[[1;31mERROR[m] [1;31m	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader.defineClass(URLClassLoader.java:473)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)[m
+[[1;31mERROR[m] [1;31m	at java.security.AccessController.doPrivileged(Native Method)[m
+[[1;31mERROR[m] [1;31m	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)[m
+[[1;31mERROR[m] [1;31m	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)[m
+[[1;31mERROR[m] [1;31m	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)[m
+[[1;31mERROR[m] [1;31m	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)[m
+[[1;31mERROR[m] [1;31m	at org.apache.maven.surefire.util.DefaultScanResult.loadClass(DefaultScanResult.java:131)[m
+[[1;31mERROR[m] [1;31m	at org.apache.maven.surefire.util.DefaultScanResult.applyFilter(DefaultScanResult.java:95)[m
+[[1;31mERROR[m] [1;31m	at org.apache.maven.surefire.junit4.JUnit4Provider.scanClassPath(JUnit4Provider.java:206)[m
+[[1;31mERROR[m] [1;31m	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:103)[m
+[[1;31mERROR[m] [1;31m	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)[m
+[[1;31mERROR[m] [1;31m	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)[m
+[[1;31mERROR[m] [1;31m	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)[m
 [[1;31mERROR[m] [1;31m[m
 [[1;31mERROR[m] -> [1m[Help 1][m
 [[1;31mERROR[m] 
@@ -1195,10 +1374,10 @@ Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquilli
 [[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
 [[1;31mERROR[m] 
 [[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
-[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
 [[1;31mERROR[m] 
 [[1;31mERROR[m] After correcting the problems, you can resume the build with the command
-[[1;31mERROR[m]   [1mmvn <args> -rf :graphene-webdriver-spi[m
+[[1;31mERROR[m]   [1mmvn <args> -rf :graphene-webdriver-impl[m
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m

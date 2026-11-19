@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/api/RQ1/a
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -Dmaven.test.failure.ignore=true && mvn install -Dmaven.test.failure.ignore=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Api.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:008e590a1cd0e91bdd3debb6c45db808d4b48cff2b5f4ca575b746570e7b6fc5
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.jboss.weld:weld-api-parent:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/api/RQ1/buildcache/weld-api-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/api/RQ1/buildcache/weld-api-parent:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk8-toolchains-8-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -Dmaven.test.failure.ignore=true && mvn install -Dmaven.test.failure.ignore=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 javac: invalid flag: --version
@@ -79,8 +79,8 @@ use -help for a list of possible options
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 14:37:52 UTC 2026.
-Universal Time is now:  Sun Oct 11 14:37:52 UTC 2026.
+Local time is now:      Thu Nov 19 02:57:49 UTC 2026.
+Universal Time is now:  Thu Nov 19 02:57:49 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -92,6 +92,7 @@ Universal Time is now:  Sun Oct 11 14:37:52 UTC 2026.
 [[1;34mINFO[m] Weld APIs Parent                                                   [pom]
 [[1;34mINFO[m] Weld APIs                                                          [jar]
 [[1;34mINFO[m] Weld SPIs for container integration                                [jar]
+Downloading from jboss-public-repository-group: https://repository.jboss.org/nexus/content/groups/public/com/baeldung/counter-maven-plugin/1.0-SNAPSHOT/maven-metadata.xml
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--------------------< [0;36morg.jboss.weld:weld-api-bom[0;1m >---------------------[m
 [[1;34mINFO[m] [1mBuilding Weld APIs BOM 4.0-SNAPSHOT                                [1/4][m
@@ -100,6 +101,7 @@ Universal Time is now:  Sun Oct 11 14:37:52 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mweld-api-bom[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mweld-api-bom[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for weld-api-bom
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/bom/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 2 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -116,6 +118,7 @@ Universal Time is now:  Sun Oct 11 14:37:52 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-api-parent[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for weld-api-parent
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 0 dependencies (0 carrying exclusions, 11 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -133,7 +136,7 @@ Universal Time is now:  Sun Oct 11 14:37:52 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api-parent[0;1m ---[m
 [[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' 'HEAD'
 [[1;34mINFO[m] Working directory: /var/maven/app
-[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: October 11, 2026 2:37:54 PM UTC
+[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 19, 2026 2:57:53 AM UTC
 [[1;33mWARNING[m] Cannot get the branch information from the git repository: 
 Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 
@@ -172,6 +175,7 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-api[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for weld-api
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/weld/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 5 dependencies (2 carrying exclusions, 11 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -180,6 +184,7 @@ Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
 [[1;34mINFO[m] Flattening leaf module dependencies for: weld-api (5 dependencies, 2 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/weld/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for weld-api: pinned=5 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: weld-api
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api[0;1m ---[m
@@ -221,6 +226,7 @@ Audit done.
 [[1;34mINFO[m] No sources to compile
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mweld-api[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/weld/target/weld-api-4.0-SNAPSHOT.jar
@@ -255,6 +261,7 @@ Audit done.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mweld-spi[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for weld-spi
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/weld-spi/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 12 dependencies (3 carrying exclusions, 11 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -263,6 +270,7 @@ Audit done.
 [[1;34mINFO[m] Flattening leaf module dependencies for: weld-spi (12 dependencies, 3 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/weld-spi/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for weld-spi: pinned=12 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: weld-spi
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-spi[0;1m ---[m
@@ -311,17 +319,7 @@ Audit done.
 [[1;34mINFO[m] /var/maven/app/weld-spi/src/test/java/org/jboss/weld/servlet/spi/test/MockHttpServletRequest.java: Recompile with -Xlint:unchecked for details.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m @ [36mweld-spi[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running [1mTestSuite[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.162 s - in [1mTestSuite[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 10, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mweld-spi[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/weld-spi/target/weld-spi-4.0-SNAPSHOT.jar
@@ -351,15 +349,247 @@ Audit done.
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Weld APIs Parent 4.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.251 s]
-[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  1.043 s]
-[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  2.129 s]
-[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  1.652 s]
+[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.230 s]
+[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  1.033 s]
+[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  2.482 s]
+[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  1.056 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  5.221 s
-[[1;34mINFO[m] Finished at: 2026-10-11T14:37:58Z
+[[1;34mINFO[m] Total time:  6.874 s
+[[1;34mINFO[m] Finished at: 2026-11-19T02:57:57Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+javac: invalid flag: --version
+Usage: javac <options> <source files>
+use -help for a list of possible options
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version [0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Thu Nov 19 02:57:58 UTC 2026.
+Universal Time is now:  Thu Nov 19 02:57:58 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;33mWARNING[m] The project org.jboss.weld:weld-api-parent:pom:4.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Weld APIs BOM                                                      [pom]
+[[1;34mINFO[m] Weld APIs Parent                                                   [pom]
+[[1;34mINFO[m] Weld APIs                                                          [jar]
+[[1;34mINFO[m] Weld SPIs for container integration                                [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36morg.jboss.weld:weld-api-bom[0;1m >---------------------[m
+[[1;34mINFO[m] [1mBuilding Weld APIs BOM 4.0-SNAPSHOT                                [1/4][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mweld-api-bom[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/bom/pom.xml to /var/maven/.m2/repository/org/jboss/weld/weld-api-bom/4.0-SNAPSHOT/weld-api-bom-4.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36morg.jboss.weld:weld-api-parent[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding Weld APIs Parent 4.0-SNAPSHOT                             [2/4][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven-version)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:maven-version[m [1m(default)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:parse-version[m [1m(default)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' 'HEAD'
+[[1;34mINFO[m] Working directory: /var/maven/app
+[[1;34mINFO[m] Storing buildNumber: db490c3e4c9d63869d6ce90c3e3e5b9409d1aa79 at timestamp: November 19, 2026 2:57:59 AM UTC
+[[1;33mWARNING[m] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/var/maven/app' && 'git' 'rev-parse' '--verify' 'HEAD'
+[[1;34mINFO[m] Working directory: /var/maven/app
+[[1;34mINFO[m] Storing buildScmBranch: UNKNOWN
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.7.0:process[m [1m(attach-license)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] Preparing remote bundle org.jboss.weld:weld-license:1
+[[1;34mINFO[m] Copying 2 resources from 1 bundle.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[0;1m > [0;1mgenerate-sources[m @ [36mweld-api-parent[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven-version)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:maven-version[m [1m(default)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:parse-version[m [1m(default)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[0;1m < [0;1mgenerate-sources[m @ [36mweld-api-parent[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mweld-api-parent[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/jboss/weld/weld-api-parent/4.0-SNAPSHOT/weld-api-parent-4.0-SNAPSHOT.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------------< [0;36morg.jboss.weld:weld-api[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding Weld APIs 4.0-SNAPSHOT                                    [3/4][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven-version)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:maven-version[m [1m(default)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:parse-version[m [1m(default)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.7.0:process[m [1m(attach-license)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Preparing remote bundle org.jboss.weld:weld-license:1
+[[1;34mINFO[m] Copying 2 resources from 1 bundle.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1-jboss-1:compile[m [1m(default-compile)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:3.1.1:checkstyle[m [1m(check-style)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Starting audit...
+Audit done.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/weld/src/test/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1-jboss-1:testCompile[m [1m(default-testCompile)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[0;1m > [0;1mgenerate-sources[m @ [36mweld-api[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven-version)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:maven-version[m [1m(default)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:parse-version[m [1m(default)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[0;1m < [0;1mgenerate-sources[m @ [36mweld-api[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mweld-api[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/weld/target/weld-api-4.0-SNAPSHOT.jar to /var/maven/.m2/repository/org/jboss/weld/weld-api/4.0-SNAPSHOT/weld-api-4.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/weld/pom.xml to /var/maven/.m2/repository/org/jboss/weld/weld-api/4.0-SNAPSHOT/weld-api-4.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/weld/target/weld-api-4.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/org/jboss/weld/weld-api/4.0-SNAPSHOT/weld-api-4.0-SNAPSHOT-sources.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------------< [0;36morg.jboss.weld:weld-spi[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding Weld SPIs for container integration 4.0-SNAPSHOT          [4/4][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven-version)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:maven-version[m [1m(default)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:parse-version[m [1m(default)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:1.7.0:process[m [1m(attach-license)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] Preparing remote bundle org.jboss.weld:weld-license:1
+[[1;34mINFO[m] Copying 2 resources from 1 bundle.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/weld-spi/src/main/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1-jboss-1:compile[m [1m(default-compile)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:3.1.1:checkstyle[m [1m(check-style)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] Starting audit...
+Audit done.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/weld-spi/src/test/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1-jboss-1:testCompile[m [1m(default-testCompile)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running [1mTestSuite[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.249 s - in [1mTestSuite[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 10, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[0;1m > [0;1mgenerate-sources[m @ [36mweld-spi[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-java-version)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.0.0-M3:enforce[m [1m(enforce-maven-version)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:maven-version[m [1m(default)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.2.0:parse-version[m [1m(default)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:1.4:create[m [1m(set-build-properties)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[0;1m < [0;1mgenerate-sources[m @ [36mweld-spi[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-source-plugin:3.2.1:jar[m [1m(attach-sources)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.5.2:install[m [1m(default-install)[m @ [36mweld-spi[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/weld-spi/target/weld-spi-4.0-SNAPSHOT.jar to /var/maven/.m2/repository/org/jboss/weld/weld-spi/4.0-SNAPSHOT/weld-spi-4.0-SNAPSHOT.jar
+[[1;34mINFO[m] Installing /var/maven/app/weld-spi/pom.xml to /var/maven/.m2/repository/org/jboss/weld/weld-spi/4.0-SNAPSHOT/weld-spi-4.0-SNAPSHOT.pom
+[[1;34mINFO[m] Installing /var/maven/app/weld-spi/target/weld-spi-4.0-SNAPSHOT-sources.jar to /var/maven/.m2/repository/org/jboss/weld/weld-spi/4.0-SNAPSHOT/weld-spi-4.0-SNAPSHOT-sources.jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for Weld APIs Parent 4.0-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Weld APIs BOM ...................................... [1;32mSUCCESS[m [  0.145 s]
+[[1;34mINFO[m] Weld APIs Parent ................................... [1;32mSUCCESS[m [  0.973 s]
+[[1;34mINFO[m] Weld APIs .......................................... [1;32mSUCCESS[m [  1.144 s]
+[[1;34mINFO[m] Weld SPIs for container integration ................ [1;32mSUCCESS[m [  1.001 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.398 s
+[[1;34mINFO[m] Finished at: 2026-11-19T02:58:02Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Api.buildinfo: No such file or directory
 dos2unix: Skipping target/Api.buildinfo, not a regular file.

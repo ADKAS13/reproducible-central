@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/yosegi/RQ
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install  -Dtest=!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex  -Dmaven.javadoc.skip=true -Dgpg.skip=true "[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=major -Dmaven.test.failure.ignore=true -Dtest=!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex -Dmaven.javadoc.skip=true -Dgpg.skip=true && mvn install -DallowVersionRanges=major -Dmaven.test.failure.ignore=true -Dtest=!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex -Dmaven.javadoc.skip=true -Dgpg.skip=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Yosegi.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mjp.co.yahoo.yosegi:yosegi:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/yosegi/RQ2major/buildcache/yosegi:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -Dtest=!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex -Dmaven.javadoc.skip=true -Dgpg.skip=true " [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/yosegi/RQ2major/buildcache/yosegi:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=major -Dmaven.test.failure.ignore=true -Dtest=!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex -Dmaven.javadoc.skip=true -Dgpg.skip=true && mvn install -DallowVersionRanges=major -Dmaven.test.failure.ignore=true -Dtest=!TestIndexAndObject#T_addAndGet_throwsExeption_withSmallerThanStartIndex -Dmaven.javadoc.skip=true -Dgpg.skip=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Nov  5 01:37:07 UTC 2026.
-Universal Time is now:  Thu Nov  5 01:37:07 UTC 2026.
+Local time is now:      Fri Nov 13 01:39:05 UTC 2026.
+Universal Time is now:  Fri Nov 13 01:39:05 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -92,62 +92,64 @@ Universal Time is now:  Thu Nov  5 01:37:07 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36myosegi[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36myosegi[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for yosegi
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 24 dependencies (0 carrying exclusions, 0 dependencyManagement entries, version range mode: major).
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36myosegi[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/carrotsearch/hppc/maven-metadata.xml
-Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/carrotsearch/hppc/maven-metadata.xml (1.2 kB at 2.6 kB/s)
+Progress (1): 1.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/carrotsearch/hppc/maven-metadata.xml (1.2 kB at 1.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 24 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/maven-metadata.xml (6.3 kB at 118 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.7 kB at 129 kB/s)
+Progress (1): 4.1 kBProgress (1): 6.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/maven-metadata.xml (6.7 kB at 132 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.1 kB at 158 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/maven-metadata.xml (8.1 kB at 169 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/maven-metadata.xml (5.7 kB at 26 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/maven-metadata.xml (5.7 kB at 22 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 8.4 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 9.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/maven-metadata.xml (1.3 kB at 5.6 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/maven-metadata.xml (1.3 kB at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 22 kB/s)
+Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/maven-metadata.xml (1.1 kB at 25 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/maven-metadata.xml (10 kB at 204 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-buffer/maven-metadata.xml (10 kB at 221 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/maven-metadata.xml (10 kB at 212 kB/s)
+Progress (1): 4.1 kBProgress (1): 8.2 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-common/maven-metadata.xml (10 kB at 179 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml
-Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 46 kB/s)
+Progress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/joda-time/joda-time/maven-metadata.xml (2.4 kB at 52 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/net/jpountz/lz4/lz4/maven-metadata.xml
-Progress (1): 474 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/jpountz/lz4/lz4/maven-metadata.xml (474 B at 7.5 kB/s)
+Progress (1): 474 B                   Downloaded from central: https://repo.maven.apache.org/maven2/net/jpountz/lz4/lz4/maven-metadata.xml (474 B at 10 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-format/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-format/maven-metadata.xml (2.0 kB at 6.7 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-format/maven-metadata.xml (2.0 kB at 7.4 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-memory/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-memory/maven-metadata.xml (2.0 kB at 7.2 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-memory/maven-metadata.xml (2.0 kB at 6.0 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-vector/maven-metadata.xml
-Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-vector/maven-metadata.xml (2.0 kB at 8.2 kB/s)
+Progress (1): 2.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-vector/maven-metadata.xml (2.0 kB at 8.5 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/maven-metadata.xml (1.4 kB at 32 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/maven-metadata.xml (1.4 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml
 Progress (1): 430 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/maven-metadata.xml (430 B at 8.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 81 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/maven-metadata.xml (4.0 kB at 76 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml
 Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/maven-metadata.xml (4.0 kB at 94 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 77 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/maven-metadata.xml (3.9 kB at 85 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 79 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/maven-metadata.xml (4.0 kB at 94 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml
-Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 88 kB/s)
+Progress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/maven-metadata.xml (4.0 kB at 90 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml
-Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 14 kB/s)
+Progress (1): 699 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/maven-metadata.xml (699 B at 16 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
-Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 84 kB/s)
+Progress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.9 kB at 83 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: yosegi (29 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for yosegi: pinned=1 upgraded=23 downgraded=0 added=5 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: yosegi
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36myosegi[0;1m ---[m
@@ -179,577 +181,7 @@ Progress (1): 3.9 kB                    Downloaded from central: https://repo.
 [[1;34mINFO[m] /var/maven/app/src/test/java/jp/co/yahoo/yosegi/binary/TestColumnBinary.java: Recompile with -Xlint:unchecked for details.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M2:test[m [1m(default-test)[m @ [36myosegi[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.[1mTestColumnBinaryTree[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestDumpBytesColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestDumpBytesColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeIntegerIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m37[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeIntegerIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeLongIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.296 s - in jp.co.yahoo.yosegi.binary.[1mTestColumnBinaryTree[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeDumpStringColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeDumpStringColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeStringIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m37[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeLongIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexLong[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexLong[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexFloat[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexFloat[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexInteger[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexInteger[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeDoubleIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m37[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeDoubleIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexShort[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexShort[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeShortIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m38[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeStringIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestSequentialBooleanCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestSequentialBooleanCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialStringCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m37[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeShortIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeStringColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialStringCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeFloatIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeStringColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeFloatColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeFloatColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestLazyColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestLazyColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestConstantColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestConstantColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestDumpBooleanColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestDumpBooleanColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestDumpUnionColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestDumpUnionColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.[1mTestFindColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m37[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeFloatIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in jp.co.yahoo.yosegi.binary.[1mTestFindColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.[1mTestColumnBinaryMakerConfig[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexByte[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in jp.co.yahoo.yosegi.binary.[1mTestColumnBinaryMakerConfig[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.block.[1mTestPushdownSupportedBlockReader[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestBufferDirectSequentialNumberCellIndexByte[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeByteIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m37[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s - in jp.co.yahoo.yosegi.binary.maker.index.[1mTestRangeByteIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeDumpLongColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeDumpLongColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestDumpSpreadColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestDumpSpreadColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeDoubleColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeDoubleColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestUnsupportedColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestUnsupportedColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeLongColumnBinaryMaker[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m17[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestUnsafeOptimizeLongColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.maker.[1mTestDumpArrayColumnBinaryMaker[m
-index 0 , end 3
-index 3 , end 3
-index 6 , end 3
-index 9 , end 3
-index 12 , end 3
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in jp.co.yahoo.yosegi.binary.maker.[1mTestDumpArrayColumnBinaryMaker[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.[1mTestColumnBinary[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.binary.[1mTestColumnBinary[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.binary.[1mTestColumnBinaryMakerCustomConfigNode[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in jp.co.yahoo.yosegi.binary.[1mTestColumnBinaryMakerCustomConfigNode[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.block.[1mTestColumnBinaryTree[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m21[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in jp.co.yahoo.yosegi.block.[1mTestColumnBinaryTree[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.block.[1mTestPushdownSupportedBlockWriter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.19 s - in jp.co.yahoo.yosegi.block.[1mTestPushdownSupportedBlockReader[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.block.[1mTestColumnNameNode[m
-root
-|- child
-
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.block.[1mTestColumnNameNode[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.block.[1mTestBlock[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.block.[1mTestBlock[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestMultiArray[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m17[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in jp.co.yahoo.yosegi.block.[1mTestPushdownSupportedBlockWriter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.block.[1mTestBlockReadOffset[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.block.[1mTestBlockReadOffset[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestConstNumberCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m64[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in jp.co.yahoo.yosegi.blackbox.[1mTestConstNumberCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeShort[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeShort[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeInteger[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in jp.co.yahoo.yosegi.blackbox.[1mTestMultiArray[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestConstStringCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeInteger[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestPrimitiveSchema[m
-Column name : d
-Column type : BOOLEAN
---------------------------
-CELL-0: (BOOLEAN)true
-CELL-1: (BOOLEAN)true
-CELL-2: (BOOLEAN)true
-CELL-3: (BOOLEAN)true
-CELL-4: (BOOLEAN)false
-CELL-5: (BOOLEAN)true
-CELL-6: (BOOLEAN)true
-CELL-7: (BOOLEAN)true
-CELL-8: (BOOLEAN)true
-CELL-9: (NULL)NULL
-CELL-10: (BOOLEAN)true
-CELL-11: (BOOLEAN)true
-CELL-12: (NULL)NULL
-CELL-13: (BOOLEAN)true
-
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.blackbox.[1mTestPrimitiveSchema[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestFloatPrimitiveColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in jp.co.yahoo.yosegi.blackbox.[1mTestFloatPrimitiveColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestGetPrimitiveObjectArray[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in jp.co.yahoo.yosegi.blackbox.[1mTestGetPrimitiveObjectArray[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestNumberBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m128[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.09 s - in jp.co.yahoo.yosegi.blackbox.[1mTestConstStringCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestArrowConvert[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.308 s - in jp.co.yahoo.yosegi.blackbox.[1mTestArrowConvert[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestBytePrimitiveColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in jp.co.yahoo.yosegi.blackbox.[1mTestBytePrimitiveColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestUnionSchema[m
---------------------------
-LINE-0
---------------------------
-{p=(STRING)n, a=(STRING)v, bc=(STRING), cd=(STRING)co, b=(STRING), r=(STRING), re=(STRING), pv=(STRING)0.1, i=(STRING)56, l=(STRING), i6=(STRING), ut=(STRING)}
-
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m17[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in jp.co.yahoo.yosegi.blackbox.[1mTestUnionSchema[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestNumberCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1656[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.465 s - in jp.co.yahoo.yosegi.blackbox.[1mTestNumberBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeDouble[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeDouble[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeLong[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeLong[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeByte[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeByte[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestStringPrimitiveColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in jp.co.yahoo.yosegi.blackbox.[1mTestStringPrimitiveColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeBoolean[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeBoolean[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestIntegerPrimitiveColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in jp.co.yahoo.yosegi.blackbox.[1mTestIntegerPrimitiveColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestNullCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m68[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in jp.co.yahoo.yosegi.blackbox.[1mTestNullCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeBytes[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeBytes[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestStringBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m19[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in jp.co.yahoo.yosegi.blackbox.[1mTestStringBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestExpandAndFlatten[m
---------------------------
-LINE-0
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-1
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-2
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-3
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-4
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-5
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-6
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
-
---------------------------
-LINE-0
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-1
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-2
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-3
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-4
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-5
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
---------------------------
-LINE-6
---------------------------
-{f1=(STRING)f1, f2=(STRING)f2}
-
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in jp.co.yahoo.yosegi.blackbox.[1mTestExpandAndFlatten[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.stats.[1mTestSpreadSummaryStats[m
-Line count=5 , Average record size=20.000000 , Average record real size=10.000000 , Average record per field=2.000000 , Field count=10 , Raw data size=100 , Real data size=50 , Logical data size=100 , cardinality=10 , stats report count=1 , Average field size=10.000000 , Average field real size=5.000000 , Compress late=0.500000 , Average row count per stats report count=10.000000 , Average cardinality=10.000000
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.stats.[1mTestSpreadSummaryStats[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.reader.[1mTestParserAll[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in jp.co.yahoo.yosegi.reader.[1mTestParserAll[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestLongRangeBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m47[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in jp.co.yahoo.yosegi.blockindex.[1mTestLongRangeBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestRangeBlockIndexNameShortCut[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in jp.co.yahoo.yosegi.blockindex.[1mTestRangeBlockIndexNameShortCut[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestStringRangeBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m47[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in jp.co.yahoo.yosegi.blockindex.[1mTestStringRangeBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestFindBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m11[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in jp.co.yahoo.yosegi.blockindex.[1mTestFindBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestUnsupportedBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.blockindex.[1mTestUnsupportedBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestIntegerRangeBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m47[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in jp.co.yahoo.yosegi.blockindex.[1mTestIntegerRangeBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.parser.text.[1mTestTextMessageReader[m
-array
-100,200,300
-map
-f1=b,f2=hogehoge,f3=,f4=5
-100
-200
-300
-f1
-b
-f2
-hogehoge
-f3
-
-f4
-5
-200
-300
-100
-null
-100
-200
-300
-300
-200
-100
-200
-300
-2
-2
-null
-100
-200
-300
-null
-null
-null
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in jp.co.yahoo.yosegi.message.parser.text.[1mTestTextMessageReader[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestBytesField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in jp.co.yahoo.yosegi.message.design.[1mTestBytesField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestProperties[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m32[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in jp.co.yahoo.yosegi.message.design.[1mTestProperties[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestStringField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.message.design.[1mTestStringField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestByteField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.message.design.[1mTestByteField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestBooleanField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.design.[1mTestBooleanField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestIntegerField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.design.[1mTestIntegerField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestNullField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.design.[1mTestNullField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestLongField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.message.design.[1mTestLongField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonParserToJsonObject[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonParserToJsonObject[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonObjectFormatter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonObjectFormatter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonContainerToJsonObject[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonContainerToJsonObject[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.writer.[1mTestYosegiSchemaStreamWriter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m312[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.352 s - in jp.co.yahoo.yosegi.blackbox.[1mTestNumberCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestDoublePrimitiveColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s - in jp.co.yahoo.yosegi.writer.[1mTestYosegiSchemaStreamWriter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowShortMemoryAllocator[m
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logg[er [i1m;p3l4emmIeNnFtOat[imo]n 
-[1S;L3F24mJT:e sStese  rhunt:t p[:0;/1/;w3w2wm.8sl[fm4,j .Foarigl/ucroedse:s .0h,t mElr#rSotartsi:c L0o,g gSekriBpipnedde:r  0f,o rT ifmuer tehlearp sdeedt:a i0l.s0.1
-5 s - in jp.co.yahoo.yosegi.blackbox.[1mTestDoublePrimitiveColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestBooleanPrimitiveColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in jp.co.yahoo.yosegi.blackbox.[1mTestBooleanPrimitiveColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeFloat[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeFloat[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestBooleanCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.blackbox.[1mTestBooleanCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestShortPrimitiveColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in jp.co.yahoo.yosegi.blackbox.[1mTestShortPrimitiveColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestEmptyArray[m
---------------------------
-LINE-0
---------------------------
-{array1=(ARRAY)[(SPREAD){aa=(INTEGER)1, bb=(INTEGER)2}, (SPREAD){aa=(INTEGER)2, bb=(NULL)NULL}, (SPREAD){aa=(NULL)NULL, bb=(NULL)NULL}, (SPREAD){aa=(NULL)NULL, bb=(NULL)NULL}]}
-
-Column name : array1
-Column type : ARRAY<SPREAD>
---------------------------
-CELL-0: (ARRAY)[(SPREAD){aa=(INTEGER)1, bb=(INTEGER)2}, (SPREAD){aa=(INTEGER)2, bb=(NULL)NULL}, (SPREAD){aa=(NULL)NULL, bb=(NULL)NULL}, (SPREAD){aa=(NULL)NULL, bb=(NULL)NULL}]
-
-Column name : ARRAY
-Column type : SPREAD<aa INTEGER,bb INTEGER>
---------------------------
-CELL-0: (SPREAD){aa=(INTEGER)1, bb=(INTEGER)2}
-CELL-1: (SPREAD){aa=(INTEGER)2, bb=(NULL)NULL}
-
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in jp.co.yahoo.yosegi.blackbox.[1mTestEmptyArray[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestStringCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowShortMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowIntegerMemoryAllocator[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowIntegerMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowStringMemoryAllocator[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowStringMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowDoubleMemoryAllocator[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowDoubleMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowBytesMemoryAllocator[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m266[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.14 s - in jp.co.yahoo.yosegi.blackbox.[1mTestStringCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestConstBooleanCellIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.blackbox.[1mTestConstBooleanCellIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestLongPrimitiveColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in jp.co.yahoo.yosegi.blackbox.[1mTestLongPrimitiveColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeString[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowBytesMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.compressor.[1mTestCompressor[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m16[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in jp.co.yahoo.yosegi.blackbox.[1mTestCalcLogicalDataSizeString[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.stats.[1mTestColumnStats[m
-/root<STRING> : Field count=20 , Raw data size=200 , Real data size=100 , Logical data size=200 , cardinality=20 , stats report count=2 , Average field size=10.000000 , Average field real size=5.000000 , Compress late=0.500000 , Average row count per stats report count=10.000000 , Average cardinality=10.000000
-/root/child<STRING> : Field count=20 , Raw data size=200 , Real data size=100 , Logical data size=200 , cardinality=20 , stats report count=2 , Average field size=10.000000 , Average field real size=5.000000 , Compress late=0.500000 , Average row count per stats report count=10.000000 , Average cardinality=10.000000
-
-{name=root, total={field_count=20, raw_data_size=200, real_data_size=100, logical_data_size=200, cardinality=20, statsCount=2}, integratoin_total={field_count=40, raw_data_size=400, real_data_size=200, logical_data_size=400, cardinality=40, statsCount=2}, column_types=[{field_count=20, raw_data_size=200, real_data_size=100, logical_data_size=200, cardinality=20, statsCount=2, column_type=STRING}], child={child={name=child, total={field_count=20, raw_data_size=200, real_data_size=100, logical_data_size=200, cardinality=20, statsCount=2}, integratoin_total={field_count=20, raw_data_size=200, real_data_size=100, logical_data_size=200, cardinality=20, statsCount=1}, column_types=[{field_count=20, raw_data_size=200, real_data_size=100, logical_data_size=200, cardinality=20, statsCount=2, column_type=STRING}], child={}}}}
-/child<STRING> : Field count=10 , Raw data size=100 , Real data size=50 , Logical data size=100 , cardinality=10 , stats report count=1 , Average field size=10.000000 , Average field real size=5.000000 , Compress late=0.500000 , Average row count per stats report count=10.000000 , Average cardinality=10.000000
-
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m54[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in jp.co.yahoo.yosegi.stats.[1mTestColumnStats[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.reader.[1mTestYosegiReader[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 s - in jp.co.yahoo.yosegi.compressor.[1mTestCompressor[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.compressor.[1mTestGzipCompressor[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in jp.co.yahoo.yosegi.compressor.[1mTestGzipCompressor[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.util.io.unsafe.[1mTestUnsafeSupporter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.util.io.unsafe.[1mTestUnsafeSupporter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.util.io.nullencoder.[1mTestNullBinaryEncoder[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.util.io.nullencoder.[1mTestNullBinaryEncoder[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.util.io.[1mTestNumberToBinaryUtils[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m15[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in jp.co.yahoo.yosegi.util.io.[1mTestNumberToBinaryUtils[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestShortColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestShortColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestBooleanColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestBooleanColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestByteColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestByteColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestLongColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestLongColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestAnalyzer[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestAnalyzer[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestByteCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestByteCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestShortCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestShortCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowIntegerConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowIntegerConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestIntegerCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestIntegerCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowFloatConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowFloatConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowDoubleConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowDoubleConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestFloatCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestFloatCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowByteConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowByteConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestNotNullFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestNotNullFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestBooleanFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestBooleanFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestPartialMatchStringFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestPartialMatchStringFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestNullFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestNullFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestRangeStringCompareFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestRangeStringCompareFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestCellMakerFactory[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestCellMakerFactory[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowShortConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowShortConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestLongCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.column.[1mTestLongCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestNullCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.column.[1mTestNullCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.expand.[1mTestExpandFunction[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.expand.[1mTestExpandFunction[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.expand.[1mTestNotExpandFunction[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.expand.[1mTestNotExpandFunction[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.[1mTestSpread[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 s - in jp.co.yahoo.yosegi.reader.[1mTestYosegiReader[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestBlockIndexNode[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m13[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.blockindex.[1mTestBlockIndexNode[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestByteRangeBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m30[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in jp.co.yahoo.yosegi.spread.[1mTestSpread[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m47[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in jp.co.yahoo.yosegi.blockindex.[1mTestByteRangeBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestFloatRangeBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m47[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in jp.co.yahoo.yosegi.blockindex.[1mTestFloatRangeBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestDoubleRangeBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m47[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in jp.co.yahoo.yosegi.blockindex.[1mTestDoubleRangeBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.blockindex.[1mTestShortRangeBlockIndex[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m47[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in jp.co.yahoo.yosegi.blockindex.[1mTestShortRangeBlockIndex[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.parser.text.[1mTestTextStreamReader[m
-300
-3
-30
-999
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in jp.co.yahoo.yosegi.message.parser.text.[1mTestTextStreamReader[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.parser.[1mTestYosegiSchemaSpreadReader[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.message.parser.[1mTestYosegiSchemaSpreadReader[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.parser.json.[1mTestJacksonMessageReader[m
-100.0
-200.0
-3.0
-Parser to JSON
-[100,"200",3.0]
-123
-true
-{"c-1":"HOGEHOGE"}
-[10,"20",0.1]
-HOGEHOGE
-10.0
-20.0
-0.1
-Parser to JSON
-{"a":123,"b":true,"c":{"c-1":"HOGEHOGE"},"d":[10,"20",0.1]}
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in jp.co.yahoo.yosegi.message.parser.json.[1mTestJacksonMessageReader[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestArrayContainerField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.design.[1mTestArrayContainerField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestStructContainerField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.message.design.[1mTestStructContainerField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestShortField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.message.design.[1mTestShortField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestFloatField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.message.design.[1mTestFloatField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestUnionField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m15[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.design.[1mTestUnionField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestDoubleField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.message.design.[1mTestDoubleField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.design.[1mTestMapContainerField[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m13[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.design.[1mTestMapContainerField[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.formatter.text.[1mTestTextMessageWriter[m
-100000,2,1,10,100
-f1,100000 f2,100000 f3,0 f4,-100
-abc defg hijkl
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.formatter.text.[1mTestTextMessageWriter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonArrayFormatter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonArrayFormatter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonMessageWriter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.message.formatter.json.[1mTestJacksonMessageWriter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowByteMemoryAllocator[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowByteMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowLongMemoryAllocator[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowLongMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowArrayMemoryAllocator[m
-count:3
-obj:["a","b","c"]
-count:3
-obj:["a","b","c"]
-count:3
-obj:["a","b","c"]
-count:3
-obj:["a","b","c"]
-count:0
-obj:null
-count:0
-obj:null
-count:3
-obj:["a","b","c"]
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowArrayMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowBooleanMemoryAllocator[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowBooleanMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.inmemory.[1mTestArrowFloatMemoryAllocator[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in jp.co.yahoo.yosegi.inmemory.[1mTestArrowFloatMemoryAllocator[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.compressor.[1mTestCompressResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.compressor.[1mTestCompressResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.compressor.[1mTestDeflateCommonsCompressor[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.compressor.[1mTestDeflateCommonsCompressor[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.compressor.[1mTestBZip2CommonsCompressor[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.37 s - in jp.co.yahoo.yosegi.compressor.[1mTestBZip2CommonsCompressor[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.util.[1mTestIndexAndObject[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m15[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.util.[1mTestIndexAndObject[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.util.io.nullencoder.[1mTestBitNullBinaryEncoder[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.util.io.nullencoder.[1mTestBitNullBinaryEncoder[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.util.io.nullencoder.[1mTestIndexNullBinaryEncoder[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.util.io.nullencoder.[1mTestIndexNullBinaryEncoder[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.util.[1mTestRangeBinarySearch[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.util.[1mTestRangeBinarySearch[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.util.[1mTestCollectionUtils[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.util.[1mTestCollectionUtils[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestStringColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestStringColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestDoubleColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestDoubleColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestBytesColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestBytesColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestIntegerColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestIntegerColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestFloatColumnAnalizeResult[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestFloatColumnAnalizeResult[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.analyzer.[1mTestSpreadColumnAnalizer[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.analyzer.[1mTestSpreadColumnAnalizer[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestStringCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestStringCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestNullColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestNullColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestDoubleCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.column.[1mTestDoubleCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowBooleanConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowBooleanConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestBooleanCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.column.[1mTestBooleanCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowStructConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowStructConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestBytesCell[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestBytesCell[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestPerfectMatchStringFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestPerfectMatchStringFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestForwardMatchStringFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestForwardMatchStringFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestBackwardMatchStringFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestBackwardMatchStringFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestNumberFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestNumberFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.filter.[1mTestRegexpMatchStringFilter[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.filter.[1mTestRegexpMatchStringFilter[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowArrayConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowArrayConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrayColumn[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrayColumn[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestPrimitiveCellManager[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m18[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in jp.co.yahoo.yosegi.spread.column.[1mTestPrimitiveCellManager[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.column.[1mTestArrowLongConnector[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.column.[1mTestArrowLongConnector[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.expand.[1mTestExpandFunctionFactory[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in jp.co.yahoo.yosegi.spread.expand.[1mTestExpandFunctionFactory[m
-[[1;34mINFO[m] Running jp.co.yahoo.yosegi.spread.expression.[1mTestExpression[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in jp.co.yahoo.yosegi.spread.expression.[1mTestExpression[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 4067, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-checkstyle-plugin:3.0.0:check[m [1m(default)[m @ [36myosegi[0;1m ---[m
 [[1;34mINFO[m] 
@@ -775,14 +207,54 @@ obj:["a","b","c"]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  21.666 s
-[[1;34mINFO[m] Finished at: 2026-11-05T01:37:30Z
+[[1;34mINFO[m] Total time:  17.128 s
+[[1;34mINFO[m] Finished at: 2026-11-13T01:39:23Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-dos2unix: target/Yosegi.buildinfo: No such file or directory
-dos2unix: Skipping target/Yosegi.buildinfo, not a regular file.
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Fri Nov 13 01:39:24 UTC 2026.
+Universal Time is now:  Fri Nov 13 01:39:24 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------------< [0;36mjp.co.yahoo.yosegi:yosegi[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding Yosegi 0.10.8[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-memory/19.0.0/arrow-memory-19.0.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-format/19.0.0/arrow-format-19.0.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-memory-core/19.0.0/arrow-memory-core-19.0.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/25.2.10/flatbuffers-java-25.2.10.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.0/jackson-datatype-jsr310-2.21.0.jar
+Progress (1): 3.2/111 kBProgress (2): 3.2/111 kB | 3.2/118 kBProgress (3): 3.2/111 kB | 3.2/118 kB | 3.3/137 kBProgress (4): 3.2/111 kB | 3.2/118 kB | 3.3/137 kB | 3.3/122 kBProgress (4): 3.2/111 kB | 3.2/118 kB | 6.0/137 kB | 3.3/122 kBProgress (4): 3.2/111 kB | 5.9/118 kB | 6.0/137 kB | 3.3/122 kBProgress (4): 5.9/111 kB | 5.9/118 kB | 6.0/137 kB | 3.3/122 kBProgress (4): 5.9/111 kB | 8.7/118 kB | 6.0/137 kB | 3.3/122 kBProgress (4): 5.9/111 kB | 8.7/118 kB | 9.1/137 kB | 3.3/122 kBProgress (4): 5.9/111 kB | 8.7/118 kB | 9.1/137 kB | 6.0/122 kBProgress (4): 5.9/111 kB | 8.7/118 kB | 12/137 kB | 6.0/122 kB Progress (4): 5.9/111 kB | 11/118 kB | 12/137 kB | 6.0/122 kB Progress (4): 8.7/111 kB | 11/118 kB | 12/137 kB | 6.0/122 kBProgress (4): 8.7/111 kB | 14/118 kB | 12/137 kB | 6.0/122 kBProgress (4): 8.7/111 kB | 14/118 kB | 15/137 kB | 6.0/122 kBProgress (4): 8.7/111 kB | 14/118 kB | 15/137 kB | 8.8/122 kBProgress (4): 8.7/111 kB | 14/118 kB | 17/137 kB | 8.8/122 kBProgress (4): 8.7/111 kB | 17/118 kB | 17/137 kB | 8.8/122 kBProgress (4): 11/111 kB | 17/118 kB | 17/137 kB | 8.8/122 kB Progress (4): 11/111 kB | 20/118 kB | 17/137 kB | 8.8/122 kBProgress (4): 11/111 kB | 20/118 kB | 20/137 kB | 8.8/122 kBProgress (4): 11/111 kB | 20/118 kB | 20/137 kB | 11/122 kB Progress (4): 11/111 kB | 20/118 kB | 23/137 kB | 11/122 kBProgress (4): 11/111 kB | 22/118 kB | 23/137 kB | 11/122 kBProgress (4): 14/111 kB | 22/118 kB | 23/137 kB | 11/122 kBProgress (4): 14/111 kB | 25/118 kB | 23/137 kB | 11/122 kBProgress (4): 14/111 kB | 25/118 kB | 26/137 kB | 11/122 kBProgress (4): 14/111 kB | 25/118 kB | 26/137 kB | 14/122 kBProgress (4): 14/111 kB | 25/118 kB | 28/137 kB | 14/122 kBProgress (4): 14/111 kB | 28/118 kB | 28/137 kB | 14/122 kBProgress (4): 17/111 kB | 28/118 kB | 28/137 kB | 14/122 kBProgress (4): 17/111 kB | 30/118 kB | 28/137 kB | 14/122 kBProgress (4): 17/111 kB | 30/118 kB | 31/137 kB | 14/122 kBProgress (4): 17/111 kB | 30/118 kB | 31/137 kB | 17/122 kBProgress (4): 17/111 kB | 30/118 kB | 34/137 kB | 17/122 kBProgress (4): 17/111 kB | 33/118 kB | 34/137 kB | 17/122 kBProgress (4): 20/111 kB | 33/118 kB | 34/137 kB | 17/122 kBProgress (4): 20/111 kB | 33/118 kB | 36/137 kB | 17/122 kBProgress (4): 20/111 kB | 33/118 kB | 36/137 kB | 20/122 kBProgress (4): 20/111 kB | 33/118 kB | 39/137 kB | 20/122 kBProgress (4): 22/111 kB | 33/118 kB | 39/137 kB | 20/122 kBProgress (4): 22/111 kB | 36/118 kB | 39/137 kB | 20/122 kBProgress (4): 22/111 kB | 36/118 kB | 42/137 kB | 20/122 kBProgress (4): 22/111 kB | 36/118 kB | 42/137 kB | 22/122 kBProgress (4): 22/111 kB | 36/118 kB | 45/137 kB | 22/122 kBProgress (4): 22/111 kB | 39/118 kB | 45/137 kB | 22/122 kBProgress (4): 25/111 kB | 39/118 kB | 45/137 kB | 22/122 kBProgress (4): 25/111 kB | 41/118 kB | 45/137 kB | 22/122 kBProgress (4): 25/111 kB | 41/118 kB | 47/137 kB | 22/122 kBProgress (4): 25/111 kB | 41/118 kB | 47/137 kB | 25/122 kBProgress (4): 25/111 kB | 41/118 kB | 50/137 kB | 25/122 kBProgress (4): 25/111 kB | 44/118 kB | 50/137 kB | 25/122 kBProgress (4): 28/111 kB | 44/118 kB | 50/137 kB | 25/122 kBProgress (4): 28/111 kB | 47/118 kB | 50/137 kB | 25/122 kBProgress (4): 28/111 kB | 47/118 kB | 53/137 kB | 25/122 kBProgress (4): 28/111 kB | 47/118 kB | 53/137 kB | 28/122 kBProgress (4): 28/111 kB | 47/118 kB | 57/137 kB | 28/122 kBProgress (4): 28/111 kB | 50/118 kB | 57/137 kB | 28/122 kBProgress (4): 30/111 kB | 50/118 kB | 57/137 kB | 28/122 kBProgress (4): 30/111 kB | 52/118 kB | 57/137 kB | 28/122 kBProgress (4): 30/111 kB | 52/118 kB | 61/137 kB | 28/122 kBProgress (4): 30/111 kB | 52/118 kB | 61/137 kB | 31/122 kBProgress (4): 30/111 kB | 52/118 kB | 65/137 kB | 31/122 kBProgress (4): 30/111 kB | 55/118 kB | 65/137 kB | 31/122 kBProgress (4): 30/111 kB | 55/118 kB | 69/137 kB | 31/122 kBProgress (4): 33/111 kB | 55/118 kB | 69/137 kB | 31/122 kBProgress (4): 33/111 kB | 55/118 kB | 73/137 kB | 31/122 kBProgress (4): 33/111 kB | 59/118 kB | 73/137 kB | 31/122 kBProgress (4): 33/111 kB | 59/118 kB | 73/137 kB | 33/122 kBProgress (4): 33/111 kB | 63/118 kB | 73/137 kB | 33/122 kBProgress (4): 33/111 kB | 63/118 kB | 77/137 kB | 33/122 kBProgress (4): 36/111 kB | 63/118 kB | 77/137 kB | 33/122 kBProgress (4): 36/111 kB | 63/118 kB | 81/137 kB | 33/122 kBProgress (4): 36/111 kB | 67/118 kB | 81/137 kB | 33/122 kBProgress (4): 36/111 kB | 67/118 kB | 81/137 kB | 36/122 kBProgress (4): 36/111 kB | 72/118 kB | 81/137 kB | 36/122 kBProgress (4): 36/111 kB | 72/118 kB | 86/137 kB | 36/122 kBProgress (4): 39/111 kB | 72/118 kB | 86/137 kB | 36/122 kBProgress (4): 39/111 kB | 72/118 kB | 90/137 kB | 36/122 kBProgress (4): 39/111 kB | 76/118 kB | 90/137 kB | 36/122 kBProgress (4): 39/111 kB | 76/118 kB | 90/137 kB | 39/122 kBProgress (4): 39/111 kB | 80/118 kB | 90/137 kB | 39/122 kBProgress (4): 39/111 kB | 80/118 kB | 94/137 kB | 39/122 kBProgress (4): 41/111 kB | 80/118 kB | 94/137 kB | 39/122 kBProgress (4): 41/111 kB | 80/118 kB | 98/137 kB | 39/122 kBProgress (4): 41/111 kB | 84/118 kB | 98/137 kB | 39/122 kBProgress (4): 41/111 kB | 84/118 kB | 98/137 kB | 41/122 kBProgress (4): 41/111 kB | 86/118 kB | 98/137 kB | 41/122 kBProgress (4): 41/111 kB | 86/118 kB | 102/137 kB | 41/122 kBProgress (4): 44/111 kB | 86/118 kB | 102/137 kB | 41/122 kBProgress (4): 44/111 kB | 86/118 kB | 106/137 kB | 41/122 kBProgress (4): 44/111 kB | 90/118 kB | 106/137 kB | 41/122 kBProgress (4): 44/111 kB | 90/118 kB | 106/137 kB | 44/122 kBProgress (4): 44/111 kB | 90/118 kB | 110/137 kB | 44/122 kBProgress (4): 47/111 kB | 90/118 kB | 110/137 kB | 44/122 kBProgress (4): 47/111 kB | 90/118 kB | 114/137 kB | 44/122 kBProgress (4): 47/111 kB | 90/118 kB | 114/137 kB | 47/122 kBProgress (4): 47/111 kB | 94/118 kB | 114/137 kB | 47/122 kBProgress (4): 47/111 kB | 94/118 kB | 114/137 kB | 50/122 kBProgress (4): 47/111 kB | 98/118 kB | 114/137 kB | 50/122 kBProgress (4): 47/111 kB | 98/118 kB | 118/137 kB | 50/122 kBProgress (4): 50/111 kB | 98/118 kB | 118/137 kB | 50/122 kBProgress (4): 50/111 kB | 98/118 kB | 122/137 kB | 50/122 kBProgress (4): 50/111 kB | 102/118 kB | 122/137 kB | 50/122 kBProgress (4): 50/111 kB | 102/118 kB | 122/137 kB | 52/122 kBProgress (4): 50/111 kB | 106/118 kB | 122/137 kB | 52/122 kBProgress (4): 50/111 kB | 106/118 kB | 125/137 kB | 52/122 kBProgress (4): 52/111 kB | 106/118 kB | 125/137 kB | 52/122 kBProgress (4): 52/111 kB | 106/118 kB | 129/137 kB | 52/122 kBProgress (4): 52/111 kB | 110/118 kB | 129/137 kB | 52/122 kBProgress (4): 52/111 kB | 110/118 kB | 129/137 kB | 55/122 kBProgress (4): 52/111 kB | 115/118 kB | 129/137 kB | 55/122 kBProgress (4): 52/111 kB | 115/118 kB | 133/137 kB | 55/122 kBProgress (4): 55/111 kB | 115/118 kB | 133/137 kB | 55/122 kBProgress (4): 55/111 kB | 115/118 kB | 137 kB | 55/122 kB    Progress (4): 55/111 kB | 118 kB | 137 kB | 55/122 kB    Progress (4): 55/111 kB | 118 kB | 137 kB | 59/122 kBProgress (4): 59/111 kB | 118 kB | 137 kB | 59/122 kBProgress (4): 59/111 kB | 118 kB | 137 kB | 63/122 kBProgress (4): 63/111 kB | 118 kB | 137 kB | 63/122 kBProgress (4): 63/111 kB | 118 kB | 137 kB | 67/122 kBProgress (4): 67/111 kB | 118 kB | 137 kB | 67/122 kBProgress (4): 67/111 kB | 118 kB | 137 kB | 72/122 kBProgress (4): 72/111 kB | 118 kB | 137 kB | 72/122 kBProgress (4): 72/111 kB | 118 kB | 137 kB | 76/122 kBProgress (4): 76/111 kB | 118 kB | 137 kB | 76/122 kBProgress (4): 80/111 kB | 118 kB | 137 kB | 76/122 kBProgress (4): 80/111 kB | 118 kB | 137 kB | 80/122 kBProgress (4): 84/111 kB | 118 kB | 137 kB | 80/122 kBProgress (4): 86/111 kB | 118 kB | 137 kB | 80/122 kBProgress (4): 86/111 kB | 118 kB | 137 kB | 84/122 kBProgress (4): 90/111 kB | 118 kB | 137 kB | 84/122 kBProgress (4): 90/111 kB | 118 kB | 137 kB | 88/122 kBProgress (4): 94/111 kB | 118 kB | 137 kB | 88/122 kBProgress (4): 94/111 kB | 118 kB | 137 kB | 90/122 kBProgress (4): 98/111 kB | 118 kB | 137 kB | 90/122 kBProgress (4): 98/111 kB | 118 kB | 137 kB | 94/122 kBProgress (4): 102/111 kB | 118 kB | 137 kB | 94/122 kBProgress (4): 102/111 kB | 118 kB | 137 kB | 98/122 kBProgress (4): 106/111 kB | 118 kB | 137 kB | 98/122 kBProgress (4): 106/111 kB | 118 kB | 137 kB | 102/122 kBProgress (4): 110/111 kB | 118 kB | 137 kB | 102/122 kBProgress (4): 110/111 kB | 118 kB | 137 kB | 107/122 kBProgress (4): 111 kB | 118 kB | 137 kB | 107/122 kB    Progress (4): 111 kB | 118 kB | 137 kB | 111/122 kBProgress (4): 111 kB | 118 kB | 137 kB | 115/122 kBProgress (4): 111 kB | 118 kB | 137 kB | 119/122 kBProgress (4): 111 kB | 118 kB | 137 kB | 122 kB                                                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-memory-core/19.0.0/arrow-memory-core-19.0.0.jar (118 kB at 171 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.0/jackson-datatype-jsr310-2.21.0.jar (137 kB at 195 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-vector/19.0.0/arrow-vector-19.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-format/19.0.0/arrow-format-19.0.0.jar (122 kB at 173 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/flatbuffers/flatbuffers-java/25.2.10/flatbuffers-java-25.2.10.jar (111 kB at 156 kB/s)
+Progress (1): 0/1.6 MBProgress (1): 0/1.6 MBProgress (1): 0/1.6 MBProgress (1): 0/1.6 MBProgress (1): 0/1.6 MBProgress (1): 0/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.1/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.2/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MB                        Progress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.3/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.4/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.5/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.6/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.7/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.8/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 0.9/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.0/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.1/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.2/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.3/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.4/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.5/1.6 MBProgress (1): 1.6/1.6 MBProgress (1): 1.6/1.6 MBProgress (1): 1.6/1.6 MBProgress (1): 1.6/1.6 MBProgress (1): 1.6/1.6 MBProgress (1): 1.6 MB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/arrow/arrow-vector/19.0.0/arrow-vector-19.0.0.jar (1.6 MB at 1.7 MB/s)
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  1.981 s
+[[1;34mINFO[m] Finished at: 2026-11-13T01:39:27Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal on project [36myosegi[m: [1;31mCould not resolve dependencies for project jp.co.yahoo.yosegi:yosegi:jar:0.10.8: Could not find artifact org.apache.arrow:arrow-memory:jar:19.0.0 in central (https://repo.maven.apache.org/maven2)[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
-[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
 [0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
 [0m

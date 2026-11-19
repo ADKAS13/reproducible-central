@@ -11,6 +11,9 @@ jdk=17
 newline=lf
 umask=022
 
-command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=major &&
-    mvn clean install -Denforcer.skip=true -Dgpg.skip=true\""
+command="sh -c \"find . -name 'pom.deps.xml' -delete &&
+    mvn -Dmaven.test.failure.ignore=true -Denforcer.skip=true -Dgpg.skip=true com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=major install &&
+    find . -type d \( -name surefire-reports -o -name failsafe-reports \) -exec rm -rf {} + &&
+    mvn -Dmaven.test.failure.ignore=true -Denforcer.skip=true -Dgpg.skip=true -DskipTests com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-compare install &&
+    find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true install -Denforcer.skip=true -Dgpg.skip=true\""
 buildinfo=target/Bots-10.0.0.buildinfo

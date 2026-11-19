@@ -2,7 +2,8 @@
 \begin{small}
 \setlength{\tabcolsep}{4pt}
 \begin{longtable}{llrrrr}
-\caption{Per-Repository Dependency Actions and Build Status across Update Flags (failed builds excluded: --)} \label{tab:repo_breakdown} \\
+\caption{Per-Repository Dependency Actions and Build Status (RQ2).}
+\label{tab:rq2_repo_breakdown} \\
 \toprule
 \textbf{Repository} & \textbf{Flag} & \textbf{Upgraded} & \textbf{Pinned} & \textbf{Downgraded} & \textbf{Build} \\
 \midrule
@@ -24,47 +25,47 @@ Xponents & Major & 0 & 101 & 0 & \cmark \\
  & Minor & 0 & 101 & 0 & \cmark \\
  & Patch & 0 & 101 & 0 & \cmark \\
 \midrule
-animal-sniffer & Major & 4 & 119 & 0 & \cmark \\
- & Minor & 1 & 122 & 0 & \cmark \\
- & Patch & 0 & 123 & 0 & \cmark \\
+animal-sniffer & Major & 4 & 119 & 0 & \xmark \\
+ & Minor & 1 & 122 & 0 & \xmark \\
+ & Patch & 0 & 123 & 0 & \xmark \\
 \midrule
 api & Major & 0 & 17 & 0 & \cmark \\
- & Minor & 14 & 3 & 0 & \cmark \\
+ & Minor & 14 & 3 & 0 & \xmark \\
  & Patch & 10 & 7 & 0 & \cmark \\
 \midrule
-arquillian-graphene & Major & 34 & 391 & 2 & \cmark \\
- & Minor & 29 & 396 & 2 & \cmark \\
- & Patch & 24 & 401 & 2 & \cmark \\
+arquillian-graphene & Major & 38 & 394 & 0 & \xmark \\
+ & Minor & 33 & 399 & 0 & \xmark \\
+ & Patch & 28 & 404 & 0 & \cmark \\
 \midrule
-asset-share-commons & Major & 370 & 69 & 0 & \cmark \\
- & Minor & 213 & 227 & 0 & \cmark \\
- & Patch & 161 & 279 & 0 & \cmark \\
+asset-share-commons & Major & 370 & 69 & 0 & \xmark \\
+ & Minor & 213 & 227 & 0 & \xmark \\
+ & Patch & 157 & 283 & 0 & \xmark \\
 \midrule
 astra & Major & 21 & 67 & 0 & \cmark \\
  & Minor & 17 & 71 & 0 & \cmark \\
  & Patch & 5 & 83 & 0 & \cmark \\
 \midrule
-auto-table & Major & 226 & 544 & 0 & \cmark \\
- & Minor & 333 & 437 & 0 & \cmark \\
- & Patch & 307 & 463 & 0 & \cmark \\
+auto-table & Major & 450 & 400 & 0 & \xmark \\
+ & Minor & 182 & 668 & 0 & \xmark \\
+ & Patch & 335 & 515 & 0 & \xmark \\
 \midrule
-automatalib & Major & 144 & 344 & 0 & \cmark \\
- & Minor & 126 & 362 & 0 & \cmark \\
+automatalib & Major & 144 & 344 & 0 & \xmark \\
+ & Minor & 126 & 362 & 0 & \xmark \\
  & Patch & 52 & 436 & 0 & \cmark \\
 \midrule
-cloudtrace & Major & 695 & 205 & 0 & \cmark \\
- & Minor & 556 & 344 & 0 & \cmark \\
- & Patch & 266 & 634 & 0 & \cmark \\
+cloudtrace & Major & 695 & 205 & 0 & \xmark \\
+ & Minor & 556 & 344 & 0 & \xmark \\
+ & Patch & 237 & 663 & 0 & \cmark \\
 \midrule
-cryptolib & Major & 24 & 4 & 0 & \cmark \\
+cryptolib & Major & 24 & 4 & 0 & \xmark \\
  & Minor & 22 & 6 & 0 & \cmark \\
  & Patch & 14 & 14 & 0 & \cmark \\
 \midrule
-dkpro-jwpl & Major & -- & -- & -- & \xmark \\
- & Minor & -- & -- & -- & \xmark \\
- & Patch & -- & -- & -- & \xmark \\
+dkpro-jwpl & Major & 0 & 33 & 0 & \xmark \\
+ & Minor & 0 & 33 & 0 & \xmark \\
+ & Patch & 0 & 33 & 0 & \xmark \\
 \midrule
-easyvcr & Major & 4 & 1 & 0 & \cmark \\
+easyvcr & Major & 4 & 1 & 0 & \xmark \\
  & Minor & 1 & 4 & 0 & \cmark \\
  & Patch & 0 & 5 & 0 & \cmark \\
 \midrule
@@ -76,19 +77,19 @@ gauge-java & Major & 26 & 8 & 0 & \cmark \\
  & Minor & 21 & 13 & 0 & \cmark \\
  & Patch & 4 & 30 & 0 & \cmark \\
 \midrule
-juneau & Major & -- & -- & -- & \xmark \\
- & Minor & -- & -- & -- & \xmark \\
- & Patch & -- & -- & -- & \xmark \\
+juneau & Major & 0 & 0 & 0 & \xmark \\
+ & Minor & 0 & 0 & 0 & \xmark \\
+ & Patch & 0 & 0 & 0 & \xmark \\
 \midrule
-maven-checkstyle-plugin & Major & -- & -- & -- & \xmark \\
- & Minor & -- & -- & -- & \xmark \\
- & Patch & -- & -- & -- & \xmark \\
+maven-checkstyle-plugin & Major & 71 & 10 & 0 & \xmark \\
+ & Minor & 0 & 81 & 0 & \xmark \\
+ & Patch & 0 & 81 & 0 & \xmark \\
 \midrule
 mdlz80optimizer & Major & 4 & 0 & 0 & \cmark \\
  & Minor & 3 & 1 & 0 & \cmark \\
  & Patch & 1 & 3 & 0 & \cmark \\
 \midrule
-peppol-commons & Major & 167 & 60 & 0 & \cmark \\
+peppol-commons & Major & 167 & 60 & 0 & \xmark \\
  & Minor & 105 & 122 & 0 & \cmark \\
  & Patch & 91 & 136 & 0 & \cmark \\
 \midrule
@@ -100,36 +101,36 @@ saucerest-java & Major & 13 & 1 & 0 & \cmark \\
  & Minor & 12 & 2 & 0 & \cmark \\
  & Patch & 2 & 12 & 0 & \cmark \\
 \midrule
-sokrates & Major & 138 & 47 & 0 & \cmark \\
- & Minor & 128 & 57 & 0 & \cmark \\
- & Patch & 105 & 80 & 0 & \cmark \\
+sokrates & Major & 148 & 42 & 0 & \cmark \\
+ & Minor & 128 & 62 & 0 & \cmark \\
+ & Patch & 105 & 85 & 0 & \cmark \\
 \midrule
 sorald & Major & 0 & 72 & 0 & \cmark \\
  & Minor & 0 & 72 & 0 & \cmark \\
  & Patch & 0 & 72 & 0 & \cmark \\
 \midrule
-teamengine & Major & 82 & 99 & 0 & \cmark \\
+teamengine & Major & 82 & 99 & 0 & \xmark \\
  & Minor & 104 & 77 & 0 & \cmark \\
  & Patch & 58 & 123 & 0 & \cmark \\
 \midrule
-telegrambots & Major & 382 & 73 & 0 & \cmark \\
- & Minor & 350 & 105 & 0 & \cmark \\
- & Patch & 218 & 237 & 0 & \cmark \\
+telegrambots & Major & 382 & 73 & 0 & \xmark \\
+ & Minor & 360 & 95 & 0 & \cmark \\
+ & Patch & 228 & 227 & 0 & \cmark \\
 \midrule
-turbine & Major & 16 & 6 & 0 & \cmark \\
- & Minor & 14 & 8 & 0 & \cmark \\
+turbine & Major & 16 & 6 & 0 & \xmark \\
+ & Minor & 14 & 8 & 0 & \xmark \\
  & Patch & 6 & 16 & 0 & \cmark \\
 \midrule
 wavefront-proxy & Major & 0 & 155 & 0 & \cmark \\
  & Minor & 0 & 155 & 0 & \cmark \\
- & Patch & 64 & 91 & 0 & \cmark \\
+ & Patch & 64 & 91 & 0 & \xmark \\
 \midrule
-xwiki-commons & Major & -- & -- & -- & \xmark \\
- & Minor & -- & -- & -- & \xmark \\
- & Patch & -- & -- & -- & \xmark \\
+xwiki-commons & Major & 53 & 147 & 0 & \xmark \\
+ & Minor & 27 & 173 & 0 & \xmark \\
+ & Patch & 8 & 192 & 0 & \xmark \\
 \midrule
-yosegi & Major & 23 & 1 & 0 & \cmark \\
- & Minor & 23 & 1 & 0 & \cmark \\
+yosegi & Major & 23 & 1 & 0 & \xmark \\
+ & Minor & 23 & 1 & 0 & \xmark \\
  & Patch & 8 & 16 & 0 & \cmark \\
 \end{longtable}
 \end{small}

@@ -12,6 +12,6 @@ jdk=11
 newline=lf
 umask=022
 
-command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests && mvn -Dmaven.test.failure.ignore=true clean install -Dcheckstyle.skip=true -Denforcer.skip=true -Dgpg.skip=true -DargLine="-Dhttp.timeout=5000"\""
+command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -Dmaven.test.failure.ignore=true -Dcheckstyle.skip=true -Denforcer.skip=true -Dgpg.skip=true -DargLine="-Dhttp.timeout=5000" && mvn install -Dmaven.test.failure.ignore=true -Dcheckstyle.skip=true -Denforcer.skip=true -Dgpg.skip=true -DargLine="-Dhttp.timeout=5000"\""
 
 buildinfo=target/easyvcrRQ1.buildinfo

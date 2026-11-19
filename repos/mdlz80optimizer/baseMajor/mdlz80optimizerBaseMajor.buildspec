@@ -10,7 +10,10 @@ jdk=8
 newline=lf
 umask=022
 
-command="sh -c \"find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true com.baeldung:lock-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=major &&
-    mvn clean install\""
+command="sh -c \"find . -name 'pom.deps.xml' -delete &&
+    mvn -Dmaven.test.failure.ignore=true com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-test -DallowVersionRanges=major install &&
+    find . -type d \( -name surefire-reports -o -name failsafe-reports \) -exec rm -rf {} + &&
+    mvn -Dmaven.test.failure.ignore=true -DskipTests com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:range-compare install &&
+    find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true install\""
 
 buildinfo=target/Mdlz80optimizer.buildinfo

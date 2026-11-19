@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/turbine/R
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=major -Dmaven.test.failure.ignore=true && mvn install -DallowVersionRanges=major -Dmaven.test.failure.ignore=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Turbine.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1mcom.google.turbine:turbine:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/turbine/RQ2major/buildcache/turbine:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init -DallowVersionRanges=major com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/turbine/RQ2major/buildcache/turbine:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -DallowVersionRanges=major -Dmaven.test.failure.ignore=true && mvn install -DallowVersionRanges=major -Dmaven.test.failure.ignore=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Thu Nov  5 01:33:14 UTC 2026.
-Universal Time is now:  Thu Nov  5 01:33:14 UTC 2026.
+Local time is now:      Fri Nov 13 01:34:44 UTC 2026.
+Universal Time is now:  Fri Nov 13 01:34:44 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -99,6 +99,7 @@ Universal Time is now:  Thu Nov  5 01:33:14 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mturbine[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mturbine[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for turbine
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;33mWARNING[m] Non-numeric version segment in '30.0-jre' — falling back to pinned.
 [[1;33mWARNING[m] Non-numeric version segment in '9999.0-empty-to-avoid-conflict-with-guava' — falling back to pinned.
@@ -109,42 +110,43 @@ Universal Time is now:  Thu Nov  5 01:33:14 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:flatten[m [1m(default-cli)[m @ [36mturbine[0;1m ---[m
 [[1;34mINFO[m] Found pom.deps.xml — reading dependencies, exclusions and dependencyManagement...
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml
-Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 1.3 kB/s)
+Progress (1): 461 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/maven-metadata.xml (461 B at 724 B/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml
-Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 56 kB/s)
+Progress (1): 3.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/maven-metadata.xml (3.3 kB at 58 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml
-Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 7.4 kB/s)
+Progress (1): 427 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/maven-metadata.xml (427 B at 9.9 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml
-Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 8.0 kB/s)
+Progress (1): 514 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/maven-metadata.xml (514 B at 12 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/maven-metadata.xml
 Progress (1): 609 B                   Downloaded from central: https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/maven-metadata.xml (609 B at 2.8 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 129 kB/s)
+Progress (1): 4.1 kBProgress (1): 7.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/maven-metadata.xml (7.7 kB at 164 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml
-Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml (1.6 kB at 21 kB/s)
+Progress (1): 1.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/truth/maven-metadata.xml (1.6 kB at 31 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-java8-extension/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-java8-extension/maven-metadata.xml (1.4 kB at 5.3 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-java8-extension/maven-metadata.xml (1.4 kB at 5.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-liteproto-extension/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-liteproto-extension/maven-metadata.xml (1.4 kB at 3.0 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-liteproto-extension/maven-metadata.xml (1.4 kB at 2.7 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-proto-extension/maven-metadata.xml
-Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-proto-extension/maven-metadata.xml (1.4 kB at 3.4 kB/s)
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/google/truth/extensions/truth-proto-extension/maven-metadata.xml (1.4 kB)
 Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
-Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 23 kB/s)
+Progress (1): 1.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 28 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml
-Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 89 kB/s)
+Progress (1): 4.1 kBProgress (1): 5.3 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/maven-metadata.xml (5.3 kB at 116 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml
-Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 12 kB/s)
+Progress (1): 721 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/maven-metadata.xml (721 B at 15 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml
-Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml (1.8 kB at 28 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/maven-metadata.xml (1.8 kB at 35 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/maven-metadata.xml
-Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/maven-metadata.xml (1.8 kB at 8.5 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/maven-metadata.xml (1.8 kB at 8.3 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/maven-metadata.xml
-Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/maven-metadata.xml (1.8 kB at 7.0 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/maven-metadata.xml (1.8 kB at 7.1 kB/s)
 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/maven-metadata.xml
-Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/maven-metadata.xml (1.8 kB at 8.1 kB/s)
+Progress (1): 1.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-util/maven-metadata.xml (1.8 kB at 4.9 kB/s)
 [[1;34mINFO[m] Flattening leaf module dependencies for: turbine (24 dependencies, 0 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for turbine: pinned=6 upgraded=16 downgraded=0 added=2 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: turbine
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.5.0:compile[m [1m(default)[m @ [36mturbine[0;1m ---[m
@@ -174,115 +176,7 @@ Progress (1): 1.8 kB                    Downloaded from central: https://repo.
 [[1;33mWARNING[m] Unable to autodetect 'javac' path, using 'javac' from the environment.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.19.1:test[m [1m(default-test)[m @ [36mturbine[0;1m ---[m
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running com.google.turbine.parse.UnicodeEscapePreprocessorTest
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec - in com.google.turbine.parse.UnicodeEscapePreprocessorTest
-Running com.google.turbine.parse.LexerTest
-Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec - in com.google.turbine.parse.LexerTest
-Running com.google.turbine.parse.ExpressionParserTest
-Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in com.google.turbine.parse.ExpressionParserTest
-Running com.google.turbine.parse.VariableDeclarationTest
-Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.google.turbine.parse.VariableDeclarationTest
-Running com.google.turbine.parse.CommentParserTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.google.turbine.parse.CommentParserTest
-Running com.google.turbine.parse.ParseErrorTest
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec - in com.google.turbine.parse.ParseErrorTest
-Running com.google.turbine.parse.ParserIntegrationTest
-Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in com.google.turbine.parse.ParserIntegrationTest
-Running com.google.turbine.parse.VariableInitializerTest
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.google.turbine.parse.VariableInitializerTest
-Running com.google.turbine.deps.DependenciesTest
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.695 sec - in com.google.turbine.deps.DependenciesTest
-Running com.google.turbine.deps.TransitiveTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.267 sec - in com.google.turbine.deps.TransitiveTest
-Running com.google.turbine.diag.LineMapTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.diag.LineMapTest
-Running com.google.turbine.options.TurbineOptionsTest
-Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in com.google.turbine.options.TurbineOptionsTest
-Running com.google.turbine.main.ReducedClasspathTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.214 sec - in com.google.turbine.main.ReducedClasspathTest
-Running com.google.turbine.main.MainTest
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.203 sec - in com.google.turbine.main.MainTest
-Running com.google.turbine.lower.ModuleIntegrationTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.309 sec - in com.google.turbine.lower.ModuleIntegrationTest
-Running com.google.turbine.lower.LowerIntegrationTest
-Tests run: 261, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.16 sec - in com.google.turbine.lower.LowerIntegrationTest
-Running com.google.turbine.lower.LowerSignatureTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.lower.LowerSignatureTest
-Running com.google.turbine.lower.LowerTest
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec - in com.google.turbine.lower.LowerTest
-Running com.google.turbine.zip.ZipTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.439 sec - in com.google.turbine.zip.ZipTest
-Running com.google.turbine.type.TypeTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.google.turbine.type.TypeTest
-Running com.google.turbine.processing.TurbineElementsTest
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.192 sec - in com.google.turbine.processing.TurbineElementsTest
-Running com.google.turbine.processing.TurbineTypesFactoryTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.google.turbine.processing.TurbineTypesFactoryTest
-Running com.google.turbine.processing.TurbineFilerTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.google.turbine.processing.TurbineFilerTest
-Running com.google.turbine.processing.TurbineTypesIsAssignableTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 5.478 sec - in com.google.turbine.processing.TurbineTypesIsAssignableTest
-Running com.google.turbine.processing.TurbineElementsGetAllMembersTest
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineElementsGetAllMembersTest
-Running com.google.turbine.processing.TurbineAnnotationMirrorTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineAnnotationMirrorTest
-Running com.google.turbine.processing.TurbineTypeMirrorTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineTypeMirrorTest
-Running com.google.turbine.processing.TurbineTypesIsSameTypeTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.398 sec - in com.google.turbine.processing.TurbineTypesIsSameTypeTest
-Running com.google.turbine.processing.TurbineAnnotationProxyTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineAnnotationProxyTest
-Running com.google.turbine.processing.TurbineNameTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineNameTest
-Running com.google.turbine.processing.TurbineTypesUnaryTest
-Tests run: 3136, Failures: 0, Errors: 0, Skipped: 903, Time elapsed: 0.162 sec - in com.google.turbine.processing.TurbineTypesUnaryTest
-Running com.google.turbine.processing.TurbineTypesIsSubtypeTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 15721, Time elapsed: 6.21 sec - in com.google.turbine.processing.TurbineTypesIsSubtypeTest
-Running com.google.turbine.processing.ProcessingIntegrationTest
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.ProcessingIntegrationTest
-Running com.google.turbine.processing.TurbineTypesIsSubsignatureTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 30066, Time elapsed: 6.906 sec - in com.google.turbine.processing.TurbineTypesIsSubsignatureTest
-Running com.google.turbine.processing.TurbineMessagerTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineMessagerTest
-Running com.google.turbine.processing.TurbineTypesContainsTest
-Tests run: 30788, Failures: 0, Errors: 0, Skipped: 14508, Time elapsed: 3.357 sec - in com.google.turbine.processing.TurbineTypesContainsTest
-Running com.google.turbine.processing.TurbineElementTest
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.processing.TurbineElementTest
-Running com.google.turbine.binder.ClassPathBinderTest
-Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.ClassPathBinderTest
-Running com.google.turbine.binder.CtSymClassBinderTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.CtSymClassBinderTest
-Running com.google.turbine.binder.JimageClassBinderTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.JimageClassBinderTest
-Running com.google.turbine.binder.lookup.TopLevelIndexTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.lookup.TopLevelIndexTest
-Running com.google.turbine.binder.BinderErrorTest
-Tests run: 110, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.BinderErrorTest
-Running com.google.turbine.binder.BinderTest
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.BinderTest
-Running com.google.turbine.binder.ProcessingTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.ProcessingTest
-Running com.google.turbine.binder.bytecode.BytecodeBoundClassTest
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.binder.bytecode.BytecodeBoundClassTest
-Running com.google.turbine.model.ConstTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.model.ConstTest
-Running com.google.turbine.bytecode.ClassWriterTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.bytecode.ClassWriterTest
-Running com.google.turbine.bytecode.sig.SigRegressionTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.bytecode.sig.SigRegressionTest
-Running com.google.turbine.bytecode.sig.SigIntegrationTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 sec - in com.google.turbine.bytecode.sig.SigIntegrationTest
-Running com.google.turbine.bytecode.ClassReaderTest
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.turbine.bytecode.ClassReaderTest
-
-Results :
-
-Tests run: 157852, Failures: 0, Errors: 0, Skipped: 76920
-
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mturbine[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/target/turbine-HEAD-SNAPSHOT.jar
@@ -305,14 +199,192 @@ Tests run: 157852, Failures: 0, Errors: 0, Skipped: 76920
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  01:05 min
-[[1;34mINFO[m] Finished at: 2026-11-05T01:34:20Z
+[[1;34mINFO[m] Total time:  24.555 s
+[[1;34mINFO[m] Finished at: 2026-11-13T01:35:10Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-dos2unix: target/Turbine.buildinfo: No such file or directory
-dos2unix: Skipping target/Turbine.buildinfo, not a regular file.
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Fri Nov 13 01:35:10 UTC 2026.
+Universal Time is now:  Fri Nov 13 01:35:10 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] Detecting the operating system and CPU architecture
+[[1;34mINFO[m] ------------------------------------------------------------------------
+[[1;34mINFO[m] os.detected.name: linux
+[[1;34mINFO[m] os.detected.arch: x86_64
+[[1;34mINFO[m] os.detected.release: ubuntu
+[[1;34mINFO[m] os.detected.release.version: 22.04
+[[1;34mINFO[m] os.detected.release.like.ubuntu: true
+[[1;34mINFO[m] os.detected.release.like.debian: true
+[[1;34mINFO[m] os.detected.classifier: linux-x86_64
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---------------------< [0;36mcom.google.turbine:turbine[0;1m >---------------------[m
+[[1;34mINFO[m] [1mBuilding turbine HEAD-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.5.0:compile[m [1m(default)[m @ [36mturbine[0;1m ---[m
+[[1;34mINFO[m] Compiling 2 proto file(s) to /var/maven/app/target/generated-sources/protobuf/java
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mprotobuf-maven-plugin:0.5.0:compile-custom[m [1m(default)[m @ [36mturbine[0;1m ---[m
+[[1;34mINFO[m] Compiling 2 proto file(s) to /var/maven/app/target/generated-sources/protobuf/grpc-java
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mturbine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/maven/app/src/main/resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36mturbine[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 127 source files to /var/maven/app/target/classes
+[[1;33mWARNING[m] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] COMPILATION ERROR : 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] /var/maven/app/target/generated-sources/annotations/com/google/turbine/type/AutoValue_Type_ClassTy.java:[9,2] error: An unhandled exception was thrown by the Error Prone static analysis plugin.
+     Please report this at https://github.com/google/error-prone/issues/new and include the following:
+  
+     error-prone version: 2.7.1
+     BugPattern: IncompatibleModifiers
+     Stack Trace:
+     java.lang.annotation.IncompleteAnnotationException: com.google.errorprone.annotations.IncompatibleModifiers missing element value
+  	at java.base/sun.reflect.annotation.AnnotationInvocationHandler.invoke(AnnotationInvocationHandler.java:83)
+  	at com.sun.proxy.$Proxy10.value(Unknown Source)
+  	at com.google.errorprone.bugpatterns.IncompatibleModifiersChecker.matchAnnotation(IncompatibleModifiersChecker.java:54)
+  	at com.google.errorprone.scanner.ErrorProneScanner.processMatchers(ErrorProneScanner.java:450)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitAnnotation(ErrorProneScanner.java:463)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitAnnotation(ErrorProneScanner.java:151)
+  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCAnnotation.accept(JCTree.java:2601)
+  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:82)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:74)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:48)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:105)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.visitModifiers(TreeScanner.java:818)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitModifiers(ErrorProneScanner.java:761)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitModifiers(ErrorProneScanner.java:151)
+  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCModifiers.accept(JCTree.java:2631)
+  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:82)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:74)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:48)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.visitVariable(TreeScanner.java:220)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitVariable(ErrorProneScanner.java:886)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitVariable(ErrorProneScanner.java:151)
+  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:990)
+  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:82)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:74)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:48)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:105)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:113)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:187)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitClass(ErrorProneScanner.java:549)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitClass(ErrorProneScanner.java:151)
+  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:808)
+  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:82)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:74)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:48)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:105)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:113)
+  	at jdk.compiler/com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:144)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitCompilationUnit(ErrorProneScanner.java:561)
+  	at com.google.errorprone.scanner.ErrorProneScanner.visitCompilationUnit(ErrorProneScanner.java:151)
+  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:591)
+  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:56)
+  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:58)
+  	at com.google.errorprone.scanner.ErrorProneScannerTransformer.apply(ErrorProneScannerTransformer.java:43)
+  	at com.google.errorprone.ErrorProneAnalyzer.finished(ErrorProneAnalyzer.java:152)
+  	at jdk.compiler/com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:132)
+  	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1417)
+  	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1364)
+  	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:960)
+  	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:311)
+  	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:170)
+  	at jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:57)
+  	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:43)
+[[1;34mINFO[m] 1 error
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  9.303 s
+[[1;34mINFO[m] Finished at: 2026-11-13T01:35:21Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m on project [36mturbine[m: [1;31mCompilation failure[m
+[[1;31mERROR[m] [1;31m/var/maven/app/target/generated-sources/annotations/com/google/turbine/type/AutoValue_Type_ClassTy.java:[9,2] error: An unhandled exception was thrown by the Error Prone static analysis plugin.[m
+[[1;31mERROR[m] [1;31m     Please report this at https://github.com/google/error-prone/issues/new and include the following:[m
+[[1;31mERROR[m] [1;31m  [m
+[[1;31mERROR[m] [1;31m     error-prone version: 2.7.1[m
+[[1;31mERROR[m] [1;31m     BugPattern: IncompatibleModifiers[m
+[[1;31mERROR[m] [1;31m     Stack Trace:[m
+[[1;31mERROR[m] [1;31m     java.lang.annotation.IncompleteAnnotationException: com.google.errorprone.annotations.IncompatibleModifiers missing element value[m
+[[1;31mERROR[m] [1;31m  	at java.base/sun.reflect.annotation.AnnotationInvocationHandler.invoke(AnnotationInvocationHandler.java:83)[m
+[[1;31mERROR[m] [1;31m  	at com.sun.proxy.$Proxy10.value(Unknown Source)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.bugpatterns.IncompatibleModifiersChecker.matchAnnotation(IncompatibleModifiersChecker.java:54)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.processMatchers(ErrorProneScanner.java:450)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitAnnotation(ErrorProneScanner.java:463)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitAnnotation(ErrorProneScanner.java:151)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCAnnotation.accept(JCTree.java:2601)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:82)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:74)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:48)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:105)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.visitModifiers(TreeScanner.java:818)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitModifiers(ErrorProneScanner.java:761)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitModifiers(ErrorProneScanner.java:151)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCModifiers.accept(JCTree.java:2631)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:82)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:74)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:48)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.visitVariable(TreeScanner.java:220)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitVariable(ErrorProneScanner.java:886)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitVariable(ErrorProneScanner.java:151)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:990)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:82)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:74)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:48)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:105)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:113)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:187)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitClass(ErrorProneScanner.java:549)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitClass(ErrorProneScanner.java:151)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:808)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:82)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:74)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:48)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:105)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:113)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:144)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitCompilationUnit(ErrorProneScanner.java:561)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScanner.visitCompilationUnit(ErrorProneScanner.java:151)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:591)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:56)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.Scanner.scan(Scanner.java:58)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.scanner.ErrorProneScannerTransformer.apply(ErrorProneScannerTransformer.java:43)[m
+[[1;31mERROR[m] [1;31m  	at com.google.errorprone.ErrorProneAnalyzer.finished(ErrorProneAnalyzer.java:152)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:132)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1417)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1364)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:960)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:311)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:170)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:57)[m
+[[1;31mERROR[m] [1;31m  	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:43)[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
 [0m
 [0;97m[[1;91mFAIL[0;97m] [0;93m/========================================================================
-[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to convert buildinfo newlines [0;93m
+[0;97m[[1;91mFAIL[0;97m] [0;93m| [1;91m failed to build [0;93m
 [0;97m[[1;91mFAIL[0;97m] [0;93m\========================================================================
 [0;97m[[1;91mFAIL[0;97m] [0;93m[1;91m ---------->>> PROCESS WAS ABORTED <<<---------- [0;93m
 [0m

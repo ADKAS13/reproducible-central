@@ -16,7 +16,7 @@ Rebuilding from buildspec [1m/home/adkas13/reproducible-central/repos/Xponents/
 |      [0;34mlocale[0;97m: Using default value [1men_US[0m
 |      [0;34mumask[0;97m: [1m022[0m
 | 4. how?
-|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install"[0m
+|      [0;34mcommand[0;97m: [1msh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -Dmaven.test.failure.ignore=true && mvn install -Dmaven.test.failure.ignore=true"[0m
 | 5. expected results?
 |      [0;34mbuildinfo[0;97m: [1mtarget/Xponents.buildinfo[0m
 
@@ -68,7 +68,7 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilder container image is ready for use: [1mghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022[0m
 [0m[0;97m[[1;94mINFO[0;97m] [0mRebuilding [1morg.opensextant:opensextant-xponents:9[0m release
-[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/Xponents/RQ1/buildcache/opensextant-xponents:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn -Dmaven.test.failure.ignore=true clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install" [0m
+[0m[0;97m[[1;92mRUN [0;97m] [0;32mdocker run --name rebuild-central -it --rm -v /home/adkas13/reproducible-central/repos/Xponents/RQ1/buildcache/opensextant-xponents:/var/maven/app -v /home/adkas13/reproducible-central/m2:/var/maven/.m2 -v /home/adkas13/reproducible-central/.sbt:/var/maven/.sbt -v /home/adkas13/reproducible-central/.npm:/.npm -v /home/adkas13/reproducible-central/.bnd:/.bnd -u 1000:1000 -e MAVEN_CONFIG=/var/maven/.m2 -e MVN_UMASK=022 -w /var/maven/app ghcr.io/jvm-repo-rebuild/rb-ubuntu-jdk11-toolchains-11-maven-3.6.3-adkas13-utc-en_us-022 sh -c "find . -name 'pom.deps.xml' -delete && mvn clean com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:init com.baeldung:counter-maven-plugin:1.0-SNAPSHOT:flatten install -DskipTests -Dmaven.test.failure.ignore=true && mvn install -Dmaven.test.failure.ignore=true" [0m
 [90m
 [0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
@@ -76,8 +76,8 @@ sha256:a0426a1b8e31c54c325370dca411ad8844022609c3f4454db601178711ad867f
 [0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Sun Oct 11 14:37:31 UTC 2026.
-Universal Time is now:  Sun Oct 11 14:37:31 UTC 2026.
+Local time is now:      Thu Nov 19 02:57:16 UTC 2026.
+Universal Time is now:  Thu Nov 19 02:57:16 UTC 2026.
 
 [0;93m[0m
 [[1;34mINFO[m] Scanning for projects...
@@ -89,6 +89,7 @@ Universal Time is now:  Sun Oct 11 14:37:31 UTC 2026.
 [[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mopensextant-xponents[0;1m ---[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mcounter-maven-plugin:1.0-SNAPSHOT:init[m [1m(default-cli)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] [LOCK-PLUGIN] init running for opensextant-xponents
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing dependency tree snapshot to: /var/maven/app/target/dependency-tree-before.txt
 [[1;34mINFO[m] Initialized pom.deps.xml with 101 dependencies (72 carrying exclusions, 5 dependencyManagement entries, version range mode: pinned).
 [[1;34mINFO[m] 
@@ -97,6 +98,7 @@ Universal Time is now:  Sun Oct 11 14:37:31 UTC 2026.
 [[1;34mINFO[m] Flattening leaf module dependencies for: opensextant-xponents (101 dependencies, 72 carrying exclusions)
 [[1;34mINFO[m] [LOCK-PLUGIN] Writing post-flatten snapshot to: /var/maven/app/target/dependency-tree-after.txt
 [[1;34mINFO[m] [LOCK-PLUGIN] Dependency comparison for opensextant-xponents: pinned=101 upgraded=0 downgraded=0 added=0 removed=0 scope_changed=0
+[[1;34mINFO[m] [LOCK-PLUGIN] Backed up original POM to pom.xml.orig
 [[1;34mINFO[m] POM updated successfully: opensextant-xponents
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mopensextant-xponents[0;1m ---[m
@@ -125,112 +127,7 @@ Universal Time is now:  Sun Oct 11 14:37:31 UTC 2026.
 [[1;33mWARNING[m] /var/maven/app/src/test/java/org/opensextant/extractors/test/TestPlacePhonetics.java:[69,26] static method should be qualified by type name, org.opensextant.extractors.geo.rules.NonsenseFilter, instead of by an expression
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mopensextant-xponents[0;1m ---[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m]  T E S T S
-[[1;34mINFO[m] -------------------------------------------------------
-[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestPlacePhonetics[m
-14:37:36,872 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
-14:37:36,873 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
-14:37:36,873 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/var/maven/app/target/test-classes/logback.xml]
-14:37:36,874 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
-14:37:36,874 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/var/maven/app/etc/logback.xml]
-14:37:36,874 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/var/maven/app/target/test-classes/logback.xml]
-14:37:36,965 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
-14:37:36,966 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
-14:37:36,976 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
-14:37:36,981 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-14:37:37,014 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
-14:37:37,014 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.apache] to ERROR
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors] to INFO
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.geo] to INFO
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xtax] to INFO
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xtemporal] to INFO
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xcoord] to INFO
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.poli] to INFO
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.geo.rules] to DEBUG
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.xlayer] to INFO
-14:37:37,015 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
-14:37:37,016 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@2d3379b4 - Registering current configuration as safe fallback point
-
-2026-10-11T14:37:37.018 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase ok phonetic:ok
-2026-10-11T14:37:37.021 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ØK (null, null, PPLX), score=4.70, øk
-2026-10-11T14:37:37.022 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
-2026-10-11T14:37:37.023 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=øk (null, null, PPLX), score=3.70, øk
-2026-10-11T14:37:37.023 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
-2026-10-11T14:37:37.023 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE='OK (null, null, PPLX), score=6.70, 'ok
-2026-10-11T14:37:37.023 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ 'ok
-2026-10-11T14:37:37.024 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase ok phonetic:ok
-2026-10-11T14:37:37.024 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ØK (null, null, PPLX), score=4.70, øk
-2026-10-11T14:37:37.024 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
-2026-10-11T14:37:37.024 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=øk (null, null, PPLX), score=3.70, øk
-2026-10-11T14:37:37.024 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
-2026-10-11T14:37:37.025 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE='OK (null, null, PPLX), score=6.70, 'ok
-2026-10-11T14:37:37.025 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ 'ok
-2026-10-11T14:37:37.025 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=OK (null, null, PPLX), score=7.70, ok
-Place Match 'OK' -- valid geo for candidate.
-Detect abnormal punctuation
-2026-10-11T14:37:37.028 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase aea phonetic:aea
-2026-10-11T14:37:37.028 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=aea (null, null, PPLX), score=5.03, aea
-2026-10-11T14:37:37.028 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aea
-2026-10-11T14:37:37.028 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=Aeå (null, null, PPLX), score=5.03, aeå
-2026-10-11T14:37:37.029 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aeå
-2026-10-11T14:37:37.029 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase aea phonetic:aea
-2026-10-11T14:37:37.029 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=aea (null, null, PPLX), score=5.03, aea
-2026-10-11T14:37:37.029 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aea
-2026-10-11T14:37:37.029 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ÄEÃ (null, null, PPLX), score=5.03, äeã
-Place Match 'ÄEÃ' -- valid geo for candidate.
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.317 s - in org.opensextant.extractors.test.[1mTestPlacePhonetics[m
-[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestGazetteerConflationKey[m
-Key 1  = Lee County-US-ADM2-36.70545--83.12853
-Hash1 = -1711687143
-Key 2 = Lee_County;ADM2;36.7055;-83.1285
-Hash2 = -1944029872
-Key 3 = Lee_County;ADM2;36.7055;-83.1285
-Hash3 = -1944029872
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.opensextant.extractors.test.[1mTestGazetteerConflationKey[m
-[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestGazFactory[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.opensextant.extractors.test.[1mTestGazFactory[m
-[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestSolrUtils[m
-Date 2017-01-02T04:05:06Z Parses as Mon Jan 02 04:05:06 UTC 2017 in current timezone
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.opensextant.extractors.test.[1mTestSolrUtils[m
-[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestNameScoreUtils[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.opensextant.extractors.test.[1mTestNameScoreUtils[m
-[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestResourceLoading[m
-This requires CLASSPATH set via maven or other means to include ./solr/etc/gazetteer/ or xponents-gaz-meta JAR
-Russian Stopwords count=159
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in org.opensextant.extractors.test.[1mTestResourceLoading[m
-[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestPersonFilter[m
-Test punctuation in names
-2026-10-11T14:37:37.149 DEBUG o.o.e.geo.rules.PersonNameFilter - NAME FILTER
-	[]
-2026-10-11T14:37:37.149 DEBUG o.o.e.geo.rules.PersonNameFilter - TITLE FILTER
-	[]
-2026-10-11T14:37:37.149 DEBUG o.o.e.geo.rules.PersonNameFilter - SUFFIX FILTER
-	[]
-John Doe pass? false
-John Doe pass? false
-John Doe pass? false
-John Doe pass? false
-Test A-B
-Test Mr. A. B-C
-Test A{}B
-	Invalid: {}
-Test A} {B
-	Invalid:} 
-	Invalid: }
-	Invalid: {
-Test A. {B
-	Invalid: {
-Test A—.B
-	Invalid:—
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.opensextant.extractors.test.[1mTestPersonFilter[m
-[[1;34mINFO[m] 
-[[1;34mINFO[m] Results:
-[[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
-[[1;34mINFO[m] 
+[[1;34mINFO[m] Tests are skipped.
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mopensextant-xponents[0;1m ---[m
 [[1;34mINFO[m] Building jar: /var/maven/app/target/opensextant-xponents-3.4.0.jar
@@ -262,8 +159,247 @@ Test A—.B
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  6.245 s
-[[1;34mINFO[m] Finished at: 2026-10-11T14:37:38Z
+[[1;34mINFO[m] Total time:  6.950 s
+[[1;34mINFO[m] Finished at: 2026-11-19T02:57:24Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[0m[0;97m[[1;94mINFO[0;97m] [0mGenerating /var/maven/.m2/toolchains.xml
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mUsing JDK version 11.0.32[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe UMASK    has been set to: 0022[0m
+[0m[0;97m[[1;93mWARN[0;97m] [0;93mThe Timezone has been set to:[0m
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Thu Nov 19 02:57:25 UTC 2026.
+Universal Time is now:  Thu Nov 19 02:57:25 UTC 2026.
+
+[0;93m[0m
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------< [0;36morg.opensextant:opensextant-xponents[0;1m >----------------[m
+[[1;34mINFO[m] [1mBuilding OpenSextant Xponents 3.4.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:compile[m [1m(default-compile)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 7 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M4:test[m [1m(default-test)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestPlacePhonetics[m
+02:57:28,011 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+02:57:28,011 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+02:57:28,012 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/var/maven/app/target/test-classes/logback.xml]
+02:57:28,012 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+02:57:28,012 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/var/maven/app/etc/logback.xml]
+02:57:28,012 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/var/maven/app/target/test-classes/logback.xml]
+02:57:28,097 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+02:57:28,097 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+02:57:28,101 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+02:57:28,105 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+02:57:28,144 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
+02:57:28,144 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+02:57:28,144 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.apache] to ERROR
+02:57:28,144 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors] to INFO
+02:57:28,144 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.geo] to INFO
+02:57:28,144 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xtax] to INFO
+02:57:28,145 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xtemporal] to INFO
+02:57:28,145 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.xcoord] to INFO
+02:57:28,145 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.poli] to INFO
+02:57:28,145 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.extractors.geo.rules] to DEBUG
+02:57:28,145 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.opensextant.xlayer] to INFO
+02:57:28,145 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+02:57:28,145 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@2d3379b4 - Registering current configuration as safe fallback point
+
+2026-11-19T02:57:28.148 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase ok phonetic:ok
+2026-11-19T02:57:28.150 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ØK (null, null, PPLX), score=4.70, øk
+2026-11-19T02:57:28.151 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
+2026-11-19T02:57:28.151 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=øk (null, null, PPLX), score=3.70, øk
+2026-11-19T02:57:28.152 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
+2026-11-19T02:57:28.152 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE='OK (null, null, PPLX), score=6.70, 'ok
+2026-11-19T02:57:28.153 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ 'ok
+2026-11-19T02:57:28.153 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase ok phonetic:ok
+2026-11-19T02:57:28.153 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ØK (null, null, PPLX), score=4.70, øk
+2026-11-19T02:57:28.154 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
+2026-11-19T02:57:28.154 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=øk (null, null, PPLX), score=3.70, øk
+2026-11-19T02:57:28.154 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ øk
+2026-11-19T02:57:28.154 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE='OK (null, null, PPLX), score=6.70, 'ok
+2026-11-19T02:57:28.155 DEBUG o.o.e.geo.rules.NonsenseFilter - 	OK !~ 'ok
+2026-11-19T02:57:28.155 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=OK (null, null, PPLX), score=7.70, ok
+Place Match 'OK' -- valid geo for candidate.
+Detect abnormal punctuation
+2026-11-19T02:57:28.157 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase aea phonetic:aea
+2026-11-19T02:57:28.158 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=aea (null, null, PPLX), score=5.03, aea
+2026-11-19T02:57:28.158 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aea
+2026-11-19T02:57:28.158 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=Aeå (null, null, PPLX), score=5.03, aeå
+2026-11-19T02:57:28.158 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aeå
+2026-11-19T02:57:28.159 DEBUG o.o.e.geo.rules.NonsenseFilter - Testing phrase aea phonetic:aea
+2026-11-19T02:57:28.159 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=aea (null, null, PPLX), score=5.03, aea
+2026-11-19T02:57:28.159 DEBUG o.o.e.geo.rules.NonsenseFilter - 	ÄEÃ !~ aea
+2026-11-19T02:57:28.159 DEBUG o.o.e.geo.rules.NonsenseFilter - 	PLACE=ÄEÃ (null, null, PPLX), score=5.03, äeã
+Place Match 'ÄEÃ' -- valid geo for candidate.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.314 s - in org.opensextant.extractors.test.[1mTestPlacePhonetics[m
+[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestGazetteerConflationKey[m
+Key 1  = Lee County-US-ADM2-36.70545--83.12853
+Hash1 = -1711687143
+Key 2 = Lee_County;ADM2;36.7055;-83.1285
+Hash2 = -1944029872
+Key 3 = Lee_County;ADM2;36.7055;-83.1285
+Hash3 = -1944029872
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.opensextant.extractors.test.[1mTestGazetteerConflationKey[m
+[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestGazFactory[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.opensextant.extractors.test.[1mTestGazFactory[m
+[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestSolrUtils[m
+Date 2017-01-02T04:05:06Z Parses as Mon Jan 02 04:05:06 UTC 2017 in current timezone
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.opensextant.extractors.test.[1mTestSolrUtils[m
+[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestNameScoreUtils[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.opensextant.extractors.test.[1mTestNameScoreUtils[m
+[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestResourceLoading[m
+This requires CLASSPATH set via maven or other means to include ./solr/etc/gazetteer/ or xponents-gaz-meta JAR
+Russian Stopwords count=159
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in org.opensextant.extractors.test.[1mTestResourceLoading[m
+[[1;34mINFO[m] Running org.opensextant.extractors.test.[1mTestPersonFilter[m
+Test punctuation in names
+2026-11-19T02:57:28.301 DEBUG o.o.e.geo.rules.PersonNameFilter - NAME FILTER
+	[]
+2026-11-19T02:57:28.301 DEBUG o.o.e.geo.rules.PersonNameFilter - TITLE FILTER
+	[]
+2026-11-19T02:57:28.301 DEBUG o.o.e.geo.rules.PersonNameFilter - SUFFIX FILTER
+	[]
+John Doe pass? false
+John Doe pass? false
+John Doe pass? false
+John Doe pass? false
+Test A-B
+Test Mr. A. B-C
+Test A{}B
+	Invalid: {}
+Test A} {B
+	Invalid:} 
+	Invalid: }
+	Invalid: {
+Test A. {B
+	Invalid: {
+Test A—.B
+	Invalid:—
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.opensextant.extractors.test.[1mTestPersonFilter[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:jar[m [1m(default-jar)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.2.0:test-jar[m [1m(attach-tests)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:3.1.2:analyze-only[m [1m(dependency-analysis)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;33mWARNING[m] Unused declared dependencies found:
+[[1;33mWARNING[m]    ch.qos.logback:logback-classic:jar:1.2.3:test
+[[1;33mWARNING[m]    ch.qos.logback:logback-core:jar:1.2.3:test
+[[1;33mWARNING[m]    com.carrotsearch:hppc:jar:0.8.1:compile
+[[1;33mWARNING[m]    com.fasterxml.jackson.core:jackson-annotations:jar:2.9.8:compile
+[[1;33mWARNING[m]    com.fasterxml.jackson.core:jackson-core:jar:2.9.8:compile
+[[1;33mWARNING[m]    com.fasterxml.jackson.core:jackson-databind:jar:2.9.8:compile
+[[1;33mWARNING[m]    com.fasterxml.jackson.dataformat:jackson-dataformat-smile:jar:2.9.8:compile
+[[1;33mWARNING[m]    com.github.ben-manes.caffeine:caffeine:jar:2.4.0:compile
+[[1;33mWARNING[m]    com.google.guava:guava:jar:14.0.1:compile
+[[1;33mWARNING[m]    com.google.protobuf:protobuf-java:jar:3.1.0:compile
+[[1;33mWARNING[m]    com.lmax:disruptor:jar:3.4.0:compile
+[[1;33mWARNING[m]    com.norconex.language:langdetect:jar:1.3.0:compile
+[[1;33mWARNING[m]    com.tdunning:t-digest:jar:3.1:compile
+[[1;33mWARNING[m]    commons-codec:commons-codec:jar:1.11:compile
+[[1;33mWARNING[m]    commons-collections:commons-collections:jar:3.2.2:compile
+[[1;33mWARNING[m]    commons-configuration:commons-configuration:jar:1.6:compile
+[[1;33mWARNING[m]    commons-fileupload:commons-fileupload:jar:1.3.3:compile
+[[1;33mWARNING[m]    commons-lang:commons-lang:jar:2.6:compile
+[[1;33mWARNING[m]    dom4j:dom4j:jar:1.6.1:compile
+[[1;33mWARNING[m]    findbugs:annotations:jar:1.0.0:compile
+[[1;33mWARNING[m]    info.ganglia.gmetric4j:gmetric4j:jar:1.0.7:compile
+[[1;33mWARNING[m]    io.dropwizard.metrics:metrics-core:jar:3.2.6:compile
+[[1;33mWARNING[m]    io.dropwizard.metrics:metrics-ganglia:jar:3.2.6:compile
+[[1;33mWARNING[m]    io.dropwizard.metrics:metrics-graphite:jar:3.2.6:compile
+[[1;33mWARNING[m]    io.dropwizard.metrics:metrics-jetty9:jar:3.2.6:compile
+[[1;33mWARNING[m]    io.dropwizard.metrics:metrics-jvm:jar:3.2.6:compile
+[[1;33mWARNING[m]    javax.servlet:javax.servlet-api:jar:3.1.0:runtime
+[[1;33mWARNING[m]    joda-time:joda-time:jar:2.10.6:compile
+[[1;33mWARNING[m]    net.arnx:jsonic:jar:1.3.5:compile
+[[1;33mWARNING[m]    net.hydromatic:eigenbase-properties:jar:1.1.5:compile
+[[1;33mWARNING[m]    org.antlr:antlr4-runtime:jar:4.5.1-1:compile
+[[1;33mWARNING[m]    org.apache.calcite:calcite-core:jar:1.13.0:compile
+[[1;33mWARNING[m]    org.apache.calcite:calcite-linq4j:jar:1.13.0:compile
+[[1;33mWARNING[m]    org.apache.calcite.avatica:avatica-core:jar:1.10.0:compile
+[[1;33mWARNING[m]    org.apache.commons:commons-exec:jar:1.3:compile
+[[1;33mWARNING[m]    org.apache.commons:commons-math3:jar:3.6.1:compile
+[[1;33mWARNING[m]    org.apache.curator:curator-client:jar:2.8.0:compile
+[[1;33mWARNING[m]    org.apache.curator:curator-framework:jar:2.8.0:compile
+[[1;33mWARNING[m]    org.apache.curator:curator-recipes:jar:2.8.0:compile
+[[1;33mWARNING[m]    org.apache.htrace:htrace-core:jar:3.2.0-incubating:compile
+[[1;33mWARNING[m]    org.apache.httpcomponents:fluent-hc:jar:4.5.13:runtime
+[[1;33mWARNING[m]    org.apache.httpcomponents:httpclient:jar:4.5.13:compile
+[[1;33mWARNING[m]    org.apache.httpcomponents:httpcore:jar:4.4.14:compile
+[[1;33mWARNING[m]    org.apache.httpcomponents:httpmime:jar:4.5.13:compile
+[[1;33mWARNING[m]    org.apache.logging.log4j:log4j-1.2-api:jar:2.11.0:compile
+[[1;33mWARNING[m]    org.apache.logging.log4j:log4j-api:jar:2.11.0:compile
+[[1;33mWARNING[m]    org.apache.logging.log4j:log4j-core:jar:2.11.0:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-analyzers-nori:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-analyzers-phonetic:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-backward-codecs:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-classification:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-codecs:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-expressions:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-grouping:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-highlighter:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-join:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-misc:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-queries:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-sandbox:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-spatial-extras:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-spatial3d:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.lucene:lucene-suggest:jar:7.7.2:compile
+[[1;33mWARNING[m]    org.apache.zookeeper:zookeeper:jar:3.4.14:compile
+[[1;33mWARNING[m]    org.codehaus.jackson:jackson-core-asl:jar:1.9.13:compile
+[[1;33mWARNING[m]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13:compile
+[[1;33mWARNING[m]    org.codehaus.janino:commons-compiler:jar:2.7.6:compile
+[[1;33mWARNING[m]    org.codehaus.janino:janino:jar:2.7.6:compile
+[[1;33mWARNING[m]    org.codehaus.woodstox:stax2-api:jar:3.1.4:compile
+[[1;33mWARNING[m]    org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1:compile
+[[1;33mWARNING[m]    org.eclipse.jetty:jetty-rewrite:jar:9.4.14.v20181114:compile
+[[1;33mWARNING[m]    org.eclipse.jetty:jetty-servlets:jar:9.4.14.v20181114:compile
+[[1;33mWARNING[m]    org.hamcrest:hamcrest-core:jar:1.3:test
+[[1;33mWARNING[m]    org.jodd:jodd-bean:jar:5.1.5:compile
+[[1;33mWARNING[m]    org.jodd:jodd-core:jar:5.1.5:compile
+[[1;33mWARNING[m]    org.locationtech.jts:jts-core:jar:1.15.0:runtime
+[[1;33mWARNING[m]    org.locationtech.spatial4j:spatial4j:jar:0.7:compile
+[[1;33mWARNING[m]    org.noggit:noggit:jar:0.8:compile
+[[1;33mWARNING[m]    org.opensextant:geodesy:jar:2.0.1:compile
+[[1;33mWARNING[m]    org.ow2.asm:asm:jar:5.1:compile
+[[1;33mWARNING[m]    org.ow2.asm:asm-commons:jar:5.1:compile
+[[1;33mWARNING[m]    org.restlet.jse:org.restlet.ext.simple:jar:2.4.3:compile
+[[1;33mWARNING[m]    org.rrd4j:rrd4j:jar:3.2:compile
+[[1;33mWARNING[m]    org.simpleframework:simple:jar:5.1.6:compile
+[[1;33mWARNING[m]    org.slf4j:jcl-over-slf4j:jar:1.7.24:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mopensextant-xponents[0;1m ---[m
+[[1;34mINFO[m] Installing /var/maven/app/target/opensextant-xponents-3.4.0.jar to /var/maven/.m2/repository/org/opensextant/opensextant-xponents/3.4.0/opensextant-xponents-3.4.0.jar
+[[1;34mINFO[m] Installing /var/maven/app/pom.xml to /var/maven/.m2/repository/org/opensextant/opensextant-xponents/3.4.0/opensextant-xponents-3.4.0.pom
+[[1;34mINFO[m] Installing /var/maven/app/target/opensextant-xponents-3.4.0-tests.jar to /var/maven/.m2/repository/org/opensextant/opensextant-xponents/3.4.0/opensextant-xponents-3.4.0-tests.jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.126 s
+[[1;34mINFO[m] Finished at: 2026-11-19T02:57:29Z
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 dos2unix: target/Xponents.buildinfo: No such file or directory
 dos2unix: Skipping target/Xponents.buildinfo, not a regular file.
